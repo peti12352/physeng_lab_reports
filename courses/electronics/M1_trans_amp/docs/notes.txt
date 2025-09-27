@@ -1,0 +1,74 @@
+# Electronics lab 1
+
+Station 4
+
+Gregorio Jaca
+gregorio.jaca@gmail.com
+Peter Tallosy K14WR1
+peter@tallosy.hu
+
+Tasks:
+
+## M1: Investigation of common emitter amp
+
+### a) op point voltages of amp
+U_B = 1.28 V, U_C = 6.96 V, U_E = 0.66 V
+-> U_BE = U_B - U_E = 0.62 V, U_CE = U_C - U_E = 6.3 V
+
+### b) saturation
+f = 1 kHz
+ampl = 150 mV
+phase_shift = 180 deg
+it starts to saturate in the negative direction earlier (bias voltage) - assymetric
+collector point not exactly in the middle but below -> negative starts saturating at lower input amplitude
+
+at 1 kHz the common-emitter amplifier output shows 180° phase inversion. 
+due to the collector DC voltage being slightly below mid-supply (Q-point bias), 
+the negative-going output saturates at a lower input amplitude than the positive-going output, 
+resulting in asymmetric clipping.
+
+### c) freq response
+
+table:
+
+
+### d) upper-lower cutoffs (in labreport)
+
+### e)
+
+### f) 
+excel: t2_f
+
+
+## M2: Investigation of common collector amp
+
+### a) 
+V_pp = 1 V
+f = 1 kHz
+
+V_out = 980 mV
+phase_shift = 0 deg
+
+### b) 
+excel: M2_b
+
+### c) input resistance
+V_out = 488 mV
+R_ab = 37.4 kOhm = R_in
+
+### d) 
+V_out_orig = 1 V - potmeter counterclockwise to the end
+V_out_half = 496 mV
+-> error under 1%
+
+we expect high value for the FK high input res amp:
+R_ab = 248 kOhm = R_in
+
+
+
+
+
+
+
+
+

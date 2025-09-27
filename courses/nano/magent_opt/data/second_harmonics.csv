@@ -1,0 +1,24 @@
+#Digilent WaveForms Oscilloscope Measurements
+#Device Name: Discovery3
+#Serial Number: SN:210415BD6503
+#Date Time: 2025-09-25 15:10:41.120
+#Sample rate: 16000Hz
+#Samples: 32000
+#Trigger: Source: Channel 1 Type: Edge Condition: Rising Level: -545 mV Hyst.: Auto HoldOff: 0 s
+#Channel 1: Range: 1 V/div Offset: -500 mV Zero: -14 mV Sample Mode: Average
+#Math 1: Input: C1 Reference: Internal Frequency: 40 Hz Phase: 0 ° Filter: IIR Butterworth 8  Low-Pass CutOff: 10 Hz Output: Amplitude
+
+#Wavegen Channel 1: Running
+#Mode: Simple
+#Type: Sine
+#Frequency: 20 Hz
+#Period: 50 ms
+#Amplitude: 500 mV
+#Offset: 0 V
+#Symmetry: 50 %
+#Phase: 0 °
+
+,Extent,Name,Value
+C1,Visible,Average, 1.3178 V
+M1,Visible,Average, 5.3879 mV
+M1,X1 X2,Average, 1.0449 mV
