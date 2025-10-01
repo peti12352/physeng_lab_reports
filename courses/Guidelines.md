@@ -29,7 +29,6 @@ plots should be EXACTLY where they are. use [H] in figure environment.
 - The user will give **precise tasks**. When given a task:
   1. Implement the requested change directly in the target file(s).
   2. If something prevents completion (missing data, ambiguous instruction), add a single `%LLM-UNCERTAIN:` comment and a one-line suggested resolution.
-  3. Provide a one-line suggested commit message in a `%LLM-COMMENT:` if helpful.
 - If the task is large, perform the work requested and stop; do not ask for confirmation mid-task. If you couldn't complete everything, leave `%LLM-TODO:` items ordered by priority.
 
 ## 9 — Error handling and critiques
