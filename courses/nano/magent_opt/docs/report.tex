@@ -2,8 +2,8 @@
 \usepackage{graphicx, booktabs, siunitx, amsmath, geometry, float}
 \usepackage{subcaption}
 \geometry{margin=2.5cm}
-\title{XXX}
-\author{Gregorio Jaca U8L9B9, Peter Tallosy K14WR1 }
+\title{Magneto-Optics}
+\author{Gregorio Jaca U8L9B9, Peter Tallosy K14WR1}
 \date{\today}
 
 \begin{document}
@@ -13,14 +13,14 @@
 \begin{abstract}
 
     Sensitive light polarization allows us to characterize the optical properties of different samples.
-    We measured the optical retardation of a voltage controlled liquid cristal (LC) cell. We built a setup which allows us to measure the linear dichroism in hemozoid in suspension, a malaria indicator. Using samples of known concentration, we constructed a calibration curve which allows us to quantify the concentration of an unknown sample.
+    We measured the optical retardation of a voltage controlled liquid crystal (LC) cell. We built a setup which allows us to measure the linear dichroism in hemozoid in suspension, a malaria indicator. Using samples of known concentration, we constructed a calibration curve which allows us to quantify the concentration of an unknown sample.
 
 \end{abstract}
 
 % Introduction
 \section{Introduction}
 
-Molecules with anisotropic shapes can have anisotropic orientation-dependent optical effects individually. In most cases, aggrgates of randomly oriented molecules have no net anisotropic effect. Liquid crystal (LC) phases at the boundary of a liquid and a solid crystal with an ordered orientation, which can controlled by an electric field. Taking advantage of this propery, we use a LC cell with a volatge controlled waveplate which generates the alternating electric field, which acts as a voltage-controlled waveplate.
+Molecules with anisotropic shapes can have anisotropic orientation-dependent optical effects individually. In most cases, aggregates of randomly oriented molecules have no net anisotropic effect. Liquid crystal (LC) phases at the boundary of a liquid and a solid crystal with an ordered orientation, which can controlled by an electric field. Taking advantage of this property, we use a LC cell with a voltage controlled waveplate which generates the alternating electric field, which acts as a voltage-controlled waveplate.
 
 
 \section{Results and Discussion}
@@ -33,13 +33,12 @@ We measure the analyzer orientation dependence of the intensity. We considering 
 
 \begin{figure} [H]
     \centering
-    \includegraphics[width=0.35\linewidth]{figs/task1_transmittance.png}
+    \includegraphics[width=0.6\linewidth]{figs/task1_transmittance.png}
     \caption{Light intensity dependency on analyzer orientation.}
     \label{fig:t1}
 \end{figure}
 
-The data shows a $I \sim \cos^2\varphi$ dependency of the light intensity with the polarizer angle. The extintion ratio = \frac{I_\perp}{I_\parallel} quantifies the quality of a polarizer, with a smaller value indicating a higher quality, was calculated and we obtained a value of 0.0026. This measurement allowed us to determine the polarization direction of the light source.
-
+The data shows a $I \sim \cos^2\varphi$ dependency of the light intensity with the polarizer angle. The extinction ratio $= \frac{I_\perp}{I_\parallel}$ quantifies the quality of a polarizer, with a smaller value indicating a higher quality, was calculated and we obtained a value of 0.0026. This measurement allowed us to determine the polarization direction of the light source and calibrate our setup.
 
 \subsection{Liquid crystal cell}
 
@@ -48,53 +47,109 @@ The data shows a $I \sim \cos^2\varphi$ dependency of the light intensity with t
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{\linewidth}
+    \begin{subfigure}[b]{0.48\linewidth}
         \centering
-    \includegraphics[width=0.35\linewidth]{figs/task2_transmittance.png}
+        \includegraphics[width=\linewidth]{figs/task2_transmittance.png}
+        \caption{Transmittance vs analyzer angle}
+        \label{fig:t2a}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/task2_polar.png}
+        \caption{Polar plot of measured intensity}
+        \label{fig:t2b}
     \end{subfigure}
-    
-    \vspace{1em} % 
 
-    \begin{subfigure}{\linewidth}
-        \centering
-    \includegraphics[width=0.35\linewidth]{figs/task2_polar.png}
-    \end{subfigure}
-    
-    \caption{Left: Light intensity dependency on analyzer orientation. Right: Polar plot of the light intensity as a function of the analyzer orientation. A circular plot indicates a orientation independent signal. Our measured angle range was unfortunately less than 360° which makes the plot not be closed.}
+    \caption{Left: Light intensity dependency on analyzer orientation. Right: Polar plot of the light intensity as a function of the analyzer orientation. A circular plot indicates an orientation-independent signal. Our measured angle range was unfortunately less than 360°, which prevents a closed polar plot.}
     \label{fig:t2}
 \end{figure}
 
- The small angular dependency resembles the one observed previously (see Fig. \ref{XXX}). This suggests that a small component of the light did not get circularly polarized, but rather remained linearly polarized, and it was this component that gets filtered by the analyzer based on its orientation.
+ The small angular dependency resembles the one observed previously (see Fig. \ref{fig:t1}). This suggests that a small component of the light did not get circularly polarized, but rather remained linearly polarized, and it was this component that gets filtered by the analyzer based on its orientation.
  The constant (angle independent) intensity component of the measured signal represent the circularly polarized component of the light, which is not affected by the orientation of the linear analyzer polarizer.
 % circular plot
 
 
 % TASK 3 AND 4
 
-We synthesize a 2kHz rectangular signal and apply it to the LC cell. We measure the voltage deendency of the measured light intensity. 
+We synthesize a 2 kHz rectangular signal and apply it to the LC cell. The generated electric field makes some of the molecules align with its direction, creating a birefringent cell, which will introduce a phase shift in the passing light if the LC cell not aligned with the incoming light (achieved by rotating it 45° with respect to the polarizer). We measure the voltage dependency of the measured light intensity. We repeat this procedure both with parallel and orthogonal linear polarizer and analyzer configurations.
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/task3_transmittance.png}
+        \caption{Parallel configuration}
+        \label{fig:t3}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/task4_transmittance.png}
+        \caption{Orthogonal configuration}
+        \label{fig:t4}
+    \end{subfigure}
 
+    \caption{Light intensity as a function of the amplitude of the rectangular AC applied voltage. Left: parallel configuration. Right: orthogonal configuration.}
+    \label{fig:t3_4}
+\end{figure}
 
+%LLM-COMMENT: commit: place Task 3 and Task 4 plots side-by-side with subcaptions
 
+The relationship between the transmittance and the retardation $\delta$ when the LC cell is rotated by 45° can be expressed as:
+% \[
+% T_\parallel = \cos^2($delta$/2)
+% T_\perp = \sin^2($delta$/2)
+% \]
+% \[
+% T_\parallel = \cos^2\!\left(\frac{\delta}{2}\right), \qquad
+% T_\perp = \sin^2\!\left(\frac{\delta}{2}\right)
+% \]
+\begin{align*}
+T_\parallel &= \cos^2\!\left(\frac{\delta}{2}\right),\\
+T_\perp      &= \sin^2\!\left(\frac{\delta}{2}\right).
+\end{align*}
+% G: XXX check
 
+Based on this, we can calculate $\delta$ as a function of the applied voltage amplitude, which shows a strongly non-linear relationship.
 
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{figs/task34_delta.png}
+    \caption{$\delta(V)$ calculated from the orthogonal and parallel configuration.}
+    \label{fig:t3_4_delta}
+\end{figure}
 
-\subsection{Detection of hemozoin suspended in water}
+\subsection{Detection of hemozoid suspended in water}
 
 % TASK 5
 
-In order to measure the second harmonic, we use a lock-in frequency (20Hz) twice as large as the driving frequency (10Hz)
+In order to measure the second harmonic, we use a lock-in frequency (20 Hz) twice as large as the driving frequency (10 Hz)
 
 % The results from the lockin measurement were not very precise, and repeated mesurements yielded slightly different results. 
 
-The quality of the calibration curve is limited by the few datapoints available. We were expecting a linear relationship (at least, for not very large concentrations where some saturation is expected), which is difficult to validate given the limited data. The discprenacy seen at the 0\% concentration sample could be accounted for by considering it the baseline effect caused by the elements other than the hemozoid. % XXX improved
-Furthermore, there were more bubbles in the 0\% concentration sample. However, linear or nonlinear, a well done calibration curve can be effectively used to calculate the concentration level of hemozoid by interpolation, which makes this technique useful for diagnosis.
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{figs/task6_concentration.png}
+    \caption{$\delta(V)$ calculated from the orthogonal and parallel configuration.}
+    \label{fig:t6}
+\end{figure}
+
+The quality of the calibration curve is limited by the few data points available. We were expecting a linear relationship (at least, for not very large concentrations where some saturation is expected), which is difficult to validate given the limited data. The discrepancy seen at the 0\% concentration sample could be accounted for by considering it the baseline effect caused by the elements other than the hemozoid. % XXX improved
+Furthermore, there were more bubbles in the 0\% concentration sample. However, linear or non-linear, a well done calibration curve can be effectively used to calculate the concentration level of hemozoid by interpolation, which makes this technique useful for diagnosis.
 
 
 % Conclusion
 \section{Conclusion}
 
 Manually rotating the polarizer and calibrating the measurement setup introduced some limitations and errors which could be reduced by more precise automatized controls.
-We could construct a calibration curve that relates the concentration of hemozoid to the measured optical signal. I would be greatly improved by increasing the number of datapoints used for the curve.
+We could construct a calibration curve that relates the concentration of hemozoid to the measured optical signal. I would be greatly improved by increasing the number of data points used for the curve.
+
+\section{Appendix}
+
+\subsection{Things that were wrong in the lab notes and we corrected here}
+
+- Calculating the retardation delta in Tasks 3 and 4: In the lab notes we normalized each $T_\parallel$ and $T_\perp$ individually by their maximum values. Instead we had to normalize them by the total $T$. We did not measure it, but we can calculate it as $T=\sqrt{T_\parallel^2+T_\perp^2}$. In this lab report we normalized them properly.
+
+- The polar plot in Task 2: In the lab notes we did not convert from degrees to radians, which we fixed here.
+
 
 \end{document}
