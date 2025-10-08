@@ -13,13 +13,12 @@
 \maketitle
 
 \begin{abstract}
-This report details an experiment conducted with a Scanning Tunneling Microscope (STM) to investigate the surface of Highly Oriented Pyrolytic Graphite (HOPG) under ambient conditions. The primary objectives were to characterize the instrument\'s performance and to explore the atomic and electronic properties of the graphite surface. Key tasks included determining the effect of the vertical scanning range (z-limit) on resolution, measuring the height of atomic steps, achieving atomic resolution to determine the lattice constant, and analyzing a Moiré superstructure to calculate the rotational angle between graphene layers. % GGG: Add key quantitative results here, for example: The measured lattice constant was XXX nm and the Moiré pattern indicated a twist angle of Y.YY degrees.
+We used a Scanning Tunneling Microscope (STM) to investigate the surface of a Highly Oriented Pyrolytic Graphite (HOPG) sample. We characterized the instrument's performance and explored the atomic and electronic properties of the graphite surface. We investogated the effect of the vertical scanning range (z-limit) on resolution showing that GGG, measured the height of atomic steps, achieved atomic resolution to determine the lattice constant, and analyzing a Moiré superstructure to calculate the rotational angle between graphene layers. % GGG: Add key quantitative results here, for example: The measured lattice constant was XXX nm and the Moiré pattern indicated a twist angle of Y.YY degrees.
+
 \end{abstract}
 
 \section{Introduction}
-The Scanning Tunneling Microscope (STM), invented by Gerd Binnig and Heinrich Rohrer in 1981, is a foundational tool in nanoscience, enabling the visualization and manipulation of surfaces at the atomic scale \cite{stm_manual}. It operates based on the quantum mechanical phenomenon of electron tunneling. When a sharp, conductive tip is brought within a few angstroms of a conductive sample, and a small bias voltage is applied, electrons can tunnel across the vacuum gap, generating a measurable tunneling current. This current is exponentially dependent on the tip-sample distance, providing the STM with its exceptional vertical sensitivity.
-
-In this experiment, we use an STM to study Highly Oriented Pyrolytic Graphite (HOPG). HOPG is an ideal substrate for ambient STM studies because it is relatively inert, electrically conductive, and can be easily cleaved to produce large, atomically flat terraces.
+The Scanning Tunneling Microscope (STM), invented by Gerd Binnig and Heinrich Rohrer in 1981, is a foundational tool in nanoscience, enabling the visualization and manipulation of surfaces at the atomic scale \cite{stm_manual}. It operates based on the quantum mechanical phenomenon of electron tunneling. When a sharp, conductive tip is brought within a few angstroms of a conductive sample, and a small bias voltage is applied, electrons can tunnel across the vacuum gap, generating a measurable tunneling current. This current is exponentially dependent on the tip-sample distance, providing the STM with its exceptional vertical sensitivity. The exponential dependance and a sharp tip ensures that (practically) all the current goes through a single point, the closest point of the tip to the sample. The quality of the tip can be ensured by the quality of the obtained images, making the calibration verification straightforward.
 
 The goals of this lab are:
 \begin{enumerate}
@@ -46,9 +45,9 @@ When two periodic lattices are overlaid with a relative twist angle, a larger-pe
 This phenomenon allows for the precise determination of the twist angle between layers from a large-scale STM image.
 
 \section{Experimental Methods}
-The experiment was performed using a Veeco/DI Nanoscope 3 STM operating in ambient air. The scanning tip was mechanically cut from a Platinum-Iridium (Pt-Ir) wire. A fresh surface of the HOPG sample was prepared by mechanical exfoliation using adhesive tape.
+The experiment was performed using a Veeco/DI Nanoscope 3 STM operating in ambient air. The scanning tip was mechanically cut from a Platinum-Iridium (Pt-Ir) wire. The quality of the tip was tested until a satisfactory one was found. We were careful in checking for tip degradation during the measuring, ensuring high quality images.
 
-The STM was operated in constant current mode. Images were acquired using the Nanoscope software, with typical parameters of a bias voltage of around 100 mV and a tunneling current of approximately 500 pA. The acquired data was processed and analyzed using the Gwyddion software. Analysis steps included plane fitting to correct for sample tilt, row alignment to correct for scanner artifacts, and 2D Fast Fourier Transform (FFT) filtering to reduce noise in atomic-resolution images.
+The STM was operated in constant current mode. Images were acquired using the Nanoscope software, with typical parameters of a bias voltage between 50 and 500 mV and a tunneling setpoint current between 500 pA and 2 nA. We investigated different parameter configurations for different measurements, always striving to get the best quality images, while protecting the tip from degradation. The acquired data was processed and analyzed using the Gwyddion software. Analysis steps included plane fitting to correct for sample tilt, row alignment to correct for scanner artifacts, and 2D Fast Fourier Transform (FFT) filtering to reduce noise in atomic-resolution images.
 
 \section{Results and Discussion}
 
@@ -75,7 +74,7 @@ The vertical resolution of the STM is limited by the 16-bit Digital-to-Analog Co
 % GGG: Add calculated resolution values and discussion. For a z-limit of 500 nm, the theoretical resolution is 500 nm / 65536 = 7.6 pm. For a z-limit of 50 nm, it is 0.76 pm. While a smaller z-limit offers finer theoretical resolution, it also restricts the ability to track large topographic features. We found that a z-limit of 500 nm provided a good balance for locating atomic steps.
 
 \subsection{Atomic Steps on HOPG}
-The cleaved HOPG surface exhibits atomically flat terraces separated by steps. We located several of these steps and measured their heights using line profile analysis.
+The cleaved HOPG surface exhibits atomically flat terraces separated by steps. We located several of these steps and measured their heights using line profile analysis. We compare the heights with the literature value for the interlayer distance in graphite.
 
 % GGG: Insert an image showing terraces and a line profile across a step.
 \begin{figure}[H]
@@ -88,7 +87,8 @@ The cleaved HOPG surface exhibits atomically flat terraces separated by steps. W
 % GGG: Add the measured height and calculation. The line profile shows a step height of approximately XXX nm. The known interlayer spacing for graphite is about 0.34 nm. Therefore, this step corresponds to N = (measured height / 0.34 nm) layers of graphene.
 
 \subsection{Atomic Resolution and Lattice Constant}
-By scanning a small, flat area and applying a 2D FFT filter to remove noise, we were able to achieve atomic resolution of the graphite lattice. The image reveals a triangular pattern of atoms, not the hexagonal honeycomb structure of a single graphene sheet. This is because in AB-stacked graphite, half of the atoms in one layer lie directly above an atom in the layer below (A-site), while the other half lie above the center of a hexagon (B-site). Due to differences in the local density of states, the STM tip primarily images only one of these two types of atoms, resulting in a triangular lattice appearance.
+We scanned a small, flat area which was identified from a previous image, for which, as there were no terraces, we could safely reduce the surface-tip distance, by increasing the current setpoint value to 2.39 nA and reduced the Bisas voltage to 51.7 mV. We applied a 2D FFT filter to remove noise, we were able to achieve atomic resolution of the graphite lattice. The image reveals a triangular pattern of atoms, not the hexagonal honeycomb structure of a single graphene sheet. This is because in AB-stacked graphite, half of the atoms in one layer lie directly above an atom in the layer below (A-site), while the other half lie above the center of a hexagon (B-site). Due to differences in the local density of states, the STM tip primarily images only one of these two types of atoms, resulting in a triangular lattice appearance.
+% A-site and B-site GGG
 
 % GGG: Insert the atomically resolved and filtered image.
 \begin{figure}[H]
@@ -121,3 +121,157 @@ The results demonstrate the power of STM as a tool for characterizing materials 
 \printbibliography
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+% config 1
+
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Scan Controls}} \\
+\hline
+Scan size: & 10.0 nm \\
+X offset: & 4.97 µm \\
+Y offset: & -44.0 nm \\
+Scan angle: & 0.00° \\
+Scan rate: & 30.5 Hz \\
+Tip velocity: & 0.610 µm/s \\
+Samples/line: & 512 \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Feedback Controls}} \\
+\hline
+SPM feedback: & Log \\
+Current setpoint: & 2.390 nA \\
+Integral gain: & 0.5038 \\
+Proportional gain: & 1.581 \\
+Bias: & 51.71 mV \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Other Controls}} \\
+\hline
+Microscope mode: & STM \\
+Z limit: & 357.5 nm \\
+Units: & Metric \\
+Color table: & 12 \\
+Serial number: & 5342EV \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Channel 1}} \\
+\hline
+Data type: & Height \\
+Data scale: & 100.0 pm \\
+Line direction: & Trace \\
+Realtime planefit: & Line \\
+Offline planefit: & Full \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Channel 2}} \\
+\hline
+Data type: & Current \\
+Data scale: & 500.0 pA \\
+Line direction: & Retrace \\
+Realtime planefit: & Line \\
+Offline planefit: & Full \\
+\hline
+\end{tabular}
+
+% config 2
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Scan Controls}} \\
+\hline
+Scan size: & 500 nm \\
+X offset: & 4.86 µm \\
+Y offset: & -17.1 nm \\
+Scan angle: & 0.00° \\
+Scan rate: & 1.00 Hz \\
+Tip velocity: & 1.00 µm/s \\
+Samples/line: & 512 \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Feedback Controls}} \\
+\hline
+SPM feedback: & Log \\
+Current setpoint: & 500.0 pA \\
+Integral gain: & 0.7000 \\
+Proportional gain: & 2.064 \\
+Bias: & 500.0 mV \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Other Controls}} \\
+\hline
+Microscope mode: & STM \\
+Z limit: & 500.0 nm \\
+Units: & Metric \\
+Color table: & 12 \\
+Serial number: & 5342EV \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Channel 1}} \\
+\hline
+Data type: & Height \\
+Data scale: & 1.500 nm \\
+Line direction: & Trace \\
+Realtime planefit: & Line \\
+Offline planefit: & Full \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Channel 2}} \\
+\hline
+Data type: & Current \\
+Data scale: & 500.0 pA \\
+Line direction: & Retrace \\
+Realtime planefit: & Line \\
+Offline planefit: & Full \\
+\hline
+\end{tabular}
