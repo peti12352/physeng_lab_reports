@@ -1,0 +1,23 @@
+1. Show the effect of the z_limit to the horizontal resolution of the
+STM (you can approximate it with the smallest steps on a small linescan,
+resolution = z_limit / 2^16). Compare this using two images with
+different z_limit. This will tell you the capabilities of the
+piezoscanner.
+
+2. Measure heights of atomic steps on graphite and calculate how many
+layers they consist of.
+
+3. Measure the lattice constant on the atomic scale image (after Fourier
+filtering) and calculate the distance between atoms in the lattice with
+a simple geometric calculation. It will be a little bit different in the
+3 equivalent direction due to the thermal drift, check it out. We
+expected hexagonal structure but we see triangular one because we only
+see every second atoms. The density of states becomes quite different if
+there is an atom directly below in the underlying layer or not. I send
+the filtered version of one of your measurements.
+
+4. image containing twisted graphene layers. Determine the angle of
+rotation between the two layers from the moiré pattern observed on the
+graphene. You can use the theoretic lattice constant of graphene (d ~
+0.246 nm). Check it out how cool is it that you can see the atomic
+resolution and the moiré superstructure in the same image.

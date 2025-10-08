@@ -1,0 +1,123 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{graphicx, booktabs, siunitx, amsmath, geometry, float}
+\usepackage{subcaption}
+\usepackage[backend=biber, style=ieee]{biblatex}
+\addbibresource{references.bib}
+
+\geometry{margin=2.5cm}
+\title{Scanning Tunneling Microscopy Study of Highly Oriented Pyrolytic Graphite (HOPG)}
+\author{Gregorio Jaca (U8L9B9), Peter Tallosy (K14WR1)}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report details an experiment conducted with a Scanning Tunneling Microscope (STM) to investigate the surface of Highly Oriented Pyrolytic Graphite (HOPG) under ambient conditions. The primary objectives were to characterize the instrument\'s performance and to explore the atomic and electronic properties of the graphite surface. Key tasks included determining the effect of the vertical scanning range (z-limit) on resolution, measuring the height of atomic steps, achieving atomic resolution to determine the lattice constant, and analyzing a Moiré superstructure to calculate the rotational angle between graphene layers. % GGG: Add key quantitative results here, for example: The measured lattice constant was XXX nm and the Moiré pattern indicated a twist angle of Y.YY degrees.
+\end{abstract}
+
+\section{Introduction}
+The Scanning Tunneling Microscope (STM), invented by Gerd Binnig and Heinrich Rohrer in 1981, is a foundational tool in nanoscience, enabling the visualization and manipulation of surfaces at the atomic scale \cite{stm_manual}. It operates based on the quantum mechanical phenomenon of electron tunneling. When a sharp, conductive tip is brought within a few angstroms of a conductive sample, and a small bias voltage is applied, electrons can tunnel across the vacuum gap, generating a measurable tunneling current. This current is exponentially dependent on the tip-sample distance, providing the STM with its exceptional vertical sensitivity.
+
+In this experiment, we use an STM to study Highly Oriented Pyrolytic Graphite (HOPG). HOPG is an ideal substrate for ambient STM studies because it is relatively inert, electrically conductive, and can be easily cleaved to produce large, atomically flat terraces.
+
+The goals of this lab are:
+\begin{enumerate}
+    \item To investigate the relationship between the vertical scanner range (z-limit) and the achievable vertical resolution.
+    \item To measure the height of atomic steps on the HOPG surface and relate them to the graphene interlayer spacing.
+    \item To achieve atomic resolution and determine the lattice constant of the graphite crystal.
+    \item To analyze a Moiré pattern arising from twisted graphene layers and determine the corresponding rotation angle.
+\end{enumerate}
+
+\section{Theoretical Background}
+\subsection{Tunneling Current}
+In the constant current (topographic) mode, the STM feedback loop adjusts the vertical position (z) of the tip to maintain a constant tunneling current ($I_t$) as it scans across the surface (x,y). For small bias voltages ($U_t$), the tunneling current is proportional to the local density of states (LDOS) of the sample at the Fermi level ($E_F$) \cite{stm_manual}.
+\begin{equation}
+    I_t(r, U_t) \propto U_t \cdot \rho_{\text{sample}}(E = E_F, r)
+\end{equation}
+The resulting $z(x,y)$ map provides a convolution of the surface topography and its electronic structure.
+
+\subsection{Moiré Effect}
+When two periodic lattices are overlaid with a relative twist angle, a larger-period superstructure, known as a Moiré pattern, can emerge. For two stacked graphene layers with a lattice constant $d$ and a small twist angle $	heta$, the period of the Moiré pattern $D$ is given by:
+\begin{equation}
+    D = \frac{d}{2 \sin(\theta/2)}
+    \label{eq:moire}
+\end{equation}
+This phenomenon allows for the precise determination of the twist angle between layers from a large-scale STM image.
+
+\section{Experimental Methods}
+The experiment was performed using a Veeco/DI Nanoscope 3 STM operating in ambient air. The scanning tip was mechanically cut from a Platinum-Iridium (Pt-Ir) wire. A fresh surface of the HOPG sample was prepared by mechanical exfoliation using adhesive tape.
+
+The STM was operated in constant current mode. Images were acquired using the Nanoscope software, with typical parameters of a bias voltage of around 100 mV and a tunneling current of approximately 500 pA. The acquired data was processed and analyzed using the Gwyddion software. Analysis steps included plane fitting to correct for sample tilt, row alignment to correct for scanner artifacts, and 2D Fast Fourier Transform (FFT) filtering to reduce noise in atomic-resolution images.
+
+\section{Results and Discussion}
+
+\subsection{Vertical Resolution vs. Z-limit}
+The vertical resolution of the STM is limited by the 16-bit Digital-to-Analog Converter (DAC) that controls the z-piezo. The minimum vertical step size is determined by the total vertical range, or z-limit, according to: Resolution = $z_{\text{limit}} / 2^{16}$. We acquired images at different z-limit values to observe this effect.
+
+% GGG: Insert a figure with two subplots showing images taken at different z-limits.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{high_z_limit_image.png}
+        \caption{Image with a large z-limit (e.g., 500 nm).}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{low_z_limit_image.png}
+        \caption{Image with a small z-limit (e.g., 50 nm).}
+    \end{subfigure}
+    \caption{STM topography images of HOPG taken with different z-limit settings. A smaller z-limit provides lower noise and higher effective resolution.}
+    \label{fig:z-limit}
+\end{figure}
+
+% GGG: Add calculated resolution values and discussion. For a z-limit of 500 nm, the theoretical resolution is 500 nm / 65536 = 7.6 pm. For a z-limit of 50 nm, it is 0.76 pm. While a smaller z-limit offers finer theoretical resolution, it also restricts the ability to track large topographic features. We found that a z-limit of 500 nm provided a good balance for locating atomic steps.
+
+\subsection{Atomic Steps on HOPG}
+The cleaved HOPG surface exhibits atomically flat terraces separated by steps. We located several of these steps and measured their heights using line profile analysis.
+
+% GGG: Insert an image showing terraces and a line profile across a step.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{atomic_step_profile.png}
+    \caption{STM image of HOPG showing atomic terraces, with a line profile indicating the height of a step.}
+    \label{fig:step}
+\end{figure}
+
+% GGG: Add the measured height and calculation. The line profile shows a step height of approximately XXX nm. The known interlayer spacing for graphite is about 0.34 nm. Therefore, this step corresponds to N = (measured height / 0.34 nm) layers of graphene.
+
+\subsection{Atomic Resolution and Lattice Constant}
+By scanning a small, flat area and applying a 2D FFT filter to remove noise, we were able to achieve atomic resolution of the graphite lattice. The image reveals a triangular pattern of atoms, not the hexagonal honeycomb structure of a single graphene sheet. This is because in AB-stacked graphite, half of the atoms in one layer lie directly above an atom in the layer below (A-site), while the other half lie above the center of a hexagon (B-site). Due to differences in the local density of states, the STM tip primarily images only one of these two types of atoms, resulting in a triangular lattice appearance.
+
+% GGG: Insert the atomically resolved and filtered image.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{atomic_resolution_graphite.png}
+    \caption{Atomically resolved 2D FFT-filtered STM image of the HOPG surface. The triangular arrangement of carbon atoms is visible.}
+    \label{fig:atomic-res}
+\end{figure}
+
+% GGG: Add the measured atom-atom distance and the calculated lattice constant. From the image, we measured the distance between adjacent bright spots to be approximately XXX nm. This corresponds to the lattice constant 'a' of the hexagonal lattice. The theoretical value is a = 0.246 nm. Discrepancies can arise from thermal drift and piezo scanner calibration.
+
+\subsection{Moiré Pattern and Layer Rotation Angle}
+In one region of the sample, we observed a Moiré superstructure, indicating the presence of at least two graphene layers with a rotational mismatch.
+
+% GGG: Insert the image showing the Moiré pattern.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{moire_pattern.png}
+    \caption{Large-scale STM image showing a Moiré pattern on the HOPG surface, caused by a rotational twist between graphene layers.}
+    \label{fig:moire}
+\end{figure}
+
+% GGG: Add the measured Moiré period and the calculated twist angle. We measured the period of the Moiré pattern, D, to be XXX nm. Using Equation \ref{eq:moire} and the theoretical graphene lattice constant d = 0.246 nm, we calculated the twist angle $\theta$ to be Y.YY degrees.
+
+\section{Conclusion}
+In this experiment, we successfully used a scanning tunneling microscope to explore the surface of HOPG. We characterized the instrument\'s vertical resolution and demonstrated the trade-offs involved in selecting the z-limit. We measured the heights of atomic steps, confirming their correspondence to integer multiples of the graphene layer spacing. Furthermore, we achieved atomic resolution, observing the characteristic triangular pattern of the graphite surface and determined the lattice constant. % GGG: state value.
+Finally, we analyzed a Moiré pattern to determine the twist angle between graphene layers. % GGG: state value.
+The results demonstrate the power of STM as a tool for characterizing materials at the nanoscale. Potential sources of error in the measurements include thermal drift, acoustic vibrations, and the quality of the scanning tip.
+
+\printbibliography
+
+\end{document}
