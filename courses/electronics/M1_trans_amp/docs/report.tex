@@ -2,12 +2,16 @@
 \usepackage{graphicx, booktabs, siunitx, amsmath, geometry, float}
 \usepackage{subcaption}
 \geometry{margin=2.5cm}
-\title{M1 & M2: Investigation of Transistor Amplifiers}
-\author{Gregorio Jaca U8L9B9, Peter Tallosy K14WR1 }
+\title{Investigation of Transistor Amplifiers}
+\author{Gregorio Jaca U8L9B9 gregorio.jaca@gmail.com , \ Peter Tallosy K14WR1 peter@tallosy.hu }
 \date{\today}
 
 \begin{document}
-%\maketitle
+\maketitle
+
+\begin{abstract}
+We investigate the characteristics of simple transistor based amplifiers, both common-emitter and common-collector types. We find an appropriate operational point and we study the frequency dependent properties and the Miller effect on the high frequency performance.
+\end{abstract}
 
 \section{M1: Investigation of a Common-Emitter Amplifier}
 
@@ -27,23 +31,23 @@ From these, the base-emitter and collector-emitter voltages were calculated:
 The $U_{BE}$ value is within the range of typical value for a silicon transistor, between 0.6 and 0.7 V. Considering the supply voltage of 15 V (The effective supply voltage would be the supply voltage minus the voltage dropped on the protective diode) the value for $U_{CE}$ is very close to the ideal mid-point value. This indicates a good operational point.
 
 \subsection{Saturation Measurement}
-A \SI{1}{kHz} sinusoidal input signal was applied. The input amplitude was increased until the output signal began to show distortion. Saturation was observed to begin at an input amplitude of \SI{150}{mV}. A phase shift of approximately 180° was produced. 
+A \SI{1}{kHz} sinusoidal input signal was applied. The input amplitude was increased until the output signal began to show distortion. Saturation was observed to begin at an input amplitude of \SI{150}{mV}. A phase shift of approximately 180° was observed. 
 
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\linewidth}
         \centering
-        \includegraphics[width=\linewidth]{unsaturated.png}
+        \includegraphics[width=\linewidth]{unsaturated_100mv.jpg}
     \end{subfigure}\hfill
     \begin{subfigure}[b]{0.48\linewidth}
         \centering
-        \includegraphics[width=\linewidth]{saturated_160mv.jpg.png}
+        \includegraphics[width=\linewidth]{saturated_160mv.jpg}
     \end{subfigure}
     \caption{Amplifier output at the oscillator. Left: 100mV, unsaturated , Right: 160mV saturated at the negative voltages.}
     \label{fig:oscilloscope}
 \end{figure}
 
-Looking at the oscilloscope, we noticed that the signal saturated first at the negative voltages. This asymmetry initially suggests that the Q-point, the DC operating point is too high. We know, and it can be seen in Fig. \ref{fig:oscilloscope}, that the common emitter amplifier inverts the voltage sign. Therefore, the fact that the negative voltages \textbf{at the output} saturate means that the positive input (including the bias voltage) is too high. However, in the previous section we measured the DC operational point and saw that the Q-point was not high, if anything, it was slightly below the mid-point. Therefore, the above explanation is unsatisfactory. Other posibilities which we considered, but could not test, are: transistor non-linearity and gain variation, and input and output capacitor effects. 
+Looking at the oscilloscope, we noticed that the signal saturated first at the negative voltages. This asymmetry initially suggests that the Q-point, the DC operating point is too high. We know, and it can be seen in Fig. \ref{fig:oscilloscope}, that the common emitter amplifier inverts the voltage sign. Therefore, the fact that the negative voltages \textbf{at the output} saturate means that the positive input (including the bias voltage) is too high. However, in the previous section we measured the DC operational point and saw that the Q-point was not high, if anything, it was slightly below the mid-point. Therefore, the above explanation is unsatisfactory. Other possibilities which we considered, but could not test, are: transistor non-linearity and gain variation, and input and output capacitor effects. 
 
 
 \subsection{Frequency Response}
@@ -51,8 +55,7 @@ The frequency response of the amplifier was measured by applying a sinusoidal in
 
 \begin{table}[H]
     \centering
-    \caption{Frequency response data for Common-Emitter amplifier (M1.c).}
-    \label{tab:freq_response_m1}
+    \caption{Frequency response data for Common-Emitter amplifier (M1.c)}\label{tab:freq_response_m1}\footnotemark
     \sisetup{table-format=3.2}
     \begin{tabular}{lccccccccccc}
         \toprule
@@ -66,16 +69,7 @@ The frequency response of the amplifier was measured by applying a sinusoidal in
         \bottomrule
     \end{tabular}
 \end{table}
-
-% \begin{figure}[H]
-%     \centering
-%     % GGG: Create Bode plot (au vs f) and phase plot (phi vs f) from the table data for M1.
-%     \includegraphics[width=0.7\linewidth]{bode_plot_m1.png}
-%     \caption{}
-%     \label{fig:bode_plot_m1}
-% \end{figure}
-
-
+\footnotetext{We did not properly save the table data during our measurement excercise and we lost it. Czehlár Gergely and Hunyady Csongor were kind enough to share this data with us. The raw data in Tables \ref{tab:freq_response_m1} and \ref{tab:freq_response_m2} is theirs.}
 
 \begin{figure}[H]
     \centering
@@ -94,10 +88,10 @@ The frequency response of the amplifier was measured by applying a sinusoidal in
 From the frequency response characteristics we can identify the upper and lower cut-offs: $f_l = \SI{78.6}{Hz}$ and $f_u = \SI{69.3}{kHz}$. The bandwidth of the amplifier is $B = f_u - f_l = \SI{69.2}{kHz}$. 
 
 \subsection{Miller Effect}
-A \SI{22}{pF} capacitor was connected between the collector and base of the transistor. This reduced the upper cut-off frequency to $f_u = \SI{12}{kHz}$, and did not modify the low frequency characteristics. This is expected as the capacitor's impeadance increases with the frequency. This shows the importance of reducing the capacitance between the electrodes in a circuit.
+A \SI{22}{pF} capacitor was connected between the collector and base of the transistor. This reduced the upper cut-off frequency to $f_u = \SI{12}{kHz}$, and did not modify the low frequency characteristics. This is expected as the capacitor's impedance increases with the frequency. This shows the importance of reducing the capacitance between the electrodes in a circuit. It is worth noting that a finite stray capaticance is present in the transistor, and this is one of the main reasons behind the limited bandwidth at high frequencies.
 
 \subsection{Cascade Circuit}
-The circuit was modified into a cascade configuration. This increased the upper cut-off frequency significantly to $f_u = \SI{271}{kHz}$.
+In order to investigate the above mentioned point, we will construct an amplifier circuit which minimizes the Miller effect, by using an extra transistor which is connected to a DC source. The circuit was modified into a cascade configuration, incorporating a second transistor. This increased the upper cut-off frequency significantly to $f_u = \SI{271}{kHz}$. This huge increase in the upper cut-off frequency is explained by the minimization of the Miller effect.
 
 \section{M2: Investigation of a Common-Collector Amplifier}
 
@@ -139,20 +133,18 @@ The frequency response was investigated at several input frequencies.
     \label{fig:bode_plot_m2}
 \end{figure}
 
-As expected, the voltage gain is smaller but close to unity
-
-\subsection{Input Resistance}
-The input resistance of the common-collector amplifier was measured to be $R_{in} = \SI{37.4}{k\ohm}$.
+As expected, the voltage gain is smaller but close to unity and the phase response is close to 0°. The input resistance of the common-collector amplifier was measured to be $R_{in} = \SI{37.4}{k\ohm}$.
 
 \subsection{High Input Resistance Configuration}
-The circuit was modified to a high input resistance configuration. The input resistance was measured to be $R_{in} = \SI{248}{k\ohm}$.
+The circuit was modified to a high input resistance FK amplifier. Starting from a original voltage output of 1 V, we reduced the output voltage until 496 mV by turning the potmeter 1. From this, the input resistance was measured to be $R_{in} = \SI{248}{k\ohm}$, which is indeed a high input resistance.
+
+\section{Measurement Setup}
+
+We were in the measurement station 4. We used the SIGLENT SDS 1072CML Digital Oscilloscope, SIGLENT SPD 3303C DC Power Supply, SIGLENT SDM3045X Digital  Multimiter, RIGOL DG811 SiFi II 20MHz AWG, and METEX M-3800 Multimeter.
 
 \section{Conclusion}
-The characteristics of a common-emitter amplifier were measured. The operating point, gain, and bandwidth were determined. The measurements confirm the expected behavior, including the \SI{180}{\degree} phase inversion and the frequency limitations of the amplifier. The Miller effect and the cascade configuration demonstrated methods to influence the high-frequency performance.
-
-The common-collector amplifier was also investigated, confirming its characteristics such as voltage gain close to unity, no phase inversion, and high input impedance.
+The characteristics of a common-emitter amplifier were measured. The operating point, gain, and bandwidth were determined. The measurements confirm the expected behaviour, including the \SI{180}{\degree} phase inversion and the frequency limitations of the amplifier. The Miller effect and the cascade configuration demonstrated methods to influence the high-frequency performance and bandwidth of the amplifier, highlighting the impact of stray capacitances present in transistors. The common-collector amplifier was also investigated, confirming its characteristics such as voltage gain close to unity, no phase inversion, and high input impedance.
 
 \end{document}
 
-% GGG
-We did not properly save the table data during our measurement excercise and we lost it. Czehlár Gergely and Hunyady Csongor were kind enough to share this data with us. The raw data in Tables 1 and 2 \ref{\ref{tab:freq_response_m1}} and \ref{\ref{tab:freq_response_m2}} is theirs.
+
