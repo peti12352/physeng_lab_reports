@@ -13,7 +13,7 @@
 \maketitle
 
 \begin{abstract}
-We used a Scanning Tunneling Microscope (STM) to investigate the surface of a Highly Oriented Pyrolytic Graphite (HOPG) sample. We characterized the instrument's performance and explored the atomic and electronic properties of the graphite surface. We investogated the effect of the vertical scanning range (z-limit) on resolution showing that GGG, measured the height of atomic steps, achieved atomic resolution to determine the lattice constant, and analyzing a Moiré superstructure to calculate the rotational angle between graphene layers. % GGG: Add key quantitative results here, for example: The measured lattice constant was XXX nm and the Moiré pattern indicated a twist angle of Y.YY degrees.
+We used a Scanning Tunneling Microscope (STM) to investigate the surface of a Highly Oriented Pyrolytic Graphite (HOPG) sample. We characterized the instrument\'s performance and explored the atomic and electronic properties of the graphite surface. We investigated the effect of the vertical scanning range (z-limit) on resolution, measured the height of atomic steps, achieved atomic resolution to determine the lattice constant, and analyzed a Moiré superstructure to calculate the rotational angle between graphene layers. The measured lattice constant was 0.252 nm and the Moiré pattern indicated a twist angle of 1.09 degrees.
 
 \end{abstract}
 
@@ -59,19 +59,20 @@ The vertical resolution of the STM is limited by the 16-bit Digital-to-Analog Co
     \centering
     \begin{subfigure}[b]{0.48\linewidth}
         \centering
-        \includegraphics[width=\linewidth]{high_z_limit_image.png}
-        \caption{Image with a large z-limit (e.g., 500 nm).}
+        \includegraphics[width=\linewidth]{../data/tasks/1/2342nm.PNG}
+        \caption{Image with a large z-limit (2342 nm).}
+        \label{fig:high_z_limit_image}
     \end{subfigure}\hfill
     \begin{subfigure}[b]{0.48\linewidth}
         \centering
-        \includegraphics[width=\linewidth]{low_z_limit_image.png}
-        \caption{Image with a small z-limit (e.g., 50 nm).}
+        \includegraphics[width=\linewidth]{../data/tasks/1/500nm.PNG}
+        \caption{Image with a small z-limit (500 nm).}
+        \label{fig:low_z_limit_image}
     \end{subfigure}
     \caption{STM topography images of HOPG taken with different z-limit settings. A smaller z-limit provides lower noise and higher effective resolution.}
     \label{fig:z-limit}
 \end{figure}
-
-% GGG: Add calculated resolution values and discussion. For a z-limit of 500 nm, the theoretical resolution is 500 nm / 65536 = 7.6 pm. For a z-limit of 50 nm, it is 0.76 pm. While a smaller z-limit offers finer theoretical resolution, it also restricts the ability to track large topographic features. We found that a z-limit of 500 nm provided a good balance for locating atomic steps.
+For a z-limit of 2342 nm, the theoretical resolution is \(2342 \text{ nm} / 2^{16} \approx 35.7 \text{ pm}\). For a z-limit of 500 nm, it is \(500 \text{ nm} / 2^{16} \approx 7.6 \text{ pm}\). While a smaller z-limit offers finer theoretical resolution, it also restricts the ability to track large topographic features. We found that a z-limit of 500 nm provided a good balance for locating atomic steps.
 
 \subsection{Atomic Steps on HOPG}
 The cleaved HOPG surface exhibits atomically flat terraces separated by steps. We located several of these steps and measured their heights using line profile analysis. We compare the heights with the literature value for the interlayer distance in graphite.
@@ -79,199 +80,188 @@ The cleaved HOPG surface exhibits atomically flat terraces separated by steps. W
 % GGG: Insert an image showing terraces and a line profile across a step.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\linewidth]{atomic_step_profile.png}
+    \includegraphics[width=0.7\linewidth]{../data/tasks/2/graph.PNG}
     \caption{STM image of HOPG showing atomic terraces, with a line profile indicating the height of a step.}
     \label{fig:step}
 \end{figure}
-
-% GGG: Add the measured height and calculation. The line profile shows a step height of approximately XXX nm. The known interlayer spacing for graphite is about 0.34 nm. Therefore, this step corresponds to N = (measured height / 0.34 nm) layers of graphene.
+The line profile shows a step height of approximately 0.33 nm (0.23 - (-0.10) nm). The known interlayer spacing for graphite is about 0.34 nm. Therefore, this step corresponds to N = $(0.33 \text{ nm} / 0.34 \text{ nm}) \approx 1$ layer of graphene.
 
 \subsection{Atomic Resolution and Lattice Constant}
-We scanned a small, flat area which was identified from a previous image, for which, as there were no terraces, we could safely reduce the surface-tip distance, by increasing the current setpoint value to 2.39 nA and reduced the Bisas voltage to 51.7 mV. We applied a 2D FFT filter to remove noise, we were able to achieve atomic resolution of the graphite lattice. The image reveals a triangular pattern of atoms, not the hexagonal honeycomb structure of a single graphene sheet. This is because in AB-stacked graphite, half of the atoms in one layer lie directly above an atom in the layer below (A-site), while the other half lie above the center of a hexagon (B-site). Due to differences in the local density of states, the STM tip primarily images only one of these two types of atoms, resulting in a triangular lattice appearance.
-% A-site and B-site GGG
+After applying a 2D FFT filter to an atomically resolved scan, we observed the characteristic triangular pattern of atoms on the HOPG surface. This appearance, rather than the expected hexagonal honeycomb structure, arises because the STM primarily images only one of the two types of carbon atoms (A-site vs. B-site) due to differences in the local density of states.
 
-% GGG: Insert the atomically resolved and filtered image.
+To determine the lattice constant, we performed a line profile analysis on the filtered image, as shown in Figure \ref{fig:atomic-res}. The profile measures the periodicity of the atomic lattice along a specific direction.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{atomic_resolution_graphite.png}
-    \caption{Atomically resolved 2D FFT-filtered STM image of the HOPG surface. The triangular arrangement of carbon atoms is visible.}
+    \includegraphics[width=0.8\linewidth]{../data/tasks/3/intermolecular_distance.PNG}
+    \caption{Line profile taken across the atomically resolved and filtered STM image of the HOPG surface. The plot shows the tunneling current variation, with the peaks corresponding to the positions of the imaged carbon atoms. The periodicity directly relates to the lattice constant.}
     \label{fig:atomic-res}
 \end{figure}
 
-% GGG: Add the measured atom-atom distance and the calculated lattice constant. From the image, we measured the distance between adjacent bright spots to be approximately XXX nm. This corresponds to the lattice constant 'a' of the hexagonal lattice. The theoretical value is a = 0.246 nm. Discrepancies can arise from thermal drift and piezo scanner calibration.
+From the line profile, the distance between adjacent peaks was measured to be approximately 0.252 nm. This corresponds to the lattice constant 'a' of the hexagonal lattice. The theoretical value is a = 0.246 nm. Measurements along the three equivalent lattice directions showed minor variations, consistent with the expected effects of thermal drift. Discrepancies can arise from thermal drift and piezo scanner calibration.
 
 \subsection{Moiré Pattern and Layer Rotation Angle}
-In one region of the sample, we observed a Moiré superstructure, indicating the presence of at least two graphene layers with a rotational mismatch.
+In one region of the sample, we observed a Moiré superstructure, indicating the presence of at least two graphene layers with a rotational mismatch. The image obtained remarkably shows both the atomic-resolution graphite lattice and the larger Moiré superstructure simultaneously.
 
 % GGG: Insert the image showing the Moiré pattern.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{moire_pattern.png}
+    \includegraphics[width=0.6\linewidth]{../data/gergo_data/hopg.png}
     \caption{Large-scale STM image showing a Moiré pattern on the HOPG surface, caused by a rotational twist between graphene layers.}
     \label{fig:moire}
 \end{figure}
 
-% GGG: Add the measured Moiré period and the calculated twist angle. We measured the period of the Moiré pattern, D, to be XXX nm. Using Equation \ref{eq:moire} and the theoretical graphene lattice constant d = 0.246 nm, we calculated the twist angle $\theta$ to be Y.YY degrees.
+We measured the period of the Moiré pattern, D, to be 12.89 nm. Using Equation \ref{eq:moire} and the theoretical graphene lattice constant d = 0.246 nm, we calculated the twist angle $\theta$ to be 1.09 degrees.
 
 \section{Conclusion}
-In this experiment, we successfully used a scanning tunneling microscope to explore the surface of HOPG. We characterized the instrument\'s vertical resolution and demonstrated the trade-offs involved in selecting the z-limit. We measured the heights of atomic steps, confirming their correspondence to integer multiples of the graphene layer spacing. Furthermore, we achieved atomic resolution, observing the characteristic triangular pattern of the graphite surface and determined the lattice constant. % GGG: state value.
-Finally, we analyzed a Moiré pattern to determine the twist angle between graphene layers. % GGG: state value.
-The results demonstrate the power of STM as a tool for characterizing materials at the nanoscale. Potential sources of error in the measurements include thermal drift, acoustic vibrations, and the quality of the scanning tip.
+In this experiment, we successfully used a scanning tunneling microscope to explore the surface of HOPG. We characterized the instrument\'s vertical resolution and demonstrated the trade-offs involved in selecting the z-limit. We measured the heights of atomic steps, confirming their correspondence to integer multiples of the graphene layer spacing. Furthermore, we achieved atomic resolution, observing the characteristic triangular pattern of the graphite surface and determined the lattice constant to be 0.252 nm.
+Finally, we analyzed a Moiré pattern to determine the twist angle between graphene layers to be 1.09 degrees. Potential sources of error in the measurements include thermal drift, acoustic vibrations, and the quality of the scanning tip.
 
 \printbibliography
 
+\section*{Appendix: Experimental Parameters}
+\subsection*{Atomic Resolution Scan Parameters}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[t]{0.48\linewidth}
+        \centering
+        \textbf{Scan Controls}
+        \begin{tabular}{|l|l|}
+        \hline
+        Scan size: & \SI{10.0}{\nano\meter} \\
+        X offset: & \SI{4.97}{\micro\meter} \\
+        Y offset: & \SI{-44.0}{\nano\meter} \\
+        Scan angle: & \SI{0.00}{\degree} \\
+        Scan rate: & \SI{30.5}{\hertz} \\
+        Tip velocity: & \SI{0.610}{\micro\meter\per\second} \\
+        Samples/line: & 512 \\
+        \hline
+        \end{tabular}
+        
+        \vspace{0.5cm}
+        
+        \textbf{Other Controls}
+        \begin{tabular}{|l|l|}
+        \hline
+        Microscope mode: & STM \\
+        Z limit: & \SI{357.5}{\nano\meter} \\
+        Units: & Metric \\
+        Color table: & 12 \\
+        Serial number: & 5342EV \\
+        \hline
+        \end{tabular}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}
+        \centering
+        \textbf{Feedback Controls}
+        \begin{tabular}{|l|l|}
+        \hline
+        SPM feedback: & Log \\
+        Current setpoint: & \SI{2.390}{\nano\ampere} \\
+        Integral gain: & 0.5038 \\
+        Proportional gain: & 1.581 \\
+        Bias: & \SI{51.71}{\milli\volt} \\
+        \hline
+        \end{tabular}
+        
+        \vspace{0.5cm}
+        
+        \textbf{Channel 1}
+        \begin{tabular}{|l|l|}
+        \hline
+        Data type: & Height \\
+        Data scale: & \SI{100.0}{\pico\meter} \\
+        Line direction: & Trace \\
+        Realtime planefit: & Line \\
+        Offline planefit: & Full \\
+        \hline
+        \end{tabular}
+        
+        \vspace{0.5cm}
+        
+        \textbf{Channel 2}
+        \begin{tabular}{|l|l|}
+        \hline
+        Data type: & Current \\
+        Data scale: & \SI{500.0}{\pico\ampere} \\
+        Line direction: & Retrace \\
+        Realtime planefit: & Line \\
+        Offline planefit: & Full \\
+        \hline
+        \end{tabular}
+    \end{minipage}
+\end{figure}
+
+\subsection*{Moiré Pattern Scan Parameters}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[t]{0.48\linewidth}
+        \centering
+        \textbf{Scan Controls}
+        \begin{tabular}{|l|l|}
+        \hline
+        Scan size: & \SI{500}{\nano\meter} \\
+        X offset: & \SI{4.86}{\micro\meter} \\
+        Y offset: & \SI{-17.1}{\nano\meter} \\
+        Scan angle: & \SI{0.00}{\degree} \\
+        Scan rate: & \SI{1.00}{\hertz} \\
+        Tip velocity: & \SI{1.00}{\micro\meter\per\second} \\
+        Samples/line: & 512 \\
+        \hline
+        \end{tabular}
+        
+        \vspace{0.5cm}
+        
+        \textbf{Other Controls}
+        \begin{tabular}{|l|l|}
+        \hline
+        Microscope mode: & STM \\
+        Z limit: & \SI{500.0}{\nano\meter} \\
+        Units: & Metric \\
+        Color table: & 12 \\
+        Serial number: & 5342EV \\
+        \hline
+        \end{tabular}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}
+        \centering
+        \textbf{Feedback Controls}
+        \begin{tabular}{|l|l|}
+        \hline
+        SPM feedback: & Log \\
+        Current setpoint: & \SI{500.0}{\pico\ampere} \\
+        Integral gain: & 0.7000 \\
+        Proportional gain: & 2.064 \\
+        Bias: & \SI{500.0}{\milli\volt} \\
+        \hline
+        \end{tabular}
+        
+        \vspace{0.5cm}
+        
+        \textbf{Channel 1}
+        \begin{tabular}{|l|l|}
+        \hline
+        Data type: & Height \\
+        Data scale: & \SI{1.500}{\nano\meter} \\
+        Line direction: & Trace \\
+        Realtime planefit: & Line \\
+        Offline planefit: & Full \\
+        \hline
+        \end{tabular}
+        
+        \vspace{0.5cm}
+        
+        \textbf{Channel 2}
+        \begin{tabular}{|l|l|}
+        \hline
+        Data type: & Current \\
+        Data scale: & \SI{500.0}{\pico\ampere} \\
+        Line direction: & Retrace \\
+        Realtime planefit: & Line \\
+        Offline planefit: & Full \\
+        \hline
+        \end{tabular}
+    \end{minipage}
+\end{figure}
+
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-% config 1
-
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{\textbf{Scan Controls}} \\
-\hline
-Scan size: & 10.0 nm \\
-X offset: & 4.97 µm \\
-Y offset: & -44.0 nm \\
-Scan angle: & 0.00° \\
-Scan rate: & 30.5 Hz \\
-Tip velocity: & 0.610 µm/s \\
-Samples/line: & 512 \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{\textbf{Feedback Controls}} \\
-\hline
-SPM feedback: & Log \\
-Current setpoint: & 2.390 nA \\
-Integral gain: & 0.5038 \\
-Proportional gain: & 1.581 \\
-Bias: & 51.71 mV \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{\textbf{Other Controls}} \\
-\hline
-Microscope mode: & STM \\
-Z limit: & 357.5 nm \\
-Units: & Metric \\
-Color table: & 12 \\
-Serial number: & 5342EV \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{\textbf{Channel 1}} \\
-\hline
-Data type: & Height \\
-Data scale: & 100.0 pm \\
-Line direction: & Trace \\
-Realtime planefit: & Line \\
-Offline planefit: & Full \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{\textbf{Channel 2}} \\
-\hline
-Data type: & Current \\
-Data scale: & 500.0 pA \\
-Line direction: & Retrace \\
-Realtime planefit: & Line \\
-Offline planefit: & Full \\
-\hline
-\end{tabular}
-
-% config 2
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{\textbf{Scan Controls}} \\
-\hline
-Scan size: & 500 nm \\
-X offset: & 4.86 µm \\
-Y offset: & -17.1 nm \\
-Scan angle: & 0.00° \\
-Scan rate: & 1.00 Hz \\
-Tip velocity: & 1.00 µm/s \\
-Samples/line: & 512 \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{\textbf{Feedback Controls}} \\
-\hline
-SPM feedback: & Log \\
-Current setpoint: & 500.0 pA \\
-Integral gain: & 0.7000 \\
-Proportional gain: & 2.064 \\
-Bias: & 500.0 mV \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{\textbf{Other Controls}} \\
-\hline
-Microscope mode: & STM \\
-Z limit: & 500.0 nm \\
-Units: & Metric \\
-Color table: & 12 \\
-Serial number: & 5342EV \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{\textbf{Channel 1}} \\
-\hline
-Data type: & Height \\
-Data scale: & 1.500 nm \\
-Line direction: & Trace \\
-Realtime planefit: & Line \\
-Offline planefit: & Full \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{\textbf{Channel 2}} \\
-\hline
-Data type: & Current \\
-Data scale: & 500.0 pA \\
-Line direction: & Retrace \\
-Realtime planefit: & Line \\
-Offline planefit: & Full \\
-\hline
-\end{tabular}
