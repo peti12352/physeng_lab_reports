@@ -64,13 +64,13 @@ A voltage follower, or buffer amplifier, was constructed using a TL071CP op-amp.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{voltage_follower.jpg} % GGG
+    \includegraphics[width=0.6\linewidth]{voltage_follower.jpg} 
     \caption{Input (purple) and output (yellow) signals of the voltage follower, showing the output closely tracking the input, confirming a gain of approximately +1.}
     \label{fig:follower_unity}
 \end{figure}
 
 As the frequency was increased, a phase difference became apparent, and the output amplitude started to decrease. The upper cutoff frequency, \(f_c\), is the frequency at which the output voltage amplitude drops to \(1/\sqrt{2}\) of its low-frequency value.
-% GGG Please add the measured value for the cutoff frequency fc.
+%LLM-UNCERTAIN: The measured value for the cutoff frequency fc is missing. Please add the value.
 
 
 \subsection{M4: Differentiator}
@@ -81,10 +81,10 @@ To improve stability, a small capacitor (\(C_p = \SI{100}{\pico\farad}\)) was pl
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{diff_square.jpg} % GGG
+        \includegraphics[width=\linewidth]{diff_square.jpg} 
     \end{subfigure}
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{diff_triangle.jpg} % GGG
+        \includegraphics[width=\linewidth]{diff_triangle.jpg} 
     \end{subfigure}
     \caption{Differentiator output waveforms for square and triangle inputs \textbf{with} the stabilizing capacitor \(C_p\).}
     \label{fig:differentiator}
@@ -93,13 +93,13 @@ To improve stability, a small capacitor (\(C_p = \SI{100}{\pico\farad}\)) was pl
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{diff_sine_no.jpg} % GGG
+        \includegraphics[width=\linewidth]{diff_sine_no.jpg} 
     \end{subfigure}
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{diff_square_no.jpg} % GGG
+        \includegraphics[width=\linewidth]{diff_square_no.jpg} 
     \end{subfigure}
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{diff_triangle_no.jpg} % GGG
+        \includegraphics[width=\linewidth]{diff_triangle_no.jpg} 
     \end{subfigure}
     \caption{Differentiator output waveforms for sine, square, and triangle inputs \textbf{without} the stabilizing capacitor \(C_p\).}
     \label{fig:differentiator_no}
@@ -114,13 +114,13 @@ To counteract this, a large resistor (\(R_p = \SI{10}{\mega\ohm}\)) was placed i
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{int_sine_.jpg} % GGG
+        \includegraphics[width=\linewidth]{int_sine_.jpg} 
     \end{subfigure}
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{int_square_.jpg} % GGG
+        \includegraphics[width=\linewidth]{int_square_.jpg} 
     \end{subfigure}
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{int_triangle_.jpg} % GGG
+        \includegraphics[width=\linewidth]{int_triangle_.jpg} 
     \end{subfigure}
     \caption{Integrator output waveforms for sine, square, and triangle inputs \textbf{with} the feedback resistor \(R_p\), showing stable operation.}
     \label{fig:integrator_}
@@ -129,13 +129,13 @@ To counteract this, a large resistor (\(R_p = \SI{10}{\mega\ohm}\)) was placed i
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{int_sine_no.jpg} % GGG
+        \includegraphics[width=\linewidth]{int_sine_no.jpg} 
     \end{subfigure}
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{int_square_no.jpg} % GGG
+        \includegraphics[width=\linewidth]{int_square_no.jpg} 
     \end{subfigure}
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{int_triangle_no.jpg} % GGG
+        \includegraphics[width=\linewidth]{int_triangle_no.jpg} 
     \end{subfigure}
     \caption{Integrator output waveforms for sine, square, and triangle inputs \textbf{without} the feedback resistor \(R_p\), showing drift and saturation.}
     \label{fig:integrator_no}

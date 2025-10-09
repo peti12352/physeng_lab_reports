@@ -54,7 +54,6 @@ The STM was operated in constant current mode. Images were acquired using the Na
 \subsection{Vertical Resolution vs. Z-limit}
 The vertical resolution of the STM is limited by the 16-bit Digital-to-Analog Converter (DAC) that controls the z-piezo. The minimum vertical step size is determined by the total vertical range, or z-limit, according to: Resolution = $z_{\text{limit}} / 2^{16}$. We acquired images at different z-limit values to observe this effect.
 
-% GGG: Insert a figure with two subplots showing images taken at different z-limits.
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\linewidth}
@@ -72,12 +71,11 @@ The vertical resolution of the STM is limited by the 16-bit Digital-to-Analog Co
     \caption{STM topography images of HOPG taken with different z-limit settings. A smaller z-limit provides lower noise and higher effective resolution.}
     \label{fig:z-limit}
 \end{figure}
-For a z-limit of 2342 nm, the theoretical resolution is \(2342 \text{ nm} / 2^{16} \approx 35.7 \text{ pm}\). For a z-limit of 500 nm, it is \(500 \text{ nm} / 2^{16} \approx 7.6 \text{ pm}\). While a smaller z-limit offers finer theoretical resolution, it also restricts the ability to track large topographic features. We found that a z-limit of 500 nm provided a good balance for locating atomic steps.
+For a z-limit of 2342 nm, the theoretical resolution is \(2342 \text{ nm} / 2^{16} \approx 35.7 \text{ pm}\), while we obtained a resolution of \(\approx 42 \text{ pm}\). For a z-limit of 500 nm, it is \(500 \text{ nm} / 2^{16} \approx 7.6 \text{ pm}\) and we obtained a resolution of \(\approx 14 \text{ pm}\). While a smaller z-limit offers finer theoretical resolution, it also restricts the ability to track large topographic features. We found that a z-limit of 500 nm provided a good balance for locating atomic steps when operating in flat regions.
 
 \subsection{Atomic Steps on HOPG}
 The cleaved HOPG surface exhibits atomically flat terraces separated by steps. We located several of these steps and measured their heights using line profile analysis. We compare the heights with the literature value for the interlayer distance in graphite.
 
-% GGG: Insert an image showing terraces and a line profile across a step.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{../data/tasks/2/graph.PNG}
@@ -86,8 +84,29 @@ The cleaved HOPG surface exhibits atomically flat terraces separated by steps. W
 \end{figure}
 The line profile shows a step height of approximately 0.33 nm (0.23 - (-0.10) nm). The known interlayer spacing for graphite is about 0.34 nm. Therefore, this step corresponds to N = $(0.33 \text{ nm} / 0.34 \text{ nm}) \approx 1$ layer of graphene.
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/tasks/1/original.PNG}
+        \caption{Image of the graphite surface showing terraces.}
+        \label{fig:terraces}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/tasks/1/Capture.PNG}
+        \caption{Altitude profiles at several terrace boundaries.}
+        \label{fig:altitude_profiles}
+    \end{subfigure}
+    \caption{STM topography images of HOPG showing terraces and altitude profiles. The profiles show single terrace steps of $\approx 0.34 \text{ nm}$ (green), and some multi-atom steps: two-layer (red and green) and four-layer (black).}
+    \label{fig:terraces_and_profiles}
+\end{figure}
+
+
 \subsection{Atomic Resolution and Lattice Constant}
-After applying a 2D FFT filter to an atomically resolved scan, we observed the characteristic triangular pattern of atoms on the HOPG surface. This appearance, rather than the expected hexagonal honeycomb structure, arises because the STM primarily images only one of the two types of carbon atoms (A-site vs. B-site) due to differences in the local density of states.
+
+
+We scanned a small, flat area which was identified from a previous image, for which, as there were no terraces, we could safely reduce the surface-tip distance, by increasing the current setpoint value to 2.39 nA and reduced the Bisas voltage to 51.7 mV. After applying a 2D FFT filter to the atomically resolved scan, we observed the characteristic triangular pattern of atoms on the HOPG surface. This appearance, rather than the expected hexagonal honeycomb structure, arises because the STM primarily images only one of the two types of carbon atoms (A-site vs. B-site) due to differences in the local density of states.
 
 To determine the lattice constant, we performed a line profile analysis on the filtered image, as shown in Figure \ref{fig:atomic-res}. The profile measures the periodicity of the atomic lattice along a specific direction.
 
@@ -103,7 +122,6 @@ From the line profile, the distance between adjacent peaks was measured to be ap
 \subsection{Moiré Pattern and Layer Rotation Angle}
 In one region of the sample, we observed a Moiré superstructure, indicating the presence of at least two graphene layers with a rotational mismatch. The image obtained remarkably shows both the atomic-resolution graphite lattice and the larger Moiré superstructure simultaneously.
 
-% GGG: Insert the image showing the Moiré pattern.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth]{../data/gergo_data/hopg.png}
@@ -113,7 +131,15 @@ In one region of the sample, we observed a Moiré superstructure, indicating the
 
 We measured the period of the Moiré pattern, D, to be 12.89 nm. Using Equation \ref{eq:moire} and the theoretical graphene lattice constant d = 0.246 nm, we calculated the twist angle $\theta$ to be 1.09 degrees.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../data/tasks/4/moire_with_dist.png}
+    \caption{Measurement of Moiré pattern D}
+    \label{fig:moire_dist}
+\end{figure}
+
 \section{Conclusion}
+
 In this experiment, we successfully used a scanning tunneling microscope to explore the surface of HOPG. We characterized the instrument\'s vertical resolution and demonstrated the trade-offs involved in selecting the z-limit. We measured the heights of atomic steps, confirming their correspondence to integer multiples of the graphene layer spacing. Furthermore, we achieved atomic resolution, observing the characteristic triangular pattern of the graphite surface and determined the lattice constant to be 0.252 nm.
 Finally, we analyzed a Moiré pattern to determine the twist angle between graphene layers to be 1.09 degrees. Potential sources of error in the measurements include thermal drift, acoustic vibrations, and the quality of the scanning tip.
 
