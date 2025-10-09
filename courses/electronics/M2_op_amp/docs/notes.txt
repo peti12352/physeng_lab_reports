@@ -1,0 +1,72 @@
+# Electronics lab 2: M2 Op-amp
+
+Station 8
+
+Gregorio Jaca
+gregorio.jaca@gmail.com
+Peter Tallosy K14WR1
+peter@tallosy.hu
+
+Siglent SPD3303C DC POWERSUPPLY
+Siglent SDM 3045X DIGITAL MULTIMETER
+
+
+## Exercises:
+
+--> using UA741CN
+
+### M1: Inverting amp gain
+circuit assembled, excel table: U_in = linspace(init=100 mV, step=100mV) , U_out
+
+Slope: −4.7257 => gain = 4.7257 (fit param from first 6 datapoints before saturated)
+Intercept: 36.2571
+
+it clearly shows a linear region up to around 600 mV input, 
+followed by output saturation around U_sat = −3130 mV
+
+### M2: Adder
+
+frist it saturated but the R_v = 470 kOhm was too large we swapped it to R_v = 1 kOhm
+
+R_1 = R_2 = R_s = R_v = 1 kOhm
+
+R_s touched with R_1,2,3 and this made it outout with wrong positive sign
+
+resistor was dead
+
+### M3: Follower
+
+we are using averaging with N=16, at low f there is no phase diff, 
+but at high it increases (at 1.1 MOhm its about 180 deg phase diff)
+
+--> using new op amp TL071CP 8839BR
+
+### M4: Differentiator
+lot of photos
+
+C1 = 10nF, C2 = 100pF
+
+
+sine wave: output is 90 deg phase shift (inverted cosine wave, shifted by 90 deg)
+triangle: output is square wave 
+
+purpose of C_p: less noisy (high freq noise is cutoff - low pass like regulation),
+higher f -> lower Z_C (capacitor impedance) -> lower G (gain)
+
+with C: more stable, less noisy
+
+### M5: Integrator
+
+
+sine - negative cosine
+square - triangle
+triangle - perdiodic parabolas
+
+purpose of R_p:
+
+with C: stable (no saturation)
+
+
+
+
+
