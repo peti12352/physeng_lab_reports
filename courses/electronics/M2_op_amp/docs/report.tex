@@ -2,7 +2,7 @@
 \usepackage{graphicx, booktabs, siunitx, amsmath, geometry, float}
 \usepackage{subcaption}
 \geometry{margin=2.5cm}
-\title{M2: Operational Amplifier Basic Circuits}
+\title{Operational Amplifier Basic Circuits}
 \author{Gregorio Jaca U8L9B9 gregorio.jaca@gmail.com , \\ Peter Tallosy K14WR1 peter@tallosy.hu }
 \date{\today}
 
@@ -10,7 +10,7 @@
 \maketitle
 
 \begin{abstract}
-In this laboratory excercise we investogated the characteristics and applications of operational amplifiers (op-amps). We constructed and analyzed five fundamental op-amp circuits: an inverting amplifier, an adder, a voltage follower, a differentiator, and an integrator. The behavior of these circuits was examined using various input signals, and the experimental results were compared with theoretical predictions. We characterized properties such as gain, saturation, frequency response, and the transformative effects of these circuits on different waveforms.
+In this laboratory excercise we investigated the characteristics and applications of operational amplifiers (op-amps). We constructed and analyzed five fundamental op-amp circuits: an inverting amplifier, an adder, a voltage follower, a differentiator, and an integrator. The behavior of these circuits was examined using various input signals, and the experimental results were compared with theoretical predictions. We characterized properties such as gain, saturation, frequency response, and the transformative effects of these circuits on different waveforms.
 \end{abstract}
 
 \section{Measurement Instruments}
@@ -44,7 +44,7 @@ From the linear region of the measured data (up to \(U_{in} = \SI{600}{\milli\vo
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{inverter_saturator.png} % 
+    \includegraphics[width=0.6\linewidth]{inverter_saturation.png} % 
     \caption{Measured output voltage as a function of input voltage for the inverting amplifier including the saturation region}
     \label{fig:inverting_amp_saturated}
 \end{figure}
@@ -60,7 +60,7 @@ An adder circuit was built with \(R_1 = R_2 = R_s = R_v = \SI{1}{\kilo\ohm}\). T
 \end{figure}
 
 \subsection{M3: Voltage Follower}
-A voltage follower, or buffer amplifier, was constructed using a TL071CP op-amp. This circuit has a theoretical gain of +1. We applied a \SI{1}{\kilo\hertz}, \SI{100}{\milli\volt} peak-to-peak sinusoidal signal to the input. At low frequencies, the output signal was an exact replica of the input, demonstrating the unity gain characteristic of the follower, as seen in Figure \ref{fig:follower_unity}.
+A voltage follower, or buffer amplifier, was constructed using a TL071CP op-amp (because it was better and less noisy). This circuit has a theoretical gain of +1. We applied a \SI{1}{\kilo\hertz}, \SI{100}{\milli\volt} peak-to-peak sinusoidal signal to the input. At low frequencies, the output signal was an exact replica of the input, demonstrating the unity gain characteristic of the follower, as seen in Figure \ref{fig:follower_unity}.
 
 \begin{figure}[H]
     \centering
@@ -69,14 +69,18 @@ A voltage follower, or buffer amplifier, was constructed using a TL071CP op-amp.
     \label{fig:follower_unity}
 \end{figure}
 
-As the frequency was increased, a phase difference became apparent, and the output amplitude started to decrease. The upper cutoff frequency, \(f_c\), is the frequency at which the output voltage amplitude drops to \(1/\sqrt{2}\) of its low-frequency value.
-%LLM-UNCERTAIN: The measured value for the cutoff frequency fc is missing. Please add the value.
+As the frequency was increased, a phase difference became apparent, reaching a 180° phase shift at 1.1 MHz, and the output amplitude started to decrease. The upper cutoff frequency, \(f_c = 904 kHz\), is the frequency at which the output voltage amplitude drops to \(1/\sqrt{2}\) of its low-frequency value.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{follower_response_with_cutoff.png} 
+    \caption{Frequency characteristcs of the voltage follower circuit and upper cutoff frequency measurement.}
+    \label{fig:follower_unity_frequency_response}
+\end{figure}
 
 
 \subsection{M4: Differentiator}
 A differentiator circuit was built with \(C = \SI{10}{\nano\farad}\) and \(R_v = \SI{100}{\kilo\ohm}\). The circuit\'s output is proportional to the time derivative of the input signal. We tested the circuit with sine, square, and triangle wave inputs. Figure \ref{fig:differentiator_no} shows the output waveforms, which are noisy and there is ringing, especially at the points where the derivative is discontinuous, especially for the triangle and square wave inputs. 
-
-To improve stability, a small capacitor (\(C_p = \SI{100}{\pico\farad}\)) was placed in parallel with the feedback resistor. This capacitor forms a low-pass filter, reducing high-frequency noise. Figure \ref{fig:differentiator} shows the output waveforms with \(C_p\) included. The outputs are visibly smoother and more stable, demonstrating the effectiveness of this technique. As expected, a sine wave input produced a cosine wave, a triangle wave produced a square wave, and a square wave produced sharp spikes.
 
 \begin{figure}[H]
     \centering
@@ -89,6 +93,8 @@ To improve stability, a small capacitor (\(C_p = \SI{100}{\pico\farad}\)) was pl
     \caption{Differentiator output waveforms for square and triangle inputs \textbf{with} the stabilizing capacitor \(C_p\).}
     \label{fig:differentiator}
 \end{figure}
+
+To improve stability, a small capacitor (\(C_p = \SI{100}{\pico\farad}\)) was placed in parallel with the feedback resistor. This capacitor forms a low-pass filter, reducing high-frequency noise. Figure \ref{fig:differentiator} shows the output waveforms with \(C_p\) included. The outputs are visibly smoother and more stable, demonstrating the effectiveness of this technique. As expected, a sine wave input produced a cosine wave, a triangle wave produced a square wave, and a square wave produced sharp spikes.
 
 \begin{figure}[H]
     \centering
@@ -109,22 +115,22 @@ To improve stability, a small capacitor (\(C_p = \SI{100}{\pico\farad}\)) was pl
 \subsection{M5: Integrator}
 The integrator circuit was constructed with \(C = \SI{10}{\nano\farad}\) and \(R_s = \SI{100}{\kilo\ohm}\). The output is proportional to the time integral of the input. Without a feedback resistor, small DC offsets at the input can cause the integrator\'s output to drift and eventually saturate, as shown in Figure \ref{fig:integrator_no}.
 
-To counteract this, a large resistor (\(R_p = \SI{10}{\mega\ohm}\)) was placed in parallel with the capacitor. This resistor provides DC feedback, preventing saturation and ensuring stable operation. Figure \ref{fig:integrator_} shows the stable, integrated waveforms. As predicted, a square wave input produced a triangle wave, a sine wave produced a negative cosine wave, and a triangle wave produced a series of parabolas.
-
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{int_sine_.jpg} 
+        \includegraphics[width=\linewidth]{int_sine.jpg} 
     \end{subfigure}
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{int_square_.jpg} 
+        \includegraphics[width=\linewidth]{int_square.jpg} 
     \end{subfigure}
     \begin{subfigure}[b]{0.32\linewidth}
-        \includegraphics[width=\linewidth]{int_triangle_.jpg} 
+        \includegraphics[width=\linewidth]{int_triangle.jpg} 
     \end{subfigure}
     \caption{Integrator output waveforms for sine, square, and triangle inputs \textbf{with} the feedback resistor \(R_p\), showing stable operation.}
     \label{fig:integrator_}
 \end{figure}
+
+To counteract this, a large resistor (\(R_p = \SI{10}{\mega\ohm}\)) was placed in parallel with the capacitor. This resistor provides DC feedback, preventing saturation and ensuring stable operation. Figure \ref{fig:integrator_} shows the stable, integrated waveforms. As predicted, a square wave input produced a triangle wave, a sine wave produced a negative cosine wave, and a triangle wave produced a series of parabolas.
 
 \begin{figure}[H]
     \centering
@@ -142,9 +148,7 @@ To counteract this, a large resistor (\(R_p = \SI{10}{\mega\ohm}\)) was placed i
 \end{figure}
 
 
-
-
 \section{Conclusion}
-This series of experiments successfully demonstrated the fundamental principles of several basic operational amplifier circuits. The measured gain of the inverting amplifier closely matched the theoretical value. The functions of the adder, voltage follower, differentiator, and integrator circuits were verified, and their outputs for various input signals were observed to be in line with theoretical predictions. The roles of supplementary components for stability and noise reduction, such as the parallel capacitor in the differentiator and the feedback resistor in the integrator, were also practically demonstrated and understood. The discrepancies and practical issues encountered, such as component failures and saturation, highlighted the differences between ideal models and real-world circuit behavior.
+We successfully made all the desired circuits using op-amps. The measured gain of the inverting amplifier closely matched the theoretical value. The functions of the adder, voltage follower, differentiator, and integrator circuits were verified, and their outputs for various input signals were observed to be in line with theoretical predictions. The roles of supplementary components for stability and noise reduction, such as the parallel capacitor in the differentiator and the feedback resistor in the integrator, were also practically demonstrated and understood. We observed and understood some discrepancies and practical issues, such as component failures and saturation, and were able to account for them.
 
 \end{document}
