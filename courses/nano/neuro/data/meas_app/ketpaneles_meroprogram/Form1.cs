@@ -34,7 +34,7 @@ namespace ketpaneles_meroprogram
 
         // New sweep variables
         private double startVoltage, endVoltage, stepVoltage;
-        private bool peltierSweepingUp = true;
+        // private bool peltierSweepingUp = true; // Removed duplicate declaration
 
         // New UI Elements
         private Label labelStartVoltage;
@@ -257,7 +257,8 @@ namespace ketpaneles_meroprogram
                 try
                 {
                     powerSupplySession = (MessageBasedSession)new NationalInstruments.Visa.ResourceManager().Open(PeltierPowerSupplyVisaResource);
-                    powerSupplySession.Timeout = 2000; // Set a timeout for VISA operations
+                    powerSupplySession.RawIO.ReadTimeout = 2000; // Set a read timeout for VISA operations
+                    powerSupplySession.RawIO.WriteTimeout = 2000; // Set a write timeout for VISA operations
                     powerSupplySession.RawIO.Write("OUTPut CH1,ON"); // Turn on power supply output
                 }
                 catch (VisaException ex)
@@ -537,7 +538,8 @@ namespace ketpaneles_meroprogram
                 if (powerSupplySession == null)
                 {
                     powerSupplySession = (MessageBasedSession)new NationalInstruments.Visa.ResourceManager().Open(PeltierPowerSupplyVisaResource);
-                    powerSupplySession.Timeout = 2000; // Set a timeout for VISA operations
+                    powerSupplySession.RawIO.ReadTimeout = 2000; // Set a read timeout for VISA operations
+                    powerSupplySession.RawIO.WriteTimeout = 2000; // Set a write timeout for VISA operations
                 }
                 powerSupplySession.RawIO.Write("OUTPut CH1,ON");
             }
