@@ -1,0 +1,25 @@
+# Ignore Visual Studio temporary files
+.vs/
+
+# Ignore LaTeX auxiliary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.run.xml
+
+# Ignore .NET build artifacts and temporary files
+**/*/bin/
+**/*/obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.suo
+*.dtbcache.json
+
+# Ignore specific .NET project temporary files
+courses/nano/neuro/data/meas_app/ketpaneles_meroprogram/.vs/
+courses/nano/neuro/data/meas_app/ketpaneles_meroprogram/bin/
+courses/nano/neuro/data/meas_app/ketpaneles_meroprogram/obj/
