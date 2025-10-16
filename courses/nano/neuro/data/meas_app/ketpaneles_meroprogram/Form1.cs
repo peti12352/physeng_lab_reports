@@ -57,6 +57,9 @@ namespace ketpaneles_meroprogram
         private double peltierStartVoltage, peltierEndVoltage, peltierStepVoltage, peltierCurrentVoltage;
         private bool peltierSweepingUp = true;
 
+        private Button buttonPeltierOn;
+        private Button buttonPeltierOff;
+
         // Placeholder for VISA resource name - **USER TO UPDATE**
         private const string PeltierPowerSupplyVisaResource = "USB0::0x0400::0x0937::XXXXXXXXXXXX::INSTR"; // Replace XXXXXXXXXXXX with the actual serial number/resource name
 
@@ -176,6 +179,26 @@ namespace ketpaneles_meroprogram
             this.textBoxPeltierStepVoltage.Name = "textBoxPeltierStepVoltage";
             this.textBoxPeltierStepVoltage.Text = "0.1";
             this.Controls.Add(this.textBoxPeltierStepVoltage);
+
+            // Peltier ON Button
+            this.buttonPeltierOn = new Button();
+            this.buttonPeltierOn.Location = new System.Drawing.Point(30, 460);
+            this.buttonPeltierOn.Name = "buttonPeltierOn";
+            this.buttonPeltierOn.Size = new System.Drawing.Size(100, 23);
+            this.buttonPeltierOn.Text = "Peltier ON";
+            this.buttonPeltierOn.UseVisualStyleBackColor = true;
+            this.buttonPeltierOn.Click += new System.EventHandler(this.buttonPeltierOn_Click);
+            this.Controls.Add(this.buttonPeltierOn);
+
+            // Peltier OFF Button
+            this.buttonPeltierOff = new Button();
+            this.buttonPeltierOff.Location = new System.Drawing.Point(140, 460);
+            this.buttonPeltierOff.Name = "buttonPeltierOff";
+            this.buttonPeltierOff.Size = new System.Drawing.Size(100, 23);
+            this.buttonPeltierOff.Text = "Peltier OFF";
+            this.buttonPeltierOff.UseVisualStyleBackColor = true;
+            this.buttonPeltierOff.Click += new System.EventHandler(this.buttonPeltierOff_Click);
+            this.Controls.Add(this.buttonPeltierOff);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -190,7 +213,7 @@ namespace ketpaneles_meroprogram
 
             chart1.Series[0].ChartType = SeriesChartType.Line;
 
-            chart2.ChartAreas[0].AxisX.Title = "Drive (V)";
+            chart2.ChartAreas[0].AxisX.Title = "Temperature (C)"; // Corrected X-axis title for R(T) plot
             chart2.ChartAreas[0].AxisY.Title = "Sample Resistance (Ohm)";
 
             chart2.ChartAreas[0].AxisX.LabelStyle.Format = "0.##";
@@ -305,7 +328,7 @@ namespace ketpaneles_meroprogram
             Run = true;
             buttonStart.Text = "Stop";
             timer.Enabled = true;
-            fileWriter.WriteLine("Time (s)\tDrive Voltage (V)\tBias Voltage (V)\tResistor Voltage Drop (V)\tCurrent (A)\tRaw AO0 (V)\tRaw AI0 (V)\tRaw AI1 (V)"); 
+            fileWriter.WriteLine("Time (s)\tPeltier Voltage (V)\tPT1000 Resistance (Ohm)\tTemperature (C)\tDrive Voltage (V)\tResistor Voltage Drop (V)\tCurrent (A)\tSample Resistance (Ohm)\tRaw AO0 (V)\tRaw AI0 (V)\tRaw AI1 (V)"); 
 
         }
 
@@ -338,16 +361,43 @@ namespace ketpaneles_meroprogram
 
             double sampleResistance = (current != 0) ? (biasVoltage / current) : 0; // Calculate sample resistance (Memristor Resistance)
 
+            // PT1000 Resistance to Temperature Conversion (Callendar-Van Dusen equation)
+            double R0 = 1000.0; // Resistance at 0°C for PT1000
+            double A = 3.9083e-3;
+            double B = -5.775e-7;
+            double temperature = 0.0;
+
+            // For T >= 0 °C (simple quadratic approximation)
+            if (pt1000Resistance >= R0)
+            {
+                double deltaR = pt1000Resistance - R0;
+                temperature = (-A + Math.Sqrt(A * A - 4 * B * deltaR)) / (2 * B);
+            }
+            // For T < 0 °C (more complex equation, but often not needed for Peltier heating)
+            else
+            {
+                // This part can be refined if negative temperatures are expected and require higher accuracy
+                // For simplicity, a linear approximation or the same quadratic can be used if accuracy allows
+                // However, a more accurate formula for T < 0 C involves a C coefficient.
+                // For now, using the same quadratic for estimation, but a warning is due.
+                double deltaR = pt1000Resistance - R0;
+                temperature = (-A + Math.Sqrt(A * A - 4 * B * deltaR)) / (2 * B);
+            }
+
             //plotting data
             chart1.Series[0].Points.AddXY(biasVoltage, current * 1000); // Plot current in mA
+            chart2.Series[0].Points.AddXY(temperature, sampleResistance); // Plot Sample Resistance vs Temperature
 
             //writing data to file
-            fileWriter.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}", 
-                CurrentTimeSeconds.ToString(CultureInfo.InvariantCulture), 
-                DriveVoltage.ToString(CultureInfo.InvariantCulture), 
-                biasVoltage.ToString(CultureInfo.InvariantCulture), 
-                resistorVoltageDrop.ToString(CultureInfo.InvariantCulture), 
+            fileWriter.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}", 
+                CurrentTimeSeconds.ToString(CultureInfo.InvariantCulture),
+                peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture),
+                pt1000Resistance.ToString(CultureInfo.InvariantCulture),
+                temperature.ToString(CultureInfo.InvariantCulture),
+                DriveVoltage.ToString(CultureInfo.InvariantCulture),
+                resistorVoltageDrop.ToString(CultureInfo.InvariantCulture),
                 current.ToString(CultureInfo.InvariantCulture),
+                sampleResistance.ToString(CultureInfo.InvariantCulture),
                 DriveVoltage.ToString(CultureInfo.InvariantCulture),
                 ai0.ToString(CultureInfo.InvariantCulture),
                 ai1.ToString(CultureInfo.InvariantCulture));
@@ -478,6 +528,46 @@ namespace ketpaneles_meroprogram
             catch (Exception ex)
             {
                 label_QueryPowSuplName.Text = ex.Message;
+            }
+        }
+
+        private void buttonPeltierOn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (powerSupplySession == null)
+                {
+                    powerSupplySession = (MessageBasedSession)new NationalInstruments.Visa.ResourceManager().Open(PeltierPowerSupplyVisaResource);
+                    powerSupplySession.Timeout = 2000; // Set a timeout for VISA operations
+                }
+                powerSupplySession.RawIO.Write("OUTPut CH1,ON");
+            }
+            catch (VisaException ex)
+            {
+                MessageBox.Show("Error turning Peltier ON: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("General error turning Peltier ON: " + ex.Message);
+            }
+        }
+
+        private void buttonPeltierOff_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (powerSupplySession != null)
+                {
+                    powerSupplySession.RawIO.Write("OUTPut CH1,OFF");
+                }
+            }
+            catch (VisaException ex)
+            {
+                MessageBox.Show("Error turning Peltier OFF: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("General error turning Peltier OFF: " + ex.Message);
             }
         }
 
