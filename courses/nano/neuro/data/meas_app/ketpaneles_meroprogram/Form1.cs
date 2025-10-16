@@ -34,7 +34,7 @@ namespace ketpaneles_meroprogram
 
         // New sweep variables
         private double startVoltage, endVoltage, stepVoltage;
-        private bool sweepingUp = true;
+        private bool peltierSweepingUp = true;
 
         // New UI Elements
         private Label labelStartVoltage;
@@ -61,7 +61,7 @@ namespace ketpaneles_meroprogram
         private Button buttonPeltierOff;
 
         // Placeholder for VISA resource name - **USER TO UPDATE**
-        private const string PeltierPowerSupplyVisaResource = "USB0::0x0400::0x0937::XXXXXXXXXXXX::INSTR"; // Replace XXXXXXXXXXXX with the actual serial number/resource name
+        private const string PeltierPowerSupplyVisaResource = "USB0::0xF4EC::0x1410::SPD13DCC8R0078::INSTR"; // Replaced XXXXXXXXXXXX with the actual serial number/resource name
 
         public Form1()
         {
@@ -249,7 +249,7 @@ namespace ketpaneles_meroprogram
                 //Output
                 MeasStartTime = DateTime.Now.ToOADate()*24*3600;
                 BiasOutTask = new NationalInstruments.DAQmx.Task();  //Task constructor
-                BiasOutTask.AOChannels.CreateVoltageChannel("myDAQ2/ao0", "",                        Minimumvoltage, Maximumvoltage,
+                BiasOutTask.AOChannels.CreateVoltageChannel("myDAQ1/ao0", "",                        Minimumvoltage, Maximumvoltage,
                         AOVoltageUnits.Volts);//Creating the output channel
                 writer = new AnalogSingleChannelWriter(BiasOutTask.Stream);
                 
@@ -276,14 +276,14 @@ namespace ketpaneles_meroprogram
                 //Input
                 V_MeasureInTask = new NationalInstruments.DAQmx.Task();  //Task constructor
                                       //Creating the input channel
-                V_MeasureInTask.AIChannels.CreateVoltageChannel("myDAQ2/ai0:1", "",
+                V_MeasureInTask.AIChannels.CreateVoltageChannel("myDAQ1/ai0:1", "",
                         AITerminalConfiguration.Differential, Minimumvoltage, Maximumvoltage,
                         AIVoltageUnits.Volts); //same type of measurements can be done in one task
                 V_MeasureReader = new AnalogMultiChannelReader(V_MeasureInTask.Stream);
 
                 //Resistance measurement
                 ResistanceMeasureTask = new NationalInstruments.DAQmx.Task();
-                ResistanceMeasureTask.AIChannels.CreateResistanceChannel("myDAQ2/dmm", "", MinimumResistance, MaximumResistance, AIResistanceConfiguration.TwoWire, AIExcitationSource.Internal, 1e-3, AIResistanceUnits.Ohms);
+                ResistanceMeasureTask.AIChannels.CreateResistanceChannel("myDAQ1/dmm", "", MinimumResistance, MaximumResistance, AIResistanceConfiguration.TwoWire, AIExcitationSource.Internal, 1e-3, AIResistanceUnits.Ohms);
                 // Current excitation must be set to 1e-3
 
                 ResistanceMeasureReader = new AnalogSingleChannelReader(ResistanceMeasureTask.Stream);
@@ -316,7 +316,6 @@ namespace ketpaneles_meroprogram
                     return;
                 }
 
-                sweepingUp = true;
             }
         }
         
