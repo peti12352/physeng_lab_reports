@@ -1,0 +1,20 @@
+
+The name 'powerSupplySessionDAQ1ut' does not exist in the current context
+
+
+There was a mismatch between the processor architecture of the project being built "MSIL" and the processor architecture of the reference "NationalInstruments.DAQmx, Version=19.0.40.2, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=AMD64", "AMD64". This mismatch may cause runtime failures. Please consider changing the targeted processor architecture of your project through the Configuration Manager so as to align the processor architectures between your project and references, or take a dependency on references with a processor architecture that matches the targeted processor architecture of your project.
+
+The field 'Form1.sweepingUp' is assigned but its value is never used
+
+
+
+
+
+
+for lAB NOTE
+
+we coonnected the pt-1000 to the mydaq resistor measurement (dmm channel) and connected the computer to the power supply to regulate it.
+
+
+
+USB0::0xF4EC::0x1410::SPD13DCC8R0078::INSTR
