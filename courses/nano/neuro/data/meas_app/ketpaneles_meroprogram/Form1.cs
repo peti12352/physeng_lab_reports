@@ -360,8 +360,8 @@ namespace ketpaneles_meroprogram
             Run = true;
             buttonStart.Text = "Stop";
             timer.Enabled = true;
-            // Unified header: includes Task 2 (IV) and Task 3 (R-T) fields
-            fileWriter.WriteLine("Time (s)\tPeltier Voltage (V)\tPT1000 Resistance (Ohm)\tTemperature (C)\tDrive Voltage (V)\tBias Voltage (V)\tResistor Voltage Drop (V)\tCurrent (A)\tSample Resistance (Ohm)\tRaw AO0 (V)\tRaw AI0 (V)\tRaw AI1 (V)"); 
+            // Unified header: includes Task 2 (IV), Task 3 (R-T), and now also logs Peltier PSU current
+            fileWriter.WriteLine("Time (s)\tPeltier Voltage (V)\tPeltier PSU Current (A)\tPT1000 Resistance (Ohm)\tTemperature (C)\tDrive Voltage (V)\tBias Voltage (V)\tResistor Voltage Drop (V)\tCurrent (A)\tSample Resistance (Ohm)\tRaw AO0 (V)\tRaw AI0 (V)\tRaw AI1 (V)");
 
         }
 
@@ -451,6 +451,25 @@ namespace ketpaneles_meroprogram
             double alpha = 3.85e-3; // PT1000 temperature coefficient (1/°C)
             double temperature = (pt1000Resistance - R0) / (alpha * R0);
 
+            // Query Peltier PSU current (A)
+            string peltierCurrentStr = "";
+            double peltierCurrent = double.NaN;
+            if (powerSupplySession != null)
+            {
+                try
+                {
+                    powerSupplySession.FormattedIO.WriteLine("INST CH1");
+                    powerSupplySession.FormattedIO.WriteLine("MEAS:CURR?");
+                    string currentResp = powerSupplySession.FormattedIO.ReadLine();
+                    double.TryParse(currentResp.Trim(), System.Globalization.NumberStyles.Float, CultureInfo.InvariantCulture, out peltierCurrent);
+                    peltierCurrentStr = peltierCurrent.ToString(CultureInfo.InvariantCulture);
+                }
+                catch
+                {
+                    peltierCurrentStr = "NaN";
+                }
+            }
+
             //plotting data
             // Ensure chart1 has one valid series for IV plotting
             if (chart1.Series.Count == 0)
@@ -463,9 +482,10 @@ namespace ketpaneles_meroprogram
             chart2.Series[0].Points.AddXY(temperature, sampleResistance); // Plot Sample Resistance vs Temperature
 
             //writing data to file
-            fileWriter.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\t{11}",
+            fileWriter.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\t{11}\t{12}",
                 CurrentTimeSeconds.ToString(CultureInfo.InvariantCulture),
                 peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture),
+                peltierCurrentStr,
                 pt1000Resistance.ToString(CultureInfo.InvariantCulture),
                 temperature.ToString(CultureInfo.InvariantCulture),
                 DriveVoltage.ToString(CultureInfo.InvariantCulture),
