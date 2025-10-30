@@ -331,14 +331,14 @@ namespace ketpaneles_meroprogram
                 // Set initial Peltier voltage
                 try
                 {
-                    powerSupplySession.RawIO.Write($"SOURce:VOLTage {peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture)}");
+                    powerSupplySession.RawIO.Write("INST CH1");
+                    powerSupplySession.RawIO.Write($"SOURce1:VOLTage {peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture)}");
                     lastPeltierUpdate = DateTime.Now;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error setting initial Peltier voltage: " + ex.Message);
-                    Run = false;
-                    return;
+                    // Continue without aborting; stepping logic will retry on next tick
                 }
 
             }
@@ -463,13 +463,13 @@ namespace ketpaneles_meroprogram
                     }
                     try
                     {
-                        powerSupplySession.RawIO.Write($"SOURce:VOLTage {peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture)}");
+                        powerSupplySession.RawIO.Write("INST CH1");
+                        powerSupplySession.RawIO.Write($"SOURce1:VOLTage {peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture)}");
                         lastPeltierUpdate = DateTime.Now;
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Error setting Peltier voltage: " + ex.Message);
-                        Run = false;
                     }
                 }
             }

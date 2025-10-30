@@ -483,7 +483,7 @@
             this.numericPeltierIntervalMs.Size = new System.Drawing.Size(112, 26);
             this.numericPeltierIntervalMs.TabIndex = 20;
             this.numericPeltierIntervalMs.Value = new decimal(new int[] {
-            500,
+            10000,
             0,
             0,
             0});
