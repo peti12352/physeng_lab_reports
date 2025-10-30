@@ -1,10 +1,5 @@
-'IMessageBasedRawIO' does not contain a definition for 'ReadTimeout' and no accessible extension method 'ReadTimeout' accepting a first argument of type 'IMessageBasedRawIO' could be found (are you missing a using directive or an assembly reference?)
-
 'IMessageBasedRawIO' does not contain a definition for 'WriteTimeout' and no accessible extension method 'WriteTimeout' accepting a first argument of type 'IMessageBasedRawIO' could be found (are you missing a using directive or an assembly reference?)
-
 'IMessageBasedRawIO' does not contain a definition for 'ReadTimeout' and no accessible extension method 'ReadTimeout' accepting a first argument of type 'IMessageBasedRawIO' could be found (are you missing a using directive or an assembly reference?)
-
-                    powerSupplySession.RawIO.WriteTimeout = 2000; // Set a write timeout for VISA operations
-
-
-There was a mismatch between the processor architecture of the project being built "MSIL" and the processor architecture of the reference "NationalInstruments.DAQmx, Version=19.0.40.2, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=AMD64", "AMD64". This mismatch may cause runtime failures. Please consider changing the targeted processor architecture of your project through the Configuration Manager so as to align the processor architectures between your project and references, or take a dependency on references with a processor architecture that matches the targeted processor architecture of your project.
+'IMessageBasedRawIO' does not contain a definition for 'WriteTimeout' and no accessible extension method 'WriteTimeout' accepting a first argument of type 'IMessageBasedRawIO' could be found (are you missing a using directive or an assembly reference?)
+'IMessageBasedRawIO' does not contain a definition for 'ReadTimeout' and no accessible extension method 'ReadTimeout' accepting a first argument of type 'IMessageBasedRawIO' could be found (are you missing a using directive or an assembly reference?)
+There was a mismatch between the processor architecture of the project being built "MSIL" and the processor architecture of the reference "NationalInstruments.DAQmx, Version=19.0.40.2, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=AMD64", "x86". This mismatch may cause runtime failures. Please consider changing the targeted processor architecture of your project through the Configuration Manager so as to align the processor architectures between your project and references, or take a dependency on references with a processor architecture that matches the targeted processor architecture of your project.
