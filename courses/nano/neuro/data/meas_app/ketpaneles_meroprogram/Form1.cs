@@ -34,6 +34,7 @@ namespace ketpaneles_meroprogram
 
         // New sweep variables
         private double startVoltage, endVoltage, stepVoltage;
+        private bool driveSweepingUp = true;
         
         // New UI Elements
         private Label labelStartVoltage;
@@ -321,6 +322,11 @@ namespace ketpaneles_meroprogram
                 
                 // Parse Constant Drive Voltage for sample
                 DriveVoltage = double.Parse(textBoxConstantDriveVoltage.Text, CultureInfo.InvariantCulture);
+                if (this.checkBoxIVSweep.Checked)
+                {
+                    DriveVoltage = startVoltage;
+                    driveSweepingUp = true;
+                }
 
                 // Parse Peltier sweep parameters
                 peltierStartVoltage = double.Parse(textBoxPeltierStartVoltage.Text, CultureInfo.InvariantCulture);
@@ -353,7 +359,7 @@ namespace ketpaneles_meroprogram
             Run = true;
             buttonStart.Text = "Stop";
             timer.Enabled = true;
-            fileWriter.WriteLine("Time (s)\tPeltier Voltage (V)\tPT1000 Resistance (Ohm)\tTemperature (C)\tDrive Voltage (V)\tResistor Voltage Drop (V)\tCurrent (A)\tSample Resistance (Ohm)\tRaw AO0 (V)\tRaw AI0 (V)\tRaw AI1 (V)"); 
+            fileWriter.WriteLine("Time (s)\tDrive Voltage (V)\tBias Voltage (V)\tResistor Voltage Drop (V)\tCurrent (A)\tRaw AO0 (V)\tRaw AI0 (V)\tRaw AI1 (V)"); 
 
         }
 
@@ -378,6 +384,29 @@ namespace ketpaneles_meroprogram
                 }
             }
 
+            // Step drive voltage for IV sweep if enabled
+            if (this.checkBoxIVSweep.Checked)
+            {
+                if (driveSweepingUp)
+                {
+                    DriveVoltage += stepVoltage;
+                    if (DriveVoltage >= endVoltage)
+                    {
+                        DriveVoltage = endVoltage;
+                        driveSweepingUp = false;
+                    }
+                }
+                else
+                {
+                    DriveVoltage -= stepVoltage;
+                    if (DriveVoltage <= startVoltage)
+                    {
+                        DriveVoltage = startVoltage;
+                        driveSweepingUp = true;
+                    }
+                }
+            }
+
             // measurement
             double ai0 = 0.0;
             double ai1 = 0.0;
@@ -399,40 +428,23 @@ namespace ketpaneles_meroprogram
             double current = resistorVoltageDrop / SerialResValue; // Corrected: current = V_RS / RS
             double biasVoltage = DriveVoltage - ai1; // Corrected: Vbias = Vdrive - V_RS
 
-            double pt1000Resistance = 0.0; // Initialize PT1000 resistance
-            if (ResistanceMeasureReader != null)
-            {
-                try
-                {
-                    pt1000Resistance = ResistanceMeasureReader.ReadSingleSample();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error reading PT-1000 resistance: " + ex.Message);
-                }
-            }
+            // (Task 2) PT1000 not required in log; keep optional read for charts if needed
 
             double sampleResistance = (current != 0) ? (biasVoltage / current) : 0; // Calculate sample resistance (Memristor Resistance)
 
-            // PT1000 Resistance to Temperature Conversion (simple linear approximation)
-			double R0 = 1000.0; // Resistance at 0°C for PT1000
-			double alpha = 3.85e-3; // PT1000 temperature coefficient (1/°C)
-			double temperature = (pt1000Resistance - R0) / (alpha * R0);
+            // (Task 2) Temperature not required in log
 
             //plotting data
             chart1.Series[0].Points.AddXY(biasVoltage, current * 1000); // Plot current in mA
-            chart2.Series[0].Points.AddXY(temperature, sampleResistance); // Plot Sample Resistance vs Temperature
+            // chart2 (R-T) optional for Task 2
 
             //writing data to file
-            fileWriter.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}", 
+            fileWriter.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}",
                 CurrentTimeSeconds.ToString(CultureInfo.InvariantCulture),
-                peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture),
-                pt1000Resistance.ToString(CultureInfo.InvariantCulture),
-                temperature.ToString(CultureInfo.InvariantCulture),
                 DriveVoltage.ToString(CultureInfo.InvariantCulture),
+                biasVoltage.ToString(CultureInfo.InvariantCulture),
                 resistorVoltageDrop.ToString(CultureInfo.InvariantCulture),
                 current.ToString(CultureInfo.InvariantCulture),
-                sampleResistance.ToString(CultureInfo.InvariantCulture),
                 DriveVoltage.ToString(CultureInfo.InvariantCulture),
                 ai0.ToString(CultureInfo.InvariantCulture),
                 ai1.ToString(CultureInfo.InvariantCulture));

@@ -63,6 +63,7 @@
             this.textBox_QueryPowSuplName = new System.Windows.Forms.TextBox();
             this.labelPeltierInterval = new System.Windows.Forms.Label();
             this.numericPeltierIntervalMs = new System.Windows.Forms.NumericUpDown();
+            this.checkBoxIVSweep = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericInterval)).BeginInit();
@@ -76,6 +77,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericChart2YMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPeltierIntervalMs)).BeginInit();
             this.SuspendLayout();
+            // 
+            // checkBoxIVSweep
+            // 
+            this.checkBoxIVSweep.AutoSize = true;
+            this.checkBoxIVSweep.Checked = true;
+            this.checkBoxIVSweep.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxIVSweep.Location = new System.Drawing.Point(30, 82);
+            this.checkBoxIVSweep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkBoxIVSweep.Name = "checkBoxIVSweep";
+            this.checkBoxIVSweep.Size = new System.Drawing.Size(172, 24);
+            this.checkBoxIVSweep.TabIndex = 21;
+            this.checkBoxIVSweep.Text = "IV Sweep (Drive V)";
+            this.checkBoxIVSweep.UseVisualStyleBackColor = true;
             // 
             // chart1
             // 
@@ -493,6 +507,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1390, 706);
+            this.Controls.Add(this.checkBoxIVSweep);
             this.Controls.Add(this.numericPeltierIntervalMs);
             this.Controls.Add(this.labelPeltierInterval);
             this.Controls.Add(this.textBox_QueryPowSuplName);
@@ -570,6 +585,7 @@
         private System.Windows.Forms.TextBox textBox_QueryPowSuplName;
         private System.Windows.Forms.Label labelPeltierInterval;
         private System.Windows.Forms.NumericUpDown numericPeltierIntervalMs;
+        private System.Windows.Forms.CheckBox checkBoxIVSweep;
     }
 }
 
