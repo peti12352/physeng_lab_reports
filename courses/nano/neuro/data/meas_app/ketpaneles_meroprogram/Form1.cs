@@ -34,8 +34,7 @@ namespace ketpaneles_meroprogram
 
         // New sweep variables
         private double startVoltage, endVoltage, stepVoltage;
-        // private bool peltierSweepingUp = true; // Removed duplicate declaration
-
+        
         // New UI Elements
         private Label labelStartVoltage;
         private TextBox textBoxStartVoltage;
