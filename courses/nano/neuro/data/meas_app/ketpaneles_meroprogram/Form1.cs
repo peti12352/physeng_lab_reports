@@ -62,6 +62,16 @@ namespace ketpaneles_meroprogram
         // Placeholder for VISA resource name - **USER TO UPDATE**
         private const string PeltierPowerSupplyVisaResource = "USB0::0xF4EC::0x1410::SPD13DCC8R0078::INSTR"; // Replaced XXXXXXXXXXXX with the actual serial number/resource name
 
+        private string GetPeltierVisaResource()
+        {
+            string fromUi = this.textBox_QueryPowSuplName != null ? this.textBox_QueryPowSuplName.Text : null;
+            if (!string.IsNullOrWhiteSpace(fromUi))
+            {
+                return fromUi.Trim();
+            }
+            return PeltierPowerSupplyVisaResource;
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -255,7 +265,7 @@ namespace ketpaneles_meroprogram
                 // Initialize Power Supply Session for Peltier
                 try
                 {
-                    powerSupplySession = (MessageBasedSession)new NationalInstruments.Visa.ResourceManager().Open(PeltierPowerSupplyVisaResource);
+                    powerSupplySession = (MessageBasedSession)new NationalInstruments.Visa.ResourceManager().Open(GetPeltierVisaResource());
                     powerSupplySession.TimeoutMilliseconds = 2000; // Set VISA session timeout (applies to IO)
                     powerSupplySession.RawIO.Write("OUTPut CH1,ON"); // Turn on power supply output
                 }
@@ -359,28 +369,10 @@ namespace ketpaneles_meroprogram
 
             double sampleResistance = (current != 0) ? (biasVoltage / current) : 0; // Calculate sample resistance (Memristor Resistance)
 
-            // PT1000 Resistance to Temperature Conversion (Callendar-Van Dusen equation)
-            double R0 = 1000.0; // Resistance at 0°C for PT1000
-            double A = 3.9083e-3;
-            double B = -5.775e-7;
-            double temperature = 0.0;
-
-            // For T >= 0 °C (simple quadratic approximation)
-            if (pt1000Resistance >= R0)
-            {
-                double deltaR = pt1000Resistance - R0;
-                temperature = (-A + Math.Sqrt(A * A - 4 * B * deltaR)) / (2 * B);
-            }
-            // For T < 0 °C (more complex equation, but often not needed for Peltier heating)
-            else
-            {
-                // This part can be refined if negative temperatures are expected and require higher accuracy
-                // For simplicity, a linear approximation or the same quadratic can be used if accuracy allows
-                // However, a more accurate formula for T < 0 C involves a C coefficient.
-                // For now, using the same quadratic for estimation, but a warning is due.
-                double deltaR = pt1000Resistance - R0;
-                temperature = (-A + Math.Sqrt(A * A - 4 * B * deltaR)) / (2 * B);
-            }
+            // PT1000 Resistance to Temperature Conversion (simple linear approximation)
+			double R0 = 1000.0; // Resistance at 0°C for PT1000
+			double alpha = 3.85e-3; // PT1000 temperature coefficient (1/°C)
+			double temperature = (pt1000Resistance - R0) / (alpha * R0);
 
             //plotting data
             chart1.Series[0].Points.AddXY(biasVoltage, current * 1000); // Plot current in mA
@@ -535,7 +527,7 @@ namespace ketpaneles_meroprogram
             {
                 if (powerSupplySession == null)
                 {
-                    powerSupplySession = (MessageBasedSession)new NationalInstruments.Visa.ResourceManager().Open(PeltierPowerSupplyVisaResource);
+                    powerSupplySession = (MessageBasedSession)new NationalInstruments.Visa.ResourceManager().Open(GetPeltierVisaResource());
                     powerSupplySession.TimeoutMilliseconds = 2000; // Set VISA session timeout (applies to IO)
                 }
                 powerSupplySession.RawIO.Write("OUTPut CH1,ON");

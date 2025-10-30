@@ -436,7 +436,7 @@
             // label_QueryPowSuplName
             // 
             this.label_QueryPowSuplName.AutoSize = true;
-            this.label_QueryPowSuplName.Location = new System.Drawing.Point(0, 529);
+            this.label_QueryPowSuplName.Location = new System.Drawing.Point(200, 529);
             this.label_QueryPowSuplName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_QueryPowSuplName.Name = "label_QueryPowSuplName";
             this.label_QueryPowSuplName.Size = new System.Drawing.Size(134, 20);
@@ -445,7 +445,7 @@
             // 
             // textBox_QueryPowSuplName
             // 
-            this.textBox_QueryPowSuplName.Location = new System.Drawing.Point(4, 494);
+            this.textBox_QueryPowSuplName.Location = new System.Drawing.Point(204, 494);
             this.textBox_QueryPowSuplName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_QueryPowSuplName.Name = "textBox_QueryPowSuplName";
             this.textBox_QueryPowSuplName.Size = new System.Drawing.Size(403, 26);
