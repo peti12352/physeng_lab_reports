@@ -424,7 +424,7 @@
             // 
             // button_QueryPowSuplName
             // 
-            this.button_QueryPowSuplName.Location = new System.Drawing.Point(4, 455);
+            this.button_QueryPowSuplName.Location = new System.Drawing.Point(200, 600);
             this.button_QueryPowSuplName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_QueryPowSuplName.Name = "button_QueryPowSuplName";
             this.button_QueryPowSuplName.Size = new System.Drawing.Size(186, 35);
