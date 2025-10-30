@@ -359,7 +359,8 @@ namespace ketpaneles_meroprogram
             Run = true;
             buttonStart.Text = "Stop";
             timer.Enabled = true;
-            fileWriter.WriteLine("Time (s)\tDrive Voltage (V)\tBias Voltage (V)\tResistor Voltage Drop (V)\tCurrent (A)\tRaw AO0 (V)\tRaw AI0 (V)\tRaw AI1 (V)"); 
+            // Unified header: includes Task 2 (IV) and Task 3 (R-T) fields
+            fileWriter.WriteLine("Time (s)\tPeltier Voltage (V)\tPT1000 Resistance (Ohm)\tTemperature (C)\tDrive Voltage (V)\tBias Voltage (V)\tResistor Voltage Drop (V)\tCurrent (A)\tSample Resistance (Ohm)\tRaw AO0 (V)\tRaw AI0 (V)\tRaw AI1 (V)"); 
 
         }
 
@@ -428,23 +429,49 @@ namespace ketpaneles_meroprogram
             double current = resistorVoltageDrop / SerialResValue; // Corrected: current = V_RS / RS
             double biasVoltage = DriveVoltage - ai1; // Corrected: Vbias = Vdrive - V_RS
 
-            // (Task 2) PT1000 not required in log; keep optional read for charts if needed
+            // Read PT1000 resistance if available
+            double pt1000Resistance = 0.0;
+            if (ResistanceMeasureReader != null)
+            {
+                try
+                {
+                    pt1000Resistance = ResistanceMeasureReader.ReadSingleSample();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error reading PT-1000 resistance: " + ex.Message);
+                }
+            }
 
             double sampleResistance = (current != 0) ? (biasVoltage / current) : 0; // Calculate sample resistance (Memristor Resistance)
 
-            // (Task 2) Temperature not required in log
+            // Temperature from PT1000 (simple linear approximation)
+            double R0 = 1000.0; // Resistance at 0°C for PT1000
+            double alpha = 3.85e-3; // PT1000 temperature coefficient (1/°C)
+            double temperature = (pt1000Resistance - R0) / (alpha * R0);
 
             //plotting data
+            // Ensure chart1 has one valid series for IV plotting
+            if (chart1.Series.Count == 0)
+                chart1.Series.Add("IV");
+            // Plot IV data
             chart1.Series[0].Points.AddXY(biasVoltage, current * 1000); // Plot current in mA
-            // chart2 (R-T) optional for Task 2
+            // Ensure chart2 has one valid series for R-T plotting
+            if (chart2.Series.Count == 0)
+                chart2.Series.Add("RT");
+            chart2.Series[0].Points.AddXY(temperature, sampleResistance); // Plot Sample Resistance vs Temperature
 
             //writing data to file
-            fileWriter.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}",
+            fileWriter.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\t{11}",
                 CurrentTimeSeconds.ToString(CultureInfo.InvariantCulture),
+                peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture),
+                pt1000Resistance.ToString(CultureInfo.InvariantCulture),
+                temperature.ToString(CultureInfo.InvariantCulture),
                 DriveVoltage.ToString(CultureInfo.InvariantCulture),
                 biasVoltage.ToString(CultureInfo.InvariantCulture),
                 resistorVoltageDrop.ToString(CultureInfo.InvariantCulture),
                 current.ToString(CultureInfo.InvariantCulture),
+                sampleResistance.ToString(CultureInfo.InvariantCulture),
                 DriveVoltage.ToString(CultureInfo.InvariantCulture),
                 ai0.ToString(CultureInfo.InvariantCulture),
                 ai1.ToString(CultureInfo.InvariantCulture));
