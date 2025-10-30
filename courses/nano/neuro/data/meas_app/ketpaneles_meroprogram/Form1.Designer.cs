@@ -450,7 +450,7 @@
             this.textBox_QueryPowSuplName.Name = "textBox_QueryPowSuplName";
             this.textBox_QueryPowSuplName.Size = new System.Drawing.Size(403, 26);
             this.textBox_QueryPowSuplName.TabIndex = 18;
-            this.textBox_QueryPowSuplName.Text = "USB0::0xF4EC::0x1410::SPD1XECC800032::INSTR";
+            this.textBox_QueryPowSuplName.Text = "USB0::0xF4EC::0x1410::SPD13DCC8R0078::INSTR";
             // 
             // Form1
             // 
