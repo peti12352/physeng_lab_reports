@@ -297,6 +297,20 @@ namespace ketpaneles_meroprogram
 
                 ResistanceMeasureReader = new AnalogSingleChannelReader(ResistanceMeasureTask.Stream);
 
+                // Ensure DAQ tasks are started before timer ticks
+                try
+                {
+                    BiasOutTask.Start();
+                    V_MeasureInTask.Start();
+                    ResistanceMeasureTask.Start();
+                }
+                catch (DaqException ex)
+                {
+                    MessageBox.Show("Error starting DAQ tasks: " + ex.Message);
+                    Run = false;
+                    return;
+                }
+
                 // Parse sweep parameters
                 startVoltage = double.Parse(textBoxStartVoltage.Text, CultureInfo.InvariantCulture);
                 endVoltage = double.Parse(textBoxEndVoltage.Text, CultureInfo.InvariantCulture);
@@ -342,13 +356,26 @@ namespace ketpaneles_meroprogram
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            if (!Run || writer == null || V_MeasureReader == null || ResistanceMeasureReader == null)
+            {
+                return;
+            }
             double CurrentTimeSeconds = DateTime.Now.ToOADate() * 24 * 3600 - MeasStartTime;
 
             // Set output voltage
             writer.WriteSingleSample(true, DriveVoltage);
 
             // measurement
-            double[] data = V_MeasureReader.ReadSingleSample();
+            double[] data;
+            try
+            {
+                data = V_MeasureReader.ReadSingleSample();
+            }
+            catch (DaqException ex)
+            {
+                MessageBox.Show("Error reading AI channels: " + ex.Message);
+                return;
+            }
             double ai0 = data[0];
             double ai1 = data[1];
 
