@@ -270,6 +270,7 @@ namespace ketpaneles_meroprogram
                     powerSupplySession = (MessageBasedSession)new NationalInstruments.Visa.ResourceManager().Open(GetPeltierVisaResource());
                     powerSupplySession.TimeoutMilliseconds = 2000; // Set VISA session timeout (applies to IO)
                     powerSupplySession.FormattedIO.WriteLine("INST CH1");
+                    powerSupplySession.FormattedIO.WriteLine("CURR 8");
                     powerSupplySession.FormattedIO.WriteLine("OUTP CH1,ON"); // Turn on power supply output
                 }
                 catch (VisaException ex)
@@ -620,6 +621,7 @@ namespace ketpaneles_meroprogram
                     powerSupplySession.TimeoutMilliseconds = 2000; // Set VISA session timeout (applies to IO)
                 }
                 powerSupplySession.FormattedIO.WriteLine("INST CH1");
+                powerSupplySession.FormattedIO.WriteLine("CURR 8");
                 powerSupplySession.FormattedIO.WriteLine("OUTP CH1,ON");
             }
             catch (VisaException ex)
