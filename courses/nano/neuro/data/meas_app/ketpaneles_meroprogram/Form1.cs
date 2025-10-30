@@ -268,7 +268,8 @@ namespace ketpaneles_meroprogram
                 {
                     powerSupplySession = (MessageBasedSession)new NationalInstruments.Visa.ResourceManager().Open(GetPeltierVisaResource());
                     powerSupplySession.TimeoutMilliseconds = 2000; // Set VISA session timeout (applies to IO)
-                    powerSupplySession.RawIO.Write("OUTPut CH1,ON"); // Turn on power supply output
+                    powerSupplySession.FormattedIO.WriteLine("INST CH1");
+                    powerSupplySession.FormattedIO.WriteLine("OUTP CH1,ON"); // Turn on power supply output
                 }
                 catch (VisaException ex)
                 {
@@ -331,8 +332,8 @@ namespace ketpaneles_meroprogram
                 // Set initial Peltier voltage
                 try
                 {
-                    powerSupplySession.RawIO.Write("INST CH1");
-                    powerSupplySession.RawIO.Write($"SOURce1:VOLTage {peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture)}");
+                    powerSupplySession.FormattedIO.WriteLine("INST CH1");
+                    powerSupplySession.FormattedIO.WriteLine($"VOLT {peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture)}");
                     lastPeltierUpdate = DateTime.Now;
                 }
                 catch (Exception ex)
@@ -463,8 +464,8 @@ namespace ketpaneles_meroprogram
                     }
                     try
                     {
-                        powerSupplySession.RawIO.Write("INST CH1");
-                        powerSupplySession.RawIO.Write($"SOURce1:VOLTage {peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture)}");
+                        powerSupplySession.FormattedIO.WriteLine("INST CH1");
+                        powerSupplySession.FormattedIO.WriteLine($"VOLT {peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture)}");
                         lastPeltierUpdate = DateTime.Now;
                     }
                     catch (Exception ex)
@@ -579,7 +580,8 @@ namespace ketpaneles_meroprogram
                     powerSupplySession = (MessageBasedSession)new NationalInstruments.Visa.ResourceManager().Open(GetPeltierVisaResource());
                     powerSupplySession.TimeoutMilliseconds = 2000; // Set VISA session timeout (applies to IO)
                 }
-                powerSupplySession.RawIO.Write("OUTPut CH1,ON");
+                powerSupplySession.FormattedIO.WriteLine("INST CH1");
+                powerSupplySession.FormattedIO.WriteLine("OUTP CH1,ON");
             }
             catch (VisaException ex)
             {
@@ -597,7 +599,8 @@ namespace ketpaneles_meroprogram
             {
                 if (powerSupplySession != null)
                 {
-                    powerSupplySession.RawIO.Write("OUTPut CH1,OFF");
+                    powerSupplySession.FormattedIO.WriteLine("INST CH1");
+                    powerSupplySession.FormattedIO.WriteLine("OUTP CH1,OFF");
                 }
             }
             catch (VisaException ex)
