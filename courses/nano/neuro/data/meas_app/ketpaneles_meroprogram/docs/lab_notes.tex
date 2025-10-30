@@ -2,9 +2,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
+\usepackage{parskip}
 
-\title{Lab 3: Neuro - Measurement Station 2}
-\author{Grego \& Peti}
+\title{Neuro Lab: Measurement Station 2 -- Notes}
+\author{P\'eter Tall\'osy, Gregorio Jaca}
 \date{\today}
 
 \begin{document}
@@ -13,7 +14,7 @@
 
 \section*{Task 1: Series Resistor Measurement}
 
-Rs = 2.17 kOhm (multimeter measurement), Rsmd nominal: 4.701 kOhm. Assembled circuit with Rs in series with Rsmd. Rsmd measured: 4.663 kOhm. Value close to nominal, circuit validated. Code and circuit functioning.
+Rs = 2.17 k\Ohm\ (multimeter measurement), Rsmd nominal: 4.701 k\Ohm. Assembled circuit with Rs in series with Rsmd. Rsmd measured: 4.663 k\Ohm. Value close to nominal, circuit validated. Code and circuit functioning.
 
 \subsection*{Visuals}
 \begin{figure}[h!]
@@ -32,7 +33,10 @@ Rs = 2.17 kOhm (multimeter measurement), Rsmd nominal: 4.701 kOhm. Assembled cir
 
 \section*{Task 2: I(V) Curve Measurement}
 
-Observed expected I(V) curve with characteristic jumps. Using the row1 col3 memristor on the sample.
+Observed I(V) characteristics with expected behavior; differential slope indicates evolving conduction. Early points show lower differential resistance consistent with onset of conduction increase.
+
+\textbf{Slope dI/d$V_{bias}$ (first 5):} [0.03837007, 0.05557502, 0.05442573, 0.02578657, 0.02225945] A/V\\
+\textbf{Differential resistance d$V_{bias}$/dI (first 5):} [26.06198114, 17.99369474, 18.37366398, 38.77987233, 44.92473767] $\Omega$
 
 \subsection*{Visuals}
 \begin{figure}[h!]
@@ -45,12 +49,23 @@ Observed expected I(V) curve with characteristic jumps. Using the row1 col3 memr
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{task_2_three_plots.png}
-    \caption{Task 2: Three Plots}
+    \caption{Task 2: Additional Plots}
     \label{fig:task_2_three_plots}
 \end{figure}
 
-\section*{Task 3: R(T) Characteristics Measurement Setup}
+\section*{Task 3: R(T) Characteristics}
 
-User interface, VISA/SCPI control, and data acquisition setup completed for R(T) measurements. Calculations for sample resistance and temperature implemented. Data logging and plotting updated. Power supply ON/OFF controls added. Remember to update the `PeltierPowerSupplyVisaResource`.
+R(T) measurement implemented with VISA/SCPI control for the Peltier supply, DAQ-based voltage/current readout, and PT1000 temperature conversion. One run was noisy after moving the setup; after redoing with stable wiring and contact, a clean heating--cooling hysteresis was observed and transition temperature aligned with expectations.
+
+\section*{Task 4: Relaxation (Reset) Time}
+
+\textbf{Devices:} VO$_2$ memristors at row 4, col 2 and row 4, col 3.\\
+\textbf{Method:} Two-channel oscilloscope capture with 50~$\Omega$ termination; VIN(t) from AWG; V$_{\text{TRANS}}$(t) at the oscilloscope input. Compute $R_M(t)$ via $R_M(t)=2Z_0\left(\frac{\mathrm{VIN}(t)}{\mathrm{VTRANS}(t)}-1\right)$ with $Z_0=50\,\Omega$. Clear LRS$\to$HRS relaxation observed; reset time in the expected $\mu$s regime under our pulse/readout settings.
+
+\textbf{Future analysis:} percentile-based time markers (e.g., 10--90\% of $\Delta R$) and stretched-exponential fits $R_M(t)=R_\infty-\Delta R\,e^{-(t/\tau)^\beta}$ to extract $\tau$ and $\beta$ vs. pulse amplitude and readout level.
+
+\section*{Brief Error Notes}
+
+Timing uncertainty from scope sampling/trigger; amplitude scale from 50~$\Omega$ tolerance and vertical calibration; residual reflections minimized with short cables and proper termination; thermal/mechanical stability improved repeatability.
 
 \end{document}
