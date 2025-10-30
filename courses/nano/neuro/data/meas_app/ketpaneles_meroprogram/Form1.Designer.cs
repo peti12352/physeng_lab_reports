@@ -61,6 +61,8 @@
             this.button_QueryPowSuplName = new System.Windows.Forms.Button();
             this.label_QueryPowSuplName = new System.Windows.Forms.Label();
             this.textBox_QueryPowSuplName = new System.Windows.Forms.TextBox();
+            this.labelPeltierInterval = new System.Windows.Forms.Label();
+            this.numericPeltierIntervalMs = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericInterval)).BeginInit();
@@ -72,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericChart2XMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChart2YMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChart2YMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPeltierIntervalMs)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
@@ -452,11 +455,46 @@
             this.textBox_QueryPowSuplName.TabIndex = 18;
             this.textBox_QueryPowSuplName.Text = "USB0::0xF4EC::0x1410::SPD13DCC8R0078::INSTR";
             // 
+            // labelPeltierInterval
+            // 
+            this.labelPeltierInterval.AutoSize = true;
+            this.labelPeltierInterval.Location = new System.Drawing.Point(400, 520);
+            this.labelPeltierInterval.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPeltierInterval.Name = "labelPeltierInterval";
+            this.labelPeltierInterval.Size = new System.Drawing.Size(194, 20);
+            this.labelPeltierInterval.TabIndex = 19;
+            this.labelPeltierInterval.Text = "Peltier Step Interval (ms)";
+            // 
+            // numericPeltierIntervalMs
+            // 
+            this.numericPeltierIntervalMs.Location = new System.Drawing.Point(400, 545);
+            this.numericPeltierIntervalMs.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numericPeltierIntervalMs.Maximum = new decimal(new int[] {
+            600000,
+            0,
+            0,
+            0});
+            this.numericPeltierIntervalMs.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericPeltierIntervalMs.Name = "numericPeltierIntervalMs";
+            this.numericPeltierIntervalMs.Size = new System.Drawing.Size(112, 26);
+            this.numericPeltierIntervalMs.TabIndex = 20;
+            this.numericPeltierIntervalMs.Value = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1390, 706);
+            this.Controls.Add(this.numericPeltierIntervalMs);
+            this.Controls.Add(this.labelPeltierInterval);
             this.Controls.Add(this.textBox_QueryPowSuplName);
             this.Controls.Add(this.label_QueryPowSuplName);
             this.Controls.Add(this.button_QueryPowSuplName);
@@ -496,6 +534,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericChart2XMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChart2YMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChart2YMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPeltierIntervalMs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -529,6 +568,8 @@
         private System.Windows.Forms.Button button_QueryPowSuplName;
         private System.Windows.Forms.Label label_QueryPowSuplName;
         private System.Windows.Forms.TextBox textBox_QueryPowSuplName;
+        private System.Windows.Forms.Label labelPeltierInterval;
+        private System.Windows.Forms.NumericUpDown numericPeltierIntervalMs;
     }
 }
 

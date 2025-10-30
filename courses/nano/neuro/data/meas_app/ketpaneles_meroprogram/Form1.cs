@@ -55,6 +55,7 @@ namespace ketpaneles_meroprogram
         private MessageBasedSession powerSupplySession; // New: VISA session for power supply
         private double peltierStartVoltage, peltierEndVoltage, peltierStepVoltage, peltierCurrentVoltage;
         private bool peltierSweepingUp = true;
+        private DateTime lastPeltierUpdate;
 
         private Button buttonPeltierOn;
         private Button buttonPeltierOff;
@@ -331,6 +332,7 @@ namespace ketpaneles_meroprogram
                 try
                 {
                     powerSupplySession.RawIO.Write($"SOURce:VOLTage {peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture)}");
+                    lastPeltierUpdate = DateTime.Now;
                 }
                 catch (Exception ex)
                 {
@@ -356,42 +358,57 @@ namespace ketpaneles_meroprogram
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            if (!Run || writer == null || V_MeasureReader == null || ResistanceMeasureReader == null)
+            if (!Run)
             {
                 return;
             }
             double CurrentTimeSeconds = DateTime.Now.ToOADate() * 24 * 3600 - MeasStartTime;
 
             // Set output voltage
-            writer.WriteSingleSample(true, DriveVoltage);
+            if (writer != null)
+            {
+                try
+                {
+                    writer.WriteSingleSample(true, DriveVoltage);
+                }
+                catch (DaqException ex)
+                {
+                    MessageBox.Show("Error writing AO: " + ex.Message);
+                }
+            }
 
             // measurement
-            double[] data;
-            try
+            double ai0 = 0.0;
+            double ai1 = 0.0;
+            if (V_MeasureReader != null)
             {
-                data = V_MeasureReader.ReadSingleSample();
+                try
+                {
+                    double[] data = V_MeasureReader.ReadSingleSample();
+                    ai0 = data.Length > 0 ? data[0] : 0.0;
+                    ai1 = data.Length > 1 ? data[1] : 0.0;
+                }
+                catch (DaqException ex)
+                {
+                    MessageBox.Show("Error reading AI channels: " + ex.Message);
+                }
             }
-            catch (DaqException ex)
-            {
-                MessageBox.Show("Error reading AI channels: " + ex.Message);
-                return;
-            }
-            double ai0 = data[0];
-            double ai1 = data[1];
 
             double resistorVoltageDrop = ai1; // Corrected: ai1 is the series resistor voltage drop
             double current = resistorVoltageDrop / SerialResValue; // Corrected: current = V_RS / RS
             double biasVoltage = DriveVoltage - ai1; // Corrected: Vbias = Vdrive - V_RS
 
             double pt1000Resistance = 0.0; // Initialize PT1000 resistance
-            try
+            if (ResistanceMeasureReader != null)
             {
-                pt1000Resistance = ResistanceMeasureReader.ReadSingleSample();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error reading PT-1000 resistance: " + ex.Message);
-                // Handle error, possibly stop the measurement
+                try
+                {
+                    pt1000Resistance = ResistanceMeasureReader.ReadSingleSample();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error reading PT-1000 resistance: " + ex.Message);
+                }
             }
 
             double sampleResistance = (current != 0) ? (biasVoltage / current) : 0; // Calculate sample resistance (Memristor Resistance)
@@ -422,33 +439,38 @@ namespace ketpaneles_meroprogram
             // Update Peltier sweep voltage and control power supply
             if (powerSupplySession != null)
             {
-                if (peltierSweepingUp)
+                double elapsedMs = (DateTime.Now - lastPeltierUpdate).TotalMilliseconds;
+                double targetMs = (double)this.numericPeltierIntervalMs.Value;
+                if (elapsedMs >= targetMs)
                 {
-                    peltierCurrentVoltage += peltierStepVoltage;
-                    if (peltierCurrentVoltage >= peltierEndVoltage)
+                    if (peltierSweepingUp)
                     {
-                        peltierCurrentVoltage = peltierEndVoltage;
-                        peltierSweepingUp = false;
+                        peltierCurrentVoltage += peltierStepVoltage;
+                        if (peltierCurrentVoltage >= peltierEndVoltage)
+                        {
+                            peltierCurrentVoltage = peltierEndVoltage;
+                            peltierSweepingUp = false;
+                        }
                     }
-                }
-                else
-                {
-                    peltierCurrentVoltage -= peltierStepVoltage;
-                    if (peltierCurrentVoltage <= peltierStartVoltage)
+                    else
                     {
-                        peltierCurrentVoltage = peltierStartVoltage;
-                        peltierSweepingUp = true;
+                        peltierCurrentVoltage -= peltierStepVoltage;
+                        if (peltierCurrentVoltage <= peltierStartVoltage)
+                        {
+                            peltierCurrentVoltage = peltierStartVoltage;
+                            peltierSweepingUp = true;
+                        }
                     }
-                }
-                try
-                {
-                    powerSupplySession.RawIO.Write($"SOURce:VOLTage {peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture)}");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error setting Peltier voltage: " + ex.Message);
-                    Run = false;
-                    // Optionally, turn off the timer and dispose of resources here as well
+                    try
+                    {
+                        powerSupplySession.RawIO.Write($"SOURce:VOLTage {peltierCurrentVoltage.ToString(CultureInfo.InvariantCulture)}");
+                        lastPeltierUpdate = DateTime.Now;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error setting Peltier voltage: " + ex.Message);
+                        Run = false;
+                    }
                 }
             }
 
