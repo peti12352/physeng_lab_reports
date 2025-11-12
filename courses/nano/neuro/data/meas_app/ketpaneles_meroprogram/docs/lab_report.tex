@@ -113,7 +113,7 @@ omitting samples where $V_{\text{trans}}$ is below the oscilloscope noise floor.
     \label{fig:task4_relaxation}
 \end{figure}
 
- The zoomed-in view confirms that the current spike at \SI{\sim 100}{\micro\second} is a direct response to an input voltage pulse.
+ The zoomed-in view confirms that the current spike at \SI{\sim 100}{\micro\second} is a direct response to an input voltage pulse. We were expecting to observe a refractory period, where the neuron does not respond to a stimulus and the voltage drops below the baseline (Yi \ref{sec:bib}). We observed it once, but we could not reproduce it, as the memristor got damaged, and we did not properly save the data. We tried to investogate how the reset time depended on the amplitude of the pulse, but the memristors got damaged even when re-applying a pulse which induced a nice switch previously.
 
 \begin{figure}[H]
     \centering
@@ -132,7 +132,16 @@ omitting samples where $V_{\text{trans}}$ is below the oscilloscope noise floor.
     \label{fig:task4_second}
 \end{figure}
 
-We were expecting to observe a refractory period, where the neuron does not respond to a stimulus and the voltage drops below the baseline (Yi \ref{sec:bib}). We observed it once, but we could not reproduce it, as the memristor got damaged, and we did not properly save the data.
+The relaxation of the memristor from LRS to HRS is complex and non-exponential. We validated that the readout level would not cause switching.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\linewidth]{task4_relaxation.png}
+    \caption{Reconstructed memristor resistance during the reset experiment. The relaxation to the high-resistance state completes after roughly \SI{197}{\micro\second}. Time = 0 corresponds to the time of switching to the low-resistance state.}
+    \label{fig:task4_fit}
+\end{figure}
+
+
 
 \subsection{Error Analysis}
 
