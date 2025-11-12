@@ -1,5 +1,6 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage{graphicx, booktabs, siunitx, amsmath, geometry, float}
+\usepackage{float}
 \usepackage{subcaption}
 \usepackage{nicefrac}
 \geometry{margin=2.5cm}
@@ -20,12 +21,12 @@ Neuromorphic electronics aims to implement artificial neural networks in energy-
 
 VO$_2$ exhibits a first-order phase transition at approximately \SI{68}{\celsius}, transitioning from an insulating monoclinic phase to a metallic rutile phase. This transition can be triggered thermally or electrically through self-heating in nanoscale devices. The voltage-induced switching shows characteristic set and reset voltages, with the device returning to the high-resistance state at zero bias, making it volatile.
 
-This measurement session focused on characterizing a VO$_2$ memristor device through: (1) circuit validation with series resistor measurements, (2) I(V) curve characterization to identify switching thresholds, (3) temperature-dependent resistance measurements to observe the phase transition, and (4) analysis of the relaxation dynamics.
+This measurement session focused on characterizing a VO$_2$ memristor device through: (1) circuit validation with series resistor measurements, (2) I(V) curve characterization to identify switching thresholds, (3) temperature-dependent resistance measurements to observe the phase transition, and (4) analysis of the switching and relaxation dynamics.
 
 \section{Results and Discussion}
 
-\subsection{Task 1: Series Resistor Measurement and Circuit Validation}
-A series resistor $R_s = \SI{2.17}{\kilo\ohm}$ (measured with multimeter) was connected in series with a surface-mount device (SMD) resistor with nominal value $R_{\text{smd}} = \SI{4.701}{\kilo\ohm}$. The measured value of $R_{\text{smd}} = \SI{4.663}{\kilo\ohm}$ agrees well with the nominal value (within \SI{0.8}{\percent}), validating the measurement circuit and data acquisition system.
+\subsection{Series Resistor Measurement and Circuit Validation}
+A series resistor $R_s = \SI{2.17}{\kilo\ohm}$ (measured with multimeter) was connected in series with a surface-mount device (SMD) resistor with nominal value $R_{\text{smd}} = \SI{4.701}{\kilo\ohm}$. 
 
 \begin{figure}[H]
     \centering
@@ -51,6 +52,9 @@ A series resistor $R_s = \SI{2.17}{\kilo\ohm}$ (measured with multimeter) was co
     \label{fig:task1_timeseries}
 \end{figure}
 
+We measured the I(V) characteristics of the circuit showing a linear relationship, shown in Fig. \ref{fig:task1_fit}. Fitting a linear function and obtaining the slope yields the resistance.
+The measured value of $R_{\text{smd}} = \SI{4.663}{\kilo\ohm}$ agrees within \SI{0.8}{\percent} of the nominal value, validating the measurement circuit and data acquisition system for the first measurement.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth]{task1_fit.png}
@@ -58,7 +62,7 @@ A series resistor $R_s = \SI{2.17}{\kilo\ohm}$ (measured with multimeter) was co
     \label{fig:task1_fit}
 \end{figure}
 
-\subsection{Task 2: I(V) Curve Measurement}
+\subsection{I(V) Curve Measurement of a VO$_2$ memristor }
 
 The I(V) characteristics of the VO$_2$ memristor (row 1, column 3) were measured using a voltage ramp from \SI{-4}{\volt} to \SI{+4}{\volt} and back, with a series resistor $R_s = \SI{2.17}{\kilo\ohm}$ to limit current and enable voltage division measurements. The bias voltage across the memristor was calculated as $V_{\text{bias}} = V_{\text{drive}} - I \cdot R_s$, where $I = V_{R_s} / R_s$.
 
@@ -76,41 +80,40 @@ The I(V) characteristics of the VO$_2$ memristor (row 1, column 3) were measured
     \label{fig:task2_three_plots}
 \end{figure}
 
-The I(V) curve exhibits the expected hysteretic behavior characteristic of VO$_2$ memristors. During the forward sweep (increasing voltage), the device remains in the high-resistance state until reaching the set voltage, where it abruptly switches to the low-resistance state. On the reverse sweep, the device remains in LRS until the reset voltage, where it switches back to HRS. This volatile behavior, where the device always returns to HRS at zero bias, is essential for artificial neuron applications.
+The I(V) curve exhibits the expected hysteretic behavior characteristic of VO$_2$ memristors. During the forward sweep (increasing voltage), the device remains in the high-resistance state until reaching the set voltage, where it abruptly switches to the low-resistance state. On the reverse sweep, the device remains in LRS until the reset voltage (which is different from the set voltage, thus hysterisis), where it switches back to HRS. The reset voltage was measured to be 0.19V while the set voltage was found to be between 0.8V and 1.4V. This volatile behavior, where the device always returns to HRS at zero bias, is essential for artificial neuron applications. This can be seen in the periodic \footnote{Although there is variability in the set voltage.} response to the applied triangle voltage in Fig. \ref{fig:task2_three_plots}.
 
 The differential resistance $dV_{\text{bias}}/dI$ varies significantly throughout the sweep, reflecting the changing conduction state. In the HRS region, the differential resistance is high (tens of \si{\ohm}), while in the LRS region it decreases substantially. The switching transition itself shows a negative differential resistance region, characteristic of the phase transition.
 
-\subsection{Task 3: Temperature-Dependent Resistance Characteristics}
+\subsection{Temperature-Dependent Resistance Characteristics}
 
 The resistance of the VO$_2$ memristor was measured as a function of temperature using a Peltier element for heating and cooling, with temperature monitored via a PT1000 resistance thermometer. A constant low bias voltage of \SI{0.2}{\volt} was applied to measure the resistance without triggering voltage-induced switching.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{task3_rt.png}
-    \caption{Temperature-dependent resistance extracted from \texttt{task3.csv}. Heating and cooling branches are plotted separately, highlighting the VO$_2$ insulator--metal transition near \SI{68}{\celsius}.}
+    \caption{Temperature-dependent resistance. Heating and cooling branches are plotted separately, highlighting the VO$_2$ insulator--metal transition near \SI{68}{\celsius}.}
     \label{fig:task3_rt}
 \end{figure}
 
-Analysis of the task3.csv data reveals the first-order phase transition of VO$_2$. The resistance measurements show values in the range of \SI{20}{\kilo\ohm} to \SI{30}{\kilo\ohm} at room temperature (around \SI{28}{\celsius}), decreasing as temperature increases. As the temperature approaches the transition temperature around \SI{68}{\celsius}, the resistance drops dramatically by several orders of magnitude as the material transitions from the insulating monoclinic phase to the metallic rutile phase.
+Analysis of the data reveals the phase transition of VO$_2$. The resistance measurements show values in the range of \SI{20}{\kilo\ohm} to \SI{30}{\kilo\ohm} at room temperature (around \SI{28}{\celsius}), decreasing as temperature increases. As the temperature approaches the transition temperature around \SI{57}{\celsius}, the resistance drops dramatically by several orders of magnitude as the material transitions from the insulating monoclinic phase to the metallic rutile phase. The literature value for the phase transition is between \SI{61}{\celsius} and \SI{68}{\celsius} (Zhang, Lee \ref{sec:bib}) and we believe the discrepancy might be caused by differences in the temperature of the memristor and the sensor, as the memristor might self-heat and its local temperature might be higher than that of the sensor. Unfortunatly we could not find the exacpt placement of the thermometer in the cited studies, making it hard to compare. Alternatively it might be due to slight differences in the properties of the memristors used (compared to the ones used in other literature).
 
-The resistance decreases with increasing temperature in the insulating phase, which is consistent with semiconductor-like behavior where thermal energy increases carrier concentration. The cooling cycle shows hysteresis, with the transition occurring at a lower temperature during cooling, characteristic of first-order phase transitions. After the transition to the metallic phase, the resistance shows weak temperature dependence typical of metallic conduction, with values in the range of tens to hundreds of ohms.
+The resistance decreases with increasing temperature in the insulating phase, which is consistent with semiconductor-like behavior where thermal energy increases carrier concentration. The cooling cycle shows hysteresis, with the transition occurring at a lower temperature during cooling, characteristic of first-order phase transitions. After the transition to the metallic phase, the resistance shows a weaker temperature dependence typical of metallic conduction, with values in the range of tens to hundreds of ohms \footnote{Although the temperature range we measured the metalic phase at is narrow, we found this, which is consistent with the expectations for a metal.}.
 
-\subsection{Task 4: Relaxation (Reset) Dynamics}
+\subsection{Relaxation (Reset) Dynamics}
 
-The relaxation measurement was captured with the oscilloscope log saved as \texttt{switchstayon.csv}. The raw traces (\SI{2}{\nano\second} sampling) provide the applied drive voltage $V_{\text{in}}$ (channel 2) and the transmitted voltage $V_{\text{trans}}$ across the \SI{50}{\ohm} shunt (channel 1). The memristor resistance was reconstructed point-by-point using Eq.~III.4.2 from the lab manual,
+The relaxation measurement was captured with the oscilloscope. The raw traces (\SI{2}{\nano\second} sampling) provide the applied drive voltage $V_{\text{in}}$ (channel 2) and the transmitted voltage $V_{\text{trans}}$ across the \SI{50}{\ohm} shunt (channel 1). The memristor resistance was reconstructed point-by-point using Eq.~III.4.2 from the lab manual,
 \begin{equation}
     R_M(t) = 2Z_0\left(\frac{V_{\text{in}}(t)}{V_{\text{trans}}(t)} - 1\right), \qquad Z_0 = \SI{50}{\ohm},
 \end{equation}
-omitting samples where $V_{\text{trans}}$ is below the oscilloscope noise floor. Immediately after the excitation pulse the derived resistance is approximately $-\SI{1.3}{\kilo\ohm}$ (the negative sign reflects a small phase/offset mismatch between the two channels rather than a physical negative resistance). The device relaxes back to its high-resistance state within $\approx\SI{197}{\micro\second}$, at which point $R_M$ stabilises around $(2.7\text{--}3.0)\times 10^4\,\si{\ohm}$.
-
+omitting samples where $V_{\text{trans}}$ is below the oscilloscope noise floor. Immediately after the excitation pulse the derived resistance is approximately $-\SI{1.3}{\kilo\ohm}$ (the negative sign reflects a small phase/offset mismatch between the two channels rather than a physical negative resistance). The device relaxes back to its high-resistance state within $\approx\SI{197}{\micro\second}$, at which point $R_M$ stabilises around $(2.7\text{--}3.0)\times 10^4\,\si{\ohm}$. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\linewidth]{task4_relaxation.png}
-    \caption{Reconstructed memristor resistance during the reset experiment (Task 4) using \texttt{switchstayon.csv}. The relaxation to the high-resistance state completes after roughly \SI{197}{\micro\second}.}
+    \caption{Reconstructed memristor resistance during the reset experiment. The relaxation to the high-resistance state completes after roughly \SI{197}{\micro\second}. Time = 0 corresponds to the time of switching to the low-resistance state.}
     \label{fig:task4_relaxation}
 \end{figure}
 
-\subsection{Task 5: VO$_2$ Oscillator Outlook}
+ The zoomed-in view confirms that the current spike at \SI{\sim 100}{\micro\second} is a direct response to an input voltage pulse.
 
 \begin{figure}[H]
     \centering
@@ -125,11 +128,11 @@ omitting samples where $V_{\text{trans}}$ is below the oscilloscope noise floor.
         \includegraphics[width=\linewidth]{task5_zoom_spike.png}
         \caption{Zoomed-in view of the spike}
     \end{subfigure}
-    \caption{Task 5 measurement from \texttt{short.csv}. The plots show that the circuit did not enter a self-sustaining oscillation. The current spike at \SI{\sim 100}{\micro\second} is a direct response to a drive voltage pulse, indicating the device acted as a switch rather than an oscillator.}
-    \label{fig:task5_oscillator}
+    \caption{The current spike at \SI{\sim 100}{\micro\second} is a direct response to a drive voltage pulse.}
+    \label{fig:task4_second}
 \end{figure}
 
-The goal of this task was to create a self-sustaining oscillator. However, the data captured in \texttt{short.csv} shows that the circuit did not achieve stable oscillation (Figure~\ref{fig:task5_oscillator}). The current trace is mostly flat, with sharp spikes that directly correlate with pulses in the drive voltage. The zoomed-in view confirms that the current spike at \SI{\sim 100}{\micro\second} is a direct response to an input voltage pulse. This indicates that the conditions for oscillation were not met; the device behaved as a switch, but the circuit did not re-trigger itself. Frequency analysis (e.g., FFT) on this non-periodic signal would be misleading. This is a null result, suggesting that circuit parameters such as the drive voltage or series resistance would need further tuning to find an oscillation regime.
+We were expecting to observe a refractory period, where the neuron does not respond to a stimulus and the voltage drops below the baseline (Yi \ref{sec:bib}). We observed it once, but we could not reproduce it, as the memristor got damaged, and we did not properly save the data.
 
 \subsection{Error Analysis}
 
@@ -144,49 +147,48 @@ The volatile nature of these devices, where they return to HRS at zero bias, mak
 Future work could include detailed analysis of the relaxation dynamics (Task 4) to extract time constants, and investigation of oscillator circuits (Task 5) to demonstrate the device's potential for oscillating neural networks.
 
 \appendix
-\section{Data Processing Guide}
-\label{sec:plot-guide}
+% \section{Data Processing Guide}
+% \label{sec:plot-guide}
 
-The following procedures summarise the steps needed to regenerate every plot used (or still pending) in the report. The notebook \texttt{analyze\_memristor\_data.ipynb} contains reference code snippets for Tasks~2--5.
+% The following procedures summarise the steps needed to regenerate every plot used (or still pending) in the report. The notebook \texttt{analyze\_memristor\_data.ipynb} contains reference code snippets for Tasks~2--5.
+% \subsection*{Task 1 -- Series Resistor Measurement}
+% \begin{enumerate}
+%     \item Load \texttt{task1.txt} (tab separated) and verify the columns for time, drive voltage, and measured node voltages.
+%     \item Compute the divider output using $V_{R_s}$ and confirm $R_s$ and $R_{\text{smd}}$ via $R=V/I$.
+%     \item Plot the raw time series of the measured voltages to produce Figure~\ref{fig:task1_timeseries}.
+%     \item Fit the linear transfer characteristic (output vs input) to obtain the gradient corresponding to the resistor ratio, and export Figure~\ref{fig:task1_fit}.
+% \end{enumerate}
 
-\subsection*{Task 1 -- Series Resistor Measurement}
-\begin{enumerate}
-    \item Load \texttt{task1.txt} (tab separated) and verify the columns for time, drive voltage, and measured node voltages.
-    \item Compute the divider output using $V_{R_s}$ and confirm $R_s$ and $R_{\text{smd}}$ via $R=V/I$.
-    \item Plot the raw time series of the measured voltages to produce Figure~\ref{fig:task1_timeseries}.
-    \item Fit the linear transfer characteristic (output vs input) to obtain the gradient corresponding to the resistor ratio, and export Figure~\ref{fig:task1_fit}.
-\end{enumerate}
+% \subsection*{Task 2 -- I(V) Sweep}
+% \begin{enumerate}
+%     \item Load \texttt{task2\_second} (tab separated). Use $R_s=\SI{2.17}{\kilo\ohm}$.
+%     \item Derive the current $I=V_{R_s}/R_s$ and the memristor bias $V_{\text{bias}}=V_{\text{drive}}-I R_s$.
+%     \item Generate the time-domain traces of $V_{\text{drive}}$, $V_{R_s}$, and $I$ (Figure~\ref{fig:task2_three_plots}).
+%     \item Plot $I$ versus $V_{\text{bias}}$ to obtain the hysteretic I(V) curve (Figure~\ref{fig:task2_memristor_iv}); optionally fit linear segments to estimate differential resistance.
+% \end{enumerate}
 
-\subsection*{Task 2 -- I(V) Sweep}
-\begin{enumerate}
-    \item Load \texttt{task2\_second} (tab separated). Use $R_s=\SI{2.17}{\kilo\ohm}$.
-    \item Derive the current $I=V_{R_s}/R_s$ and the memristor bias $V_{\text{bias}}=V_{\text{drive}}-I R_s$.
-    \item Generate the time-domain traces of $V_{\text{drive}}$, $V_{R_s}$, and $I$ (Figure~\ref{fig:task2_three_plots}).
-    \item Plot $I$ versus $V_{\text{bias}}$ to obtain the hysteretic I(V) curve (Figure~\ref{fig:task2_memristor_iv}); optionally fit linear segments to estimate differential resistance.
-\end{enumerate}
+% \subsection*{Task 3 -- Temperature-Dependent Resistance}
+% \begin{enumerate}
+%     \item Load \texttt{task3.csv} and extract the columns ``Temperature (C)'' and ``Sample Resistance (Ohm)''.
+%     \item Separate the heating and cooling branches by monitoring the monotonicity of the temperature column (or by splitting at the maximum temperature).
+%     \item Plot $R$ vs $T$ on a semi-logarithmic scale, using different colours/markers for heating and cooling to show hysteresis.
+%     \item Mark the transition temperature (e.g., where $\mathrm{d}R/\mathrm{d}T$ peaks) and export the figure (to be saved as \texttt{task3\_rt.png}).
+% \end{enumerate}
 
-\subsection*{Task 3 -- Temperature-Dependent Resistance}
-\begin{enumerate}
-    \item Load \texttt{task3.csv} and extract the columns ``Temperature (C)'' and ``Sample Resistance (Ohm)''.
-    \item Separate the heating and cooling branches by monitoring the monotonicity of the temperature column (or by splitting at the maximum temperature).
-    \item Plot $R$ vs $T$ on a semi-logarithmic scale, using different colours/markers for heating and cooling to show hysteresis.
-    \item Mark the transition temperature (e.g., where $\mathrm{d}R/\mathrm{d}T$ peaks) and export the figure (to be saved as \texttt{task3\_rt.png}).
-\end{enumerate}
+% \subsection*{Task 4 -- Relaxation (Reset) Dynamics}
+% \begin{enumerate}
+%     \item Load \texttt{switchstayon.csv}. Convert CH2 and CH1 from millivolts to volts and create the time axis using the \SI{2}{\nano\second} sampling interval (information in the file header).
+%     \item Mask samples where $|V_{\text{trans}}|<\SI{1}{\milli\volt}$ to avoid division noise, then compute $R_M(t)=2Z_0\left(\nicefrac{V_{\text{in}}}{V_{\text{trans}}}-1\right)$ with $Z_0=\SI{50}{\ohm}$.
+%     \item Plot $R_M$ versus time in microseconds, annotate the low- and high-resistance plateaus, and extract the $90\,\%$ reset time (\SI{\sim 197}{\micro\second}). Save as \texttt{task4\_relaxation.png}.
+% \end{enumerate}
 
-\subsection*{Task 4 -- Relaxation (Reset) Dynamics}
-\begin{enumerate}
-    \item Load \texttt{switchstayon.csv}. Convert CH2 and CH1 from millivolts to volts and create the time axis using the \SI{2}{\nano\second} sampling interval (information in the file header).
-    \item Mask samples where $|V_{\text{trans}}|<\SI{1}{\milli\volt}$ to avoid division noise, then compute $R_M(t)=2Z_0\left(\nicefrac{V_{\text{in}}}{V_{\text{trans}}}-1\right)$ with $Z_0=\SI{50}{\ohm}$.
-    \item Plot $R_M$ versus time in microseconds, annotate the low- and high-resistance plateaus, and extract the $90\,\%$ reset time (\SI{\sim 197}{\micro\second}). Save as \texttt{task4\_relaxation.png}.
-\end{enumerate}
-
-\subsection*{Task 5 -- VO$_2$ Oscillator}
-\begin{enumerate}
-    \item Export the oscilloscope acquisition with columns for time, shunt voltage $V_{\text{trans}}$, and drive voltage $V_{\text{in}}$ (CSV format).
-    \item Update Cell~6 in \texttt{analyze\_memristor\_data.ipynb} with the file path and column names.
-    \item Compute the current $I(t)=V_{\text{trans}}/Z_0$, plot $V_{\text{in}}$ and $I$ versus time, and determine the oscillation frequency using peak detection or FFT.
-    \item Summarise the frequency versus drive amplitude (or capacitance) if multiple sweeps are available, and export the waveform/frequency plots for inclusion in the report.
-\end{enumerate}
+% \subsection*{Task 5 -- VO$_2$ Oscillator}
+% \begin{enumerate}
+%     \item Export the oscilloscope acquisition with columns for time, shunt voltage $V_{\text{trans}}$, and drive voltage $V_{\text{in}}$ (CSV format).
+%     \item Update Cell~6 in \texttt{analyze\_memristor\_data.ipynb} with the file path and column names.
+%     \item Compute the current $I(t)=V_{\text{trans}}/Z_0$, plot $V_{\text{in}}$ and $I$ versus time, and determine the oscillation frequency using peak detection or FFT.
+%     \item Summarise the frequency versus drive amplitude (or capacitance) if multiple sweeps are available, and export the waveform/frequency plots for inclusion in the report.
+% \end{enumerate}
 
 \section{Supplementary Photos}
 
@@ -196,5 +198,16 @@ The following procedures summarise the steps needed to regenerate every plot use
     \caption{Ladybug observed on Grego's phone during preparation.}
     \label{fig:ladybug}
 \end{figure}
+
+\section{References} \label{sec:bib}
+
+Zhang, R., Fu, Q.S., Yin, C.Y. et al. Understanding of metal-insulator transition in VO2 based on experimental and theoretical investigations of magnetic features. Sci Rep 8, 17093 (2018). https://doi.org/10.1038/s41598-018-35490-5
+
+D. Lee et al. ,Isostructural metal-insulator transition in VO2.Science362,1037-1040(2018).DOI:10.1126/science.aam9189
+
+W. Yi, K. Tsang, S. Lam, X. Bai, J. Crowell, and E. Flores. Biological plausibility and
+stochasticity in scalable VO2 active memristor neurons. Nature Communications, 9, 4661
+(2018).
+
 
 \end{document}
