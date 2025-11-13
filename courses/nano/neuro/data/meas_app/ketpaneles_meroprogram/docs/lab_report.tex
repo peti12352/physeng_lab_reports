@@ -12,14 +12,14 @@
 \maketitle
 
 \begin{abstract}
-This report presents the characterization of volatile vanadium dioxide (VO$_2$) memristors, which exhibit an insulator-metal transition that can be triggered by both temperature and voltage. Measurements were performed on a memristor at row 1, column 3 of the sample array. The I(V) characteristics show the expected hysteretic switching behavior between high-resistance (HRS) and low-resistance (LRS) states. Temperature-dependent resistance measurements reveal the phase transition around \SI{68}{\celsius}, consistent with the known VO$_2$ transition temperature. The results demonstrate the volatile nature of these devices, making them suitable for artificial neuron applications in neuromorphic computing.
+This report presents the characterization of volatile vanadium dioxide (VO$_2$) memristors, which exhibit an insulator-metal transition that can be triggered by both temperature and voltage. Measurements were performed on a memristor at row 1, column 3 of the sample array. The I(V) characteristics show the expected hysteretic switching behavior between high-resistance (HRS) and low-resistance (LRS) states. Temperature-dependent resistance measurements reveal the phase transition around \SI{57}{\celsius}, consistent with the known VO$_2$ transition temperature. The results demonstrate the volatile nature of these devices, making them suitable for artificial neuron applications in neuromorphic computing.
 \end{abstract}
 
 \section{Introduction}
 
 Neuromorphic electronics aims to implement artificial neural networks in energy-efficient hardware, addressing the growing computational demands of artificial intelligence. Vanadium dioxide (VO$_2$) memristors are volatile devices that can function as artificial neurons due to their hysteretic I(V) characteristics and temperature-dependent insulator-metal transition.
 
-VO$_2$ exhibits a first-order phase transition at approximately \SI{68}{\celsius}, transitioning from an insulating monoclinic phase to a metallic rutile phase. This transition can be triggered thermally or electrically through self-heating in nanoscale devices. The voltage-induced switching shows characteristic set and reset voltages, with the device returning to the high-resistance state at zero bias, making it volatile.
+VO$_2$ exhibits a first-order phase transition at approximately \SI{65}{\celsius}, transitioning from an insulating monoclinic phase to a metallic rutile phase. This transition can be triggered thermally or electrically through self-heating in nanoscale devices. The voltage-induced switching shows characteristic set and reset voltages, with the device returning to the high-resistance state at zero bias, making it volatile.
 
 This measurement session focused on characterizing a VO$_2$ memristor device through: (1) circuit validation with series resistor measurements, (2) I(V) curve characterization to identify switching thresholds, (3) temperature-dependent resistance measurements to observe the phase transition, and (4) analysis of the switching and relaxation dynamics.
 
@@ -91,7 +91,7 @@ The resistance of the VO$_2$ memristor was measured as a function of temperature
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{task3_rt.png}
-    \caption{Temperature-dependent resistance. Heating and cooling branches are plotted separately, highlighting the VO$_2$ insulator--metal transition near \SI{68}{\celsius}.}
+    \caption{Temperature-dependent resistance. Heating and cooling branches are plotted separately, highlighting the VO$_2$ insulator--metal transition near \SI{57}{\celsius}}
     \label{fig:task3_rt}
 \end{figure}
 
@@ -104,14 +104,14 @@ The resistance decreases with increasing temperature in the insulating phase, wh
 The relaxation measurement was captured with the oscilloscope. The raw traces (\SI{2}{\nano\second} sampling) provide the applied drive voltage $V_{\text{in}}$ (channel 2) and the transmitted voltage $V_{\text{trans}}$ across the \SI{50}{\ohm} shunt (channel 1). The memristor resistance was reconstructed point-by-point using Eq.~III.4.2 from the lab manual,
 \begin{equation}
     R_M(t) = 2Z_0\left(\frac{V_{\text{in}}(t)}{V_{\text{trans}}(t)} - 1\right), \qquad Z_0 = \SI{50}{\ohm},
-\end{equation}
-omitting samples where $V_{\text{trans}}$ is below the oscilloscope noise floor. Immediately after the excitation pulse the derived resistance is approximately $-\SI{1.3}{\kilo\ohm}$ (the negative sign reflects a small phase/offset mismatch between the two channels rather than a physical negative resistance). The device relaxes back to its high-resistance state within $\approx\SI{197}{\micro\second}$, at which point $R_M$ stabilises around $(2.7\text{--}3.0)\times 10^4\,\si{\ohm}$. 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.65\linewidth]{task4_relaxation.png}
-    \caption{Reconstructed memristor resistance during the reset experiment. The relaxation to the high-resistance state completes after roughly \SI{197}{\micro\second}. Time = 0 corresponds to the time of switching to the low-resistance state.}
-    \label{fig:task4_relaxation}
-\end{figure}
+\end{equation} \label{r_t}
+% omitting samples where $V_{\text{trans}}$ is below the oscilloscope noise floor. Immediately after the excitation pulse the derived resistance is approximately $-\SI{1.3}{\kilo\ohm}$ (the negative sign reflects a small phase/offset mismatch between the two channels rather than a physical negative resistance). The device relaxes back to its high-resistance state within $\approx\SI{197}{\micro\second}$, at which point $R_M$ stabilises around $(2.7\text{--}3.0)\times 10^4\,\si{\ohm}$. 
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.65\linewidth]{task4_relaxation.png}
+%     \caption{Reconstructed memristor resistance during the reset experiment. The relaxation to the high-resistance state completes after roughly \SI{197}{\micro\second}. Time = 0 corresponds to the time of switching to the low-resistance state.}
+%     \label{fig:task4_relaxation}
+% \end{figure}
 
  The zoomed-in view confirms that the current spike at \SI{\sim 100}{\micro\second} is a direct response to an input voltage pulse. We were expecting to observe a refractory period, where the neuron does not respond to a stimulus and the voltage drops below the baseline (Yi \ref{sec:bib}). We observed it once, but we could not reproduce it, as the memristor got damaged, and we did not properly save the data. We tried to investogate how the reset time depended on the amplitude of the pulse, but the memristors got damaged even when re-applying a pulse which induced a nice switch previously.
 
@@ -134,26 +134,53 @@ omitting samples where $V_{\text{trans}}$ is below the oscilloscope noise floor.
 
 The relaxation of the memristor from LRS to HRS is complex and non-exponential. We validated that the readout level would not cause switching.
 
+We also attempted to calculate the resistance immediatly before the pulse and right after it, and compare. To do this, we measured the resistance using formula \ref{r_t} on the part of the signal at the readout level (where we can measure the resistance). This is shown in Fig. \ref{fig:resistance_part}. We see that immediatly after the pulse, the memrsitor switches to a low resistance state. We were expecting it to go back up to a high resistance state. However, in the evaluated time, it did not go back to a high resistance level. So we can not provide an upper limit for the characteristic time (only a lower bound, considering the size of the readout window after the pulse). We are not satisfied with this measurement, as we did not observe the switch back to the high resistance state. 
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.65\linewidth]{resistance_by_parts.png}
+%     \caption{Resistance right before and right after the excitation pulse.}
+%     \label{fig:resistance_part}
+% \end{figure}
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\linewidth]{task4_relaxation.png}
-    \caption{Reconstructed memristor resistance during the reset experiment. The relaxation to the high-resistance state completes after roughly \SI{197}{\micro\second}. Time = 0 corresponds to the time of switching to the low-resistance state.}
-    \label{fig:task4_fit}
+    \begin{subfigure}[b]{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{task_4_pulse_separation.png}
+        \caption{Applied pulse only showing the region from the start of the readout.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{resistance_by_parts.png}
+        \caption{Resistance right before and right after the excitation pulse.}
+    \end{subfigure}
+    \caption{Measuring pulse switches on memristor.}
+    \label{fig:resistance_part}
 \end{figure}
 
+We re-did this process with another pulse measurement, which did come back to the high resistance state, but the very noisy data prevents us from evaluating the time constant. This does show, however, that the memristor switches back to the high resistance state. Actually, we are not sure if we can claim that it switched to a low resistance state, as we have very noisy and few datapoints to indicate it.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\linewidth]{resistance_weird.png}
+    \caption{Resistance right before and right after the excitation pulse.}
+    \label{fig:resistance_weird}
+\end{figure}
 
 
 \subsection{Error Analysis}
 
-Main sources of uncertainty: \textbf{Task 1:} Multimeter uncertainty \SI{\pm 1}{\percent} and SMD resistor tolerance \SI{\pm 1}{\percent} account for the \SI{0.8}{\percent} deviation. \textbf{Task 2:} DAQ voltage uncertainty \SI{\pm 0.1}{\percent}, series resistor tolerance \SI{\pm 1}{\percent}, and switching voltage variations due to thermal effects and device history. \textbf{Task 3:} PT1000 accuracy \SI{\pm 0.1}{\celsius}, thermal gradients from Peltier element, and contact resistance contributions. The R(T) hysteresis is physical, though its width may be affected by measurement rate. \textbf{Task 4:} Oscilloscope timing accuracy \SI{\pm 0.01}{\percent}, channel calibration errors \SI{\pm 1}{\percent} to \SI{\pm 3}{\percent}, channel phase mismatch causing negative resistance artifacts, \SI{50}{\ohm} termination tolerance \SI{\pm 1}{\percent}, and reset time extraction uncertainty \SI{\pm 5}{\micro\second} from noise. \textbf{Task 5:} Sampling rate requirements (Nyquist), peak detection sensitivity, FFT resolution $\Delta f = 1/T_{\text{window}}$, and load line stability affecting frequency.
+Main sources of uncertainty: \textbf{Task 1:} Multimeter uncertainty \SI{\pm 1}{\percent} and SMD resistor tolerance \SI{\pm 1}{\percent} account for the \SI{0.8}{\percent} deviation. \textbf{Task 2:} DAQ voltage uncertainty \SI{\pm 0.1}{\percent}, series resistor tolerance \SI{\pm 1}{\percent}, and switching voltage variations due to thermal effects and device history. \textbf{Task 3:} PT1000 accuracy \SI{\pm 0.1}{\celsius}, thermal gradients from Peltier element, and contact resistance contributions. The R(T) hysteresis is physical, though its width may be affected by measurement rate. \textbf{Task 4:} Oscilloscope timing accuracy \SI{\pm 0.01}{\percent}, channel calibration errors \SI{\pm 1}{\percent} to \SI{\pm 3}{\percent}, channel phase mismatch causing negative resistance artifacts, \SI{50}{\ohm} termination tolerance \SI{\pm 1}{\percent}, and reset time extraction uncertainty \SI{\pm 5}{\micro\second} from noise. 
 
 \section{Conclusion}
 
-The characterization of the VO$_2$ memristor successfully demonstrated the key properties required for neuromorphic applications. The I(V) measurements confirmed the volatile, hysteretic switching behavior, with clear set and reset voltages. The temperature-dependent resistance measurements revealed the insulator-metal phase transition around \SI{68}{\celsius}, consistent with known VO$_2$ properties.
+The characterization of the VO$_2$ memristor successfully demonstrated the key properties required for neuromorphic applications. The I(V) measurements confirmed the volatile, hysteretic switching behavior, with clear set and reset voltages. The temperature-dependent resistance measurements revealed the insulator-metal phase transition around \SI{57}{\celsius}, consistent with known VO$_2$ properties, although not within the typical range reported in literature.
 
 The volatile nature of these devices, where they return to HRS at zero bias, makes them suitable for artificial neuron circuits. The combination of voltage-induced and temperature-induced switching provides multiple mechanisms for controlling the device state, enabling various neuromorphic computing architectures.
 
-Future work could include detailed analysis of the relaxation dynamics (Task 4) to extract time constants, and investigation of oscillator circuits (Task 5) to demonstrate the device's potential for oscillating neural networks.
+Future work could include detailed analysis of the relaxation dynamics to extract time constants, and investigation of oscillator circuits to demonstrate the device's potential for oscillating neural networks.
 
 \appendix
 % \section{Data Processing Guide}
@@ -198,6 +225,28 @@ Future work could include detailed analysis of the relaxation dynamics (Task 4) 
 %     \item Compute the current $I(t)=V_{\text{trans}}/Z_0$, plot $V_{\text{in}}$ and $I$ versus time, and determine the oscillation frequency using peak detection or FFT.
 %     \item Summarise the frequency versus drive amplitude (or capacitance) if multiple sweeps are available, and export the waveform/frequency plots for inclusion in the report.
 % \end{enumerate}
+
+\section{Measurement Application}
+
+We developed a \texttt{C\#} application with a GUI for the operation of the measurement devices and the data acquisition, logging and visualization in real time. We also did the data analysis using python.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{task2_screenshot.png}
+ 
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{task3_mid_measurement.png}
+
+    \end{subfigure}
+    \caption{Data acquisition application.}
+    \label{fig:gui}
+\end{figure}
+
 
 \section{Supplementary Photos}
 
