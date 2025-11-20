@@ -8,7 +8,7 @@ Gregorio Jaca, Peter Tallosy
 general:
 ua741opamp
 
-### 1. Build the comparator circuit
+### 1. Build the comparator circuit 
 
 U_2 is input voltage 9.94V potentiometer
 R_1 = 22k ohm
