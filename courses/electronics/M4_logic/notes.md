@@ -26,7 +26,7 @@ A,B,Y
 0,1,1 (4V)
 1,1,0 (0.17V)
 
--> probably a NOR gate
+-> probably a NAND gate
 
 b) input 1,2 together what happens?
 
@@ -34,11 +34,13 @@ truth table (csv):
 X,Y
 0,1 (4V)
 1,0 (0.17V)
--> NAND gate (single bit)
+-> NOT gate (single bit)
 
-c) ---
+c) 4V and 0.17V
 
 d) f = 1 kHz square wave, amplitude 5V -> determine fall and rise time of output Y wrt input X
+
+double plot with 1Hz.png and 1kHz.png
 
 f = 1 kHz
 Rise time delays (CH2→CH1): 499999.99 ± 0.03 ns
@@ -49,9 +51,14 @@ Fall time delays (CH2→CH1): 500000.02 ± 0.05 ns
 a) built
 
 b) truth table (csv) (4-bit):
+this is a 3 bit counter. write the truth table
 
 c)
 the least significant digit flips at every change of state
 the second most significant digit flips at every two changes of state
 the third most significant digit flips at every four changes of state
 the most significant digit flips at every eight changes of state
+
+d) we assembled the circuit but did not work
+
+e and f) did not have to be done
