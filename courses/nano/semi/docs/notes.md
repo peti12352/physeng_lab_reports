@@ -15,16 +15,11 @@ sigma_sheet = 1/(Resistance / Thickness) = l / res
 -> (v\*2e-5) (scaling for report)
 
 v(sigma)
-linear fit coeffs on (l/res) vs voltage:
-Slope: 1.192184e+00
-Intercept: 1.212277
-R²: 0.9985
-
+check notes.ipynb
 
 sigma(v)
-Fit slope: 4.187684e+01
-Fit intercept: -1.015311e+00
-R²: 0.9985
+check notes.ipynb
+for slope and r2
 
 Task 7: about 2% error
 
@@ -50,7 +45,7 @@ multiply by -0.003
 
 DC level 1.225V (transform later)
 
-decay has to reach noise level -> saturation
+decay has to reach noise level -> saturation -------- XXXXXXXXXX FOR STEADY STATE
 smoothen curve
 different laser powers to find appropriate saturation point
 
