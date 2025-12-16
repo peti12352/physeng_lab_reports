@@ -1,0 +1,55 @@
+WHAT
+
+It should last for 20 minutes. It will be followed by a  10minutes discussion. Evaluation form is used (
+
+Scores for quality of a) structuring the content, b) introduction, c) presentation of the methodology, d) presentation of own results, e) adequate conclusion, f) visual quality, clarity of speech, confidence, formal aspects, ... ). 
+
+
+For your introduction, please read 2-3 references given for your measurement in advance and prepare a 5 minutes introduction of your talk based on that.
+
+
+
+
+
+
+motivation 4m (make sure you know the background at least superficially (look in the references if necessary).
+
+
+Discuss your experimental methods and the theoretical background at least in passing.
+If it is complicated but the details are not important, you can skip parts of it and focus on what is relevant later. If they are important, spend at least a few minutes on the basics and also define the physical quantities, so that the audience has some concept of it all.
+
+pause between major parts for a few seconds and then say out loud what comes next. EXTRA SLIDE -> also -> Contents.
+
+At the end, make a summary or conclusions slide to go over your main results again. 
+
+You can even show earlier pictures again. 
+After the conclusions you might mention again some of the practical applications, but do not discuss them in detail. Focus on your achievements, stay positive, and maybe give an outlook and talk about how you plan to continue your research.
+
+Define quantities on the slide: actually write down their names.
+
+TODO
+
+Note on the slides the sources and references that you get your material from, especially for images and figures.
+
+
+don't use screenshots of computer programs (windows and other user interfaces), at least crop to show only the graph.
+
+Finally, acknowledge all important contributors, from fellow researchers who took part to other research groups who provided materials, or institutions where you performed part of your research, or funding projects, grants and fellowships.
+
+error of the quantity, at least from how much variation there is between repeated measurements. 
+
+Don't estimate relative differences between quantities that are themselves relative: like temperatures in Celsius 
+
+You can mention challenges or failures, but focus on how you overcame them. You can mention if there was something that did not work or that you could not finish, but do not dwell on it and do not collect them in one place. Focus on the results that you have achieved, and try to stay positive.
+
+
+
+
+
+STM
+[1]    Binnig, G & Rohrer, H. Scanning Tunneling Microscopy – From birth to adolescence, Nobel lecture, 1986. December 8. 
+[2]   Binnig, Gerd & Rohrer, H. In Touch with Atoms. RevModPhys 71 S324 (1999). 
+[3]    Andrei, E.Y., MacDonald, A.H. Graphene bilayers with a twist. Nat. Mater. 19, 1265–1275 (2020). 
+[4]    Wiesendanger, R. Scanning Probe Microscopy and Spectroscopy. Methods and Applications. Cambridge University Press (1994). 
+[5]    Meyer, E., Hug, H. J. & Bennewitz, R. Scanning Probe Microscopy. Springer-Verlag, Berlin Heidelberg (2004) 
++[1]   S. Hembacher, F.J. Giessibl, J. Mannhart, & C.F. Quate, Revealing the hidden atom in graphite by low-temperature atomic force microscopy, Proc. Natl. Acad. Sci. U.S.A. 100 (22) 12539-12542, (2003).

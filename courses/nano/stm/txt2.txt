@@ -1,0 +1,86 @@
+STM
+
+
+- you can validate the quality of your results by directly loooking at the image. quick feedback
+-- ofc there is post-processing, but 
+-- you know when you have a good tip immediatly
+
+- STM can be used to manipulate atoms on an individual basis!
+(If the distance between the tip and
+the surface is decreased, the tip
+can be used to drag atoms along
+the surface)
+
+- THEORETICAL MINIMUM
+
+exponential decay of tunneling -> High sensitivity
+
+There is tunneling even with no bias voltage.
+Bias voltage is applied to break the equilibrium and generate a net current.
+
+
+- MEASUREMENT MODES
+-- constant current imaging (most common)
+---  the tip scans across the sample surface while a feedback loop adjusts its vertical position (tip-sample
+distance) to maintain a constant tunneling current (typically around 100 pA)
+
+
+FUTURE:
+Recently, an STM has even been used to probe the quantum superposition of electrons.
+
+
+
+The STM works by moving a
+sub-millimetre conducting tip over
+a surface. There is a small vacuum
+gap of a few ångströms between the
+tip and the surface such that electrons can tunnel through, creating a
+current. To keep the current constant
+over the roughness of the surface,
+the height of the tip must be adjusted.
+Thus, recording the movement of the
+tip enables the creation of a 3D map
+of the surface on the atomic scale.
+
+
+The STM is a mechanically positioned, electrically sensitive kind of nanofinger
+for sensing, addressing, and handling individually selected atoms, molecules, and other tiny objects and for
+modifying condensed matter on an atomic scale
+
+
+
+
+local probe: A tool that looks at a material in a particular location. small-sized objects, usually the very end of a sharp tip
+
+1979 Invention of STM Gerd Binnig and Heine Rohrer at IBM labs. 1986. Nobel prize.
+
+
+
+WHAT IS IT GOOD FOR?
+- can be used in air -> cheap 
+
+COMPARE WITH AFM
+- AFM is more mechanical, it relies on the interatomic forces, via deformation or bending of cantilever
+- in STM, it is tunnelin current that quantifies the interaction
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
