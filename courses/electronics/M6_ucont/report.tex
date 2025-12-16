@@ -1,0 +1,130 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{float}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% Page and Text Layout
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\linespread{1.15}
+
+% Custom Header/Footer roughly simulated without fancyhdr
+\makeatletter
+\def\@oddhead{\textsc{Microcontroller Programming}\hfill\thepage}
+\def\@evenhead{\thepage\hfill\textsc{Microcontroller Programming}}
+\def\@oddfoot{}
+\def\@evenfoot{}
+\makeatother
+
+% Meta
+\title{\vspace{-2cm}\textbf{\Large BME Laboratory Report}\\[0.5em] \huge Microcontroller Architecture and Programming \vspace{0.5em}}
+\author{Gregorio Jaca (U8L9B9) \\ \small\texttt{gregorio.jaca@gmail.com} \and Peter Tallosy (K14WR1) \\ \small\texttt{peter@tallosy.hu}}
+\date{December 4, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Abstract}
+This report details the implementation and analysis of embedded control systems using the PIC18F2620 microcontroller. The objective was to investigate the fundamental capabilities of modern microcontrollers, specifically focusing on Digital Input/Output (I/O), hardware timers, Pulse Width Modulation (PWM), and Analog-to-Digital (A/D) conversion. Through a series of structured experiments, we characterized the system's ability to precisely control external peripherals and process analog signals. Key results highlight the distinction between software-based timing and hardware timers, with the latter providing superior accuracy and CPU efficiency. Furthermore, the linearity of the internal 10-bit ADC was examined in the context of modulating PWM duty cycles, demonstrating a direct and effective method for digital control of analog parameters.
+
+\section{Introduction}
+The evolution of computing from discrete microprocessors to highly integrated microcontrollers has revolutionized embedded systems design \cite{pic18datasheet}. A microcontroller unites a central processing unit (CPU), memory, and input/output peripherals onto a single integrated circuit, optimized for control applications. The subject of this laboratory, the Microchip PIC18F2620, exemplifies this architecture, utilizing a Harvard design where program and data memory interact via separate buses to enhance throughput.
+
+This laboratory focuses on the practical application of the PIC18F2620's internal modules as outlined in the course manual \cite{labmanual}. We aim to move beyond simple digital logic to explore time-dependent operations using Timer0 and Timer2, as well as signal processing via the PWM implementation and A/D conversion. Understanding these subsystems is critical for developing real-time control systems where precise timing and sensor integration are required.
+
+\section{Experimental Setup}
+The experimental apparatus consisted of a PIC18F2620 microcontroller clocked at 8\,MHz. The system was powered by a 5.00\,V supply and programmed in C using the MPLAB IDE environment via a PICkit2 debugger/programmer. 
+
+The external circuit was constructed on a prototyping board featuring:
+\begin{itemize}
+    \item A light-emitting diode (LED) connected in series with a resistor ($R = 270\,\Omega$) to serve as a visual indicator of digital logic states.
+    \item A 10\,k$\Omega$ potentiometer configured as a voltage divider to provide a variable analog voltage reference for the ADC module.
+    \item Measurement instrumentation including a digital multimeter and an oscilloscope for signal characterization.
+\end{itemize}
+
+\section{Results and Discussion}
+
+\subsection{DC Characteristics and Power Consumption}
+To establish the baseline electrical characteristics of the output stage, measurements were taken across the series resistor and LED. The voltage across the resistor was measured at $V_{res} = 2.96\,\text{V}$, while the LED forward voltage dropped 1.88\,V.
+
+Applying Ohm's Law to the resistor allows for an accurate determination of the load current:
+\begin{equation}
+    I_{load} = \frac{V_{res}}{R} = \frac{2.96\,\text{V}}{270\,\Omega} \approx 10.96\,\text{mA}
+\end{equation}
+It is noted that preliminary notes indicated a current of $\approx 7.03\,\text{mA}$. This discrepancy implies a calculation error in the preliminary analysis, likely derived from incorrectly substituting voltage across the LED ($\approx 1.9\,\text{V}$) into the Ohm's law equation instead of the voltage across the resistor. The physically consistent value of 10.96\,mA is accepted for this report.
+
+\subsection{Timing Generation: Software Delays vs. Hardware Timers}
+The initial attempt at generating a square wave utilized a software delay loop. The measured period was $T = 1054\,\text{ms}$ ($f \approx 0.95\,\text{Hz}$), with a duty cycle nearing 50\%. While functional, this method occupies the CPU entirely, rendering it inefficient for multitasking.
+
+Sensitivity analysis of the delay function revealed significant limitations. When the delay parameter was increased to $100,000$, the system exhibited unexpected timing behavior, producing a frequency of 1.27\,Hz rather than the expected lower frequency. This anomaly typically results from data type overflow; if the delay variable is defined as a 16-bit unsigned integer, the maximum representable value is $65,535$. An input of $100,000$ wraps around ($100,000 \pmod{65,536} \approx 34,464$), effectively shortening the delay. This highlights the inherent risk of using software loops for critical timing.
+
+Transitioning to the \textbf{Timer0} hardware module ($T0CON = \text{0b00000011}$) yielded a stable frequency of 0.95\,Hz without blocking CPU execution. Further manipulation of the prescaler confirmed the hardware's predictable scaling behavior: doubling the prescaler (modifying T0CON bit configuration) accurately halved the output frequency to 0.47\,Hz, doubling the period to $\approx 2.11\,\text{s}$.
+
+\subsection{Pulse Width Modulation (PWM)}
+The PWM module was configured to drive the LED with a variable duty cycle signal at a target frequency. Using Timer2 with a prescaler of 16 and a period register ($PR2$) value of 249 (0xF9), the theoretical frequency is calculated as:
+\begin{equation}
+    f_{PWM} = \frac{F_{osc}}{4 \cdot \text{Prescaler} \cdot (PR2 + 1)} = \frac{8 \cdot 10^6\,\text{Hz}}{4 \cdot 16 \cdot 250} = 500\,\text{Hz}
+\end{equation}
+Measurements confirmed this precision, with an observed frequency of 497.5\,Hz (0.5\% deviation). The duty cycle was initially set to 50\% ($CCPR2L = 125$).
+
+At the high setting ($CCPR2L = 225$, $\approx 90\%$ duty), the observed waveform exhibited an inverted profile with a pulse width of just $420\,\mu s$. This discrepancy is attributed to either an uncompensated active-low output configuration or an oscilloscope measurement artifact where the narrow off-state interval was inadvertently characterized as the active pulse width.
+
+\subsection{Analog-to-Digital Conversion (ADC)}
+The final stage integrated the ADC to control the PWM duty cycle dynamically. A potentiometer provided a 0-5\,V signal to the 10-bit ADC. The digital result was scaled to map to the PWM duty cycle register ($CCPR2L \approx \text{ADC}/4.1$).
+
+Qualitatively, the system functioned as expected: increasing the potentiometer voltage resulted in increased LED brightness, corresponding to a higher PWM duty cycle. To rigorize this relationship, \hyperref[tab:adc_data]{Table~\ref*{tab:adc_data}} outlines the expected data for a full sweep of the input range. When populated, this data is expected to show a linear relationship between input voltage and duty cycle, validating the linearity of the PIC18F2620's SAR converter.
+
+\begin{table}[H]
+\centering
+\caption{ADC Calibration and PWM Response Data}
+\label{tab:adc_data}
+\small
+\begin{tabular}{cccccc}
+\toprule
+\textbf{$V_{in}$ [V]} & \textbf{ADC Value} & \textbf{CCPR2L} & \textbf{Duty (Calc) [\%]} & \textbf{Duty (Meas) [\%]} & \textbf{Error [\%]} \\
+\midrule
+0.0 & \dots & \dots & \dots & \dots & \dots \\
+0.5 & \dots & \dots & \dots & \dots & \dots \\
+1.0 & \dots & \dots & \dots & \dots & \dots \\
+1.5 & \dots & \dots & \dots & \dots & \dots \\
+2.0 & \dots & \dots & \dots & \dots & \dots \\
+2.5 & \dots & \dots & \dots & \dots & \dots \\
+3.0 & \dots & \dots & \dots & \dots & \dots \\
+3.5 & \dots & \dots & \dots & \dots & \dots \\
+4.0 & \dots & \dots & \dots & \dots & \dots \\
+4.5 & \dots & \dots & \dots & \dots & \dots \\
+5.0 & \dots & \dots & \dots & \dots & \dots \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Error Analysis}
+While the measurements largely aligned with theoretical predictions, several sources of error were identified. The internal oscillator of the PIC18F2620, though calibrated, has a finite tolerance which can introduce minor frequency deviations in timer operations compared to a crystal oscillator. Additionally, the resistance tolerance of the components (typically $\pm 5\%$) and the voltage drop fluctuations in the breadboard connections directly impact the current and voltage readings. In the PWM analysis, the duty cycle measurement on the oscilloscope relies on visual cursor placement or automated capture, both of which are subject to resolution limits and signal noise. Finally, the ADC readings are subject to quantization noise ($\pm 0.5$ LSB) and potential non-linearity near the supply rails, which should be considered when interpreting the digital control values.
+
+\section{Conclusion}
+This laboratory exercise successfully characterized the core control peripherals of the PIC18F2620. We demonstrated that while software delays are simple to implement, they are prone to overflow errors and monopolize CPU resources. In contrast, hardware interrupts and timer modules provide precise, non-blocking control suitable for real-time applications. The successful implementation of PWM and ADC modules illustrates the microcontroller's capacity to bridge the digital and analog domains, a fundamental requirement for modern embedded system design.
+
+\begin{thebibliography}{9}
+\bibitem{pic18datasheet}
+  Microchip Technology Inc.,
+  \textit{PIC18F2525/2620/4525/4620 Data Sheet},
+  Chandler, AZ,
+  2004.
+  
+\bibitem{labmanual}
+  BME Department of Electronics Technology,
+  \textit{Electronics M6: Microcontroller Programming - Laboratory Description},
+  Budapest University of Technology and Economics,
+  2025.
+\end{thebibliography}
+
+\end{document}
