@@ -8,7 +8,7 @@
 - LED: [type/color], forward voltage: [V]
 - Series resistor: [value] Ω
 - Potentiometer: 10 kΩ
-
+ 
 ## Task 1: LED Current
 
 we are using a oscilloscope to measure the voltage across the LED and the resistor.
