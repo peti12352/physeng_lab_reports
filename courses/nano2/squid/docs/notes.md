@@ -1,6 +1,6 @@
 Notes
 
-1. V-I characteristics
+1. V-I characteristics of a single junction
 
 drive_I = 120 microA
 R = 10 kohm
@@ -28,7 +28,7 @@ with measuring T dependent I-V curve we can extract microscopic parameters of th
 
 magentic - tune flux - tune crit current 
 
-2. SQUID
+2. SQUID I-V characteristics
 
 R = 10 kohm
 flux bias current I_b = plusminus 300 microA
@@ -46,7 +46,7 @@ we use 41Hz for triangle sig for mag field -> freq of response 400Hz plus minus 
 
 -> periodicity (from data to be calculated)
 
-
+3. SQUID flux response
 
 M = h_reduced / (2 * e * I_c) = h_reduced / (2 * e * I_0 * cos(phi))
 
