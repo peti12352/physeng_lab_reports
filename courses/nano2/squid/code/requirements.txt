@@ -1,0 +1,6 @@
+pyvisa
+numpy
+matplotlib
+scipy
+ipykernel
+pyvisa-py
