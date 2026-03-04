@@ -32,47 +32,40 @@ def save_refined_plot(data_path, output_name, xlabel, ylabel, mode='iv'):
         v_sq = data[:, 1]
         v_ref = data[:, 2]
         
+        # Determine points per cycle
+        with open(data_path, 'r') as f:
+            header = f.readline()
+        match = re.search(r'num\. of cycles: (\d+)', header)
+        num_cycles = int(match.group(1)) if match else 1
+        pts_per_cycle = len(data) // num_cycles
+        
         fig, ax = plt.subplots(figsize=(4.5, 3.0))
         
         if mode == 'iv':
-            # Calculate current in uA
-            current = v_ref / R_BIAS * 1e6
-            
-            # Find the first full cycle (peak to peak)
-            # Find index of max current
-            idx_max = np.argmax(current)
-            idx_min = np.argmin(current)
-            
-            # Show a range centered around the zero crossing
-            # Usually the transition happens near the center
-            # We'll take a window that covers the main features
-            start = max(0, idx_min - 200)
-            end = min(len(current), idx_max + 200)
-            
-            x = current[start:end]
+            # Use just the first cycle for a clean trace
+            start, end = 0, pts_per_cycle
+            current = v_ref[start:end] / R_BIAS * 1e6 # uA
             y = v_sq[start:end]
             
-            # Distinctive marker style for I-V
-            ax.plot(x, y, color='black', alpha=0.9, linewidth=0.8, label='Experimental Trace')
-            # Add a bit of padding to see the full sharp transition
-            ax.set_xlim(min(x)*1.1, max(x)*1.1)
-            ax.set_ylim(min(y)*1.1, max(y)*1.1)
+            ax.plot(current, y, color='black', alpha=0.9, linewidth=1.0, label='Experimental Trace')
+            
+            # Auto-range logic
+            ax.set_xlim(np.min(current)*1.1, np.max(current)*1.1)
+            ax.set_ylim(np.min(y) - 0.1*(np.max(y)-np.min(y)), np.max(y) + 0.1*(np.max(y)-np.min(y)))
             
         elif mode == 'flux':
-            # Task 3: Zoom into a few periods to make them visible
-            # Total v_ref range is large, let's take a small slice [0, 2]V if possible
-            # Or just take indices 1500:2500 which usually covers a good segment
-            start, end = 1600, 2600
+            # Take a small segment (e.g. half a cycle or two periods)
+            # 1520 points is usually one triangle sweep
+            start, end = 0, pts_per_cycle
             x = v_ref[start:end]
             y = v_sq[start:end]
             
             y_smooth = gaussian_filter(y, sigma=5)
             
-            # Grayscale scatter with black smooth line
             ax.scatter(x, y, s=5, facecolors='none', edgecolors='#AAAAAA', alpha=0.5, label='Raw Signal')
             ax.plot(x, y_smooth, color='black', linewidth=1.2, label='Smoothed Flux Trace')
             
-            ax.set_xlim(min(x), max(x))
+            ax.set_xlim(np.min(x), np.max(x))
             
         ax.set_xlabel(xlabel)
         ax.set_ylabel(ylabel)
@@ -80,19 +73,20 @@ def save_refined_plot(data_path, output_name, xlabel, ylabel, mode='iv'):
         plt.tight_layout()
         plt.savefig(DOCS_DIR + output_name)
         plt.close()
-        print(f"Plot {output_name} saved successfully.")
+        print(f"Plot {output_name} saved.")
         
     except Exception as e:
         print(f"Error in {output_name}: {e}")
 
+import re # Need re
 # Task 1: Josephson Junction I-V
-save_refined_plot(CODE_DIR + '1.txt', 'task1_iv.png', 
+save_refined_plot(CODE_DIR + 'task1/1.txt', 'task1_iv.png', 
                    'Bias Current $I_{\\mathrm{bias}}$ [$\\mu$A]', 'Junction Voltage $V_{\\mathrm{j}}$ [V]', mode='iv')
 
 # Task 2: SQUID I-V
-save_refined_plot(CODE_DIR + 'task2.txt', 'task2_iv.png', 
+save_refined_plot(CODE_DIR + 'task2/task2.txt', 'task2_iv.png', 
                    'Bias Current $I_{\\mathrm{bias}}$ [$\\mu$A]', 'SQUID Voltage $V_{\\mathrm{sq}}$ [V]', mode='iv')
 
 # Task 3: Flux Response (ZOOMED)
-save_refined_plot(CODE_DIR + 'mag.txt', 'task3_flux.png', 
+save_refined_plot(CODE_DIR + 'task3/mag.txt', 'task3_flux.png', 
                    'Flux Bias Voltage $V_{\\mathrm{ref}}$ [V]', 'SQUID Voltage $V_{\\mathrm{sq}}$ [V]', mode='flux')

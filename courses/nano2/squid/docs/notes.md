@@ -68,3 +68,16 @@ Avg. Bias Voltage Period (Delta V_ref): 0.829272 V
 Avg. Bias Current Period (Delta I_flux): 82.927 uA
 Calculated Mutual Inductance M: 2.4936e-11 H
 Calculated Mutual Inductance M: 0.0249 nH
+
+Task 4: Shapiro steps
+
+
+goal: phase lockin the josephson junction to external microwave field
+
+estimation of voltage step: 
+f = 10 GHz
+w = 2 * pi * f = 2 * pi * 10 * 10^9 = 6.28 * 10^10 rad/s
+
+V_DC = (h_bar * w) / (2 * e) = (1.054571817 * 10^-34 * 6.28 * 10^10) / (2 * 1.602176634 * 10^-19) = 20.5 microV
+
+and we use R = 10 kohm

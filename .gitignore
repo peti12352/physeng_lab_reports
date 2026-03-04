@@ -23,3 +23,9 @@
 courses/nano/neuro/data/meas_app/ketpaneles_meroprogram/.vs/
 courses/nano/neuro/data/meas_app/ketpaneles_meroprogram/bin/
 courses/nano/neuro/data/meas_app/ketpaneles_meroprogram/obj/
+
+# Ignore SQUID data backups
+**/data_backup/
+*backup*
+*~
+*.swp
