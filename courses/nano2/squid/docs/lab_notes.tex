@@ -1,82 +1,92 @@
 \documentclass[10pt, a4paper]{article}
 
-% --- Typography: Times New Roman ---
+% --- Typography & Layout ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{mathptmx} 
-
-% --- Layout ---
-\usepackage[margin=2.5cm]{geometry}
-\usepackage{amsmath, amssymb}
+\usepackage{mathpazo} % Palatino for a clean, professional look
+\usepackage[margin=2.0cm]{geometry}
+\usepackage{amsmath, amssymb, bm}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{siunitx}
 \usepackage{enumitem}
 \usepackage{titlesec}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{hyperref}
 
-% --- Centering Style ---
-\titleformat{\section}{\large\bfseries\centering}{}{0em}{}
-\titleformat{\subsection}{\bfseries\centering}{}{0em}{}
-\setlist[itemize]{noitemsep, leftmargin=1.5em}
+% --- Styling ---
+\titleformat{\section}{\large\bfseries\sffamily}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{\thesubsection.}{0.5em}{}
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.5em}
+\captionsetup{font=small, labelfont=bf}
+
+\title{\vspace{-1.5cm}\Large\bfseries\sffamily SQUID Characterisation and Shapiro Resonance\\ \large \normalfont Laboratory Notes}
+\author{Gregorio Jaca and Peter Tallosy}
+\date{\today}
 
 \begin{document}
+\maketitle
 
-\begin{center}
-    {\small PhysEng Lab | SQUID Experiment} \\
-    {\small \textbf{Gregorio Jaca and Peter Tallosy}} \\
-    {\small \textit{\today}}
-    
-    \vspace{2em}
-    
-    {\Large \textbf{LAB NOTES: SQUID CHARACTERISATION}}
-\end{center}
+\section{Single Junction V-I Characteristics (Tasks 1 and 2)}
+\paragraph{Experimental Setup} The sample was cooled into the superconducting (SC) regime. Measurements were driven by a \SI{120}{\micro\ampere} triangular wave bias current through a \SI{10}{\kilo\ohm} bias resistor, producing a linear current sweep.
+\paragraph{Results} The transition mapped the energy gap $\Delta(T) \propto T_c \sqrt{1 - T/T_c}$, indicating the binding energy of Cooper pairs. Parameter extraction from the threshold yielded a critical current $I_c = \SI{82}{\micro\ampere}$ (see Appendix~\ref{app:figures}, Fig.~\ref{fig:vi_curves}). 
 
-\vspace{1.5em}
+\section{SQUID Flux Response and Inductance (Task 3)}
+\paragraph{Setup} A \SI{41}{Hz} triangle drive modulated the flux bias.
+\paragraph{Results} The interference response occurred at approximately \SI{400 \pm 100}{Hz}, signalling traversal across multiple flux quanta within a single sweep (see Appendix~\ref{app:figures}, Fig.~\ref{fig:flux}).
+\paragraph{Mutual Inductance Extraction} Automated peak detection on 14 analyzed periods yielded bias periods $\Delta V_{\mathrm{ref}} = \SI{0.8293}{V}$ and $\Delta I_{\mathrm{flux}} = \SI{82.93}{\micro\ampere}$. Using $\Delta I_{\mathrm{flux}} = \Phi_0/M$, the extracted mutual inductance is $M = \SI{24.94}{pH}$, consistent with manual estimations.
 
-\section*{1. Junction V-I Characteristics}
-We initiated the measurement in the superconducting (SC) regime, observing the transition as the temperature increased towards the non-SC state. 
-\begin{itemize}
-    \item \textbf{Setup:} Drive current set to \SI{120}{\micro\ampere} with a \SI{10}{\kilo\ohm} bias resistor.
-    \item \textbf{Energy gap:} The SC regime is governed by the energy gap $\Delta(T) \propto T_c \sqrt{1 - T/T_c}$, which represents the binding energy of Cooper pairs. The modulation of the critical current allows for the mapping of the density of states (DOS) threshold.
-    \item \textbf{Params:} From the I-V curves (Fig. 1), the critical current was determined to be $I_c = \SI{82}{\micro\ampere}$.
-\end{itemize}
+\section{Shapiro Resonances: Frequency Sweep (Tasks 4 and 5)}
+\paragraph{Objective} Verification of the AC Josephson effect relation $\Delta V = \frac{h}{2e}\nu = \Phi_0 \nu$.
+\paragraph{Setup} The SQUID was irradiated with a microwave field; frequency $\nu$ was swept from \SI{8}{GHz} to \SI{12}{GHz}. Differential amplifier gain ($A \approx 1000\times$) was compensated to retrieve absolute quantum voltage scales.
+\paragraph{Data Processing} Step size ($\Delta V$) extraction utilized two parallel cross-verifying methodologies: transition edge detection via differential resistance maxima ($dV/dI$ peaks), and plateau centre evaluation via voltage density of states (histogram peaks). While physically grounded, the reliance on fixed peak-prominences and histogram bin-widths introduces ad-hoc heuristics. Implementing adaptive noise-floor thresholding (e.g., $3\sigma_{\text{noise}}$) or Kernel Density Estimation (KDE) would rigorously automate and eliminate bias.
+\paragraph{Results and Error} Visualisation of the \SI{10}{GHz} step extraction workflow is given in Appendix~\ref{app:figures}, Fig.~\ref{fig:shapiro}. The frequency dependence yielded an extracted $\Phi_0 = \SI{1.88e-15}{Wb}$ (Error: $\sim 9.2\%$). However, despite this seemingly low aggregate error, the underlying $\Delta V$ vs.\ $\nu$ data exhibits severe scatter (see Appendix~\ref{app:figures}, Fig.~\ref{fig:freq_dep}). The ad-hoc nature of the fixed-prominence edge detection fails to adapt to varying noise floors and impedance mismatches across the frequency sweep, resulting in catastrophic misidentification of plateau boundaries. Consequently, the extracted voltage step sizes are highly unstable and erratic, demonstrating the fragility of rigid heuristic processing on raw cryogenic signals.
 
-\begin{center}
-    \includegraphics[width=0.55\textwidth]{task1_iv.png} \\
-    \footnotesize \textit{Fig 1: Single Josephson Junction I-V trace showing SC transition.}
-\end{center}
+\section{Shapiro Resonances: Power Sweep (Task 6)}
+\paragraph{Setup} Microwave frequency fixed at \SI{10}{GHz} whilst iterating driving power levels. 28 measured step points were mapped onto 8 discrete power tiers (\SI{-26.1}{dBm} to \SI{11.7}{dBm}).
+\paragraph{Processing} Microwave driver power $P$ was systematically interpolated across the measurement index $N$ using a robust 3rd-order polynomial map $P(N) = a_3 N^3 + a_2 N^2 + a_1 N + a_0$. Extracted $\Delta V$ magnitudes from histogram/derivative methods were mapped sequentially against the interpolated indices.
+\paragraph{Results} The cubic polynomial ($a_3 \approx 3.78\times 10^{-3}$, $a_2 \approx -0.20$, $a_1 \approx 3.90$, $a_0 \approx -25.22$) generated a reliable stability curve (RSS $\approx 7.53$) verifying standardisation without exhibiting Runge's phenomenon or high-frequency over-oscillation (see Appendix~\ref{app:figures}, Fig.~\ref{fig:power_dep}).
 
-\section*{2. SQUID I-V Response}
-The flux bias current $I_b$ was swept $\pm\SI{300}{\micro\ampere}$ to tune the critical current of the SQUID loop. Adaptive gain was manually applied at the oscilloscope to maintain signal resolution across the modulation depth.
+\clearpage
+\appendix
+\section{Figures}
+\label{app:figures}
 
-\begin{center}
-    \includegraphics[width=0.55\textwidth]{task2_iv.png} \\
-    \footnotesize \textit{Fig 2: SQUID I-V characteristics under varying magnetic flux.}
-\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{task1_iv.png}
+    \includegraphics[width=0.45\textwidth]{task2_iv.png}
+    \caption{Left: Single Josephson Junction I-V trace mapping the SC density of states. Right: SQUID I-V response under magnetic flux tuning ($I_b = \pm\SI{300}{\micro\ampere}$). Adaptive gain applied.}
+    \label{fig:vi_curves}
+\end{figure}
 
-\section*{3. Flux response and Mutual Inductance}
-A \SI{41}{Hz} triangle drive was used for flux biasing, resulting in an interference response of approximately \SI{400 \pm 100}{Hz}, indicating the traversal of multiple flux quanta within a single sweep.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{task3_flux.png}
+    \caption{Flux interference pattern demonstrating macroscopic quantum coherence.}
+    \label{fig:flux}
+\end{figure}
 
-\begin{center}
-    \includegraphics[width=0.55\textwidth]{task3_flux.png} \\
-    \footnotesize \textit{Fig 3: Intereference pattern as a function of flux bias voltage $V_{\mathrm{ref}}$.}
-\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{../code/task4/task4_shapiro_10ghz_restored_verification.png}
+    \caption{Shapiro step verification at \SI{10}{GHz}. Panels display the raw sweep (top), parametric differential resistance bounding (middle), and plateau density of states extraction (bottom).}
+    \label{fig:shapiro}
+\end{figure}
 
-\subsection*{Inductance Extraction (Task 3)}
-Automated peak detection on 14 analyzed periods yielded the following results:
-\begin{center}
-\begin{tabular}{ll}
-    \toprule
-    \textbf{Metric} & \textbf{Value} \\
-    \midrule
-    Bias Voltage Period $\Delta V_{\mathrm{ref}}$ & \SI{0.8293}{V} \\
-    Bias Current Period $\Delta I_{\mathrm{flux}}$ & \SI{82.93}{\micro\ampere} \\
-    \textbf{Mutual inductance $M$} & \textbf{\SI{24.94}{nH}} \\
-    \bottomrule
-\end{tabular}
-\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../code/task5/task5_frequency_dependence.png}
+    \caption{Linear dependence of the fundamental Shapiro voltage step magnitude on applied microwave frequency, fitted through the origin.}
+    \label{fig:freq_dep}
+\end{figure}
 
-\vspace{1em}
-The extracted $M$ is highly consistent with manual Gregorian-style estimation based on $\Delta I_{\mathrm{flux}} = \Phi_0/M$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../code/task6/task6_power_dependence_full.png}
+    \caption{Interpolated power mapping ($P$ vs $N$) utilising a resilient 3rd-order fit, alongside simultaneously extracted \SI{10}{GHz} fundamental Shapiro step magnitudes ($\Delta V$).}
+    \label{fig:power_dep}
+\end{figure}
 
 \end{document}
