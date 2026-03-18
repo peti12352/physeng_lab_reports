@@ -1,0 +1,89 @@
+\documentclass[twocolumn,10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper, margin=0.75in, columnsep=0.25in}
+\usepackage{hyperref}
+\usepackage{mathpazo} % Palatino font for a slightly more polished look
+\usepackage{microtype}
+
+% Adjust title format to look like Arxiv
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+\begin{flushleft}
+  {\Large\bfseries \@title}
+  \vspace{1.5ex}
+  
+  {\normalsize \@author}
+  \vspace{1.5ex}
+  
+  {\small \@date}
+\end{flushleft}\egroup
+}
+\makeatother
+
+\title{Notes on Femtosecond Pulse Generation:\\ Measurements and Optical Characterization}
+\author{Gregorio Jaca and Peter Tallosy}
+\date{\today}
+
+\begin{document}
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \maketitle
+    \vspace{-1em}
+    \begin{abstract}
+      \noindent These notes summarize the experimental characterization of a femtosecond pulsed laser system, serving as the first occasion of a two-part laboratory series. We detail the fundamental parameters of the pulse generator (including repetition rate and cavity length), spectral bandwidth measurements, and time-domain pulse width estimations assuming Fourier-transform limits. Furthermore, we discuss the role of saturable absorbers (SESAM) in mode-locking, the effects of dispersion from glass optical components, and the subsequent compression of pulses using SF10 prisms and Tellurium dioxide ($\text{TeO}_2$) crystals. These notes present rigorous calculations derived directly from laboratory observations.
+    \end{abstract}
+    \vspace{0.5cm}
+  \end{@twocolumnfalse}
+]
+
+\section{System Overview and Cavity Dynamics}
+Our experimental setup is driven by a Continuous Wave (CW) pump laser operating at 20\,W, which is subsequently frequency-doubled via Second Harmonic Generation (SHG) down to 5.2\,W. In the SHG process, each photon doubles in energy, halving the original wavelength. This output pumps the Tsunami pulse generator, producing an output power of $P = 0.340$\,W in the red spectrum.
+
+Unlike CW lasers, pulse operation requires the phase synchronization of numerous longitudinal modes, leading to a much broader spectrum. The formation of the pulse strictly relies on stimulated emission. Spontaneous emission (fluorescence), which carries random phase and frequency, does not contribute to laser action and is suppressed by the resonant cavity to ensure a synchronized phase and fixed frequency.
+
+The time between pulses (the round-trip time of the light inside the cavity) was measured to be $\Delta t = 12.14$\,ns. The cavity length $L$ can be calculated directly from this round-trip time:
+\begin{equation}
+    L = \frac{c \cdot \Delta t}{2} \approx \frac{(3 \times 10^8\,\text{m/s})(12.14\,\text{ns})}{2} \approx 1.82\,\text{m}.
+\end{equation}
+
+In any measurement chain, the slowest device (the one with the least resolution) determines the overall error. If the risetime for a detector or measurement device is higher than the pulse duration, the resulting measurement essentially resembles a triangle wave (a Dirac-delta pulse is measured as a triangle). For instance, the width of the pulse measured directly on the oscilloscope is around $2$\,ns, specifically because the oscilloscope is a 500\,GHz device.
+
+\section{Spectral Measurements and Transform Limits}
+To accurately characterize the pulse width independently of electronic risetime, we used a spectrometer to measure intensity as a function of frequency. The spectral profile displays a distinct bandwidth of $\Delta \lambda = 14.5$\,nm, bounded by $\lambda_1 = 778$\,nm and $\lambda_2 = 792.5$\,nm. 
+In frequency space, these correspond to:
+\begin{align*}
+    f_1 &= \frac{c}{\lambda_1} \approx 385.34\,\text{THz}, \\
+    f_2 &= \frac{c}{\lambda_2} \approx 378.29\,\text{THz},
+\end{align*}
+yielding a spectral bandwidth of $\Delta f \approx 7.05$\,THz.
+
+According to the time-bandwidth product, the pulse duration $\Delta t$ and spectral bandwidth $\Delta f$ obey $\Delta f \cdot \Delta t \ge C_B$, where $C_B$ depends on the temporal shape of the pulse. Assuming a Gaussian pulse shape, the constant is $C_B \approx 0.441$. Thus, the Fourier-transform-limited pulse duration (assuming no internal dispersion) is:
+\begin{equation}
+    \tau_{\text{pulse}} \approx \frac{0.441}{\Delta f} \approx 62.55\,\text{fs}.
+\end{equation}
+This duration represents the best-case temporal profile theoretically achievable for our measured spectrum limit. In practice, the measured spectral amplitude correlates to the square root of the power spectrum; assuming a fixed phase, it determines the Fourier transform of the time-domain electric field.
+
+\section{Mode-locking and Autocorrelation}
+Our system uses a Semiconductor Saturable Absorber Mirror (SESAM) to passively mode-lock the laser and force pulsed operation. The SESAM effectively acts as an intensity-dependent filter (it lets high-intensity coherent pulses pass unharmed while strongly absorbing low-intensity continuous noise). It continuously cleans the signal without introducing active amplification of its own, serving solely to suppress noise.
+
+We evaluated the pulse shape using an autocorrelator. Mathematically, the pulse envelope formation modeled with the saturable absorber leads to a differential equation whose complex solution intrinsically favors a hyperbolic secant squared ($\text{sech}^2$) profile, though Gaussian profiles are also commonly approximated. We extracted both Gaussian and $\text{sech}^2$ fits from our autocorrelator data to cross-reference our estimated pulse duration.
+
+\section{Dispersion and Pulse Compression}
+
+\subsection{Amplifiers and Material Dispersion}
+Optical amplifiers reduce the spectrum bandwidth, which makes the pulse longer in time. To compensate, a nonlinear crystal (compressor) is used that widens the spectrum and narrows the time duration of the pulse. Additionally, placing refractive glass in the path directly causes dispersion.
+
+We demonstrated this dispersion by reflecting the laser pulse using a 1\,cm thick glass reflector. We retrieve two reflections: one of them does not go through the glass (labeled ``LEFT"), and the other traverses it twice at an angle (labeled ``RIGHT"). The RIGHT reflection accrues dispersion, inherently becoming wider in time. We repeated the measurement and fit, immediately confirming the second reflection is indeed wider. Measuring both with a spectrometer confirmed they shared the same spectral profile. A similar time-domain broadening was observed upon inserting an additional 20\,mm glass cube into the beam path.
+
+\subsection{Pulse Compression Methodologies}
+To precisely compress the pulse time, an SF10 high-dispersion glass prism is used as a compressor. It has a high refractive index and induces a different phase difference (linearly) for different frequencies $\omega$. This setup precisely compresses the pulse time and compensates for the effect of materials; it does not alter the bandwidth of the intensity spectrum, but the phase ($k \cdot d = 2\pi / \lambda \cdot d$) of the light changes.
+
+For extreme control, we also employed Tellurium dioxide ($\text{TeO}_2$, referred to as Telur dioxide) crystals, which are the best crystals for deflectors (acousto-optics) due to their high intrinsic dispersion. Passing the beam through a 3\,cm thick $\text{TeO}_2$ sample anomalously decreased the chirped pulse time by a factor of approximately four. Adding an extra 1\,cm $\text{TeO}_2$ sample in series (demonstrating commutativity) further reduced the pulse duration by a total factor of nearly five. 
+
+Ultimately, the pulses became so tightly compressed that our baseline detection electronics required a completely rescaled scanning range to achieve sufficient time resolution, robustly proving the success of our dispersion compensation.
+
+\end{document}
