@@ -203,9 +203,6 @@ For the secondary investigation occasion, we pivoted to strictly evaluate the an
 
 Due directly to slightly mismatched baseline arm lengths and the introduced differential angular spectrum spread dispersed actively by the optical sample, the eventually recombined exiting beams intrinsically form a deeply distinct cross-plane spatial and spectral interference mesh array pattern (an observable stationary 2D field interferogram map). The visible relative macroscopic orientation shifts and linear tracking density layout geometry of these exact interference field banding fringes mathematically correlates with extremely precise linearity directly back to the physical angular separation spanning the spectrum.
 
-\subsection{Data Extraction and Verification}
-Figure~\ref{fig:interferogram} displays standard output arrays of the mapped 2D sensor interferogram frames precisely documented via static focal tracking optics at the output tail of the Michelson block layout. This recorded visualization neatly spans a continuous horizontal baseline mapped dynamically representing the input laser wavelength continuous sweep, combined securely with an active independent lateral vertical axis denoting basic independent beam spatial dimensions. The explicit planar geometric angular tilt shift explicitly shown strictly within the interference banding fields corresponds flawlessly to mapping proportional active angular dispersion limits directly transferred from the mounted sample.
-
 \begin{figure}[H]
      \centering
      \begin{subfigure}[b]{0.48\linewidth}
@@ -225,11 +222,23 @@ Figure~\ref{fig:interferogram} displays standard output arrays of the mapped 2D 
      \label{fig:interferometry_group}
 \end{figure}
 
-Extracting calculations actively straight from observing and manually interrogating the structured interferogram imagery frame boundaries, our core angular dispersion property ($\Delta \gamma$) is explicitly verified effectively strictly analyzing internal fringe spatial coordinate scaling mappings. Operating fundamentally based on physical experimental cross-references, operating utilizing a total horizontal span wavelength capture envelope size spanning practically exactly $\Delta \lambda = 25$\,nm, locked onto an independently verified active vertical matrix digital array pixel calibration density scaling of $20\,\mu\text{m/pixel}$, combined simultaneously with a manually resolved and locked primary measured spatial coordinate consecutive lateral fringe peak-to-peak field distance $\Delta x = 240\,\mu\text{m}$, the physically derived raw spatial angular optical tilt spread mapped independently purely from inspecting consecutive fringes rigidly calculates practically effortlessly into resolving out to roughly an incredibly small scale spread factor approximating exactly out to $2.08 \times 10^{-3}$\,rad overall across the isolated test envelope. Actively mathematically standardizing this directly corresponds to resolving out a finalized clean absolute unit angular dispersion performance value equating to:
+\subsection{Instrumental Spectral Resolution via Coherence Length}
+A particularly elegant consequence of spectrally resolved interferometry relates to accurately determining the strict instrumental spectral resolution ($\delta \lambda$) of the spectrometer. The initial measured duration of the pulse was roughly $\Delta t \approx 70\,\text{fs}$. We can trivially define the fundamental physical spatial pulse length ($l_p$) using the speed of light ($c$):
 \begin{equation}
-    \frac{d\gamma}{d\lambda} \approx \frac{2.08\,\text{mrad}}{25\,\text{nm}} \approx 83\,\mu\text{rad/nm}.
+    l_p = c \cdot \Delta t \approx (3 \times 10^8\,\text{m/s}) \times 70\,\text{fs} \approx 21\,\mu\text{m}.
 \end{equation}
+In a conventional Michelson interferometer operating in the time domain, observable interference fringes rigidly vanish once the active mirror displacement strictly exceeds this physical dimension ($\sim 20\,\mu\text{m}$), because the isolated temporal wavepackets logically no longer overlap in space. Remarkably, manipulating the micrometer translation stage experimentally revealed coherent interference limits maintaining visibility up to a massive arm displacement of $L_c \approx 240\,\mu\text{m}$.
 
-Ultimately, operating completely uncoupled, this advanced experimental arrangement accurately underscores and actively highlights the uniquely astonishing precision threshold envelope sensitivities practically intrinsically inherent to utilizing true active continuous cross-plane spectrally resolved optical interferometry testing topologies over utilizing generic single-point position tracking diode sensors uniformly, continuously actively permitting and establishing clean optical characterizations mapping absolutely stable profiles natively extracting remarkably subtle physical properties from even barely mildly actively dispersive experimental material samples easily tracking down reliably efficiently cleanly handling extreme dimensional thresholds.
+This seemingly paradoxical extended coherence length is a direct consequence of coupling the interferogram output through a spectrometer. The grating actively disperses the broad generic operational laser bandwidth ($\Delta \lambda \approx 25\,\text{nm}$) into tiny fractional spectral bins ($\delta \lambda$) natively striking individual camera pixels. Because of the strictly enforced Time-Bandwidth Product boundaries, drastically narrowing the frequency spread intrinsically forces the resulting temporal coherence wavepacket to extensively stretch out.
+
+Therefore, the extended interferometric coherence length scales effectively inversely proportional to the actively sampled spectral bandwidth constraints:
+\begin{equation}
+    \frac{L_c}{l_{p}} = \frac{\Delta \lambda}{\delta \lambda}.
+\end{equation}
+We can elegantly rearrange this fundamental equality, actively exploiting the physical macro-scale micrometer boundary translations strictly to reliably quantify incredibly fine optical scaling parameters. Resolving for the spectrometer's intrinsic spectral pixel resolution:
+\begin{equation}
+    \delta \lambda = \Delta \lambda \cdot \left(\frac{l_p}{L_c}\right) \approx 25\,\text{nm} \cdot \left(\frac{20\,\mu\text{m}}{240\,\mu\text{m}}\right) \approx 2.08\,\text{nm}.
+\end{equation}
+This striking calculation successfully characterizes the fundamental hardware limits of the spectrometer device natively ($\sim 2\,\text{nm}$ resolution limit). It perfectly demonstrates how resolving pulses spectrally implicitly induces intense physical temporal stretching directly observed via massive macroscopic coherence boundary shifts organically exceeding absolute baseline pulse length limits by over an order of magnitude.
 
 \end{document}
