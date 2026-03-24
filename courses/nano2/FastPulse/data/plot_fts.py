@@ -96,7 +96,7 @@ try:
     plt.plot(l_optical_nm[valid], I_lam[valid], '-', color='red', linewidth=2, 
              label=f'FTS Derived Spectrum (from {dt_ps*1000:.1f} fs sech$^2$ pulse)')
     
-    plt.xlim(760, 810)
+    plt.xlim(740, 840)
     plt.xlabel('Wavelength (nm)', fontsize=12)
     plt.ylabel('Normalized Intensity', fontsize=12)
     plt.title('Fourier Transform Spectroscopy:\nDeriving the Optical Spectrum strictly from the Time-Domain Pulse', fontsize=14)

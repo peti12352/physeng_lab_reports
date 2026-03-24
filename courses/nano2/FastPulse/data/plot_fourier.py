@@ -110,7 +110,7 @@ try:
     plt.plot(t_meas_ps*1000, I_meas, 'o', markersize=4, label='Measured Initial Autocorrelation (61 fs pulse)', color='gray')
     plt.plot(t_ps*1000, I_ac_scaled, '-', label='Transform-Limited Autocorrelation (Derived strictly from Optical Spectrum FFT)', color='blue', linewidth=2.5)
     
-    plt.xlim(-200, 200)
+    plt.xlim(-500, 500)
     plt.xlabel('Delay Time (fs)', fontsize=12)
     plt.ylabel('Normalized Intensity', fontsize=12)
     plt.title('Fourier Transform Spectroscopy Validation\n(Wiener-Khinchin Theorem & Transform Limit Analysis)', fontsize=14)
