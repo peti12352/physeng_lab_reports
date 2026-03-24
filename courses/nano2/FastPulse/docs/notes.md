@@ -157,6 +157,9 @@ angular dispersion causes diff spectral components to propagate in varying direc
 
 
 
+we measured some interference patters. we did a similar experiment to that described in docs/high-precision-measurement-of-angular-disperion-in-a-CPA-laser.md so read it as well.
+we recorded some images, but we didn't record the raw data properly (unfortnately). we did record the data/second_occassion/michelson and data/second_occassion/michelson.txt but I don't know how to read the format.
+
 
 
 In the next task what we did is created an interference pattern with a michelson interferometer. then we displaced the mounted mirror with a micrometer translator and measured the points where we stop getting interference. We repeated this a couple times, the latter times being more accurate

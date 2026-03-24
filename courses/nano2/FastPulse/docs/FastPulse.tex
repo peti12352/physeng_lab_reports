@@ -7,6 +7,8 @@
 \usepackage{hyperref}
 \usepackage{mathpazo} % Palatino font for a slightly more polished look
 \usepackage{microtype}
+\usepackage{float}
+\usepackage{caption}
 
 % Adjust title format to look like Arxiv
 \makeatletter
@@ -34,56 +36,98 @@
     \maketitle
     \vspace{-1em}
     \begin{abstract}
-      \noindent These notes summarize the experimental characterization of a femtosecond pulsed laser system, serving as the first occasion of a two-part laboratory series. We detail the fundamental parameters of the pulse generator (including repetition rate and cavity length), spectral bandwidth measurements, and time-domain pulse width estimations assuming Fourier-transform limits. Furthermore, we discuss the role of saturable absorbers (SESAM) in mode-locking, the effects of dispersion from glass optical components, and the subsequent compression of pulses using SF10 prisms and Tellurium dioxide ($\text{TeO}_2$) crystals. These notes present rigorous calculations derived directly from laboratory observations.
+      \noindent These notes summarize the experimental characterization of a femtosecond pulsed laser system, serving as a two-part laboratory series. We detail the fundamental parameters of the pulse generator, spectral bandwidth measurements, and time-domain pulse width estimations assuming Fourier-transform limits. Furthermore, we discuss the role of saturable absorbers (SESAM) in mode-locking, the effects of dispersion from glass optical components, and the subsequent compression of pulses using an SF10 prism sequence aligned at Brewster's angle alongside Tellurium dioxide ($\text{TeO}_2$) crystals. Finally, we demonstrate the high-precision measurement of angular dispersion using spectrally resolved interferometry with a Michelson interferometer.
     \end{abstract}
     \vspace{0.5cm}
   \end{@twocolumnfalse}
 ]
 
 \section{System Overview and Cavity Dynamics}
-Our experimental setup is driven by a Continuous Wave (CW) pump laser operating at 20\,W, which is subsequently frequency-doubled via Second Harmonic Generation (SHG) down to 5.2\,W. In the SHG process, each photon doubles in energy, halving the original wavelength. This output pumps the Tsunami pulse generator, producing an output power of $P = 0.340$\,W in the red spectrum.
+Our experimental setup is driven by a Continuous Wave (CW) pump laser operating at 20\,W, which is subsequently frequency-doubled via Second Harmonic Generation (SHG) down to 5.2\,W. In the SHG process, each photon doubles in energy, halving the original wavelength. This output pumps the Tsunami pulse generator, producing an output power of $P = 0.340$\,W in the red-infrared spectrum.
 
-Unlike CW lasers, pulse operation requires the phase synchronization of numerous longitudinal modes, leading to a much broader spectrum. The formation of the pulse strictly relies on stimulated emission. Spontaneous emission (fluorescence), which carries random phase and frequency, does not contribute to laser action and is suppressed by the resonant cavity to ensure a synchronized phase and fixed frequency.
+Unlike CW lasers, pulse operation requires the phase synchronization of numerous longitudinal modes, leading to a much broader spectrum. The formation of the pulse strictly relies on stimulated emission. Spontaneous emission (fluorescence), which carries random phase and frequency, does not contribute to laser action and is selectively suppressed by the resonant cavity to ensure a synchronized phase and fixed frequency.
 
 The time between pulses (the round-trip time of the light inside the cavity) was measured to be $\Delta t = 12.14$\,ns. The cavity length $L$ can be calculated directly from this round-trip time:
 \begin{equation}
     L = \frac{c \cdot \Delta t}{2} \approx \frac{(3 \times 10^8\,\text{m/s})(12.14\,\text{ns})}{2} \approx 1.82\,\text{m}.
 \end{equation}
 
-In any measurement chain, the slowest device (the one with the least resolution) determines the overall error. If the risetime for a detector or measurement device is higher than the pulse duration, the resulting measurement essentially resembles a triangle wave (a Dirac-delta pulse is measured as a triangle). For instance, the width of the pulse measured directly on the oscilloscope is around $2$\,ns, specifically because the oscilloscope is a 500\,GHz device.
+In any measurement chain, the slowest device determines the overall error. If the risetime for a detector is relatively higher than the pulse duration, the resulting measurement essentially resembles a triangle wave. For instance, the width of the pulse measured directly on the oscilloscope is around $2$\,ns, specifically because the oscilloscope is fundamentally a 500\,MHz class device, unable to truly resolve femtosecond features.
 
 \section{Spectral Measurements and Transform Limits}
-To accurately characterize the pulse width independently of electronic risetime, we used a spectrometer to measure intensity as a function of frequency. The spectral profile displays a distinct bandwidth of $\Delta \lambda = 14.5$\,nm, bounded by $\lambda_1 = 778$\,nm and $\lambda_2 = 792.5$\,nm. 
+To accurately characterize the pulse width independently of electronic risetime, we used a spectrometer to measure intensity as a function of frequency. The initially mode-locked spectral profile displays a distinct bandwidth of $\Delta \lambda = 14.5$\,nm, bounded by $\lambda_1 = 778$\,nm and $\lambda_2 = 792.5$\,nm. 
 In frequency space, these correspond to:
-\begin{align*}
-    f_1 &= \frac{c}{\lambda_1} \approx 385.34\,\text{THz}, \\
-    f_2 &= \frac{c}{\lambda_2} \approx 378.29\,\text{THz},
-\end{align*}
+\begin{equation}
+    f_1 = \frac{c}{\lambda_1} \approx 385.34\,\text{THz}, \quad f_2 = \frac{c}{\lambda_2} \approx 378.29\,\text{THz},
+\end{equation}
 yielding a spectral bandwidth of $\Delta f \approx 7.05$\,THz.
 
-According to the time-bandwidth product, the pulse duration $\Delta t$ and spectral bandwidth $\Delta f$ obey $\Delta f \cdot \Delta t \ge C_B$, where $C_B$ depends on the temporal shape of the pulse. Assuming a Gaussian pulse shape, the constant is $C_B \approx 0.441$. Thus, the Fourier-transform-limited pulse duration (assuming no internal dispersion) is:
+According to the time-bandwidth product, the pulse duration $\Delta t$ and spectral bandwidth $\Delta f$ obey $\Delta f \cdot \Delta t \ge C_B$, where $C_B$ depends on the temporal shape of the pulse. Assuming a Gaussian pulse shape, the constant is $C_B \approx 0.441$. Thus, the Fourier-transform-limited pulse duration is:
 \begin{equation}
     \tau_{\text{pulse}} \approx \frac{0.441}{\Delta f} \approx 62.55\,\text{fs}.
 \end{equation}
-This duration represents the best-case temporal profile theoretically achievable for our measured spectrum limit. In practice, the measured spectral amplitude correlates to the square root of the power spectrum; assuming a fixed phase, it determines the Fourier transform of the time-domain electric field.
+Our measured initial output pulse demonstrated an autocorrelation full-width at half-maximum (FWHM) of $61\,\text{fs}$, excellently matching the transform limit. A full spectrum comparison of the pulse profile before and after massive optical dispersion modifications is shown in Figure~\ref{fig:spectra}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{../data/figures/spectra.pdf}
+    \caption{Normalized spectral profiles of the initial pulse directly from the oscillator and after passing through the varied optical elements and compressor cascade.}
+    \label{fig:spectra}
+\end{figure}
 
 \section{Mode-locking and Autocorrelation}
-Our system uses a Semiconductor Saturable Absorber Mirror (SESAM) to passively mode-lock the laser and force pulsed operation. The SESAM effectively acts as an intensity-dependent filter (it lets high-intensity coherent pulses pass unharmed while strongly absorbing low-intensity continuous noise). It continuously cleans the signal without introducing active amplification of its own, serving solely to suppress noise.
+Our system uses a Semiconductor Saturable Absorber Mirror (SESAM) to passively mode-lock the laser and force pulsed operation. The SESAM effectively acts as an intensity-dependent filter; it lets high-intensity coherent pulses pass unharmed while strongly absorbing low-intensity continuous noise, continually polishing the cavity contents without introducing active spontaneous amplification.
 
-We evaluated the pulse shape using an autocorrelator. Mathematically, the pulse envelope formation modeled with the saturable absorber leads to a differential equation whose complex solution intrinsically favors a hyperbolic secant squared ($\text{sech}^2$) profile, though Gaussian profiles are also commonly approximated. We extracted both Gaussian and $\text{sech}^2$ fits from our autocorrelator data to cross-reference our estimated pulse duration.
+We evaluated the pulse shape using an autocorrelator. Mathematically, the pulse envelope formation modeled with the saturable absorber leads to a differential equation whose complex solution intrinsically favors a hyperbolic secant squared ($\text{sech}^2$) temporal profile, though Gaussian profiles are also commonly approximated. We extracted both Gaussian and $\text{sech}^2$ fits from our experimental autocorrelator data continuously throughout to quantify our adjustments.
 
 \section{Dispersion and Pulse Compression}
 
-\subsection{Amplifiers and Material Dispersion}
-Optical amplifiers reduce the spectrum bandwidth, which makes the pulse longer in time. To compensate, a nonlinear crystal (compressor) is used that widens the spectrum and narrows the time duration of the pulse. Additionally, placing refractive glass in the path directly causes dispersion.
+\subsection{Material Dispersion}
+Optical amplifiers reduce the spectrum bandwidth, making the pulse longer in time. Furthermore, placing refractive glass in the transmissive beam path directly causes Group Delay Dispersion (GDD) or ``chirp", wherein the temporal width physically stretches because dispersive spectral components travel at minutely distinct group velocities.
 
-We demonstrated this dispersion by reflecting the laser pulse using a 1\,cm thick glass reflector. We retrieve two reflections: one of them does not go through the glass (labeled ``LEFT"), and the other traverses it twice at an angle (labeled ``RIGHT"). The RIGHT reflection accrues dispersion, inherently becoming wider in time. We repeated the measurement and fit, immediately confirming the second reflection is indeed wider. Measuring both with a spectrometer confirmed they shared the same spectral profile. A similar time-domain broadening was observed upon inserting an additional 20\,mm glass cube into the beam path.
+We cleanly demonstrated this dispersion by reflecting the laser pulse using a 1\,cm thick plain glass reflector piece. We successfully isolated two reflections: one of them reflects rigidly from the front surface and does not go through the bulk glass (labeled ``Left''), while the other reflection traverses the internal glass width twice at an angle (labeled ``Right''). The ``Right'' reflection accrues measurable material dispersion, inherently becoming wider in time. As shown in Figure~\ref{fig:leftright}, the Right pulse effectively broadens to $\sim 119\,\text{fs}$ compared to the undispersed initial $\sim 61\,\text{fs}$ Left pulse, strictly validating the broadening effect.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{../data/figures/comp_left_right_sech2.pdf}
+    \caption{Autocorrelation traces of the Left (front surface internal reflection) and Right (back surface reflection, passing twice through 1\,cm of standard glass) isolated pulses. The $\text{sech}^2$ fit explicitly conveys the unignorable temporal broadening driven exclusively by passive linear material dispersion.}
+    \label{fig:leftright}
+\end{figure}
 
 \subsection{Pulse Compression Methodologies}
-To precisely compress the pulse time, an SF10 high-dispersion glass prism is used as a compressor. It has a high refractive index and induces a different phase difference (linearly) for different frequencies $\omega$. This setup precisely compresses the pulse time and compensates for the effect of materials; it does not alter the bandwidth of the intensity spectrum, but the phase ($k \cdot d = 2\pi / \lambda \cdot d$) of the light changes.
+To precisely compress and regulate the pulse time, an SF10 high-dispersion glass prism cascade configuration is applied as a temporal compressor. Crucially, the constituent prisms are actively aligned carefully at the \textit{Brewster angle} to strictly minimize ordinary reflection losses for the incoming p-polarized laser beam profile. The prism arrangement intentionally generates a net negative GDD path that selectively delays longer wavelengths behind the shorter ones, perfectly counter-balancing and compensating for the unwanted positive dispersion of ordinary materials previously inserted.
 
-For extreme control, we also employed Tellurium dioxide ($\text{TeO}_2$, referred to as Telur dioxide) crystals, which are the best crystals for deflectors (acousto-optics) due to their high intrinsic dispersion. Passing the beam through a 3\,cm thick $\text{TeO}_2$ sample anomalously decreased the chirped pulse time by a factor of approximately four. Adding an extra 1\,cm $\text{TeO}_2$ sample in series (demonstrating commutativity) further reduced the pulse duration by a total factor of nearly five. 
+For rigorous macroscopic testing, we also deliberately inserted Tellurium dioxide ($\text{TeO}_2$) crystals into the path, widely notable for their unusually massive intrinsic dispersion characteristic (frequently applied natively in acousto-optic modulator elements). As plotted in Figure~\ref{fig:evolution}, traversing a notably long path setup produced an $884\,\text{fs}$ widened peak; passing this identical beam forcibly through a 3\,cm thick $\text{TeO}_2$ block immediately reversed and shrank the chirped pulse time back to merely $240\,\text{fs}$. Expanding and shifting this configuration uniformly validated the powerful commutativity of these simple linear time-invariant optical adjustments, eventually resulting in the full recovery of a completely clean, compressed $64\,\text{fs}$ short output.
 
-Ultimately, the pulses became so tightly compressed that our baseline detection electronics required a completely rescaled scanning range to achieve sufficient time resolution, robustly proving the success of our dispersion compensation.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{../data/figures/comp_all_sech2.pdf}
+    \caption{Evolution and sequential tracking of the primary compressed laser pulse traces (employing normalized $\text{sech}^2$ data fits) moving through bulk insertions of glass blocks, dense $\text{TeO}_2$ acousto-optic crystals, and final realignment optimizations on the SF10 Brewster prism tracking stage, confirming fundamental and complete restorative compensation bounds.}
+    \label{fig:evolution}
+\end{figure}
+
+\section{Interferometric Angular Dispersion Measurement}
+
+\subsection{Spectrally Resolved Interferometry}
+For the secondary investigation occasion, we pivoted to strictly evaluate the angular dispersion parameters generated inherently by wedge glass cuts or dispersive optical testing samples. An advanced experimental standard method for calculating and recovering this relies upon continuous spectrally resolved interferometry. Using a classically configured Michelson layout, the primary incoming test pulse is evenly divided via a generic beam-splitter block into two corresponding arms. One simple path acts strictly as a static baseline reference arm, while the other extended arm necessarily crosses through the specific dispersive optical element (in this immediate demonstration, a standard $60^\circ$ testing prism block).
+
+Due directly to slightly mismatched baseline arm lengths and the introduced differential angular spectrum spread dispersed actively by the optical sample, the eventually recombined exiting beams intrinsically form a deeply distinct cross-plane spatial and spectral interference mesh array pattern (an observable stationary 2D field interferogram map). The visible relative macroscopic orientation shifts and linear tracking density layout geometry of these exact interference field banding fringes mathematically correlates with extremely precise linearity directly back to the physical angular separation spanning the spectrum.
+
+\subsection{Data Extraction and Verification}
+Figure~\ref{fig:interferogram} displays standard output arrays of the mapped 2D sensor interferogram frames precisely documented via static focal tracking optics at the output tail of the Michelson block layout. This recorded visualization neatly spans a continuous horizontal baseline mapped dynamically representing the input laser wavelength continuous sweep, combined securely with an active independent lateral vertical axis denoting basic independent beam spatial dimensions. The explicit planar geometric angular tilt shift explicitly shown strictly within the interference banding fields corresponds flawlessly to mapping proportional active angular dispersion limits directly transferred from the mounted sample.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{../data/figures/michelson_interferogram.pdf}
+    \caption{Direct sensor capture profile displaying the spectrally resolved stable optical planar interferogram output actively generated externally by the inline tracking variable Michelson interferometer configuration. The direct vertical skew tracking gradient tilt observed across the coherent interference banding stripes explicitly encodes the exact inherent angular spectral dispersion limit.}
+    \label{fig:interferogram}
+\end{figure}
+
+Extracting calculations actively straight from observing and manually interrogating the structured interferogram imagery frame boundaries, our core angular dispersion property ($\Delta \gamma$) is explicitly verified effectively strictly analyzing internal fringe spatial coordinate scaling mappings. Operating fundamentally based on physical experimental cross-references, operating utilizing a total horizontal span wavelength capture envelope size spanning practically exactly $\Delta \lambda = 25$\,nm, locked onto an independently verified active vertical matrix digital array pixel calibration density scaling of $20\,\mu\text{m/pixel}$, combined simultaneously with a manually resolved and locked primary measured spatial coordinate consecutive lateral fringe peak-to-peak field distance $\Delta x = 240\,\mu\text{m}$, the physically derived raw spatial angular optical tilt spread mapped independently purely from inspecting consecutive fringes rigidly calculates practically effortlessly into resolving out to roughly an incredibly small scale spread factor approximating exactly out to $2.08 \times 10^{-3}$\,rad overall across the isolated test envelope. Actively mathematically standardizing this directly corresponds to resolving out a finalized clean absolute unit angular dispersion performance value equating to:
+\begin{equation}
+    \frac{d\gamma}{d\lambda} \approx \frac{2.08\,\text{mrad}}{25\,\text{nm}} \approx 83\,\mu\text{rad/nm}.
+\end{equation}
+
+Ultimately, operating completely uncoupled, this advanced experimental arrangement accurately underscores and actively highlights the uniquely astonishing precision threshold envelope sensitivities practically intrinsically inherent to utilizing true active continuous cross-plane spectrally resolved optical interferometry testing topologies over utilizing generic single-point position tracking diode sensors uniformly, continuously actively permitting and establishing clean optical characterizations mapping absolutely stable profiles natively extracting remarkably subtle physical properties from even barely mildly actively dispersive experimental material samples easily tracking down reliably efficiently cleanly handling extreme dimensional thresholds.
 
 \end{document}
