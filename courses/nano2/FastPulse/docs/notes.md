@@ -1,6 +1,8 @@
 
 first occasion
 
+first we started by extensively talking about the measurement setup and the tricks of measuring fast pulses.
+
 1. 
 20w --- 5.2w (pump) (each photon is twice as energetic, half wavelength as previous. uses SHG) --- 0.34w pulse generator (red)
 P = 0.340 W
@@ -19,6 +21,8 @@ tsunami pulse generator length
 c*12.14ns/2
 
   (SpeedOfLight × (12.14 nanoseconds)) / 2 ≈ 1.819740220 m
+
+this agrees with the device specifications
 
 time between pulses (round trip along device): 12.14ns
 
@@ -62,11 +66,14 @@ differential equ:
 - saturable absorber mirror -> gaussian
 - 
 
-
 for the sech solution, the differential equation has a complex solution which is this sech
 
 we measured and saved gaussian and sechfit for the pulse. gives the time duration
 
+data/first_occassion/autocorr1_61fs_leftpulse_sech2
+data/first_occassion/autocorr1_68fs_leftpulse_gauss
+data/first_occassion/autocorr1_119fs_rightpulse_sech2
+data/first_occassion/autocorr1_138fs_rightpulse_gauss
 
 we did this procedure by taking the laser pulse, using a 1cm thick glass relfector. we get 2 reflections, one of them doesnt go through the glass, and the other traverses it twice (at an angle ofc), this it has some dispersion, and then the pulse becomes wider. we repeate the measurement and fit, and we can immediatly see that the measurement for the second reflection is wider
 
@@ -74,10 +81,8 @@ for the first reflection we call it LEFT, for second, we call it RIGHT
 
 then we measure these two but using spectrometer so we check that they have the same spectral
 
-
-
-
-
+we do see differences between the left and right measurements, here it would be great to compare the two side by side.
+Also show this both using the "gauss" fit and the "sech2" fit.
 
 
 
@@ -165,7 +170,7 @@ x2=17540 micrometer (no interference)
 delta x = x1-x2 = 18480-17540 = 940 micrometer
 
 (high because of spectrally decomposition  )
-
+(this was probably wrong)
 
 same a prev but repeat
 
@@ -173,13 +178,13 @@ x1 = 17660 micrometer (no interference)
 x2 = 11590 micrometer (no interference)
 
 
-
-
 same repetition:
 
-240 micrometers diff
+here we repeated the measurement more carefully and robustly. we measured twice and obtained that
+240 micrometers range
+this is the best measurement value
 
-1.5nm res
+1.5nm resolution (what does this mean here? help)
 
 
 
