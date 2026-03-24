@@ -1,3 +1,6 @@
+
+first occasion
+
 1. 
 20w --- 5.2w (pump) (each photon is twice as energetic, half wavelength as previous. uses SHG) --- 0.34w pulse generator (red)
 P = 0.340 W
@@ -114,6 +117,8 @@ this proves the operation of the compressor prism to compensate for the dispersi
 shifted-prism
 
 
+data/spektrum_grego_peti.txt is the spectrum after crystal and glass cube ( 30 mm TeO2 crystal and 20 mm BK7 glass) + compressor
+
 
 
 second occasion:
@@ -145,6 +150,13 @@ lambda -> refractive index -> reflection rule -> how lambda is spread
 
 angular dispersion causes diff spectral components to propagate in varying directions -> pulse-front tilt
 
+
+
+
+
+In the next task what we did is created an interference pattern with a michelson interferometer. then we displaced the mounted mirror with a micrometer translator and measured the points where we stop getting interference. We repeated this a couple times, the latter times being more accurate
+
+
 x_init=17608 micrometer 
 
 x1=18480 micrometer (no interference)
@@ -170,4 +182,15 @@ same repetition:
 1.5nm res
 
 
+
+Bandwidth of the laser (you see it from the spectral information) = 20 or 25 nm
+
+The pulse length
+70 fento seconds * c_light = 20 micrometer 
+
+The limits in the interference Vs not interference was 240 micro meter
+
+25nm* 20micrometer /240 micrometer = 2.083 nm
+
+but what does this mean? I know that there is one calculation involving these values: pulse length = 70 fs, range of interference = 240 micrometer, and bandwidth of laser = 20 or 25 nm
 
