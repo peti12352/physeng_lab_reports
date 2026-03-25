@@ -54,18 +54,17 @@ try:
     I_meas /= np.max(I_meas)
     
     # 2. Get Pulse duration from Autocorrelation fit
-    ac = read_autocorr('first_occassion/autocorr1_61fs_leftpulse_sech2')
+    ac = read_autocorr('first_occassion/autocorr1_68fs_leftpulse_gauss')
     ac[:, 1] -= np.min(ac[:, 1])
     fwhm_ac = calc_fwhm(ac[:, 0], ac[:, 1])
-    dt_ps = fwhm_ac / 1.543 # sech2 pulse duration
+    dt_ps = fwhm_ac / 1.414 # Gaussian deconvolution factor
     
     # 3. Construct Time-Domain Field Envelope E(t)
     # High resolution time grid
     t = np.linspace(-10 * dt_ps, 10 * dt_ps, 8192) # ps
-    tau = dt_ps / 1.7627 # tau parameter for sech^2 intensity where fwhm = 1.76 * tau
     
-    # Intensity I(t) = sech^2(t/tau)
-    I_t = (1.0 / np.cosh(t / tau))**2
+    # Intensity I(t) = exp(-4*ln2 * (t/dt)^2)  where dt is FWHM of Intensity
+    I_t = np.exp(-4 * np.log(2) * (t / dt_ps)**2)
     # Field E(t) = sqrt(I(t))
     E_t = np.sqrt(I_t)
     

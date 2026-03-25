@@ -121,15 +121,45 @@ def read_autocorr(f):
     # the constant shift (a3) is maintained so curves coincide properly.
     return d
 
+# Calculate spectral bandwidths for each measurement phase
+def get_bandwidth(f_path):
+    if f_path.endswith('.trt'):
+        sp = read_trt(f_path)
+    else:
+        sp = read_txt_sp(f_path)
+    if len(sp) == 0: return 0, 0
+    sp[:, 1] -= np.min(sp[:, 1])
+    dl = calc_fwhm(sp[:, 0], sp[:, 1])
+    l_c = sp[np.argmax(sp[:, 1]), 0]
+    c = 299792458
+    df = (c * (dl * 1e-9) / ((l_c * 1e-9)**2))
+    return df, df / 1e12
+
+# Pre-calculate available spectra
+spectra_map = {
+    'initial': get_bandwidth('first_occassion/SPECTRUM10001.trt'),
+    'phase2': get_bandwidth('first_occassion/SPECTRUM10002.trt'),
+    'phase3': get_bandwidth('first_occassion/SPECTRUM10003.trt'),
+    'teo2': get_bandwidth('spektrum_grego_peti.txt')
+}
+
 def analyze_and_plot(f_path):
-    fname = os.path.basename(f_path)
+    fname = os.path.basename(f_path).lower()
     d = read_autocorr(f_path)
     if len(d) == 0: return
     
+    # 1. Match correct Spectrum to Autocorrelation
+    if 'teo2' in fname or 'shifted' in fname:
+        df_hz, df_thz = spectra_map['teo2']
+    elif 'autocorr1' in fname or 'glasscube' in fname:
+        df_hz, df_thz = spectra_map['initial']
+    else:
+        df_hz, df_thz = spectra_map['initial'] # Default
+        
     r2 = r_squared(d[:, 1], d[:, 2])
     fwhm_ac = calc_fwhm(d[:, 0], d[:, 2]) # ps
     
-    if 'sech' in fname.lower():
+    if 'sech' in fname:
         dt_ps = fwhm_ac / 1.543
         theory = 0.315
         fit_type = 'sech$^2$'
@@ -139,7 +169,7 @@ def analyze_and_plot(f_path):
         fit_type = 'Gaussian'
         
     dt_fs = dt_ps * 1000
-    tbp = dt_ps * 1e-12 * df_Hz
+    tbp = dt_ps * 1e-12 * df_hz
     
     plt.figure(figsize=(8, 5))
     plt.plot(d[:, 0]*1000, d[:, 1], 'o', markersize=3, label='Raw Data', color='gray', alpha=0.7)
@@ -147,7 +177,7 @@ def analyze_and_plot(f_path):
     
     info_text = (f"Fit type: {fit_type}\n"
                  f"$\\Delta t$ = {dt_fs:.1f} fs\n"
-                 f"$\\Delta f$ = {df_THz:.2f} THz\n"
+                 f"$\\Delta f$ = {df_thz:.2f} THz\n"
                  f"TBP = {tbp:.3f} (Theory limit: {theory})")
     
     plt.text(0.05, 0.95, info_text, transform=plt.gca().transAxes,

@@ -67,7 +67,7 @@ According to the time-bandwidth product, the pulse duration $\Delta t$ and spect
 \begin{equation}
     \tau_{\text{pulse}} \approx \frac{0.441}{\Delta f} \approx 62.55\,\text{fs}.
 \end{equation}
-Our measured initial output pulse demonstrated an autocorrelation full-width at half-maximum (FWHM) of $61\,\text{fs}$, excellently matching the transform limit. 
+Our measured initial output pulse demonstrated an autocorrelation full-width at half-maximum (FWHM) of $67.7\,\text{fs}$, matching the transform limit as can be seen in Fig. \ref{fig:initial_autocorr}. 
 
 \begin{figure}[H]
     \centering
@@ -76,34 +76,21 @@ Our measured initial output pulse demonstrated an autocorrelation full-width at 
     \label{fig:initial_autocorr}
 \end{figure}
 
+Once the autocorrelation function is obtained, we have the Fourier Transform of the optical spectrum, and we can compare it to the spectrum we measured, as can be seen in Figure~\ref{fig:spectra}.
 
-A full spectrum comparison of the pulse profile before and after massive optical dispersion modifications is shown in Figure~\ref{fig:spectra}.
 
 \begin{figure}[H]
-     \centering
-     \begin{subfigure}[b]{0.48\linewidth}
-         \centering
-         \includegraphics[width=\linewidth]{./figures/all_spectra.pdf}
-         \caption{Normalized spectral profiles.}
-         \label{fig:spectra_all}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.48\linewidth}
-         \centering
-         \includegraphics[width=\linewidth]{./figures/FTS_from_time.pdf}
-         \caption{Derived FTS spectrum.}
-         \label{fig:fts_spectrum}
-     \end{subfigure}
-     \caption{Spectral characterization. (a) Displays the measured bandwidth evolution through different optical stages. (b) Shows the theoretical optical spectrum derived strictly from the time-domain pulse envelope via Fourier Transform Spectroscopy (FTS), compared with the measured data.}
-     \label{fig:spectral_group}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/FTS_from_time.pdf}
+    \caption{Shows the theoretical optical spectrum derived strictly from the time-domain pulse envelope via Fourier Transform Spectroscopy (FTS), compared with the measured data.}
+    \label{fig:spectral_group}
 \end{figure}
 
 \section{Fourier-Domain Validation of the Transform Limit}
-According to the Wiener-Khinchin theorem, the absolute intensity profile of the power spectrum can be directly tied to the temporal field envelope via the Fourier transform. We rigorously demonstrated this relationship computationally by utilizing the explicitly extracted initial optical spectrum dataset.
 
-By systematically converting the recorded wavelength trace cleanly into the linear frequency domain, shifting the fundamental envelope center carrier frequency safely to baseband, assuming a strictly uniform flat-phase representation perfectly across the active bandwidth (the rigorous formal definition of the Fourier-transform limit), and heavily zero-padding the subsequent field envelope block ensuring maximum continuous time-domain evaluation interpolation, an Inverse Fast Fourier Transform (IFFT) natively yields the predicted optimal shortest intensity profile curve boundary.
+We can also do the opposite process and calculate the autocorrelation function from the optical spectrum we measured.According to the Wiener-Khinchin theorem, the absolute intensity profile of the power spectrum can be directly tied to the temporal field envelope via the Fourier transform. By converting from wavelength domain to linear frequency domain, shifting the fundamental envelope center carrier frequency safely to baseband, assuming a strictly uniform flat-phase representation perfectly across the active bandwidth (the rigorous formal definition of the Fourier-transform limit), and heavily zero-padding the subsequent field envelope block ensuring maximum continuous time-domain evaluation interpolation, an Inverse Fast Fourier Transform (IFFT) yields the predicted optimal shortest intensity profile curve boundary.
 
-Plotting the strictly discrete intensity auto-correlation calculation tracking tracking this synthetic IFFT profile ($I_{\text{ac}}(\tau) = \int I(t) I(t-\tau) dt$) solidly directly alongside the purely unfiltered raw experimental hardware autocorrelation trace, as rendered comprehensively cleanly in Figure~\ref{fig:fourier_validation}, definitively actively proves that our continuously tracked $\sim 61\,\text{fs}$ initial stage pulse genuinely operates incredibly flawlessly right at the ideal theoretical physical transform barrier constraint bounds, firmly inherently establishing practically zero measurable internal residual pre-chirp.
+Plotting the strictly discrete intensity auto-correlation calculation tracking tracking this synthetic IFFT profile ($I_{\text{ac}}(\tau) = \int I(t) I(t-\tau) dt$) solidly directly alongside the purely unfiltered raw experimental hardware autocorrelation trace, as rendered comprehensively cleanly in Figure~\ref{fig:fourier_validation}, definitively actively proves that our continuously tracked $\sim 67.7\,\text{fs}$ initial stage pulse genuinely operates incredibly flawlessly right at the ideal theoretical physical transform barrier constraint bounds, firmly inherently establishing practically zero measurable internal residual before GDD.
 
 \begin{figure}[H]
     \centering
@@ -113,9 +100,9 @@ Plotting the strictly discrete intensity auto-correlation calculation tracking t
 \end{figure}
 
 \section{Mode-locking and Autocorrelation}
-Our system uses a Semiconductor Saturable Absorber Mirror (SESAM) to passively mode-lock the laser and force pulsed operation. The SESAM effectively acts as an intensity-dependent filter; it lets high-intensity coherent pulses pass unharmed while strongly absorbing low-intensity continuous noise, continually polishing the cavity contents without introducing active spontaneous amplification.
+Our system uses a Semiconductor Saturable Absorber Mirror (SESAM) to passively mode-lock the laser and force pulsed operation. It acts as an intensity-dependent filter; it lets high-intensity coherent pulses pass while strongly absorbing low-intensity continuous noise, continually polishing the cavity contents without introducing active spontaneous amplification.
 
-We evaluated the pulse shape using an autocorrelator. Mathematically, the pulse envelope formation modeled with the saturable absorber leads to a differential equation whose complex solution intrinsically favors a hyperbolic secant squared ($\text{sech}^2$) temporal profile, though Gaussian profiles are also commonly approximated. We extracted both Gaussian and $\text{sech}^2$ fits from our experimental autocorrelator data continuously throughout to quantify our adjustments. As demonstrated in Figure~\ref{fig:initial_fits}, the initial pulse profile is better represented by the $\text{sech}^2$ model, which yielded a higher $R^2$ value and pulse duration more consistent with our spectral bandwidth.
+We evaluated the pulse shape using an autocorrelator. Mathematically, the pulse envelope formation modeled with the saturable absorber leads to a differential equation whose complex solution intrinsically favors a hyperbolic secant squared ($\text{sech}^2$) temporal profile, though Gaussian profiles are also commonly approximated. We extracted both Gaussian and $\text{sech}^2$ fits from our experimental autocorrelator data continuously throughout to quantify our adjustments. As we can see in Figure~\ref{fig:initial_fits}, the initial pulse profile is well represented by both.
 
 \begin{figure}[H]
      \centering
@@ -132,16 +119,16 @@ We evaluated the pulse shape using an autocorrelator. Mathematically, the pulse 
          \caption{Gaussian Fit.}
          \label{fig:initial_gauss}
      \end{subfigure}
-     \caption{Initial pulse autocorrelation fits for the oscillator output (Left pulse). The $\text{sech}^2$ profile demonstrates superior fit quality for the mode-locked output.}
+     \caption{Initial pulse autocorrelation fits for the oscillator output (Left pulse).}
      \label{fig:initial_fits}
 \end{figure}
 
 \section{Dispersion and Pulse Compression}
 
 \subsection{Material Dispersion}
-Optical amplifiers reduce the spectrum bandwidth, making the pulse longer in time. Furthermore, placing refractive glass in the transmissive beam path directly causes Group Delay Dispersion (GDD) or ``chirp", wherein the temporal width physically stretches because dispersive spectral components travel at minutely distinct group velocities.
+Optical amplifiers reduce the spectrum bandwidth, making the pulse longer in time. Furthermore, placing refractive glass in the transmissive beam path directly causes Group Delay Dispersion (GDD), wherein the temporal width physically stretches because dispersive spectral components travel at minutely distinct group velocities.
 
-We cleanly demonstrated this dispersion by reflecting the laser pulse using a 1\,cm thick plain glass reflector piece. We successfully isolated two reflections: one of them reflects rigidly from the front surface and does not go through the bulk glass (labeled ``Left''), while the other reflection traverses the internal glass width twice at an angle (labeled ``Right''). The ``Right'' reflection accrues measurable material dispersion, inherently becoming wider in time. As shown in Figure~\ref{fig:leftright}, the Right pulse effectively broadens to $\sim 119\,\text{fs}$ compared to the undispersed initial $\sim 61\,\text{fs}$ Left pulse, strictly validating the broadening effect.
+We observe this dispersion by reflecting the laser pulse using a 1\,cm thick plain glass reflector piece. We measure two reflections: one of them reflects rigidly from the front surface and does not go through the bulk glass (labeled ``Left''), while the other reflection traverses the internal glass width twice at an angle (labeled ``Right''). The ``Right'' reflection accrues measurable material dispersion, inherently becoming wider in time. As shown in Figure~\ref{fig:leftright_individual}, the Right pulse effectively broadens to $\sim 115\,\text{fs}$ compared to the undispersed initial $\sim 61\,\text{fs}$ Left pulse, validating the broadening effect.
 
 \begin{figure}[H]
      \centering
@@ -178,7 +165,7 @@ For rigorous macroscopic testing, we also deliberately inserted Tellurium dioxid
      \hfill
      \begin{subfigure}[b]{0.48\linewidth}
          \centering
-         \includegraphics[width=\linewidth]{./figures/TBP_autocorr_comp_TeO2_extended_72fs_gauss.pdf}
+         \includegraphics[width=\linewidth]{./figures/TBP_autocorr_comp_teo2_extended_72fs_gauss.pdf}
          \caption{Gaussian Fit.}
          \label{fig:teo2_gauss}
      \end{subfigure}
@@ -197,7 +184,7 @@ For rigorous macroscopic testing, we also deliberately inserted Tellurium dioxid
      \hfill
      \begin{subfigure}[b]{0.48\linewidth}
          \centering
-         \includegraphics[width=\linewidth]{./figures/TBP_autocorr_comp_shifted_prism_TeO2_glass_72fs_gauss.pdf}
+         \includegraphics[width=\linewidth]{./figures/TBP_autocorr_comp_shifted_prism_teo2_glass_72fs_gauss.pdf}
          \caption{Gaussian Fit.}
          \label{fig:final_gauss}
      \end{subfigure}
@@ -282,7 +269,7 @@ As plotted directly from the software extraction in Figure~\ref{fig:angular_disp
 \end{figure}
 
 \subsection{Resolving the $2\pi$ Software Mismatch}
-While the direct theoretical angular dispersion is strictly $28.58\,\mu\text{rad/nm}$, the software explicitly extracted a 1st order angular dispersion of exactly $180.96\,\mu\text{rad/nm}$. This massive apparent discrepancy (a factor of $\sim 6.3$) resolves flawlessly when acknowledging the underlying interferometry mathematics: mapping spatial frequency from interference phase gradients intrinsically includes a rigid full-cycle $2\pi$ scaling factor ($k = 2\pi / \lambda$). 
+The direct theoretical angular dispersion is strictly $28.58\,\mu\text{rad/nm}$, but the software explicitly extracted a 1st order angular dispersion of exactly $180.96\,\mu\text{rad/nm}$. We could not explain this large discrepancy fully. By noting that the discrepancy is a factor of $\sim 6.3 \approx 2\pi$ we conclude that there is a factor of $2\pi$ originatin from.
 
 Multiplying our base theoretical deviation by exactly one angular cycle returns:
 \begin{equation}

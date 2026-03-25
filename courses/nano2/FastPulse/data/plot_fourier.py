@@ -30,7 +30,7 @@ def read_autocorr(f):
             parts = line.split()
             data.append([float(parts[0]), float(parts[1]), float(parts[2])])
     d = np.array(data)
-    d[:, 1] -= np.min(d[:, 1])
+    # We maintain the raw baseline to correctly overlay the theory
     return d
 
 # Load Spectrum
@@ -94,21 +94,22 @@ try:
     I_ac /= np.max(I_ac)
     
     # Load the actually measured initial pulse autocorrelation
-    measured = read_autocorr('first_occassion/autocorr1_61fs_leftpulse_sech2')
+    measured = read_autocorr('first_occassion/autocorr1_68fs_leftpulse_gauss')
     t_meas_ps = measured[:, 0]
     # Center the raw measurement time axis physically to t=0
     t_meas_ps -= t_meas_ps[np.argmax(measured[:, 1])]
     I_meas = measured[:, 1]
     
     # Physically scale the Transform-Limited Autocorrelation to overlay perfectly on the raw data baseline boundaries
-    baseline_meas = np.min(I_meas)
+    # We use a robust median of the wings to avoid noise-floor spikes
+    baseline_meas = np.median(np.concatenate([I_meas[:50], I_meas[-50:]]))
     peak_meas = np.max(I_meas)
     I_ac_scaled = I_ac * (peak_meas - baseline_meas) + baseline_meas
     
     # Plotting comparison
     plt.figure(figsize=(9, 6))
-    plt.plot(t_meas_ps*1000, I_meas, 'o', markersize=4, label='Measured Initial Autocorrelation (61 fs pulse)', color='gray')
-    plt.plot(t_ps*1000, I_ac_scaled, '-', label='Transform-Limited Autocorrelation (Derived strictly from Optical Spectrum FFT)', color='blue', linewidth=2.5)
+    plt.plot(t_meas_ps*1000, I_meas, 'o', markersize=4, label='Measured Initial Autocorrelation (68 fs Gaussian pulse)', color='gray')
+    plt.plot(t_ps*1000, I_ac_scaled, '-', label='Transform-Limited Autocorrelation (Derived from Spectrum IFFT)', color='blue', linewidth=2.5)
     
     plt.xlim(-500, 500)
     plt.xlabel('Delay Time (fs)', fontsize=12)
