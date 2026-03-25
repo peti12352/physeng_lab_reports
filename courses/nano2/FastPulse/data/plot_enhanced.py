@@ -11,15 +11,16 @@ def r_squared(y_true, y_pred):
     return 1 - (ss_res / ss_tot) if ss_tot != 0 else 0
 
 def calc_fwhm(x, y):
-    half_max = np.max(y) / 2.0
-    idx_l = np.where(y >= half_max)[0][0]
-    idx_r = np.where(y >= half_max)[0][-1]
+    y_shifted = y - np.min(y)
+    half_max = np.max(y_shifted) / 2.0
+    idx_l = np.where(y_shifted >= half_max)[0][0]
+    idx_r = np.where(y_shifted >= half_max)[0][-1]
     
     if idx_l == 0 or idx_r == len(x) - 1:
         return x[idx_r] - x[idx_l]
         
-    x_l = x[idx_l-1] + (x[idx_l] - x[idx_l-1]) * ((half_max - y[idx_l-1]) / (y[idx_l] - y[idx_l-1]))
-    x_r = x[idx_r] + (x[idx_r+1] - x[idx_r]) * ((half_max - y[idx_r]) / (y[idx_r+1] - y[idx_r]))
+    x_l = x[idx_l-1] + (x[idx_l] - x[idx_l-1]) * ((half_max - y_shifted[idx_l-1]) / (y_shifted[idx_l] - y_shifted[idx_l-1]))
+    x_r = x[idx_r] + (x[idx_r+1] - x[idx_r]) * ((half_max - y_shifted[idx_r]) / (y_shifted[idx_r+1] - y_shifted[idx_r]))
     return x_r - x_l
 
 # 1. Process Spectra
