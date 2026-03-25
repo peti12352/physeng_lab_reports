@@ -142,7 +142,21 @@ calculate angular dispersion
 
 we have prism wit 60-60-60 degree angles
 
-(we took photo of formula - paper)
+we measured this
+K1 = 1.038  
+L1 = 0.006  
+
+K2 = 0.231  
+L2 = 0.02  
+
+K3 = 1.01  
+L3 = 103.56  
+
+
+n^2 = 1 
+    + (K1 * λ^2) / (λ^2 - L1)
+    + (K2 * λ^2) / (λ^2 - L2)
+    + (K3 * λ^2) / (λ^2 - L3)
 
 calculste n
 
