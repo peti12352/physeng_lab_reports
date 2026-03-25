@@ -35,3 +35,9 @@ noise is about 0.1 mV
 first run: R=18.5mV was max 
 
 second run: R=18.3mV was max
+
+4
+
+time const is used from the lockin to calcuate the sampling rate
+
+for task 2 and 3 we used 10ms, for task for onwards we use 30ms
