@@ -44,3 +44,10 @@ So, in the photoluminescence case task 2, what you were trying to find is the lo
 time const is used from the lockin to calcuate the sampling rate
 
 for task 2 and 3 we used 10ms, for task for onwards we use 30ms
+
+
+we see two resonance peaks.
+
+5
+
+we expect to get 8 resonances. there are 4 possible directions for the magentic field, and each has 2 resonance peaks.
