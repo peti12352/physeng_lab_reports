@@ -48,6 +48,10 @@ for task 2 and 3 we used 10ms, for task for onwards we use 30ms
 
 we see two resonance peaks.
 
+the center between the two peaks is D
+the distance between the center and each peak is 2*E
+the distance between peaks is 2E
+
 5
 
 we expect to get 8 resonances. there are 4 possible directions for the magentic field, and each has 2 resonance peaks.
