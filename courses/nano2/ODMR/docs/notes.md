@@ -36,6 +36,9 @@ first run: R=18.5mV was max
 
 second run: R=18.3mV was max
 
+
+So, in the photoluminescence case task 2, what you were trying to find is the location that has the highest density of nitrogen vacancy sites, because those are the photoluminescence emitting sites. And then, in the microwave case, because you are measuring the lock-in signal, which measures the difference in photoluminescence between the microwave excitation time and the non-microwave excitation time, then what you are trying to find is the space that has both the highest concentration of nitrogen vacancies, but also the highest intensity of the microwave field. And here we need to remember that both in this sample is inhomogeneous in space in the density and concentration of nitrogen vacancies, and the microwave is inhomogeneous in intensity because of the design.
+
 4
 
 time const is used from the lockin to calcuate the sampling rate
