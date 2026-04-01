@@ -55,3 +55,6 @@ the distance between peaks is 2E
 5
 
 we expect to get 8 resonances. there are 4 possible directions for the magentic field, and each has 2 resonance peaks.
+
+
+2 groups of 4;

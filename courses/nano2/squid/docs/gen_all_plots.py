@@ -26,7 +26,7 @@ R_BIAS = 10000
 DOCS_DIR = '/home/peter/Documents/proj/physeng_lab_reports/courses/nano2/squid/docs/'
 CODE_DIR = '/home/peter/Documents/proj/physeng_lab_reports/courses/nano2/squid/code/'
 
-def save_refined_plot(data_path, output_name, xlabel, ylabel, mode='iv'):
+def save_refined_plot(data_path, output_name, xlabel, ylabel, mode='iv', yscale=1.0):
     try:
         data = np.loadtxt(data_path, skiprows=1)
         v_sq = data[:, 1]
@@ -45,7 +45,7 @@ def save_refined_plot(data_path, output_name, xlabel, ylabel, mode='iv'):
             # Use just the first cycle for a clean trace
             start, end = 0, pts_per_cycle
             current = v_ref[start:end] / R_BIAS * 1e6 # uA
-            y = v_sq[start:end]
+            y = v_sq[start:end] * yscale
             
             ax.plot(current, y, color='black', alpha=0.9, linewidth=1.0, label='Experimental Trace')
             
@@ -58,7 +58,7 @@ def save_refined_plot(data_path, output_name, xlabel, ylabel, mode='iv'):
             # 1520 points is usually one triangle sweep
             start, end = 0, pts_per_cycle
             x = v_ref[start:end]
-            y = v_sq[start:end]
+            y = v_sq[start:end] * yscale
             
             y_smooth = gaussian_filter(y, sigma=5)
             
@@ -81,12 +81,12 @@ def save_refined_plot(data_path, output_name, xlabel, ylabel, mode='iv'):
 import re # Need re
 # Task 1: Josephson Junction I-V
 save_refined_plot(CODE_DIR + 'task1/1.txt', 'task1_iv.png', 
-                   'Bias Current $I_{\\mathrm{bias}}$ [$\\mu$A]', 'Junction Voltage $V_{\\mathrm{j}}$ [V]', mode='iv')
+                   'Bias Current $I_{\\mathrm{bias}}$ [$\\mu$A]', 'Junction Voltage $V_{\\mathrm{j}}$ [mV]', mode='iv')
 
 # Task 2: SQUID I-V
 save_refined_plot(CODE_DIR + 'task2/task2.txt', 'task2_iv.png', 
-                   'Bias Current $I_{\\mathrm{bias}}$ [$\\mu$A]', 'SQUID Voltage $V_{\\mathrm{sq}}$ [V]', mode='iv')
+                   'Bias Current $I_{\\mathrm{bias}}$ [$\\mu$A]', 'SQUID Voltage $V_{\\mathrm{SQUID}}$ [$\\mu$V]', mode='iv', yscale=1e6/1000)
 
 # Task 3: Flux Response (ZOOMED)
 save_refined_plot(CODE_DIR + 'task3/mag.txt', 'task3_flux.png', 
-                   'Flux Bias Voltage $V_{\\mathrm{ref}}$ [V]', 'SQUID Voltage $V_{\\mathrm{sq}}$ [V]', mode='flux')
+                   'Flux Bias Voltage $V_{\\mathrm{ref}}$ [V]', 'SQUID Voltage $V_{\\mathrm{SQUID}}$ [$\\mu$V]', mode='flux', yscale=1e6/1000)
