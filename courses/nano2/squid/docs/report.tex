@@ -24,7 +24,7 @@ inductance $M = \SI{24.9}{\pico\henry}$. Shapiro steps under microwave irradiati
 voltage distribution, replacing conventional ad-hoc histogram methods. At
 \SI{10}{\giga\hertz}, the KDE yields $\Delta V = \SI{19.7}{\micro\volt}$
 (6~plateaus, 4.8\% error vs.\ theory). The frequency sweep gives
-$\Phi_0 = \SI{1.75e-15}{\weber}$ (15.2\% deviation).  Power-dependent
+$\Phi_0 = \SI{1.71e-15}{\weber}$ (17.3\% deviation).  Power-dependent
 measurements at \SI{10}{\giga\hertz} reveal an onset threshold at
 $\sim\!\SI{1}{\dBm}$ above which $\Delta V = 23.0 \pm \SI{7.2}{\micro\volt}$,
 consistent with the expected first-order Shapiro step. A second-harmonic signature
@@ -114,18 +114,23 @@ dwells at a constant value as the bias current is swept. The distribution of mea
 voltages therefore has density peaks at the plateau voltages $V_n = n\,\Phi_0\,\nu$.
 This motivates replacing the histogram with a continuous density estimator.
 
-We use Gaussian KDE with bandwidth selection based on Silverman's rule,
+We use Gaussian KDE with bandwidth $h$ selected via Least-Squares
+Cross-Validation (LSCV)~\cite{oser}. LSCV minimises the integrated squared
+error between the estimated and true density by choosing the $h$ that minimises
 \begin{equation}
-    h = 0.9 \cdot \min\!\bigl(\hat\sigma,\, \mathrm{IQR}/1.34\bigr)
-      \cdot N^{-1/5}\,,
-    \label{eq:silverman}
+    \mathrm{LSCV}(h) = \int \hat{f}_h^2(x)\,dx
+      - \frac{2}{N}\sum_{i=1}^{N} \hat{f}_{-i,h}(x_i)\,,
+    \label{eq:lscv}
 \end{equation}
-where $\hat\sigma$ is the sample standard deviation, $\mathrm{IQR}$ the
-interquartile range, and $N$ the number of voltage samples. To resolve peaks
-separated by $\sim\!\SI{20}{\micro\volt}$ within a total voltage range of
-$\sim\!\SI{200}{\micro\volt}$, we scale the bandwidth by a factor of $0.3$.
-This is the only numerical parameter in the method, and its value is derived from
-resolution requirements rather than fitted to data.
+where $\hat{f}_{-i,h}$ is the leave-one-out density at sample $x_i$. For
+Gaussian kernels both terms have closed-form expressions involving pairwise
+differences, making the computation tractable (see Appendix~\ref{app:kde} for
+the full derivation). This data-driven procedure avoids the oversmoothing bias
+of Silverman's rule of thumb, which assumes a unimodal Gaussian reference and
+therefore merges closely spaced Shapiro plateaus. At \SI{10}{\giga\hertz}, LSCV
+selects $h = \SI{1.5}{\micro\volt}$, a factor of $\sim\!0.23$ below the Silverman
+value of \SI{6.7}{\micro\volt}, consistent with the need to resolve plateaus spaced
+by $\sim\!\SI{20}{\micro\volt}$.
 
 To suppress the nearly-uniform voltage distribution from the ohmic branch of the
 V-I curve, we restrict the analysis to the \emph{central 50\% of the current range}
@@ -232,20 +237,20 @@ Table~\ref{tab:freq} and plotted in \hyperref[fig:task5]{Figure~\ref*{fig:task5}
 \toprule
 $\nu$ [GHz] & $\Delta V_\mathrm{KDE}$ [$\mu$V] & \# KDE peaks \\
 \midrule
-8.0  & 15.4 & 4 \\
-9.0  & 14.9 & 2 \\
-9.5  & 12.8 & 3 \\
-10.0 & 14.7 & 6 \\
-11.0 & 21.5 & 5 \\
+8.0  & 14.7 & 4 \\
+9.0  & 12.0 & 5 \\
+9.5  & 12.5 & 3 \\
+10.0 & 14.6 & 6 \\
+11.0 & 21.4 & 5 \\
 11.5 & 22.8 & 4 \\
-12.0 & 21.8 & 3 \\
+12.0 & 21.9 & 3 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 A linear fit through the origin ($\Delta V = \Phi_0 \cdot \nu$) yields
-$\Phi_0^\mathrm{meas} = \SI{1.75e-15}{\weber}$, corresponding to a 15.2\% deviation
-from the theoretical value, with RMSE~$= \SI{2.3}{\micro\volt}$.
+$\Phi_0^\mathrm{meas} = \SI{1.71e-15}{\weber}$, corresponding to a 17.3\% deviation
+from the theoretical value, with RMSE~$= \SI{2.7}{\micro\volt}$.
 
 The data exhibit a striking bimodal clustering: the three lower frequencies
 (8, 9, 9.5~GHz) yield $\Delta V \approx 13$--\SI{15}{\micro\volt}, while the three
@@ -255,7 +260,7 @@ frequency-dependent microwave coupling efficiency, likely due to impedance match
 between the SMA cable antenna and the SQUID geometry. The waveguide-like coupling
 (open SMA cable above the liquid~N$_2$ surface) has no controlled impedance matching
 network, so the transferred power at the junction depends on the standing-wave
-pattern, which varies with frequency. This systematic effect dominates the 15.2\%
+pattern, which varies with frequency. This systematic effect dominates the 17.3\%
 deviation in $\Phi_0$, rather than the KDE extraction itself, which produces
 internally consistent results with 4--6 resolved peaks at each frequency.
 
@@ -306,10 +311,10 @@ of the zero-voltage plateau into discrete Shapiro steps.
 
 We characterized a YBCO DC SQUID across six experimental tasks. The principal
 quantitative results are: $I_c = \SI{82}{\micro\ampere}$,
-$M = \SI{24.9}{\pico\henry}$, and $\Phi_0 = \SI{1.75e-15}{\weber}$ (15.2\%
+$M = \SI{24.9}{\pico\henry}$, and $\Phi_0 = \SI{1.71e-15}{\weber}$ (17.3\%
 deviation from theory). The KDE-based Shapiro step extraction, which replaces
 arbitrary prominence thresholds with a continuous density estimator using
-Silverman-bandwidth selection on the central voltage region, produces stable results
+LSCV-optimised bandwidth selection on the central voltage region, produces stable results
 across all frequencies and power levels. At \SI{10}{\giga\hertz}, the extracted
 $\Delta V = \SI{19.7}{\micro\volt}$ deviates by only 4.8\% from theory, whereas the
 old ad-hoc method yielded values between \SI{13}{\micro\volt} and
@@ -376,7 +381,7 @@ propagation from the KDE bandwidth selection through the linear fit.
     \includegraphics[width=0.70\linewidth]{../code/task5/task5_frequency_dependence_kde.png}
     \caption{Task~5: Voltage step vs.\ microwave frequency.
     Black circles: KDE extraction. Red dashed: linear fit giving
-    $\Phi_0 = \SI{1.75e-15}{\weber}$ (15.2\% error). Blue dotted: theoretical
+    $\Phi_0 = \SI{1.71e-15}{\weber}$ (17.3\% error). Blue dotted: theoretical
     prediction. The bimodal clustering between 8--10~GHz and 11--12~GHz suggests
     frequency-dependent coupling efficiency.}
     \label{fig:task5}
@@ -406,9 +411,62 @@ propagation from the KDE bandwidth selection through the linear fit.
     \label{fig:task6map}
 \end{figure}
 
+\appendix
+\section{KDE and LSCV Formulae}
+\label{app:kde}
+
+\paragraph{Kernel Density Estimator.}
+Given $N$ samples $\{x_1, \ldots, x_N\}$, the Gaussian KDE with bandwidth $h$ is
+\begin{equation}
+    \hat{f}_h(x) = \frac{1}{Nh}\sum_{i=1}^{N} \varphi\!\left(\frac{x - x_i}{h}\right),
+    \label{eq:kde}
+\end{equation}
+where $\varphi(u) = (2\pi)^{-1/2} e^{-u^2/2}$ is the standard Gaussian kernel.
+
+\paragraph{Silverman's Rule of Thumb.}
+The MISE-optimal bandwidth for a Gaussian reference distribution is
+\begin{equation}
+    h_{\mathrm{Silv}} = 0.9\,\min\!\bigl(\hat\sigma,\,
+      \mathrm{IQR}/1.34\bigr)\, N^{-1/5}.
+    \label{eq:silverman}
+\end{equation}
+This oversmooths multimodal distributions because $R(g'')$ is underestimated
+when $g$ is not Gaussian.
+
+\paragraph{Least-Squares Cross-Validation.}
+LSCV selects $h$ by minimising a computable proxy for the MISE:
+\begin{equation}
+    \mathrm{LSCV}(h) = R(\hat{f}_h) - \frac{2}{N}\sum_{i=1}^{N}
+      \hat{f}_{-i,h}(x_i),
+    \label{eq:lscv_app}
+\end{equation}
+where $\hat{f}_{-i,h}$ is the leave-one-out estimator (sample $x_i$ excluded).
+The constant term $R(g) = \int g^2(x)\,dx$ is independent of $h$ and drops out.
+
+For Gaussian kernels, the first term has a closed form via the convolution
+identity $\varphi * \varphi = \varphi_{\sqrt{2}}$:
+\begin{equation}
+    R(\hat{f}_h) = \frac{1}{N^2 \sqrt{2}\, h}
+      \sum_{i=1}^{N}\sum_{j=1}^{N}
+      \varphi\!\left(\frac{x_i - x_j}{\sqrt{2}\,h}\right).
+    \label{eq:rfhat}
+\end{equation}
+The second term is
+\begin{equation}
+    \hat{f}_{-i,h}(x_i) = \frac{1}{(N-1)\,h}
+      \sum_{\substack{j=1 \\ j \neq i}}^{N}
+      \varphi\!\left(\frac{x_i - x_j}{h}\right).
+    \label{eq:loo}
+\end{equation}
+The bandwidth is found by grid search over 40 log-spaced candidates
+from $0.05\,h_{\mathrm{Silv}}$ to $2\,h_{\mathrm{Silv}}$.
+
 \begin{thebibliography}{9}
 \bibitem{lab_manual} Lab description: ``SQUID---Superconducting Quantum
   Interference Device'' (course material, 2024).
+\bibitem{oser} S.~Oser, ``Kernel Density Estimation,''
+  PHYS~509 Lecture~23, University of British Columbia (2012).
+  \url{https://phas.ubc.ca/~oser/p509/Lec_23.pdf}
 \end{thebibliography}
 
 \end{document}

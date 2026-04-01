@@ -25,6 +25,79 @@ from scipy.signal import find_peaks
 from scipy.stats import gaussian_kde
 
 
+def _lscv_bandwidth(data, n_grid=40):
+    """Least-Squares Cross-Validation bandwidth for Gaussian KDE.
+
+    Minimises the LSCV objective (Oser, UBC PHYS 509 Lecture 23):
+        LSCV(h) = R(f_hat) - 2 * E[f_{-i}(x_i)]
+    For Gaussian kernels both terms have closed-form expressions
+    in terms of pairwise differences, avoiding explicit leave-one-out.
+
+    Parameters
+    ----------
+    data : 1-D array of samples
+    n_grid : int, number of candidate bandwidths to evaluate
+
+    Returns
+    -------
+    h_opt : float, optimal bandwidth (in data units)
+    """
+    x = np.asarray(data, dtype=np.float64)
+    n = len(x)
+    if n < 10:
+        # Too few points — fall back to Silverman
+        std = np.std(x)
+        iqr = np.subtract(*np.percentile(x, [75, 25]))
+        return max(0.9 * min(std, iqr / 1.34) * n**(-0.2), 1e-7)
+
+    # Silverman reference bandwidth as search centre
+    std = np.std(x)
+    iqr = np.subtract(*np.percentile(x, [75, 25]))
+    h_silv = 0.9 * min(std, iqr / 1.34) * n**(-0.2)
+    h_silv = max(h_silv, 1e-10)
+
+    # Search grid: 0.05× to 2× Silverman (log-spaced)
+    h_candidates = np.logspace(np.log10(h_silv * 0.05),
+                               np.log10(h_silv * 2.0), n_grid)
+
+    # Precompute pairwise differences (upper triangle)
+    # For large n, subsample to keep O(n^2) tractable
+    if n > 2000:
+        idx = np.random.default_rng(42).choice(n, 2000, replace=False)
+        x_sub = x[idx]
+        n_sub = len(x_sub)
+    else:
+        x_sub = x
+        n_sub = n
+
+    diffs = x_sub[:, None] - x_sub[None, :]  # (n_sub, n_sub)
+
+    best_score = np.inf
+    best_h = h_silv
+
+    for h in h_candidates:
+        # Term 1: R(f_hat) = (1/n^2) sum_i sum_j K*K(xi-xj) / h
+        # K*K for Gaussian: N(0, 2h^2), so sum phi((xi-xj)/sqrt(2)/h)/(n^2*sqrt(2)*h)
+        arg1 = diffs / (np.sqrt(2) * h)
+        term1 = np.sum(np.exp(-0.5 * arg1**2)) / (n_sub**2 * np.sqrt(2 * np.pi) * np.sqrt(2) * h)
+
+        # Term 2: Leave-one-out estimate E[f_{-i}(xi)]
+        # f_{-i}(xi) = 1/((n-1)*h) sum_{j≠i} phi((xi-xj)/h)
+        arg2 = diffs / h
+        phi_vals = np.exp(-0.5 * arg2**2) / (np.sqrt(2 * np.pi) * h)
+        # Zero out diagonal (j=i terms)
+        np.fill_diagonal(phi_vals, 0.0)
+        loo_densities = np.sum(phi_vals, axis=1) / (n_sub - 1)
+        term2 = np.mean(loo_densities)
+
+        score = term1 - 2 * term2
+        if score < best_score:
+            best_score = score
+            best_h = h
+
+    return max(best_h, 1e-7)
+
+
 def extract_shapiro_step_kde(filepath, sigma=5, save_plot=False, plot_dir=None):
     """
     Extract Shapiro voltage step size from V-I data using KDE.
@@ -76,19 +149,7 @@ def extract_shapiro_step_kde(filepath, sigma=5, save_plot=False, plot_dir=None):
     if len(v_central) < 50:
         v_central = v_sq  # Fallback to full range
 
-    # Use Scott's rule with downscaling for multimodal detection
-    # Scott: h = 3.49 * sigma * n^(-1/3)
-    # We use a factor of 0.3 to resolve peaks at ~20 uV spacing
-    n = len(v_central)
-    std_v = np.std(v_central)
-    iqr_v = np.subtract(*np.percentile(v_central, [75, 25]))
-    # Silverman's width estimate
-    width_est = 0.9 * min(std_v, iqr_v / 1.34) * n**(-0.2)
-
-    # For Shapiro steps at 10 GHz: expected step ~ 20 uV = 2e-5 V
-    # We want bandwidth << step size to resolve peaks
-    # Use 1/3 of the Silverman estimate as a practical tighter bandwidth
-    bw = max(width_est * 0.3, 1e-7)  # Floor to avoid degenerate KDE
+    bw = _lscv_bandwidth(v_central)
 
     try:
         kde = gaussian_kde(v_central, bw_method=bw / np.std(v_central))
@@ -97,6 +158,7 @@ def extract_shapiro_step_kde(filepath, sigma=5, save_plot=False, plot_dir=None):
             kde = gaussian_kde(v_central, bw_method='silverman')
         except Exception:
             return 0.0, step_deriv, 0, len(deriv_peaks)
+
 
     v_min, v_max = np.min(v_central), np.max(v_central)
     v_margin = (v_max - v_min) * 0.05
