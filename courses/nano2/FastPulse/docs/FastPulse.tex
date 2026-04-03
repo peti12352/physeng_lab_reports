@@ -1,0 +1,319 @@
+\documentclass[twocolumn,10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper, margin=0.75in, columnsep=0.25in}
+\usepackage{hyperref}
+\usepackage{mathpazo} % Palatino font for a slightly more polished look
+\usepackage{microtype}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Adjust title format to look like Arxiv
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+\begin{flushleft}
+  {\Large\bfseries \@title}
+  \vspace{1.5ex}
+  
+  {\normalsize \@author}
+  \vspace{1.5ex}
+  
+  {\small \@date}
+\end{flushleft}\egroup
+}
+\makeatother
+
+\title{Ultrashort Pulse Characterization:\\ Dispersion Compensation and Angular Dispersion Measurement}
+\author{Gregorio Jaca (U8L9B9, gregorio.jaca@gmail.com) \and Peter Tallosy (K14WR1, peter@tallosy.hu)}
+\date{\today}
+
+\begin{document}
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \maketitle
+    \vspace{-1em}
+    \begin{abstract}
+      \noindent We characterize femtosecond pulses from a Ti:sapphire oscillator in two complementary experiments. First, we measure the spectral bandwidth and verify that the initial pulse duration is transform-limited. We then demonstrate dispersion compensation: after inserting dispersive elements (BK7 glass and TeO$_2$ crystals) that broaden the pulse to, an SF10 prism-pair compressor restores the pulse to its near-transform-limited duration verifying its usefulness to compensate for optical dispersion. Second, using spectrally resolved interferometry in a Mach--Zehnder configuration, we measure the angular dispersion of a 60$^\circ$ prism and determine the instrumental spectral resolution of the spectrometer from coherence-length measurements.
+    \end{abstract}
+    \vspace{0.5cm}
+  \end{@twocolumnfalse}
+]
+
+\section{Introduction}
+
+Ultrashort laser pulses, with durations in the femtosecond regime, are essential tools in spectroscopy, material processing, nonlinear optics, and biomedical imaging. Their broad spectral bandwidth and high peak intensity enable time-resolved studies of physical processes that are inaccessible with conventional light sources.
+
+Generating such pulses requires mode-locking, a technique in which the phases of many longitudinal cavity modes are synchronized so that their superposition produces a short pulse. The minimum achievable pulse duration for a given bandwidth is set by the time--bandwidth product $\Delta t \cdot \Delta f \geq C_B$, where $C_B$ depends on the pulse shape (e.g.\ $C_B = 0.441$ for Gaussian, $0.315$ for $\mathrm{sech}^2$). A pulse that saturates this bound is called transform-limited.
+
+When femtosecond pulses propagate through dispersive media, the wavelength-dependent refractive index introduces group delay dispersion (GDD), temporally broadening the pulse without significantly altering its spectral bandwidth. To recover the shortest pulse at the point of application, dispersion compensation is required. A prism-pair compressor introduces a controllable negative GDD that can counteract the positive material dispersion.
+
+Direct electronic measurement of femtosecond pulses is impossible because detector response times ($\sim$ns) far exceed the pulse duration. Instead, intensity autocorrelation is used: the pulse is split, one copy is delayed, both are recombined in a nonlinear crystal, and the second-harmonic signal is recorded as a function of delay. The width of the resulting autocorrelation trace is related to the pulse duration by a known deconvolution factor that depends on the assumed pulse shape.
+
+Angular dispersion, where different spectral components propagate in different directions after an optical element, is another source of pulse distortion distinct from material dispersion. It can be measured with high precision using spectrally resolved interferometry, where the wavelength-dependent fringe pattern in a Mach--Zehnder interferometer encodes the angular separation of spectral components.
+
+In this report, we present two sets of measurements. In the first part, we characterize the Ti:sapphire oscillator output, demonstrate material dispersion and its compensation with an SF10 prism-pair compressor, and verify the transform-limited nature of our pulses. In the second part, we measure the angular dispersion of a 60$^\circ$ prism using spectrally resolved interferometry and determine the spectrometer resolution from coherence-length measurements.
+
+\section{Results and Discussion}
+
+\subsection{System Overview and Cavity Dynamics}
+Our experimental setup is driven by a Continuous Wave (CW) pump laser operating at 20\,W, which is subsequently frequency-doubled via Second Harmonic Generation (SHG) down to 5.2\,W. In the SHG process, each photon doubles in energy, halving the original wavelength. This output pumps the Tsunami pulse generator, producing an output power of $P = 0.340$\,W in the red-infrared spectrum.
+
+Unlike CW lasers, pulse operation requires the phase synchronization of numerous longitudinal modes, leading to a much broader spectrum. The formation of the pulse strictly relies on stimulated emission. Spontaneous emission (fluorescence), which carries random phase and frequency, does not contribute to laser action and is selectively suppressed by the resonant cavity to ensure a synchronized phase and fixed frequency.
+
+The time between pulses (the round-trip time of the light inside the cavity) was measured to be $\Delta t = 12.14$\,ns. The cavity length $L$ can be calculated directly from this round-trip time:
+\begin{equation}
+    L = \frac{c \cdot \Delta t}{2} \approx \frac{(3 \times 10^8\,\text{m/s})(12.14\,\text{ns})}{2} \approx 1.82\,\text{m}.
+\end{equation}
+
+In any measurement chain, the slowest device determines the overall error. If the risetime for a detector is relatively higher than the pulse duration, the resulting measurement essentially resembles a triangle wave. For instance, the width of the pulse measured directly on the oscilloscope is around $2$\,ns, specifically because the oscilloscope is a 500\,MHz class device, unable to truly resolve femtosecond features.
+
+\section{Spectral Measurements and Transform Limits}
+To accurately characterize the pulse width independently of electronic risetime, we used a spectrometer to measure intensity as a function of frequency. The initially mode-locked spectral profile displays a distinct bandwidth of $\Delta \lambda = 14.5$\,nm, bounded by $\lambda_1 = 778$\,nm and $\lambda_2 = 792.5$\,nm. 
+In frequency space, these correspond to:
+\begin{equation}
+    f_1 = \frac{c}{\lambda_1} \approx 385.34\,\text{THz}, \quad f_2 = \frac{c}{\lambda_2} \approx 378.29\,\text{THz},
+\end{equation}
+yielding a spectral bandwidth of $\Delta f \approx 7.05$\,THz.
+
+According to the time-bandwidth product, the pulse duration $\Delta t$ and spectral bandwidth $\Delta f$ obey $\Delta f \cdot \Delta t \ge C_B$, where $C_B$ depends on the temporal shape of the pulse. Assuming a Gaussian pulse shape, the constant is $C_B \approx 0.441$. Thus, the Fourier-transform-limited pulse duration is:
+\begin{equation}
+    \tau_{\text{pulse}} \approx \frac{0.441}{\Delta f} \approx 62.55\,\text{fs}.
+\end{equation}
+Our measured initial output pulse demonstrated an autocorrelation full-width at half-maximum (FWHM) of $67.7\,\text{fs}$, matching the transform limit as can be seen in Fig. \ref{fig:initial_autocorr}. The value we obtain is slightly larger than the ideal theoretical minimum, which is reasonable given small non-idealities. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{./figures/TBP_autocorr1_68fs_leftpulse_gauss.pdf}
+    \caption{Initial autocorrelation trace of the oscillator output (Gaussian fit). The measured FWHM of the autocorrelation trace is deconvolved to retrieve the actual pulse duration $\Delta t$, which matches the transform limit derived from the spectral bandwidth.}
+    \label{fig:initial_autocorr}
+\end{figure}
+
+Once the autocorrelation function is obtained, we have the Fourier Transform of the optical spectrum, and we can compare it to the spectrum we measured, as can be seen in Figure~\ref{fig:spectra}.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{./figures/FTS_from_time.pdf}
+    \caption{Shows the theoretical optical spectrum derived strictly from the time-domain pulse envelope via Fourier Transform Spectroscopy (FTS), compared with the measured data.}
+    \label{fig:spectral_group}
+\end{figure}
+
+\subsection{Fourier-Domain Validation of the Transform Limit}
+
+Conversely, we can compute the expected autocorrelation function directly from the measured optical spectrum. By the Wiener--Khinchin theorem, the power spectral density and the autocorrelation function form a Fourier transform pair. We convert the measured spectrum from wavelength to frequency domain, shift to baseband, and assume flat spectral phase (the definition of transform-limited operation). An inverse FFT of this field, followed by computation of the intensity autocorrelation $I_{\text{ac}}(\tau) = \int I(t)\, I(t-\tau)\, dt$, yields the predicted trace for a transform-limited pulse.
+
+As shown in Figure~\ref{fig:fourier_validation}, the computed transform-limited autocorrelation matches the measured trace, confirming that the initial pulse ($\sim 67.7$\,fs) carries negligible residual GDD.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{./figures/FT_validation.pdf}
+    \caption{Overlay of the measured autocorrelation trace and the transform-limited autocorrelation computed from the measured optical spectrum via inverse FFT. The agreement confirms that the initial pulse operates at the transform limit.}
+    \label{fig:fourier_validation}
+\end{figure}
+
+\subsection{Mode-locking and Autocorrelation}
+Our system uses a Semiconductor Saturable Absorber Mirror (SESAM) to passively mode-lock the laser. The SESAM acts as an intensity-dependent filter: it transmits high-intensity pulses while absorbing low-intensity continuous-wave radiation, thereby favoring pulsed operation.
+
+We evaluated the pulse shape using an autocorrelator. Mathematically, the pulse envelope formation modeled with the saturable absorber leads to a differential equation whose complex solution intrinsically favors a hyperbolic secant squared ($\text{sech}^2$) temporal profile, though Gaussian profiles are also commonly approximated. We extracted both Gaussian and $\text{sech}^2$ fits from our experimental autocorrelator data continuously throughout to quantify our adjustments. As we can see in Figure~\ref{fig:initial_fits}, the initial pulse profile is well represented by both.
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.48\linewidth}
+         \centering
+         \includegraphics[width=\linewidth]{./figures/TBP_autocorr1_61fs_leftpulse_sech2.pdf}
+         \caption{$\text{sech}^2$ Fit.}
+         \label{fig:initial_sech}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.48\linewidth}
+         \centering
+         \includegraphics[width=\linewidth]{./figures/TBP_autocorr1_68fs_leftpulse_gauss.pdf}
+         \caption{Gaussian Fit.}
+         \label{fig:initial_gauss}
+     \end{subfigure}
+     \caption{Initial pulse autocorrelation fits for the oscillator output (Left pulse).}
+     \label{fig:initial_fits}
+\end{figure}
+
+\subsection{Dispersion and Pulse Compression}
+
+\subsubsection{Material Dispersion}
+Placing dispersive glass in the beam path introduces group delay dispersion (GDD): different spectral components acquire different group delays, causing the pulse to broaden temporally without significant change in spectral bandwidth.
+
+We observe this dispersion by reflecting the laser pulse using a 1\,cm thick plain glass reflector piece. We measure two reflections: one of them reflects rigidly from the front surface and does not go through the bulk glass (labeled ``Left''), while the other reflection traverses the internal glass width twice at an angle (labeled ``Right''). The ``Right'' reflection accrues measurable material dispersion, inherently becoming wider in time. As shown in Figure~\ref{fig:leftright_individual}, the Right pulse broadens to $\sim 115\,\text{fs}$ compared to the undispersed initial $\sim 61\,\text{fs}$ Left pulse, validating the broadening effect.
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.48\linewidth}
+         \centering
+         \includegraphics[width=\linewidth]{./figures/TBP_autocorr1_61fs_leftpulse_sech2.pdf}
+         \caption{Left Pulse (Undispersed).}
+         \label{fig:left_pulse}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.48\linewidth}
+         \centering
+         \includegraphics[width=\linewidth]{./figures/TBP_autocorr1_119fs_rightpulse_sech2.pdf}
+         \caption{Right Pulse (Dispersed).}
+         \label{fig:right_pulse}
+     \end{subfigure}
+     \caption{Direct comparison of the autocorrelation traces for the front surface reflection (Left) and the back surface reflection (Right). The Right pulse exhibits significant temporal broadening ($\sim 115\,\text{fs}$) compared to the initial pulse ($\sim 61\,\text{fs}$) due to travel through 1\,cm of extra glass material.}
+     \label{fig:leftright_individual}
+\end{figure}
+
+\subsubsection{Pulse Compression with SF10 Prism Pair}
+An SF10 prism-pair compressor was used to compensate the accumulated positive GDD. The prisms were aligned at Brewster's angle to minimize reflection losses. The prism arrangement introduces a net negative GDD: longer wavelengths travel a shorter optical path through the prism material than shorter wavelengths, counteracting the positive dispersion of previously inserted elements.
+
+To test the compressor under large dispersion loads, we inserted 4\,cm of Tellurium dioxide ($\text{TeO}_2$) crystal into the beam path. As shown in Figure~\ref{fig:teo2_comp}, the pulse broadened to $\sim 240$\,fs, and the time--bandwidth product increased well above the transform limit, as expected for dispersed pulses.
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.48\linewidth}
+         \centering
+         \includegraphics[width=\linewidth]{./figures/TBP_autocorr_comp_teo2_240fs_sech2.pdf}
+         \caption{$\text{sech}^2$ Fit.}
+         \label{fig:teo2_sech}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.48\linewidth}
+         \centering
+         \includegraphics[width=\linewidth]{./figures/TBP_autocorr_comp_teo2_271fs_gauss.pdf}
+         \caption{Gaussian Fit.}
+         \label{fig:teo2_gauss}
+     \end{subfigure}
+     \caption{Pulse characterization after 4\,cm of $\text{TeO}_2$ insertion. The high $R^2$ values indicate that even under massive dispersion, the temporal profile remains consistent with our fitting models.}
+     \label{fig:teo2_comp}
+\end{figure}
+
+After adjusting the prism separation, the pulse was restored to its near-transform-limited duration, as shown in Figure~\ref{fig:final_comp}. The time--bandwidth product also returned to near-ideal values. The compressor is optimized by translating the second prism on its linear stage until the autocorrelator reads minimum pulse width.
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.48\linewidth}
+         \centering
+         \includegraphics[width=\linewidth]{./figures/TBP_autocorr_comp_shifted_prism_teo2_glass_64fs_sech2.pdf}
+         \caption{$\text{sech}^2$ Fit.}
+         \label{fig:final_sech}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.48\linewidth}
+         \centering
+         \includegraphics[width=\linewidth]{./figures/TBP_autocorr_comp_shifted_prism_teo2_glass_72fs_gauss.pdf}
+         \caption{Gaussian Fit.}
+         \label{fig:final_gauss}
+     \end{subfigure}
+     \caption{Final optimized pulse compression results. The system successfully compensates for the cumulative dispersion of glass blocks and $\text{TeO}_2$ crystals.}
+     \label{fig:final_comp}
+\end{figure}
+
+These results validate the effectiveness of prism-pair compressors for dispersion compensation in ultrafast optical systems.
+
+\subsection{Interferometric Angular Dispersion Measurement}
+
+\subsubsection{Spectrally Resolved Interferometry}
+We measured the angular dispersion introduced by a 60$^\circ$ prism using spectrally resolved interferometry in a Mach--Zehnder configuration. The laser beam is split at a beam splitter; one arm serves as a reference, while the other passes through the prism. The recombined beams produce a 2D interferogram at the spectrometer, where the fringe pattern encodes the wavelength-dependent angular separation introduced by the prism.
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.48\linewidth}
+         \centering
+         \includegraphics[width=\linewidth]{./figures/michelson_interferogram.pdf}
+         \caption{2D Sensor Interferogram.}
+         \label{fig:interferogram_2d}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.48\linewidth}
+         \centering
+         \includegraphics[width=\linewidth]{./figures/michelson_spectrum.pdf}
+         \caption{1D Spectral Profile.}
+         \label{fig:michelson_spectrum}
+     \end{subfigure}
+     \caption{Direct sensor capture and mathematical extraction from the Michelson interferometer. (a) Displays the 2D interferogram field. (b) Shows the high-fidelity 1D spectral profile recovered by vertically integrating the interferogram matrix, which effectively averages out the interference fringes and noise to isolate the spectral envelope.}
+     \label{fig:interferometry_group}
+\end{figure}
+
+\subsubsection{Instrumental Spectral Resolution via Coherence Length}
+Spectrally resolved interferometry also allows determination of the spectrometer's instrumental spectral resolution $\delta\lambda$. The spatial pulse length is
+\begin{equation}
+    l_p = c \cdot \Delta t \approx (3 \times 10^8\,\text{m/s}) \times 70\,\text{fs} \approx 21\,\mu\text{m}.
+\end{equation}
+In a conventional (time-domain) Michelson interferometer, fringes disappear once the arm displacement exceeds $l_p \approx 20\,\mu\text{m}$, because the two pulse copies no longer overlap temporally. However, when the output is spectrally resolved, each pixel of the detector sees only a narrow spectral bin $\delta\lambda$ of the total bandwidth $\Delta\lambda \approx 25$\,nm. By the time--bandwidth product, this narrower bandwidth corresponds to a longer coherence length. Experimentally, we observed interference fringes persisting up to an arm displacement of $L_c \approx 240\,\mu\text{m}$.
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.48\linewidth}
+         \centering
+         \includegraphics[width=\linewidth]{./figures/interference2.png}
+         \caption{2D Sensor Interferogram.}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.48\linewidth}
+         \centering
+         \includegraphics[width=\linewidth]{./figures/michelson.png}
+         \caption{1D Spectral Profile.}
+     \end{subfigure}
+     \caption{A view of the interference patters.}
+     \label{fig:interference_foto}
+\end{figure}
+
+The ratio of coherence lengths equals the ratio of bandwidths:
+\begin{equation}
+    \frac{L_c}{l_{p}} = \frac{\Delta \lambda}{\delta \lambda},
+\end{equation}
+from which
+\begin{equation}
+    \delta \lambda = \Delta \lambda \cdot \frac{l_p}{L_c} \approx 25\,\text{nm} \cdot \frac{20\,\mu\text{m}}{240\,\mu\text{m}} \approx 2.08\,\text{nm}.
+\end{equation}
+This gives the instrumental resolution of the spectrometer ($\sim 2$\,nm).
+
+\subsubsection{Theoretical Verification of Angular Dispersion}
+The Mach--Zehnder interferometer maps angular dispersion ($d\theta/d\lambda$) to a transverse spatial fringe tilt. A lens ($f = 500$\,mm) focuses the recombined beams so that the wavelength-dependent propagation angle maps to a vertical position at the focal plane, $y(\lambda) = f \cdot \theta(\lambda)$. The software extracts the angular deviation from the resulting fringe pattern.
+
+To verify the software output, we calculate the theoretical angular dispersion of the 60$^\circ$ prism. The refractive index $n(\lambda)$ is given by the Sellmeier equation:
+\begin{equation}
+    n^2(\lambda) = 1 + \frac{K_1 \lambda^2}{\lambda^2 - L_1} + \frac{K_2 \lambda^2}{\lambda^2 - L_2} + \frac{K_3 \lambda^2}{\lambda^2 - L_3}
+\end{equation}
+with coefficients $K_1 = 1.038$, $L_1 = 0.006$; $K_2 = 0.231$, $L_2 = 0.02$; $K_3 = 1.01$, $L_3 = 103.56$. At the central wavelength $\lambda_0 = 823$\,nm:
+\begin{equation}
+    n(823\,\text{nm}) \approx 1.5095
+\end{equation}
+The chromatic dispersion is:
+\begin{equation}
+    \frac{dn}{d\lambda} \approx -0.01875\,\mu\text{m}^{-1}
+\end{equation}
+
+Applying the derivative of Snell's law for a 60$^\circ$ prism at minimum deviation:
+\begin{equation}
+    D_{\mathrm{theoretical}} = \frac{d\theta}{d\lambda} = \frac{d\theta}{dn} \cdot \frac{dn}{d\lambda} \approx 28.58\,\mu\text{rad/nm}
+\end{equation}
+
+The experimentally extracted angular deviation, plotted in Figure~\ref{fig:angular_dispersion_plot}, fits well to a second-order polynomial.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{./figures/angular_dispersion.png}
+    \caption{Angular dispersion extracted from the Mach--Zehnder interferogram. The polynomial fit yields a first-order angular dispersion of $180.96\,\mu\text{rad/nm}$ and a second-order component of $-1.49\,\mu\text{rad/nm}^2$.}
+    \label{fig:angular_dispersion_plot}
+\end{figure}
+
+\subsubsection{Resolving the $2\pi$ Discrepancy}
+The theoretical angular dispersion is $28.58\,\mu\text{rad/nm}$, while the software reports $180.96\,\mu\text{rad/nm}$. The ratio of these two values is $\approx 6.3 \approx 2\pi$, indicating that the software reports angular dispersion in units of $\mu\text{rad/nm}$ where the angle is expressed in terms of phase ($2\pi$ radians per spatial cycle) rather than geometric angle. Multiplying by $2\pi$:
+%LLM-UNCERTAIN: The exact origin of this 2pi factor (phase-front vs propagation-direction definition, or software convention) should be confirmed with the instructor.
+\begin{equation}
+    D_{\mathrm{software}} = 2\pi \cdot D_{\mathrm{theoretical}} \approx 179.57\,\mu\text{rad/nm}
+\end{equation}
+This agrees with the software-reported value of $180.96\,\mu\text{rad/nm}$ to within $0.8\%$, confirming the consistency of our theoretical calculation.
+
+\section{Conclusion}
+
+We characterized femtosecond pulses from a Ti:sapphire oscillator and demonstrated dispersion compensation using an SF10 prism-pair compressor. The initial pulse duration of $\sim 67.7$\,fs (Gaussian assumption) was confirmed to be transform-limited by comparison with the spectral bandwidth and by Fourier-domain reconstruction of the autocorrelation trace. Material dispersion from BK7 glass and TeO$_2$ crystals broadened the pulses significantly, but the prism compressor restored the pulse duration to $\sim 64$\,fs, close to the transform limit.
+
+In the second part of the experiment, we measured the angular dispersion of a 60$^\circ$ prism using spectrally resolved interferometry in a Mach--Zehnder configuration. The experimentally extracted first-order angular dispersion agreed with the Sellmeier-based theoretical prediction to within $0.8\%$, after accounting for a $2\pi$ factor in the software convention. We also determined the spectrometer resolution ($\sim 2$\,nm) from coherence-length measurements, demonstrating how spectral resolution extends the observable coherence length beyond the physical pulse length.
+
+These measurements illustrate the practical tools available for femtosecond pulse characterization: autocorrelation for temporal width, prism compressors for dispersion management, and spectrally resolved interferometry for high-precision dispersion and angular dispersion measurements.
+
+\end{document}

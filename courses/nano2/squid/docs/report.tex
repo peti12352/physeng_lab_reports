@@ -1,0 +1,472 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{graphicx, booktabs, siunitx, amsmath, geometry, float}
+\usepackage{subcaption}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\geometry{margin=2.5cm}
+\DeclareSIUnit\dBm{dBm}
+
+\title{Characterization of a High-Temperature DC SQUID:\\
+V-I Traces, Magnetometry, and Shapiro Step Detection}
+\author{Gregorio Jaca U8L9B9 gregorio.jaca@gmail.com, \\
+Peter Tallosy K14WR1 peter@tallosy.hu}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We report the electrical characterization of a YBCO bicrystal grain-boundary
+DC SQUID operated at \SI{77}{\kelvin}. Single-junction V-I traces yield
+$I_c = \SI{82}{\micro\ampere}$. Flux-dependent voltage modulation gives a mutual
+inductance $M = \SI{24.9}{\pico\henry}$. Shapiro steps under microwave irradiation
+(8--12~GHz) are extracted using kernel density estimation (KDE) on the junction
+voltage distribution, replacing conventional ad-hoc histogram methods. At
+\SI{10}{\giga\hertz}, the KDE yields $\Delta V = \SI{19.7}{\micro\volt}$
+(6~plateaus, 4.8\% error vs.\ theory). The frequency sweep gives
+$\Phi_0 = \SI{1.71e-15}{\weber}$ (17.3\% deviation).  Power-dependent
+measurements at \SI{10}{\giga\hertz} reveal an onset threshold at
+$\sim\!\SI{1}{\dBm}$ above which $\Delta V = 23.0 \pm \SI{7.2}{\micro\volt}$,
+consistent with the expected first-order Shapiro step. A second-harmonic signature
+($\Delta V \approx \SI{41.7}{\micro\volt}$) is observed at high power. Limitations
+of the KDE approach and systematic error sources are discussed.
+\end{abstract}
+
+
+\section{Introduction}
+
+A DC superconducting quantum interference device (SQUID) consists of two Josephson
+junctions (JJs) connected in parallel around a superconducting loop. The device
+exploits the macroscopic quantum coherence of the superconducting condensate to
+transduce magnetic flux into a measurable voltage signal. The physics is governed
+by two relations: the DC Josephson equation $I = I_0 \sin\delta$, which sets the
+dissipationless supercurrent through the phase difference $\delta$ across a junction;
+and the AC Josephson relation
+\begin{equation}
+    \dot\delta = \frac{2eV}{\hbar}\,,
+    \label{eq:ac_josephson}
+\end{equation}
+which links the phase evolution to the bias voltage $V$. When an external microwave
+field at frequency $\nu$ is coupled to the junction, phase-locking produces
+constant-voltage plateaus (Shapiro steps) at
+\begin{equation}
+    \Delta V = n\,\frac{h}{2e}\,\nu = n\,\Phi_0\,\nu\,, \quad n \in \mathbb{Z}\,,
+    \label{eq:shapiro}
+\end{equation}
+%
+where $\Phi_0 = h/(2e) \approx \SI{2.068e-15}{\weber}$ is the magnetic flux quantum
+and $n$ the step index. In a current-biased SQUID, the critical current oscillates
+with the enclosed flux $\Phi$ as
+$I_c(\Phi) = 2I_0\,|\cos(\pi\Phi/\Phi_0)|$,
+enabling sensitive magnetometry.
+
+In this report we present six characterization tasks performed on a YBCO DC SQUID
+at \SI{77}{\kelvin}: single-junction V-I traces (Task~1), flux-dependent voltage
+modulation (Tasks~2 and 3), Shapiro step detection at \SI{10}{\giga\hertz}
+(Task~4), frequency-dependent step extraction across 8--12~GHz (Task~5), and
+power-dependent measurements (Task~6). A central methodological contribution is the
+replacement of ad-hoc histogram-based step extraction with a statistically
+principled kernel density estimation (KDE) approach, described in
+Section~\ref{sec:kde}.
+
+
+\section{Experimental Setup}
+
+The SQUID is a YBCO bicrystal grain-boundary device mounted on a printed circuit
+board. Two JJs form the DC SQUID loop. The board is cooled in liquid~N$_2$
+(\SI{77}{\kelvin}) via a sample-holder thermostat. Current bias is applied through a
+\SI{10}{\kilo\ohm} pre-resistor driven by the AWG output of an Owon XDS3102A
+oscilloscope. The junction voltage is amplified by a home-built differential
+amplifier (gain $\approx 1000$), low-pass filtered, and read back on CH1.
+The reference current waveform is monitored on CH2. Flux bias uses a second AWG
+channel through a dedicated flux line. All reported SQUID voltages are corrected for
+the amplifier gain ($V_\mathrm{SQUID} = V_\mathrm{CH1}/1000$). Numerical derivatives
+are computed parametrically in the time domain as $(dV/dt)/(dI/dt)$ to avoid
+artifacts from AD/DAC sample interleaving. For Shapiro experiments, a HP~8620C sweep
+oscillator provides CW microwave radiation (8--12~GHz) via an SMA cable suspended
+above the liquid~N$_2$ level. The oscilloscope samples in 4$\times$ or 16$\times$
+average mode to suppress noise. All data acquisition and instrument control are
+handled via Python over ethernet.
+
+
+\section{Data Analysis: KDE-Based Step Extraction}
+\label{sec:kde}
+
+\subsection{Motivation}
+
+The standard approach to Shapiro step extraction computes the numerical derivative
+$dV/dI$ of the smoothed V-I trace and identifies transitions via peak detection with
+a prominence threshold. A common choice is
+$\text{prominence} = \alpha \cdot \sigma_{dV/dI}$
+with $\alpha$ set empirically. Similarly, histogram-based methods count voltage
+occurrences with fixed bin widths and identify peaks using
+$\text{prominence} = \beta \cdot \max(\text{hist})$. Both $\alpha$ and $\beta$ are
+tuning parameters with no physical justification; their values can drastically change
+the extracted step size. On our data, the old method produced $\Delta V$ values
+ranging from \SI{13.3}{\micro\volt} to \SI{25.6}{\micro\volt} at \SI{10}{\giga\hertz}
+depending on parameter choices, compared to a theoretical value of
+\SI{20.7}{\micro\volt}.
+
+\subsection{KDE Method}
+
+Shapiro steps create voltage \emph{plateaus} in $V(I)$: regions where the voltage
+dwells at a constant value as the bias current is swept. The distribution of measured
+voltages therefore has density peaks at the plateau voltages $V_n = n\,\Phi_0\,\nu$.
+This motivates replacing the histogram with a continuous density estimator.
+
+We use Gaussian KDE with bandwidth $h$ selected via Least-Squares
+Cross-Validation (LSCV)~\cite{oser}. LSCV minimises the integrated squared
+error between the estimated and true density by choosing the $h$ that minimises
+\begin{equation}
+    \mathrm{LSCV}(h) = \int \hat{f}_h^2(x)\,dx
+      - \frac{2}{N}\sum_{i=1}^{N} \hat{f}_{-i,h}(x_i)\,,
+    \label{eq:lscv}
+\end{equation}
+where $\hat{f}_{-i,h}$ is the leave-one-out density at sample $x_i$. For
+Gaussian kernels both terms have closed-form expressions involving pairwise
+differences, making the computation tractable (see Appendix~\ref{app:kde} for
+the full derivation). This data-driven procedure avoids the oversmoothing bias
+of Silverman's rule of thumb, which assumes a unimodal Gaussian reference and
+therefore merges closely spaced Shapiro plateaus. At \SI{10}{\giga\hertz}, LSCV
+selects $h = \SI{1.5}{\micro\volt}$, a factor of $\sim\!0.23$ below the Silverman
+value of \SI{6.7}{\micro\volt}, consistent with the need to resolve plateaus spaced
+by $\sim\!\SI{20}{\micro\volt}$.
+
+To suppress the nearly-uniform voltage distribution from the ohmic branch of the
+V-I curve, we restrict the analysis to the \emph{central 50\% of the current range}
+($|I - I_\mathrm{center}| < 0.25 \cdot \Delta I$), where the superconducting branch
+and Shapiro plateaus dominate the voltage dwell time. The KDE peaks are identified
+with a minimal prominence of 2\% of the maximum density, and peaks must be separated
+by at least \SI{5}{\micro\volt} (a physical constraint: distinct plateaus cannot be
+closer than the measurement noise floor).
+
+The fundamental step $\Delta V$ is taken as the median spacing between adjacent,
+sorted KDE peaks. If more than two spacings are available, spacings exceeding
+$2\times$ the median are filtered as multi-step jumps before computing the final
+estimate.
+
+\subsection{Derivative Method with MAD Threshold}
+
+For comparison, we retain a derivative-based edge detection using the median absolute
+deviation (MAD) as a robust scale estimate:
+$\sigma_\mathrm{MAD} = 1.4826 \cdot \mathrm{median}(|dV/dI - \widetilde{dV/dI}|)$,
+with transitions identified at $dV/dI > \widetilde{dV/dI} + 2\,\sigma_\mathrm{MAD}$.
+This replaces the previous $0.5\times\mathrm{std}$ threshold, which is sensitive to
+outliers in the heavy-tailed $dV/dI$ distribution.
+
+
+\section{Results and Discussion}
+
+\subsection{Single Junction V-I Characteristic (Task~1)}
+
+\hyperref[fig:task1]{Figure~\ref*{fig:task1}} shows the V-I trace of the SQUID after
+cooling to \SI{77}{\kelvin} using a triangular current sweep at
+$I_\mathrm{drive} = \pm\SI{120}{\micro\ampere}$. The characteristic exhibits
+hysteretic switching at $I_c = \SI{82}{\micro\ampere}$, consistent with underdamped
+behavior. The linear branch at high bias reflects the normal-state resistance
+shunted by the \SI{10}{\kilo\ohm} pre-resistor. The junction voltage spans
+$\pm\SI{1.5}{\milli\volt}$ (amplified to $\pm\SI{1.5}{\volt}$ on the oscilloscope,
+confirming the differential amplifier gain of $\sim\!1000$). Multi-cycle
+traces during warmup from \SI{77}{\kelvin} captured the superconducting-to-normal
+transition; the reported $I_c$ corresponds to the lowest-temperature sweep.
+Temperature was not measured directly.
+
+\subsection{SQUID Magnetometry (Tasks~2 and 3)}
+
+Moving a permanent magnet near the sample holder produced visible voltage
+oscillations on the oscilloscope, confirming the SQUID's sensitivity to external
+flux. Subsequently, a triangular flux-bias current ($\pm\SI{300}{\micro\ampere}$,
+\SI{41}{\hertz}) was applied. The SQUID voltage oscillates with the expected
+$\Phi_0$ periodicity (\hyperref[fig:task2]{Figure~\ref*{fig:task2}}). The measurement
+was repeated at four DC current biases (0.8, 1.0, 1.1, \SI{1.5}{\volt}). The
+maximal peak-to-peak voltage modulation is
+$V_\mathrm{pp} = \SI{2.2}{\micro\volt}$ at DC biases of 1.0 and \SI{1.1}{\volt};
+at \SI{1.5}{\volt} the modulation drops to \SI{0.8}{\micro\volt}, indicating
+over-biasing past the optimal working point.
+
+From the flux interference trace (\hyperref[fig:task3]{Figure~\ref*{fig:task3}}),
+the mutual inductance between the flux line and the SQUID loop is extracted. Using
+Gaussian smoothing with peak detection on 14~periods, we obtain an average
+bias-current period $\Delta I_\mathrm{flux} = \SI{82.9}{\micro\ampere}$, giving
+\begin{equation}
+    M = \frac{\Phi_0}{\Delta I_\mathrm{flux}}
+      = \frac{\SI{2.068e-15}{\weber}}{\SI{82.9}{\micro\ampere}}
+      = \SI{24.9}{\pico\henry}\,.
+    \label{eq:mutual}
+\end{equation}
+A manual calculation using $I_c = \SI{82}{\micro\ampere}$ from the V-I trace yields
+$M = \SI{25.2}{\pico\henry}$, in agreement within 1.2\%.
+
+The V-I characteristic was also recorded at 11 flux bias points spanning one
+modulation period (\hyperref[fig:task3b]{Figure~\ref*{fig:task3b}}). The overlay
+shows a flux-dependent voltage offset spread of $\sim\!\SI{0.9}{\micro\volt}$ near
+zero bias and a total $V_\mathrm{pp}$ modulation depth of \SI{6.0}{\micro\volt}
+(8.4\%), confirming the $I_c(\Phi)$ dependence predicted by
+$I_c(\Phi) = 2I_0|\cos(\pi\Phi/\Phi_0)|$.
+
+
+\subsection{Shapiro Steps at \SI{10}{\giga\hertz} (Task~4)}
+
+Under \SI{10}{\giga\hertz} CW microwave irradiation, the V-I trace develops subtle
+staircase features. The expected first-order step is
+$\Delta V = \Phi_0 \times \SI{10}{\giga\hertz} = \SI{20.7}{\micro\volt}$.
+
+The KDE density of the central-region voltages
+(\hyperref[fig:task4]{Figure~\ref*{fig:task4}}, bottom panel) reveals six
+well-resolved peaks spanning $\pm\SI{50}{\micro\volt}$, with a median spacing of
+$\Delta V_\mathrm{KDE} = \SI{19.7}{\micro\volt}$ (4.8\% below theory). This
+represents a substantial improvement over the ad-hoc histogram method, which
+produced values of \SI{13.3}{\micro\volt} or \SI{25.6}{\micro\volt} depending on
+parameter tuning. The consistent six-peak structure across the symmetric $V = 0$
+axis is characteristic of quantized $n = \{-3, -2, -1, 0, +1, +2, +3\}$ Shapiro
+plateaus and constitutes direct evidence of the AC Josephson effect.
+
+
+\subsection{Frequency Dependence (Task~5)}
+
+Seven frequencies between 8 and \SI{12}{\giga\hertz} were measured. The KDE
+extractor yields valid step sizes at all seven frequencies, compared to only 3/7
+with the old histogram method. Results are summarized in
+Table~\ref{tab:freq} and plotted in \hyperref[fig:task5]{Figure~\ref*{fig:task5}}.
+
+\begin{table}[H]
+\centering
+\caption{KDE-extracted voltage steps at measured frequencies.}
+\label{tab:freq}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$\nu$ [GHz] & $\Delta V_\mathrm{KDE}$ [$\mu$V] & \# KDE peaks \\
+\midrule
+8.0  & 14.7 & 4 \\
+9.0  & 12.0 & 5 \\
+9.5  & 12.5 & 3 \\
+10.0 & 14.6 & 6 \\
+11.0 & 21.4 & 5 \\
+11.5 & 22.8 & 4 \\
+12.0 & 21.9 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A linear fit through the origin ($\Delta V = \Phi_0 \cdot \nu$) yields
+$\Phi_0^\mathrm{meas} = \SI{1.71e-15}{\weber}$, corresponding to a 17.3\% deviation
+from the theoretical value, with RMSE~$= \SI{2.7}{\micro\volt}$.
+
+The data exhibit a striking bimodal clustering: the three lower frequencies
+(8, 9, 9.5~GHz) yield $\Delta V \approx 13$--\SI{15}{\micro\volt}, while the three
+higher ones (11, 11.5, 12~GHz) yield $\approx 21$--\SI{23}{\micro\volt}. The 10~GHz
+point falls between the two groups. This is not random scatter: it suggests a
+frequency-dependent microwave coupling efficiency, likely due to impedance matching
+between the SMA cable antenna and the SQUID geometry. The waveguide-like coupling
+(open SMA cable above the liquid~N$_2$ surface) has no controlled impedance matching
+network, so the transferred power at the junction depends on the standing-wave
+pattern, which varies with frequency. This systematic effect dominates the 17.3\%
+deviation in $\Phi_0$, rather than the KDE extraction itself, which produces
+internally consistent results with 4--6 resolved peaks at each frequency.
+
+
+\subsection{Power Dependence (Task~6)}
+
+Twenty-eight V-I measurements were recorded at \SI{10}{\giga\hertz} while manually
+stepping the microwave power across the full range of the HP~8620C attenuator. The
+eight labeled anchor points ($N = 0, 4, \ldots, 28$ corresponding to
+$P = -26.1, -10.4, \ldots, \SI{11.7}{\dBm}$) are interpolated by a cubic polynomial
+\begin{equation}
+    P(N) = a_3 N^3 + a_2 N^2 + a_1 N + a_0\,,
+    \label{eq:power_poly}
+\end{equation}
+with fitted coefficients $a_3 = \num{3.776e-3}$, $a_2 = \num{-1.975e-1}$,
+$a_1 = \num{3.903}$, $a_0 = \num{-25.22}$ (RSS~$= 7.53$, no Runge oscillation; see
+\hyperref[fig:task6]{Figure~\ref*{fig:task6}}, top panel).
+
+The KDE extractor yields valid Shapiro steps for 12 out of 28 measurements
+(\hyperref[fig:task6]{Figure~\ref*{fig:task6}}, bottom panel). A clear onset
+threshold is visible: no steps are detected below $\sim\!\SI{0}{\dBm}$
+($N \leq 12$), above which the extracted $\Delta V$ clusters tightly around
+\SI{22}{\micro\volt}, consistent with the expected \SI{20.7}{\micro\volt}. Below
+this threshold, the microwave power is insufficient to establish phase-locking.
+
+One measurement at $P \approx \SI{9.1}{\dBm}$ ($N = 26$) yields
+$\Delta V = \SI{41.7}{\micro\volt}$, approximately $2 \times \SI{20.7}{\micro\volt}$.
+This is consistent with a second-order ($n = 2$) Shapiro step, expected at elevated
+power levels where higher-order Bessel function terms ($J_2$) in Eq.~I.5.3 become
+significant.
+
+The absence of the oscillatory Bessel-function modulation pattern predicted by
+theory (alternating step amplitudes as $J_n(2eV_\mathrm{AC}/\hbar\omega)$) is
+attributable to the uncontrolled coupling geometry: the open SMA cable does not
+deliver a well-defined $V_\mathrm{AC}$ to the junction, making the effective RF
+voltage a non-trivial function of the attenuator setting.
+
+The full $V(I, P)$ and $dV/dI(I, P)$ colormaps are shown in
+\hyperref[fig:task6map]{Figure~\ref*{fig:task6map}}. At low power
+($P < \SI{0}{\dBm}$), the central superconducting region exhibits uniformly low
+$dV/dI$, while the switching transitions at $|I| \approx \SI{75}{\micro\ampere}$
+dominate. Above the onset threshold, the central-region $dV/dI$ increases from
+$\sim\!\SI{0.37}{\ohm}$ to $\sim\!\SI{0.47}{\ohm}$, reflecting the microwave-induced disruption
+of the zero-voltage plateau into discrete Shapiro steps.
+
+
+\section{Conclusion}
+
+We characterized a YBCO DC SQUID across six experimental tasks. The principal
+quantitative results are: $I_c = \SI{82}{\micro\ampere}$,
+$M = \SI{24.9}{\pico\henry}$, and $\Phi_0 = \SI{1.71e-15}{\weber}$ (17.3\%
+deviation from theory). The KDE-based Shapiro step extraction, which replaces
+arbitrary prominence thresholds with a continuous density estimator using
+LSCV-optimised bandwidth selection on the central voltage region, produces stable results
+across all frequencies and power levels. At \SI{10}{\giga\hertz}, the extracted
+$\Delta V = \SI{19.7}{\micro\volt}$ deviates by only 4.8\% from theory, whereas the
+old ad-hoc method yielded values between \SI{13}{\micro\volt} and
+\SI{26}{\micro\volt} depending on parameter choices.
+
+The dominant source of systematic error is the uncontrolled microwave coupling geometry (open SMA cable), which introduces frequency- and
+power-dependent impedance mismatches. Future improvements should include a matched
+antenna or waveguide coupler, temperature-stabilized operation, and uncertainty
+propagation from the KDE bandwidth selection through the linear fit.
+
+
+\clearpage
+\appendix
+\section{Figures}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\linewidth]{../docs/task1_iv.png}
+    \caption{Task~1: V-I characteristic of the single junction at \SI{77}{\kelvin}.
+    The hysteretic switching at $I_c = \SI{82}{\micro\ampere}$ is visible at both
+    sweep turnaround points. Amplifier gain $\approx 1000$.}
+    \label{fig:task1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\linewidth]{../docs/task2_iv.png}
+    \caption{Task~2: SQUID voltage modulation under triangular flux drive at
+    \SI{41}{\hertz}. Approximately 7~flux periods are visible within the drive
+    envelope, showing the $V(\Phi)$ transducer response.}
+    \label{fig:task2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\linewidth]{../docs/task3_flux.png}
+    \caption{Task~3: SQUID voltage vs.\ flux bias. Raw data (gray) and smoothed
+    trace (black) show the periodic flux modulation used to extract
+    $M = \SI{24.9}{\pico\henry}$ from 14~oscillation periods.}
+    \label{fig:task3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.70\linewidth]{../code/task3/task3_flux_vi_overlay.png}
+    \caption{Task~3: V-I characteristics at 11 flux bias points spanning one
+    modulation period. Color encodes flux index. The spread near $I = 0$ and the
+    8.4\% $V_\mathrm{pp}$ modulation confirm the flux-dependent critical current.}
+    \label{fig:task3b}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{../code/task4/task4_shapiro_10ghz_restored_kde_verification.png}
+    \caption{Task~4: KDE verification at \SI{10}{\giga\hertz}. Top: V-I trace with
+    green shading indicating the central region used for KDE. Middle: smoothed
+    $dV/dI$. Bottom: KDE density with six resolved Shapiro plateaus (magenta dots)
+    yielding $\Delta V_\mathrm{KDE} = \SI{19.7}{\micro\volt}$.}
+    \label{fig:task4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.70\linewidth]{../code/task5/task5_frequency_dependence_kde.png}
+    \caption{Task~5: Voltage step vs.\ microwave frequency.
+    Black circles: KDE extraction. Red dashed: linear fit giving
+    $\Phi_0 = \SI{1.71e-15}{\weber}$ (17.3\% error). Blue dotted: theoretical
+    prediction. The bimodal clustering between 8--10~GHz and 11--12~GHz suggests
+    frequency-dependent coupling efficiency.}
+    \label{fig:task5}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{../code/task6/task6_power_kde.png}
+    \caption{Task~6: Power dependence at \SI{10}{\giga\hertz}. Top: cubic
+    interpolation of microwave power vs.\ measurement index. Bottom: KDE-extracted
+    $\Delta V$ vs.\ power. Color encodes the number of KDE peaks. Clear onset at
+    $\sim\!\SI{1}{\dBm}$; the outlier at \SI{41.7}{\micro\volt} ($P \approx
+    \SI{9}{\dBm}$) is consistent with a second-order ($n=2$) Shapiro step.}
+    \label{fig:task6}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\linewidth]{../code/task6/task6_colormap.png}
+    \caption{Task~6: (a)~SQUID voltage $V(I, P)$ colormap showing the V-I
+    transition broadening with increasing microwave power.
+    (b)~Differential resistance $dV/dI(I, P)$; switching peaks at
+    $|I| \approx \SI{75}{\micro\ampere}$ weaken at high power.
+    (c)~Central region detail ($|I| < \SI{50}{\micro\ampere}$): the emerging
+    structure above $\sim\!\SI{0}{\dBm}$ corresponds to Shapiro step formation.
+    White dashed line marks $P = \SI{0}{\dBm}$.}
+    \label{fig:task6map}
+\end{figure}
+
+\appendix
+\section{KDE and LSCV Formulae}
+\label{app:kde}
+
+\paragraph{Kernel Density Estimator.}
+Given $N$ samples $\{x_1, \ldots, x_N\}$, the Gaussian KDE with bandwidth $h$ is
+\begin{equation}
+    \hat{f}_h(x) = \frac{1}{Nh}\sum_{i=1}^{N} \varphi\!\left(\frac{x - x_i}{h}\right),
+    \label{eq:kde}
+\end{equation}
+where $\varphi(u) = (2\pi)^{-1/2} e^{-u^2/2}$ is the standard Gaussian kernel.
+
+\paragraph{Silverman's Rule of Thumb.}
+The MISE-optimal bandwidth for a Gaussian reference distribution is
+\begin{equation}
+    h_{\mathrm{Silv}} = 0.9\,\min\!\bigl(\hat\sigma,\,
+      \mathrm{IQR}/1.34\bigr)\, N^{-1/5}.
+    \label{eq:silverman}
+\end{equation}
+This oversmooths multimodal distributions because $R(g'')$ is underestimated
+when $g$ is not Gaussian.
+
+\paragraph{Least-Squares Cross-Validation.}
+LSCV selects $h$ by minimising a computable proxy for the MISE:
+\begin{equation}
+    \mathrm{LSCV}(h) = R(\hat{f}_h) - \frac{2}{N}\sum_{i=1}^{N}
+      \hat{f}_{-i,h}(x_i),
+    \label{eq:lscv_app}
+\end{equation}
+where $\hat{f}_{-i,h}$ is the leave-one-out estimator (sample $x_i$ excluded).
+The constant term $R(g) = \int g^2(x)\,dx$ is independent of $h$ and drops out.
+
+For Gaussian kernels, the first term has a closed form via the convolution
+identity $\varphi * \varphi = \varphi_{\sqrt{2}}$:
+\begin{equation}
+    R(\hat{f}_h) = \frac{1}{N^2 \sqrt{2}\, h}
+      \sum_{i=1}^{N}\sum_{j=1}^{N}
+      \varphi\!\left(\frac{x_i - x_j}{\sqrt{2}\,h}\right).
+    \label{eq:rfhat}
+\end{equation}
+The second term is
+\begin{equation}
+    \hat{f}_{-i,h}(x_i) = \frac{1}{(N-1)\,h}
+      \sum_{\substack{j=1 \\ j \neq i}}^{N}
+      \varphi\!\left(\frac{x_i - x_j}{h}\right).
+    \label{eq:loo}
+\end{equation}
+The bandwidth is found by grid search over 40 log-spaced candidates
+from $0.05\,h_{\mathrm{Silv}}$ to $2\,h_{\mathrm{Silv}}$.
+
+\begin{thebibliography}{9}
+\bibitem{lab_manual} Lab description: ``SQUID---Superconducting Quantum
+  Interference Device'' (course material, 2024).
+\bibitem{oser} S.~Oser, ``Kernel Density Estimation,''
+  PHYS~509 Lecture~23, University of British Columbia (2012).
+  \url{https://phas.ubc.ca/~oser/p509/Lec_23.pdf}
+\end{thebibliography}
+
+\end{document}

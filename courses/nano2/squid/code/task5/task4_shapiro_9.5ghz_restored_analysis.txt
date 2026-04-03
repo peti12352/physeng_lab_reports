@@ -1,0 +1,4 @@
+--- Scientific Shapiro Analysis: task5/task4_shapiro_9.5ghz_restored.txt ---
+Method A (Derivative Peaks): 6 transitions identified.
+ -> Average Voltage Step: 12.18 uV
+Method B (Voltage Histogram): 1 plateaus identified.
