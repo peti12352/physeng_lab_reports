@@ -36,7 +36,7 @@
   \maketitle
 
   \section*{Abstract}
-  This report details the implementation and analysis of embedded control systems using the PIC18F2620 microcontroller that done in the laboratory excercise. The objective was to investigate the fundamental capabilities of modern microcontrollers, specifically focusing on Digital Input/Output (I/O), hardware timers, Pulse Width Modulation (PWM), and Analog-to-Digital (A/D) conversion. Key results highlight the distinction between software-based timing and hardware timers, with the latter providing superior accuracy and CPU efficiency. PWM was used to modulate the duty cycle
+  This report details the implementation and analysis of embedded control systems using the PIC18F2620 microcontroller that done in the laboratory excercise. The objective was to investigate the fundamental capabilities of modern microcontrollers, specifically focusing on Digital Input/Output (I/O), hardware timers, Pulse Width Modulation (PWM), and Analog-to-Digital (A/D) conversion. Key results highlight the distinction between software-based timing and hardware timers, with the latter providing superior accuracy and CPU efficiency. PWM was used to modulate the duty cycle, using a 10-bit ADC and validating its linearity demonstrating a direct and effective method for digital control of analog parameters.
   % Furthermore, the linearity of the internal 10-bit ADC was examined in the context of modulating PWM duty cycles, demonstrating a direct and effective method for digital control of analog parameters.
 
   \section{Introduction}
@@ -51,7 +51,7 @@
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.35\linewidth]{setup.pdf}
-    \caption{}
+    \caption{Experimental setup}
     \label{fig:setup}
   \end{figure}
 
@@ -75,9 +75,9 @@
   This value is reasonable for the operation of the LED and we could see it turn on.
 
   \subsection{Timing Generation: Software Delays vs. Hardware Timers}
-  The initial attempt at generating a square wave utilized a software delay loop. The measured period was $T = 1054\,\text{ms}$ ($f \approx 0.95\,\text{Hz}$), with a duty cycle nearing 50\%. While functional, this method occupies the CPU entirely, rendering it inefficient for multitasking.
+  The initial attempt at generating a square wave utilized a software delay loop. The measured period was $T = 1054\,\text{ms}$ ($f \approx 0.95\,\text{Hz}$), with a duty cycle nearing 50\%, which can be seen in Figure \ref{fig:timing} (a). While functional, this method occupies the CPU entirely, rendering it inefficient for multitasking.
 
-  We experimented setting the second delay to $25,000$ which caused one of the high time to be half of its previous value. The frequency consequently increases to $f \approx 1.27\,\text{Hz}$.
+We experimented setting the second delay to $25,000$ which caused one of the high time to be half of its previous value, which can be seen in Figure \ref{fig:timing} (b). The frequency consequently increases to $f \approx 1.27\,\text{Hz}$ and the duty cycle decreased to 33.7\%.
 
   % plot 1hz.pdf ; int_overflow.pdf
   \begin{figure}[H]
@@ -85,12 +85,12 @@
     \begin{subfigure}[b]{0.48\linewidth}
       \centering
       \includegraphics[width=\linewidth]{1hz.pdf}
-      \caption{}
+      \caption{1 Hz signal, duty cycle 50\%}
     \end{subfigure}\hfill
     \begin{subfigure}[b]{0.48\linewidth}
       \centering
       \includegraphics[width=\linewidth]{int_overflow.pdf}
-      \caption{}
+      \caption{1.27 Hz signal, duty cycle 33.7\%}
     \end{subfigure}
     \caption{}
     \label{fig:timing}
@@ -111,10 +111,10 @@
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.35\linewidth]{500hz.pdf}
-    \caption{}
+    \caption{PWM generated signal. 497.5 Hz, duty cycle 50\%}
     \label{fig:500hz}
   \end{figure}
-  Changing $CCPR2L = 25$ reduces the high time to $201\, \mu s$ making the duty cycle 10.4\%. At the high setting ($CCPR2L = 225$) the ducty cycle was $\approx 90\%$, with a high time of $1.81\, ms$. In both cases, changing the CCPR2L did not change the total time period or frequency of the whole signal, just the duty cycle.
+  Changing $CCPR2L = 25$ reduces the high time to $201\, \mu s$ making the duty cycle 10.4\%, a low setting. At the high setting ($CCPR2L = 225$) the ducty cycle was $\approx 90\%$, with a high time of $1.81\, ms$. These can be seen in Figure \ref{fig:pwm_duty}. In both cases, changing the CCPR2L did not change the total time period or frequency of the whole signal, just the duty cycle.
   % the observed waveform exhibited an inverted profile with a pulse width of just $420\,\mu s$. This discrepancy is attributed to either an uncompensated active-low output configuration or an oscilloscope measurement artifact where the narrow off-state interval was inadvertently characterized as the active pulse width.
 
 
@@ -124,21 +124,21 @@
     \begin{subfigure}[b]{0.48\linewidth}
       \centering
       \includegraphics[width=\linewidth]{low.pdf}
-      \caption{}
+      \caption{Low setting using $CCPR2L = 25$}
     \end{subfigure}\hfill
     \begin{subfigure}[b]{0.48\linewidth}
       \centering
       \includegraphics[width=\linewidth]{high.pdf}
-      \caption{}
+      \caption{High setting using $CCPR2L = 225$}
     \end{subfigure}
-    \caption{}
+    \caption{PWM signals}
     \label{fig:pwm_duty}
   \end{figure}
 
   \subsection{Analog-to-Digital Conversion (ADC)}
-  The final stage integrated the ADC to control the PWM duty cycle dynamically. A potentiometer provided a 0-5\,V signal to the 10-bit ADC. We added this component and modified the program accordingly to make CCPR2L be determined the signal (converted from analogue to digital). The digital result was scaled to map to the PWM duty cycle register ($CCPR2L \equiv \text{ADC}/4.1$). Increasing the potentiometer's resistance increased the duty cycle, which could be obverved both at the oscilloscope and also in the LEDs as their intensity increased.
+  The final stage integrated the ADC to control the PWM duty cycle dynamically. A potentiometer provided a 0-5\,V signal to the 10-bit ADC. We added this component and modified the program accordingly to make CCPR2L be determined the signal (converted from analogue to digital). The digital result was scaled to map to the PWM duty cycle register ($CCPR2L \equiv \text{ADC}/4.1$). Increasing the potentiometer's resistance increased the duty cycle, which could be obverved both at the oscilloscope and also in the LEDs as their intensity increased. 
 
-  To rigorize this relationship, \hyperref[tab:adc_data]{Table~\ref*{tab:adc_data}} outlines the expected data for a full sweep of the input range. When populated, this data is expected to show a linear relationship between input voltage and duty cycle, validating the linearity of the PIC18F2620's SAR converter.
+  To rigorize this relationship, \hyperref[tab:adc_data]{Table~\ref*{tab:adc_data}} outlines the expected data for a full sweep of the input range. 
 
   \begin{table}[H]
   \centering
@@ -163,6 +163,15 @@
   \bottomrule
   \end{tabular}
   \end{table}
+
+Figure \ref{fig:linear} shows a linear relationship between input voltage and duty cycle, validating the linearity of the PIC18F2620's SAR converter.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{linear.png}
+    \caption{Plot of the input voltage and positive intervals, showing a linear relationship.}
+    \label{fig:linear}
+  \end{figure}
 
   \subsection{Error Analysis}
   While the measurements largely aligned with theoretical predictions, several sources of error were identified. The internal oscillator of the PIC18F2620, though calibrated, has a finite tolerance which can introduce minor frequency deviations in timer operations compared to a crystal oscillator. Additionally, the resistance tolerance of the components (typically $\pm 5\%$) and the voltage drop fluctuations in the breadboard connections directly impact the current and voltage readings. In the PWM analysis, the duty cycle measurement on the oscilloscope relies on visual cursor placement or automated capture, both of which are subject to resolution limits and signal noise. Finally, the ADC readings are subject to quantization noise ($\pm 0.5$ LSB) and potential non-linearity near the supply rails, which should be considered when interpreting the digital control values.
