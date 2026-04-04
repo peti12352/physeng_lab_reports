@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+matplotlib = "*"
+numpy = "*"
+scipy = "*"
+pyvisa = "*"
+pandas = "*"
+pyserial = "*"
+tqdm = "*"
+pyvisa-py = "*"
+jupyter = "*"
+
+[dev-packages]
+spyder-terminal = "*"
+spyder = "*"
+
+[requires]
+python_version = "3.14"
