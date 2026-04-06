@@ -1,0 +1,13 @@
+expected_file,exists
+CW_Sweep.csv,True
+CW_SweepREDO.csv,True
+CW_Sweep_magnet.csv,True
+CW_Sweep_magnet2.csv,True
+CW_Sweep_magnetFOCUS.csv,True
+CW_Sweep_magnetREDO.csv,True
+CW_Sweep_magnetREDO2.csv,True
+Rabi_Corrected.csv,True
+Rabi_tau1.csv,True
+T1_Sweep.csv,True
+T1_Sweep2.csv,True
+T1_relaxation.json,True

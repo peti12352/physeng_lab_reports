@@ -1,0 +1,2 @@
+file,type,rows,samples_per_row,scalar_csv,rs_wide_csv,rs_long_csv,fit_csv
+T1_relaxation.json,JSON_CONVERSION,30,25,T1_relaxation_scalar.csv,T1_relaxation_Rs_wide.csv,T1_relaxation_Rs_long.csv,T1_relaxation_for_fit.csv
