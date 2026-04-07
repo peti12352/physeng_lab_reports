@@ -148,7 +148,7 @@ def convert_t1_json_lossless(json_path, out_dir):
     }
 
 
-def analyze_cw_file(csv_path, plot_dir):
+def analyze_cw_file(csv_path, plot_dir, D_val=None, E_val=None):
     df = pd.read_csv(csv_path)
     if not {"freq_GHz", "R_V"}.issubset(df.columns):
         raise ValueError(f"Missing required columns in {csv_path.name}")
@@ -178,48 +178,23 @@ def analyze_cw_file(csv_path, plot_dir):
     resonance_idx = np.array(sorted(resonance_idx.tolist()), dtype=int)
 
     fig, ax = plt.subplots(figsize=(10, 5), dpi=120)
-    ax.plot(x, y, "o", markersize=3, alpha=0.6, label="Raw data")
-    ax.plot(x, y_smooth, "-", linewidth=2, label="Smoothed trace")
+    # Clean line plot of raw data as requested
+    ax.plot(x, y * 1e3, "-", lw=1.5, color="#457B9D", label="Lock-in Signal")
 
-    if SHOW_CW_RESONANCE_MARKERS and len(resonance_idx) > 0:
-        marker = "^" if CW_FIND_MAXIMA else "v"
-        ax.plot(
-            x[resonance_idx],
-            y_smooth[resonance_idx],
-            marker,
-            color="crimson",
-            markersize=7,
-            linestyle="None",
-            label="Detected resonances",
-        )
-        for idx in resonance_idx:
-            ax.annotate(
-                f"{x[idx]:.4f} GHz",
-                xy=(x[idx], y_smooth[idx]),
-                xytext=(0, 8),
-                textcoords="offset points",
-                ha="center",
-                fontsize=8,
-                rotation=90,
-            )
+    # Add D and E markers for specific plots
+    if csv_path.stem in ["CW_Sweep_magnetREDO2", "CW_SweepREDO"] and D_val is not None:
+        ax.axvline(D_val - E_val, color="red", ls="--", alpha=0.6, label="f1 (D-E)")
+        ax.axvline(D_val + E_val, color="green", ls="--", alpha=0.6, label="f2 (D+E)")
+        param_text = f"Zero-field benchmarks:\nD = {D_val:.4f} GHz\nE = {E_val*1e3:.2f} MHz"
+        ax.text(0.02, 0.4, param_text, transform=ax.transAxes, 
+                bbox=dict(facecolor='white', alpha=0.8, edgecolor='gray'), fontsize=10)
 
-    extrema_text = "Maxima" if CW_FIND_MAXIMA else "Minima"
-    ax.text(
-        0.01,
-        0.99,
-        f"Detection: {extrema_text}\nProminence >= {prominence:.3e} V\nMin distance: {distance} points",
-        transform=ax.transAxes,
-        va="top",
-        ha="left",
-        bbox={"boxstyle": "round", "facecolor": "white", "alpha": 0.85},
-        fontsize=9,
-    )
-
-    ax.set_xlabel("Frequency (GHz)")
-    ax.set_ylabel("Lock-in R (V)")
-    ax.set_title(f"CW Analysis: {csv_path.stem}")
-    ax.grid(True, ls=":", alpha=0.6)
-    ax.legend()
+    # Final plot styling
+    ax.set_title("CW frequency sweep", fontweight="bold", fontsize=12)
+    ax.set_xlabel("Microwave Frequency (GHz)", fontweight="bold")
+    ax.set_ylabel("Signal Amplitude (mV)", fontweight="bold")
+    ax.grid(True, which="both", ls=":", alpha=0.5)
+    ax.legend(loc="upper right", frameon=True, fontsize=10)
     fig.tight_layout()
     out_plot = save_figure(fig, plot_dir / f"{csv_path.stem}_analysis")
 
@@ -274,12 +249,27 @@ def analyze_rabi_file(csv_path, plot_dir):
         np.mean(y),
     ]
 
+    # Sane physical bounds for Rabi: 0.1 to 15 MHz
+    # frequency_per_ns: 0.0001 (0.1 MHz) to 0.015 (15 MHz)
     bounds = (
-        [-np.inf, 1.0, 1e-8, -2 * np.pi, -np.inf],
-        [np.inf, np.inf, 1.0, 2 * np.pi, np.inf],
+        [-np.inf, 10.0, 0.0001, -2 * np.pi, -np.inf],
+        [np.inf, 50000.0, 0.015, 2 * np.pi, np.inf],
     )
 
-    popt, _ = curve_fit(rabi_model, t, y, p0=p0, bounds=bounds, maxfev=20000)
+    # Use a few starting frequencies to avoid local minima
+    best_popt = p0
+    min_chi2 = np.inf
+    for f_guess in [f0, 0.002, 0.005, 0.008]:
+        p0[2] = f_guess
+        try:
+            popt_curr, _ = curve_fit(rabi_model, t, y, p0=p0, bounds=bounds, maxfev=10000)
+            chi2 = np.sum((y - rabi_model(t, *popt_curr))**2)
+            if chi2 < min_chi2:
+                min_chi2 = chi2
+                best_popt = popt_curr
+        except:
+            continue
+    popt = best_popt
     y_fit = rabi_model(t, *popt)
 
     amplitude, t2star_ns, frequency_per_ns, phase_rad, offset = popt
@@ -354,9 +344,24 @@ def analyze_t1_file(csv_path, plot_dir):
     if yerr is not None:
         yerr = yerr[sort_idx]
 
-    p0 = [y[0] - y[-1], max((np.max(t) - np.min(t)) / 3, 1000), y[-1]]
+    p0 = [y[0] - y[-1], 1e6, y[-1]]
     bounds = ([-np.inf, 1.0, -np.inf], [np.inf, np.inf, np.inf])
-    popt, _ = curve_fit(t1_model, t, y, p0=p0, bounds=bounds, maxfev=20000)
+
+    # Multi-start strategy for T1 to handle different scales and noise levels
+    best_popt = p0
+    min_chi2 = np.inf
+    # Try guesses for T1: 0.1ms, 1ms, 5ms, 10ms
+    for t1_guess in [1e5, 1e6, 5e6, 1e7]:
+        p0[1] = t1_guess
+        try:
+            popt_curr, _ = curve_fit(t1_model, t, y, p0=p0, bounds=bounds, maxfev=10000)
+            chi2 = np.sum((y - t1_model(t, *popt_curr))**2)
+            if chi2 < min_chi2:
+                min_chi2 = chi2
+                best_popt = popt_curr
+        except:
+            continue
+    popt = best_popt
     y_fit = t1_model(t, *popt)
     amplitude, t1_ns, offset = popt
     r2 = safe_r2(y, y_fit)
@@ -369,22 +374,23 @@ def analyze_t1_file(csv_path, plot_dir):
     ax.plot(t / 1e6, y_fit * 1e3, "-", lw=2, label="Exponential fit")
 
     model_text = (
-        r"$R(\tau)=C + A e^{-\tau/T_1}$"
+        r"Fit: $R(\tau) = C + A e^{-\tau/T_1}$"
         + "\n"
-        + f"A = {amplitude*1e3:.3f} mV\n"
-        + f"T1 = {t1_ns:.1f} ns = {t1_ns/1e6:.6f} ms\n"
-        + f"Offset C = {offset*1e3:.3f} mV\n"
-        + f"R² = {r2:.4f}"
+        + f"$A$ = {amplitude*1e3:.2f} mV\n"
+        + f"$T_1$ = {t1_ns/1e6:.3f} ms\n"
+        + f"$C$ = {offset*1e3:.2f} mV\n"
+        + f"$r^2$ = {r2:.4f}"
     )
     ax.text(
-        0.01,
-        0.99,
+        0.05,
+        0.05,
         model_text,
         transform=ax.transAxes,
-        va="top",
+        va="bottom",
         ha="left",
-        bbox={"boxstyle": "round", "facecolor": "white", "alpha": 0.85},
-        fontsize=9,
+        bbox={"boxstyle": "round", "facecolor": "white", "alpha": 0.9, "edgecolor": "gray"},
+        fontsize=11,
+        fontweight="bold"
     )
 
     ax.set_xscale("log")
@@ -453,9 +459,28 @@ def main():
             }
         )
 
+    # Pre-extract D and E from CW_SweepREDO if possible
+    D_val, E_val = None, None
+    zf_path = results_dir / "CW_SweepREDO.csv"
+    if zf_path.exists():
+        try:
+            zf_df = pd.read_csv(zf_path)
+            zf_y = zf_df["R_V"].to_numpy()
+            zf_x = zf_df["freq_GHz"].to_numpy()
+            zf_w = odd_window_size(len(zf_y), fraction=0.16)
+            zf_y_smooth = savgol_filter(zf_y, zf_w, 2)
+            zf_peaks, _ = find_peaks(zf_y_smooth, prominence=np.ptp(zf_y_smooth)*0.2)
+            if len(zf_peaks) >= 2:
+                f1, f2 = sorted(zf_x[zf_peaks[:2]])
+                D_val = (f1 + f2) / 2
+                E_val = (f2 - f1) / 2
+                print(f"Extracted Zero-field D={D_val:.4f} GHz, E={E_val*1e3:.2f} MHz")
+        except Exception as e:
+            print(f"Warning: Could not extract D/E: {e}")
+
     for csv_path in csv_files:
         if csv_path.name.startswith("CW"):
-            result = analyze_cw_file(csv_path, plots_dir)
+            result = analyze_cw_file(csv_path, plots_dir, D_val, E_val)
         elif csv_path.name.startswith("Rabi"):
             result = analyze_rabi_file(csv_path, plots_dir)
         elif csv_path.name.startswith("T1"):
