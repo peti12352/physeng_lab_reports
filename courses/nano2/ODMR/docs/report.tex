@@ -9,6 +9,8 @@
 \usepackage{siunitx}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage{subcaption}
+
 
 \begin{document}
 
@@ -31,20 +33,8 @@ The negatively charged nitrogen-vacancy center (NV$^-$) in diamond is a point de
 \begin{equation}
 \frac{H}{h}=D S_z^2 + E\left(S_x^2-S_y^2\right)+\gamma_e\,\mathbf{B}\cdot\mathbf{S},
 \end{equation} 
-% GGG please cite https://arxiv.org/html/2504.20750v3.
-% GGG
-@misc{lönard2025limitsabsolutevectormagnetometry,
-      title={Limits of absolute vector magnetometry with NV centers in diamond}, 
-      author={Dennis Lönard and Isabel Cardoso Barbosa and Stefan Johansson and Jonas Gutsche and Artur Widera},
-      year={2025},
-      eprint={2504.20750},
-      archivePrefix={arXiv},
-      primaryClass={quant-ph},
-      url={https://arxiv.org/abs/2504.20750}, 
-}
-% GGG
-
-where $E$ describes strain- and electric-field-induced splitting, $\gamma_e$ is the electron gyromagnetic ratio, and $\mathbf{B}$ is the applied magnetic field.
+\cite{loenard2025limitsabsolutevectormagnetometry} 
+where $E$ describes strain- and electric-field-induced splitting, \(\gamma_e\) is the electron gyromagnetic ratio, and \(\mathbf{B}\) is the applied magnetic field.
 
 ODMR combines optical spin polarization/readout with microwave-driven magnetic resonance. Under green excitation, spin-selective intersystem crossing pumps the NV ensemble preferentially into $m_s=0$, and the fluorescence is higher for $m_s=0$ than for $m_s=\pm1$. When the microwave drive is resonant with a spin transition, population is transferred out of $m_s=0$ and a dip appears in fluorescence. In zero magnetic field this produces the characteristic two-peak structure around $D$ due to nonzero $E$.
 
@@ -59,18 +49,14 @@ V_R(\tau)=A\exp\left[-\left(\tau/T_2^{\mathrm{eff}}\right)^\beta\right]\sin\left
 
 \section{Results and Discussion}
 
-\subsection{CW ODMR and Magnetic Field Calibration}
-
-%%% GGG Calibration photoluminescence
+\subsection{Photoluminescence and Lock-in Calibration}
 
 We carried out our measurements in workstation 1 using the D9 sample.
 During setup alignment, the detector background level before laser excitation was approximately $0.22$~V, while the best photoluminescence operating point reached about $1.5$~V. The sample position was adjusted to find the region of highest density of nitrogen vacancy sites by maximizing photoluminescence signal at a voltmeter.
 
-% GGG Calibration
-
 For the ODMR measurements we slightly re-calibrated the sample position to optimize for the lock-in signal, which measures the difference in photoluminescence between the microwave excitation time and the non-microwave excitation time. The sample's concentration of nitrogen vacancies and the microwave's intensity are inhomogeneous in space.We find the position that with both the highest concentration of nitrogen vacancies and highest intensity of the microwave field. We could reach a maximum signal level of $18.5$~mV, with a noise floor of $0.1$~mV. We used a lock-in time constant of 10 ms.
 
-% GGG measurement
+\subsection{CW ODMR and Magnetic Field Measurements}
 
 Initially, a frequency sweep was conducted in zero magnetic field to characterize the ground-state splitting of the NV centers (Fig.~\ref{fig:cw_zerofield}). The resonance exhibits a double-peak structure due to the strain-induced crystal field parameter $E$.
 
@@ -113,7 +99,7 @@ $V_R(\tau) = A e^{-(\tau / T_2^{\text{eff}})^\beta} \sin (\omega_{\text{Rabi}} \
     \centering
     \includegraphics[width=0.45\textwidth]{figures/Rabi_Corrected.png}
     \includegraphics[width=0.45\textwidth]{figures/Rabi_tau1.png}
-    \caption{Rabi oscillation measurements performed by our group: (a) worse calibrated setup, (b) better calibrated setup GGG.}
+    \caption{Rabi oscillation measurements performed by our group: (a) worse calibrated setup, (b) better calibrated setup XXX.}
     \label{fig:rabi_ours}
 \end{figure}
 
@@ -129,15 +115,37 @@ The fitted parameter $\omega_{\mathrm{Rabi}}$ provides the extracted Rabi freque
 % XXX check
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.23\textwidth]{figures/rabi_oscillations_task6_XY.png}
-    \includegraphics[width=0.23\textwidth]{figures/rabi_oscillations_task6_6dB_XY.png}
-    \includegraphics[width=0.23\textwidth]{figures/rabi_oscillations_task6_10dB_XY.png}
-    % GGG put a caption to each indicating that the first one has no attenuation, second has 6dB and third 10dB attenuation
+    \begin{subfigure}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/rabi_oscillations_task6_XY.png}
+        \caption{No attenuation}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/rabi_oscillations_task6_6dB_XY.png}
+        \caption{6 dB attenuation}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/rabi_oscillations_task6_10dB_XY.png}
+        \caption{10 dB attenuation}
+    \end{subfigure}
     \caption{Colleague-provided Rabi oscillation measurements showing coherent nutations at various power levels.}
     \label{fig:rabi_colleagues}
 \end{figure}
-% XXX check values and compare them
+
+The $\omega_{\mathrm{Rabi}}$ measurement with different MW attenuations allows us to look at the power dependence of the frequency. We expect  $\omega_{Rabi} \propto \sqrt{P}$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/rabi_power_dependence.pdf}
+    \caption{Power dependence of the Rabi frequency.}
+    \label{fig:rabi_power_dependence}
+\end{figure}
+
+As expected, $\omega_{\mathrm{Rabi}}$ increases with the power. The few data points and the non ideality of the MW and amplifier explain the deviation from the linear fit.
 
 \subsection{T1 Relaxation Time}
 
@@ -156,5 +164,8 @@ The sequence design followed the standard timing constraints for this setup, wit
 \section{Conclusion}
 
 We successfully implemented TR-ODMR characterization of NV centers in diamond. By extracting the zero-field splitting $D$ and $E$, calibrating the magnetic field response, and identifying the optimal modulation frequency at 3.0912 GHz, we established a robust framework for spin manipulation. Our results, validated against colleague and instructor data, provide a clear quantification of the coherent nutation and relaxation regimes of the system.
+
+\bibliographystyle{apsrev4-2}
+\bibliography{lit}
 
 \end{document}
