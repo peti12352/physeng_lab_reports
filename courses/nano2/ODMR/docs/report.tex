@@ -99,20 +99,15 @@ $V_R(\tau) = A e^{-(\tau / T_2^{\text{eff}})^\beta} \sin (\omega_{\text{Rabi}} \
     \centering
     \includegraphics[width=0.45\textwidth]{figures/Rabi_Corrected.png}
     \includegraphics[width=0.45\textwidth]{figures/Rabi_tau1.png}
-    \caption{Rabi oscillation measurements performed by our group: (a) worse calibrated setup, (b) better calibrated setup XXX.}
+    \caption{Rabi oscillation measurements performed by our group: (a) worse calibrated setup, (b) better calibrated setup.}
     \label{fig:rabi_ours}
 \end{figure}
 
-In Fig. \ref{fig:rabi_ours} (a) we could not get a large enough signal. Then after re-calibrating the setup by adjusting the sample and magnet positions, we obtained a better measurement Fig. \ref{fig:rabi_ours} (b). While we still couldn't properly measure $\omega_{\text{Rabi}}$], we could accurately measure $T_2^{\text{eff}}$, in strong coincidence with the value measured by our colleagues and shown in \ref{fig:rabi_colleagues}. Unfortunately we were not able to reliably measure the Rabi oscillations
+In Fig. \ref{fig:rabi_ours} (a) we could not get a large enough signal. Then after re-calibrating the setup by adjusting the sample and magnet positions, we obtained a better measurement Fig. \ref{fig:rabi_ours} (b). While we still couldn't properly measure $\omega_{\text{Rabi}}$, we could accurately measure $T_2^{\text{eff}}$ to be around $100$~ns , which is close to the value measured by our colleagues and shown in \ref{fig:rabi_colleagues}. Unfortunately we were not able to reliably measure the Rabi oscillations. We believed that the main issue was the low signal, but even after optimizing for a high signal, we still could not get a good reading of the $\omega_{\text{Rabi}}$. 
 % We calibrated the measurement setup by optimizing the sample's position and the magnet's orientation to obtain the highest signal possible. A motivation for this was that we wanted to investigate the power dependence of the MW
-
-In Fig.~\ref{fig:rabi_ours}(a), fully resolved multi-period oscillations were limited by microwave delivery and field inhomogeneity, but the initial coherent rotation and damping trend are still visible and fit reliably. We calibrated the setup by optimizing sample position and magnet orientation to maximize contrast before recording the pulse-duration sweeps.
 
 We then analyzed four reference measurements kindly provided by colleagues Volk János and Eisenberger Lea (Fig.~\ref{fig:rabi_colleagues}) to compare with our fitting model.
 % across different microwave delivery efficiencies and power levels.
-
-The fitted parameter $\omega_{\mathrm{Rabi}}$ provides the extracted Rabi frequency for each dataset. Comparing traces acquired at different microwave attenuation levels is used as a consistency check for coherent driving, since the Rabi frequency is expected to increase with effective microwave field amplitude.
-% XXX check
 
 \begin{figure}[H]
     \begin{subfigure}[b]{0.31\textwidth}
@@ -136,7 +131,7 @@ The fitted parameter $\omega_{\mathrm{Rabi}}$ provides the extracted Rabi freque
     \label{fig:rabi_colleagues}
 \end{figure}
 
-The $\omega_{\mathrm{Rabi}}$ measurement with different MW attenuations allows us to look at the power dependence of the frequency. We expect  $\omega_{Rabi} \propto \sqrt{P}$.
+The $\omega_{\mathrm{Rabi}}$ measurement with different MW attenuations allows us to look at the power dependence of the frequency. We expect  $\omega_{Rabi} \propto \sqrt{P}$:
 
 \begin{figure}[H]
     \centering
@@ -145,7 +140,7 @@ The $\omega_{\mathrm{Rabi}}$ measurement with different MW attenuations allows u
     \label{fig:rabi_power_dependence}
 \end{figure}
 
-As expected, $\omega_{\mathrm{Rabi}}$ increases with the power. The few data points and the non ideality of the MW and amplifier explain the deviation from the linear fit.
+As expected, $\omega_{\mathrm{Rabi}}$ increases with the power. The few data points and the non ideality of the MW and amplifier explain the deviation from the linear fit. On the other hand $T_2^{\text{eff}}$ decreases with an increasing power. This is manily due to the effect of the inhomogeneous MW field, which creates a spread of $\omega_{\mathrm{Rabi}}$, which macroscopically destructively interfere making the dephasing quicker. This is in accordance with the measurements.
 
 \subsection{T1 Relaxation Time}
 
