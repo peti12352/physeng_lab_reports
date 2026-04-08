@@ -19,7 +19,8 @@
 \date{\today}
 
 \begin{abstract}
-This report details the implementation and results of Time-Resolved Optically Detected Magnetic Resonance (TR-ODMR) measurements on Nitrogen-Vacancy (NV) centers in a bulk diamond sample. We performed Continuous Wave (CW) ODMR to characterize zero-field splitting and magnetic field response. Time-resolved measurements were conducted to observe Rabi oscillations and determine the longitudinal relaxation time $T_1$. Despite experimental challenges in microwave delivery, we successfully extracted the core spin Hamiltonian parameters and validated our results against reference datasets.
+This report details the implementation and results of Time-Resolved Optically Detected Magnetic Resonance (TR-ODMR) measurements on Nitrogen-Vacancy (NV) centers in a bulk diamond sample. We performed Continuous Wave (CW) ODMR to characterize zero-field splitting and magnetic field response. Time-resolved measurements were conducted to observe Rabi oscillations and determine the longitudinal relaxation time $T_1$. 
+% Despite experimental challenges in microwave delivery, we successfully extracted the core spin Hamiltonian parameters and validated our results against reference datasets.
 \end{abstract}
 
 \maketitle
@@ -32,16 +33,20 @@ The Nitrogen-Vacancy (NV) center in diamond is a point defect consisting of a su
 
 \subsection{CW ODMR and Magnetic Field Calibration}
 
-Initially, a frequency sweep was conducted in zero magnetic field to characterize the ground-state splitting of the NV centers (Fig.~\ref{fig:cw_zerofield}). The resonance exhibits a double-peak structure due to the strain-induced crystal field parameter $E$.
+Initially, a frequency sweep was conducted in zero magnetic field to characterize the ground-state splitting of the NV centers (Fig.~\ref{fig:cw_zerofield}). The resonance exhibits a double-peak structure due to the strain-induced crystal field parameter $E$. % GGG
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.48\textwidth]{figures/CW_SweepREDO_analysis.pdf}
-    \caption{CW ODMR sweep at zero magnetic field from 2.3 to 3.4 GHz range with $D$ and $E$ parameters indicated..}
+    \caption{CW ODMR sweep at zero magnetic field from 2.3 to 3.4 GHz range with $D = 2.87$ GHz and $E = 3.25$ GHz parameters.}
     \label{fig:cw_zerofield}
 \end{figure}
 
-By analyzing this splitting, we extracted the zero-field splitting parameters $D$ and $E$. These parameters are overlaid on the full magnetic field sweep in Fig.~\ref{fig:magnet_cal}a. A focused sweep (Fig.~\ref{fig:magnet_cal}b) was then used to accurately identify the optimal resonance frequency at $3.0912$~GHz, which was used for all subsequent pulsed manipulation tasks.
+By analyzing this splitting, we extracted the zero-field splitting parameters $D = 2.87$ GHz and $E = 3.25$ GHz. 
+% GGG compare with literature values
+
+We then introduced
+These parameters are overlaid on the full magnetic field sweep in Fig.~\ref{fig:magnet_cal}a. A focused sweep (Fig.~\ref{fig:magnet_cal}b) was then used to accurately identify the optimal resonance frequency at $3.0912$~GHz, which was used for the following tasks.
 
 \begin{figure}[H]
     \centering
@@ -57,12 +62,15 @@ Coherent control of the NV spin was investigated using the Rabi oscillation puls
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/Rabi_tau1.png}
     \includegraphics[width=0.45\textwidth]{figures/Rabi_Corrected.png}
+    % GGG include caption (a) and (b)
+    \includegraphics[width=0.45\textwidth]{figures/Rabi_tau1.png}
     \caption{Rabi oscillation measurements performed by our group.}
     \label{fig:rabi_ours}
 \end{figure}
 
+In Fig. \ref{fig:rabi_ours} (a) we could not get a 
+We calibrated the measurement setup by optimizing the sample's position and the magnet's orientation to obtain the highest signal possible. A motivation for this was that we wanted to investigate the power dependence of the MW
 
 We then analyzed four reference measurements kindly provided by colleagues Volk János and Eisenberger Lea (Fig.~\ref{fig:rabi_colleagues}) to compare with our fitting model.
 % across different microwave delivery efficiencies and power levels.
