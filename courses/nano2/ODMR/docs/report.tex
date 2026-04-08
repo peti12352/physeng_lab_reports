@@ -59,11 +59,16 @@ Initially, a frequency sweep was conducted in zero magnetic field to characteriz
 
 By analyzing this splitting, we extracted $D = 2.87$~GHz and the corresponding strain-related splitting parameter $E$. The obtained $D$ value is consistent with the standard literature value for NV$^-$ centers at room temperature.
 
+In the zero-field scan, two resonance peaks are observed, corresponding to the $m_s=0\rightarrow m_s=+1$ and $m_s=0\rightarrow m_s=-1$ transitions split by $E$. Following the task definition, $D$ is the average of the two resonance frequencies and $E$ is half of their separation.
+
 During optical alignment, the detector background level before laser excitation was approximately $0.22$~V, while the best photoluminescence operating point reached about $1.5$~V. The sample position (rather than mirror alignment) was adjusted to maximize signal.
 
 After enabling microwave modulation and lock-in detection, the optimization target became fluorescence contrast between microwave-on and microwave-off conditions. The best lock-in amplitude was approximately $R\approx18.5$~mV with a noise floor of about $0.1$~mV. This behavior is consistent with spatial inhomogeneity in both NV density and microwave field strength across the sample and coplanar waveguide.
 
 These calibrated conditions are overlaid on the full magnetic-field sweep in Fig.~\ref{fig:magnet_cal}(a). A focused sweep (Fig.~\ref{fig:magnet_cal}(b)) was then used to identify the working resonance frequency at $3.0912$~GHz, which was used for the time-resolved measurements.
+
+With an external magnetic field, the spectrum is expected to show up to eight resonances: four crystallographic NV orientations, each with two allowed transitions. In our data, the observed structure is consistent with this orientation-split ODMR picture.
+% GGG random orientation magnet
 
 \begin{figure}[H]
     \centering
@@ -85,10 +90,16 @@ Coherent control of the NV spin was investigated using the Rabi oscillation puls
     \label{fig:rabi_ours}
 \end{figure}
 
+% In Fig. \ref{fig:rabi_ours} (a) we could not get a 
+% We calibrated the measurement setup by optimizing the sample's position and the magnet's orientation to obtain the highest signal possible. A motivation for this was that we wanted to investigate the power dependence of the MW
+
 In Fig.~\ref{fig:rabi_ours}(a), fully resolved multi-period oscillations were limited by microwave delivery and field inhomogeneity, but the initial coherent rotation and damping trend are still visible and fit reliably. We calibrated the setup by optimizing sample position and magnet orientation to maximize contrast before recording the pulse-duration sweeps.
 
 We then analyzed four reference measurements kindly provided by colleagues Volk János and Eisenberger Lea (Fig.~\ref{fig:rabi_colleagues}) to compare with our fitting model.
 % across different microwave delivery efficiencies and power levels.
+
+The fitted parameter $\omega_{\mathrm{Rabi}}$ provides the extracted Rabi frequency for each dataset. Comparing traces acquired at different microwave attenuation levels is used as a consistency check for coherent driving, since the Rabi frequency is expected to increase with effective microwave field amplitude.
+% GGG check
 
 \begin{figure}[H]
     \centering
@@ -99,11 +110,13 @@ We then analyzed four reference measurements kindly provided by colleagues Volk 
     \caption{Colleague-provided Rabi oscillation measurements showing coherent nutations at various power levels.}
     \label{fig:rabi_colleagues}
 \end{figure}
-
+% GGG check values and compare them
 
 \subsection{T1 Relaxation Time}
 
 The longitudinal relaxation time $T_1$ was measured using a variable-delay sequence. Figure~\ref{fig:t1_plots} compares our group's cleanest experimental dataset with the reference sweep provided by the laboratory instructor. The signal follows an exponential decay, $V(\tau)=A\exp(-\tau/T_1)+C$. For the CW optimization steps we used a lock-in time constant of 10 ms, while for the subsequent time-resolved acquisitions we used 30 ms to improve stability.
+
+The sequence design followed the standard timing constraints for this setup, with long initialization and short readout pulses (nominally on the order of $t_{\mathrm{init}}\sim50\,\mu$s and $t_{\mathrm{read}}\sim10\,\mu$s). The polarized state yields a higher fluorescence level than the relaxed state, giving the positive contrast required for robust $T_1$ fitting.
 
 \begin{figure}[H]
     \centering

@@ -58,3 +58,59 @@ we expect to get 8 resonances. there are 4 possible directions for the magentic 
 
 
 2 groups of 4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+D
+D (zero-field splitting)
+Meaning: intrinsic splitting between 
+m
+s
+=
+0
+m 
+s
+​
+ =0 and 
+m
+s
+=
+±
+1
+m 
+s
+​
+ =±1 even when 
+B
+=
+0
+B=0.
+Origin: spin-spin interaction in the NV triplet ground state.
+Relevance: sets the central ODMR frequency scale; it is the baseline resonance and a key calibration parameter.
+E
+E (transverse splitting / strain parameter)
+Meaning: lifts degeneracy between the two 
+m
+s
+=
+±
+1
+m 
+s
+​
+ =±1 branches at zero magnetic field.
+Origin: local symmetry breaking (strain/electric-field effects).
+Relevance: determines the doublet separation around 
+D
+D, reflects crystal/environment quality, and affects line positions and fitting.
