@@ -27,32 +27,49 @@ This report details the implementation and results of Time-Resolved Optically De
 
 \section{Introduction}
 
-The Nitrogen-Vacancy (NV) center in diamond is a point defect consisting of a substitutional nitrogen atom adjacent to a lattice vacancy. Its ground state is a spin triplet ($S=1$), where the $m_s=0$ state is separated from the $m_s=\pm 1$ states by a zero-field splitting $D \approx 2.87$~GHz. In this report, we document the calibration of the CW resonances and the subsequent investigation of coherent spin dynamics and relaxation.
+The negatively charged nitrogen-vacancy center (NV$^-$) in diamond is a point defect formed by a substitutional nitrogen atom next to a vacancy. Its electronic ground state is a spin triplet ($S=1$) with a zero-field splitting between the $m_s=0$ and $m_s=\pm 1$ sublevels of approximately $D\approx2.87$~GHz at room temperature. In the effective spin-1 description used in this work, the ground-state Hamiltonian can be written as
+\begin{equation}
+\frac{H}{h}=D S_z^2 + E\left(S_x^2-S_y^2\right)+\gamma_e\,\mathbf{B}\cdot\mathbf{S},
+\end{equation}
+where $E$ describes strain- and electric-field-induced splitting, $\gamma_e$ is the electron gyromagnetic ratio, and $\mathbf{B}$ is the applied magnetic field.
+
+ODMR combines optical spin polarization/readout with microwave-driven magnetic resonance. Under green excitation, spin-selective intersystem crossing pumps the NV ensemble preferentially into $m_s=0$, and the fluorescence is higher for $m_s=0$ than for $m_s=\pm1$. When the microwave drive is resonant with a spin transition, population is transferred out of $m_s=0$ and a dip appears in fluorescence. In zero magnetic field this produces the characteristic two-peak structure around $D$ due to nonzero $E$.
+
+After CW frequency calibration, we used time-resolved pulse sequences to probe longitudinal relaxation and coherent control. The $T_1$ sequence measures recovery toward thermal equilibrium as a function of delay $\tau$, while the Rabi sequence maps coherent spin rotations driven by resonant microwave pulses of variable duration. The measured signals were fitted with the models
+\begin{equation}
+V_{T_1}(\tau)=A\exp\left(-\tau/T_1\right)+C,
+\end{equation}
+and
+\begin{equation}
+V_R(\tau)=A\exp\left[-\left(\tau/T_2^{\mathrm{eff}}\right)^\beta\right]\sin\left(\omega_{\mathrm{Rabi}}\tau+\phi\right)+B\tau+C.
+\end{equation}
 
 \section{Results and Discussion}
 
 \subsection{CW ODMR and Magnetic Field Calibration}
 
-Initially, a frequency sweep was conducted in zero magnetic field to characterize the ground-state splitting of the NV centers (Fig.~\ref{fig:cw_zerofield}). The resonance exhibits a double-peak structure due to the strain-induced crystal field parameter $E$. % GGG
+Initially, a frequency sweep was conducted in zero magnetic field to characterize the ground-state splitting of the NV centers (Fig.~\ref{fig:cw_zerofield}). The resonance exhibits a double-peak structure due to the strain-induced crystal field parameter $E$.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.48\textwidth]{figures/CW_SweepREDO_analysis.pdf}
-    \caption{CW ODMR sweep at zero magnetic field from 2.3 to 3.4 GHz range with $D = 2.87$ GHz and $E = 3.25$ GHz parameters.}
+    \caption{CW ODMR sweep at zero magnetic field from 2.3 to 3.4 GHz range with extracted $D$ and $E$ parameters indicated by the fit.}
     \label{fig:cw_zerofield}
 \end{figure}
 
-By analyzing this splitting, we extracted the zero-field splitting parameters $D = 2.87$ GHz and $E = 3.25$ GHz. 
-% GGG compare with literature values
+By analyzing this splitting, we extracted $D = 2.87$~GHz and the corresponding strain-related splitting parameter $E$. The obtained $D$ value is consistent with the standard literature value for NV$^-$ centers at room temperature.
 
-We then introduced
-These parameters are overlaid on the full magnetic field sweep in Fig.~\ref{fig:magnet_cal}a. A focused sweep (Fig.~\ref{fig:magnet_cal}b) was then used to accurately identify the optimal resonance frequency at $3.0912$~GHz, which was used for the following tasks.
+During optical alignment, the detector background level before laser excitation was approximately $0.22$~V, while the best photoluminescence operating point reached about $1.5$~V. The sample position (rather than mirror alignment) was adjusted to maximize signal.
+
+After enabling microwave modulation and lock-in detection, the optimization target became fluorescence contrast between microwave-on and microwave-off conditions. The best lock-in amplitude was approximately $R\approx18.5$~mV with a noise floor of about $0.1$~mV. This behavior is consistent with spatial inhomogeneity in both NV density and microwave field strength across the sample and coplanar waveguide.
+
+These calibrated conditions are overlaid on the full magnetic-field sweep in Fig.~\ref{fig:magnet_cal}(a). A focused sweep (Fig.~\ref{fig:magnet_cal}(b)) was then used to identify the working resonance frequency at $3.0912$~GHz, which was used for the time-resolved measurements.
 
 \begin{figure}[H]
     \centering
     (a) \includegraphics[width=0.48\textwidth]{figures/CW_Sweep_magnetREDO2_analysis.png} \\
     (b) \includegraphics[width=0.48\textwidth]{figures/CW_Sweep_magnetFOCUS_analysis.png}
-    \caption{CW ODMR spectra under magnetic field. (a) Full sweep from 2.3 to 3.4 GHz  (b) High-resolution sweep from 3.04 to 3.12 GHz focused on the selected resonance at 3.0912 GHz.}
+    \caption{CW ODMR spectra under magnetic field: (a) full sweep from 2.3 to 3.4 GHz; (b) high-resolution sweep from 3.04 to 3.12 GHz focused on the selected resonance at 3.0912 GHz.}
     \label{fig:magnet_cal}
 \end{figure}
 
@@ -63,14 +80,12 @@ Coherent control of the NV spin was investigated using the Rabi oscillation puls
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/Rabi_Corrected.png}
-    % GGG include caption (a) and (b)
     \includegraphics[width=0.45\textwidth]{figures/Rabi_tau1.png}
-    \caption{Rabi oscillation measurements performed by our group.}
+    \caption{Rabi oscillation measurements performed by our group: (a) measured contrast and fit in the standard acquisition window, (b) extended-delay dataset used to evaluate damping and effective coherence envelope.}
     \label{fig:rabi_ours}
 \end{figure}
 
-In Fig. \ref{fig:rabi_ours} (a) we could not get a 
-We calibrated the measurement setup by optimizing the sample's position and the magnet's orientation to obtain the highest signal possible. A motivation for this was that we wanted to investigate the power dependence of the MW
+In Fig.~\ref{fig:rabi_ours}(a), fully resolved multi-period oscillations were limited by microwave delivery and field inhomogeneity, but the initial coherent rotation and damping trend are still visible and fit reliably. We calibrated the setup by optimizing sample position and magnet orientation to maximize contrast before recording the pulse-duration sweeps.
 
 We then analyzed four reference measurements kindly provided by colleagues Volk János and Eisenberger Lea (Fig.~\ref{fig:rabi_colleagues}) to compare with our fitting model.
 % across different microwave delivery efficiencies and power levels.
@@ -88,7 +103,7 @@ We then analyzed four reference measurements kindly provided by colleagues Volk 
 
 \subsection{T1 Relaxation Time}
 
-The longitudinal relaxation time $T_1$ was measured using a variable delay sequence. Fig.~\ref{fig:t1_plots} compare our group's cleanest experimental dataset with the reference sweep provided by the laboratory instructor. The signal follows an exponential decay: $V(\tau) = A \exp(-\tau/T_1) + C$.
+The longitudinal relaxation time $T_1$ was measured using a variable-delay sequence. Figure~\ref{fig:t1_plots} compares our group's cleanest experimental dataset with the reference sweep provided by the laboratory instructor. The signal follows an exponential decay, $V(\tau)=A\exp(-\tau/T_1)+C$. For the CW optimization steps we used a lock-in time constant of 10 ms, while for the subsequent time-resolved acquisitions we used 30 ms to improve stability.
 
 \begin{figure}[H]
     \centering
