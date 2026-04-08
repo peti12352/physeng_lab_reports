@@ -34,28 +34,40 @@ The Nitrogen-Vacancy (NV) center in diamond is a point defect consisting of a su
 
 Initially, a frequency sweep was conducted in zero magnetic field to characterize the ground-state splitting of the NV centers (Fig.~\ref{fig:cw_zerofield}). The resonance exhibits a double-peak structure due to the strain-induced crystal field parameter $E$.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.48\textwidth]{figures/CW_SweepREDO_analysis.pdf}
-    \caption{CW ODMR spectrum at zero magnetic field (2.3 - 3.4 GHz range).}
+    \caption{CW ODMR sweep at zero magnetic field from 2.3 to 3.4 GHz range with $D$ and $E$ parameters indicated..}
     \label{fig:cw_zerofield}
 \end{figure}
 
-By analyzing this splitting, we extracted the zero-field splitting parameters $D$ and $E$. These benchmarks are overlaid on the full magnetic field sweep in Fig.~\ref{fig:magnet_cal}a. A focused sweep (Fig.~\ref{fig:magnet_cal}b) was then used to accurately identify the optimal resonance frequency at $3.0912$~GHz, which was used for all subsequent pulsed manipulation tasks.
+By analyzing this splitting, we extracted the zero-field splitting parameters $D$ and $E$. These parameters are overlaid on the full magnetic field sweep in Fig.~\ref{fig:magnet_cal}a. A focused sweep (Fig.~\ref{fig:magnet_cal}b) was then used to accurately identify the optimal resonance frequency at $3.0912$~GHz, which was used for all subsequent pulsed manipulation tasks.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     (a) \includegraphics[width=0.48\textwidth]{figures/CW_Sweep_magnetREDO2_analysis.png} \\
     (b) \includegraphics[width=0.48\textwidth]{figures/CW_Sweep_magnetFOCUS_analysis.png}
-    \caption{CW ODMR spectra under magnetic field. (a) Full sweep from 2.3 to 3.4 GHz with $D$ and $E$ benchmarks indicated. (b) High-resolution sweep focused on the selected resonance at 3.0912 GHz.}
+    \caption{CW ODMR spectra under magnetic field. (a) Full sweep from 2.3 to 3.4 GHz  (b) High-resolution sweep from 3.04 to 3.12 GHz focused on the selected resonance at 3.0912 GHz.}
     \label{fig:magnet_cal}
 \end{figure}
 
 \subsection{Rabi Oscillations}
 
-Coherent control of the NV spin was investigated using the Rabi oscillation pulse sequence. We first analyzed four reference measurements provided by colleagues (Fig.~\ref{fig:rabi_colleagues}) to calibrate our fitting model across different microwave delivery efficiencies and power levels.
+Coherent control of the NV spin was investigated using the Rabi oscillation pulse sequence. Our group's experimental results are shown in Fig.~\ref{fig:rabi_ours}. While clear sinusoidal oscillations were limited in our physical setup, the transition to saturation and the characteristic damping times were successfully captured by the complex fitting model. The fitting was done according to the formula: $V_R(\tau) = A e^{-(\tau / T_2^{\text{eff}})^\beta} \sin (\omega_{\text{Rabi}} \tau + \phi) + B\tau + C$
 
-\begin{figure}[h]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/Rabi_tau1.png}
+    \includegraphics[width=0.45\textwidth]{figures/Rabi_Corrected.png}
+    \caption{Rabi oscillation measurements performed by our group.}
+    \label{fig:rabi_ours}
+\end{figure}
+
+
+We then analyzed four reference measurements kindly provided by colleagues Volk János and Eisenberger Lea (Fig.~\ref{fig:rabi_colleagues}) to compare with our fitting model.
+% across different microwave delivery efficiencies and power levels.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.23\textwidth]{figures/rabi_oscillations_task6_6dB_XY.png}
     \includegraphics[width=0.23\textwidth]{figures/rabi_oscillations_task6_proper.png}
@@ -65,21 +77,12 @@ Coherent control of the NV spin was investigated using the Rabi oscillation puls
     \label{fig:rabi_colleagues}
 \end{figure}
 
-Our group's experimental results are shown in Fig.~\ref{fig:rabi_ours}. While clear sinusoidal oscillations were limited in our physical setup, the transition to saturation and the characteristic damping times were successfully captured by the complex fitting model.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.45\textwidth]{figures/Rabi_tau1.png}
-    \includegraphics[width=0.45\textwidth]{figures/Rabi_Corrected.png}
-    \caption{Rabi oscillation measurements performed by our group (tau1 and Corrected datasets).}
-    \label{fig:rabi_ours}
-\end{figure}
 
 \subsection{T1 Relaxation Time}
 
-The longitudinal relaxation time $T_1$ was measured using a variable delay sequence. Fig.~\ref{fig:t1_plots} compare our group's cleanest experimental dataset with the reference sweep provided by the instructor. The signal follows an exponential decay: $V(\tau) = A \exp(-\tau/T_1) + C$.
+The longitudinal relaxation time $T_1$ was measured using a variable delay sequence. Fig.~\ref{fig:t1_plots} compare our group's cleanest experimental dataset with the reference sweep provided by the laboratory instructor. The signal follows an exponential decay: $V(\tau) = A \exp(-\tau/T_1) + C$.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/T1_relaxation_for_fit_analysis.pdf}
     \includegraphics[width=0.45\textwidth]{figures/T1_Sweep2_analysis.pdf}
