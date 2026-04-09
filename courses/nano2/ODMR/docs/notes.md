@@ -114,3 +114,29 @@ Origin: local symmetry breaking (strain/electric-field effects).
 Relevance: determines the doublet separation around 
 D
 D, reflects crystal/environment quality, and affects line positions and fitting.
+
+
+
+
+
+
+
+
+
+The formula you are using is a modified version of the standard Rabi decay model. [cite_start]Your lab manual recommends this specific stretched exponential formula to account for the physical realities of your experimental setup, such as imperfect driving fields and thermal effects[cite: 576, 577].
+
+Here is the physical breakdown of each fitting parameter in your equation:
+
+* [cite_start]**(Effective Transverse Relaxation Time):** Noted as $T_2^*$ in your lab manual's formula[cite: 578], this represents the dephasing time of the ensemble. [cite_start]It describes the timescale over which the NV spins lose their phase coherence in the transverse ($x-y$) plane[cite: 289, 290]. [cite_start]As the spins interact with their local environment (like the fluctuating magnetic fields from $^{13}$C nuclear spins) and experience slightly different local microwave field strengths, their rotations fall out of sync, causing the macroscopic Rabi oscillations to dampen and wash out[cite: 288, 290].
+* [cite_start]**$\beta$ (Stretching Exponent):** This is an empirical parameter used to account for inhomogeneity[cite: 577]. In a perfect, single-qubit measurement, the decay envelope is typically a simple exponential ($\beta = 1$). [cite_start]In an ensemble measurement, the spatial inhomogeneity of the driving microwave field causes different NV centers to rotate at slightly different rates[cite: 288]. [cite_start]The stretching parameter corrects the envelope for these compounded, incoherent rotations[cite: 288, 577].
+* [cite_start]**$\omega_{\text{Rabi}}$ (Rabi Frequency):** This represents the angular frequency at which the spin state is coherently driven back and forth between the $|0\rangle$ and $|1\rangle$ states[cite: 244, 245]. [cite_start]It scales linearly with the amplitude of the driving microwave magnetic field ($B_1$)[cite: 246]. 
+* **$A$ (Amplitude):** This defines the signal contrast (the depth of the oscillation). Physically, it is determined by the population difference created by the optical initialization pulse and the collection efficiency of your photodetector setup.
+* **$\phi$ (Phase Offset):** This parameter accounts for any initial phase shift in the oscillation. It corrects for the system not starting at exactly zero rotation at $\tau = 0$, which can be caused by finite rise times of the microwave pulses or minor signal propagation delays in the electronics.
+* [cite_start]**$B$ (Linear Slope):** This linear term is explicitly added to account for microwave heating[cite: 576]. [cite_start]As the microwave pulse duration ($\tau$) gets longer, the high-power microwave radiation (up to 10 W in your setup) physically heats the waveguide and diamond sample[cite: 324, 326, 548]. This temperature shift slightly alters the background fluorescence, introducing a linear drift in the baseline signal.
+* [cite_start]**$C$ (Background Offset):** This is the baseline photoluminescence signal (the unmodulated DC component of the fluorescence)[cite: 578].
+
+
+attenuation = [0, 6, 10] # dB
+f_Rabi = [2.48, 2.17, 1.46]
+
+
