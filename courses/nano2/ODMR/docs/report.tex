@@ -21,7 +21,7 @@
 \date{\today}
 
 \begin{abstract}
-This report details the implementation and results of Time-Resolved Optically Detected Magnetic Resonance (TR-ODMR) measurements on Nitrogen-Vacancy (NV) centers in a bulk diamond sample. We performed Continuous Wave (CW) ODMR to characterize zero-field splitting and magnetic field response. Time-resolved measurements were conducted to observe Rabi oscillations and determine the longitudinal relaxation time $T_1$. 
+This report details the implementation and results of Time-Resolved Optically Detected Magnetic Resonance (TR-ODMR) measurements on Nitrogen-Vacancy (NV) centers in a bulk diamond sample. NV centers have a long coherence time, and can be initialized and measured optically. We performed Continuous Wave (CW) ODMR to characterize zero-field splitting and magnetic field response. Time-resolved measurements were conducted to observe Rabi oscillations and determine the longitudinal relaxation time $T_1$. 
 % Despite experimental challenges in microwave delivery, we successfully extracted the core spin Hamiltonian parameters and validated our results against reference datasets.
 \end{abstract}
 
@@ -103,7 +103,7 @@ $V_R(\tau) = A e^{-(\tau / T_2^{\text{eff}})^\beta} \sin (\omega_{\text{Rabi}} \
     \label{fig:rabi_ours}
 \end{figure}
 
-In Fig. \ref{fig:rabi_ours} (a) we could not get a large enough signal amplitude. Then after re-calibrating the setup by adjusting the sample and magnet positions, we obtained a better measurement Fig. \ref{fig:rabi_ours} (b). While we still couldn't properly measure $\omega_{\text{Rabi}}$, we could accurately measure $T_2^{\text{eff}}$ to be around $100$~ns , which is close to the value measured by our colleagues and shown in Fig. \ref{fig:rabi_colleagues}. Unfortunately we were not able to reliably measure the Rabi oscillations. We believed that the main issue was the low signal, but even after optimizing for a high signal, we still could not get a good reading of the $\omega_{\text{Rabi}}$. 
+In Fig. \ref{fig:rabi_ours} (a) we could not get a large enough signal amplitude. Then after re-calibrating the setup by adjusting the sample and magnet positions, we obtained a better measurement Fig. \ref{fig:rabi_ours} (b). While we still couldn't properly measure $\omega_{\text{Rabi}}$, we could accurately measure $T_2^{\text{eff}}$ to be around $100$~ns , which is close to the value measured by our colleagues and shown in Fig. \ref{fig:rabi_colleagues}. Unfortunately we were not able to reliably measure the Rabi oscillations. We believed that the main issue was the low signal, but even after optimizing for a high signal, we still could not get a good reading of the $\omega_{\text{Rabi}}$. This led us to believe that the MW excitation was not sufficient to observe the Rabi oscillations, and unfortunately we could not move the MW antenna or calibrate it to achieve the desired phenomena. \footnote{During the measurement excercise, we thought there was no point in doing a power-dependence analysis using an attenuator since we couldn't even measure the Rabi oscillations, but we later realized we could've done a power-dependence study of the $T_2^{\text{eff}$T_2^{\text{eff}} using our measurement setup, and that can give us information about the dependence of the rabi frequency as well.}
 % We calibrated the measurement setup by optimizing the sample's position and the magnet's orientation to obtain the highest signal possible. A motivation for this was that we wanted to investigate the power dependence of the MW
 
 We then analyzed four reference measurements kindly provided by colleagues Volk János and Eisenberger Lea (Fig.~\ref{fig:rabi_colleagues}) to compare with our fitting model.
@@ -146,7 +146,7 @@ As expected, $\omega_{\mathrm{Rabi}}$ increases with the power. The few data poi
 
 The longitudinal relaxation time $T_1$ was measured using a variable-delay sequence. Figure~\ref{fig:t1_plots} compares our group's cleanest experimental dataset with the reference sweep provided by the laboratory instructor. The signal follows an exponential decay, $V(\tau)=A\exp(-\tau/T_1)+C$. 
 
-The sequence design followed the standard timing constraints for this setup, with long initialization and short readout pulses (nominally on the order of $t_{\mathrm{init}}\sim50\,\mu$s and $t_{\mathrm{read}}\sim10\,\mu$s). The polarized state yields a higher fluorescence level than the relaxed state, giving the positive contrast required for robust $T_1$ fitting.
+The sequence design followed the standard timing constraints for this setup, with long initialization and short readout pulses (nominally on the order of $t_{\mathrm{init}}\sim50\,\mu$s and $t_{\mathrm{read}}\sim10\,\mu$s). The polarized state yields a higher fluorescence level than the relaxed state, giving the positive contrast required for $T_1$ fitting.
 
 \begin{figure}[H]
     \centering
@@ -156,9 +156,11 @@ The sequence design followed the standard timing constraints for this setup, wit
     \label{fig:t1_plots}
 \end{figure}
 
+Our measured data was very noisy, and a more careful measurement setup is needed for a more precise analysis. The relaxation time obtained by fitting Fig. \ref{fig:t1_plots} (Top) is 645 ns, orders of magnitude larger than $T_2^{\text{eff}}$ measured in the Rabi oscillation measurement. This is as expected because T1 involves longitudinal energy relaxation, while $T_2^{\text{eff}}$ involves transverse decoherence. 
+
 \section{Conclusion}
 
-We successfully implemented TR-ODMR characterization of NV centers in diamond. By extracting the zero-field splitting $D$ and $E$, calibrating the magnetic field response, and identifying the optimal modulation frequency at 3.0912 GHz, we established a robust framework for spin manipulation. Our results, validated against colleague and instructor data, provide a clear quantification of the coherent nutation and relaxation regimes of the system.
+We successfully implemented ODMR characterization of NV centers in diamond. We extracted the zero-field splitting $D$ and $E$, measuring the magnetic field response, and identifying the optimal modulation frequency at 3.0912 GHz. We analyzed the relaxation time of the laser excitation, and MW driven Rabi oscillations. Our results, validated against colleague and instructor data, provide a clear quantification of the coherent nutation and relaxation regimes of the system.
 
 \bibliographystyle{apsrev4-2}
 \bibliography{lit}
