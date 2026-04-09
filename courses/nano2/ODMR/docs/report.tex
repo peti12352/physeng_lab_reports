@@ -38,7 +38,7 @@ where $E$ describes strain- and electric-field-induced splitting, \(\gamma_e\) i
 
 ODMR combines optical spin polarization/readout with microwave-driven magnetic resonance. Under green excitation, spin-selective intersystem crossing pumps the NV ensemble preferentially into $m_s=0$, and the fluorescence is higher for $m_s=0$ than for $m_s=\pm1$. When the microwave drive is resonant with a spin transition, population is transferred out of $m_s=0$ and a dip appears in fluorescence. In zero magnetic field this produces the characteristic two-peak structure around $D$ due to nonzero $E$.
 
-After CW frequency calibration, we used time-resolved pulse sequences to probe longitudinal relaxation and coherent control. The $T_1$ sequence measures recovery toward thermal equilibrium as a function of delay $\tau$, while the Rabi sequence maps coherent spin rotations driven by resonant microwave pulses of variable duration. The measured signals were fitted with the models
+After CW frequency calibration, we used time-resolved pulse sequences to probe longitudinal relaxation and coherent control. The $T_1$ sequence measures recovery toward thermal equilibrium as a function of delay $\tau$, while the Rabi represent coherent spin rotations driven by resonant microwave pulses of variable duration. The measured signals were fitted with the models
 \begin{equation}
 V_{T_1}(\tau)=A\exp\left(-\tau/T_1\right)+C,
 \end{equation}
@@ -67,13 +67,13 @@ Initially, a frequency sweep was conducted in zero magnetic field to characteriz
     \label{fig:cw_zerofield}
 \end{figure}
 
-By analyzing this splitting, we extracted $D = 2.87$~GHz and the corresponding strain-related splitting parameter $E$. The obtained $D$ value is consistent with the standard literature value for NV$^-$ centers at room temperature.
+By analyzing this splitting, we extracted $D = 2.87$~GHz and the splitting parameter $E = 3.25$~GHz. The obtained $D$ value is consistent with the standard literature value for NV$^-$ centers at room temperature.
 
 In the zero-field scan, two resonance peaks are observed, corresponding to the $m_s=0\rightarrow m_s=+1$ and $m_s=0\rightarrow m_s=-1$ transitions split by $E$. $D$ is the average of the two resonance frequencies and $E$ is half of their separation.
 
 After enabling microwave modulation and lock-in detection, the optimization target became fluorescence contrast between microwave-on and microwave-off conditions. The best lock-in amplitude was approximately $R\approx18.5$~mV with a noise floor of about $0.1$~mV. This behavior is consistent with spatial inhomogeneity in both NV density and microwave field strength across the sample and coplanar waveguide.
 
-We apply a arbitratu direction magnetic field and re-do the sweep as can be seen in Fig.~\ref{fig:magnet_cal}(a). With an external magnetic field, the spectrum is expected to show up to eight resonances: four crystallographic NV orientations, each with two allowed transitions. In our data, the observed spectrum is consistent with this orientation-split ODMR picture, although 6 peaks only can be clearly seen. A focused sweep of one peak (Fig.~\ref{fig:magnet_cal}(b)) was then used to identify the working resonance frequency at $3.0912$~GHz, which was used for the time-resolved measurements, and we used 30 ms to improve stability. 
+We apply a arbitrary direction magnetic field and re-do the sweep as can be seen in Fig.~\ref{fig:magnet_cal}(a). With an external magnetic field, the spectrum is expected to show up to eight resonances: four crystallographic NV orientations, each with two allowed transitions. In our data, the observed spectrum is consistent with this orientation-split ODMR picture, although 6 peaks only can be clearly seen. A focused sweep of one peak (Fig.~\ref{fig:magnet_cal}(b)) was then used to identify the working resonance frequency at $3.0912$~GHz, which was used for the time-resolved measurements. We used a lock-in time constant of 30 ms to improve stability. 
 
 \begin{figure}[H]
     \centering
@@ -85,7 +85,7 @@ We apply a arbitratu direction magnetic field and re-do the sweep as can be seen
 
 \subsection{Rabi Oscillations}
 
-Coherent control of the NV spin was investigated using the Rabi oscillation pulse sequence. Our group's experimental results are shown in Fig.~\ref{fig:rabi_ours}. While clear sinusoidal oscillations were limited in our physical setup, the transition to saturation and the characteristic damping times were successfully captured by the complex fitting model. The fitting was done according to the formula: 
+Coherent control of the NV spin was investigated using the Rabi oscillation pulse sequence. Our group's experimental results are shown in Fig.~\ref{fig:rabi_ours}. While clear sinusoidal oscillations were limited in our physical setup, the transition to saturation and the characteristic damping times were successfully captured by the fitting model. The fitting was done according to the formula: 
 
 $V_R(\tau) = A e^{-(\tau / T_2^{\text{eff}})^\beta} \sin (\omega_{\text{Rabi}} \tau + \phi) + B\tau + C$
 \begin{description}
@@ -103,7 +103,7 @@ $V_R(\tau) = A e^{-(\tau / T_2^{\text{eff}})^\beta} \sin (\omega_{\text{Rabi}} \
     \label{fig:rabi_ours}
 \end{figure}
 
-In Fig. \ref{fig:rabi_ours} (a) we could not get a large enough signal. Then after re-calibrating the setup by adjusting the sample and magnet positions, we obtained a better measurement Fig. \ref{fig:rabi_ours} (b). While we still couldn't properly measure $\omega_{\text{Rabi}}$, we could accurately measure $T_2^{\text{eff}}$ to be around $100$~ns , which is close to the value measured by our colleagues and shown in \ref{fig:rabi_colleagues}. Unfortunately we were not able to reliably measure the Rabi oscillations. We believed that the main issue was the low signal, but even after optimizing for a high signal, we still could not get a good reading of the $\omega_{\text{Rabi}}$. 
+In Fig. \ref{fig:rabi_ours} (a) we could not get a large enough signal amplitude. Then after re-calibrating the setup by adjusting the sample and magnet positions, we obtained a better measurement Fig. \ref{fig:rabi_ours} (b). While we still couldn't properly measure $\omega_{\text{Rabi}}$, we could accurately measure $T_2^{\text{eff}}$ to be around $100$~ns , which is close to the value measured by our colleagues and shown in Fig. \ref{fig:rabi_colleagues}. Unfortunately we were not able to reliably measure the Rabi oscillations. We believed that the main issue was the low signal, but even after optimizing for a high signal, we still could not get a good reading of the $\omega_{\text{Rabi}}$. 
 % We calibrated the measurement setup by optimizing the sample's position and the magnet's orientation to obtain the highest signal possible. A motivation for this was that we wanted to investigate the power dependence of the MW
 
 We then analyzed four reference measurements kindly provided by colleagues Volk János and Eisenberger Lea (Fig.~\ref{fig:rabi_colleagues}) to compare with our fitting model.
