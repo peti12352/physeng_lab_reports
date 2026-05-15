@@ -1,0 +1,672 @@
+
+![](reference/images/EntPhotons.pdf-0001-00.png)
+
+
+. 
+
+## _**Quantum optics Laboratory Exercise for Physicist-Engineer Students**_ 
+
+**Abstract.** In this experiment, you will gain hands-on insight into the quantum-optical process of spontaneous parametric down-conversion. Beyond understanding the underlying physical principles, you will become familiar with the measurement techniques and electronic tools commonly used in photon-counting experiments. The laboratory work also introduces the fundamentals of photon statistics, coincidence detection, and essential corrections required for accurate data analysis. 
+
+**Warning.** This experiment uses a Class 3B laser. Direct or specularly reflected exposure can cause eye injury. **Laser safety goggles must be worn whenever the laser is in operation** , and the beam must never be viewed directly. 
+
+_This development was carried out within the framework of the project ’Practice-Oriented Higher Education Infrastructure and Skills Development at BME’ (Project ID: RRF-2.1.221-2022-00005), supported by a non-refundable grant from the Recovery and Resilience Facility funded by the European Union and the Government of Hungary._ 
+
+## **Introduction to quantum optics** 
+
+## **1 Brief history** 
+
+
+![](reference/images/EntPhotons.pdf-0001-08.png)
+
+
+**----- Start of picture text -----**<br>
+I<br>**----- End of picture text -----**<br>
+
+
+Quantum optics is a branch of physics that studies the interaction between light and matter at the level where the quantum nature of electromagnetic radiation becomes significant. Unlike classical optics, which successfully describes many optical phenomena using wave theory, quantum optics is required to explain effects such as single-photon interference, photon antibunching, and entanglement. In this framework, light is treated as being composed of discrete quanta, photons, whose properties are governed by the principles of quantum mechanics. 
+
+The foundations of quantum optics can be traced back to the early twentieth century, when classical theories failed to explain several experimental observations. Max Planck’s introduction of energy quantization in 1900 to describe blackbody radiation, followed by Albert Einstein’s explanation of the photoelectric effect in 1905, established the particlelike behavior of light. These developments laid the groundwork for a quantum description of electromagnetic radiation. Later, the formulation of quantum electrodynamics and the 
+
+1 
+
+Recent applications 
+
+2 
+
+concept of field quantization provided a consistent theoretical framework for light–matter interactions. 
+
+Experimental progress in quantum optics accelerated significantly in the second half of the twentieth century with the development of coherent light sources, most notably the laser. Lasers enabled precise control over optical fields and intensities, making it possible to investigate nonlinear optical effects and quantum states of light in laboratory settings. Landmark experiments demonstrating phenomena such as squeezed states and single-photon emission further confirmed the necessity of a quantum treatment of light. 
+
+Today, quantum optics forms the experimental and conceptual basis of many modern quantum technologies. It provides essential tools for investigating fundamental questions of quantum mechanics and enables practical implementations in areas such as quantum communication, quantum metrology, and quantum information processing. Within this context, nonlinear optical processes play a central role, serving as reliable sources of nonclassical light states used in both fundamental research and applied experiments. 
+
+## **2 Recent applications** 
+
+Recent decades have seen rapid progress in quantum optics driven by both technological advances and the emergence of practical quantum technologies. Central to many of these developments are reliable photon-pair sources and the controlled generation of entangled photonic states. In particular, polarization-entangled photon pairs have become a fundamental resource, as polarization offers a robust and easily accessible degree of freedom for encoding quantum information [1]. 
+
+One of the most prominent application areas is quantum communication, where entangled photons enable fundamentally secure information transfer. Quantum key distribution protocols based on entanglement exploit the nonlocal correlations between photon pairs to detect eavesdropping and guarantee unconditional security under ideal conditions [2]. Experimental demonstrations using polarization-entangled photons have confirmed the feasibility of long-distance quantum communication in both optical fibers and free-space links. 
+
+Photon-pair sources are also essential building blocks for optical quantum computing. In linear optical quantum computing, single photons and entangled states are used to implement quantum logic operations using beam splitters, phase shifters, and photon detectors [3]. While scalable implementations remain technologically challenging, proof-of-principle experiments have demonstrated small-scale quantum circuits and algorithms based entirely on photonic qubits. 
+
+Another landmark application of entanglement is quantum state teleportation, in which the quantum state of a particle is transferred to another distant particle without physical transmission of the state itself. The first experimental realization of quantum teleportation employed polarization-entangled photon pairs and verified the faithful transfer of an unknown quantum state using classical communication and shared entanglement [4]. This protocol has since become a core element of quantum networks and distributed quantum information processing. 
+
+Beyond these examples, entangled and non-classical light sources are increasingly used in quantum metrology and sensing, where quantum correlations enable measurement sensitivities beyond classical limits [5]. As a result, photon-pair generation and entanglement engineering remain central topics in modern quantum optics research and education. 
+
+Spontaneous parametric down-conversion 
+
+3 
+
+## **3 Spontaneous parametric down-conversion** 
+
+Spontaneous parametric down-conversion (SPDC) is a nonlinear optical process that has become one of the most widely used sources of non-classical light in quantum optics. As discussed in the previous sections, many modern quantum optical experiments and applications rely on the availability of correlated or entangled photon pairs, for which SPDC serves as a reliable experimental source [6]. 
+
+In SPDC, a nonlinear optical crystal is illuminated by a strong pump laser beam. With a small probability, a pump photon interacting with the nonlinear medium is converted into two lower-energy photons, commonly referred to as the signal and idler photons. This process is spontaneous, because the pump and the vacuum fluctuations of the electromagnetic field is mixed in the nonlinear crystal. This results in photon pairs with strong temporal and spectral correlations. A comprehensive overview of the physics of SPDC is given by Couteau [6], and detailed treatments can also be found in standard quantum optics textbooks [7, 8]. 
+
+The physical origin of SPDC lies in the second-order optical nonlinearity of certain non-centrosymmetric crystals. In such materials, the induced polarization of the medium contains a term proportional to the square of the applied electric field. When a strong optical pump field is present beside the ever present vacuum field, this nonlinear response allows energy to be transferred from the pump field into the vacuum modes of lower frequencies. 
+
+For SPDC to occur, two fundamental conservation laws must be satisfied. First, energy conservation requires that the energy of the pump photon equals the sum of the energy of the generated photon pair, 
+
+
+![](reference/images/EntPhotons.pdf-0003-07.png)
+
+
+where _ωp, ωs, ωi_ are the angular frequencies of the pump, signal and idler photons respectively. 
+
+Second, momentum conservation must be fulfilled, a condition commonly referred to as phase matching, which ensures that the wave vector of the pump photon equals the vector sum of the signal and idler wave vectors, 
+
+
+![](reference/images/EntPhotons.pdf-0003-10.png)
+
+
+The conditions for phase matching in nonlinear media and their impact on SPDC emission properties are discussed in detail in texts on nonlinear optics [7]. 
+
+In practice, satisfying the phase-matching condition is nontrivial due to material dispersion, as the refractive index of the crystal depends on wavelength and polarization. The two primary techniques to achieve the phase matching condition ∆ **k** = 0 are Birefringent Phase Matching (BPM)[7] and Quasi-Phase Matching (QPM)[9, 10]. 
+
+**Birefringent Phase Matching** utilizes the property of birefringence found in many nonlinear crystals. Birefringent materials exhibit different refractive indices for light with different polarizations relative to the optic axes of the crystal. In the most frequently used so-called uniaxial crystals plane waves can propagate in two distinct linearly polarized states that are orthogonal to each other. The corresponding propagation velocities can be described by the ordinary refractive index ( _no_ ) and extraordinary refractive index ( _ne_ ). The extraordinary refractive index varies with the angle the propagation makes to the optic axis, while the ordinary refractive index does not [11]. By appropriately choosing the polarization of the pump, signal, and idler photons, and fine-tuning the refractive indices by changing the propagation direction through the crystal (angle tuning) or its temperature 
+
+
+![](reference/images/EntPhotons.pdf-0003-14.png)
+
+
+**Figure I.3.1** . General case of birefringent phase matching, _kp,s,i_ denote the wave vectors of the pump, signal and idler beams respectively. 
+
+
+![](reference/images/EntPhotons.pdf-0003-16.png)
+
+
+**Figure I.3.2** . Angle tuning of birefringent phase matching in a uniaxial birefringent crystal. The refractive index for the extraordinary pump beam depends on the angle between the optic axis and the pump _θp_ . 
+
+(temperature tuning), the different wave vectors of the interacting beams can be balanced to satisfy ∆ **k** = 0, as seen in Figure I.3.1. Angle tuning involves physically rotating the crystal to change the angle of the incident pump beam with respect to the crystal optic axis (see Fig. I.3.2). This modifies the extraordinary refractive index experienced by the e-polarized waves until phase matching is achieved. Temperature tuning refers to the temperature control of the nonlinear crystal. The refractive indices of the crystal are temperature-dependent. By carefully adjusting the temperature, the phase-matching condition can be met for a specific set of wavelengths and polarizations. 
+
+BPM is sorted into the two broad categories of Type-I and Type-II phase matching: 
+
+- **Type-I Phase Matching:** In this scheme, the signal and idler photons have the same polarization, which is orthogonal to that of the pump photon. For example, in a negative uniaxial crystal (where _ne < no_ ), if the pump is extraordinary: 
+
+Pump photon (e) _→_ Signal photon (o) + Idler photon (o). 
+
+- **Type-II Phase Matching:** Here, the signal and idler photons have orthogonal polarizations. For example, in a negative uniaxial crystal: 
+
+Pump photon (e) →Signal photon (o) + Idler photon (e). 
+
+This type is particularly useful for generating polarization-entangled photon pairs directly. The distinct polarizations allow for easy separation or manipulation of the signal and idler photons. 
+
+
+![](reference/images/EntPhotons.pdf-0004-07.png)
+
+
+**Figure I.3.3** . Conical shape of down-converted light in case of type-I and type-II phase matching. 
+
+While Figure I.3.1 is a planar k-vector diagram, it represents an axially symmetric situation in the case of type-I phase matching, where down-converted photons form a cone around the pump beam. An example of this is shown in Figure I.3.3. In contrast, for type-II phase matching, the signal and idler photons can emerge in two separate cones. 
+
+**Quasi-Phase Matching** is a more flexible and often more efficient technique that does not rely on intrinsic material birefringence to the same extent as BPM. Instead, QPM involves periodically modulating the sign of the nonlinear coefficient _χ_[2] (therefore also _d_[2] _eff_ along the direction of propagation within the crystal. This is typically achieved by fabricating a periodic domain structure in ferroelectric crystals like potassium titanyl phosphate (ppKTP – periodically poled potassium titanyl phosphate) or lithium niobate (ppLN – periodically poled lithium niobate). In QPM, the phase mismatch ∆ **k** that would naturally occur is compensated by an additional vector **K** _G_ provided by the periodic grating. The QPM condition is: 
+
+
+![](reference/images/EntPhotons.pdf-0004-11.png)
+
+
+where **K** _G_ = 2 _π/_ Λ _G_ and Λ _G_ is the grating period. By carefully choosing Λ _G_ , one can achieve phase matching for virtually any interaction within the transparency window of the material, often utilizing the largest component of the nonlinear susceptibility tensor (e.g., _d_ 33 in ppKTP or ppLN), which might not be accessible with BPM due to polarization constraints. 
+
+
+![](reference/images/EntPhotons.pdf-0004-13.png)
+
+
+**Figure I.3.4** . Example of QPM, **k** _p,s,i,G_ denote the wave vectors of the pump, signal and idler beams and grating vector respectively in a collinear phase-matching condition. 
+
+While SPDC is a dominant source of entangled and correlated photons, it is not the only available approach. Solid-state color centers, such as nitrogen-vacancy centers in diamond, can act as deterministic single-photon sources under appropriate excitation. Unlike SPDC, which is probabilistic and produces photons in pairs, color centers emit individual photons 
+
+4 
+
+Examining SPDC with a goniometer 
+
+5 
+
+on demand, making them attractive for certain quantum information applications. Reviews on these alternative sources are available in the literature [12]. 
+
+## **SPDC measurements** 
+
+## **1 Examining SPDC with a goniometer** 
+
+
+![](reference/images/EntPhotons.pdf-0005-05.png)
+
+
+**----- Start of picture text -----**<br>
+II<br>**----- End of picture text -----**<br>
+
+
+In this experiment, the angular emission characteristics of spontaneous parametric downconversion are investigated using a goniometer-based detection system. A Type-I betabarium borate (BBO) crystal is used as the nonlinear medium, and the spatial distribution of the down-converted photons is measured. The schematics of the setup is depicted in Figure II.1.1. 
+
+The SPDC process is driven by a continuous-wave _λ_ p = 405 nm pump laser incident on the BBO crystal, which produces frequency degenerate down-converted photons of _λ_ SPDC = 810 nm central wavelength. (Frequency degeneracy means that both the signal and idler photons have the same frequency, therefore also the same wavelength.) Since the efficiency of Type-I SPDC depends critically on the polarization of the pump field, the pump polarization is adjusted using a half-wave plate (HWP) placed before the crystal. By rotating the HWP, the pump polarization can be aligned to satisfy the phase-matching condition of the crystal. Throughout the measurement, the pump polarization must remain fixed at the optimal orientation. 
+
+The BBO crystal is mounted in a rotational holder that allows precise tilting with respect to the pump beam. Tilting the crystal modifies the phase-matching condition and, consequently, the emission angles of the down-converted photons. As a result, the opening angle of the SPDC emission cone changes with the crystal orientation. This effect provides direct experimental access to the phase-matching properties discussed in the previous section. 
+
+
+![](reference/images/EntPhotons.pdf-0005-09.png)
+
+
+**Figure II.1.1** . Schematics of the experimental setup for examining the angular distribution of SPDC light generated from a type-I BBO crystal. HWP: half-wave plate, M: mirror, F1: 810±5nm bandpass flter, A: aperture, L: focusing lens, F2: 647 nm long-pass flter 
+
+The angular distribution of the SPDC photons is measured using a goniometer with two detector arms positioned symmetrically around the pump beam axis. By rotating the detector arms, the intensity of the down-converted light can be recorded as a function of 
+
+**Remark.** A **half-wave plate (HWP)** is a birefringent optical element that introduces a relative phase shift of _π_ between two orthogonal polarization components of an incident light field. This phase retardation arises from the different refractive indices experienced by the ordinary and extraordinary polarization components inside the birefringent material. When linearly polarized light passes through a half-wave plate, the polarization direction is rotated by an angle 2 _α_ , where _α_ is the angle between the incident polarization and the optic axis of the wave plate. As a result, a HWP provides a convenient and precise method for controlling the polarization direction of a laser beam without altering its intensity [13]. 
+
+Single photon detection 
+
+6 
+
+the observation angle. From these measurements, the half opening angle of the SPDC cone, denoted by _φ_ 0, and the angular width of the cone, ∆ _φ_ , can be determined. 
+
+In order to ensure that only down-converted photons are detected, the pump beam must be strongly attenuated before reaching the detectors. This is achieved using spectral filters placed immediately after the crystal (F1) and in front of each detector (F2). These filters suppress the pump wavelength while transmitting the signal and idler photons, thereby preventing detector saturation and ensuring that the recorded signal originates from the SPDC process. 
+
+Each detector arm is equipped with an aperture of diameter _D_ , which defines the angular acceptance of the goniometer. The angular resolution of the measurement is approximately given by 
+
+
+![](reference/images/EntPhotons.pdf-0006-05.png)
+
+
+where _l_ is the length of the goniometer arm measured from the rotation axis to the aperture. This relation illustrates the trade-off between angular resolution and detected photon flux. Reducing the diameter of the aperture, therefore the ratio in (II.1.1) improves the angular resolution of the measurement, but simultaneously decreases the detected intensity. 
+
+The light passing through each aperture is collected and focused onto a single-photon avalanche diode (SPAD) using an appropriate lens system. The SPADs operate in singlephoton counting mode, allowing the low photon flux characteristic of SPDC to be measured with high sensitivity. The recorded count rates as a function of the goniometer angle form the basis for the quantitative analysis of the SPDC emission cone. 
+
+## **2 Single photon detection** 
+
+The detection of single photons is a fundamental requirement in quantum optics experiments. In processes such as spontaneous parametric down-conversion, the photon flux is typically very low, often on the order of a few hundred to a few million photons per second. Conventional optical detectors, such as photodiodes or CCD sensors, measure light intensity through averaged electrical signals and require many photons to produce a detectable response. As a result, they are insensitive to individual photon events and cannot be used to directly observe SPDC emission. 
+
+Single-photon detectors are designed to respond to individual photon absorption events, producing a measurable electrical pulse for each detected photon. Historically, one of the earliest technologies capable of single-photon detection was the photomultiplier tube (PMT). PMTs rely on the photoelectric effect followed by electron multiplication through a dynode chain, enabling the detection of very weak optical signals. While PMTs offer large active areas and fast response times, they typically require high operating voltages and have limited quantum efficiency, especially in the visible and near-infrared spectral ranges [14]. 
+
+Modern quantum optics experiments predominantly employ solid-state single-photon detectors. Among the most widely used technologies are single-photon avalanche diodes (SPADs) and superconducting nanowire single-photon detectors (SNSPDs). SPADs are semiconductor devices operated in Geiger mode, where the absorption of a single photon triggers a self-sustaining avalanche of charge carriers. SNSPDs, by contrast, rely on superconducting nanowires biased close to their critical current; photon absorption locally disrupts superconductivity, producing a detectable voltage pulse. Reviews comparing these 
+
+
+![](reference/images/EntPhotons.pdf-0006-12.png)
+
+
+**Figure II.2.1** . IDQ ID100 detector unit (SPAD used in the experiment). 
+
+Single photon detection 
+
+7 
+
+detector technologies, including their efficiencies, timing resolution, and spectral coverage, can be found in the literature [15, 16]. 
+
+SPADs are particularly well suited for laboratory experiments due to their compact size (the model used in the experiment is depicted in Figure II.2.1), room-temperature operation, and ease of use. They typically offer high detection efficiencies in the visible spectral range, low dark count rates, and timing resolutions on the order of hundreds of picoseconds. SNSPDs, while capable of higher efficiencies and timing resolutions, require cryogenic cooling and are therefore more complex to operate. 
+
+In this experiment, single-photon detection is performed using a commercial SPAD module (ID Quantique ID100). The detector is optimized for the visible wavelength range, however it has sufficient efficiency in the near infrared as well to detect down-converted 810 nm photons generated in the BBO crystal. The photon detection efficiency as a function of wavelength is shown graphically in Figure II.2.2. The detector produces a standardized electrical output pulse for each detected photon, allowing photon counting using external electronics. 
+
+An important characteristic of SPAD operation is the detector dead time. After registering a photon, the detector becomes temporarily insensitive to subsequent photons while the avalanche is quenched and the device is reset. At higher count rates, this leads to a systematic underestimation of the true photon flux. For non-paralyzable detectors such as the ID100, the measured count rate _r_ meas (counts in a second) can be corrected to obtain the true count rate _r_ true (real events on the detector in a second) using [15] 
+
+
+![](reference/images/EntPhotons.pdf-0007-06.png)
+
+
+**Figure II.2.2** . Detection efficiency of the IDQ ID100 versus the wavelength of the incident photons. 
+
+
+![](reference/images/EntPhotons.pdf-0007-08.png)
+
+
+where _τ_ dead is the detector dead time. This correction becomes increasingly important as the detected count rate approaches the inverse of the dead time. 
+
+**Remark.** If the detector has a _τ_ dead dead time, calculate the maximum count rate that can be measured with this detector! 
+
+Another key performance parameter of single-photon detectors is timing jitter, which describes the statistical uncertainty in the detection time of individual photon events. Timing jitter limits the temporal resolution of coincidence measurements and time-correlated photon counting experiments. For SPADs, the jitter is typically dominated by avalanche build-up statistics and electronic noise. The typical temporal response of the detector to an optical excitation at _t_ = 0 s is plotted in Figure III.2.1. From the figure we can see the temporal uncertainty of the response, so the _τ_ jit jitter of the detector. 
+
+
+![](reference/images/EntPhotons.pdf-0007-12.png)
+
+
+**Figure II.2.3** . Histogram of counting events of the IDQ ID100 detector for an optical excitation at _t_ = 0 s. 
+
+In addition to photon-induced detection events, single-photon detectors also exhibit so-called dark counts, which are detection events that occur in the absence of incident light. Dark counts originate from thermally generated charge carriers, tunneling effects, and electronic noise within the detector. They introduce a background count rate that limits the sensitivity of single-photon measurements, particularly at low photon fluxes. In SPDC experiments, dark counts can be reduced by spectral filtering, careful shielding from stray light, and appropriate choice of detection thresholds. The contribution of dark counts must be taken into account when interpreting measured count rates, especially when the signal level is comparable to the dark count rate. Typical _r_ dark dark count rate and other properties of the IDQ ID100 are summarized in Table II.2.1. One can use a simple correction to obtain the _N_ count rate originating solely from signal photons (as long as _r_ dark _τ_ dead _≪_ 1): 
+
+_r_ = _r_ true _− r_ dark _._ (II.2.2) 
+
+|**Property**|**Symbol**|**IDQ ID100**|
+|---|---|---|
+|Dead time|_τ_dead|50 ns|
+|Timing jitter (FWHM)|_τ_jit|40 ps|
+|Dark count rate|_r_dark|100 cps|
+
+
+
+**Table II.2.1** . Main characteristics of the SPAD used in the experiment. (cps - counts per second) 
+
+## **Analog Pulse and Coincidence Counter** 
+
+
+![](reference/images/EntPhotons.pdf-0008-03.png)
+
+
+**----- Start of picture text -----**<br>
+III<br>**----- End of picture text -----**<br>
+
+
+## **1 Introduction to photon counting electronics** 
+
+Photon counting electronics are responsible for processing the electrical output signals of single-photon detectors and converting them into measurable quantities such as count rates, arrival times, or coincidence events. Since individual photon detection produces short, discrete electrical pulses, the task of the counting electronics is to register these pulses with high temporal precision while minimizing timing uncertainty, and data loss. 
+
+Historically, photon counting evolved from early particle detection techniques. The first devices capable of counting individual quanta appeared in the early 20th century with the development of Geiger counters. The introduction of standardized electronic modules, most notably the Nuclear Instrument Module (NIM) standard in the 1960s, enabled reliable pulse processing, discrimination, and counting. These developments established the basic principle of threshold-based pulse counting, which remains central to photon counting electronics today. 
+
+With increasing demands for temporal resolution, photon counting progressed beyond simple event counting toward time-resolved measurements. Time-Correlated Single Photon Counting (TCSPC) emerged as a key technique in the 1980s, particularly for fluorescence lifetime studies. In classical TCSPC systems, photon arrival times were accumulated directly into histograms relative to a periodic reference signal. While effective, this approach limited flexibility and imposed constraints on count rates and data processing. 
+
+Advances in digital electronics and high-speed logic led to a shift toward recording individual photon events rather than pre-accumulated histograms. In modern time-tagged time-resolved (TTTR) systems, each detection pulse is assigned a precise timestamp using a time-to-digital converter (TDC) and stored as a digital event. Field-programmable gate arrays (FPGAs) now implement these functions with picosecond timing resolution and high throughput, enabling real-time processing of millions of events per second. This evolution from hardware-based histogram creation to event-based recording has significantly increased the versatility of photon counting, allowing post-processing tasks such as coincidence analysis, correlation measurements, and synchronization across multiple channels. 
+
+Alongside digital approaches, analogue photon counting has historically played an important role and remains relevant in educational and low-complexity measurements. In analogue counting schemes, detector pulses are processed by integrators or frequency-tovoltage converters, producing an output voltage proportional to the average photon count rate over a defined time window. Although analogue methods lack the timing precision and flexibility of digital time tagging, they offer intuitive operation and simpler hardware 
+
+8 
+
+Counting by integration 
+
+9 
+
+requirements, making them suitable for laboratory experiments where absolute timing information is not required. 
+
+Modern photon counting electronics therefore span a wide range of approaches, from analogue integration-based counting to fully digital, FPGA-based time taggers. The choice of counting method depends on the experimental requirements, such as temporal resolution, count rate, data throughput, and system complexity. In the present experiment, a combination of these techniques is employed to illustrate both the fundamental principles and practical considerations of photon counting. 
+
+## **2 Counting by integration** 
+
+Each detection event produces a voltage pulse of finite width and amplitude. An integrator sums these pulses over time, resulting in an output voltage that is proportional to the average count rate. This voltage can be conveniently measured using a standard multimeter. 
+
+In this approach, the electrical output pulses of the single-photon detector are converted into current pulses ( _I_ in), then fed to an integrator. Due to the stochastic nature of the incoming pulses, the instantaneous frequency of the pulses may vary significantly. Moreover, to achieve large dynamic range (that is the ratio of the maximum to minimum pulse frequency to be measured), a switched integrator would be recommended, as seen in Figure III.2.2. 
+
+
+![](reference/images/EntPhotons.pdf-0009-07.png)
+
+
+**Figure III.2.1** . Pulses from the detector and the analog output after integration. 
+
+
+![](reference/images/EntPhotons.pdf-0009-09.png)
+
+
+**Figure III.2.2** . Circuit diagram and signals of a switched integrator electronics. 
+
+A measurement cycle starts by resetting the integrator output voltage to _V_ int = 0 V by closing S2 for a given reset period. Integration of the input current begins when S2 opens and S1 closes so that the input current begins to charge capacitor _C_ int. Current flowing into the integrator will produce a negative-going ramp. _V_ int is measured at the end of one or multiple integration periods, prior to the next reset period. The ideal result is proportional to the average input current so the total accumulated charge in the capacitor. 
+
+In our case, both the amplitude and duration of the input pulse are constant. _I_ in is constant during a pulse if a series resistor is connected at the input. The expression for the integrated voltage can be written as: 
+
+
+![](reference/images/EntPhotons.pdf-0009-13.png)
+
+
+Counting by integration 
+
+10 
+
+Implementation of a gated integrator requires additional logic for careful timing of the switches. The switches need to be specialised to transfer analogue voltages with low series resistance and reduced switching spikes (at turn on/off). 
+
+Overcoming these difficulties, we utilize an operational amplifier based continuous integrator. The circuit is similar to the above described, but it operates without switches. R2 resistor is inserted instead of S1, and a high value resistor R3 is connected in parallel with the capacitor, instead of S2, prohibiting the saturation of the capacitor. The circuit is depicted in Figure III.2.3 (integrator) where _C_ int = C2. 
+
+
+![](reference/images/EntPhotons.pdf-0010-04.png)
+
+
+**Figure III.2.3** . Circuit diagram of a continuous integrator electronics. 
+
+The addition of this feedback resistor, R3 gives the circuit the characteristics of an inverting amplifier with finite closed-loop voltage gain on the integrated output given by R3/R2. Here, R2 sets the input charging current _I_ in = _V_ in _/_ R2. The expression for the integrated voltage output therefore can be formulated as 
+
+
+![](reference/images/EntPhotons.pdf-0010-07.png)
+
+
+from where we can see the time constant of the integration is _T_ int = C2 _·_ R2. Reducing _T_ int will reduce settling time of _V_ int advantageous at high pulse count. If the count rate is sufficiently high compared to the inverse of this time constant, than the output voltage becomes smooth and stable. At low count rates, the integrator capacitor can partially discharge between individual detector pulses, so the output voltage no longer appears smooth but exhibits a noticeable ripple due to the temporally distant arrival of photons. A trade-off needs to be made observing minimum and maximum pulse counts related to the dynamic range. 
+
+The output signal of the integrator depends on several parameters: the photon count rate, the temporal width of the detector output pulses, and the gain of the integration circuit. For a fixed pulse shape and amplifier gain, the integrator output voltage scales linearly with the detection rate within the dynamic range of the circuit. 
+
+The integration process is ultimately limited by the supply voltage of the operational amplifier. As the count rate increases, the integrator output voltage rises until it reaches saturation at the supply rails of the amplifier. Consequently, the amplifier gain and supply voltage together define the maximum measurable count rate. Proper selection of these parameters is therefore essential to ensure linear operation over the desired range of photon fluxes. 
+
+Coincidence events 
+
+11 
+
+To further suppress the residual ripple of _V_ int, the integrator output is filtered (averaged) by an additional single-pole low-pass stage based on the operational amplifier U2. Practically, this stage consists of an RC filter followed by a voltage-follower buffer, ensuring that the averaging does not load the integrator output. The time constant of this averaging stage is defined by 2 _π · R_ 4 _· C_ 3 and is chosen according to the required settling time of the averaged output voltage _V_ avg. For voltmeter or panel-meter based readout, the averaging time constant is typically selected to be on the order of several hundred milliseconds, corresponding to the refresh rate of such instruments (approximately 300 ms). 
+
+As a final stage, an additional inverting operational amplifier (U3) is used to provide a positive-range output voltage _V_ out. Since the integrator stage produces a negative-going voltage proportional to the accumulated charge, this stage restores a convenient positive polarity for readout. Furthermore, it implements a zero-adjust function by adding a constant offset voltage via a rheostat connected to the supply rails or to symmetric reference voltages. 
+
+This offset adjustment is essential because the integrator output is not exactly zero even in the absence of input pulses. The reason is that the detector pulses are digital signals whose low level is not an ideal 0 V but typically a small residual voltage (e.g. _∼_ 0 _._ 1 V) corresponding to the saturation voltage of the output transistor. When such pulses are integrated continuously, this finite baseline produces a small DC contribution. The adjustable offset stage compensates for this effect and ensures that _V_ out = 0 corresponds to zero photon flux. 
+
+## **3 Coincidence events** 
+
+Although modern SPADs provide already shaped digital output pulses, their intrinsic width (typically 10–20 ns) is optimized for high-rate counting and fast leading-edge detection rather than for analogue processing. Such short pulses would produce only a small integrated charge and would therefore result in a weak analogue signal. For this reason, the raw detector pulses are temporally stretched to defined durations ∆ _t_ 1 and ∆ _t_ 2 before further processing. 
+
+Pulse stretching is implemented using a monostable (one-shot) circuit, which generates uniform output pulses of fixed amplitude and well-defined duration independent of the exact shape of the detector signal. This ensures reproducible timing and amplitude conditions for both detector channels. 
+
+
+![](reference/images/EntPhotons.pdf-0011-08.png)
+
+
+**Figure III.3.1** . Schematics of the detection electronics. Raw detector pulses are first stretched, than fed to the AND gate circuits and integrators to produce the analog signal on each channel. 
+
+Coincidence events 
+
+12 
+
+A coincidence event occurs when two independent detectors register signals within a predefined temporal window, indicating that the detection events are temporally correlated. Coincidence detection is based on comparing the arrival times of the leading edges of the two input pulses. In advanced digital systems, the time difference between the events is evaluated using time-to-digital conversion, and a coincidence is registered if this difference falls within a predefined coincidence window. In the present analogue implementation, a simplified realization is used: the stretched pulses are fed into a logical AND gate. The output of this gate represents the logical overlap (convolution) of the two input pulses. A coincidence event is therefore detected whenever the two stretched pulses overlap in time as in Figure III.3.2. 
+
+
+![](reference/images/EntPhotons.pdf-0012-03.png)
+
+
+**Figure III.3.2** . Stretched detector signals and their resultant coincidence signal. 
+
+The effective coincidence window in this scheme is determined by the pulse widths ∆ _t_ 1 and ∆ _t_ 2 and by their relative arrival time. Identical logic gates are used for the two detector channels as well as for the coincidence channel in order to guarantee symmetry of the signal processing, as seen in Figure III.3.1. Therefore the duration of the shaped pulses are equal on both side ∆ _t_ 1 = ∆ _t_ 2 = ∆ _t_ . If the pulses do not overlap, no coincidence signal is produced. If they partially overlap, the coincidence pulse amplitude (or integrated value) is proportional to the duration of the overlap. Maximum coincidence signal is obtained when the two stretched pulses overlap completely. Perfect overlap, however, can only be achieved under artificial conditions (e.g. using synchronized signals from a function generator). In real photon detection experiments, detector timing jitter prevents exact temporal alignment, so the coincidence signal exhibits statistical broadening even for correlated photons. 
+
+Accurate coincidence measurements require careful minimization of systematic delays between the two channels. Relative delays may originate from unequal optical path lengths or from differences in electrical cable lengths and electronic processing times. Such delays reduce the effective overlap of the pulses and thus diminish the measured coincidence rate. Proper temporal alignment of the channels is therefore essential. 
+
+For uncorrelated light sources, such as thermal emitters (e.g. lamps or sunlight), photon arrivals are statistically independent and coincidences occur randomly. In contrast, correlated photon-pair sources can produce temporally correlated detection events. 
+
+Photon statistics and random coincidence 
+
+13 
+
+## **4 Photon statistics and random coincidence** 
+
+As long as the coherence length of the light incident on our detectors is much shorter than the temporal resolution (jitter) of the detector, the detector can not resolve the temporal properties. Therefore detection events can be considered to have Poisson distribution. (This is also true if the coherence length is very long.) The _λ_ expected value of the Poisson distribution, in our case, corresponds to the expected photon count in a given _dt_ temporal interval. If the average count rate is _r_ then _λ_ = _r dt_ . The probability of detecting _n_ photons in this interval is: 
+
+
+![](reference/images/EntPhotons.pdf-0013-04.png)
+
+
+Random coincidence happens when there is no correlation between measurements on the two detectors, however the pulses generated by two independent events overlap. To determine the rate of random coincidences we have to calculate the probability of this overlap. Our detectors can not distinguish between one or multiple detection events during their dead time, or more precisely in the duration of the ∆ _t_ stretched pulses. Therefore we have to calculate the probability of detecting at least one photon in a _dt ≤_ ∆ _t_ interval. We can simply do it by calculating the probability of exactly zero detection event. As long as the count rate and the temporal window is sufficiently small, so _λ ≪_ 1, we can apply Taylor-series approximation up to first order. 
+
+
+![](reference/images/EntPhotons.pdf-0013-06.png)
+
+
+To obtain the probability of at least one detected photon, we simply subtract the previous result from all possibilities: 
+
+
+![](reference/images/EntPhotons.pdf-0013-08.png)
+
+
+Suppose we have a registered pulse on ch1 starting at _t_ = 0 with a duration of ∆ _t_ . We can calculate the P(overlap) overlap probability with two integrals, one for the pulses on ch2 generated _t_ time before the pulse on ch1, and one for the pulses _t_ time after the pulse on ch1. To obtain the probability we also have to multiply the overlap whit the P( _n >_ 0) probability of detection, and integrate it over the duration of the pulses. 
+
+
+![](reference/images/EntPhotons.pdf-0013-10.png)
+
+
+We can see that this result is equivalent to integrating the convolution of two rectangular pulses of width ∆ _t_ . It reinforces the fact, that that prior integration, the coincidence signal is indeed the mathematical convolution of the two channels. 
+
+We might have different count rates on the input channels _r_ 1 on ch1 and _r_ 2 on ch2. To obtain the _c_ rand random coincidence rate, one just have to multipy the rate on ch1 with the above derived overlap probability on ch2, therefore: 
+
+
+![](reference/images/EntPhotons.pdf-0013-13.png)
+
+
+## **Measurement tools** 
+
+Figure IV.1.1. shows the experimental realization of the goniometer setup with which the optical part of the measurement will be carried out. The labeling is equivalent to that of in Figure II.1.1. 
+
+
+![](reference/images/EntPhotons.pdf-0014-02.png)
+
+
+**----- Start of picture text -----**<br>
+IV<br>**----- End of picture text -----**<br>
+
+
+
+![](reference/images/EntPhotons.pdf-0014-03.png)
+
+
+**Figure IV.1.1** . Realization of the goniometer setup outlined in Figure II.1.1. 
+
+The analog counting electronics is yet an experimental version of the proposed one from in Figure III.3.1. The schematic diagram of the circuit that will indeed be used in the measurement is depicted in Figure IV.1.2. This is also capable of providing the same functionality, but has to be adjusted by switches. It has three inputs BNC1, 2, 3. The inputs of the AND gate can be redirected by the K1 and K2 switches. Therefore inputs can be fed from the pulse shapers, or directly from a function generator. We can directly measure the integrated output on an oscilloscope without filtering, or the low-pass filtered output on a multimeter. 
+
+The S1 and S2 switches are used to change the ∆ _t_ duration of the pulse provided by the pulse shapers. Both can be adjusted to a shorter 230 ns, or to a longer 2.25 _µ_ s length. 
+
+
+![](reference/images/EntPhotons.pdf-0014-07.png)
+
+
+**Figure IV.1.2** . Schematics of the experimental analog counter electronics. 
+
+14 
+
+15 
+
+Examples of measurement settings: 
+
+- **Mesuring count rate on SPAD1:** 
+
+K1 should be connected to SPAD1 input and K2 should be connected to the function generator that provides a constant DC signal. Therefore the AND gate is always enabled to register pulses from SPAD1. On the output we can measure the analog signal proportional to the count rate on SPAD1. 
+
+- **Calibrating the analog output to the count rate:** 
+
+Both K1 and K2 should be connected to the function generator input. Therefore the AND gate receives the same pulses on each input in perfect overlap. The output than will be proportional to the pulse frequency set on the function generator. **Important:** The duration of the pulses set on the function generator should be equal to the ∆ _t_ duration of the pulses formed by the pulse shapers to properli calibrate for SPAD count rates. 
+
+- Settings for any other measurement can be adjusted similarly. 
+
+
+![](reference/images/EntPhotons.pdf-0015-07.png)
+
+
+**Figure IV.1.3** . Experimental realization of the analog counting electronics. 
+
+The physical implementation of the analog counting electronics is depicted in Figure IV.1.3, with the same labeling as that of in IV.1.2. 
+
+## **Measurement tasks 1** 
+
+**Warning.** This experiment uses a Class 3B laser. Direct or specularly reflected exposure can cause eye injury. **Laser safety goggles must be worn whenever the laser is in operation** , and the beam must never be viewed directly. 
+
+
+![](reference/images/EntPhotons.pdf-0016-02.png)
+
+
+**----- Start of picture text -----**<br>
+V<br>**----- End of picture text -----**<br>
+
+
+**Warning.** The setup used in the experiment is a delicate optical instrument. Avoid touching of the optical surfaces of the optical components. 
+
+**Hint for the Lab Notes.** Estimate the error of all measured quantities and record these estimations in the Lab Note! Later on in the Lab Report, when you derive other quantities from these measurements, perform error propagation based on the measurement errors! 
+
+## **Task 1.** Align the pump laser beam 
+
+Our goal is to ensure that the pump laser beam propagates along the axis of the goniometer at the correct height. The goniometer was specifically designed for this experiment so that the BBO crystal and the detectors are positioned at the same height. Therefore, we only need to align the beam so that it is parallel to the axis. 
+
+This alignment can be achieved using two adjustable mirrors, each of which can be tuned at three points. By using the same adjustment screw on both mirrors, we can align the beam along one direction, and then repeat the procedure for the other direction. 
+
+For precise alignment, an alignment mark is placed in front of the detector lens. One of the detectors is then set to the 0° position, and the mirrors can be adjusted to guide the pump beam through the crystal and hitting the alignment mark at the same time. 
+
+Care must be taken not to steer the beam outside the apertures of the mirrors or the crystal. 
+
+**Hint for the Lab Notes.** Document your alignment e.g. with a photo. 
+
+**Hint for the Lab Report.** There is no need to write about this task in the report. 
+
+## **Task 2.** Align the SPAD detectors 
+
+## **Warning.** Care must be taken to avoid saturating the detectors. 
+
+The sensitive area of the detectors is very small (25 _µm ×_ 25 _µm_ ). Combined with the focusing lens in front of it ensures that the signal reaching the detector originates only from a narrow solid angle. Consequently, the detectors themselves must be carefully aligned with the direction of the incoming beam. This adjustment can be performed using tilting mechanisms located on the detector mounts. 
+
+16 
+
+17 
+
+The alignment cannot be carried out using the down-converted photons, as their signal is too weak. Instead, it is advisable to use the pump beam. A thick sheet of paper is placed directly behind the BBO crystal to scatter the pump beam. In effect, the illuminated section of the paper function as a point-like isotropic source at the position of the crystal. We can aim the detectors to collect the scattered light and adjust until maximum signal is observed. The SPDC cone will also emerge from this position. Following this process the detectors will be able to efficiently collect it. 
+
+**Hint for the Lab Report.** Record the detector signals. How symmetric was the alignment? 
+
+Apply dark count and dead time correction and discuss their significance in the current measurement. 
+
+## **Task 3.** Measure the geometry of the SPDC ring 
+
+Orient the BBO as close to perpendicular to the pump beam as possible, and then place the F1 bandpass filter into the setup. With the pump laser turned off, measure the background noise on both detectors, and record its value. 
+
+Switch on the pump laser and set the goniometer arms symmetrically to approximately 3°. There you should observe down-converted photons. SPDC is also sensitive to the polarization of the pump beam. Rotate the HWP, thereby the polarization of the pump, until caunt rates are maximized. 
+
+A direct evidence of SPDC photons is not just the increased count rate at both detectors, but the clear presence of coincidence signal, since these photons are correlated in time. Then, by finely adjusting the arms, search for a position where the detector signal is maximized. At this point, use the detector tilt adjustments to further optimize the signal. 
+
+Apply a known size aperture in front of the detectors and scan the angular distribution of the SPDC cone. Obtain the correlated angular distribution as well, by fixing one detector and scanning with the other, while recording the coincidence signal. Then repeat it in other fixed detector positions to map the correlations of the whole cone. 
+
+**Hint for the Lab Report.** Plot the intensity distribution (count rate vs. angular position) on both sides. Plot the correlated distribution as a heatmap, where the two axes are the angular positions of the two detectors and the coloring represents the corresponding coincidence count rate. 
+
+## Discuss the results: 
+
+- What is the half opening angle _φ_ 0 and width ∆ _φ_ of the cone (see Fig. II.1.1). How do they correspond to the angular resolution of the goniometer? 
+
+- Try to explain the correlated results with the phase matching condition from Eq. I.3.2. 
+
+## **Task 4.** Acquire the Start-Stop histogram of coincident pairs 
+
+A start–stop histogram records the temporal delay between detection events from the two detectors using discrete time bins. This is mainly helpful to reveal temporal uncertainties of the system. The coherence time of the down-converted photons in our experiment 
+
+is very short, therefore coincident pairs are detected with this negligible uncertainty. The main temporal broadening of coincidence detection comes from the temporal jitter of the SPADs and the counting electronics. 
+
+Align the goniometer so the coincidence signal is maximal, then record a start-stop histogram. 
+
+**Hint for the Lab Report.** Plot the acquired histogram and determine the FWHM jitter of the measurement. Calculate the coherence time of the SPDC photons and compare it to the measured width. 
+
+You might notice a shift of the whole histogram relative to the zero time delay. Explain! 
+
+## **Task 5.** Optimize the width of the coincidence window 
+
+In coincidence measurements, we are effectively constructing a start–stop histogram in which detection events are recorded within a single time bin. The width of this bin corresponds to the coincidence window and is symmetric around zero time delay. 
+
+To ensure optimal coincidence counting there should be no systematic temporal shift between detector channels. If necessary, the signal from one of the detectors must be shifted in time by an amount equal to the position of the maximum observed in the previously measured histogram. Apply this delay, acquire another start–stop histogram, and verify that the peak is centered at zero. 
+
+Coincidence counting is efficient if all real coincidences are captured by the coincidence window, but random coincidences are minimized. Change the width of the coincidence window and record the corresponding coincidence count rate. 
+
+**Hint for the Lab Report.** Plot count rate as a function of the width of the coincidence window. There should be a break point in the plot. How does this correspond to the start-stop histogram? 
+
+After the break point the coincidence count rate continues to grow as you increase the size of the window. Explain and quantitatively justify the slope of the further increment based on the models provided in this description. 
+
+Determine the size of an optimal coincidence window! 
+
+## **Measurement tasks 2** 
+
+## **Task 6.** Calibrate the counter. 
+
+
+![](reference/images/EntPhotons.pdf-0018-13.png)
+
+
+**----- Start of picture text -----**<br>
+VI<br>**----- End of picture text -----**<br>
+
+
+The analogue counter has a limited linear operating range. Within this linear region, determine the relationship between the measured output voltage and the input count rate. 
+
+Use a function generator to provide a pulsed signal to the detection electronics. Vary the pulse frequency over a suitable range and record the corresponding analogue output voltage. 
+
+Determine the calibration factor for both single channels and for the coincidence channel. For calibration of the coincidence channel, apply the same input signal to both inputs 
+
+18 
+
+19 
+
+simultaneously. 
+
+**Hint for the Lab Notes.** You might use a built in frequency sweep on the function generator, while recording the output on an oscilloscope. 
+
+**Hint for the Lab Report.** Plot the analogue output voltage as a function of the input pulse frequency. Identify and fit the linear region. Determine the calibration factor from the slope of the fit. 
+
+## **Task 7.** Examine and explain counter limits 
+
+In Task 6. you encountered nonlinear behavior of the counter at both low and high frequency limits. What is the linear range of the counter? Relate the minimum and maximum measurable frequency to known parameters of the detection circuit. 
+
+Record and explain the nonlinear behavior! 
+
+**Hint for the Lab Report.** Plot the nonlinear behavior at both extrema. Provide not just qualitative but also quantitative explanation. 
+
+**Task 8.** Study the consequences of time delays 
+
+Apply the same pulsed driving to both inputs, but from different channels of the function generator. Synchronize the function generator channels and introduce temporal delay between them. Study how this shift affect the coincidence signal. 
+
+- What is the shortest noticeable delay? 
+
+- What is the longest delay at which a coincidence signal can still be measured? 
+
+- How do these relate to the characteristics of the counting electronics? 
+
+**Hint for the Lab Report.** Answer all questions above. Plot the coincidence signal as a function of the delay. 
+
+**Bonus:** Compose a function based on the working principles of this analog coincidence detection, and fit it to the plot. 
+
+## **Task 9.** Deterministic vs non-deterministic signal 
+
+Keep the function generator connected to one input, but connect a SPAD to the other. 
+
+**Warning.** The detectors are designed to measure extremely low intensities. Therefore they must be covered to protect them from ambient light. You can carefully adjust the cover to introduce more light if the experiment requires so. **But always ensure that the detector are not overexposed, stay below** 5 _·_ 10 _[−]_[6] **cps (counts per second).** 
+
+Change the duty cycle on the function generator. Start from a constant DC signal (100% duty cycle) and work your way down. This is a simple implementation of gated detection. Events from the SPAD are all captured on the coincidence output when the DC 
+
+20 
+
+"enabling signal" is present from the function generator. However if the function generator is set to pulsed operation, then the detector events will only be captured by the coincidence channel in the duration of the pulses. 
+
+Investigate how this gating affect the detected count rate. How many of the detected events will be present on the coincidence channel? 
+
+**Hint for the Lab Notes.** Experiment with different pulse lengths and frequencies on the function generator. 
+
+**Hint for the Lab Report.** Based on the model provided for random coincidences in Section III.4 work out a simple one for this case. How the analog coincidence output depend on pulse duration and frequency from the generator and count rate on the SPAD? 
+
+**Remark. Gated detection** [17] restricts the detector’s active time to a well-defined temporal window synchronized to an external trigger (e.g. a laser pulse). This reduces dark counts and background noise outside the expected arrival time of photons and improves the signal-to-noise ratio in time-resolved and coincidence measurements. 
+
+**Task 10.** Calculate the probability of random coincidences 
+
+Connect a SPAD on both inputs of the detection electronics. Thereby both channels receive detection events random in time. Record the coincidence output as a function of the count rate on individual channels. 
+
+**Hint for the Lab Report.** Calculate the expected coincidence rate, and compare it with the measured results. 
+
+REFERENCES 
+
+_REFERENCES_ 21 
+
+## **References** 
+
+- [1] P. G. Kwiat et al. “New High-Intensity Source of Polarization-Entangled Photon Pairs”. In: _Physical Review Letters_ 75.24 (1995), pp. 4337–4341. doi: `10 . 1103 / PhysRevLett.75.4337` . 
+
+- [2] A. K. Ekert. “Quantum Cryptography Based on Bell’s Theorem”. In: _Physical Review Letters_ 67.6 (1991), pp. 661–663. doi: `10.1103/PhysRevLett.67.661` . 
+
+- [3] J. L. O’Brien. “Optical Quantum Computing”. In: _Science_ 318.5856 (2007), pp. 1567– 1570. doi: `10.1126/science.1142892` . 
+
+- [4] D. Bouwmeester et al. “Experimental Quantum Teleportation”. In: _Nature_ 390 (1997), pp. 575–579. doi: `10.1038/37539` . 
+
+- [5] V. Giovannetti, S. Lloyd, and L. Maccone. “Quantum-Enhanced Measurements: Beating the Standard Quantum Limit”. In: _Science_ 306.5700 (2004), pp. 1330–1336. doi: `10.1126/science.1104149` . 
+
+- [6] Christophe Couteau. “Spontaneous parametric down-conversion”. In: _Contemporary Physics_ 59.3 (2018), pp. 291–304. doi: `10.1080/00107514.2018.1442834` . 
+
+- [7] Robert W. Boyd. _Nonlinear Optics_ . 4th ed. Chapter 2, Section 2.2: Phase Matching. Cambridge, MA: Academic Press, 2020. 
+
+- [8] Leonard Mandel and Emil Wolf. _Optical Coherence and Quantum Optics_ . Cambridge University Press, 1995. 
+
+- [9] M. M. Fejer et al. “Quasi-phase-matched second harmonic generation: tuning and tolerances”. In: _IEEE Journal of Quantum Electronics_ 28.11 (1992), pp. 2631–2654. 
+
+- [10] Philip E. Powers and Joseph W. Haus. _Fundamentals of Nonlinear Optics_ . 2nd ed. Chapter 5. Boca Raton, FL: CRC Press, 2017. 
+
+- [11] Bahaa E. A. Saleh and Malvin Carl Teich. _Fundamentals of Photonics_ . 3rd ed. Section 6.3: Optics of Anisotropic Media. Hoboken, NJ: Wiley, 2019. 
+
+- [12] Igor Aharonovich, Dirk Englund, and Milos Toth. “Solid-state single-photon emitters”. In: _Nature Photonics_ 10 (2016), pp. 631–641. 
+
+- [13] Eugene Hecht. _Optics_ . 5th. See Chapter 8 (Polarization), in particular Section 8.6 on retardation plates. Pearson, 2017. 
+
+- [14] Hamamatsu Photonics. _Photomultiplier Tubes: Basics and Applications_ . Technical handbook. 
+
+- [15] Robert H. Hadfield. “Single-photon detectors for optical quantum information applications”. In: _Nature Photonics_ 3 (2009), pp. 696–705. 
+
+- [16] Matthew D. Eisaman et al. “Invited review article: Single-photon sources and detectors”. In: _Review of Scientific Instruments_ 82.7 (2011), p. 071101. 
+
+- [17] Wolfgang Becker. _Advanced Time-Correlated Single Photon Counting Techniques_ . Berlin, Heidelberg: Springer, 2005. isbn: 978-3-540-26677-1. doi: `10.1007/3-54028882-1` . 
+

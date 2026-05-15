@@ -1,0 +1,125 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Entangled Photons: Lab Notes and Analysis Progress}
+\author{Gregorio Jaca, Peter Tallosy\\ \textit{Quantum Optics Laboratory}}
+\date{\today}
+
+
+
+\maketitle
+
+\section{Phase I: Optics and Alignment}
+\subsection{Observations}
+\begin{itemize}
+    \item \textbf{Alignment}: Pump beam spatial position calibrated; centered on BBO crystal. Alignment through the crystal to the target mark was documented via photographs.
+    \item \textbf{Geometry and Error Estimation}: Source-to-detector path length measured as $L = 1.35 \pm 0.01$\,m. Detector aperture diameter $D = 0.005 \pm 0.0001$\,m. 
+    \item \textbf{Angular Resolution}: Constrained primarily by geometry, $\Delta\theta \approx D/L \approx 3.70 \times 10^{-3}$\,rad ($\approx 0.21^\circ$). Finite pump beam waist slightly degrades this limit.
+    \item \textbf{Optomechanics}: Flip-mount stability evaluated. ``Upflipped'' configuration confirmed mechanically stable; ``downflipped'' state exhibits instability.
+    \item \textbf{Detector Rates and Error}: Preliminary single-photon dark count rates measured at $N_1 = 485 \pm 22$\,cps and $N_2 = 462 \pm 21$\,cps (errors estimated via Poisson statistics, $\sqrt{N}$). 
+\end{itemize}
+
+\subsection{Missing Analysis (Task 2)}
+\begin{itemize}
+    \item Calculate detector dead time correction using $\tau_{\text{dead}} = 50$\,ns.
+    \item Determine maximum measurable true count rate $r_{\text{true}}$ before saturation.
+\end{itemize}
+
+\section{SPDC Angular Distribution (Task 3)}
+\subsection{Observations}
+\begin{itemize}
+    \item Pump polarization optimized via half-wave plate to maximize degenerate SPDC cones.
+    \item Angular scans ($\theta_1, \theta_2$) completed to map spatial correlations. Marginal counts peak at $\sim 2.56 \times 10^5$\,cps.
+    \item Coincidence count rates ($N_c$) maximized symmetrically, confirming transverse momentum conservation ($-\vec{k}_{i,\text{idler}} = \vec{k}_{i,\text{signal}}$).
+\end{itemize}
+
+\subsection{Missing Analysis (Task 3)}
+\begin{itemize}
+    \item Extract half opening angle $\phi_0$ and distribution width $\Delta\phi$ from the recorded angular scan data.
+    \item Compare empirical $\phi_0$ with theoretical phase-matching conditions $\Delta \mathbf{k} = 0$.
+\end{itemize}
+
+\section{Temporal Correlations and Coincidence Window}
+\subsection{Start-Stop Histogram (Task 4)}
+\begin{itemize}
+    \item HBT measurement completed. Temporal delay sweep shows clear coincidence peak.
+    \item Peak observed at an offset $t \approx 4.7$\,ns relative to zero delay (systematic electronic/optical path difference).
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{task4_hist.pdf}
+    \caption{Start-Stop Histogram revealing the temporal offset and system jitter.}
+    \label{fig:task4}
+\end{figure}
+
+\subsection{Missing Analysis (Tasks 4 and 5)}
+\begin{itemize}
+    \item \textbf{Task 4}: Determine FWHM timing jitter from the start-stop histogram.
+    \item \textbf{Task 4}: Calculate the SPDC coherence time and compare with the measured FWHM jitter.
+    \item \textbf{Task 4}: Formally explain the $\approx 4.7$\,ns systematic temporal shift.
+    \item \textbf{Task 5}: Plot coincidence rate vs. coincidence window width (data already acquired). Identify the break-point and quantitatively justify the linear slope beyond the break-point using the random coincidence probability model.
+\end{itemize}
+
+\section{Analog Counter Characterization}
+\subsection{Counter Calibration (Tasks 6 and 7)}
+\begin{itemize}
+    \item \textbf{Task 6 (Calibration Factor)}: Frequency sweep completed for 230\,ns pulse width. The linear region exhibits a calibration factor (slope) of $\approx 0.228$\,mV/Hz.
+    \item \textbf{Task 7 (Upper Limit)}: Saturation occurs at $\approx 3.89$\,V. This hard limit is fundamentally enforced by the operational amplifier's power supply rails (a standard 5\,V supply), where the maximum output voltage equals the rail voltage minus the amplifier's internal voltage drop ($\approx 1.1$\,V headroom).
+    \item \textbf{Task 7 (Lower Limit and Linear Range)}: The effective linear range spans from $\sim 100$\,Hz to $\sim 15$\,kHz. Below $\sim 100$\,Hz, the linear relationship fails due to the counting circuit's integration time. The long temporal gap between incoming low-frequency pulses allows the integrating capacitor to discharge significantly through the resistor ($R_3$), causing large voltage ripples and a drop in the average output. Switching from AC to DC coupling mitigated some artifacts caused by the AC coupling capacitance.
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{task7_freq.pdf}
+    \caption{Analog output voltage vs. pulse frequency, demonstrating linear regime and saturation limits.}
+    \label{fig:task7}
+\end{figure}
+
+\subsection{Time Delay Sweep (Task 8)}
+\begin{itemize}
+    \item \textbf{Consequences of Time Delay}: We introduced a precise temporal delay $\Delta t$ between the two correlated channels to map the coincidence output. The output voltage relies on the overlapping integral of the analog pulses.
+    \item For identical rectangular pulses of width $\tau$, the resulting coincidence voltage as a function of delay traces a triangular/trapezoidal convolution shape with a base width of $2\tau$.
+    \item \textbf{Delay Limits}: The shortest noticeable delay causing a signal drop is constrained by the manual adjustment resolution ($\sim 10-20$\,ns). The longest measurable delay corresponds to the point where the pulses completely separate, which is exactly $2\tau$ ($\approx 4.5\,\mu$s for the long pulse and $\approx 460$\,ns for the short pulse).
+    \item Measurements were completed for both the long ($2.25\,\mu$s) and short ($230\,$ns) pulses, successfully confirming the convolution profile (captured via oscilloscope sweeps).
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{task8_delay.pdf}
+    \caption{Coincidence output versus introduced temporal delay ($\Delta t = 2.25\,\mu$s), illustrating the pulse convolution shape.}
+    \label{fig:task8}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\columnwidth]{sweep_clean_1.pdf}
+    \includegraphics[width=0.48\columnwidth]{sweep_clean_2.pdf}
+    \caption{Oscilloscope sweeps plotting the correlation output directly against the delay voltage signal (CH1 vs CH2), clearly demonstrating the triangular convolution profile for long (left) and short (right) pulses.}
+    \label{fig:sweeps}
+\end{figure}
+
+\subsection{Missing Analysis (Task 8 Bonus)}
+\begin{itemize}
+    \item \textbf{Task 8 (Bonus)}: Analytically compose the precise convolution function of the analog coincidence detection and fit it to the empirical delay plots to extract the true pulse shapes.
+\end{itemize}
+
+\subsection{Tasks 9 and 10 Analysis}
+\begin{itemize}
+    \item \textbf{Task 9 (Deterministic vs. Non-deterministic Signal)}: We implemented gated detection by sweeping the function generator duty cycle. As predicted, the expected number of detected events captured on the coincidence channel is strictly proportional to the gating duty cycle (Figure \ref{fig:task9}).
+    \item \textbf{Task 10 (Random Coincidences)}: We supplied both detection electronics inputs with independent, random SPAD events (from uncorrelated background light) while varying the count rates.
+    \item \textbf{Probability Distribution and Expected Rate}: For uncorrelated sources, detection events follow a Poisson distribution. The probability of at least one photon arriving in a small interval $dt$ is given by a first-order Taylor expansion: $P(n>0) \approx \lambda = r_2 dt$. The total overlap probability for two rectangular pulses of width $\Delta t$ is the integral of this probability over the full coincidence window, yielding $P(\text{overlap}) = \int_{-\Delta t}^{\Delta t} (1 - \frac{|t|}{\Delta t}) r_2 dt = \Delta t \, r_2$ (which effectively results in an overlap window of $2\Delta t$ for simple counting). Thus, the expected random coincidence rate is strictly $c_{\text{expected}} = r_1 P(\text{overlap}) = \Delta t \, r_1 r_2$.
+    \item We measured the marginal rates using the short pulse setting ($\tau_{\text{short}} = 230$\,ns) and the coincidence output using the long pulse logic ($\tau_{\text{long}} = 2.25\,\mu$s). Correcting the calibration factor for the long pulse logic ($K_{\text{long}} \approx K_{\text{short}} \times (\tau_{\text{long}}/\tau_{\text{short}})$), the theoretical expectation perfectly models the empirical coincidence output (Figure \ref{fig:task10}). 
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\columnwidth]{task9_duty.pdf}
+    \includegraphics[width=0.48\columnwidth]{task10_rand.pdf}
+    \caption{Left: Coincidence output vs. duty cycle for gated detection. Right: Measured random coincidences vs. theoretical expected values $c_{\text{expected}} = 2 \Delta t \, r_1 r_2$, showing excellent agreement with the model.}
+    \label{fig:task9}
+    \label{fig:task10}
+\end{figure}
+
+\end{document}
