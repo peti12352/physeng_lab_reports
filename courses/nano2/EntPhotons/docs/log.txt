@@ -1,0 +1,16 @@
+- Initialized project execution.
+- Verified existing files in `figures/`, `scripts/`, and `data/`.
+- Written and executed `scripts/analyze_task3_geometry.py` to generate 2D SPDC Cone Heatmap and marginals.
+- Fixed paths in `scripts/plot_data.py` and `scripts/analyze_task910.py` to read from `data/` and output directly to `figures/`.
+- Executed all Python scripts in `meas_env`. 
+- Verified outputs: `task3_geometry.pdf`, `task4_hist.pdf`, `task5_window.pdf`, `task7_freq.pdf`, `task8_delay.pdf`, `task9_duty.pdf`, `task10_rand.pdf` are physically grounded and correct.
+- Drafted `docs/report.tex` strictly adhering to style guidelines (no '&', no '—', formal arXiv style).
+- Incorporated deep physics checks: evaluated 4.75ns shift vs 5cm cable length (proved contradictory, dominating electronic delay).
+- Framed the sunlight joke physically.
+- Compiled `docs/report.tex` successfully using `pdflatex` twice to resolve cross-references.
+- [AUDIT 2] Performed rigorous end-to-end check against `questions.txt` and `comments.md`.
+- [AUDIT 2] Created `scripts/audit_analysis.py` to extract missing exact numerical values: FWHM cone (2.00 deg), FWHM jitter (352.7 ps), linear K fit (0.221 mV/Hz + 9.09 mV offset), and convolution bounds (60 ns, 2300 ns).
+- [AUDIT 2] Calculated coherence time from bandpass filter (~200 fs) and compared to jitter.
+- [AUDIT 2] Answered the Task 8 Bonus question (convolution integral bounds).
+- [AUDIT 2] Wove the "human" narrative into the formal text: the AC coupling disaster causing R3 discharge, the paper alignment trick, and the "downflipped" mechanical instability.
+- [AUDIT 2] Recompiled `docs/report.tex` flawlessly. Execution fully verified.

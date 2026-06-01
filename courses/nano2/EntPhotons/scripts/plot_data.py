@@ -2,14 +2,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-docs_dir = '/home/peter/Documents/proj/physeng_lab_reports/courses/nano2/EntPhotons/docs'
-
+data_dir = '/home/peter/Documents/proj/physeng_lab_reports/courses/nano2/EntPhotons/data'
+fig_dir = '/home/peter/Documents/proj/physeng_lab_reports/courses/nano2/EntPhotons/figures'
+os.makedirs(fig_dir, exist_ok=True)
 # Task 4: Start-Stop Histogram from a.txt
 # t (s) - HBT Measurement    Start-Stop Historam (events per second) - HBT Measurement
 t_data = []
 events_data = []
 try:
-    with open(os.path.join(docs_dir, 'a.txt'), 'r') as f:
+    with open(os.path.join(data_dir, 'a.txt'), 'r') as f:
         next(f) # skip header
         for line in f:
             parts = line.strip().split('\t')
@@ -32,7 +33,7 @@ try:
     plt.ylabel('Events per second')
     plt.title('Start-Stop Histogram (HBT)')
     plt.tight_layout()
-    plt.savefig(os.path.join(docs_dir, 'task4_hist.pdf'))
+    plt.savefig(os.path.join(fig_dir, 'task4_hist.pdf'))
     plt.close()
 except Exception as e:
     print(f"Error Task 4: {e}")
@@ -49,7 +50,7 @@ try:
     plt.title('Counter Calibration (230ns pulse)')
     plt.grid(True, which="both", ls=":", alpha=0.5)
     plt.tight_layout()
-    plt.savefig(os.path.join(docs_dir, 'task7_freq.pdf'))
+    plt.savefig(os.path.join(fig_dir, 'task7_freq.pdf'))
     plt.close()
 except Exception as e:
     print(f"Error Task 7: {e}")
@@ -66,7 +67,7 @@ try:
     plt.title(r'Time Delay Effect ($\Delta t = 2.25 \mu s$)')
     plt.grid(True, ls=":", alpha=0.5)
     plt.tight_layout()
-    plt.savefig(os.path.join(docs_dir, 'task8_delay.pdf'))
+    plt.savefig(os.path.join(fig_dir, 'task8_delay.pdf'))
     plt.close()
 except Exception as e:
     print(f"Error Task 8: {e}")

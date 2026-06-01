@@ -1,0 +1,46 @@
+## Task 2
+- Record the detector signals. How symmetric was the alignment?
+- Apply dark count and dead time correction and discuss their significance in the current measurement.
+
+## Task 3
+- Plot the intensity distribution (count rate vs. angular position) on both sides. Plot the correlated distribution as a heatmap, where the two axes are the angular positions of the two detectors and the coloring represents the corresponding coincidence count rate.
+- What is the half opening angle φ0 and width Δφ of the cone (see Fig. II.1.1). How do they correspond to the angular resolution of the goniometer?
+- Try to explain the correlated results with the phase matching condition from Eq. I.3.2.
+
+## Task 4
+- Plot the acquired histogram and determine the FWHM jitter of the measurement. Calculate the coherence time of the SPDC photons and compare it to the measured width.
+- You might notice a shift of the whole histogram relative to the zero time delay. Explain!
+
+## Task 5
+- Plot count rate as a function of the width of the coincidence window. There should be a break point in the plot. How does this correspond to the start-stop histogram?
+- After the break point the coincidence count rate continues to grow as you increase the size of the window. Explain and quantitatively justify the slope of the further increment based on the models provided in this description.
+- Determine the size of an optimal coincidence window!
+
+## Task 6
+- Plot the analogue output voltage as a function of the input pulse frequency. Identify and fit the linear region. Determine the calibration factor from the slope of the fit.
+
+## Task 7
+- What is the linear range of the counter? Relate the minimum and maximum measurable frequency to known parameters of the detection circuit.
+- Record and explain the nonlinear behavior!
+- Plot the nonlinear behavior at both extrema. Provide not just qualitative but also quantitative explanation.
+
+## Task 8
+- What is the shortest noticeable delay?
+- What is the longest delay at which a coincidence signal can still be measured?
+- How do these relate to the characteristics of the counting electronics?
+- Plot the coincidence signal as a function of the delay.
+- Bonus: Compose a function based on the working principles of this analog coincidence detection, and fit it to the plot.
+
+## Task 9
+- Investigate how this gating affect the detected count rate. How many of the detected events will be present on the coincidence channel?
+- Based on the model provided for random coincidences in Section III.4 work out a simple one for this case. How the analog coincidence output depend on pulse duration and frequency from the generator and count rate on the SPAD?
+
+## Task 10
+- Calculate the probability of random coincidences
+- Calculate the expected coincidence rate, and compare it with the measured results.
+
+## Hints for the Lab Notes
+- Document your alignment e.g. with a photo.
+- Estimate the error of all measured quantities and record these estimations in the Lab Note! Later on in the Lab Report, when you derive other quantities from these measurements, perform error propagation based on the measurement errors!
+- You might use a built in frequency sweep on the function generator, while recording the output on an oscilloscope.
+- Experiment with different pulse lengths and frequencies on the function generator.

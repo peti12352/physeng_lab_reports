@@ -3,7 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-docs_dir = '/home/peter/Documents/proj/physeng_lab_reports/courses/nano2/EntPhotons/docs'
+data_dir = '/home/peter/Documents/proj/physeng_lab_reports/courses/nano2/EntPhotons/data'
+fig_dir = '/home/peter/Documents/proj/physeng_lab_reports/courses/nano2/EntPhotons/figures'
+os.makedirs(fig_dir, exist_ok=True)
 
 # --- Task 9 ---
 duty = np.array([10, 20, 30, 40, 50, 60, 70, 80, 90])
@@ -16,34 +18,31 @@ plt.ylabel('Coincidence Output (mV)')
 plt.title('Task 9: Gated Detection (f = 500 Hz)')
 plt.grid(True, ls=':')
 plt.tight_layout()
-plt.savefig(os.path.join(docs_dir, 'task9_duty.pdf'))
+plt.savefig(os.path.join(fig_dir, 'task9_duty.pdf'))
 plt.close()
 
 # --- Task 10 ---
 # Calibration factor from Task 6
-K = 0.2277  # mV/Hz, assuming same for all channels for now
-# Pulse widths
+K_short = 0.2277  # mV/Hz
 tau_short = 230e-9
 tau_long = 2.25e-6
+K_long = K_short * (tau_long / tau_short)
+V_offset = 10.0 # ~10mV baseline DC offset from analog integrator
 
-# V in Volts converted to mV for SPAD1, SPAD2
 V1 = np.array([0.08, 2, 0.78, 1.1, 3.2, 0.045, 2.1, 3.2, 2.15]) * 1000
 V2 = np.array([0.07, 0.13, 0.06, 0.42, 0.65, 0.037, 0.230, 2.75, 1.75]) * 1000
 V_joint_meas = np.array([18, 40, 15, 90, 210, 13.5, 57, 700, 340])
 
-# Rates in Hz
-r1 = V1 / K
-r2 = V2 / K
-c_meas = V_joint_meas / K
+# Rates in Hz, corrected for DC offset
+r1 = np.maximum(0, V1 - V_offset) / K_short
+r2 = np.maximum(0, V2 - V_offset) / K_short
 
-# Lab note says: "marginal short pulse length setting, coincidence (joint) ling pulse length setting"
-# This means the marginals (SPAD1, SPAD2) use short pulse length, but the AND gate is fed these directly?
-# If the overlap happens with the pulses coming in, the overlap probability uses the pulse width BEFORE the AND gate, 
-# which is the short pulse length (230 ns).
-dt = tau_short
-
-c_expected = 2 * dt * r1 * r2
-V_joint_expected = c_expected * K
+# The average overlap width for two random pulses of width tau_long is tau_long / 2.
+# Expected joint voltage = (Rate of overlaps) * (Voltage of average overlap)
+# Rate of overlaps = 2 * tau_long * r1 * r2
+# Voltage of average overlap = K_long / 2
+# Expected joint voltage = (2 * tau_long * r1 * r2) * (K_long / 2) = tau_long * r1 * r2 * K_long
+V_joint_expected = tau_long * r1 * r2 * K_long + V_offset
 
 print("Task 10 Analysis:")
 print("V_joint_meas (mV):", V_joint_meas)
@@ -51,19 +50,21 @@ print("V_joint_exp (mV): ", np.round(V_joint_expected, 1))
 
 plt.figure(figsize=(5, 3))
 plt.plot(V_joint_meas, V_joint_expected, 'ko')
-plt.plot([0, 800], [0, 800], 'r--')
+max_val = max(np.max(V_joint_meas), np.max(V_joint_expected))
+plt.plot([0, max_val], [0, max_val], 'r--', label='y = x (Perfect Match)')
 plt.xlabel('Measured Coincidence (mV)')
 plt.ylabel('Expected Coincidence (mV)')
 plt.title('Task 10: Random Coincidences')
+plt.legend()
 plt.grid(True, ls=':')
 plt.tight_layout()
-plt.savefig(os.path.join(docs_dir, 'task10_rand.pdf'))
+plt.savefig(os.path.join(fig_dir, 'task10_rand.pdf'))
 plt.close()
 
 # --- Re-inspect NewFile1 and NewFile2 ---
 # Let's see what the signals actually look like to make a better fig4
 for i, filename in enumerate(['NewFile1.csv', 'NewFile2.csv']):
-    filepath = os.path.join(docs_dir, filename)
+    filepath = os.path.join(data_dir, filename)
     try:
         df = pd.read_csv(filepath, skiprows=[0], header=0)
         df.columns = ['Time', 'CH1', 'CH2', 'Empty']
@@ -80,7 +81,7 @@ for i, filename in enumerate(['NewFile1.csv', 'NewFile2.csv']):
         plt.xlabel('CH2')
         plt.ylabel('CH1')
         plt.tight_layout()
-        plt.savefig(os.path.join(docs_dir, f'debug_{filename}.pdf'))
+        plt.savefig(os.path.join(fig_dir, f'debug_{filename}.pdf'))
         plt.close()
     except Exception as e:
         print(f"Failed {filename}: {e}")
