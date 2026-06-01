@@ -1,0 +1,1 @@
+Title: Optical, mechanical, and thermal properties of barium borate\nAuthors: D. Eimerl et al.\nJournal: J. Appl. Phys. 62, 1968 (1987)\n\nAbstract: The optical, mechanical, and thermal properties of barium borate are reported. The Sellmeier equations are: n_o^2 = 2.7359 + 0.01878/(lam^2 - 0.01822) - 0.01354*lam^2 and n_e^2 = 2.3753 + 0.01224/(lam^2 - 0.01667) - 0.01516*lam^2.

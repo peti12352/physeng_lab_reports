@@ -1,0 +1,980 @@
+Spontaneous parametric down-conversion
+Christophe Couteau1
+
+1
+
+University of Technology of Troyes
+Light, Nanotechnologies & Nanomaterials (L2n)
+ICD CNRS, 12 rue Marie Curie, 10000 Troyes, France.
+
+Spontaneous Parametric Down-Conversion (SPDC), also known as parametric fluorescence, parametric
+noise, parametric scattering and all various combinations of the abbreviation SPDC, is a non-linear
+optical process where a photon spontaneously splits into two other photons of lower energies. One
+would think that this article is about particle physics and yet it is not, as this process can occur fairly
+easily on a day to day basis in an optics laboratory. Nowadays, SPDC is at the heart of many quantum
+optics experiments for applications in quantum cryptography, quantum simulation, quantum
+metrology but also for testing fundamentals laws of physics in quantum mechanics. In this article, we
+will focus on the physics of this process and highlight few important properties of SPDC. There will be
+two parts: a first theoretical one showing the particular quantum nature of SPDC and the second part,
+more experimental and in particular focusing on applications of parametric down-conversion. This is
+clearly a non-exhaustive article about parametric down-conversion as there is a tremendous literature
+on the subject, but it gives the necessary first elements needed for a novice student or researcher to
+work on SPDC sources of light.
+
+1
+
+Even though SPDC has been predicted in the 1960s [1] and first demonstrated experimentally by
+Burham and Weinberg (from NASA!) in 1970 [2], this process was really used for practical purposes
+only in the late 80s and early 90s. Since then, this process is at the heart of many quantum optics
+experiments for applications in quantum cryptography [3], quantum computing [4], quantum
+metrology [5] but also simply for testing fundamentals laws of physics in quantum mechanics [6]. This
+review article is clearly not exhaustive as a massive literature exists on the subject and cannot be
+summarized in 20 pages only. Rather, this article intends to provide the necessary basic formalism and
+knowledge there is to know if one wants to work with SPDC and what it is good for. We will not go on
+to explain how to build your own SPDC source as plenty of literature already exists on this matter [7,8].
+In that context, we will first develop some basic non-linear optics derived from Maxwell equations with
+a focus on the exact reverse process of SPDC, namely second-harmonic generation (SHG). Then we will
+go on to introduce some quantum optics in a nutshell before going into the theoretical derivation of
+SPDC. In the second part, we will develop what SPDC is used for with the notion of correlated photons
+[9], indistinguishable photons [10], entangled photons [11] but also how it can be used to engineer a
+single photon source [12]. To finish, we will give some examples of how parametric fluorescence was
+used for the demonstration of quantum teleportation [13], quantum cryptography [14], CNOT gates
+[15], quantum candela [16] or for quantum lithography [17]. We will finish by giving some perspectives
+of engineering new sources of SDPC in the hope of increasing the efficiency of this physical effect.
+ITheoretical derivation of SPDC: classical case
+Without going into the details of non-linear optics, let us refresh our mind with some concepts [18].
+The idea is that when an electromagnetic (em) wave interacts with a medium full of charges, there is
+a dipolar-type of interaction between the dipoles (charges) in the medium and the incoming em field
+at the frequency ω. The classical harmonic oscillator model holds which is the model of an electron
+attached to an atom-core behaving like a spring and thus like an harmonic oscillator interacting with
+the incoming wave. We then obtain the standard linear complex refractive index of the medium, which
+would depend on ω. But if one starts to increase significantly the energy of the incoming field then this
+harmonic oscillator will start to be anharmonic i.e. not respond linearly with the incident
+electromagnetic wave. One can simulate this behaviour by the following equation of motion for an
+electron in the medium under such em wave by:
+𝑑2 𝑥
+𝑑𝑥
+𝑒
++ 2𝛾 + 𝜔02 𝑥 + 𝑎𝑥 2 = 𝐹 = − 𝐸(𝑡)
+𝑑𝑡 2
+𝑑𝑡
+𝑚
+
+(1)
+
+where the first term on the left hand side is the motion acceleration contribution, the second term is
+a damping term that tends to slow down oscillations mainly due to non-radiative contribution and the
+last two terms on the left side of the equality cause the restoring force of the electrons towards its
+initial position. The anharmonicity is contained in the last term (a.x2) which we can neglect in linear
+optics. If ignored, then one can see that the dependence of the motion equation is linear with the
+position x. This is no longer true at high em power, then the electromagnetic force given by the righthand side of equation (1) will induce non-linearities (we note that higher terms than a.x2 can also exist).
+Now if one takes two different incoming frequencies ω1 and ω2, one can show that this equation of
+motion, thanks to the last quadratic term, will lead to the generation of waves at ω1 and ω2 of course,
+but also at ω1 + ω2, ω1 - ω2, 2ω1, 2ω2 and 0 (so-called optical rectification) leading to 6 frequency
+components [18]. We can solve this equation by assuming that the non-linear term is a perturbation
+case of the linear one in order to end up with these 6 frequencies. A particularly interesting case occurs
+2
+
+when ω1=ω2=ω as this will lead to the so-called second-harmonic generation at 2ω, so useful in every
+optics laboratory. Higher terms can also exist leading to other non-linear phenomena with more
+interacting waves. This classical approach is very useful to understand the physics of the interaction
+but is rapidly complex when using the perturbation theory. There is another equivalent way of treating
+⃗ and the magnetic
+the problem by starting with Maxwell's equations with the displacement term 𝐷
+⃗ in a medium which is not the vacuum. We suppose no external charges, no currents
+field strength 𝐻
+⃗ = 𝜀0 𝐸⃗ + 𝑃⃗ for the
+and we suppose a non-magnetic medium, thus we have the standards relations 𝐷
+⃗ = 𝜇0 𝐻
+⃗ for the magnetic field.
+displacement, where 𝑃⃗ is the polarisation vector of the medium, and 𝐵
+The polarisation vector 𝑃⃗ accounts for the usual charge displacement in a medium due to an applied
+external em field. By playing around with Maxwell's equations, one can show the following known
+wave equation:
+2⃗
+
+⃗ 2 𝐸⃗ − 12 𝜕 𝐸2 =
+∇
+𝑐 𝜕𝑡
+
+1 𝜕2 𝑃⃗
+𝜀0 𝑐 2 𝜕𝑡 2
+
+(2)
+
+with the polarisation 𝑃⃗ = 𝑃⃗𝐿 + 𝑃⃗𝑁𝐿 containing both the linear (L) and the non-linear (NL) terms. SPDC
+(and SHG for that matter) is a three-wave interaction only and thus we will only consider the first nonlinear term for the polarisation given by:
+(2)
+
+𝑃𝑖𝑁𝐿 = 𝜀0 ∑𝑗 ∑𝑘 𝜒𝑖𝑗𝑘 . 𝐸𝑗 𝐸𝑘
+
+(3)
+(2)
+
+with {𝑖, 𝑗, 𝑘} = {𝑥, 𝑦, 𝑧}, meaning that the second order term 𝜒𝑖𝑗𝑘 is actually a tensor and is called the
+second order nonlinear susceptibility of the medium. Figure 1-a) represents the Feynman’s diagram of
+the SPDC process where the photon γ3 at energy ℏ𝜔3 splits into two twin photons (γ2 and γ1) at
+energies ℏ𝜔2 and ℏ𝜔1 . SHG would be the exact time-reverse process. Even though very odd looking at
+a first glance, SPDC does follow energy conservation and momentum conservation rules so that:
+ℏ𝜔3 = ℏ𝜔1 + ℏ𝜔2
+
+(4)
+
+𝑘⃗3 = 𝑘⃗2 + 𝑘⃗1 and ∆𝑘⃗ = 𝑘⃗3 − 𝑘⃗2 − 𝑘⃗1 = ⃗0
+
+(5)
+
+These two equations are called the phase-matching conditions and will be discussed in details later on
+as they are central for the mechanism to happen. These conditions are represented in Figure 1-b
+(energy conservation) and Figure 1-c (momentum conservation). Now one can solve the wave equation
+from Eq. (2) with the usual assumptions where we consider a lossless medium, collimated and
+monochromatic input beams, continuous excitation, normal incidence and we will neglect the double
+refraction. We will also make a less-reasonable assumption which is to be in the non-depleted regime
+meaning that the incoming beam can give rise to SHG (reverse diagram than the one presented in
+Figure 1-a) but without significant energy loss for the excitation beam or so (the so-called pump beam,
+with 2 photons at frequency ω coming from the same pump laser in this case). This assumption can be
+quite wrong as the incoming beam can be more or less completely depleted for SHG if one is careful
+with phase-matching conditions.
+
+3
+
+Figure 1: a) Feynman’s diagram of SPDC where one photon at energy ℏ𝝎𝟑 splits into two twin photons at
+energies ℏ𝝎𝟐 and ℏ𝝎𝟏 and b) representation of energy conservation of SPDC, c) is the representation of
+momentum conservation of SPDC and d) is a schematic of SPDC where a UV pump laser generates red SPDC
+photons coming out of the crystal in a cone shape.
+
+For SPDC on the other hand, we are (unfortunately) completely in the regime of no-pump depletion as
+parametric down-conversion is an extremely inefficient process. Under such assumptions, one can
+solve the equation (2) by looking for a solution of the form:
+𝐸3 (𝑧, 𝑡) = 𝐴3 𝑒 𝑖(𝑘3 𝑧−𝜔3 𝑡) + 𝑐. 𝑐.
+
+(6)
+
+‘c.c.’ being the complex conjugate term and k3=n3.ω3/c and 𝑛32 = 𝜀 𝐿 (𝜔3 ) where L stands for the linear
+part only. We thus look for a solution for the polarisation of the form:
+𝑃3 (𝑧, 𝑡) = ℘3 . 𝑒 𝑖(𝑘3 𝑧−𝜔3 𝑡) + 𝑐. 𝑐.
+
+(7)
+
+℘3 = 4𝜀0 𝑑𝑒𝑓𝑓 𝐸1 𝐸2
+
+(8)
+
+with
+
+E1 and E2 being the amplitudes of the em fields 1 and 2. 𝑑𝑒𝑓𝑓 = 1/2𝜒𝑒𝑓𝑓 is a complicated but known
+parameter depending on the strength of the non-linearity of the material and on geometrical factors
+all of which are properties of the material (as an example, for BBO type II, we have 𝑑𝑒𝑓𝑓 =
+(𝑑11 sin(3𝜙) + 𝑑22 cos(3𝜙))cos(2𝜃)). One can then find the following equation from equations (23) and (6-8):
+4𝑑
+𝜔3
+𝑑 2 𝐴3
+𝑑𝐴
++ 2𝑖𝑘3 𝑑𝑧3 = − 𝑒𝑓𝑓
+𝐴1 𝐴2 𝑒 𝑖(𝑘1 +𝑘2 −𝑘3 )𝑧
+𝑑𝑧 2
+𝑐2
+
+4
+
+(9)
+
+This last equation can be further reduced by assuming the slow varying amplitude approximation and
+thus neglect the first term compared to the second term (also a standard approximation in non-linear
+optics) on the left-hand side of this equation. It is then straightforward to find the solution of such
+equation under the non-depleted pump approximation by integration between 0 and L (length of the
+crystal) and considering that 𝐼𝑖 = 2𝑛𝑖 𝜀0 𝑐|𝐴𝑖 |2 is the optical intensity of beam 𝑖:
+8𝑑 2
+
+𝜔32 𝐼1 𝐼2
+
+sin ∆𝑘.𝐿/2 2
+
+𝐼3 = 𝑛 𝑒𝑓𝑓
+𝐿2 ( ∆𝑘.𝐿/2 ) = 𝐼3𝑚𝑎𝑥 . 𝑠𝑖𝑛𝑐 2 (∆𝑘. 𝐿/2)
+𝑛 𝑛 𝜀 𝑐3
+1 2 3 0
+
+(10)
+
+with the so-called phase-matching parameter ∆𝑘 = 𝑘1 + 𝑘2 −𝑘3 (we use scalar notations for easier
+use). One can see from equation (10) that ideally, one would want to have ∆𝑘~0 in order to have a
+quadratic increase (first order Taylor expansion of the sinc function) of the SHG intensity as a function
+of the length of the crystal. Otherwise, the sinc function ensures a periodic energy exchange between
+the em pump field (the incoming beam) and the created waves. This phase-matching condition is
+crucial for an efficient non-linear effect and accounts for the wave vector conservation of the process.
+In order to get the phase-matching condition right, one needs to have:
+𝑘1 + 𝑘2 = 𝑘3 =
+
+𝑛3 𝜔3
+𝑛 𝜔
+𝑛 𝜔
+= 1 1+ 2 2
+𝑐
+𝑐
+𝑐
+
+(11)
+
+which is an impossible condition to be satisfied with most materials as 𝑛1 (𝜔1 ) < 𝑛2 (𝜔2 ) < 𝑛3 (𝜔3 )
+for 𝜔1 < 𝜔2 < 𝜔3 , i.e. for ‘normal’ dispersion. This is where birefringent crystals are used as they
+possess two (uniaxial) or three (biaxial) different refractive indices along different symmetry axes
+which can satisfy the phase-matching condition. In the particular case of second-harmonic generation,
+it is fairly easy to have 𝑛𝑒 (𝜔1 ) = 𝑛𝑜 (𝜔3 = 2𝜔1 ) with o and e the so-called ordinary and extraordinary
+axes for uniaxial non-linear crystals.
+SPDC is the reverse process of sum-frequency generation (SFG which is non-degenerate SPDC, i.e.
+different wavelengths for the two output photons) or SHG (degenerate SPDC, i.e. same wavelengths
+for the two output photons) which would correspond to the process called parametric amplification in
+classical non-linear optics. This process occurs when a strong pump beam at 𝜔3 is combined with a
+weak signal beam at 𝜔1 to give rise to an amplified signal at 𝜔1 but also to a second signal called the
+idler beam at 𝜔2 . Using the same type of equation than the one derived in (9), we have this time:
+𝑑𝐴1
+𝜔
+(2)
+= 𝑖 𝑛 1𝑐 𝜒𝑒𝑓𝑓 𝐴3 𝐴∗2 𝑒 𝑖Δ𝑘.𝑧
+𝑑𝑧
+1
+
+(12)
+
+𝑑𝐴2
+𝜔
+(2)
+= 𝑖 2 𝜒𝑒𝑓𝑓 𝐴3 𝐴1∗ 𝑒 𝑖Δ𝑘.𝑧
+𝑑𝑧
+𝑛2 𝑐
+
+(13)
+
+These equations leading to the so-called Manley-Rowe relations can be solved supposing that Δ𝑘 = 0
+and lead to:
+𝜔 𝑛
+
+𝐴
+
+1 2
+
+3
+
+𝐴2 (𝑧) = 𝑖 √𝜔2 𝑛1 |𝐴3 | 𝐴1∗ (0) sinh(𝛼𝑧)
+
+(14)
+
+𝐴1 (𝑧) = 𝐴1 (0) cosh(𝛼𝑧)
+
+(15)
+
+(2)
+
+𝛼=
+
+𝜒𝑒𝑓𝑓 |𝐴3 |
+𝑐
+
+𝜔2 𝜔1
+
+√𝑛 𝑛
+
+2 1
+
+5
+
+(16)
+
+From these solutions of the parametric amplification process, we can clearly see that if there is no
+initial incident power at frequency 𝜔1 , i.e. if 𝐴1 (0) = 0, then the signal and the idler beams would
+not exist and SPDC would not be possible. In other words, classical non-linear optics “does not allow”
+spontaneous parametric down-conversion to exist. Clearly, we see the limitations of the classical
+treatment of non-linear optics in order to derive SPDC. For that, a quantum description of the
+phenomena is needed [19,20].
+IITheoretical derivation of SPDC: quantum case
+In order to do so, let us recall some basic quantum optics properties. Quantum optics is the realm of
+electromagnetism and Maxwell's equations when one deals with single photons. Indeed, a process
+such as SPDC tells you that spontaneously, a photon pair can suddenly 'appear' somewhere in the
+universe ex-nihilo. Once again, energy and momentum conservation hold but nevertheless, a photon
+in a particular optical mode can spontaneously be created. In order to account for such phenomena
+(and many others in quantum optics), one needs to quantise the electromagnetic field. This article is
+certainly not about that and one can find excellent textbooks on the matter [21]. We will just give a
+quick overview of what is required to know. The general principle is to start with Maxwell's equations
+and use a spatial Fourier expansion of the em field in order to solve these equations. It is also wiser to
+work with the vector potential 𝐴 rather than directly with the electric field 𝐸⃗ . If one works in the socalled Coulomb gauge where ⃗∇. 𝐴 = 0 (which tells you that photons are transverse!) then one can end
+up with an equation that looks very much like the one of an harmonic oscillator with the derivation of
+conjugate canonical variables just like in the case of a quantised harmonic oscillator. It is then
+straightforward to apply the rules of a quantum harmonic oscillator but this time for the vector
+potential of the electromagnetic field. By doing so, one can show the following relation:
+ℇ
+
+⃗
+
+⃗
+
+𝐴(𝑟) = ∑𝑙 𝜖𝑙 𝜔𝑙 (𝑒 𝑖𝑘𝑙 .𝑟 𝑎̂𝑙 + 𝑒 −𝑖𝑘𝑙 .𝑟 𝑎̂𝑙† ) = 𝐴(+) (𝑟) + 𝐴(−) (𝑟)
+𝑙
+
+(17)
+
+with the sum over the 𝑙 optical modes accessible in this universe (quite a few then) and the two
+quantum operators, 𝑎̂ being the photon annihilation operator (accounting for the disappearance of a
+photon) and 𝑎̂† the photon creation operator (accounting for the appearance of a photon). By the
+same token, 𝐴 is also an operator. 𝜖𝑙 is the vector direction of the em field associated to these photons
+and ℇ𝑙 is the amplitude of the associated classical field with energy ℏ𝜔𝑙 equals to that of a single
+photon in the 𝑙 mode. 𝑎̂ and 𝑎̂† are the equivalent creation and annihilation operators of a quantum
+of energy for an harmonic oscillator, allowing to go up and down in the energy ladder of the oscillator,
+which in the case of quantum optics, is called a photon. We have then the following relations:
+𝑎̂𝑙† |𝑣𝑎𝑐⟩ = |1𝑙 ⟩
+
+(18)
+
+𝑎̂𝑙 |1𝑙 ⟩ = |𝑣𝑎𝑐⟩
+
+(19)
+
+where a single photon in mode 𝑙 is created from the vacuum state |𝑣𝑎𝑐⟩ and a single photon in mode
+𝑙 “disappears” for instance due to absorption from a single dipole. One can show that the quantised
+free radiation Hamiltonian would look like:
+̂𝑅 = ∑𝑙 ℏ𝜔𝑙 (𝑁
+̂𝑙 + 1) = ∑𝑙 ℏ𝜔𝑙 (𝑎̂𝑙† 𝑎̂𝑙 + 1)
+𝐻
+2
+2
+
+6
+
+(20)
+
+̂𝑙 is the photon number operator giving rise to the number 𝑁𝑙 of photons in the
+Where 𝑁
+electromagnetic mode 𝑙. Within this context, quantum optics allows and explains perfectly the
+possibility of spontaneously creating a photon of a certain energy in a given optical mode. Thus a
+photon of high energy can split into two (or more but less likely) photons of lower energies that were
+not previously around when the interaction with the non-linear medium takes place. In order to
+describe the phenomena, we can infer an effective interaction Hamiltonian for SPDC which would look
+like:
+̂𝑆𝑃𝐷𝐶 = 𝑖ℏ𝜅 (𝑎̂1 𝑎̂2 𝑎̂3† 𝑒 𝑖∆𝑘⃗.𝑟−𝑖∆𝜔.𝑡 + 𝑎̂1† 𝑎̂2† 𝑎̂3 𝑒 −𝑖∆𝑘⃗.𝑟+𝑖∆𝜔.𝑡 )
+𝐻
+⃗
+
+⃗
+
+= 𝑖ℏ𝜅 (𝑎̂𝑖 𝑎̂𝑠 𝑎̂𝑝† 𝑒 𝑖∆𝑘.𝑟−𝑖∆𝜔.𝑡 + 𝑎̂𝑖† 𝑎̂𝑠† 𝑎̂𝑝 𝑒 −𝑖∆𝑘.𝑟+𝑖∆𝜔.𝑡 )
+
+(21)
+
+with the first term of the Hamiltonian accounting for SFG or SHG (if 𝜔1 = 𝜔2) and the creation of a
+SHG photon at 𝜔3 = 2𝜔2 with ∆𝜔 = 𝜔3 − 𝜔1 − 𝜔2 . The second term of the Hamiltonian accounts for
+SPDC where one photon (the pump beam) 'disappears' to create one photon at 𝜔1 and one photon at
+𝜔2 in the non-degenerate case where the two frequencies are different. We can clearly see in (21) that
+SPDC and SHG do compete and do exist at the same time. In most of what follows in this article, we
+will focus on degenerate SPDC with 𝜔1 = 𝜔2 thus 'giving birth' to twin photons in this case. Note that
+from now on, we will use the indices {𝑠, 𝑖, 𝑝} rather than {1,2,3} when talking about the three-wave
+mixing phenomenon SPDC. We have 𝑝 for the incoming pump photon at high energy and the twin
+photons 𝑖 for idler and 𝑠 for signal (note that these names are given more for historical reasons). We
+must stress that the constant 𝜅 is given by:
+2 𝑑𝑒𝑓𝑓
+
+𝜔𝑝 𝜔𝑠 𝜔𝑖
+
+0
+
+0
+
+𝜅 = 3 𝜀 𝑉 √ 2𝜀 𝑉
+
+(22)
+
+with the usual meanings for 𝑑𝑒𝑓𝑓 , V and the 3 frequencies. Now in a more concrete way we can
+estimate what happens to an incoming pump beam with 𝑁𝑝 number of pump photons impinging on a
+non-linear crystal by looking at the effect of the SPDC Hamiltonian on the incoming state |0𝑠 , 0𝑖 , 𝑁𝑝 ⟩
+describing 𝑁𝑝 pump photons and 0 photon in the signal mode and 0 photon in the idler mode. We use
+the Schrödinger equation in time and look for the state:
+1
+
+𝑡
+
+̂
+
+′
+
+′
+
+|𝜓(𝑡)⟩ = 𝑒 𝑖ℏ ∫0 𝐻𝑆𝑃𝐷𝐶 (𝑡 )𝑑𝑡 |0𝑠 , 0𝑖 , 𝑁𝑝 ⟩
+
+(23)
+
+𝜅 is rather small so it means that SPDC is very inefficient and that most of the pump beam is
+unperturbed by the SPDC process. We can thus make a Taylor expansion of the exponential
+Hamiltonian up to the first order and find that:
+|𝜓(𝑡)⟩ ≈ 𝐶0 |0𝑠 , 0𝑖 , 𝑁𝑝 ⟩ + 𝐶1
+
+1 𝑡
+̂
+(𝑡 ′ )𝑑𝑡 ′ |0𝑠 , 0𝑖 , 𝑁𝑝 ⟩ + ⋯
+∫ 𝐻
+𝑖ℏ 0 𝑆𝑃𝐷𝐶
+
+(24)
+
+where 𝐶𝑖 are the coefficients of the Taylor expansion present for the normalization of the wave
+function. In the case of 1st order, we only have 𝐶0 and 𝐶1 ≈ 1 − 𝐶0 again for the sake of working with
+normalised states. As we are looking for perfect phase-matching, including in energy too, then we have
+∆𝜔 ≈ 0 thus the integral term in (24) is a Dirac function and we can apply the operators 𝑎̂𝑖† , 𝑎̂𝑠† , 𝑎̂𝑝 on
+the incoming state |0𝑠 , 0𝑖 , 𝑁𝑝 ⟩ and find:
+
+7
+
+|𝜓(𝑡)⟩ = 𝐶0 |0𝑠 , 0𝑖 , 𝑁𝑝 ⟩ + 𝜅𝐶1 𝑒 −𝑖∆𝑘⃗.𝑟 |1𝑠 , 1𝑖 , 𝑁𝑝 − 1⟩
+
+(25)
+
+In order to bring out a true parallel with the SHG case (from Equation (10)), we must recall that the
+measured em intensity 𝐼𝑆𝑃𝐷𝐶 will be proportional to the square of the wave function from (25). Thus
+the phase matching condition in wave-vector does appear (like in SPDC). Unlike SHG, SPDC is a linear
+function with the pump power which is not trivial to see at first when looking at (25). For that, we need
+to go back to (21) and assume that the pump power is so strong that it can be considered like a classical
+em field 𝑎̂𝑝 ≈ 𝐸𝑝 and as a result, 𝐼𝑆𝑃𝐷𝐶 will be proportional to 𝐼𝑝 only, unlike the SHG phenomena from
+(10). For SPDC, one pump photon only splits into two photons but only one photon in each mode so
+the dependence is clearly linear even though it is a non-linear process. We also recall that 𝐶0 ≫ 𝐶1 .
+This is actually one of the major issues of SPDC, it is the fact that SPDC is a very inefficient process
+which hinders many applications in quantum information and quantum cryptography for instance. We
+also assumed that we only have the first 2 terms in the Taylor expansion of (24) but if 𝑎̂𝑝 ≈ 𝐸𝑝 is strong
+enough (sometimes necessary if one wants to get enough SPDC effect) then higher order terms appear.
+This expansion is thus a Poisson distribution that characterizes SPDC and thus not an on-demand
+supply of photon pairs but rather a probabilistic one. From (25), we see that for a certain probability
+to have one pair (proportional to 𝜅 2 ) we have a non-zero chance to have two pairs (with probability to
+be 𝜅 4 /4) when one add the second order term etc… In other words, most of the incoming state (the
+pump beam) is left untouched and only a small portion (10-5 to 10-12) goes into producing a twin pair
+of down-converted photons. We also see that the double-pair generation increases if the pump power
+is increased too much and that is not something one would necessarily want for most experiments
+using single twin photon pairs. Finally, we must stress that in formula (25), we ‘increase’ the probability
+of being in the |1𝑠 , 1𝑖 , 𝑁𝑝 − 1⟩ by performing a so-called coincidence measurement between the idler
+and the signal photon in a quantum optics experiment. Practically, we look at a double-detection event
+on two detectors (one pointing towards the idler photons and the other one towards the signal
+photons) in a very short time-scale of 10 ns or so. One can show that accidental events in such a short
+time window are very low and thus a coincidence event corresponds to the detection of a pair of SPDC
+photons. This is the practical way of getting rid of the vacuum state, or rather the initial state
+|0𝑠 , 0𝑖 , 𝑁𝑝 ⟩, where we collapse the wave function unto the one-and-more-pair-coincidence state, thus
+getting rid of the contribution from this dominant non-creation of pairs state. Mandel et al. also
+demonstrated that the number of events for parametric down-conversion has to the same as for the
+pump photons. In other words, one pump photon might split into two SPDC photons but the number
+of pair-event created has to be at the most the number of incoming photons, assuming every photon
+is converted and no higher order occur. It is obvious experimentally but not trivial. Finally, unlike the
+reverse case of SHG which requires a non-zero ‘seed’ signal 𝐴1 (0) in order for any SPDC photons to
+exist, thanks to the properties of the creation operators, we can start from zero photons in the idler
+and signal states and create them using the Hamiltonian in (21). To wrap up on the theory of SPDC, we
+can claim that the fact that only quantum formalism can explain the existence of SPDC photons, is
+actually one of the many peculiar properties of parametric fluorescence and that what makes it unique
+for applications in quantum optics as we will learn later on.
+IIIPractical case: BBO crystal for SPDC
+Practically in the laboratory there are many aspects that should be taken care of in order to generate
+'efficient' SPDC in an optical set-up. First of all, the phase-matching condition Δ𝑘 = 0 has to be fulfilled
+as much as possible. As it was mentioned earlier it is quite unlikely to find a natural material which
+8
+
+fulfill the condition 𝑛𝑖 (𝜔𝑖 ) = 𝑛𝑠 (𝜔𝑠 ) < 𝑛𝑝 (𝜔𝑝 ) with 𝜔𝑖 = 𝜔𝑠 < 𝜔𝑝 except when using birefringent
+crystals which may possess two (uniaxial crystals) or three (biaxial crystals) different indices for a given
+wavelength. Another important point is that we want non-collinear phase-matching leading to
+different wave vectors directions for the three waves involved thus more easily selected thereafter
+(see schematic Fig. 1-d). This makes the theory more difficult but ensures at the end the spatial
+separation of the twin photons. Let us take the most common non-linear crystal used for SPDC up to
+now: barium borate 𝛽 − 𝐵𝑎(𝐵𝑂2 )2 or BBO. It is a negative (meaning that the direction having a low
+refractive index is the fast axis. At right angles to it is the slow axis, with a high index of refraction,
+𝑛𝑒 < 𝑛𝑜 ) uniaxial crystal (meaning it has an optical axis OA) with two different indices 𝑛𝑒 and 𝑛𝑜 for
+extraordinary and ordinary indices. BBO is transparent from 190 nm to 3300 nm and with indices given
+by the Sellmeier equations which are, for example, for type I down-conversion (𝑒 ↦ 𝑜 + 𝑜):
+0.0184
+
+𝑛𝑜 = 2.27405 + 𝜆2 −0.0179 − 0.0155𝜆2
+0.0128
+
+𝑛𝑒 = 2.3730 + 𝜆2 −0.0156 − 0.0044𝜆2
+
+(33)
+(34)
+
+with 𝜆 given in 𝜇𝑚. We recall the relation of the extraordinary index of refraction with the angle 𝜃
+from the optical axis is given by the ellipsoid equation for indices:
+𝑛2 𝑛2
+
+𝑒 𝑜
+𝑛2 (𝜃) = 𝑛2 cos2 𝜃+𝑛
+2 sin2 𝜃
+𝑒
+
+𝑜
+
+(35)
+
+So typically, when the pump beam enters the crystal with a certain angle 𝜃 with the optical axis OA,
+the extraordinary index will be different for different angles, as opposed to the ordinary index. For
+BBO, phase-matching conditions occur with an extraordinary beam only and one can have two types
+of phase-matching:
+𝑒 ⟼𝑜+𝑜
+
+type I
+
+𝑒 ⟼𝑒+𝑜
+
+type II
+
+𝑒 ⟼𝑜+𝑒
+
+type II
+
+Figure 1-d represents a type II configuration. Figure 2 represents the two curves for the Sellmeier
+equations of BBO with 𝑛(𝜃) for 𝜃 = 90° (in black) and 𝑛𝑜 (in red) as a function of the wavelength 𝜆.
+We will take the simple case where we have collinear phase matching and with a pump at 400 nm and
+hope to get a pair of 800 nm photons. The pink curve is 𝑛(𝜃 = 31.7°) where we can see that for a
+pump beam at 400 nm (very common in the laboratory) we can have phase matching at 800 nm (the
+two grey circles) where we fulfill a condition where 𝑛𝑒 (𝜔𝑠 ) = 𝑛𝑜 (2𝜔𝑝 ). This is the phase matching
+condition for this particular case at these particular wavelengths for type I and in a collinear
+configuration. This simple case is for illustration but the most general case cannot be evaluated without
+the help of numerics. The idea is to solve equation (5) in a vector form |∆𝑘⃗ = 𝑘⃗𝑝 − 𝑘⃗𝑠 − 𝑘⃗𝑖 | = 0. In
+order to do so, one needs to work in spherical coordinates and determine 9 parameters to fulfill the
+phase matching conditions given by the equations (4) and (5): 3 parameters for the wavelength 𝑖, 𝑠, 𝑝,
+3 angles 𝜃 for each wave and 3 angles 𝜑 for each wave. Clearly one can set 𝜆𝑝 , 𝜆𝑠 , 𝜆𝑖 for the 3 waves if
+we want to work at certain wavelengths and in the degenerate case. We can also decide to set 𝜃𝑠 for
+instance (and not be in the collinear case such as in Fig. 1-d) and we can show that for a uniaxial crystal,
+9
+
+Figure 2: Graphs representing the Sellmeier equations of BBO with ne(θ) for θ=90° (in black) and no (in red) as
+a function of the wavelength λ. The pink curve is n e(θ=31.7° ). We have phase-matching between 400 nm and
+800 nm (the two grey circles) when we fulfill a condition where ne (ωs )=no (2ωp). This is the phase matching
+for SHG condition for this particular case at these particular wavelengths for a type I non-linear BBO crystal
+and in a collinear configuration.
+
+Figure 3: Graph representing the two outcoming cones of SPDC for a type II BBO crystal. This is an experimental
+transverse cut of SPDC at 810 nm behind a BBO crystal. The two circles represent the two extraordinary and
+ordinary beams. In this particular case, we can observe two intersection points (where polarization
+entanglement occurs). We can also observe that one circle is slightly bigger than the other one due to crystal
+tilting and meaning that the two wavelengths for signal and idler are slightly different.
+
+10
+
+there is no dependence with 𝜑𝑝 and that there is the relation 𝜑𝑠 = 𝜋 + 𝜑𝑖 . We are finally left with 3
+parameters (𝜃𝑝 , 𝜃𝑖 , 𝜑𝑠 ) to determine using equations (4) and (5). For more information in the
+calculation part, see the article from NIST by Boeuf et al. from 2000 [22]. The following website
+maintained by NIST: spdcalc.org allows you to enter your own parameters and gives you all sorts of
+information such as the phase-matching curves or the joint spectral distribution. In particular, one
+derives from these calculations that for a type II SPDC in BBO with a pump laser at 405 nm, giving rise
+to 810 nm down-converted photons, we have an angle of about 3° between the idler and the signal
+waves coming out of the crystal in a cone shape (see Figure 1-d for a schematic). Figure 3 presents an
+experimental result of the double cone emission of SPDC in type II BBO. In this case, we have two
+different circles as opposed to the type I case. Figure 3 represents the notorious picture of the
+parametric down-converted cones coming out of the crystal with photons with orthogonal
+polarisations for the two different cones (extraordinary e/V cone and ordinary o/H photons). This is an
+experimental transverse cut of SPDC at 810 nm behind a BBO crystal done by scanning across a 2D
+plane parallel and away from the nonlinear crystal using an optical fibre linked to a single photon
+detector. We will see later on that it can lead to polarisation entangled pairs of photons. For that, one
+will need to take two things into account that are inherent to SPDC: the temporal walk-off and the
+spatial walk-off. For the temporal walk-off, also known as the longitudinal walk-off, it simply shows
+that as the crystal has two indices along which the 'e' and the 'o' photons follow, they will travel
+differently (different group velocities) and be temporally different when coming out of the crystal (the
+length of the crystal is typically on the order of 1 mm). One photon will come out of the crystal before
+the other one. This temporal difference is given by:
+1
+
+1
+
+𝑒
+
+𝑜
+
+Δ𝑡 = |𝐿𝑐 (𝑛 − 𝑛 )|
+
+(36)
+
+The spatial walk-off, or transverse walk-off is due to the fact again that the material is birefringent and
+as such the energy propagation or the Poynting vector is not necessarily in the same direction as the
+wavevector of the down-converted photons. This is the case for the ordinary wave o but not for the
+extraordinary wave e and we thus end up with an angle 𝜌 between the two waves at the output of the
+crystal given by:
+1 𝑑𝑛𝑒
+𝑒 𝑑𝜃
+
+𝜌 = −𝑛
+
+(37)
+
+Once again, this will be very important for the production of entangled photons as one must not have
+any kind of information (temporal or otherwise) in order to produce pure entanglement. There are
+easy ways to avoid these ‘labelling’ by using compensating crystals (see [8] for instance). One more
+thing we should emphasize is the fact that for spontaneous parametric down-conversion, the
+conservation of momentum has an uncertainty to it (equation (5)) and we have rather:
+𝑘⃗3 = 𝑘⃗2 + 𝑘⃗1 + Δ𝑘⃗
+
+(38)
+
+and the equation still holds. That is the reason why, these two cones actually form two rings when one
+makes a transversal view-cut along the propagation direction of the SPDC photons (see Fig. 3). One
+way to overcome this situation is to select spectrally with narrow-band filters (from 1 to 10 nm) the
+down-converted photon pairs, on top of a spatial (with angles) and temporal (with coincidence
+detections) selection [11,23].
+
+11
+
+IVSPDC used for applications
+Single-photon source
+The first striking effect with SPDC is the fact that we end up with twin photons created at the same
+time and which are indistinguishable. One foresees that this could be useful for some low-signal level
+communications and was predicted by Mandel and Rarity (c. 1984) as a joint measurement can ensure
+their 'twin-ness'. Derive from that, the first application was the localisation of a one-photon state using
+SPDC by [24]. This led to heralded single photon sources using SPDC providing strong photon
+antibunching which is again a clear quantum property of light. This is good for quantum information
+processing (QIP) although more for proofs of principle. Real single photon sources such as quantum
+dots, NV centers, atoms, etc... are still preferable. Figure 4-a is an example of an heralded single photon
+source where the authors used this time collinear source of orthogonal twin photons that were
+separated in polarisation [12]. One photon was detected (idler photon in Fig 4-a) and served to herald
+the arrival of the signal photon on the other side which was then detected using a standard HanburyBrown and Twiss (HBT) interferometer known in quantum optics for the determination of single
+photons. Fig 4-b presents the photon antibunching characteristics of this system as a function of the
+time coincidence window for the detection. We can show that the quality of this autocorrelation g(2)
+degrades as the intensity of the pump increases and that is due to the fact that the emission of
+spontaneous parametric down-conversion follows a Poisson statistics as discussed previously with
+equation (24). Thus SPDC has a limited use as a source of single photons as multiple pair creation is
+always present.
+Source of indistinguishable photons
+In 1987, the group of Leonard Mandel realised a two-photon interferometry and observed this time a
+
+Figure 4: a) Example of an heralded single photon source using SPDC from a periodically poled KTP crystal
+(PPKTP). The crystal produces a pair of collinear photons with orthogonal polarisations which are first
+separated by a polarizing beamsplitter (PBS), so that the idler photon serves as an heralding event for the
+(𝟐)
+
+signal photon sent onto a non-polarising beamsplitter (BS) for a measurement of the 𝒈𝒄 function (so-called
+(𝟐)
+
+(𝟐)
+
+HBT). b) 𝒈𝒄 (𝝉) function for 3 different coincidence windows showing 𝒈𝒄 (𝝉) ≈ 0.07 for the lowest
+coincidence window [12].
+
+12
+
+Figure 5: a) Experimental set-up of the first two indistinguishable photon experiment pioneered by Hong, Ou
+and Mandel [10]. This was done by doing SPDC in a KDP in a non-collinear phase-matching condition. The BS
+is moved to change the delay between the arrival times of the photons onto the BS. b) Coincidence
+measurements of the photon pairs detected by D1 and D2 as a function of the path delay at the BS with a clear
+dip observed.
+
+photon bunching effect. This experiment consisted in creating two twin photons by SPDC and then
+made them interfere on a beamsplitter (cf Figure 5). Quantum-mechanically, one can show that the
+two outcomes where the photons come out in different ports interfere destructively and remain only
+the cases where the photons come out together from the BS, they bunch. This shows bosonic
+properties for photons due to the fact that the quantum operators of annihilation and creation of
+photons are used (oppositely, fermions like electrons would go away from each other). The photons
+are said indistinguishable as they must be from the same optical mode in order for the interferences
+to occur and this is called the Hong-Ou-Mandel effect [10].
+Entangled photons
+Following these experiments, researchers used parametric down-converted photons for creating
+entangled photons in polarization for violating Bell’s inequalities. Figure 6 presents the original article
+where they managed, using a type-II BBO crystal, to create two intersections of the output cones by
+tilting their BBO crystal (see also Figure 3). They then selected the intersection of the two parts of the
+cones of the twin photons with orthogonal polarisations. As with the right conditions it is impossible
+to tell which photon is which anymore, you cannot predict the result of the measured polarisation of
+the photon at one intersection. What you do know though is the fact that parallel measurements will
+give you perfect anti-correlation in polarisation. Figure 1-d is a schematic of the two output cones from
+idler and signal and Figure 3 provides experimental data where we have a transverse cut of the two
+twin beams produced. At the intersection, one ends up with the following entangled state:
+|𝜓⟩ =
+
+1
+(|𝐻𝑖 ⟩|𝑉𝑠 ⟩ + 𝑒 𝑖𝜙 |𝑉𝑖 ⟩|𝐻𝑠 ⟩)
+√2
+
+(39)
+
+where H is for horizontal polarization and V is for vertical polarisation, s and i stand for signal and idler
+like before and φ is a phase that can be modified. Figure 6-a represents a schematic of the experiment
+carried on by Kwiat et al. [11], while Fig 6-b shows a diagram of the geometry of the process. Figure 613
+
+c demonstrates clearly that there are strong correlations in polarization between the two entangled
+photons. This entangled state and this technique was used to violate Bell’s inequalities and brought up
+a lot of discussions regarding the so-called Einstein-Podolsky-Rosen (EPR) paradox.
+Quantum teleportation
+One of the most famous use of entanglement is certainly when it was applied to demonstrate quantum
+teleportation. The idea of teleportation is that two protagonists (usually called Alice and Bob) share a
+common pair of EPR particles (in this case photons) that they will use in order to teleport a quantum
+state (which does not have to be known) from Alice to Bob. Figure 7-a shows the general principle of
+creating a pair of entangled/EPR photons (2 and 3) distributed between Alice and Bob and Alice uses
+her photon 2 to make a so-called Bell state measurement (BSM) with the photon to be teleported
+(photon 1) [13]. Using a classical channel of information, Alice tells Bob what BSM-type of
+measurement she made (but not the result) so that Bob can act accordingly on his photon n°3 and
+recover the quantum state of the teleported photon 1. Figure 7-b represents the experimental set-up
+developed in 1997 at the University of Innsbruck. A first pair of entangled photon is created by a pump
+beam where photon 3 will be going to Bob and photon 2 will be going to Alice. Alice then makes a BSM
+on a beamsplitter with photon 1 to be teleported which is in fact coming from the creation of another
+pair of EPR photons by sending back the pump beam into the crystal. This time one photon of the pair
+is photon 1 and the other one will be used to herald the arrival of photon 1 for Alice to make the BSM.
+We note that in order to synchronise the whole process, the authors use a pulse excitation with a wellknown arrival time for each time (within the pump pulse) and photon 4 is used to herald the arrival of
+photon 1 to be teleported. Finally, the equivalent classical communication between Alice and Bob is
+done by the fact that they have to communicate together to see when they made a coincidence
+measurement. Using a similar set-up, entanglement swapping was also realized [25] and now people
+try to store single photons and entangled photons into quantum memories from specific materials
+[26].
+
+Figure 6: a) Set-up of the first experiment of two entangled photon experiment done by Kwiat et al. where a
+BBO crystal is pumped at 351 nm for SPDC in a non-collinear critical phase-matching condition. b) Schematic
+of the famous two SPDC cones coming off the crystal with orthogonal polarisations and spatial selection to
+select only the photons at the intersection. c) Visibility measurements leading to a Bell parameter S > 2.5 and
+proving that the photons are indeed entangled [11].
+
+14
+
+Figure 7: a) Principle of the teleportation experiment where we send an initial state 1 and Alice proceed in
+doing a Bell-state measurement (BSM) with one entangled photon from the EPR source (2). This initial state is
+the one to be teleported. The other entangled photon of the EPR pair (3) is sent to Bob who receives a classical
+information from Alice onto what measurement he should do in order to recover Alice’s initial state, thus
+effectively teleporting the initial state 1 to state 3 from Alice to Bob. b) Schematic of the experiment where a
+strong pulse of pump photons first creates an EPR entangled pair (2 and 3) to share between Alice and Bob.
+This pump pulse of light is then sent back again into the non-linear crystal to create another pair of SPDC
+photon (1 and 4) where one photon of the pair will be the initial state to teleport (path 1) and the other one
+will be used as a trigger to create the heralded photon source (4) [13].
+
+Quantum cryptography
+This teleportation experiment and some others at the time certainly sparked a lot of interest in the
+broad field of quantum information. In particular, it was shown earlier on that using entanglement and
+the no-cloning theorem in quantum mechanics, one could make a very secure protocol based on
+15
+
+quantum cryptography (at least on paper). The basic idea proposed is that the polarisation state of a
+photon (say horizontal or vertical) can be thought of as a quantum bit of information, or a qubit. Thus
+a pair of EPR photons can represent a two-qubit source. Figure 8-a and –b presents two experiments
+realising quantum cryptography using entangled photons. In Figure 8-a, the authors use polarisation
+entangled photons [14] but in Figure 8-b, the group from Nicolas Gisin in Geneva used the so-called
+time-bin entanglement based on James-Franson’s idea from 1991 [27]. In this case, the idea is simply
+to create twin photons (say A and B) and to send each of them in a Mach-Zehnder interferometer with
+a long (L) and a short path (S). Then if one gets a coincidence measurement, assuming that beforehand
+
+Figure 8: a) Schematic of the quantum cryptography protocol using polarisation entangled photons using the
+SPDC method of Kwiat et al. (Figure 6). Each photon from a pair is sent to Alice and Bob where they verify that
+the photons are indeed entangled in order to use them as an encryption key. H polarization can be the “+1”
+bit of information and V polarization can be the “-1” bit of information [14]. b) Quantum cryptography was
+also realised in telecommunication fibres where polarization is not preserved. For that, Tittel et al. used the
+so-called time-energy entanglement or time-bin entanglement to generate entangled photons [28].
+
+16
+
+we use a pulse pump beam itself in a superposition of L and S paths, there is no way to tell whether
+the photons took both the short paths or the long paths [28]. All we know is that they have both taken
+the same path in order to get a coincidence measurement. This very powerful method of entangling
+photons allowed the Geneva group (and others thereafter) to use non-degenerate SPDC to get one
+photon at the pair at, say 900 nm in the silicon detection window, and a photon at 1550 nm [29]. This
+wavelength is not chosen randomly as it corresponds to the wavelength used in the world
+communication network thus bringing quantum cryptography into the scene of a mature
+application.Of course, science is not that easy and other problems have been encountered like
+inefficient detectors, problem with maintaining stable interferometers etc… The carrier of information
+has been tested on optical tables but also in fibers (visible or telecom) and in free-space. Now there
+are projects to point to satellites to do satellite communication quantum cryptography [30].
+Quantum computation
+Following these remarkable advances in quantum communication, it did not take long before SPDC
+was used for running experiments on quantum computation. This is still a very much on-going task
+where groups around the world demonstrated basic algorithms, error-correction codes and more using
+entangled photons from SPDC. SPDC can only generate two quantum bits (qubits) at the time (at least
+in polarisation) and people have been working actively in order to get 2, 3 up to 10 pairs of entangled
+
+Figure 9: Number of polarisation entangled photons in time using SPDC. The black squares are experimental
+results with the reference and the red line is linear fit. At this linear rate, we will reach 20 entangled photons
+in 2037.
+
+17
+
+Figure 10: a) Schematic of the CNOT gate realized in [15]. b) Polarisation-encoded photonic qubits can
+
+be converted into spatially encoded qubits, suitable for the gate shown in a) and c) schematic of the
+experimental CNOT gate. Pairs of energy degenerate photons are incident from the left of the
+diagram. They then follow the gate procedure in the middle before being detected on the right-hand
+side [15].
+photons in a given experiment [11,31,32,33,34,35,36]. Figure 9 plots the number of polarisation
+entangled photons created by SPDC as a function of time. At this linear rate, we will reach 20 entangled
+photons in 2037. Unfortunately, the trend does not follow Moore’s law and it seems pretty clear it
+may even reach a plateau at some point using this technique. Nevertheless, it is still primordial to show
+basic quantum information protocols using SPDC and entangled photons. Also shows the need for new
+sources of entangled photons.The first real practical implementation of an optical gate was realized in
+2003 with entangled photons [15]. This was the first experimental all-optical quantum controlled-NOT
+gate (CNOT gate). This experiment and many others followed the so-called KLM proposal (published
+by E. Knill, R. Laflamme and G. Milburn in 2001 and it was the first article published in Nature of the
+twenty first century [37]. The KLM proposal showed that using non-deterministic gates, single photons,
+efficient and discriminating single-photon detectors, it was possible to perform an all-optical computer
+using only linear optics such as beamsplitters, wave-plates etc… Figure 10-a presents the basic principle
+of this CNOT gate with a control qubit and a target qubit. Each qubit can have a 0 or a 1 state and the
+CNOT gate tells you if the control qubit is in the 0 state, then the state of the target state is unchanged
+whereas if the control qubit is in the 1 state, then the target state will have its state flip from 0 to 1 or
+from 1 to 0. This scheme used by O’Brien et al. was a coincidence basis gate which is non-deterministic
+[15]. Fig 10-b represents the so-called dual-rail encoding where spatial superposition with a
+beamsplitter is realised in order to implement this scheme. This, combined with entangled photons in
+polarization and conditional detections showed that the gate was realized 1/9th of the time. Since
+then, this scheme was improved. Using SPDC, it has been used to implement basic concepts in
+quantum processing through the proof of CNOT gates [15], Shor's algorithm [38], one-way quantum
+
+18
+
+computation [39] or boson sampling type of gates [40]. There is a wide literature on the subject and it
+is still very much on-going [4].
+Quantum metrology and more
+SPDC allows also other types of less-obvious applications. One of them is the use of entanglement in
+order to perform super-resolution phase measurements [17]. The basic idea is to create a so-called
+NOON state written as |𝑁, 0⟩ +|0, 𝑁⟩ where N is the number of photons in a given mode. In this case,
+using interferometry, one can show a phase resolution given by ∆𝜑 = 1/√𝑁. The concept of ‘quantum
+lithography’ was thus born although there is still much more improvement to be done before this
+concept can actually be put in practice. One example was to use entangled photons for measuring
+protein concentration [41].
+Another idea that came out fairly earlier on when spontaneous parametric down-conversion photons
+were characterised, is the idea that one could use twin photons for metrology. The concept of quantum
+metrology uses light for setting the standards that define units of measurement (the candela) for light.
+The quantum candela project aims at developing standards for photon metrology from the signal level
+of existing radiometric standards and reach the smallest grains of light which are single photons.
+Through photon correlation measurements, it was shown that one could calibrate very accurately
+photons detectors, again a very important application for radiometric metrology [16,5,42].
+Finally, we must mention that originally, parametric fluorescence and entangled photons generated
+with them where used for testing the very foundations of quantum mechanics such as the waveparticle duality, non-locality via the violation of Bell’s inequalities where in 2015, 3 experiments finally
+closed all the loop-holes associated to these tests and put an end to hidden variables introduced by
+John Bell in the 60s. Two of them used SPDC for that purpose [43,44]. Born’s rule of quantum
+mechanics was also tested with an heralded single-photon source using SPDC going through a three
+slit interferometer [6]. This was done in order to show that quantum interference is a two-amplitude
+effect and that no three-amplitude term exists in quantum mechanics.
+V- Future for SPDC
+The future for SPDC is still very bright and nowadays, SPDC is used as a tool more than anything, for
+various applications and we can classify the applications into three main categories: a-foundations of
+physics and in particular of quantum mechanics, b-quantum information processing and c-quantum
+metrology via the quantum candela project and quantum sensors. Within QIP, we can split into 3 subcategories: quantum cryptography, quantum computing and quantum communications. There are
+other secondary potential applications for optical lithography but the odds that any application will
+come out of this are pretty low, quantum imaging, also very narrow field and quantum sensing which
+has a higher potential.
+Now the challenge of tomorrow is to actually engineer new technologies to create efficient SPDC and
+not just using the natural crystal birefringence. Several groups are attempting to do so by several
+means, either by using confined light into optical fibres [45], in SOI waveguides [46] but also by careful
+engineering of semiconductor Bragg-type of structure in order to obtain parametric down-conversion
+directly on an optical chip [47]. By the same token, using two four-wave mixing processes, Silverstone
+et al. managed to create SPDC photons directly on a chip made of silicon-on-insulator [46]. A direct 3photon has also been shown using cascaded SPDC [48]. Recently, an electrically injected photon-pair
+at room temperature was even demonstrated with is the first evidence of SPDC obtained by electrical
+19
+
+pumping rather than optical pumping [49]. More recently, we should mention the very interesting
+work on enhancing SPDC effect using non-linearities in metamaterials [50]. As such, it is safe to say
+that research in SPDC has thus a bright future ahead.
+ACKNOWLEDGEMENTS
+The author would like to point out that most of this work was done when the author was at the
+University of Oxford from 2000 to 2002 and as such, would like to thank, Dik Bouwmeester, John Rarity,
+Christoph Simon, Antia Lamas-Linares, Gabriel Durkin and John Howell but also Gregor Weihs, Chris
+Erven, Rolf Horn and Kevin Resch for fruitful and sometimes very entangled discussions. The author
+thanks L. Le Cunff for Figure 1-d and C. Altuzarra and S. Vezzoli for working on the data of Figure 3.
+REFERENCES:
+[1] Quantum Fluctuations and Noise in Parametric Processes I. W. H. Louisell, A. Yariv, & A. E.
+Siegman, Phys. Rev. 124, 1646 (1961).
+[2] Observation of simultaneity in parametric production of optical photons pairs. D. C. Burnham, &
+D. L. Weinberg, Phys. Rev. Lett. 25, 84 (1970).
+[3] Quantum cryptography. N. Gisin, G. Ribordy, W. Tittel, & H. Zbinden, Rev. Mod. Phys. 74, 145
+(2002).
+[4] Optical quantum computing. J. L. O’Brien, Science 318, 1567 (2007).
+[5] The quantum candela: a re-definition of the standard units for optical radiation. J. Y. Cheung, C. J.
+Chunnilall, E. R. Woolliams, N. P. Fox, J. R. Mountford, J. Wang, & P. J. Thomas, J. Mod. Opt. 54, 373
+(2007).
+[6] Ruling out multi-order interference in quantum mechanics. U. Sinha, C. Couteau, T. Jennewein, R.
+Laflamme, & G. Weihs, Science 329, 418 (2010).
+[7] Entangled photon apparatus for the undergraduate laboratory. D. Dehlinger, & M. W. Mitchell,
+Am. J. Phys. 70, 898 (2002).
+[8] Entangled photons, nonlocality, and Bell inequalities in the undergraduate laboratory. D.
+Dehlinger, & M. W. Mitchell, Am. J. Phys. 70, 903 (2002).
+[9] Measurements of time delays in the parametric production of photon pairs. S. Friberg, C. K. Hong,
+& L. Mandel, Phys. Rev. Lett. 54, 2011 (1985).
+[10] Measurements of subpicosecond time intervals between two photons by interference. C. K.
+Hong, Z. Y. Ou, & L. Mandel, Phys. Rev. Lett. 59, 2044 (1987).
+[11] New high-intensity source of polarization-entangled photons pairs. P. G. Kwiat, K. Mattle, H.
+Weinfurter, A. Zeilinger, A. V. Sergienko, & Y. Shih, Phys. Rev. Lett. 75, 4337 (1995).
+[12] Coherence measures for heralded single-photon sources. E. Bocquillon, C. Couteau, M. Razavi, R.
+Laflamme, & G. Weihs, Phys. Rev. A 79, 035801 (2009).
+[13] Experimental quantum teleportation. D. Bouwmeester, J.-W. Pan, K. Mattle, M. Eibl, H.
+Weinfurter, & A. Zeilinger, Nature 390, 575 (1997).
+[14] Quantum cryptography with entangled photons. T. Jennewein, C. Simon, G. Weihs, H.
+Weinfurter, & A. Zeilinger, Phys. Rev. Lett. 84, 4729 (2000).
+[15] Demonstration of an all-optical quantum controlled-NOT gate. J. L. O’Brien, G. J. Pryde, A. G.
+White, T. C. Ralph, & D. Branning, Nature 426, 264 (2003).
+[16] Absolute self-calibration of the quantum efficiency of single-photon detectors. X.-H. Chen, Y.-H.
+Zhai, D. Zhang, & L.-A. Wu, Opt. Lett. 31, 2441 (2006).
+
+20
+
+[17] Super-resolving phase measurements with a multiphoton entangled state. M. W. Mitchell, J. S.
+Lundeen, & A. M. Steinberg, Nature 429, 161 (2004).
+[18] Nonlinear optics and quantum electronics. M. Schubert, & B. Wilhelmi, John Wiley and Son
+(1986).
+[19] Theory of parametric frequency down conversion of light. C. K. Hong, & L. Mandel, Phys. Rev. A
+31, 2409 (1985).
+[20] Theory of two photon entanglement in type-II optical parametric down-conversion. M.H. Rubin,
+D.N. Klyshko, Y.H. Shih, & A.V. Sergienko, Phys. Rev. A 50, 5122-5133 (1994).
+[21] The quantum theory of light. R. Loudon, Oxford University Press 3rd Edition (2000).
+[22] Calculating characteristics of noncollinear phase matching in uniaxial and biaxial crystals. N.
+Boeuf, D. Branning, I. Chaperot, E. Dauler, S. Guérin, G. Jaeger, A. Muller, & A. Migdall, Opt. Eng. 39,
+1016 (2000).
+[23] High efficiency entangled photon pair collection in type II parametric fluorescence. C. Kurtsiefer,
+M. Oberparleiter, & H. Weinfurter, Phys. Rev. A. 64, 023802 (2001).
+[24] Experimental realization of a localized one-photon state. C. K. Hong & L. Mandel, Phys. Rev. Lett.
+56, 58 (1986).
+[25] Experimental Entanglement Swapping: Entangling Photons That Never Interacted. J.-W. Pan, D.
+Bouwmeester, H. Weinfurter, and A. Zeilinger, Phys. Rev. Lett. 80, 3891 (1998).
+[26] Preparation and storage of frequency-uncorrelated entangled photons from cavity-enhanced
+spontaneous parametric downconversion. H. Zhang, X.-M. Jin, J. Yang, H.-N. Dai, S.-J. Yang, T.-M.
+Zhao, J. Rui, Y. He, X. Jiang, F. Yang, G.-S. Pan, Z.-S. Yuan, Y. Deng, Z.-B. Chen, X.-H. Bao, S. Chen, B.
+Zhao, & J.-W. Pan, Nature Photonics 5, 628 (2011).
+[27] Bell inequality for position and time. J. D. Franson, Phys. Rev. Lett. 62, 2205 (1989).
+[28] Quantum Cryptography Using Entangled Photons in Energy-Time Bell States. W. Tittel, J. Brendel,
+H. Zbinden, & N. Gisin, Phys. Rev. Lett. 84, 8737 (2000).
+[29] High-quality asynchronous heralded single-photon source at telecom wavelength. S. Fasel, O.
+Alibart, S. Tanzilli, P. Baldi, A. Beveratos, N. Gisin, H. Zbinden, New J. of Phys. 6, 163 (2004).
+[30] Experimental quantum key distribution with simulated ground-to-satellite photon losses and
+processing limitations. J.-P. Bourgoin, N. Gigov, B. L. Higgins, Z. Yan, E. Meyer-Scott, A. K. Khandani,
+N. Lütkenhaus, and T. Jennewein, Phys. Rev. A 92, 052339 (2015).
+[31] Observation of three-photon Greenberger–Horne–Zeilinger entanglement. D. Bouwmeester, J.W. Pan, M. Daniell, H. Weinfurter, A. & Zeilinger, Phys. Rev. Lett. 82, 1345 (1999).
+[32] Experimental demonstration of four-photon entanglement and high-fidelity teleportation. J.-W.
+Pan, M. Daniell, S. Gasparoni, G. Weihs, & A. Zeilinger, Phys. Rev. Lett. 86, 4435 (2001).
+[33] Experimental demonstration of five-photon entanglement and open-destination teleportation.
+Z. Zhao, Y.-A. Chen, A.-N. Zhang, T. Yang, H. J. Briegel & J.-W. Pan, Nature 430, 54 (2004).
+[34] Experimental entanglement of six photons in graph states. C.-Y. Lu, X.-Q. Zhou. O. Guhne, W.-B.
+Gao, J. Zhang, Z.-S. Yuan, A. Goebel, T. Yang, J.-W. Pan, Nature Phys. 3, 91 (2007).
+[35] Observation of eight-photon entanglement. X.-C. Yao, T.-X. Wang, P. Xu, He Lu, G.-S. Pan, X.-H.
+Bao, C.-Z. Peng, C.-Y. Lu, Y.-A. Chen, & J.-W. Pan, Nature Photonics 6, 225 (2012).
+[36] Experimental ten-photon entanglement. X.-L. Wang, L.-K. Chen, W. Li, H.-L. Huang, C. Liu, C.
+Chen, Y.-H. Luo, Z.-E. Su, D. Wu, Z.-D. Li, H. Lu, Y. Hu, X. Jiang, C.-Z. Peng, L. Li, N.-L. Liu, Y.-A. Chen, C.Y. Lu, J.-W. Pan, Phys. Rev. Lett. 117, 210502 (2016).
+[37] A scheme for efficient quantum computation with linear optics. E. Knill, R. Laflamme, & G. J.
+Milburn, G. J., Nature 409, 46 (2001).
+21
+
+[38] Experimental realization of Shor's quantum factoring algorithm using qubit recycling. E. MartínLópez, A. Laing, T. Lawson, R. Alvarez, X.-Q. Zhou, & J. L. O'Brien, Nature Photonics 6, 773 (2012).
+[39] Experimental one-way quantum computing. P. Walther, K. J. Resch, T. Rudolph, E. Schenck, H.
+Weinfurter, V. Vedral, M. Aspelmeyer, & A. Zeilinger, Nature 434, 169 (2005).
+[40] Experimental boson sampling. M. Tillmann, B. Dakić, R. Heilmann, S. Nolte, A. Szameit, & P.
+Walther, Nature Photonics 7, 540 (2013).
+[41] Measuring protein concentration with entangled photons. A. Crespi, M. Lobino, J. C. F.
+Matthews, A. Politi, C. R. Neal, R. Ramponi, R. Osellame, & J. L. O’Brien, Appl. Phys. Lett. 100, 233704
+(2012).
+[42] Advances in quantum metrology. V. Giovannetti, S. Lloyd, & L. Maccone, Nature Photonics 5, 222
+(2011).
+[43] Significant-Loophole-Free Test of Bell’s Theorem with Entangled Photons. M. Giustina, M. A. M.
+Versteegh, S. Wengerowsky, J. Handsteiner, A. Hochrainer, K. Phelan, F. Steinlechner, J. Kofler, J.-Å.
+Larsson, C. Abellán, W. Amaya, V. Pruneri, M. W. Mitchell, J. Beyer, T. Gerrits, A. E. Lita, L. K. Shalm, S.
+W. Nam, T. Scheidl, R. Ursin, B. Wittmann, & A. Zeilinger, Phys. Rev. Lett. 115, 250401 (2015).
+[44] Strong Loophole-Free Test of Local Realism. L. K. Shalm, E. Meyer-Scott, B. G. Christensen, P.
+Bierhorst, M. A. Wayne, M. J. Stevens, T. Gerrits, S. Glancy, D. R. Hamel, M. S. Allman, K. J. Coakley, S.
+D. Dyer, C. Hodge, A. E. Lita, V. B. Verma, C. Lambrocco, E. Tortorici, A. L. Migdall, Y. Zhang, D. R.
+Kumor, W. H. Farr, F. Marsili, M. D. Shaw, J. A. Stern, C. Abellán, W. Amaya, V. Pruneri, T. Jennewein,
+M. W. Mitchell, P. G. Kwiat, J. C. Bienfang, R. P. Mirin, E. Knill, & S. W. Nam, Phys. Rev. Lett. 115,
+250402 (2015).
+[45] Optical-Fiber Source of Polarization-Entangled Photons in the 1550 nm Telecom Band. X. Li, P. L.
+Voss, J. E. Sharping, & P. Kumar, Phys. Rev. Lett. 94, 053601 (2005).
+[46] On-chip quantum interference between silicon photon-pair sources. J. W. Silverstone, D.
+Bonneau, K. Ohira, N. Suzuki, H. Yoshida, N. Iizuka, M. Ezaki, C. M. Natarajan, M. G. Tanner, R. H.
+Hadfield, V. Zwiller, G. D. Marshall, J. G. Rarity, J. L. O'Brien & M. G. Thompson, Nature Photonics 8,
+104 (2014).
+[47] Monolithic Source of Photon Pairs. R. T. Horn, P. Abolghasem, B. J. Bijlani, D. Kang, A. S. Helmy,
+& G. Weihs, Phys. Rev. Lett. 108, 153605 (2012), Phys. Rev. Lett. 108, 153605 (2012).
+[48] Direct generation of three-photon polarization entanglement. D R. Hamel, L. K. Shalm, H. Hübel,
+A. J. Miller, F. Marsili, V. B. Verma, R. P. Mirin, S. W. Nam, K. J. Resch, & T. Jennewein, Nature
+Photonics 8, 801 (2014).
+[49] Electrically Injected Photon-Pair Source at Room Temperature. F. Boitier, A. Orieux, C. Autebert,
+A. Lemaître, E. Galopin, C. Manquest, C. Sirtori, I. Favero, G. Leo, & S. Ducci, Phys. Rev. Lett. 112,
+183901 (2014).
+[50] Quantum nonlinear light emission in metamaterials: broadband Purcell enhancement of
+parametric downconversion. A. Davoyan & H. Atwater, Optica 5, 608 (2018).
+
+22
+
+

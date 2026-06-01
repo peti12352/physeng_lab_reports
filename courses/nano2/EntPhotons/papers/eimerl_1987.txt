@@ -1,0 +1,2692 @@
+Optical, mechanical, and thermal properties of barium borate
+D. Eimerl, L. Davis, S. Velsko, E. K. Graham, and A. Zalkin
+Citation: J. Appl. Phys. 62, 1968 (1987); doi: 10.1063/1.339536
+View online: http://dx.doi.org/10.1063/1.339536
+View Table of Contents: http://jap.aip.org/resource/1/JAPIAU/v62/i5
+Published by the AIP Publishing LLC.
+
+Additional information on J. Appl. Phys.
+Journal Homepage: http://jap.aip.org/
+Journal Information: http://jap.aip.org/about/about_the_journal
+Top downloads: http://jap.aip.org/features/most_downloaded
+Information for Authors: http://jap.aip.org/authors
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+Optical, mechanical, and thermal properties of barium borate
+D. Eimerl, L. Davis, and S. Velsko
+Nonlinear Optical Materials Group, Lawrence Livermore National Laboratory, P. O. Box 5508,
+Livermore, California 94550
+
+E. K. Graham
+The Pennsylvania State University, University Park, Pennsylvania 16802
+
+A. Zalkin
+Materials and Molecular Research Division, Lawrence Berkeley Laboratory, Berkeley, California 94720
+
+(Received 2 March 1987; accepted for publication 27 April 1987)
+We report measurements of all the material constants necessary to fully characterize barium
+borate as a nonlinear optical material. All data was taken on crystals supplied by Professor
+Chuangtien Chen, Fuzhou, People's Republic of China. We have determined the crystal
+structure, the optical absorption, the refractive indices from the UV to the near IR, the
+thermo-optic coefficients, the nonlinear optical or coefficients, the resistance to laser damage,
+the elastic constants, the thermal expansion, thermal conduCtivity and dielectric constants, and
+the fracture toughness. This data is used to evaluate barium borate for a variety of applications.
+We find that, in general, barium borate has a low acceptance angle, and that despite its higher
+optical nonlinearity, it is therefore not significantly more efficient than other commonly
+available materials, except in the UV below 250 nm. On the other hand, it has a high damage
+threshold, it is physically robust, it has good UV and IR transparency, and it has excellent
+average power capability. It permits deep UV generation, and has great potential for
+generating tunable visible and IR light as an optical parametric amplifier.
+
+INTRODUCTION
+
+Barium metaborate (BaB 2 0 4 ) is a new nonlinear optical material discovered by Professor Chuangtien Chen of the
+Fujian Institute for Research on the Structure of Matter in
+Fuzhou, People's Republic of China. 1-7 It is an interesting
+material characterized by a wide range of transparency in
+both the ultraviolet and the near infrared. Its large birefringence allows phasematching for many harmonic generation
+processes, and in particular it has been used to generate the
+fifth harmonic of Nd:YAG. 2,4 It has a substantial nonlinear
+coupling. These properties indicate that barium borate is potentially useful for many applications, especially in the ultraviolet region.
+However, the utility of a material in applications depends on other properties besides the linear and nonlinear
+optical constants. These include, for example, the damage
+threshold, chemical stability, and mechanical strength. At
+high average power, even weak optical absorption leads to
+thermal dephasing, and to induced thermal stresses which
+can fracture the crystal. 8 In the region of transparency, the
+optical absorption is controlled primarily by trace impurities
+and consequently crystal quality and the crystal growth process are important factors at high average power. These and
+other issues associated with average power have been analyzed recently in detail. 8,9 The performance of harmonic
+generators and other nonlinear optical devices was found to
+be characterized by four figures of merit. These figures of
+merit are simple combinations of material constants which
+determine the crystal shape and size, and the maximum
+average power density compatible with high conversion efficiency. At this time, complete sets of the relevant material
+constants are available for only a few materials (KDP,
+1968
+
+J. Appl. Phys. 62 (5), 1 September 1987
+
+Lil0 3 , LiNb0 3 , KNb0 3 ). These are discussed in detail in
+Refs. 8-10. We have measured all the relevant material constants for barium borate, and calculated figures of merit for
+many nonlinear optical processes. This paper reports the results of our measurements on the fundamental physical constants of barium borate, and uses this data to discuss the
+performance of barium borate in various nonlinear optical
+devices.
+CRYSTAL SAMPLES
+
+The crystals used in this study were grown in Professor
+Chen's group in Fuzhou, People's Republic of China. The
+crystals were grown by a top-seeded technique from a hightemperature flux containing oxides of boron, sodium, and
+barium. Barium and boron oxides are prepared in stoichiometric proportion, and then either sodium oxide or sodium
+borate is added to the flux, to bring the liquidus below the
+phase-transition temperature at about 900 ·C.
+The crystals were typically large, 10 X 20 X 5 mm, optically clear, and relatively free of strain. One was already cut
+as a prism for refractive index measurements. All the data
+reported here was taken on material grown in Fuzhou, People's Republic of China.
+
+CRYSTAL STRUCTURE
+There are two known phases for barium borate. II The
+structure of the quenched high temperature form was determined by Mighell, Perloff, and Block l2 to be R 3c. The lowtemperature form was given as C 2/c by Hubner, \3 but a subsequent determination by Liebertz and Stahr l4 gave the
+structure R 3c. Frohlich 15 reexamined the low-temperature
+1968
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+phase and confirmed the trigonal structure R 3c found by
+Liebertz and Stahr.
+However, Chen l and Lu, Ho, and Huang l6 report the
+crystal structure of the new nonlinear material to be R 3. This
+suggested that the new nonlinear material was in fact a third,
+hitherto unknown modification of the structure. This is significant because the crystal structure determines which nonlinear coefficients are allowed, and the existence of a third
+phase impacts the phase diagram and crystal growth techniques. We therefore examined the structure of the crystals
+provided by Chen using both powder and single-crystal
+methods. The powder x-ray pattern did not show any of the
+reflections which would have been allowed in R 3 but are
+forbidden by the c glide in R 3C. 17 The independent crystal
+structure determination was done on a single crystal of dimensions 0.22 X 0.17 X 0.08 mm 3. The space group so found
+was R 3c with hexagonal cell dimensions a = 12.547(6) A
+and C = 12736(9) A with six formula units in the unit
+cell. 18 A modified Picker FACS-I diffractometer equipped
+with a Mo x-ray tube and a graphite monochromator was
+used to collect 6060 intensities of which 3103 were unique.
+The data were corrected for absorption, f.L = 110.6 cm - I .
+The resulting structure, which is identical to that reported
+by Frohlich (see Ref. 15) was refined by least squares, using
+anisotropic thermal parameters, to an R factor of 0.035 for
+2969 data for which the intensities I> u(l). The structure
+was also refined in space group R 3, in which there are 5917
+unique data because of the lower symmetry. The structure in
+R 3 refined to an R factor of 0.038 for 5539 I> u(l) data. All
+of the positional parameters of the pseudo-c-glide-related
+
+atoms were within two standard deviations oftheir positions
+in R 3c. Since the atomic positions resulting from the refinements in R 3 are statistically undistinguishable from those in
+R 3c, and half as many parameters are needed in R 3c to give
+about the same statistical agreement between the calculated
+and observed intensities, it is concluded the R 3c is the true
+space group for this crystal.
+The low-temperature form is stable up to about 900·C.
+The crystal structure is shown in Fig. 1. It consists of nearly
+planar anionic B3 0 6 ring groups perpendicular to the polar
+(trigonal) axis. These anionic groups are bonded ionically
+through the barium ions. There are four anionic groups in
+each unit cell, which are distributed over two symmetrically
+independent positions. The four groups are stacked on top of
+each other and are arranged in two pairs. The upper two
+rings form one pair, and are oriented parallel to each other.
+The lower two rings form the other pair, and are also oriented parallel to each other, but 180· relative to the upper pair.
+The c glide forces the upper and lower pairs to be exactly 180·
+apart. If the structure were R 3 then the two rings in the
+upper (or lower) pair would not be required to be exactly
+180· apart. This occurs in the structure given by LU. 16 We
+reexamined the crystal structure carefully to determine the
+relative orientation of these pairs of rings, as well as any
+other slight distortion which might remove the c glide. We
+found that the structure supports the c glide to an accuracy
+corresponding to the uncertainty associated with the estimated standard deviation of the positional parameters.
+Therefore, we conclude that the crystal structure of the lowtemperature phase is indeed R 3c, to this accuracy.
+The high -temperature phase is also R 3c, and is very similar to the low-temperature phase. 12 The only difference
+between them lies in the oxygen coordination of the barium
+atoms. In the high-temperature phase there are two Ba sites:
+one has point symmetry 32 with six oxygen atoms arranged
+in a trigonal prism, and the other has point symmetry 3 with
+a ninefold coordination. In the low-temperature phase, the
+barium atoms all have an irregular eightfold coordination.
+Powder second harmonic tests on the quenched high-temperature phase gave signals about as large as the low-temperature phase, in basic agreement with the anionic model of
+the nonlinearity proposed by Chen. 19,20
+
+TABLE I. Refractive indices of .B-BaB,04'
+
+FIG. 1. Crystal structure of barium borate, Ba, (B, 0 6 )2' consists of nearly
+planar (B, 0 6 ) - , rings perpendicular to the polar axis, bonded together
+through the barium atoms. The optical and mechanical properties reflect
+this structure, which has much in common with the graphite structure. The
+axes shown refer to the hexagonal cell (see insert).
+1969
+
+J. Appl. Phys., Vol. 62, No.5, 1 September 1987
+
+10140
+8943.5
+8521.2
+8189.0
+6438.5
+5893.0
+5790.7
+5460.7
+5085.8
+4799.9
+4678.2
+4358.3
+4046.6
+
+ne
+
+no
+
+1.54333
+1.544 69
+1.54542
+1.54589
+1.55012
+1.55247
+1.552 98
+1.55465
+1.55691
+1.559 14
+1.56024
+1.56376
+1.56796
+
+1.65608
+1.658 62
+1.65969
+1.66066
+1.66736
+1.67049
+1.67131
+1.673 76
+1.677 22
+1.68044
+1.68198
+1.68679
+1.69267
+
+Eimerl eta/.
+
+1969
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+TABLE II. Sellmeier parameters for .B-BaB 20 4 •
+A
+
+C
+
+B
+
+TABLE IV. Thermo-optic coefficients for .B-BaB 20 •.
+
+(/lm- 2)
+
+D
+
+(/lm- 2)
+
+Ref.
+
+(/lm2)
+
+-0.0044
+- 0.0155
+
+a
+
+ne
+no
+
+2.3730
+2.7405
+
+0.0128
+0.0184
+
+- 0.0156
+- 0.0179
+
+ne
+no
+
+2.3785
+2.7462
+
+0.01217
+0.01715
+
+-0.01793
+-0.02177
+
+ne
+no
+
+2.3753
+2.7359
+
+0.01224
+0.01878
+
+- 0.01667
+- 0.01822
+
+10140
+5790
+4047
+
+~ 16.64
+- 16.35
+- 16.83
+
+- 9.76
+- 9.42
+- 8.84
+
+b
+- 0.01516
+- 0.01354
+
+c
+
+dno
+dT
+
+'This work.
+b See Reference 1.
+C See Reference 4.
+
+dne
+dT
+
+LINEAR OPTICAL CONSTANTS
+
+The refractive indices of barium borate were determined
+directly in the region 400-10 14 nm by the method of minimum deviation. The prism spectrometer is fitted with camera for operation in the near infrared and in the ultraviolet
+region just beyond the visible. The data are presented in Table I. In order to extend this data to the ultraviolet we measured the phasematching angles for harmonic generation
+and fit this data as well as the visible data to a Sell meier form
+as follows:
+
+n2 = A + B I(A. 2 + C) + DA. 2.
+
+- l6.6X 1O- 6 iC,
+
+(2)
+
+- 9.3X 1O- 6 iC.
+
+(3)
+
+The range of transparency was determined in a sample 4
+mm thick. The transmission range of this sample was 2003000 nm, and is shown in Fig. 2(a). In the ultraviolet, the
+extinction (the combined absorption and scattering) begins
+at 215 nm and increases slowly as the wavelength decreases.
+The extinction reaches 100%/cm at about 200 nm. The sample used contained some inclusions and it is possible that
+higher-quality crystals would show a sharper edge lying
+deeper into the ultraviolet. Figure 2 (b) shows the transmission of the 4 mm sample in the range 150-320 nm.
+
+(1)
+
+This fit yields accurate refractive indices in the region 212.81064 nm. Table II gives the Sellmeier constants so obtained
+and also includes the Sellmeier constants of Chen and Kato.
+Table III gives the refractive indices for the harmonics of
+Nd:YAG. Our fit gives values which differ only slightly
+from the formula given by Kat04 and reproduces the observed phase-matching angles to within the experimental
+precision.
+We also determined the thermo-optic coefficients and
+their wavelength dispersion. The refractive indices were determined at several temperatures between 20 and 80 ·C. The
+temperature dependence was found to be linear, and a linear
+least squares fit was made to the data at each of three wavelengths. The resulting thermo-optic coefficients are presented in Table IV. The dispersion of the thermo-optic coefficients is comparable to the precision with which they could
+be determined. In our subsequent calculations we therefore
+used the following averaged values:
+
+t "" 3.72 mm
+
+e = 21°
+
+500
+
+1000
+
+3000 3200
+
+1500
+Wavelength (nm)
+
+(a)
+
+100 ,------.I---.--I----,Ir----.I---.--I----.---,
+
+80
+
+70
+
+II
+~
+
+..8
+
+60
+
+E
+
+.=
+~
+
+.
+
+50
+
+"0
+
+o
+
+.~
+
+40
+
+.~
+;.
+
+-
+
+30
+
+::J
+
+20
+
+TABLE III. Refractive indices at Nd:YAG harmonics.
+
+-
+
+10
+
+A (/lm)
+
+no
+
+ne
+
+1.0642
+0.5321
+0.3541
+0.2660
+0.2128
+
+1.54254
+1.55552
+1.57757
+1.61461
+1.67467
+
+1.65510
+1.67493
+1.70556
+1.75707
+1.84707
+
+OL--=±=~)~___L_I__~I~~~I~~_I~~
+160
+
+1970
+
+J. Appl. Phys., Vol. 62, No.5, 1 September 19B7
+
+(b)
+
+180
+
+200
+
+220
+
+240
+
+260
+
+280
+
+300
+
+Wavelength (nm)
+
+FIG. 2. (a) The transmission of unpolarized light at the type I phasematched direction through a 3. 72-mm sample. The clear transmission range
+is 200-2000 nm, with infrared structure between 2000 and 3000 nm. (b)
+The UV edge of the same sample.
+Eimerl et al.
+
+1970
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+PHASE MATCHING
+
+In the general three-wave mixing experiment, waves at
+frequencies WI and W2 are mixed to generate a wave at
+W3 = WI + W2' For low-intensity waves, the simple plane
+wave theory predicts that the output intensity is
+
+1 = 10 sin c2 (c5),
+
+(4)
+
+process at a reference temperature To is given by the following implicit equation:
+.
+6.k(Om,TO ) = O.
+(7)
+For angles near Om and temperatures near To, the wavevector mismatch 6.k can be expanded as a power series in 0
+and T,
+
+6.k = (J() CO-Om) + (JT (T - To),
+
+where c5 is the phase mismatch
+(5)
+c5 = (1/2) 6.kl.
+Here I is the crystal thickness and 6.k is the wave-vector
+
+where
+
+(J - a6.k
+and
+
+= l!c(n3w3-n2w2-nlwl)'
+
+(6)
+
+The refractive indices depend on the polarization of the
+waves, and in general there are three different polarization
+configurations which can lead to a vanishing phase mismatch. In any optical material there are two propagating
+modes of the electromagnetic field at each frequency. In a
+birefringent medium they have different velocities, and orthogonal polarizations. One polarization is fast (lower refractive index) and the other is slow (higher refractive index). In biaxial crystals, both velocities depend on the
+direction of propagation of the wave through the crystal.
+They are both considered extraordinary waves. However,
+for uniaxial crystals such as barium borate, only one velocity
+varies with propagation direction. In negatively birefringent
+crystals the fast velocity depends on the direction of propagation, whereas in positively birefringent materials, it is the
+slow velocity which varies with direction. In barium borate,
+which is negatively birefringent, the fast velocity depends on
+the propagation direction, and is the extraordinary wave.
+With the convention that WI < W2 < W3 , the three types
+of phase matching are summarized in Table V. For doubling,
+type III and type II are the same process, whereas this is not
+the case for sum frequency generation. Although there are in
+principle three types of phase matching, only the first two
+types are usually encountered, because type III requires high
+birefringence, and is consequently quite rare. In KDP, for
+example, there is no type III phase matching for mixing 1064
+and 532 nm to generate 355 nm, but a very birefringent material such as urea can support type III mixing as well as type
+II mixing. Because barium borate is a highly birefringent
+material with a birefringence comparable to urea
+(6.n = 0.13), it can support all three types of phase matching for most processes in its range of transparency.
+The phase-matching angle Om for a particular mixing
+
+TABLE V. Phase-matching types in ,B-BaB 20 4 • e = extraordinary wave
+(faster). 0 = ordinary wave (slower).
+Type
+
+II
+III
+
+1971
+
+o
+e
+o
+
+(9)
+
+() - ao
+
+mismatch
+
+6.k = k3 - k2 - k I
+
+(8)
+
+o
+o
+e
+
+J. Appl. Phys., Vol. 62, No.5, 1 September 1987
+
+e
+e
+e
+
+( 10)
+For each type of phase-matching expressions for the angular sensitivity (J() and the temperature sensitivity (JT are
+easily derived from Eq. (6). They can then be calculated
+from the refractive index data. The accuracy of these calculated values depends sensitively on the accuracy with which
+the refractive indices and the thermo-optic coefficients can
+be extrapolated or interpolated to the desired wavelengths.
+The temperature bandwidth for a crystal of length I is
+given by
+(11 )
+
+If the bandwidth is defined as the temperature range
+spanned by the first zeros on either side of the peak phasematched intensity, then A= 1T. On the other hand, if the
+bandwidth is defined as the FWHM bandwidth, then
+A = 1.391 55738. The angular bandwidth is given by an exactly analogous equation.
+DIRECT DETERMINATION OF THE ANGULAR AND
+TEMPERATURE BANDWIDTHS FOR HARMONICS OF
+1064 nm
+
+In addition to determining the Sellmeier formulas for
+the refractive indices, we have made direct measurements of
+the phase-matching angles, and the angular and temperature
+bandwidths. Our motivation for this was to check the accuracy of the Sellmeier fit as a descriptor of the phasematching
+properties. These direct measurements were made on crystals only 1 or 2 mm in size, where direct measurements of the
+refractive indices are generally too imprecise for phasematching calculations. The method used is to mount a small
+crystal on a glass fiber manipulated by a goniometer for accurate orientation. The waves to be mixed are incident on the
+crystal and the wave generated is detected using wavelength
+filters and photomultipliers. The intensity of the generated
+wave can be easily studied as a function of the orientation
+and temperature of the sample. The technique has been used
+on samples of other nonlinear materials as small as O. 5 mm in
+size. A detailed description of the apparatus used to make
+these measurements has been published elsewhere. 21
+The intensity of the generated wave is a maximum at the
+zero of the phase mismatch. The locus of points in (O\T)
+space defined by the relation
+
+6.k =(J()(O - Om) + (JT(T- To) = 0
+Eimerl et al.
+
+(12)
+1971
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+TABLE VII. Angular sensitivity of ,6'-BaB 20 •.
+
+PI
+
+Process
+
+T =61.0°C
+
+!\
+
+J .
+
+..
+
+i t
+
+\.,...~
+
+'." ,;
+
+-.-.~~
+
+'\
+
+r
+
+FIG. 3. The method of
+
+.\
+
+/.
+
+T =42.6°C
+
+I. \.
+
+~ l~
+T =16.1°C
+
+~
+
+.-
+
+measuring the thermal
+bandwidth uses the ratio
+between dBpm1dT and
+dl!.kldB. These are obtained from measurements
+of the angle-tuning curve at
+different
+temperatures.
+This technique is much
+more precise than direct
+methods.
+
+.\
+
+o-L.
+
+-
+
+~
+
+I
+\
+....../ \./~
+
+_0.12°
+
++0.12°
+
+Phase matching angle
+
+gives the variation of the phase-matching angle with temperature.
+(13 )
+
+This relation was used to determine the temperature sensitivity from the angular sensitivity and the temperature variation of the phase-matching angle. At each temperature, the
+
+TABLE VI. Calculated and observed phase-matching angles.
+
+2w1
+2wII
+3wl
+3wII
+3wIII
+4wl
+4wII
+
+(,6'8 )exp
+(cm-I/rad)
+
+(,6'8 )eak
+(cm-I/rad)
+
+10600 ± 200
+7000± 170
+21000 ± 1300
+16100 ± 500
+6400 ± 500
+33000 ± 400
+
+10700
+7061
+21700
+16400
+7018
+34000
+7400
+
+intensity of the output wave was measured as a function of
+angle. This data consisted of a series of curves each one
+slightly displaced in angle from the previous one. Typical
+results are shown in Fig. 3, in this case for type I doubling of
+1064 nm. This data was then used to determine both the
+angular sensitivity and dem / dT. This method of determining the temperature sensitivity was more accurate than a
+direct measurement of the output intensity as a function of
+temperature .
+Table VI lists calculated and observed phase-matching
+angles for various processes. For comparison, values from
+Kat04 are included, and values using Chen'sl refractive index formulae. Although not all the sum frequency mixings
+studied by Kato were also studied by us, the agreement
+among those common to both is very good.
+Experimental and predicted values of the angular and
+temperature sensitivities are listed in Tables VII and VIII.
+The temperature sensitivities were calculated using the averaged or dispersionless values for the thermo-optic coefficients, and these differ somewhat from the experimentally
+determined parameters, especially for processes such as type
+I doubling of 1064 nm, where cancellations between terms
+cause the temperature sensitivity to be small. The discrepancies are not great and are reasonably attributable to a combination of experimental errors and the use of dispersion less
+thermo-optic coefficients.
+We conclude from the generally good agreement
+between observed and measured values for em, /30' and /3T
+that the refractive index data gives accurate phasematching
+properties from the UV edge out to the near IR beyond 1064
+nm.
+
+Process
+
+(Type)
+
+B(Kato)a
+
+B(exp)b
+
+B(calc)e
+
+B(Chen)d
+
+Iw+ Iw
+
+(I)
+(II)
+
+22.8'
+32.9°
+
+22.732.4°
+
+22.9'
+32.6°
+
+19.8'
+2S.2°
+
+1w+2w
+
+(I)
+
+31.338S
+59.So
+
+31.1'
+3S.4°
+58.4°
+
+31.138.259. So
+
+29.3°
+36.756.2-
+
+47S
+81.0-
+
+47.3-
+
+47.582.6-
+
+47.4'
+Sl.oo
+
+TABLE VIII. Temperature sensitivity of ,6'-BaB 20 •.
+
+40.24&'6-
+
+40.246.6-
+
+40.1'
+46.5-
+
+Process
+
+(pradiC)
+
+(II)
+
+51.1°
+57.2°
+
+51.157.2'
+
+53.259.5-
+
+(I)
+
+69.3'
+
+69.5-
+
+72.7°
+
+2w1
+2wII
+3wl
+3wll
+3wIII
+4wl
+4wll
+
+9.9± 1
+20.9 ± 2
+17.3 ± 1
+26.2 ± 2
+73.4 ± 3
+43.7 ± 1
+
+(II)
+(III)
+
+2w+2w
+
+(I)
+
+(II)
+
+Iw+3w
+
+(I)
+
+(II)
+
+Iw+4w
+
+2w+3w
+
+(I)
+
+a Experimental determination, Ref. 4.
+bExperimental data, our laboratory.
+<Calculated from data in Table III.
+d Calculated from Chen's SelImeier data (Table II).
+1972
+
+J. Appl. Phys., Vol. 62, No.5, 1 September 1987
+
+(dB IdT)exp
+
+(,6'T )<ak
+(cm-liC)
+
+0.11 ± 0.10
+0.15 ± 0.10
+0.36 ±0.08
+0.42 ±O.OS
+0.47 ± 0.09
+1.4 ± 0.03
+
+0.14
+0.13
+0.41
+0.38
+0.34
+1.03
+0.83
+
+Eimerl et al.
+
+1972
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+9 0 , - - - - .. .- . . - - - - , - - - - - , - - - - , - - - - ,
+
+PHASE-MATCHING PARAMETERS FOR OTHER
+PROCESSES
+
+Based on the refractive index data the phase-matching
+angles, angular sensitivities, and temperature sensitivities
+have been calculated for several mixing processes. Figures
+4-8 show the phase-matching angles for lliJ + lliJ, lliJ + 2UJ,
+2UJ + 3liJ, lliJ + 3liJ, lliJ + 4UJ, including all types of polarization configurations which permit phasematching. Figures 913 show the corresponding angular sensitivities, and Figs.
+14-18 show the temperature sensitivities.
+We have also calculated these parameters for optical
+parametric amplifiers pumped at the second, third and
+fourth harmonics of 1064 nm. These are shown in Figs. 1924.
+
+80
+
+70
+j
+":
+
+60
+
+~
+
+50
+
+i
+
+40
+
+~
+
+30
+
+E
+
+j
+
+20
+
+10
+
+°0~--~0~.5----~,0~--~,~5--~2~.0----~2.5r-~3.0
+lwwavelenllth,j.lm
+
+DAMAGE THRESHOLD
+
+The damage threshold of two samples was measured at
+1064 nm and 1 ns pulse width. The first sample was cut at the
+type I phase-matching angle for doubling 1064 nm, and was
+about lOX 15 mm 2 in area. Its thickness was 4 mm, and
+apart from some inclusions ofNa 2 0 it was strain-free and of
+high optical quality. Thirty sites were irradiated, with each
+site irradiated once. The one-on-one damage threshold of the
+inclusion-free areas was about 13.5 J/cm 2 ,and the threshold
+of the inclusions themselves was about 4 J/cm 2 •
+The second sample was a cube approximately 8 mm on a
+side cut along the crystallographic (xyz) axes. It was of reI atively poor optical quality and showed considerable straininduced birefringence. It was, however, relatively inclusionfree. The relatively small volume and poor quality hindered
+a good measurement of the damage threshold, but it appeared to be about a factor of 2 lower than the first sample.
+
+FIG. 5. Phase-matching angles for mixing lw + 2w.
+
+90
+
+80
+
+t
+
+70
+
+~.
+
+60
+
+2
+
+., 50
+~
+
+E
+
+2
+B
+
+ii
+
+40
+
+~
+
+:<
+
+~ 30
+l• 20
+10
+
+NONLINEAR OPTICAL CONSTANTS AND DEVICE
+DESIGN
+
+0
+
+In the space group R 3c using the convention that the
+mirror plane is the two-axis, the only allowed nonlinear coefficientsared 11' d 31' d 33, d 15' The coefficient d 33 is irrelevant
+to (collinear) harmonic generation and Kleinman symme-
+
+0
+
+0.5
+
+1.0
+
+1.5
+
+2.0
+
+3.0
+
+2.5
+
+lwwavellngth.,um
+
+FIG. 6. Phase-matching angles for mixing lw + 3w.
+
+90'--.~----.----'r----.----.----.
+
+90,----,---,,--,------,---.-----r-----.------,
+
+80
+
+80
+
+70
+
+70
+
+! 60
+
+j
+
+60
+
+ili
+2 so
+
+~
+:~
+
+50
+
+d
+
+E
+
+i
+
+140
+
+j
+
+l 30
+20
+
+20
+
+10
+
+10
+
+°0~---0~.5----7'.0~--~1.~5---'2~.0----~2.5~--~3.0
+
+°0~--~0~.5----~'.0~--~'.~5--~2~.0----2~.5----~3~
+
+lwwivellngth.,um
+
+1w wavel .... gth.j.IR1
+
+FIG. 4. Phase-matching angles for second harmonic generation.
+1973
+
+J. Appl. Phys., Vol. 62, No.5, 1 September 1987
+
+FIG. 7. Phase-matching angles for mixing lw + 4w.
+Eimerl et al.
+
+1973
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+50r------r------,-----,------,------,--------
+
+90
+
+45
+
+80
+
+11 40
+
+70
+
+!
+'is 35
+.i+ 30
+
+f
+.i 60
+~
+
+., 50
+
+.1
+
+~
+
+•
+
+.•
+"j(
+
+~
+~
+
+~
+
+25
+
+40
+
+.~
+
+]
+
+30
+
+~
+
+J
+
+20
+
+"'
+
+10
+
+0
+
+OL------L--UL~--~L-~----~------~,----~
+
+0
+
+0.5
+
+1.0
+
+1.5
+
+2.0
+
+2.5
+
+o
+
+3.0
+
+FIG. 8. Phase-matching angles for mixing 2w + 3w.
+
+u
+
+u
+
+u
+
+3.0
+
+6O,-----r-----~----,-----._----_.----,
+
+45
+
+45
+
+1i 40
+
+40
+
+.,!
+
+1<1
+
+5 35
+j
+2 30
+
+35
+
+'~
+~.
+
+u
+
+FIG. II. Angular sensitivity dt.k Ide for mixing lw + 3w.
+
+6Or-----.-----,,-----,------r-----,------
+
+1-
+
+u
+
+lwwavelength, ,um
+
+lwwayetlngth,~m
+
+30
+
+"
+
+~
+
+.~ 25
+
+5
+
+~ 2S
+
+:2
+~
+
+•
+
+20
+
+j 15
+10
+
+10
+
+"'
+
+°0L-----70.~5----~,.LO----~1.5~-L--2~.0~----2~.5~--~3.0
+
+°0L----LO~.5L-----~1.0~----,~.5----~2L.0------2L.5----~3.0
+
+lwwavelength.,um
+
+lwwavelength,/Am
+
+FIG. 9. Angular sensitivity dt.k Ide for second harmonic generation.
+
+FIG. 12. Angular sensitivity dt.k Id8 for mixing Iw + 4w.
+
+50r------r------r------r----~,_----.-----~
+
+50r-----,------,------,------.------,-----,
+
+45
+
+45
+
+11
+
+40
+
+J
+
+I~ 35
+~.
+
++
+
+30
+
+~
+
+.~ 25
+
+•
+
+~
+
+:i
+
+~
+
+20
+
+.~ 15
+
+j
+
+20
+
+:~
+~ 15
+~
+
+.i 10
+
+10
+
+"'
+°0~----~0.~5LL--~1.0~----,~.5~----2L.0------2L.5----~3.0
+lw waYtllength, jJm
+
+lw wavelength,loIm
+
+FIG. 10. Angular sensitivity dt.k Id8 for mixing Iw + 2w.
+
+FIG. 13. Angular sensitivity dt.k Ide for mixing 2w + 3w.
+
+1974
+
+J. Appl. Phys., Vol. 62, No.5, 1 September 1987
+
+Eimerl etal
+
+1974
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+3.0
+
+3.0
+
+2.S
+
+2.S
+~
+
+,
+
+u
+
+.;- 2.0
+
+5
+J' 2.0
+
+5
+
+c;
+
+,}
+
+ili
+
+.[
+
+2
+~
+
+..E
+
+:z: '.S
+
+i
+
+t
+
+'.S
+
+.,
+~
+
+§ 1.0
+
+'.0
+
+I
+
+~
+
+~
+
+O.S
+
+0
+
+0
+
+0.5
+
+'.0
+
+'.5
+
+2.0
+
+2.5
+
+0.5
+
+0
+
+3.0
+
+1w wavelen;th. pm
+
+FIG. 14. Temperature sensitivity dAk /dT for second harmonic generation.
+
+0
+
+0.5
+
+'.0
+
+2.0
+
+'.5
+
+2.5
+
+3.0
+
+lwwavelength,~m
+
+FIG. 17. Temperature sensitivity dAk / dT for mixing leu + 4w.
+
+3.o,----,----,------,----,,-----,----,
+
+3.0 ,-----,-----,,---..,~--.---,----
+
+2.5
+u
+
+!-
+
+'5
+
+.i+ 2.0
+2
+
+....
+II
+
+'.5
+
+~
+
+I
+f
+
+'.0
+
+i
+E
+
+~
+
+05
+
+0.5
+
+ol--~~~::;;::~:::
+o
+u
+u
+u
+u
+U
+
+0;-0-----;0;';:.5------;'';;.0---;-'.";:5---:;2.-;;0---:;2:-;-5----::3.0
+
+~
+
+lw wavelength,lIm
+
+lw wavelength, ~m
+
+FIG. 15. Temperature sensitivity dAk / dT for mixing leu + 2w.
+
+FIG. 18. Temperature sensitivity dAk /dT for mixing 2eu + 3eu.
+
+3.0
+3.0,-----,----,---,---...,.---,--,
+
+2.5
+
+J'
+
+2.5
+
+~. 2.0
+
+'5
+~. 2.0
+
+!
+
+II 1.5
+2
+
+..f
+~
+
+(0)
+
+1.0
+
+:>
+
+0.5
+0.5
+
+~~0---:;2S~--~30~--3~S--r-4~0--r-4~S--~SO·
+
+°0~--~O.~5--~'.0~--'~.5~--,2~.0~--,2~.S--~3.0
+
+Pollr angle, deg
+
+11...1 wavelength,.um
+
+FIG. 16. Temperature sensitivity dAk /dT for mixing leu + 3eu.
+1975
+
+J. Appl. Phys., Vol. 62, No.5, 1 September 1987
+
+FIG. 19. Signal (idler) wavelength ofa type I optical parametric amplifier
+(e-o + 0) as a function of the polar angle for three pump wavelengths: (a)
+532 nm, (b) 355 nm, (c) 266 nm.
+Eimerl et al.
+
+1975
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+2.0 ,----,r----,----,---,---r--~
+
+'.O,---r--r--,--,---,--,--,--,-=
+Extraordinary
+
+3.5
+
+1.•
+
+~
+(.)
+
+1.0
+u
+
+3.0
+
+~
+
+'s 1.4
+
+~.
+
+2.5
+
+_
+
+1.2
+
+~
+;
+
+2.0
+
+1.0
+
+:!
+
+:'j O.B
+
+i•
+
+1.5
+
+!
+
+1.0
+
+0.5
+
+00
+
+0.'
+(.)
+
+0.2
+(0)
+
+0~0-~1~0-~2~0-~30~~'O~~W~~~-~70--.~0-~90·
+
+°0~--~0~.5--~I.LO--~'.5~-~2.0~--2~.5~-~3.0
+
+Polar angle
+
+Ordinary ray wa ••length, .um
+
+FIG. 20. Signal (idler) wavelength of a type II/III optical parametric amplifier (e-o + e) as a function of the polar angle for three pump wavelengths: (a) 532 nm, (b) 355 nm, (c) 266 nm.
+
+FIG. 23. Temperature sensitivity dllk /dTof a type I parametric amplifier
+as a function of one of the output waves for three different pump wavelengths: (a) 532 nm, (b) 355 nm, (c) 266 nm.
+
+5o,---,----,.----,---,---,--,
+
+try equates d 15 and d 31 , leaving only two relevant constants .
+In the space group R 3, d 22 and d 14 are also allowed, and
+Kleinman symmetry requires d 14 to vanish, leaving three
+relevant coefficients. The nonlinear coefficients have been
+measured relative to d 36 (KDP), for second harmonic generation of 1064 nm. They are
+
+•5
+
+40
+
+~
+
+! 35
+'s
+.{
+~ 30
+
+.!
+
+25
+
+d l1 = 1.6±O.4pmIV,
+
+(14)
+
+< 0.05,
+Id221
+d
+
+(15)
+
+I < 0.05.
+
+(16)
+
+l1
+
+(.)
+
+10
+
+d31
+
+Id
+°0~-~0.~5--~1.0~-~,.5~-~2~.0~-~2~.5--~3.'0
+Ordinary ray wavelength
+
+FIG. 21. Angular sensitivity dllk /dO ofa type I parametric amplifier as a
+function of one of the output waves for three different pump wavelengths:
+(a) 532 nm, (b) 355 nm, (c) 266 nm.
+
+In converting our measurements to absolute values we used
+d 36 (KDP) = 0.39 pmIV.22 The dispersion of the nonlinear
+coefficients is expected to be weak in the visible and near UV.
+For type I processes the nonlinear coupling is
+
+50r---,---,----,---,---,--~
+
+1.0
+
+45
+
+!
+
+S
+
+g
+
+:;
+
+1.5
+
+2.0
+
+1.2
+
+Ii
+
+g 1.0
+-I
+
+(0)
+
+-
+
+..
+
+~
+
+..
+
+nB
+
+.~
+
+o
+
+'j
+
+(b)
+
+•
+
+0.•
+
+a
+
+3 15
+
+i
+
+~
+
+" 10
+
+(.)
+
+...li
+
+0.'
+
+(.)
+
+0.2
+
+°0L--~~--7~-~,.5~-~2~.0~-~2~.5--~3.0
+E:llltraordinarv ray wavelength,.um
+
+FIG. 22. Angular sensitivity dllk /dO ofa type II/III parametric amplifier
+as a function of the extraordinary output wave for three different pump
+wavelengths: (a) 532 nm, (b) 355 nm, (c) 266 nm.
+1976
+
+I
+
+I.'
+
+35
+
+,i 20
+~
+
+I
+
+u
+
+40
+
+30
+
+ll
+
+J. Appl. Phys., Vol. 62, No.5, 1 September 1987
+
+0
+
+0
+
+0.5
+
+1.0
+
+2.5
+
+3.0
+
+Extr.ordinary rlY wavelength, J,lm
+
+FIG. 24. Temperature sensitivity dllk /dTof a type II/III parametric amplifier as a function of the extraordinary output wave for three different
+pump wavelengths: (a) 532 nm, (b) 355 nm, (c) 266 nm.
+Eimerl et al.
+
+1976
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+10000 , - - - - - , , - - - , - - - - - - - r - - - . - - - r - - - - ,
+
+'000
+
+/
+
+'00
+
+FIG. 25. Polar angle () is defined with respect to the polar axis, and the
+azimuthal angle ~ is defined with respect tox axis, the normal to the crystallographic mirror plane (m = y).
+
+deff = d31 sin () - dJl cos e cos 3cp,
+
+(17)
+
+and for type II or type III processes it is
+deff = dJl cos 2
+
+e sin 3cp.
+
+(18)
+
+The angles are defined in terms of the direction of propagation, as in Fig. 25.
+At those wavelengths where the phase-matching angle
+is 90°, the angular sensitivity vanishes. This condition is
+called noncritical phase matching, and the wavelengths at
+which it occurs are tabulated in Table IX. These wavelengths represent the short wavelength limit for each process. From Eqs. (7) and (18), the effective coupling for noncritical phase matching vanishes for type II and type III
+processes, and for type I, it is proportional to the weak d 31
+component. Thus, the effective coupling becomes very small
+at noncritical phase matching, and in practice this may preclude operation within a few nm of the noncritical wavelength.
+In frequency conversion devices, the conversion efficiency depends on the intensity of the input waves, and also
+on the phase mismatch between them. The crystal length is
+limited by the angular sensitivity of the process and the beam
+divergence. There is therefore a minimum peak intensity required to achieve efficient conversion. The relevant figure of
+merit in comparing nonlinear materials is therefore the ratio
+of the effective coupling to the angular sensitivity. The
+square of this ratio is expressible as a power which is approxi-
+
+,oo!-----,0,!:;15---,l;1~Or--.,.L'.5,-----...,I'.-=-0---::,1-:.5---::1,.0
+lw w~"'.'.nllth.l'm
+
+FIG. 26. Threshold power for second harmonic generation.
+
+mately the peak laser power in a diffraction-limited beam
+which is required for efficient conversion. This ratio is the
+key figure of merit in designing frequency conversion devices, and is discussed in Refs. 8 and 9. The essential results
+are summarized in the Appendix.
+In Figs. 26-32 the threshold powers of the harmonic
+generation and parametric amplifier processes discussed
+above are presented. Note that for harmonic generation devices the peak power of the laser must exceed the threshold
+power by a significant margin between I and 10 (see the
+Appendix), whereas for parametric amplifiers, it must exceed the threshold power by a larger factor, between 10 and
+100. Also the peak power required increases by Q2, where Q
+is the beam quality, approximately the ratio of the beam
+divergence to the divergence of a diffraction-limited laser
+beam.
+For comparison, the threshold power of type II doubling of 1064 nm in KDP is about 70 MW. It is therefore
+apparent that a crystal of barium borate with optimized dimensions will be marginally less efficient than an optimized
+
+'0000 ,----.--.-----.-,-------r----.----,----,
+
+;:
+~
+
+~ '000
+
+2
+
+.,
+
+~
+
+E
+
+TABLE IX. Noncritical wavelengths' for ,B-BaB 20 4 •
+
+2
+
+~
+
+Process
+
+Type I
+
+Type II
+
+Type III
+
+1m + 1m-2m
+Im+2m-3m
+
+409.0
+587.8
+737.7
+873.0
+998.8
+1007.2
+
+527.3
+666.6
+795.6
+917.2
+1033.2
+1197.0
+
+908.1
+1299.5
+1715.6
+2180.0
+1434.8
+
+1m+ 3m-4m
+1m+4m-5m
+2m + 3m-Sm
+1m + Sm-6m
+• Wavelengths given in nm.
+1977
+
+J. Appl. Phys., Vol. 62, No.5, 1 September 1987
+
+[
+
+.. '00
+J
+'OO~---:O:'-:-.5--1,!:;.O--:-':1.5r--.,.L2.0r--...,I1.::-5----:!1.~
+1w wavelength, IJ.m
+
+FIG. 27. Threshold power for mixing 1m + 2m .
+Eimerl et al.
+
+1977
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+'00oo,-----,---,--,--,--,------,----,------,
+
+'000 ,------r----,---,---,------,-------,
+
+1000
+
+'00
+(.)
+
+'00
+
+'0~0--0~.•~---:,~.0--~,.•~-~,~.0--~'.•~~3.0
+
+'00:---,0"'.•---/'.0;;----:''''
+.•--''''.0;;-----:''"''
+.• ------::'3.0·
+lwwave1en9th,)Jm
+
+FIG. 28. Threshold power for mixing IlLl + 3lLl.
+
+10000,-----,--,,---.----...---,--,------,
+
+~
+~
+
+J'
+
+1000
+
+2
+.~
+
+'E
+~
+
+i
+
+&
+
+Ordinary ray wavelength, /.1m
+
+FIG. 31. Threshold power for a type I optical parameter amplifier, for three
+pump wavelengths: (a) 532 nm, (b) 355 nm, (c) 266 nm.
+
+crystal of KDP. On the other hand, it has several advantages. It has higher damage threshold, and lower-temperature sensitivity, and we shall show below that it has also
+excellent resistance to thermally induced fracture. Moreover, the crystal volume needed is about an order of magnitude smaller than for KDP, and these smaller dimensions
+reduce the effects of beam walk-off. However, the threshold
+power is slightly higher, and therefore the optimized conversion efficiency is not significantly different from KDP.
+
+B
+
+j '00
+THERMOMECHANICAL PROPERTIES
+
+'oo~---;o;l;
+.•---;-':,.o;----:-,.';-.-----;';1;.0---;;';'.5:---..,;3.·0
+lwwavelength./-Irn
+
+FIG. 29. Threshold power for mixing IlLl + 4lLl.
+
+Under average power conditions, even a small optical
+absorption can lead to thermal gradients which cause stress
+and thermo-optic dephasing. The average power capability
+of a nonlinear material is therefore limited by its resistance to
+thermal fracture. We have therefore measured the relevant
+material constants controlling thermal fracture.
+
+'OOO,..-----rr,--,---,----,----,----,
+
+10000 , - - - , - - - , - - - - . - r r - - - , - - - - , - - - - ,
+
+~
+~
+
+~
+
+~'
+
+i
+
+0
+
+~
+
+'000
+
+-
+
+~
+
+~ '00
+
+,
+
+.2
+
+E
+
+..I
+
+.2
+~
+
+~
+
+K
+B
+
+~
+
+~
+
+'00
+
+I.)
+
+'00~---;;';0.•;;-----:,':-.0---:",~.-----;,~.0--~'.5~-~3.0
+
+'0 :-----:-0.5:-----:':':-.0---:"1.5:----:''=-.0--::':'.•:-----:3.0
+
+Extraonlinarv fay wavelength, /.1m
+
+lww8vehtngth,)Jm
+
+FIG. 30. Threshold power for mixing 2lLl + 3lLl.
+1978
+
+J. Appl. Phys., Vol. 62, No.5, 1 September 1987
+
+FIG. 32. Threshold power for a type II/III optical parametric amplifier, for
+three pump wavelengths: (a) 532 nm, (b) 355 nm, (c) 266 nm.
+Eimerl etal
+
+1978
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+As shown in Ref. 8 the highest average power is reached
+when the temperature variation in the crystal is minimized.
+This occurs when the thermal streamlines are shortest, and
+the heat resulting from optical absorption is removed as
+close to its point of deposition as possible. The most advantageous geometry for average power applications is therefore
+the thin plate geometry. For the purposes of characterizing
+materials, the ideal geometry is an infinite thin plate characterized only by its surface normal and its thickness. In practice, of course, three-dimensional effects must be included to
+obtain an accurate picture of the thermal behavior of actual
+devices.
+Under the idealized thermal conditions we assume for
+material characterization, thermal transport is normal to the
+plate, and the temperature profile in the material is quadratiC.S,1O The temperature profile is characterized by the temperature difference between the plate surfaces and the plane
+midway between them ~T (Fig. 33). The thermal stresses
+induced in anisotropic materials of this shape experiencing
+this temperature profile have been analyzed fully.S.1O The
+largest tensile stresses are found in the plate surfaces, and are
+due to thermal expansion in the interior of the plate in directions parallel to the plate surface. Thermal expansion parallel to the surface normal induces no surface stress. The tensile and shear stresses in the surface are directly proportional
+to ~ T, and do not depend on the plate thickness. 8 • 10 Thus the
+surface stresses are given by
+Sij = Sij~T,
+
+(19)
+
+where Sij depends on the elastic constants and the thermal
+expansion. In anisotropic materials such as barium borate it
+also depends on the plate orientation. For a particular plate
+orientation, there are three surface stresses, two tensile components along orthogonal directions and one shear component. For convenience, the simplest choice of directions in
+the surface are the optical directions, or the ordinary and
+extraordinary polarization directions. Thus, there is the ordinary tensile stress, the extraordinary tensile stress and a
+single shear stress. As ~T increases, these stresses increase
+linearly and at some value of ~ T one of them will exceed the
+
+surface strength, and the surface will fracture. In this way,
+the thermal profile leads to fracture, and to fracture along
+the weakest direction in the surface. In general, both the
+fracture strength and the weakest direction in the surface
+depend on the plate orientation.
+Plate surfaces are not perfectly fiat, but contain optically invisible defects. The polishing process is an important
+factor in creating and controlling these (sub-) surface defects. As the surface stress increases, the elastic energy density surrounding the defects increases. When one of the surface stresses exceeds its surface strength, it becomes
+energetically favorable for one of the defects to increase in
+size, thereby relieving the stress in the surrounding material.
+When this happens the surface will become crazed or shatter
+altogether. The surface strength depends on the size, shape,
+and orientation of the defect. A standard means of characterizing materials uses the indentation test. 23-25 Under these
+test conditions the surface strength is
+
+S = KJa I / 2 ,
+
+(20)
+
+where a is the defect size and Kc is the fracture toughness of
+the material.
+The temperature ~ T at which one of the stresses reaches
+its fracture strength depends on the defect size. The thin
+plate fracture temperature ~TF is defined as the temperature difference at which an ideal thin plate with 100 pm
+defects fractures. ~TF is a figure of merit which measures
+the resistance of a material to thermal fracture. It is physically the fracture point for a standard shape and standard defect
+size. Note that in anisotropic materials both the fracture
+temperature and the weakest direction depend on the plate
+orientation.
+The fracture temperature depends on the elastic constants, the thermal expansion, and the fracture toughness.
+These parameters are listed in Table X. The fracture toughness was determined using standard indentation techniques. 23 - 25 The sample used was the same 10 X 15 X 4 mm 3
+plate used for measuring the optical damage threshold.
+
+TABLE X. Thermomechanical constants of ,B-BaB2 0 4 .
+
+Temperature
+profile
+
+Nonlinear crystal
+
+FIG. 33. Thermal profile in a thin plate under conditions of efficient
+heat removal.
+1979
+
+J. Appl. Phys., Vol. 62, No.5, 1 September 1987
+
+s
+
+C
+
+Elastic constants
+
+(TPa-')
+
+(GPa)
+
+dc/dT
+(GPa/'C)
+
+11
+12
+13
+14
+33
+44
+66
+
+25.63
+- 14.85
+- 9.97
+- 63.97
+37.21
+331.3
+81.0
+
+123.8
+60.3
+49.4
+12.3
+53.3
+7.8
+31.8
+
+- 0.02828
+- 0.00904
+- 0.01112
+- 0.00772
+- 0.02056
+- 0.01363
+- 0.00962
+
+Thermal expansion
+11
+33
+
+4X 1O- 6 /K
+36X 1O- 6 /K
+
+Thermal conductivity
+11
+33
+
+0.08 W/m/K
+0.8 W/m/K
+
+Fracture toughness
+
+150KPAm l / 2
+
+Eimerl et al.
+
+1979
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+Some anisotropy ( < lOO%) in the fracture toughness was
+observed, but there was insufficient material to determine
+the nature and extent of the anisotropy. The value quoted
+therefore refers to a plate oriented at the type I phase-matching direction for doubling lO64 nm.
+The thermal expansion was determined using high-temperature x-ray methods between room temperature and
+900 dc. A series of powder x-ray diffraction patterns was
+taken at several temperatures ranging from room temperature to 900°C. Five diffraction lines were measured at four
+temperatures. The temperatures were determined by measuring the lines from the Pt heater, and using the known
+thermal expansion ofPt, 9.1 X lO-6 ~C. A least-squares fit
+to the five lines gave the hexagonal cell a and c dimensions.
+These data showed that the thermal expansion is uniform
+over this temperature range, and that it is very anisotropic.
+The thermal conductivity was determined using a thermal comparator. 26 It also is highly anisotropic. Both the
+thermal expansion and conductivity relate to the nonlinear
+terms in the vibrational energy of the crystal. These terms
+represent interactions between phonons, which give rise to
+energy shifts and scattering. 27 The cubic phonon-coupling
+term is responsible for thermal conductivity, and the quartic
+term for thermal expansion. The anisotropy indicates that in
+both terms the coupling increases strongly for phonons
+which propagate closer to the polar axis. Now, it is apparent
+from the crystal structure that the barium atoms couple
+mostly to the B3 0 6 rings in the same cell, rather than to
+barium atoms in neighboring unit cells. Therefore, they participate more in phonons which propagate closer tq the polar
+axis. This suggests that the anisotropy is associated primarily with the barium atoms. This correlates with the existence
+of the phase transition at 900°C. The two phases differ only
+in the location of the barium atoms, indicating that there
+exists a large temperature-dependent term in the lattice energy, and that this term involves the barium atoins. Thus thermal anisotropies correlate well with the two crystal structures and the existence of a phase transition between them.
+ELASTIC CONSTANTS
+
+The elastic constants were determined from the acoustic
+velocities (EG). The sample used was a rectangular parallelopiped of approximate dimensions 7.5X8X9 mm 3 . The
+edges were oriented perpendicular to the crystallographic
+(xyz) directions. Although it was clear and transparent,
+,. there was evidence of internal strain or compositional variation in the form of small bubblelike inclusions and cleavage
+cracks perpendicular to the z axis. The density was determined to be 3.840 g/cm3 by the mass/volume ratio.
+The propagation of a planar elastic wave in a homogeneous crystalline material is described by Christoffel's equation 28
+
+Pov2Aj = Cijk,njn,Ak,
+
+(21)
+
+where Po is the ambient density of the crystal, v is the acoustic wave velocity, A; is the wave amplitude components, n; is
+the components of the direction of wave propagation, and
+Cijk/ is the second-order elastic stiffness coefficients. If one
+chooses a wave mode (direction and polarization) carefully,
+1980
+
+J. Appl. Phys., Vol. 62, No.5, 1 September 1987
+
+Christoffel's equation reduces to a simple relation between
+wave velocity and some linear combination of (a few) elastic
+coefficients.
+The trigonal symmetry requires six independent elastic
+stiffness constants. In the shorthand Voige 9 notation, these
+areC I I ' C 33 ,C 44 , C 66, C 14 ,andC 13' Theorientationsnecessary to define the stiffness in terms of phase velocities via the
+Christoffel equation have been given by Gieske. 30 All but
+C 13 may be defined by compressional and shear wave mode
+propagation in the x,y, and z crystallographic directions.
+The value of C 13 must be determined from wave velocities
+measured in a direction oblique to [001] and [OlO], and
+normal to [100].
+The ultrasonic pulse superposition method of McSkimin 31 was used to measure the transit-times of compressional (longitudinal) and transverse (shear) waves through
+the oriented specimen. The technique initially requires the
+bonding of a piezoelectric transducer onto the crystal specimen. X-cut quartz transducers are used to generate and detect longitudinal waves and AC-cut quartz transducers are
+used for transverse waves. The transducers are generally
+0.180 in. in diameter. They resonate at a frequency of 20
+MHz. The bonding agent used in all the present measurements is polystyrene fluid.
+The principle of ultrasonic pulse superposition is to apply a repetitive sequence of radio-frequency (rf) pulses to
+the transducer at a rate such that the time for an elastic wave
+to transit the specimen, reflect from the opposite face, and
+return to the transducer, precisely equals the arrival time of
+the next applied rf pulse. The 20-MHz carrier frequency
+which resonates the transducer is generated by an ultrasonic
+pulse superposition oscillator. This unit also incorporates a .
+gating circuit which performs two functions. The first is to
+create an echo window by periodically disabling the rf output to the transducer. Any echoes returning to the transducer can now be observed without being overwhelmed by
+the applied pulses. The second function is to pulse the rf
+output, thus producing the requisite ultrasonic pulses. The
+pulse repetition rate is controlled by a variable rf bridge oscillator. The output from the bridge oscillator is monitored
+by a frequency counter which gives a direct readout of the
+period of the repetition rate in microseconds. Critical circuits in the frequency counter are maintained at constant
+temperature. The bridge oscillator output also provides synchronization for the oscilloscope. The repetition rate is adjusted by the experimenter such that the time delay between
+applied pulses is exactly equal to an integral multiple of
+round trips through the specimen. When this condition is
+achieved, the applied pulses are superimposed upon the return echoes, and we have constructive interference. The echoes now build up sufficient amplitude to be observed in the
+window produced by gating the sequence of applied pulses
+from the oscillator. The experimenter now critically adjusts
+the repetition rate so as to maximize the echo amplitude.
+At the condition of constructive interference, provided
+that bond and applied pulse-rf phase shifts are properly assessed,32 the repetition rate is identical to the actual roundtrip transit time tp for the acoustic mode through the specimen. It is then a simple and straightforward matter to find
+Eimerl et al.
+
+1980
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+the wave velocity by using the formula
+(22)
+v = 21/tp '
+where 1is the specimen length along the approximate axis of
+wave propagation. The relevant Christoffel relation can then
+be applied to determine an elastic stiffness tensor component
+(or some linear combination of components). As in all
+acoustic methods, the wave velocity being much greater than
+the rate of heat flow, adiabatic conditions prevail.
+The elastic constants were measured at 25 ·C. It was
+found necessary to control the temperature precisely to obtain reproducible data, due to the temperature dependence
+of the elastic properties. The experiment was repeated at
+50 ·C; and the thermoelastic constants were derived. These
+are tabulated in Table X.
+
+20 ~-------------------------------,
+
+,.
+
+I.
+14
+
+12
+
+10
+
+°0~~'0--~2~0--~~~-4~0--~5LO~50~~70~~OO--~~'
+Polar angle. B
+
+FRACTURE TEMPERATURE
+
+From the elastic constants the analysis of Ref. 8 was
+used to calculate the fracture temperature as a function of
+the plate orientation. The results are presented in Fig. 34.
+For comparison, the analogous calculation for KDP is presented in Fig. 35. The fracture temperature of barium borate
+appears to be an order of magnitude greater. The fracture
+temperature of other nonlinear materials such as Lil0 3 or
+LiNb0 3 is comparable to that of KDP. lO This data implies
+that barium borate is about an order of magnitude more fracture resistant than other nonlinear materials.
+The slope discontinuities in this figure are related to the
+weakest direction in the crystal surface. In barium borate,
+there is no shear stress, although this is not true for nonlinear
+materials in general. For most plate orientations, the weakest direction in the crystal surface is the ordinary direction,
+which is perpendicular to the polar axis. However, for some
+orientations near () = 45·, ¢ = 90·, the weakest direction is
+extraordinary. The slope discontinuities represent the points
+where the weakest direction changes from ordinary to extraordinary .
+
+FIG. 35. Thin plate fracture temperature of KDP. Lithium niobate and
+lithium iodate are similar.
+
+DIELECTRIC AND ELECTRO~OPTIC PROPERTIES
+
+The dielectric constants were measured as a function of
+temperature in the range 10-50 ·C, and as a function offrequency from 1 to 100 kHz:
+
+Kll = 6.7,
+
+(23)
+
+K 33 =8.1,
+tan 8 < 0.001.
+
+No change was seen over the range of temperature and frequency covered. This data may be used to estimate the electro-optic coefficients on the basis of constant Miller's 8 scaling. 33 ,34 Such estimates are accurate to within a factor of 2
+for other nonlinear optical materials. 22 We obtain
+r ll = 4d II
+
+(Kll - 1)
+
+[n6 (2cu) - 1] nci (cu)
+
+= 2.7 pm/V.
+
+(24)
+
+The other electro-optic coefficients are predicted to be an
+order of magnitude smaller. The corresponding half-wave
+voltage at 1064 nm is 87 kV.
+SUMMARY
+
+250
+
+}'
+
+.200
+
+o
+
+~N
+
+'0
+
+• 150
+=
+~
+
+!
+
+;
+
+£
+
+100
+
+°0L-~'0--~2~0--~30~~4~0--~50~~6~0--~70~~.~0--~90
+Polatangle. fl
+
+FIG. 34. Thin plate fracture temperature of barium borate. This figure of
+merit represents the resistance to thermal fracture. Barium borate is about
+an order of magnitude more resistant than any other nonlinear material for
+which data exists.
+1981
+
+J. Appl. Phys .• Vol. 62. No.5. 1 September 1987
+
+The complete set of material constants required to characterize barium borate as a nonlinear material for frequency
+conversion has been determined. The crystallographic space
+group determines the number of independent tensor components. For single pulse conversion, one needs the linear indices as a function of wavelength and temperature, the region of transparency, the nonlinear optical constants and
+optical damage threshold. From these data the threshold
+power for any three-wave process can be calculated; this determines whether barium borate can be efficient with the
+given laser source, and fixes the crystal shape. The crystal
+size is determined by the damage threshold. 8
+For average power applications, the elastic constants,
+
+the thermal expansion and the fracture toughness determine
+the resistance to thermal fracture, embodied in the thin plate
+fracture temperature ATF • The thermal conductivity is reEimerl et al.
+
+1981
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+quired to determine the thermal gradients set up as a result of
+optical absorption. The only parameter which cannot be precisely determined at this time is the optical absorption itself.
+In the region of transparency, the optical absorption depends on the optical quality, and in particular on the density
+of inclusions. The absorption of a particular sample is not so
+much a bulk intrinsic property of the crystal, but is more a
+function of its crystal growth and history. It seems reasonable that in the region of transparency, the absorption of small
+samples can be made small, below 0.1 %/cm.
+The new and exciting features of barium borate compared to existing nonlinear materials are (1) the combination of its range of transparency and its resistance to optical
+damage, and (2) for average power applications it has a lowtemperature sensitivity, and excellent resistance to thermal
+fracture.
+As pointed out in the Appendix, the conversion efficiency depends on two laser system parameters, the total
+peak power P and the beam quality Q. The appropriate figure of merit here is the threshold power; the conversion efficiency is higher for the material with lower threshold power.
+In general the threshold power of barium borate is not significantly lower than other commonly available materials.
+Barium borate has a high birefringence, and consequently it
+has a high angular sensitivity, compared to KDP. The resulting restriction on the crystal length is compensated by
+the higher nonlinear coupling. In fact, the larger angular
+sensitivity and the larger nonlinearity almost cancel each
+other. Barium borate requires high peak powers and highquality beams to be efficient. On the other hand, it has a high
+resistance to optical damage, and this leads to smaller crystal
+size.
+The transparency of barium borate in the UV and IR,
+coupled with its high birefringence, permits phase matching
+for a variety of optical parametric amplifiers generating tunable radiation in the visible and near IR. However, the peak
+laser power required for efficient conversion is about the
+same as for KDP or ADP. Barium borate has the advantage
+that unlike the KDP isomorphs it is transparent in the near
+infrared.
+Barium borate is one of the few materials capable of fifth
+harmonic generation of 1064 nm.I,4 This group includes
+urea, lithium formate, and potassium pentaborate. However, barium borate has the lowest threshold power and is
+therefore the most efficient for fifth harmonic generation.
+Its most striking advantages occur in average power applications. It is an order of magnitude more resistant to thermal fracture than those other nonlinear materials which
+have been characterized lO (LiI0 3 , LiNb0 3 KDP). It also
+has a low-temperature sensitivity for doubling 1064 nm and
+it can be used in a quadrature configuration. 35 ,36 It is a relatively poor thermal conductor, but this is offset by the wide
+range of transparency, and in particular by the lack of any
+intrinsic absorption at 1064, 532, 355, and 266 nm.
+Our indirect assessment of its electro-optic properties
+implies high half-wave voltages and the associated issue of
+electrical isolation. The operating voltage for transversely
+excited Pockels cells can be reduced by making the optical
+path length longer than the transverse dimension. Small ap1982
+
+J. Appl. Phys., Vol. 62, No.5, 1 September 1987
+
+erture Pockels cells using barium borate will require some
+such voltage reduction technique to be practical. For large
+aperture switches this consideration may not apply.
+In summary, barium borate is a new nonlinear material
+which brings several new frequency conversion processes
+closer to general use. This includes fifth harmonic generation, and optical parametric amplifiers generating visible
+and infrared wavelength. It has excellent average power capabilities and has the potential to make high average power
+nonlinear optics a practical reality.
+ACKNOWLEDGMENTS
+
+We are pleased to acknowledge our debt to Professor
+Chuangtien Chen, without whose collaboration this research would could not have taken place. All of the data was
+taken on crystals grown in his laboratory and supplied by
+him to us. We also gratefully acknowledge the contributions
+of the following people: R. Gonzales and D. Milam (LLNL,
+damage threshold), J. Marion (LLNL, fracture toughness),
+G. Smith and C. Weaver (thermal expansion), D. Smith
+(PSU, crystal structure), and E. G. Hilbert (PSU, elastic
+constants). This work was performed under the auspices of
+the U.S. Department of Energy by Lawrence Livermore National Laboratory under contract W-7405-Eng-48 and the
+U.S. Department of Defense Advanced Research Projects
+Agency under ARPA Order No. 5358.
+APPENDIX: THRESHOLD POWER
+
+The threshold power is the key figure of merit in determining the conversion efficiency for critically phasematched processes. To be efficient the peak power of the
+laser must exceed the threshold power of the nonlinear material. The peak power required increases rapidly as the beam
+quality deteriorates. This has been discussed fully in Refs. 8
+and 9. Here we summarize the results.
+We define the drive and dephasing as follows:
+
+170 = C 2 / 2I,
+~
+
+(AI)
+
+= (1I2)akl,
+
+(A2)
+
+where / is the crystal length, and I is the incident total intensity. The nonlinear coupling is
+C(GW-1/2 ) = 5.456 doff (pm/V)/[A.o(llm) (n l n2 n 3 ) 1/ 2 ],
+(A3)
+and the phase mismatch is
+
+Jak
+Q
+ak = -·af) =/3oA. o - .
+(A4)
+Je
+Ds
+Here Ds is the beam size in the sensitive direction of the
+crystal (parallel to the extraordinary polarization vector).
+The beam area is DsD; where D; is the beam dimension in
+the insensitive direction, and the intensity of the beam is
+(A5)
+
+1= P 1DsD;.
+
+where P is the incident total power. Q is the beam quality, or
+approximately the ratio of the beam divergence in the sensitive direction to the divergence of a diffraction-limited beam.
+Note that both P and Q a~e unaltered if the beam dimensions
+are increased using teleScopes to expand or contract the
+Eimerl eta/.
+
+1982
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+beam aperture. They are paraxial invariants.
+The conversion efficiency at low intensity is
+2
+1J = 1Jo sin c (D),
+
+(A6)
+
+where sin c(x) = sin(x)lx. The behavior of the conversion
+efficiency at high intensity where 1Jo > 1 and the design of
+frequency conversion devices is discussed fully in Ref. 9 to
+which the reader is referred for details. Essentially, efficient
+conversion places a stringent upper limit on the de phasing
+(0.1-1 rads) and also requires the drive to lie in a range of
+values between 1 and 10. The crystal length is limited by the
+requirement of small dephasing. Inserting this limit in the
+expression for the drive gives a minimum peak power required for efficient conversion.
+.
+PIQ2>Pth (1J0I48 2 )D;lDs ,
+
+(A7)
+
+where P th is the threshold power:
+Pth = ({3oAoIC)2.
+
+(A8)
+
+The ratio 1JoID2 is fixed by the desired conversion efficiency, and the ratio DJDs is the beam shape factor discussed by Hon. 37 Equation (A 7) implies that for efficient
+conversion of a diffraction limited beam, the threshold power of the crystal must be smaller than the laser peak power.
+The threshold power required increases rapidly as the beam
+quality deteriorates.
+Because both the peak power and the beam quality are
+paraxial invariants, it follows that the conversion efficiency
+is unaffected by telescoping the beam up or down, so long as
+the crystal dimensions are reoptimized for each beam aperture. In principle, the beam aperture can be chosen to reduce
+the fluence or intensity to levels compatible with the resistance of the crystal to optical damage.
+The threshold power is the relevant figure of merit for
+comparing the efficiencies of two nonlinear materials. 9 In
+general, the material with the lower threshold power will be
+more efficient. It is important to recognize that the process
+of optimization of a nonlinear material will result in crystal
+
+"O,--------,,-----,-----,--,---,--,===l
+0,9
+
+O.B 0,7
+
+:i..
+
+0.6
+
+,g
+
+5 0.5
+
+i
+
+~
+
+0.4
+
+~
+
+::l
+o"l.
+o~_~~_~
+
+0.0100
+
+0.1000
+Laser bri9htnes.$
+
+_ _ _ L_ _ _ L_ _
+10
+
+100
+
+~_~
+
+1000
+
+10000
+
+X. ~ (~) in dimensionless units
+PthQ2 \0;
+
+FIG. 36. Peak conversion efficiency for frequency mixing depends only on
+the paraxial Invariant P /Q2. For optical parametric amplifiers the curve
+depends on the small signal gain; it is generally shifted to the right about an
+order of magnitude in P /Q2 , relative to this curve.
+1983
+
+J. Appl. PhyS., Vol. 62, No.5, 1 September 1987
+
+dimensions which depend on the crystal's parameters, such
+as its coupling and threshold power. The threshold power
+determines the efficiency of the optimized system. It is always true that the conversion efficiency of the optimized
+system increases with the ratio of the peak laser power to the
+threshold power of the material (Fig. 36).
+
+IC. Chen, B. Wu, G, You, and Y. Huang, Digest of Technical Papers of the
+XIIIth International Quantum Electronics Conference, 1984, paper
+MCC5 (unpublished).
+2C. Chen, B. Wu, A. Jiang, and G. You, Sci. Sin. Ser. B 28, 235 (1985).
+3J._K. Zhu, B. Zhang, and S.-H. Liu, Society of Professional Instrumentation Engineering Conference on Basic Properties of Optical Materials,
+Gaithersburg, MD, May 7-9,1985 (unpUblished),
+4K. Kato, IEEE J. Quantum Electron. QE-22, 1013 (1986).
+5K. Miyazaki, H. Sakai, and T. Sato, Opt. Lett. 11, 797 (1986).
+6G, Zhang, C. Jin, F. Lin, C. Chen, and B. Wu, Guangxue Xuebao 4, 513
+(\984 ),
+7c. Chen, Y. X. Fan, R, C. Eckardt, and R, L. Byer, Society of PhotoOptical Instrumentation Engineering Conference on Lasers, San Diego,
+CA, July 1986 [Proc. SPIE 684 (to be published»).
+8D. Eimerl, IEEE J. Quantum Electron, QE-23, 575 (1987).
+9D. Eimerl, Society of Photo-Optical Instrumentation Engineering Conference on Lasers, San Diego, CA, July 1986 [Proc, SPIE 681 (to be published»).
+IOD. Eimerl, Society of Photo-Optical Instrumentation Engineering Conference on Lasers and Electro-optics, Los Angeles, CA, January 1987 (to
+be published).
+liE, M. Levin and H. F. McMurdie, J, Res. Natl. Bur. Stand. 42, 131
+(1949).
+12A. D. Mighell, A. Perlolf, S, Block, Acta Crystallogr. 20, 819 (1966).
+13K. H. Hubner, NeuesJahrb. Mineral. Monatsh., 335 (1969).
+14J. Liebertz and S. Stahr, Z. Kristallogr. 165,91 (1983).
+I5R. Frohlich, Z. Kristallogr. 168, 109 ( 1984).
+16S. Lu, M. Ho, and J. Huang, Acta Phys. Sin. 31, 948 (1982).
+17D. Smith, Pennsylvania State University (private communication, 1986).
+I"There seem to be minor, but significant, discrepancies in the cell dimensions reported in the literature. R. Frohlich, Ref. IS: a = 12.519(6) A,
+c = 12.723(6) A; Lu etal., Ref 16: a = 12.532 A, C = 12.717 A; Zalkin,
+this work: a = 12.547(6) A, C = 12.736(9) A. It is possible that these are
+due to variations in the samples, or that only one of the above is correct.
+Due to an insufficient supply of material, we were not able to resolve this
+question.
+19R. Li and C. Chen, Acta Phys. Sin. 34, 823 (1985).
+20c. S. Willand and A. C. Albrecht, Opt. Commun. 57,146 (1986).
+21S. Velsko and D. Eimerl, J. Appl. Phys. (to be published).
+22D. Eimerl, Ferroelectrics 72,95 (1987).
+23G. R. Anstis, P. Chantikul, B. R. Lawn, and D. B. Marshall, J. Am.
+Ceram. Soc. 64, 533 (1981).
+2.p. Chantikul, G. R. Anstis, B. R. Lawn, and D. B. Marshall, J. Am.
+Ceram. Soc. 64, 539 (1981).
+25R. F. Cook and B. R. Lawn, J. Am. Ceram. Soc. 66, C-200 (1983).
+26R. W. Powell and W. T. Clark, J. Sci. Instrum. 39,545 (1962).
+27R. E. Peierls, Quantum Theory ofSolids, Clarendon Laboratory (Oxford
+University Press, Oxford, 1955), Chap. I.
+28H. B. Huntingdon, The Elastic Constants of Crystals (Academic, New
+York, 1958).
+29R. F. S. Hearmon, Landolt Bornstein Series, Vol. III/II (Springer, Berlin,
+1979), p. 2; see also W. Voigt, Lehrbuch de Kristallphysik (Teubner, Leipzig, 1928).
+30J. H. Giekse, Ph.D. thesis, The Pennsylvania State University (1968).
+3tH. J. McSkimin, J. Acoust. Soc. Am. 33, 12 (1961).
+32J. H. McSkimin and P. Andreatch, J. Acoust. Soc. Am. 34, 609 (1962).
+33R. C. Miller, Appl. Phys. Lett. 5, 17 (1964).
+34F. Zernike and J. E. Midwinter, Applied Nonlinear Optics (Wiley, New
+York, 1973).
+35D. Eimerl, Proceedings of the International Conference on Lasers 1984,
+edited by K. M. Corcoran (STS, McLean, VA, 1984), p. 557.
+36D. Eimerl, IEEE J. Quantum Electron. (to be published).
+37D. Hon, Laser Handbook, edited by M. L. Stitch (North-Holland, New
+York, 1979), Vol. 3, Chap. B2, p. 421
+Eimerl et al.
+
+1983
+
+Downloaded 08 Oct 2013 to 137.99.26.43. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jap.aip.org/about/rights_and_permissions
+
+

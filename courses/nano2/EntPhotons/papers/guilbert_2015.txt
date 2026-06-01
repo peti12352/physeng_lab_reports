@@ -1,0 +1,954 @@
+arXiv:1503.04676v2 [quant-ph] 8 Jun 2015
+
+Observation of elliptical rings in Type-I
+spontaneous parametric down-conversion
+Hannah Guilbert, Yu-Po Wong, Daniel J. Gauthier
+June 9, 2015
+Abstract
+We investigate the transverse spatial profile of down-converted light
+produced by noncollinear, degenerate, Type-I spontaneous parametric
+down-conversion in two types of nonlinear crystals. We find that the
+pattern produced by one crystal, beta barium borate (BBO), produces
+a circular down-conversion pattern while the other crystal, bismuth triborate (BiBO) produces an elliptical pattern. We show this difference is
+due to the angle-independent refractive index experienced by the daughter photons in BBO, while they experience an angle-dependent refractive
+index in BiBO. We image the transverse spatial profile of the generated
+light to determine the eccentricity produced by each crystal and develop a
+model to explain our observation. Among other things, this model predicts
+that there is a wavelength for which the eccentricity from BiBO is nearly
+zero. Finally, we discuss how the elliptical ring pattern produced in BiBO
+potentially affects polarization entanglement for experimental setups that
+collect biphotons around the entire down-conversion ring. We show that
+the quality of polarization entanglement as measured by the overlap integral of the spectrum of the two rings, can remain high (> 99.4%) around
+the entire ring at the expense of decreased biphoton rate.
+
+1
+
+Introduction
+
+The nonlinear optical process of spontaneous parametric down-conversion (SPDC)
+is a popular method for producing correlated photon pairs, also referred to as
+biphotons or daughter photons. A major advantage of this process is the ability
+to quantum mechanically entangle the daughter photons in various degreesof-freedom including polarization, time, frequency, space, and momentum, for
+example. The entanglement quality can be very high, making it an attractive source for applications in quantum communication, such as quantum key
+distribution (QKD) [1, 2, 3], as well as experiments in fundamental quantum
+information science [4, 5].
+In the SPDC process, a pump photon (p) enters a nonlinear optical crystal
+and is annihilated, producing two daughter photons, typically called signal (s)
+and idler (i). Energy conservation dictates that ωp = ωs + ωi . To be an efficient
+1
+
+B
+
+C
+A
+
+A
+C
+
+B
+
+Figure 1: The dark circle illustrates the down-conversion ring. Points A, B, and
+C represent pairs of daughter photons at different azimuthal angles around the
+ring. To increase the total count rate, one should collect from multiple points
+around the ring. This idea is called spatial multiplexing.
+process, the photons must also abide by momentum conservation, a condition
+referred to as phase matching. In noncollinear SPDC, the daughter photons are
+emitted into angles on either side of the pump direction in order to satisfy this
+phase matching relation. In degenerate SPDC where ωs = ωi , this emission
+occurs in opposite pairs of directions around the pump beam forming a ring,
+called the down-conversion ring, in a plane transverse to the pump.
+In many experiments aimed at creating entangled photons pairs, the polarization degree-of-freedom is used because the measurement process is straightforward and very high purity can be achieved. Because current QKD schemes
+aim at maximizing photon rates, methods of creating high brightness polarizationentangled sources have been investigated [6, 7, 8, 9, 10, 11]. A potential solution
+involves using Type-I phase matching, where the two daughter photons have
+the same polarization that is opposite to the pump. Recently, Rangarajan et
+al. [11] showed that high-brightness polarization entanglement can be achieved
+in Type-I phase matching when two thin crystals are placed together with their
+optic axes rotated 90◦ with respect to each other [10, 11]. Originally, the process was demonstrated in beta barium borate (BBO, a uniaxial crystal) [9, 10],
+but later shown for bismuth triborate, (BiBO, a biaxial crystal) [11] which is
+quite promising for high-brighness applications because of its higher nonlinear
+coefficient [12, 13].
+Each crystal produces the same polarization but there is essentially no whichpath information regarding the crystal in which the photons are generated. This
+process can give rise to polarization entanglement around the entire ring, if the
+rings overlap everywhere. This enables higher achievable fluxes by allowing for
+collection of biphotons at multiple pairs of points around the down-conversion
+ring, known as spatial multiplexing and illustrated in Fig. 1.
+To achieve entanglement around the whole ring, the collected light must be
+indistinguishable. This only occurs when the emmission patterns are completely
+
+2
+
+circular because any eccentricity of the ring from the first crystal will have its
+major axis perpendicular to the major axis from the ring produced in the second
+crystal. This leads to reduced spatial overlap and reduced entanglement.
+Although BiBO is a promising crystal for high-brightness SPDC applications, we find that the emission pattern produced from a Type-I interaction
+with BiBO is elliptical. Eccentricity introduces a possible way of distinguishing photons that were born in the first crystal from those born in the second,
+thereby potentially reducing the entanglement quality around the entire ring.
+In the next section, we develop a formalism for predicting theoretically the
+emission pattern for noncollinear degenerate Type-I SPDC in BiBO and discuss
+the physical reason for elliptical emission patterns. In Sec. 3, we discuss our
+experimental setup and present our data. In Sec. 4, we discuss a theoretical
+model for predicting the eccentricity in a biaxial crystal. We show that this
+model agrees with our experimental data and that there is a wavelength that
+minimizes the eccentricity for a given set of emission angles. In Sec. 5, we
+discuss the repercussions of elliptical rings on the entanglement quality and
+brightness and further show how the spectrum of the single photons changes as
+a result of the asymmetry.
+
+2
+
+Phase Matching for Type-I SPDC in BBO and
+BiBO
+
+The phase matching process for SPDC determines the emission direction of the
+daughter photons. In general, perfect phase matching occurs when
+~kp = ~ks + ~ki ,
+where
+
+(1)
+
+~kj = nj (ωj , ŝj )ωj ŝj ,
+(2)
+c
+for j = (p, s, i), where the angle- and frequency-dependent refractive index is
+given by nj (ωj , ŝj ), ŝj is the propagation direction unit vector, and c is the
+speed of light in vacuum. We follow the geometry, notations, and conventions
+in Refs. [14, 15]. The crystal geometry and photon wavevectors and angles
+are shown in Fig. 2(a). A pump photon with wavevector k~p is incident on a
+nonlinear crystal and makes angles (θp , φp ) with the optic axis of the crystal
+denoted “OA-U” (“OA-B”) for a uniaxial (biaxial) crystal, discussed in more
+~ is emitted at local
+detail below. The signal (idler) photon with wavevector ks(i)
+angles (θs(i) , φs(i) ) with respect to k~p . For perfect phase matching, φs = φi + π.
+The photons undergo refraction at the air-crystal interface and exit at exterior
+0
+angles of θs(i)
+.
+To determine the emission angles (θs , θi , φs , φi ) of the daughter photons,
+we choose frequencies (ωp , ωs , ωi ) as well as the angles the pump wavevector
+makes with the optic axis (θp , φp ). Using the Sellmeier equations for either
+
+3
+
+(a)
+
+OA-B
+
+OA-U
+OA-B
+ki
+
+z
+φp=0
+
+θi
+θs
+
+θp
+x
+
+θi'
+φi
+
+kp
+
+φs
+θs'
+φ=0
+
+(b)
+
+ks
+
+θs' (deg)
+
+3.52
+3.51
+
+BBO
+
+3.50
+BiBO
+
+3.49
+3.48
+3.47
+0
+
+60
+
+120
+
+180 240 300 360
+φs (deg)
+
+Figure 2: (a) Crystal geometry for BBO and BiBO crystals. The pump makes
+angles (θp , φp ) with respect to the crystal optic axis. Here, φp = 0. The signal
+(idler) photons are emitted at local angles (θs(i) , φs(i) ) with respect to ~kp . Re0
+fraction at the interface of the crystal results in an exterior angle of θs(i)
+outside
+the crystal. (b) The exterior emission angle versus its local azimuthal angle for
+BiBO (blue, solid line) and BBO (maroon, dashed line). For BBO, we use a
+pump cut angle of θp = 29.392◦ while for BiBO we use φp = 90◦ , θp = 151.563◦ .
+Both curves are calculated using λp = 405 nm and λs = λi = 810 nm.
+BBO or BiBO, we solve for either set of parameters by finding a solution to the
+simultaneous equation [14]
+(∆kx )2 + (∆ky )2 + (∆kz )2 = 0,
+
+(3)
+
+∆kz = 0,
+
+(4)
+
+and
+where, for example, ∆kz = kpz − ksz − kiz . Evaluating Eqs. 3 and 4 involves the
+refractive index for each photon propagating through the crystal, which depends
+on the polarization of the photons, and the propagation direction.
+In a uniaxial crystal, which has a single axis of symmetry, an ordinarypolarized photon (o-polarized) is polarized perpendicular to the plane that con4
+
+tains its propagation wavevector and the optic axis of the crystal. This photon
+experiences a refractive index that does not change with the direction of propagation. The extraordinary-polarized photon (e-polarized) is polarized in the
+plane of the optic axis and the propagation vector and experiences an angledependent refractive index. Type-I interactions, such as those considered here,
+include interactions where the pump is an e-polarized photon and the daughter
+photons are o-polarized, or vice versa.
+A biaxial crystal, such as BiBO, has two optic axes and reduced symmetry.
+Polarized photons are neither e-polarized or o-polarized in the sense of a uniaxial
+crystal. Depending on type of crystal and wavelength range, polarized photons
+may experience either an angle-dependent or angle-independent refractive index.
+The photons are said to be either “fast” or “slow” instead of “e” or “o” where
+fast (slow) refers to having a smaller (larger) refractive index [15].
+Determining the fast (slow) refractive indices involves finding the length of
+the minor (major) axes of the optical indicatrix given by Fresnel’s equation of
+wave normals given by
+s2y
+s2z
+s2x
++
+= 0,
+−2
+−2 + −2
+−2
+−2
+n (ω, ŝ) − nx
+n (ω, ŝ) − ny
+n (ω, ŝ) − n−2
+z
+
+(5)
+
+where nx , ny , nz are the refractive indices in each principle direction of the crystal at a given vacuum frequency and n(ω, ŝ) is the refractive index in a given
+direction with unit vector ŝ. For a negative biaxial crystal, such as BiBO,
+nx < ny < nz . Solving Eq. 5 for n(ω, ŝ) using the approach described in
+Ref. [14], we obtain two solutions, one for each polarization (fast and slow). In
+BiBO we find that the pump photons experience the fast refractive index that is
+angle-independent for wavelengths in the UV and blue part of the spectrum. In
+contrast, the daughter photons in the red and NIR part of the spectrum experience the slow refractive index that is angle-dependent. In BBO, pump photons
+in the blue part of the spectrum travel as e-polarized photons, and experience
+an angle-dependent refractive index, while the signal and idler photons are opolarized and experience an angle-independent refractive index. This effect is
+not due to the uniaxial versus biaxial nature of the crystals, but simply due to
+the angle dependence on the refractive index over certain wavelength ranges for
+each particular crystal.
+Our analysis of the elliptical emission pattern for BiBO has not been noted or
+observed previously. This may be due to the fact that most previous quantum
+optics experiments have been conducted with BBO, which produces circular
+rings as observed and predicted below. This is not the case in BiBO due to
+the angle-dependent refractive index experienced by the daughter photons. In
+Fig. 2(b) we plot the external angle θs0 as a function of its azimuthal angle φs
+for BiBO (blue, solid) and BBO (maroon, dashed). For BiBO, we observe that
+θs0 varies with φs so that θs0 has a larger value at φs = 0◦ and 180◦ than in the
+φs = 90◦ and 270◦ directions. This leads to an elliptical emission pattern for
+this crystal. For BBO, θs0 is a constant as a function of φs , which implies a
+circular emission pattern. In our analysis, we ignore birefringent walk-off of the
+5
+
+beams due to its negligible contribution for the thin crystals considered here, as
+discussed in detail in the Appendix.
+
+3
+
+Experimental Results
+
+We image the spatial intensity patterns from both BiBO and BBO using the
+experimental setup shown in Fig. 3. A 405-nm-wavelength, continuous-wave
+laser pumps either a BBO or BiBO crystal. Both types of crystals are thin
+(0.8 mm) in comparison to the Rayleigh length and compared to the transverse
+extent of the imaged rings - a requirement for polarization entanglement. As
+the crystals become thick, which-path information begins to degrade the entanglement because the rings become distinguishable. We test two different BiBO
+crystals each with a different set of crystal cut angles (θp , φp ) designed to be
+phase matched for λp = 405 nm and λs = λi = 810 nm with an exterior opening angle of ∼ 3◦ . These two crystal cut angles are the angles for which it is
+straight-forward to create an optical beam that propagates through the crystal
+with negligible walk-off. That is, φp is chosen so that the pump, signal, and
+idler photons essentially propagate as a slow or a fast wave. We can further tilt
+the crystal around θp to tune the opening angle. One crystal has cut angles of
+φp = 90◦ , θp = 151.7◦ while the other has φp = 0◦ , θp = 51◦ . The BBO crystal
+has a pump cut angle of θp = 29.3◦ .
+Object plane
+λ/2
+
+Filter
+EMCCD
+BiBO/BBO
+Lens
+
+405 nm
+
+Zoom lens
+
+Figure 3:
+Experimental setup.
+A 405 nm laser (Omicron,
+LDM405.120.CWA.L.WS, < 0.02nm bandwidth FWHM) pumps either a
+BiBO or BBO crystal (Newlight Photonics). The down-converted light exits
+the crystal and propagates 12.4 cm before it passes through a 40 cm focal
+length lens (Thorlabs LAC726B). This lens functions to direct the rays from
+the down-conversion ring to an object plane that we image onto the camera.
+We image the ring ∼ 10 cm after this lens by placing a zoom lens (Navitar
+Zoom 7000E) on an EMCCD (Andor iXonEM ) ∼ 1 m away from the lens. The
+magnification of this imaging system is 8.6. Each pixel on the camera chip
+is 24 µm × 24 µm, the sensitive area of the chip is 3 mm × 3 mm, and we
+cool the chip down to −70◦ C to reduce dark noise. We put a 10 nm bandpass
+optical filter (Andover 810FS10-50) before the camera lens to select only nearly
+degenerate wavelengths.
+
+6
+
+Making precise measurements of the eccentricity requires having the wellcalibrated imaging system, depicted in Fig. 3. To achieve this, we perform
+the following procedure: first we remove the crystal and the 40 cm focal length
+lens, leaving only the laser, a set of apertures for alignment, steering mirrors,
+and camera-lens system. We then place a flat mirror against the camera lens to
+ensure the back-reflected light is going straight back through the apertures. We
+then place a target in the object plane. The target is a flat piece of metal with
+a 20-mm-diameter ring scored in the surface of the metal, where the diameter
+tolerances is ∼ 25 µm. This machined ring has a hole in the center so that
+we can easily align it with the laser beam path and check its back reflections
+for tilt. We check the eccentricity of the target and make small adjustments to
+the camera’s position and tilt until we minimize eccentricity. The eccentricity is
+caused primarily by any amount of tilt in the system, which arises from imperfect
+alignment. Astigmatism and coma also arise from an imperfectly aligned optical
+system, although these are negligible compared to the tilt for a well-aligned
+optical system. We then replace the crystal and check back reflections with a
+mirror on the camera lens. Finally, we add in the lens and ensure its alignment
+by checking back reflections.
+We collect images for each crystal and fit the observed emission pattern
+with an elliptical function in two transverse dimensions with a Gaussian profile
+in the longitudinal dimension. The free parameters of our model include the
+height of the Gaussian peak, background counts (offset of the Gaussian from
+0), major/minor axes for ellipse, width of Gaussian and location of the center
+point. We calculate the eccentricity of the ellipse by
+r
+ a 2
+,
+(6)
+= 1−
+b
+where b (a) is the major (minor) axis of the ellipse.
+Figure 4 shows the transverse spatial intensity pattern for down-conversion
+rings from both BBO and BiBO crystals. For BBO, the intensity pattern of
+the down-conversion ring is essentially circular (Fig. 4 (a)),  = 0±0.013 where
+the error is a combined statistical and systematic error of 0.013, which will be
+discussed below. Hence, our results indicate the pattern for BBO is circular
+to within our experimental uncertainties. The range of opening angles that
+are phase matched for BBO is smaller than that for BiBO because the slope
+of the opening angle versus wavelength is larger in BBO due to the slope of
+the refractive index versus angle being steeper. This leads to a thinner downconversion ring for BBO. For BiBO cut at phase matching angles φp = 90◦ , θp =
+151.7◦ , (Fig. 4, (b)), the eccentricity is greater than that for BBO, with  =
+0.172 ± 0.019. For BiBO, with φp = 0◦ , θp = 51◦ (Fig. 4 (c)),  = 0.367 ± 0.012
+and is easily seen by eye.
+Table 1 gives the results of our observations and analysis. We calculate the
+major/minor axes using the experimental values for θs0 (φs = 0)/θs0 (φs = 90) and
+Eq. 7. Using the procedure outlined in Sec. 2, we calculate theoretical values
+for the eccentricity using an exterior angle for either the major or minor axis
+
+7
+
+BBO
+
+y (mm)
+
+3
+
+(a)
+
+2
+1
+ε = 0.013 ±0.013
+
+0
+0
+
+1
+2
+x (mm)
+
+3
+
+BiBO
+(b)
+
+(c)
+
+ε = 0.367± 0.011
+
+ε = 0.172± 0.017
+0
+
+1
+(d)
+
+2
+x (mm)
+
+3
+
+0
+
+1
+(d)
+
+2
+x (mm)
+
+3
+
+Figure 4: SPDC emission pattern for BBO and BiBO. The emission pattern
+from the camera is plotted versus the two transverse dimensions (x and y)
+where y is in the direction perpendicular to the optical table. The patterns
+from the camera have been scaled up by the magnification and converted from
+pixels into cm. The red, solid lines are ellipses with the major and minor axes
+taken from the fit parameters. (a) Down-conversion ring from BBO crystal is
+nearly circular with an eccentricity of 0.013. (b) Down-conversion ring BiBO
+crystal cut at phase matching angle of (θp = 151.7◦ , φp = 90◦ ) has a higher
+eccentricity with the major axis in the x-direction. (c) Down-conversion ring in
+BiBO crystal cut at phase matching angle of (θp = 51◦ , φp = 0◦ ) has a large
+eccentricity.
+given in the first column. The exterior angle is what we measure experimentally
+and is simply the opening angles in the crystal propagated outside the crystal
+Snell’s law. We use this set exterior angle to calculate the θp and φp that gives
+this value at either φs = 0 or φs = 90◦ . In this case, instead of knowing θp and
+calculating θs and θi , we know the latter and calculate the former. Measuring
+the external emission angle is more straightforward than measuring the angle
+the pump beam makes with the crystal optic axis. Once we determine θp , we
+use it to predict the emission angle around the entire ring. Using Snell’s law,
+we propagate these angles outside the crystal and find the eccentricity through
+
+8
+
+Table 1: Experimental Data
+
+θ 0 (φ =0)
+
+Experiment θ0s(φss=90) (◦ )
+s
+
+Theory
+
+Error
+Statistical
+Systematic
+
+BBO
+
+BiBO
+φp = 90◦
+
+BiBO
+φp = 0◦
+
+4.12358
+4.12382
+
+4.0294
+4.10893
+
+4.05449
+4.31798
+
+0.013
+0
+
+0.172
+0.166
+
+0.360
+0.361
+
+0.011
+0.007
+
+0.001
+0.019
+
+0.001
+0.012
+
+the relation,
+s
+=
+
+
+1−
+
+tan[θs0 (φs = 0◦ )]
+tan[θs0 (φs = 90◦ )]
+
+±2
+,
+
+(7)
+
+where the ± accounts for the possibility that the axes at φs = 0 may be the
+major or the minor axis. We use Eq. 7 to calculate both experimental and
+theoretical values for . For the experimental values, we have measured both
+tan[θs0 (φs = 90◦ )] and tan[θs0 (φs = 0◦ )], while for the theoretical values, we use
+only one of these, either tan[θs0 (φs = 90◦ )] or tan[θs0 (φs = 0◦ )] and calculate the
+other by the procedure described above. The error in our experiments includes
+a statistical error from the fitting process and a systematic error, which is most
+likely due to small astigmatism in the system. We calculate the systematic error
+by taking repeated measurements at different times which requires realignment
+using the alignment procedure outlined above.
+
+4
+
+Theoretical Model
+
+In this section we outline a theoretical model for predicting the approximate
+eccentricity of the emission pattern in each crystal. Because our emission angles are small (θs , θi << 1), a small-angle approximation around the collinear
+case (θs = θi = 0) is a natural method for obtaining an approximate analytic
+solution. This allows us to gain better understanding of the parameters that
+affect the eccentricity. Starting from the phase matching equations in the y and
+z directions, we find that the phase matching occurs when,
+ns cos(θs ) + ni cos(θi ) − 2np = 0,
+
+(8)
+
+ns sin(θs ) + ni sin(θi ) = 0.
+
+(9)
+
+We expand sin(θj ), cos(θj ), ns , and ni to second order in θj . The approxi-
+
+9
+
+mate expressions of the refractive indices are given by,
+ns ≈ ñs +
+
+∂ ñs
+∂ ñs
+1 ∂ 2 ñs 2
+δθ +
+δθp +
+θs +
+∂θp
+∂θs
+2 ∂θp2 p
+
+(10)
+
+∂ 2 ñs
+1 ∂ 2 ñs 2
+θ ,
+δθp θs +
+∂θp ∂θs
+2 ∂θs2 s
+ni ≈ ñs +
+
+∂ ñs
+∂ ñs
+1 ∂ 2 ñs 2
+δθ −
+δθp −
+θi +
+∂θp
+∂θs
+2 ∂θp2 p
+
+(11)
+
+∂ 2 ñs
+1 ∂ 2 ñs 2
+θ ,
+δθp θi +
+∂θp ∂θs
+2 ∂θs2 i
+where θp = θp0 + δθp is the pump phase matching angle, θp0 is the pump
+phase matching angle for the collinear degenerate case and δθp is a small variation around that angle. The notation n˜s describes the refractive index for the
+collinear degenerate case, and n˜s has replaced ñi everywhere because for the
+collinear degenerate case, they are equal. The change in refractive index with
+angle is calculated from the expression for the frequency and directional dependent refractive index. These quantities indicate how quickly the refractive index
+changes with the various angles. Inserting Eqs. 11 and ?? and the trigonometric
+functions into Eqs. 8 and 9, we solve for angles θs and θi . We are interested in
+solving for δθs and δθi which are small changes in the emissions angles around
+the values of θs (φs = 90◦ ) and θs (φs = 0◦ ), which are the angles corresponding
+to the directions of the major and minor axes. We use the expression
+θs,(i) = θs (φs = 90◦ ) + δθs,(i) ,
+
+(12)
+
+to solve for δθs(φs = 0◦ ) and δθs (φs = 180◦ ). We calculate the eccentricity
+inside the crystal to be
+s
+
+2
+δθs (φs = 0◦ ) + δθs (φs = 180◦ )
+.
+(13)
+= 1−
+2θs (φs = 90◦ )
+The eccentricity arrises from the photons experiencing the angle-dependent refractive index, so the eccentricity in the emission pattern is only due to the
+eccentricity inside the crystal. Once the photons propagate into free-space,
+they experience no angle-dependence and simply follow the trajectories of the
+external angles dictated by Snell’s law. Therefore, the eccentricity inside the
+crystal is the only contribution to the eccentricity experimentally measured.
+Using Eq. 13, we determine the predicted value of the eccentricity using the
+measured values for δθp . These are shown in the final columns of Table 1. For
+small values of δθp , we also express the eccentricity in terms of the derivatives
+of refractive indices as,
+
+φ =0 2
+ 2 φs =0  2 φs =90◦
+∂ n˜s
+2
+∂ n˜s s
+∂ n˜s
+−
+−
+,
+(14)
+≈
+∂θs2
+∂θs2
+n˜s
+∂θs
+10
+
+Refractive Index Derivatives
+
+0.20
+
+1
+
+0.15
+0.10
+0.05
+
+2
+
+0.00
+
+3
+
+-0.05
+600
+
+700
+
+800
+
+900
+
+λ (nm)
+
+Figure 5: Plot of each term in Eq.14 versus wavelength, “1” (blue, short-dash)
+◦
+(∂ 2 n˜s /∂θs2 )φs =0 “2” (red, long-dash) (∂ 2 n˜s /∂θs2 )φs =90 , “3” (green, solid) 2/n˜s ∗
+φs =0 2
+◦
+[(∂ n˜s /∂θs )
+] . For this plot we use φp = 90 , θp = 152.077◦ .
+where the superscripts of φs denote the azimuthal angle at which the terms are
+evaluated. We plot the three terms in this approximation in Fig. 5. For this
+plot, the difference between the curves “1” and “2” is the dominant contribution
+to the eccentricity. Where these curves intersect is where the eccentricity is at a
+minimum in Fig. 6. This expression allows us to determine why eccentricity is
+larger for certain crystal cuts than others. We examine the relative size of each
+of the three terms in Eq. 14 for the case where φp = 0 and φp = 90◦ . We find
+that the difference of the first two terms in Eq. 14 for φp = 0 is very large in
+comparison to the difference of the first two terms for the φp = 90◦ case. This
+ultimately leads to the larger eccentricity we observe for the φp = 0 crystal cut
+in BiBO.
+Using this method, we also calculate the value of the degenerate wavelength
+(λs = λi ) that minimizes the eccentricity inside the crystal. Again, minimizing
+the internal eccentricity will minimize the eccentricity measured in the external
+emission pattern. Each of the parameters in Eq. 13 is wavelength-dependent
+because the refractive indices for the daughter photons in BiBO are angledependent. We find a minimum wavelength by performing a root-finding routine
+on Eq. 13 with wavelength as the independent parameter. We also find the eccentricity as a function of wavelength plotted in Fig. 6 for three different values
+of θp . This plot shows that there is a wavelength for each pump tilt angle for
+which the eccentricity can be minimized. According to the plot, the eccentricity
+becomes large away from the 710-780 nm range. For our degenerate wavelength
+of 810 nm, this figure agrees with the value of the eccentricity we observe. This
+plot indicates which wavelengths are best at minimizing eccentricity in a given
+crystal cut for Type-I degenerate SPDC.
+
+11
+
+0.3
+1
+3
+
+ε
+
+0.2
+2
+
+0.1
+
+0.0
+600
+
+700
+
+800
+
+900
+
+1000
+
+1100
+
+λ (nm)
+
+Figure 6: Eccentricity versus wavelength for three different values of θp , “1”
+(blue, short-dash) θp = 152.071◦ “2” (green,solid) θp = 151.378◦ , “3” (red,
+long-dash) θp = 149.21◦ . For all three plots there is a wavelength for which the
+eccentricity of the down-conversion ring is minimized. We show our experimental data for a pump wavelength of 405 nm and a degenerate down-converted
+wavelength of 810 nm (purple) with associated error bars.
+
+5
+
+Impact on entanglement and count rate
+
+One potential drawback of an elliptical emission pattern is that it may decrease
+the entanglement quality and/or the entangled photon count rate. Because the
+rings are elliptical, they no longer perfectly spatially overlap around the entire
+ring, leading to potential degradation in entanglement-purity, and limiting the
+ability to multiplex many channels around the down-conversion ring. Lack of
+spatial overlap is the most obvious way in which which-path information is
+revealed. The elliptical shape may also cause a change in the joint spectrum
+for the photons, which leads to a degradation in entanglement purity. We note
+that spatial overlap can be corrected for by collecting light in between the ring
+centroids at the cost of count rate. However, at this location, the spectra from
+the two rings is different, leading to decreased entanglement purity. We study
+each of these effects in different ways where we assume that the biphotons are
+coupled into single mode fibers.
+To estimate whether the entanglement quality is degraded, we determine
+the spectrum of the down-converted light for each crystal for single mode fiber
+collection. Using single mode fibers is important because collection of a single
+spatial mode for either the signal or idler photon means that the twin photon
+should also be projected onto a single spatial mode. The entanglement purity
+can then be determined from the overlap integral of the spectral intensity of
+these two single modes. Calculating the spectra from the midpoint between the
+rings at two locations and computing the overlap integral provides a measure
+12
+
+of distinguishability. A smaller overlap integral represents lower entanglement
+quality because the difference in spectra between the crystals means it is possible
+to distinguish which crystal the photons came from.
+Using the formalism developed in our previous work [17], we determine both
+the joint spectrum for the biphoton wavefunction as well as the singles spectrum
+for each signal and idler, where we assume single mode fiber collection. Figure
+7 (b) shows the joint spectrum at location B in Fig. 7 (a). Here the overlap is
+minimal for each crystal in the pair when the crystals are cut at φp = 90◦ , θp =
+151.7◦ (solid lines) and φp = 0, θp = 51◦ (dashed lines). In these calculations
+we choose one of these points, point A (Fig. 7 (a)) to have maximal overlap
+between the two rings, leaving point B to have minimal overlap. We choose
+the minimal-overlapped case because the entanglement purity is lowest due to
+the mismatched overlap. For the minimal overlap case, we choose the collection
+mode to be in between the two rings so that we collect equal count rates from
+each and so that the spectra from the two will be most similar. We find that,
+for both BiBO crystal cuts, the spectra are similar for the two crystals, and the
+entanglement quality is not substantially degraded. The spectra at point A are
+identical, while at point B we find the overlap integral is 99.4-99.97% for each of
+the two crystal cuts. The overlap integral for two entangled states is a measure
+of the entanglement purity of the states involved.
+Even though the eccentricity of the ring does not affect the entanglement
+purity, it does affect the count rates. Integrating the spectra in Fig. 7 (b) over
+∆ω gives the total joint count rate. For the crystal cut at φp = 0, θp = 51◦ , the
+spectra has a much lower amplitude and integrating over any band of frequencies
+gives a lower count rate compared to the crystal cut at φp = 90◦ , θp = 151.7◦ .
+Higher eccentricity causes the rings to be more spatially separated in the former
+case, resulting in the lower joint count rate. Additionally, the crystal cut for
+this high eccentricity (φp = 0, θp = 51◦ ) has a lower effective nonlinearity (deff )
+resulting in an even lower count rate so that this crystal cut is clearly not optimal for high-brightness applications. This may not be the case for other crystals
+however. For SPDC applications in BiBO that require both a high count rate
+as well as high purity entanglement, we find that the eccentricity does not decrease the entanglement purity significantly, however, the count rate is lower for
+collection of the midpoints between emissions patterns with greater eccentricity.
+Applications aiming for ultra-high entanglement purity (> 99.99%) are limited
+to the locations around the ring that can be made to overlap completely.
+
+6
+
+Conclusions
+
+In conclusion, we show both experimentally and theoretically that the emission patterns from down-conversion in BiBO have an elliptical shape, while
+the pattern from BBO has a circular profile. We show that this difference in
+shape of the down-conversion rings depends on whether or not the daughter
+photons experience an angle-independent or angle-dependent refractive index.
+Although, in hindsight, the results we present may seems obvious, this is to our
+
+13
+
+B
+
+(a)
+
+B
+
+θp = 51o
+φp = 0 o
+
+A
+
+θp = 151.7o
+φp = 90o
+
+A
+
+dR/dωs (10-11 (counts s-1)/s-1)
+
+(b)
+2.5
+2.0
+
+(2)
+
+1.5
+
+(1)
+
+(3)
+
+1.0
+
+(4)
+
+0.5
+0.0
+-1.6
+
+-1
+
+1
+0
+ωs-ωs0 or ωi-ωi0 (1014 s-1)
+
+1.6
+
+Figure 7: (a) Points A and B represent the points of maximal and minimal
+overlap respectively. Red inner ring lines and blue outer ring lines illustrate the
+center of the emission patterns from each crystal in the crystal pair, where we
+have ignored the finite width of the actual ring. The eccentricity of these rings
+has been exaggerated for illustration purposes. Left figure depicts crystal cut at
+φp = 0, θp = 51◦ and right figure depicts crystal cut at φp = 90◦ , θp = 151.7◦ (b)
+Joint spectra for each crystal cut at location B for each crystal cut. The y axis
+on the plot is the differential rate per frequency and the x axis is an angular
+frequency shift around the degenerate frequency. Solid lines (green (2) and gold
+(1)) represent the joint spectral for each crystal when the crystals are cut at
+φp = 90◦ , θp = 151.7◦ while the dashed lines (blue (3) and purple (4)) represent
+the joint spectra from each crystal when the crystals are cut at φp = 0, θp =
+51◦ . The pump wavelength for this simulation is 405 nm and the degenerate
+wavelengths 810 nm. The vertical dashed green lines in the plot indicate a 20
+nm bandwidth for reference.
+knowledge, the first time this effect has ever been characterized and its potential impact discussed. We also present a theoretical method for calculating the
+eccentricity of the down-conversion ring for biaxial crystals find that there is an
+optimal wavelength for which the eccentricity is a minimum and close to zero.
+We demonstrate that the elliptical nature of the rings does not reduce entanglement purity, but reduces joint counts rates significantly for down-conversion
+patterns with a larger eccentricity.
+
+14
+
+7
+
+Acknowledgments
+
+The authors gratefully acknowledge the financial support of the DARPA InPho
+program and the Office of Naval Research MURI on Fundamental Research on
+Wavelength-Agile High-Rate Quantum Key Distribution (QKD) in a Marine
+Environment, award #N00014-13-0627.
+
+Appendix
+Birefringent walk-off occurs in a medium when, for a particular polarization, the
+momentum vector and the Poynting vector separate from each other. Walk-off
+occurs in both uniaxial and biaxial crystals, although calculating the walk-off
+angle in the biaxial case is more challenging due to the reduced symmetry of
+the crystal. We calculate the walk-off angles using the method in Ref. [15], and
+find the contribution to the eccentricity from walk-off is negligible, due to the
+fact that the crystals considered here are so thin. The crystal thinness means
+that photons that are walking off different amounts in different directions will
+not cause a large change in eccentricity because their propagation distance to
+the crystal face is quite small.
+In BiBO, the daughter photons experience an angle-dependent refractive
+index, and will therefore have Poynting vector walk-off. Using Eqs. (20)-(22) in
+Ref. [15] we determine the Poynting unit vector N̂ and unit propagation vector
+k̂. We use these to determine the walk-off angle as a function of azimuthal
+angle φs around the original pump direction. We find walk-off angles for the
+φp = 90◦ , θp = 151.56◦ crystal cut at φs = 0 and φs = 180◦ are 3.19◦ and
+3.51◦ , respectively. The walk-off angles for φs = 90◦ and φs = 270◦ are both
+3.36◦ . We map the Poynting vectors and momentum vectors onto the crystal
+exit face and compare their eccentricity. We find that the Poynting vectors map
+a ring with eccentricity of 0.1680, while the momentum vectors map a ring with
+eccentricity 0.1685, which is a 0.3% difference.
+In free space, the Poynting vector and momentum vector must be parallel,
+so the trajectories of these vectors to the image plane are identical. As we have
+shown in the previous paragraph, the eccentricity of the ring as it is about to
+exit the crystal is negligible. The photon path outside the crystal is much larger
+than the one inside the crystal and as the Poynting vector and momentum vector
+are parallel in free-space, the dominant contribution to the eccentricity comes
+from the paths taken outside the crystal. Essentially, the overall impact of the
+walk-off from intracrystal angles is very small due to the fact that the crystal
+length is much smaller than the crystal - lens distance.
+
+References
+[1] C. H. Bennett and G. Brassard, “Quantum Cryptography: Public key
+distribution and coin tossing,” in Proceedings of the IEEE International
+15
+
+Conference on Computers, Systems, and Signal Processing, Bangalore, 175
+(1984)
+[2] A. Ekert, “Quantum cryptography based on Bell’s theorem,” Phys. Rev.
+Lett. 67, 661-663 (1991).
+[3] A. V. Sergienko, M. Atatüre, Z. Walton, G. Jaeger, B. E. A. Saleh, and
+M. C. Teich, “Quantum cryptography using femtosecond-pulsed parametric
+down-conversion,” Phys. Rev. A 60, R2622–R2625 (1999).
+[4] M. Giustina, S. Ramelow, B. Wittmann, J. Kofler, J. Beyer, A. Lita, B.
+Calkins, T. Gerrits, S. W. Man, R. Ursin, A. Zeilinger, “Bell Violation
+using entangled photons without the fair-sampling assumption,” Nat. 497,
+227 (2013).
+[5] B. G. Christensen, K. T. McCusker, J. B. Altepeter, B. Calkins, T. Gerrits,
+A. E. Lita, A. Miller, L. K. Shalm, Y. Zhang, S. W. Nam, N. Brunner, C. C.
+W. Lim, N. Gisin, P. G, Kwiat, Detection-Loophole-Free Test of Quantum
+Nonlocality, and Applications,” Phys. Rev. Lett. 111, 130406 (2013).
+[6] O. Kwon, Y-W. Cho, and Y-H. Kim, “Single-mode coupling efficiencies of
+type-II spontaneous parametric down-conversion: Collinear, noncollinear,
+and beamlike phase matching,” Opt. Express 78, 053825 (2008).
+[7] M. Fiorentino, C. E. Kuklewicz, F. N. C. Wong, “Source of polarization
+entanglement in a single periodically poled KTiOPO4 crystal with overlapping emission cones,” Phys. Rev. A 13, 127-135 (2005).
+[8] P. G. Kwiat, K. Mattle, H. Weinfurter, and A. Zeilinger, “New HighIntensity Source of Polarization-Entangled Photon Pairs,” Phys. Rev. Lett.
+75, 4337-4341 (1995).
+[9] P. G. Kwiat, E. Waks, A.G. White, I. Applebaum, and P. Eberhard, “Ultrabright Source of Polarization-entangled Photons,” Phys. Rev. A 60, R773R776 (1999).
+[10] J. Altepeter , E. Jeffrey, and P. Kwiat, “Phase-compensated ultra-bright
+source of entangled photons,” Opt. Express 13, 8951-8959 (2005).
+[11] R. Rangarajan, M. Goggin, and P. Kwiat, “Optimizing type-I polarizationentangled photons,” Opt. Express 17, 18920-18932 (2009).
+[12] H. Hellwig, J. Liebertz, and L. Bohaty, “Exceptional large nonlinear optical
+coefficients in the monoclinic bismuth borate BiB3 O6 (BIBO),” Solid State
+Commun. 109, 249-251 (1999).
+[13] M. Ghotbi and M Ebrahim-Zadeh, “Optical second harmonic generation
+properties of BiB3 O6 ,” Opt. Express 12, 6002-6018 (2004).
+
+16
+
+[14] N. Beouff, D. Branning, I. Chaperot, E. Dauler, S. Guerin, G. Jaeger, A.
+Muller and A. Migdall, “Calculating characteristics of noncollinear phase
+matching in uniaxial and biaxial crystals,” Opt. Eng. 39, 4, 1016-1024
+(2000).
+[15] D. Roberts, “Simplified Characterization of Uniaxial and Biaxial Nonlinear
+Optical Crystals: A Plea for Standardization of Nomenclature and Conventions,” IEEE J. of Quant. Elec. 28, 2057-2071 (1992).
+[16] A. Ling, A. Lamas-Linares, and C. Kurtsiefer, “Absolute emission rates of
+spontaneous parametric down-conversion into single transverse Gaussian
+modes,” Phys. Rev. A 77, 043834 (2008).
+[17] H. E. Guilbert and D. J. Gauthier, “Enhancing Heralding Efficiency
+and Biphoton Rate in Type-I Spontaneous Parametric Down-Conversion,”
+IEEE. J. Sel. Topics Quantum Electon. 21, 6400610 (2015).
+
+17
+
+
