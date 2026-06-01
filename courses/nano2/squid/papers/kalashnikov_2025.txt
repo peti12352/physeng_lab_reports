@@ -1,0 +1,1908 @@
+Diode effect in Shapiro steps in an asymmetric SQUID with a superconducting
+nanobridge
+Dmitrii S. Kalashnikov,1, ∗ Gleb S. Seleznev,2, 1, † Andrei Kudriashov,1 Ian Babich,1
+Denis Yu. Vodolazov,1, 3 Yakov V. Fominov,2, 1, 4 and Vasily S. Stolyarov1, 5, 6, ‡
+1
+
+Moscow Institute of Physics and Technology, 141700 Dolgoprudny, Russia
+L. D. Landau Institute for Theoretical Physics RAS, 142432 Chernogolovka, Russia
+3
+Institute for Physics of Microstructures, Russian Academy of Sciences, 603950, Nizhny Novgorod, GSP-105, Russia
+4
+Laboratory for Condensed Matter Physics, HSE University, 101000 Moscow, Russia
+5
+National University of Science and Technology MISIS, 119049 Moscow, Russia
+6
+Dukhov Research Institute of Automatics (VNIIA), 127055 Moscow, Russia
+
+arXiv:2510.15526v1 [cond-mat.supr-con] 17 Oct 2025
+
+2
+
+We investigate the Josephson diode effect in an asymmetric SQUID consisting of a sinusoidal
+Josephson junction formed by a Bi2 Te2 Se flake and a superconducting Nb nanobridge with a linear
+and multivalued current-phase relation (CPR). Current-voltage characteristics were measured both
+in the absence (dc regime) and presence (ac regime) of external microwave irradiation. Our dc
+measurements reveal only weak critical current asymmetry (i.e. weak Josephson diode effect), while
+confirming the multivalued behavior of the SQUID. At the same time, the key finding of this work
+is the observation of strong Shapiro step asymmetry (concerning the dc current direction) in the
+ac regime at finite magnetic flux. This peculiarity oscillates as a function of magnetic field with
+the SQUID’s periodicity and varies non-monotonically with the increase in microwave power. Our
+theoretical model shows that the pronounced Shapiro step asymmetry, despite the small diode effect
+in critical current, arises from the interplay between the sinusoidal and multivalued CPRs of the
+junctions.
+
+I.
+
+INTRODUCTION
+
+Traditionally, a diode is an electronic device that allows current to flow in only one direction while blocking
+it in the opposite direction. Its semiconductor implementations, based on p − n junctions, are widely used in
+various applications, making them essential components
+in modern electronics [1]. Recently, there has been growing interest in superconducting diodes, driven by both
+fundamental research and potential applications in superconducting electronics [2–4].
+The key characteristic of the superconducting diode effect (SDE) is the asymmetry of the critical current magnitude with respect to the current direction. There are
+various approaches to achieve this effect, which typically
+require broken time-reversal and inversion symmetries.
+This can be accomplished by introducing external magnetic fields in systems exhibiting spin-orbit interaction or
+by using topological and noncentrosymmetric materials
+[5–21]. Moreover, the SDE can be caused by the vortex motion in systems with edge [22–27] or bulk [28–32]
+natural/artificial defects.
+One possible approach is to examine the SDE in systems that include Josephson junctions (JJs), where it
+is referred to as the Josephson diode effect (JDE) [33–
+47]. The simplest setups for investigating the JDE are
+multiterminal systems and asymmetric SQUIDs using
+multiple sinusoidal Josephson junctions as their building
+
+∗ kalashnikov.ds@phystech.edu
+† seleznev.gs@phystech.edu
+‡ stolyarov.vs@phystech.edu
+
+blocks [48–50]. These setups also provide a convenient
+way to tune both the strength and sign of the effect by
+varying the external magnetic fluxes through the loops.
+An alternative approach is to employ JJs with nonsinusoidal CPRs [51–56]. In this regard, superconducting
+nanobridges emerge as particularly promising candidates
+owing to their nearly linear, multivalued CPRs, which
+significantly distinguish them from ordinary sinusoidal
+junctions [57–61]. Additionally, these devices are characterized by their small size and easy fabrication process
+[62, 63]. However, despite extensive investigations of superconducting nanobridges [64–67], particularly regarding the observation of the diode effect [68–70], the influence of the multivalued nature of the nanobridge CPR on
+the peculiarities of the JDE has not yet been explored.
+Another interesting approach to study the superconducting diode effect involves exploring quantities beyond
+just the asymmetry of critical currents. Although this
+phenomenon is the most prominent manifestation of the
+SDE, other parts of the current-voltage characteristics
+(CVC) also exhibit asymmetric behavior. For example, when capacitive effects are present, the JDE manifests as an asymmetry in the retrapping currents [71–74].
+Moreover, under external irradiation, features known as
+Shapiro steps appear in the CVC when the internal voltage oscillations of the system synchronize with the external driving alternating signal [75, 76]. The Shapiro steps
+can also demonstrate the JDE revealed in the asymmetry between shapes and sizes of the negative and positive steps (corresponding to different current directions)
+[51, 52, 74, 77–80]. However, the asymmetries mentioned
+above require specific conditions, such as the presence of
+effective capacitance of the junctions forming the SQUID
+(for the asymmetry of the retrapping currents) or the ap-
+
+2
+plication of microwave irradiation (for the asymmetry of
+the Shapiro steps). As a result, observing these effects
+is a more challenging task and has received less attention. At the same time, asymmetries in various parts
+of the CVC may reflect distinct features of the system
+(e.g., static and dynamic properties) and can exhibit entirely different behavior. Consequently, investigating the
+various asymmetric features of the CVC can provide additional valuable insights into the system.
+In our work, we study an asymmetric SQUID composed of a sinusoidal Josephson junction and a superconducting nanobridge. Our focus is on the peculiarities of
+the JDE arising from the interplay between single-valued
+and multivalued Josephson junctions. We demonstrate
+that this interplay manifests itself in a strong asymmetry
+of the Shapiro features, which can be more pronounced
+than the asymmetry of the critical current.
+The paper is organized as follows: In Sec. II, we
+describe the experimental sample and the corresponding theoretical model for static superconducting properties of the asymmetric SQUID with a superconducting
+nanobridge. In Sec. III, we present experimental results
+and theoretical analysis of the SQUID current-voltage
+characteristics, measured both without (critical current
+measurements) and with (Shapiro steps measurements)
+microwave irradiation. In Sec. IV, we analyze the dependence of the Shapiro steps asymmetry on the magnetic
+flux and microwave irradiation power. In Sec. V, we discuss the observed asymmetric features and the physical
+mechanisms underlying them. In Sec. VI, we present our
+conclusions. Finally, additional details regarding calculations and auxiliary measurement results are provided
+in the Appendices.
+
+II. ASYMMETRIC SQUID WITH
+SUPERCONDUCTING NANOBRIDGE
+A.
+
+Josephson junctions
+
+In our work, we study the asymmetric SQUID, whose
+electrodes are made from thick niobium (d ≈ 100 nm)
+and whose arms contain two strongly different weak
+links. A SEM image of the SQUID is shown in Fig. 1(a)
+and a simplified scheme of the system is presented in
+Fig. 1(b). The first junction of the SQUID is an SNS
+Josephson junction formed by a Bi2 Te2 Se flake with a
+thickness of about 90 nm. Similar samples using the
+same material were investigated in Ref. [81], where it
+was found that the flake acts as a normal metal and the
+junction has a standard sinusoidal current-phase relation
+ISNS (φa ) = Isns sin φa . The junction has large lateral dimensions, and its area Ssns is comparable to the area of
+the superconducting loop Sloop . Therefore, when analyzing the SQUID, we account for the non zero magnetic
+flux through the junction in an applied magnetic field.
+As a result, the critical current of the SNS junction exhibits Fraunhofer modulation in the presence of a mag-
+
+FIG. 1.
+Asymmetric SQUID structure.
+(a) Falsecolored Scanning Electron Microscopy (SEM) image of the
+sample. The top junction is a Superconductor/Normal
+metal/Superconductor (SNS) Josephson junction formed by a
+Bi2 Te2 Se flake, and the bottom one is a niobium nanobridge
+(NB). (b) An equivalent scheme of the SQUID with two different Josephson junctions. The insets show their current-phase
+relations (CPRs): sinusoidal function for the SNS junction
+and linear multivalued function for the nanobridge, where the
+critical current Inb corresponds to the critical phase φc > π.
+In the nonstationary state with finite average voltage (positive or negative), the nanobridge CPR takes a sawtooth form,
+shown by red and blue segments, respectively. External radiofrequency (rf ) irradiation can be applied to the SQUID.
+
+sns /Φ0 )
+netic field, following Isns (Φ) = Isns sin(πΦ
+(πΦsns /Φ0 ) , where
+the flux Φsns penetrating the SNS junction is proportional to the magnetic flux Φ through the superconducting loop as Φsns = ΦSsns /Sloop .
+The second junction is a superconducting nanobridge
+made of a thin film of niobium with a thickness of 20 nm,
+a width of 220 nm, and a length of 380 nm. Its CPR
+INB (φb ) is assumed to be multivalued, which is typical
+
+3
+for superconducting nanobridges with small cross sections [57–61, 67]. Generally, in the stationary regime
+(S state), the CPR of a JJ can be generated by a single
+branch defined in the interval [−φc , φc ] and periodically
+translated by 2πn, where n is an integer. A conventional
+single-valued CPR corresponds to φc = π. At the same
+time, in the nanobridge case, the generating branch is
+linear and φc > π. This leads to the multivaluedness
+of the CPR with n enumerating its different branches.
+For the nanobridge, the critical phase also corresponds
+to the critical current Inb . In the nonstationary regime
+(R-state) with finite average voltage (positive or negative), we suppose that INB (φb ) effectively takes a sawtooth form [82–85]. Every time the phase reaches the
+value ±φc + 2πn, it switches to the neighboring branch,
+n 7→ n ± 1. The two signs correspond to the red and blue
+vertical segments in Fig. 1(b), respectively.
+This behavior of the nanobridge can alsoH be understood in terms of vorticity defined as Nv = ∇φdl/2π,
+where the integration is performed around the loop
+perimeter and φ is the superconducting phase. Different branches of the CPR are distinguished by an integer n, which equals the vorticity Nv at zero phase drop
+across the junction. As we increase the phase across the
+junction, fluxes can penetrate the SQUID loop, resulting in a change in the vorticity by one. Because of the
+nanobridge significant length, the phase gradient along
+it is small, leading to a correspondingly small superconducting velocity. Therefore, many vortices can enter the
+loop before the nanobridge reaches its critical current,
+which occurs at Nv ≫ 1 or equivalently at φc ≫ π (for
+theoretical estimation of φc , see Appendix A). Moreover,
+once the phase reaches its critical value, a phase slip occurs in the nanobridge, causing a phase drop of 2π. This
+is formally equivalent to changing n by one, as mentioned
+earlier.
+
+B.
+
+Current-phase relation of the SQUID
+
+As two weak links are connected by a superconducting loop, the phase shift ϕ between them is related to
+the magnetic flux Φ through this loop as ϕ = φa − φb =
+2πΦ/Φ0 , where Φ0 is the magnetic flux quantum. We neglect the loop self-inductance, which is small in our case
+(see Appendix B). At the same time, the supercurrent
+flowing through the SQUID is given by the sum of the
+junctions’ supercurrents,
+Is (φ) = Isns (ϕ) sin(φ + ϕ) + INB (φ),
+
+(1)
+
+where we take into account the Fraunhofer modulation
+of the SNS critical current mentioned earlier. The asymmetry of the junctions forming the SQUID leads to the
+appearance of the JDE in our system.
+To highlight the unique features associated with the
+presence of a superconducting nanobridge, we express the
+supercurrent of the SQUID in the R state as a Fourier
+
+series
+∞
+X
+
+Is (φ)
+= A0± +
+Ak± sin k(φ + δk± ) ,
+Inb
+
+(2)
+
+k=1
+
+where ± sign indicates positive and negative part of the
+sawtooth CPR (red and blue, respectively). The zeroth
+harmonics A0± = ±(φc −π)/φc arise from the nanobridge
+CPR and determine the average supercurrent. The amplitudes Ak± and phases δk± at k = 1 are given by the
+following equations:
+s
+2
+4
+4Isns (ϕ)
+Isns (ϕ)
++ 2−
+cos (ϕ ± φc ),
+A1± =
+Inb
+φc
+Inb φc
+(3)
+sin (ϕ ± φc )
+tan (δ1± ± φc ) =
+, (4)
+cos (ϕ ± φc ) − 2Inb /φc Isns (ϕ)
+while Ak± = −2/kφc and δk± = ∓φc for k > 1.
+As shown by Eqs. (2)–(4), there are two different mechanisms leading to the diode effect. The first is the amplitude asymmetry of the first harmonic A1+ ̸= A1− at
+sin φc sin ϕ ̸= 0. Visually, sin φc ̸= 0 corresponds to the
+horizontal offset between red and blue sawtooth patterns
+in Fig. 1(b). The second mechanism involves phase shifts
+between the first and higher Josephson harmonics, where
+δ1± ̸= δk± at least for some k > 1. While the phase-shift
+mechanism of the JDE in SQUIDs is well known [51, 52],
+the amplitude-asymmetry mechanism has not been previously reported to our knowledge. This asymmetry stems
+from the interference between the sinusoidal CPR and
+the first harmonic of the nanobridge sawtooth CPR. Notably, this effect is not present in SQUIDs that consist
+solely of junctions with single-valued CPRs because of
+trivial values of the critical phase, sin φc = 0. Therefore,
+it highlights the multivalued nature of the nanobridge
+CPR. As we demonstrate below, the A1+ ̸= A1− asymmetry drives the pronounced Shapiro steps asymmetry
+observed in the nonstationary regime.
+
+III.
+
+CURRENT-VOLTAGE CHARACTERISTICS
+
+We begin the discussion of the experimental results
+with the analysis of the CVC of the SQUID. Figure 2(a)
+shows a typical example of an IV curve observed in the
+experiment. As long as the voltage is zero, the SQUID
+is in the S state. When the applied current exceeds a
+critical value Ic , the voltage changes abruptly, the CVC
+becomes linear, and the SQUID switches into the R state.
+When the current decreases back, the voltage remains finite even for current values less than the critical value.
+It drops back to zero only at a smaller value Ir , manifesting hysteretic behavior of the system. This hysteretic behavior is associated with local overheating of the sample
+caused by Joule dissipation [86, 87] and not by capacitive effects. In particular, the temperature effectively
+
+4
+
+FIG. 2. Direct current measurements of the sample. (a) CVC of the SQUID measured at temperature T = 50 mK and in an
+external magnetic field B = 0.8 G. The black arrows indicate the current sweep direction. The hysteretic behavior of the curve
+is associated with local overheating. The inset shows a zoomed area of the IV curve around the critical currents in absolute
+values of current and voltage. The critical currents differ in opposite directions by around 4 µA. (b) Dependence of Ic of the
+SQUID on the external magnetic field in positive and negative current directions. The critical currents in both directions
+slightly differ from each other, which is a manifestation of the diode effect. A set of CVCs was measured at a fixed value
+of magnetic field, and the dots indicate the critical current obtained from each CVC. As can be seen, at a given magnetic
+field, the dots concentrate around several values of the critical current, demonstrating the multivalued CPR of the SQUID.
+Different critical currents correspond to switching to the resistive state from different branches of the CPR. The dashed lines
+represent fits to the two branches of the multivalued Ic (B) curve for the positive critical currents with Eqs. (5) and (6). The
+line labeled Ic max corresponds to the highest branch (with the largest critical current value), while Ic2 represents the lower
+(second) possible critical current branch at a fixed magnetic field. (c) Dependence of the highest branch of the positive critical
+current over a wide range of fields. The small-scale oscillations of Ic (B) (because of the flux through the whole SQUID) are
+modulated by the Fraunhofer dependence of the critical current through the SNS junction, shown by the dashed line. The right
+panels demonstrate the temperature dependence of (d) the SNS critical current Isns , (e) nanobridge critical current Inb and (f)
+critical phase φc . Theoretical fits at high temperature are shown by dashed lines.
+
+changes from T = 50 mK in the S state (fixed base refrigerator temperature) to T ∼ 2 K near Ir in the R
+state. This temperature is estimated from the condition
+that the transition from the R to S state corresponds
+to the equality between the T -dependent critical current
+and the applied dc current.
+
+A.
+
+Critical current measurements
+
+To investigate the diode effect in the critical currents,
+we conducted dc measurements at finite magnetic fields.
+The IV curve in Fig. 2(a) was measured at an external
+magnetic field of 0.8 G. The inset shows that the critical
+currents in the positive (Ic+ ) and negative (Ic− ) directions differ by approximately 4 µA.
+For a detailed analysis of this asymmetry, we measured
+the critical current dependence on magnetic field over a
+wide range. The low-field results are shown in Fig. 2(b).
+We measured 100 CVCs at given magnetic field values
+to obtain critical current statistics. The procedure of
+collecting statistics is important in our case because the
+transition to the R state may occur at different currents
+at the same magnetic field, see Fig. 2(b). This effect
+arises from the existence of different vorticity states at
+the same value of magnetic field, which is a manifestation
+
+of the multivalued nature of the nanobridge CPR. Similar
+effects were previously observed in asymmetric SQUIDs
+with two different nanobridges [67, 68]. At the same time,
+the results for higher magnetic fields are presented in
+Fig. 2(c). In this case, magnetic fluxes penetrate the SNS
+junction, inducing Fraunhofer-like modulation of SQUID
+oscillations.
+We fit the Ic (B) dependence in Figs. 2(b) and (c) simultaneously maximizing the absolute value of the supercurrent given by Eq. (1). As demonstrated earlier
+in Ref. [81], the phase values at which critical currents
+are reached
+can 
+be either ±φc or φ∗± = ±2πNv± ±
+
+nb
+arccos − φc IIsns
+(ϕ)
+
+− ϕ, which correspond to the max-
+
+imum/minimum positions (numerated by integer vorticity numbers Nv± ) within the range [−φc , φc ] (for more
+details, see Appendix C).
+When critical currents are reached at the ±φc , they
+take the following values
+Ic± = Inb + Isns (ϕ) sin(φc ± ϕ),
+
+(5)
+
+which corresponds to the steep (almost vertical) segments
+in the Ic (B) dependence in Fig. 2(b).
+Conversely, when critical currents are reached at φ∗± ,
+
+5
+
+FIG. 3. SQUID measurements under radio-frequency (rf) irradiation at Φ = 3Φ0 /4. (a) Comparison between IV curves of
+the SQUID with applied microwave irradiation at frequency frf = 2.888 GHz (solid red) and without it (blue dashed line). (b)
+Zoomed area of the backward branch of the IV curve near Ir with applied microwave irradiation. The lines bend slightly at the
+voltages Vn = (n − 1/2)V0 with integer n and V0 = Φ0 frf , shown by dashed gray lines. (c) The same data as in panel (b) but
+with the horizontal axis representing the calculated differential resistance R = dV /dI. The voltage is now expressed in units of
+V0 . (d) Dependence of the differential resistance on the backward branches vs current through the sample and rf power near
+Ir± .
+
+they are given by the expression
+s
+
+2
+Inb
+Ic± = Isns (ϕ) 1 −
+φc Isns (ϕ)
+
+
+
+
+Inb
+Inb
++
+2πNv± + arccos −
+∓ϕ ,
+φc
+φc Isns (ϕ)
+
+
+(6)
+
+which corresponds to the not-so-steep linear segments in
+Fig. 2(b). According to this expression, there are multiple critical current values at the fixed magnetic field,
+distinguished by the vorticity number Nv± . In Fig. 2(b)
+Ic max corresponds to the highest branch (with the largest
+critical current value), while Ic2 represents the lower (second) critical current branch. The Ic2 branch does not
+align perfectly with the experimental data, likely because
+of a slight deviation of the nanobridge CPR from ideal
+linearity assumed in the theory.
+Nevertheless, our theoretical model successfully reproduces the overall shapes of the experimentally measured
+Ic (B) curves. At the same time, we emphasize that our
+theory does not account for the apparent “discontinuities” in the Ic (B) dependence, which manifest themselves in the absence of experimental points in some
+segments of the experimental curve. These discontinuities are attributed to stochastic switching from different
+vorticity states to the R state and the metastability of
+these vorticity states, as previously discussed in Ref. [66].
+However, these effects are not the focus of our research.
+To evaluate the strength of the diode effect in the dc
+regime, we calculate the diode efficiency, η = |(Ic+ −
+Ic− )|/(Ic+ + Ic− ), considering only branches with the
+largest Ic± values at fixed magnetic field. In our system, the diode efficiency reaches its maximum value
+of η = 2.6%, which corresponds to ≈ 4 µA difference.
+
+Hence, our measurements reveal only weak asymmetry
+in the critical currents despite the high asymmetry of
+the junctions. This can be explained by vorticity. Indeed, critical currents of the SQUID are reached in the
+vicinities of ±φc , which corresponds to Nv± ≫ 1 vortices
+trapped inside the loop. At the same time, vorticities
+differ by one at Ic± (B). Therefore, the difference in critical currents is approximately ∆Ic ∼ Inb (2π/φc ) which is
+close to the experimental value of 4 µA and small because
+of the large value of φc [see Fig. 2(f)].
+
+Finally, in addition to studying the critical current
+asymmetry, we applied the fitting procedure described
+above to the set of measurements at different temperatures. This allows us to extract the temperature dependencies of the main parameters of the system, which
+are shown in Figs. 2(d)–2(f) (for more details, see Appendix D). The critical currents of both JJs vanish at
+temperatures significantly lower than the critical temperature of the niobium electrodes, which is approximately 8 K. We relate the low critical temperature of
+the nanobridge to its small thickness (20 nm) and the
+fabrication technique: The film was produced using the
+thermal sputtering method, resulting in numerous defects
+and high oxidation of the niobium. At the same time, for
+the SNS junction, we attribute the reduced critical temperature to the fact that the Josephson coupling occurs
+not directly between the niobium electrodes. Instead,
+it emerges between flake regions beneath the electrodes,
+where only weak proximity-induced superconductivity is
+present. This effect was previously investigated in Ref.
+[88] for similar flakes.
+
+6
+
+FIG. 4. Demonstration of the diode effect in Shapiro features (thermally smeared steps) in magnetic field, which reveal
+themselves as minima of R = dV /dI. (a) Five plots of the differential resistance R dependence as a function of voltage at
+different magnetic fields. The data are obtained by numerically differentiating experimentally measured IV curves with applied
+microwave irradiation at frf = 3.754 GHz and power Prf = 1 mW. The red and blue lines correspond to the positive and
+negative current Idc through the SQUID, respectively. The dashed gray lines indicate the reference value R0 . (b) Results of
+the theoretical calculations within the RSJ model [Eqs. (7) and (8)] with T = 1.8 K, φc = 30, Isns = 0.3 µA, Inb = 12 µA,
+Iac = 12 µA. The theory qualitatively reproduces the experimentally observed features. However, the horizontal axis in the
+theoretical subplots had to be manually shifted by 1/2, see Appendix E for discussion.
+
+B.
+
+Shapiro steps measurements
+
+In addition to measuring the CVC without external irradiation, we also explore the unique effects that occur
+when microwave irradiation is applied to the sample. We
+conducted our experiments at different frequencies in the
+2.8–3.8 GHz range and observed qualitatively similar behavior. Figure 3 shows an example of a change in the
+SQUID IV curve under such conditions with rf frequency
+frf = 2.888 GHz. As expected, the critical current decreases, since an alternating current is added to the direct current. However, Shapiro steps are not formed on
+the forward current sweep branch; instead, the system
+jumps directly into a normal state. One reason of is the
+large self-heating effect, which suppresses superconducting properties. The second reason is the large voltage
+values [see red and blue vertical segments that lie outside
+the gray box in Fig. 3(a)], which correspond to the large
+numbers of Shapiro features characterized by small sizes
+and strong thermal smearing, making them unobservable
+in the experiment. Therefore, we take a closer look at the
+reverse R branch near Ir shown in Fig. 3(b) where the
+
+effective temperature and voltage values are significantly
+lower. In this part of the CVC, we observe synchronization of the JJs with external electromagnetic irradiation
+similar to those explored in Refs. [83, 89]. However, in
+our measurements, the observed peculiarities on the IV
+curve do not form clear steps but rather smeared features, which are caused by thermal fluctuations. That
+is why we address them as Shapiro features instead of
+Shapiro steps. This effect is clearly visible in the differential resistance dependence, plotted in Fig. 3(c), which
+demonstrates periodic dips of about 30% of the maximum value. These features occur at periodic intervals
+of V0 = 6.0 µV, corresponding to the frequency of the
+applied irradiation frf = 2.888 GHz. However, all stripes
+are located at voltages V0 (n−1/2) with integer n demonstrating a shift of V0 /2 from the expected positions (for
+the discussion of possible reasons, see Appendix E).
+The evolution of the differential resistance with rf
+power is shown in Fig. 3(d). The dark blue region corresponds to the S state of the SQUID. Its border represents
+the critical current Ir of the backward branch of the CVC,
+which monotonically decreases with RF power. The blue
+
+7
+stripes in the R state correspond to the Shapiro features
+that change their positions along the current axis, but
+remain at the same voltages throughout the entire power
+range. Another notable feature is the abrupt disappearance of the critical currents Ir± as a function of Prf [upper
+border of blue region in Fig 3(d)]. In this region, where
+Prf ≳ 0.5 dBm, the superconducting properties are still
+present, which are manifested by the Shapiro features [see
+Fig. 8(f) below]. Similar peculiarities were previously observed in Refs. [89–91] where they were attributed to the
+heating effect caused by microwave irradiation. However,
+in our research, we do not focus on this region of Prf .
+To investigate the JDE in the Shapiro features, we
+measure them in different magnetic fields. Figure 4(a)
+shows the evolution of differential resistance as the magnetic flux through the SQUID changes. At zero field,
+the Rdiff (V ) dependencies are nearly identical for both
+current directions. Their minor difference is caused by a
+slight deviation of the magnetic field from zero in the
+experiment. With increasing field, the R(V ) dips on
+the positive current branch become smaller in amplitude,
+while on the negative branch they increase. Their asymmetry reaches a maximum at Φ = Φ0 /4. Then, the process is reversed, and at Φ0 /2 the curves coincide again.
+At 3Φ0 /4, the difference reaches the maximum again but
+with the opposite diode effect sign. Finally, at Φ0 the
+state of the SQUID becomes indistinguishable from the
+state at zero flux, so the curves coincide again.
+In this way, we demonstrate that the amplitude of differential resistance dips differs between the positive and
+negative current directions, which is one of the manifestations of the JDE. The diode effect reaches its maximum
+at magnetic fluxes Φ ≈ Φ0 /4 and Φ ≈ 3Φ0 /4, where the
+Shapiro features nearly vanish for one current direction
+while remaining distinctly visible for the opposite direction. This observation highlights a strong asymmetry in
+the Shapiro features, contrasting with the relatively weak
+asymmetry observed in the critical currents measured in
+the absence of microwave irradiation.
+To confirm that the observed asymmetry of the Shapiro
+steps is caused by the asymmetric structure of the
+SQUID, we numerically simulate the phase dynamics using the RSJ model [75, 76] with the supercurrent given
+by Eq. (1),
+dφ/dτ + Is (φ)/Inb = jdc + jac cos ωτ + ξ(τ ),
+v = dφ/dτ,
+
+(7)
+(8)
+
+where we define the dimensionless variables: τ = ωJ t,
+v = V /Inb R, jdc = Idc /Inb , jac = Iac /Inb , ξ = If /Inb ,
+and ω = Ω/ωJ . Here, Idc and Iac represent the dc and ac
+currents, respectively, If is the fluctuating thermal current, Ω is the frequency of the ac current, R0 = 3.6 Ω is
+the normal resistance taken from the experiment (see Table I for sample N7 which is the main object of our study),
+and ωJ = (2e/ℏ)Inb R0 is the Josephson frequency. The
+thermal fluctuations in Eq. (7) are considered as white
+noise with correlator ⟨ξ(τ )ξ(τ ′ )⟩ = 2T δ(τ − τ ′ ) and dimensionless temperature T = 2eT /ℏInb . While the tem-
+
+perature generally varies along the IV curve because of
+the Joule heating, it can be treated as constant within
+narrow intervals of V /V0 .
+As a result, we obtain the CVC, v(jdc ) dependence,
+where . . . indicates time-averaging. The comparison of
+theoretical results with experimental data is presented
+in Fig. 4. While full numerical agreement has not been
+achieved, our model qualitatively describes the asymmetric dependence of the Shapiro features on magnetic flux.
+However, a notable inconsistency can be observed: the
+experimental Shapiro steps appear to be less influenced
+by thermal fluctuations, exhibiting a slower decrease in
+amplitude with increasing voltage than our theory predicts. One potential explanation for this discrepancy
+might be the overestimation of the effective temperature
+used in our numerical simulations. Nonetheless, additional results obtained at lower temperatures, presented
+in Appendix F, exhibit the same issue and do not align
+quantitatively with the experimental data. Therefore,
+this mismatch between theory and experiment might be
+attributed to the non-equilibrium processes in the electronic subsystem that cannot be characterized by a single effective temperature parameter T and lie beyond the
+theoretical framework of the RSJ model.
+
+IV.
+
+ANALYSIS OF THE SHAPIRO FEATURES
+
+For a more detailed analysis of the Shapiro feature
+asymmetry, we examine its variation with magnetic field
+and rf power. We quantify the nth Shapiro feature depths
+(for both positive and negative integers) using the relative change in differential resistance at the feature centers
+R± from the value in the normal state: ∆R± = (R0 −R± )
+(for more details about extracting these values from the
+experimental data, see Appendix G). For definiteness, we
+focus on the Shapiro feature with n = ±7 (corresponds
+to |V |/V0 = 6.5 in the experiment). At the same time,
+features with other numbers demonstrate similar behavior.
+The obtained experimental result for the Shapiro features dependence on the magnetic field is shown in
+Fig. 5(a). The curves for both current directions exhibit a periodic dependence on the field and can be
+well fitted by a sinusoidal function, which is plotted in
+the same figure with solid lines. The oscillation periods obtained during the fit for the positive and negative
+branches are ∆B+ = ∆B− = 1.04 G, which exactly coincide with the SQUID period measured by the critical
+current oscillations, see Fig. 2(b). Furthermore, we investigate the dependence of the Shapiro features asymmetry, ∆R+ −∆R− , over a wider range of magnetic field, as
+demonstrated in Fig. 5(b). At larger magnetic field values, the envelope of the oscillations in the asymmetry of
+the Shapiro features has the same form as the Fraunhofer
+dependence of the SQUID critical currents Ic± on the
+magnetic field, see Fig. 2(c). These observations demonstrate that the diode effect in the Shapiro features arises
+
+8
+
+FIG. 5. Quantitative analysis of the Shapiro features and comparison between the experimental data, shown in the top row,
+and the theoretical results [obtained from Eq. (12)], shown in the bottom. (a) and (d) Dependence of the Shapiro features
+depths ∆R± on the magnetic field at |V |/V0 = 6.5 (corresponding to n = ±7 in the theoretical model). The dots represent
+experimental data for positive (red) and negative (blue) current directions, collected with an applied microwave signal at a
+frequency frf = 3.754 GHz and a generator power Prf = 1 mW. The solid lines indicate fits with a sinusoidal function, which
+show good agreement with the experimental points. The theoretical results are also close to a sinusoidal function. (b) and (e)
+Fraunhofer envelope of the Shapiro features depths asymmetry ∆R+ − ∆R− over a wide range of the fields. The oscillations
+of the diode effect strength with SQUID periodicity at small magnetic fields and Fraunhofer envelope at large magnetic fields
+demonstrate that the asymmetry of the Shapiro features arises from the interplay of the two junctions. (c) and (f) Dependence
+of ∆R± on microwave power at a fixed magnetic field B = 0.8 G, which corresponds to a flux Φ/Φ0 ≈ 0.77. The curves exhibit
+a nonmonotonic dependence with periodic changes in the sign of the diode effect. We attribute this behavior to the heating
+effect of microwave irradiation, which manifests itself through the temperature dependence of φc . The crossings of the curves
+correspond to the condition sin φc (T ) = 0.
+
+because of the asymmetric structure of the SQUID.
+At the same time, the study of the asymmetry of the
+Shapiro features reveals their non-monotonic dependence
+on the power of the microwave signal. As demonstrated
+in Fig. 5(c), at a fixed magnetic flux value through the
+SQUID, Φ = 3Φ0 /4, with an increase in the power of the
+rf signal, the depths of the Shapiro features alternately
+reach their maxima in the positive and negative current
+directions. However, this behavior is radically different
+from the Bessel-law dependence typically observed for the
+amplitudes of the Shapiro features in similar experiments
+with JJs.
+To explain these results, we develop a theoretical
+framework using the “Slowly Varying Phase” perturbation method [75, 92, 93] concerning the smallness of the
+supercurrent and thermal fluctuations compared to the
+dc current. In addition, we focus on the vicinity of the
+centers of the Shapiro features. In this case, we sepa-
+
+rate the phase dynamics into “fast” [varying on a short
+time scale τ ≲ (nω)−1 ] and “slow” [varying on a long
+time scale τ ≫ (nω)−1 ] parts, and then conduct averaging over an intermediate timescale (nω)−1 ≪ ∆τ ≪
+T −1 , (v̂ − nω)−1 . We use the “hat” symbol for functions
+averaged over such timescales. This procedure allows us
+to exclude fast dynamics and derive the effective (Josephson) equations (for more details see Appendix H) for slow
+functions,
+θ̇n (τ ) + Iˆs± (τ ) = ∆j + ξ(τ ),
+
+(9)
+
+where θ̇n and ∆j are deviations of the average (over time)
+voltage and current from the centers of the nth Shapiro
+features:
+v̂(τ ) = nω + θ̇n (τ ),
+
+jdc = nω + A0± + ∆j,
+
+(10)
+
+and Iˆs± (τ ) are the averaged supercurrents in the R state
+
+9
+(excluding the A0± term, which determines the location of the Shapiro feature) for positive and negative
+CVC branches, respectively. The time dependence of
+Iˆs± (τ ) enters through the effective current-phase relations Iˆs± (θn ). Equation (9) can be solved numerically.
+The effective current-phase relations Iˆs± (θn ) differ
+from the sawtooth CPR discussed previously in Sec. II B.
+Their Fourier harmonics contain additional factors given
+by Bessel functions, see Eq. (H3). As a result of this,
+the amplitudes decrease faster than in the case of the
+sawtooth CPR. A reasonable approximation is then the
+“single-harmonic approximation”, where only the first
+harmonic in the effective CPR is taken into account,
+
+Iˆs± (τ ) = A1± Jn (jac /ω) sin θn (τ ) .
+(11)
+As we demonstrate below, this approximation provides a
+qualitatively correct description of the diode effect in our
+system because it captures the main mechanism, A1− ̸=
+A1+ asymmetry.
+The effective equation on the phase θn [Eq. (9)] with
+supercurrent given by Eq. (11) takes the form of the standard Josephson equation for a sinusoidal junction (however, with different critical currents for opposite current
+directions). Such equations have been studied in detail
+in many theoretical works [94–97], allowing us to directly
+apply the well-known expressions for the CVC to our case
+(for more details, see Appendix I). As a result, we obtain
+the differential resistance at the centers of the Shapiro
+features:
+(
+R±
+(2π/T± ) exp(−2/T± ), T± ≪ 1,
+−2
+= I0 (1/T± ) =
+R0
+(1 − 1/2T±2 ), T± ≫ 1,
+(12)
+where I0 is the modified Bessel function and T± =
+T /A1± Jn (jac /ω) is the effective dimensionless temperature that determines the strength of thermal fluctuation
+in different current directions near the centers of the nth
+Shapiro features.
+The dependence of the Shapiro features on the magnetic field obtained from the theoretical model is shown
+in Figs. 5(d) and (e). The curves in Fig. 5(d), originating from the exact Bessel function I0 in Eq. (12), demonstrate an almost harmonic dependence on the magnetic
+field. Analytically, the dependence of this type arises
+in the high-temperature limit of Eq. (12), ∆R± /R0 =
+A21± Jn2 (jac /ω)/2T 2 ∝ const+Isns (ϕ) cos (ϕ ± φc ), see Eq.
+(3). At the same time, the Isns (ϕ) dependence manifests
+itself at larger magnetic fields, leading to the Fraunhofer
+envelope of the Shapiro features asymmetry, see Fig. 5(e).
+Theoretical results for the dependence of the Shapiro
+features’ depths on the power of ac irradiation are shown
+in Fig. 5(f). In our consideration, we take into account
+both effects of external irradiation, which are the generation of the ac current jac and heating of the sample
+(for more details, see Appendix J). Our findings indicate
+that it is the heating effect responsible for the observed
+changes in the sign of the diode effect. This occurs because the critical phase φc depends on temperature, as
+
+shown in Fig. 2(f). As the power of irradiation increases,
+it raises the temperature, which in turn changes the sign
+of sin φc with the corresponding change in the diode effect sign.
+
+V.
+A.
+
+DISCUSSION
+
+Manifestation of the multivalued CPR in the
+Shapiro steps asymmetry
+
+In the above consideration, we have primarily focused
+on the asymmetry of the Shapiro features, which occur under applied external microwave irradiation. As
+shown in Fig. 4, this asymmetry can be pronounced at
+specific values of the magnetic fluxes, Φ ≈ Φ0 /4 and
+Φ ≈ 3Φ0 /4. Theoretically, we explain this effect as arising from the asymmetry in the amplitudes of the first harmonics A1+ ̸= A1− at sin ϕ sin φc ̸= 0. Confirmation of
+the dependence of this asymmetry on sin φc is evident in
+the relationship between the strength of the diode effect
+and the power of microwave irradiation [see Fig. 5(c)].
+The point is that the temperature increase caused by irradiation effectively changes φc [see Fig. 2(f)], leading to
+periodic changes in the sign of the diode effect. This is
+a manifestation of the multivalued nature of the diode
+effect in the R state. In contrast, in SQUIDs solely consisting of JJs with single-valued CPRs, this mechanism
+of the diode effect does not exist.
+However, even for single-valued junctions, it is possible to observe asymmetry in the Shapiro steps [77–80].
+In this case, the diode effect is caused by phase shifts between different harmonics in the effective SQUID currentphase relation [51, 52]. It is important to note that this
+mechanism of the Shapiro steps asymmetry differs from
+the one described above. We also emphasise that in
+previous works, asymmetries in only a few of the first
+Shapiro steps were investigated, while we observe up to
+ten asymmetric Shapiro features.
+
+B.
+
+Comparison of asymmetries in the critical
+current and Shapiro features
+
+Additionally, we would like to address the coexistence
+of the weak diode effect in critical currents alongside the
+noticeable asymmetry observed in the Shapiro features.
+In the S state, as mentioned in Sec. III A, the asymmetry of the critical currents reaches a maximum value
+∆Ic = 2πInb /φc . At the same time, the diode efficiency
+η ≈ πInb /φc (Inb + Isns ) ≈ 3% is small because of the
+small critical current asymmetry compared to the large
+critical current values that are mostly determined by the
+zeroth harmonic contributions A0± [see Eq. (2)]. This is
+a consequence of the large φc = 58 value at T = 50 mK.
+However, in the R state where Shapiro features are
+measured, the temperature is high, T ∼ (1−3) K, in contrast to the S state. In this regime, the critical currents
+
+10
+are strongly suppressed, see Figs. 2(d) and 2(e). This explains the strong smearing, which leads to small depths of
+the Shapiro features observed in the experiment. At the
+same time, the Shapiro steps’ asymmetry is determined
+by the A1± harmonics [see Eq. (3)], which depend on the
+relation between Isns and the amplitude of the first har(nb)
+monic of the sawtooth nanobridge CPR, I1 = 2Inb /φc .
+In the R state, they are comparable to each other. For
+(nb)
+example, Isns ≈ 0.3 µA and I1
+≈ 0.8 µA at T = 1.8 K.
+This leads to the fact that the relative asymmetry between A1+ and A1− is pronounced, resulting in strong
+asymmetry of the Shapiro features despite their small
+sizes. To summarize, the asymmetry of the critical currents is suppressed by the large φc value, while the asymmetry of the Shapiro features is strong because of the
+pronounced relative asymmetry between A1+ and A1− .
+C.
+
+Optimization of the critical phase value to
+enhance the diode effect
+
+As follows from the above discussion, to enhance the
+difference in the SQUID critical current for positive and
+negative directions and use it as a Josephson diode operating in the dc regime, it is essential to decrease the
+critical phase value. At the same time, to reach a high
+relative asymmetry between A1+ and A1− in order to
+observe significant asymmetry in the Shapiro features in
+the ac regime, it is necessary to adjust the critical phase
+(nb)
+value so that Isns and I1
+become comparable. This
+may involve both increasing and decreasing the critical
+phase value. Note that this parameter is directly proportional to the length of the nanobridge, thus it can be
+controlled by selecting an appropriate nanobridge size.
+Alternatively, the critical phase value can be reduced by
+increasing the effective temperature, achievable through
+adjustments to the cryostat temperature or by applying
+external irradiation.
+D.
+
+Increasing the visibility of the Shapiro steps
+
+In our experiment, we observe smeared Shapiro steps,
+manifested as dips in the differential resistance of up
+to 30%. This behavior is attributed to thermal fluctuations arising from the self-heating effects. The impact
+of these thermal fluctuations on the system dynamics can
+be quantitatively described using the effective normalized
+temperature T [see Eq. (7)]. Several strategies can be
+proposed to reduce this parameter and thereby enhance
+the visibility of the Shapiro features. One approach is
+to increase the critical currents of both junctions, which
+would suppress the relative influence of thermal fluctuations. For instance, Ref. [89] demonstrates clear Shapiro
+steps (a complete drop in resistance to zero) for a single
+nanobridge with critical current an order of magnitude
+larger than in our system. Another strategy involves mitigating the self-heating effects, which are responsible for
+
+the high effective temperature on the backward branch
+of the SQUID’s CVC. One potential solution is to improve heat dissipation by using a substrate with higher
+thermal conductivity at cryogenic temperatures than the
+Si/SiO2 used in our setup — for example, non-oxidized
+silicon or sapphire. Additionally, thermal hysteresis in
+superconducting nanobridges can be reduced by depositing a normal metal layer to enhance heat transfer [98].
+Finally, the introduction of a shunt resistance across the
+device can also be employed as an effective strategy to
+reduce the dissipation.
+
+E.
+
+Selecting a junction accompanying the
+nanobridge in the SQUID
+
+In this work, the Shapiro diode effect was investigated
+in the SQUID containing a Josephson junction formed
+through a Bi2 Te2 Se flake. This sample was selected based
+on our previous research [81], which demonstrates that,
+despite the specificity of the material, such a junction exhibits a standard sinusoidal CPR — a key requirement for
+our model. At the same time, a sinusoidal CPR is also
+typical for other types of Josephson junctions that use
+metals or insulators as barriers [76]. Consequently, our
+results are broadly applicable to such systems, with no
+fundamental constraints on the sinusoidal junction type.
+We emphasize that achieving high diode efficiency requires the sinusoidal junction critical current to be comparable to the first harmonic of the nanobridge sawtooth
+CPR.
+
+F.
+
+Limitations of the theoretical model
+
+Finally, we note that some factors and features corresponding to the complex behavior of the system are
+not captured by our RSJ model, particularly the Shapiro
+features shift. In addition, there may be other mechanisms of temperature relaxation besides the electronphonon mechanism assumed in our consideration. Taking them into account might increase the widths of the
+curves in Fig. 5(f), which are currently smaller than the
+experimentally observed ones. Furthermore, the nonequilibrium processes, which cannot be described by the
+effective temperature T , might also occur in the system, potentially explaining the discrepancy between experiment and theory in Fig. 4, where the experimental
+Shapiro steps exhibit a more gradual decrease with voltage than the theory predicts. At the same time, our
+relatively simple model qualitatively reproduces all the
+peculiarities observed in the experiment and relates them
+to the properties of the junctions. Hence, we expect that
+complicating the model will improve the results quantitatively but will not lead to qualitatively new features of
+the diode effect in the system.
+
+11
+VI.
+
+CONCLUSIONS
+
+We have experimentally investigated the Josephson
+diode effect in the asymmetric SQUID containing a sinusoidal SNS junction and a superconducting nanobridge
+with a multivalued, almost linear current-phase relation.
+The multivalued nature of the current-phase relation of
+the nanobridge manifests itself in the nontrivial value of
+the critical phase φc ≫ π which distinguishes it from
+conventional single-valued junctions.
+We conducted both dc and ac measurements of the
+SQUID current-voltage characteristics. While the dc
+measurements revealed only weak critical current asymmetry, they confirmed the multivalued nature of the
+SQUID behavior and allowed us to extract the temperature dependence of the junction parameters. At the
+same time, in the ac measurements, we observed strong
+asymmetry of the Shapiro features (for different current
+directions) with feature numbers up to 10 on the backward part of the Joule-heating-driven hysteretic CVC.
+We investigated the dependence of the Shapiro features on the magnetic field for both current directions. In
+this case, we observed periodic oscillations of the Shapiro
+diode effect strength at low magnetic fields and a Fraunhofer envelope at higher magnetic fields. We also conducted measurements of the Shapiro features asymmetry
+concerning the power of external microwave irradiation
+Prf . These measurements demonstrated nonmonotonic
+behavior of the Shapiro features, which differs significantly from the expected Bessel-law dependence. All
+the above-mentioned dependencies show switching of the
+diode effect sign.
+To explain the observed peculiarities, we developed a
+theoretical framework using the method of slowly varying phase and performed numerical simulations within
+the RSJ model with thermal noise. The results have
+demonstrated qualitatively good agreement between the
+theoretical predictions and experimental data.
+The key observation of our theoretical model is that
+in our asymmetric SQUID at finite magnetic fields, the
+amplitudes of the Josephson harmonics generally differ
+for opposite current directions (A1+ ̸= A1− in our case),
+leading to strong asymmetry of the Shapiro features.
+This effect requires a nontrivial value of the critical phase
+sin φc ̸= 0 and, hence, is not present in SQUIDs where
+both junctions are single-valued.
+The sign and strength of the diode effect in the Shapiro
+features are controlled by the sin ϕ sin φc combination.
+Therefore, the periodic dependence of Shapiro features
+asymmetry on the magnetic field corresponds to the
+SQUID oscillations, while their nonmonotonic behavior
+concerning the power of microwave irradiation results
+from the heating effect and the corresponding temperature dependence of the critical phase φc (T ).
+
+ACKNOWLEDGMENTS
+
+We thank M. Yu. Kupriyanov for useful discussions.
+This work was supported by the Ministry of Science and
+Higher Education of the Russian Federation (Grant No.
+075-15-2025-010, sample fabrication; Grant No. FSMG2023-0014, data analysis and approximations) and by the
+Russian Science Foundation (Grant No. 25-42-00058,
+low-temperature measurements). G.S.S. acknowledges
+support from the Ministry of Science and Higher Education of the Russian Federation (Project No. FFWR-20240017). Ya.V.F. was supported by the Basic Research
+Program of HSE.
+
+Appendix A: Estimation of φc
+
+We estimate φc assuming that the critical current of
+the niobium nanobridge Inb corresponds to the depairing current. The critical phase can be expressed as
+φc = φnp + φb , where φnp is the phase drop along the
+narrow part of the nanobridge and φb is the phase drop
+along its banks. Our nanobridge is long (in units of
+coherence length in niobium, ξNb ∼ 10 nm) and diffusive. In this case, the Usadel model is applicable and
+predicts that the phase gradient in the nanobridge is
+equal to 0.68/ξNb (see Fig. 2 in Ref. [99]) resulting in
+φnp = 0.68lnp /ξNb ≈ 26, where lnp = 0.38 µm is the
+length of the narrow part. For φb calculation, we use
+the fact that the phase drop along a segment at a fixed
+current behaves as φseg ∝ lseg /wseg , where lseg and wseg
+are the segment length and width, respectively. This relates the phase drop along the banks to the phase drop
+along the narrow part as φb = φnp (lb wnp /lnp wb ), where
+lb = 3.12 µm is the overall banks length, wb = 0.7 µm
+and wnp = 0.22 µm are the widths of the banks and
+the narrow part of the nanobridge, respectively. As
+a result, we obtain an estimate of the critical phase
+φc = φnp (1 + lb wnp /lnp wb ) ≈ 93.
+Generally, Inb can be smaller than the depairing current, which would lead to a smaller value of the critical
+phase compared to the above estimate. This could explain the difference between the value obtained above and
+that determined from the direct fitting of the experimental data, see Fig. 2(f).
+
+Appendix B: Geometric inductances
+
+To ensure that the applied magnetic flux Φ almost
+precisely coincides with the magnetic flux through the
+SQUID loop, we estimate the geometric inductances of
+the SQUID arms.
+Generally, the total magnetic flux through the loop is
+the sum of the external flux Φ and the flux generated by
+the circulating current Icirc , which is given by Lloop Icirc ,
+where Lloop is the geometric inductance. Using electromagnetic modeling with the sample geometry, we cal-
+
+12
+culated Lloop = 10 pH. The inductance of each SQUID
+arm can be estimated as Larm = Lloop /2 = 5 pH, which
+turns out to be much smaller than the inductances of
+the SNS junction Lsns = Φ0 /2πIsns = 14 pH and the
+nanobridge Lnb = φc Φ0 /2πInb = 340 pH calculated at
+the lowest temperature T = 50 mK. In addition, when
+we discuss Shapiro steps, we take into account that they
+appear on the overheated backward branch of the CVC,
+which leads to a significant decrease in critical currents.
+This means that the inductances of the JJs become several times larger. Therefore, in our model, we neglect the
+effect of the geometric inductance and assume that the
+flux in the SQUID equals the external flux Φ.
+
+Appendix C: Asymmetry of the critical currents
+
+The critical currents of the SQUID in different current directions are given by the extrema of supercurrent
+defined by Eq. (1):
+
+Ic± = max(min)φ
+
+Inb φ
+Isns (ϕ) sin(φ + ϕ) +
+φc
+
+2Inb
+[π (Nv+ − Nv− ) − ϕ] .
+(C3)
+φc
+Finally, it is possible that one critical current is reached
+at ±φc , while the second one is reached at φ∗± . The
+results are illustrated in Figs. 6(b) and (c).
+∆Ic =
+
+Appendix D: Temperature dependence of junction
+parameters
+
+We approximate the experimentally measured critical currents Inb , Isns , and critical phase φc dependencies on the temperature T in the following way. For
+the nanobridge, we assume the Likharev-Yakobson model
+[57–59] formulated for long and narrow superconducting
+bridges. In the framework of this model, the critical current and critical phase have the following temperature
+dependencies,
+(f )
+
+Inb (T ) = Inb (1 − T /Ttr )3/2 ,
+p
+)
+φc (T ) = φ(f
+1 − T /Ttr ,
+c
+
+
+, (C1)
+
+(f )
+
+where φ lies within the range [−φc , φc ]. As discussed
+in Sec.III A, these extrema may occur either at the
+∗
+boundaries
+±φc or
+
+ at the positions φ± = ±2πNv± ±
+
+nb
+arccos − φc IIsns
+(ϕ) − ϕ numerated by integer vorticity
+numbers Nv± .
+When critical currents are reached at the ±φc , they
+take the values determined by Eq. (5). This behavior
+corresponds to the steep (almost vertical) segments in the
+Ic± (B) dependence in Fig. 6(a) [which is the reproduced
+theoretical curves for the highest branches of the critical
+currents from Fig. 2(b)]. However, this is nothing more
+than part of the sinusoidal CPR of the SNS junction.
+At the same time, when critical currents are reached at
+φ∗± , they are given by Eq. (6). This behavior corresponds
+to the not-so-steep linear segments in Fig. 6(a), and this
+is nothing more than a part of the linear CPR of the
+nanobridge.
+Note that φ∗± exists only when the critical current
+of the SNS junction is large enough so that κ =
+Isns (ϕ)φc /Inb > 1. At the same time, at large magnetic
+fields, this condition is violated because of Fraunhofer
+suppression of the SNS critical current. Therefore, in
+this regime, critical currents are reached at ±φc . However, we do not conduct our measurements in such strong
+magnetic fields and do not observe such a phenomenon.
+Additionally, we examine the asymmetry of the critical
+current, defined as ∆Ic (ϕ) = Ic+ (ϕ) − Ic− (ϕ). In the
+regime where both critical currents are reached at ±φc ,
+we find
+
+∆Ic = 2Isns (ϕ) cos φc sin ϕ.
+
+reached at φ∗± , we obtain
+
+(C2)
+
+In the other regime, when both critical currents are
+
+(D1)
+(D2)
+
+(f )
+
+where we take Inb = 88 µA, φc = 62, and Ttr = 2.4 K
+as fitting parameters. Here, Ttr is the transition (critical) temperature of the nanobridge, which is significantly
+smaller than the critical temperature of the thick niobium, as mentioned in Sec. III A. The results of our approximation are presented in Figs. 2(e) and (f), respectively.
+At the same time, we consider the junction formed by
+the flake of Bi2 Te2 Se as a long dirty SNS junction, with
+the critical current given by the expression from Refs.
+[100, 101],
+∞
+
+Isns (T ) =
+
+64πT X L
+h
+eRsns n=0 Lωn
+
+∆2 exp (−L/Lωn )
+i2 ,
+p
+ωn + Ωn + 2(Ω2n + ωn Ωn )
+
+(D3)
+p
+2 + ∆2 , and L
+where
+ω
+=
+(2n
++
+1)πT
+,
+Ω
+=
+ω
+n
+n
+ω
+n
+n =
+p
+ℏD/2ωn .
+Here, Rsns is the effective resistance of the SNS junction, L is the distance between the superconducting electrodes, D is the diffusion constant of the N metal, and
+∆ is the proximity-induced superconducting gap of the
+regions beneath the flake. Experimentally, the critical
+temperature of the SNS junction is found to be approximately equal to the transition temperature of the
+nanobridge. Therefore, for simplicity, we assume that
+the SNS junction has the same critical temperature Ttr
+(which enters ∆) as the nanobridge. We take Rsns and
+the relation between
+p the junction length L and the thermal length LT = ℏD/2πT at T = 2 K as fitting parameters. To obtain the results presented in Fig. 2(d),
+we choose the following values: Rsns = 15.5 Ω, and
+L/LT = 5.73 at T = 2 K. In the relevant temperature
+range, T ∼ (1 − 3) K, the assumption that the SNS junction is long is satisfied since L/LT ∼ 5.
+
+13
+
+FIG. 6. Asymmetry of the critical currents in the dc regime (theory). (a) Reproduced theoretical curves from Fig. 2(b) for the
+highest branches of the critical current dependencies on the magnetic field B through the loop for positive (red) and negative
+(blue) current directions. In this scale, parts of sinusoidal CPR [see Eq. (5)] look almost vertical. At the same time, the not-sosteep linear segments are the parts of the nanobridge CPR [see Eq. (6)]. (b) Dependence of the critical current asymmetry ∆Ic
+on the magnetic field. (c) Dependence of the phases φmax corresponding to the critical current, on the magnetic field for positive
+(red) and negative (blue) current directions. The steep (almost vertical) segments in panel (a) correspond to φmax = ±φc [flat
+parts of φmax (B)], while the not-so-steep linear segments correspond to the linear parts of φmax (B). The transition between
+the two regimes of φmax (B) is abrupt. The parameters used for plotting the curves are taken from Table I for sample N7.
+
+Appendix E: Shapiro steps shift
+
+The reasons for the Shapiro steps to be located at halfinteger values in the case of the discussed sample (N7)
+remain unclear. During this research, three samples were
+thoroughly measured, and the additional data can be
+found in the Appendix K. First of all, the phenomena
+discussed in this paper are not unique to a single sample,
+since the same shift and diode effect in Shapiro steps were
+observed in another SQUID (N8) with similar parameters
+(see Table I), as can be seen in Figs. 8(a) and (b). At the
+same time, both effects are absent in data from sample
+N5, see Figs. 8(c) and (d). We attribute this to the fact
+that the critical current through the SNS junction in this
+sample is an order of magnitude smaller than in two other
+samples and than the critical current of the nanobridge
+(see Table I). This means that in the R state, because of
+overheating, the SNS critical current becomes negligible,
+and the SQUID works as a nanobridge shunted by normal resistance. Summarizing all the above, we observe
+shifted steps in samples N7 and N8, and unshifted ones
+in sample N5. This eliminates the possibility of errors
+because of the measuring system or b data processing.
+We measured half-integer Shapiro steps at different
+frequencies in the range from frf = 2.8 GHz to frf =
+3.8 GHz; the results are demonstrated in Fig. 8(e). At
+the same time, Fig. 8(f) shows that at high rf power,
+when the supercurrent is fully suppressed, we are able to
+observe Shapiro steps from |V |/V0 = 12 to |V |/V0 = 17 12 .
+Thus, the shifted position of the Shapiro steps cannot
+be related to a series-connected resistance since it would
+change the voltage period of the steps, which would be
+noticeable in such a wide range of voltages.
+At the same time, we note that the shift of the Shapiro
+features cannot be described theoretically by our RSJ
+model presented by Eqs. (7) and (8), which predicts po-
+
+sitions of the steps to be exactly at v = (n/k)ω (where
+n and k are integers) with the most pronounced steps
+corresponding to k = 1. Therefore, we must consider additional factors beyond the presented RSJ model, which
+may be related to the complex dynamics within the junctions themselves or in the SQUID.
+One of these factors is geometrical inductance Lloop of
+the SQUID, which we neglect in our model. For example, Ref. [102] shows that even if both JJs in SQUID have
+a sinusoidal CPR, with a large enough Lloop , fractional
+steps may occur because of their sequential phase changing. Such behavior was demonstrated experimentally in
+Ref. [79], where the half step became even larger than
+the first one at specific values of magnetic flux. However,
+this effect disappears when the SQUID contains an integer number of flux quanta. In contrast, in our case, the
+Shapiro steps are at half-integer positions at arbitrary
+flux, so this mechanism is not relevant in our case. In
+addition, our estimations presented in Appendix B show
+that the influence of inductance is negligible in our case.
+Another possible factor is connected with the properties of the R state in the nanobridge. Our nanobridge is
+long (in units of superconducting coherence length), and
+it may contain several intrinsic “weak” places along its
+length. At I > Inb the resistive state starts from vortex penetration via the weakest place and vortex passage
+through the bridge. As the current increases, the vortices
+may start entering other weak places and interact with
+vortices nucleated in other places. The overall behavior
+can be rather complicated; see, for example, Ref. [103],
+where the response of several weak places connected in
+series to rf irradiation has been studied.
+The relevance of these factors to the explanation of
+the Shapiro steps shift is not clear at present. Moreover,
+there may be other factors that could cause this effect and
+which are not mentioned above. For example, a similar
+
+14
+shift of the Shapiro steps was observed in Ref. [104] in a
+completely different system for unknown reasons.
+
+Appendix F: Comparison of the theoretical results
+for the Shapiro features at different temperatures
+
+As discussed in Sec. III B, the theoretical results in
+Fig. 4 show only qualitative agreement with the experimental data. While the experimental data exhibit three
+distinct features in the shown voltage range, our theoretical model reproduces only two of them. The third feature
+(corresponding to n = ±9) is predicted to be comparable in magnitude to the thermal noise level, rendering it
+effectively unobservable. In addition, the depths of the
+Shapiro features decrease much faster with the voltage in
+theory compared to the experiment.
+The most straightforward explanation for this discrepancy would be an overestimation of the effective temperature and its associated thermal fluctuations. However,
+both of our estimates of effective temperature, based on
+Ir measurements and experiments conducted under external irradiation, lead to the result that T ∼ 2 K, which
+aligns with the temperature value used in our calculations presented in Fig. 4.
+At the same time, by allowing the temperature to take
+arbitrary values within the model, we can generate plots
+similar to those in Fig. 4, albeit with varying sizes of
+the Shapiro features. For example, the comparison of
+the results for the Shapiro features at T = 1.8 K and
+T = 1 K are shown in Fig. 7. It is evident that both
+the depth and width of the Shapiro features increase as
+the temperature decreases. Furthermore, because of the
+reduction of thermal noise effects, it becomes feasible to
+observe the n = ±9 Shapiro features in Fig. 7(b). However, despite the qualitative similarity of the theoretical
+curves to those observed experimentally, significant discrepancies remain. As illustrated in Fig. 7, the depths of
+the theoretically calculated Shapiro features are considerably larger in amplitude compared to the experimental
+results. Additionally, there remains an issue regarding
+the rapid decrease in the depth of the Shapiro features
+with increasing voltage.
+Considering all the mentioned-above factors, we have
+decided to use the results shown in the theoretical curve
+in Fig. 4, which are calculated at T = 1.8 K, for comparison with the experimental data in the main text.
+
+Appendix G: Experimental methods
+
+The measurements were carried out in a dilution refrigerator at a temperature T = 50 mK. IV curves of the
+SQUID were measured using the four-terminal technique.
+For the measurements of the critical current oscillations,
+we applied an ac current with the frequency 17 Hz using
+a Low-distortion Function Generator SRS DS360. The
+voltage response was first amplified and filtered with a
+
+preamplifier SRS SR560, and then digitized by the NI9234 ADC. The critical current was identified when the
+voltage exceeded the threshold value Vthr = 20 µV. During the measurements of the differential resistance, we
+used a different setup with a dc current source Keithley
+6221 and a nanovoltmeter Keithley 2182A. The rf signal
+was generated using VNA Cobalt C1220 and delivered to
+the sample through a coaxial cable with a −20 dB cryogenic attenuator. The open end of the cable was fixed
+to the holder a few millimeters above the surface of the
+sample, acting as an rf antenna.
+To reduce the influence of noise effects on the experimentally obtained dependencies presented in Fig. 5, we
+average the Shapiro step depths in the following way.
+As ∆R± we take the average value of the resistance in
+the voltage range [Vn /V0 − 1/2, Vn /V0 + 1/2], where Vn
+is the voltage corresponding to the nth Shapiro feature
+center. This procedure leads to smoothing of the curves
+presented in Fig. 5, while decreasing the depth of the
+steps. It results in a difference in the step depths, presented in the experimental panels in Figs. 4 and 5.
+Appendix H: Method of slowly varying phase and
+effective Josephson equations
+
+As mentioned in Sec. IV, to find the shapes of the nth
+Shapiro features (with both positive and negative numbers) in the vicinity of their centers, we apply the first
+iteration of the perturbation method of slowly varying
+phase. Specifically, we represent the phase as a sum of
+“fast” [varies at short time scale τ ≲ (nω)−1 ] and “slow”
+[varies at long time scale τ ≫ (nω)−1 ] parts, respectively,
+φ(τ ) = φf (τ ) + φs (τ ). We assume that supercurrent and
+thermal fluctuations are small compared to dc current
+[accurate conditions of applicability are discussed below
+Eq. (H3)]. Particularly, the CVC is close to Ohm’s law
+v̂ = nω. At the same time, the fast dynamics of the phase
+is determined by dc and ac currents, while the supercurrent and thermal fluctuations are responsible only for the
+slow corrections to the phase dynamics. Therefore, in the
+zeroth order of the perturbation theory
+φf (τ ) = nωτ + (jac /ω) sin ωτ ,
+
+φs (τ ) = θn (τ ). (H1)
+
+It is important to remember that even though θn (τ ) is
+a slow function, it contains a linearly growing with time
+part, which corresponds to the slow part of v̂(τ ), see Eq.
+(10).
+In the first order, we take the supercurrent and thermal
+fluctuations into account. For this, we consider ξ(τ ) in
+the right-hand side of Eq. (7) and also substitute φf (τ )
+to Is (φ) and expand the resulting expression into the
+Fourier series:
+
+
+∞
+∞
+X
+X
+kjac
+m
+Is± (τ ) =
+(−1) Ak± Jm
+ω
+k=1 m=−∞
+
+× sin k(θn + δk± ) + (kn − m)ωτ . (H2)
+
+15
+
+FIG. 7. Theoretical results within the RSJ model at Φ/Φ0 = 1/4, Iac = 12 µA, and different temperatures taking into account
+the temperature dependencies of junction parameters: (a) T = 1.8 K, φc = 30, Isns = 0.3 µA, and Inb = 12 µA, (b) T = 1 K,
+φc = 47, Isns = 2.8 µA, Inb = 37 µA. As temperature decreases, both the depths and widths of the Shapiro features increase,
+which is the result of a decrease in the strength of thermal fluctuations.
+
+After that, we average the Josephson equation in the first
+order with supercurrent given by Eq. (H2) over time ∆τ
+such that (nω)−1 ≪ ∆τ ≪ T −1 , (v̂ − nω)−1 to exclude
+fast oscillating terms and obtain the effective equation for
+the slow functions. Averaging over ∆τ implies: (i) keeping θn intact in the left-hand side of Eq. (7), (ii) keeping
+only the slow part of ξ(τ ) (which in this order of perturbation theory can still be considered as a white noise),
+and (iii) keeping in the supercurrent Eq. (H2) only terms
+with m = kn while neglecting all other terms since they
+oscillate with frequencies ≳ ω. As a result of this procedure, we obtain the effective Josephson equation in the
+form of Eq. (9) with the averaged supercurrents given by
+Iˆs± (τ ) =
+
+∞
+X
+
+nk
+
+(−1) Ak± Jnk
+
+k=1
+
+
+
+kjac
+ω
+
+
+
+
+
+sin k[θn (τ ) + δk± ] .
+
+(H3)
+One of the validity regimes of Eq. (9), which is relevant
+for our case, is ∆j ≪ 1 (small deviation from the center
+of noise-free Shapiro steps), Ak ≪ 1 (small supercurrent
+compared to dc), T /nω ≪ 1 (small thermal fluctuations
+compared to dc currents contributions).
+At the same time, if we neglect harmonics with k > 1
+and make the phase shift θn 7→ θn −δ1± −πn (which does
+not change the CVC), we obtain the supercurrent in the
+single-harmonic approximation given by Eq. (11). The
+single-harmonic approximation is rigorously justified in
+the limiting case jac /ω ≪ 1, when higher harmonics in
+Eq. (H3) are parametrically smaller than the first one.
+
+Appendix I: Calculation of R± in the
+single-harmonic approximation
+
+θn with sinusoidal CPR:
+θ̇n + j1± sin θn = ∆j + ξ(τ ),
+j1± = |A1± Jn (jac /ω)| .
+
+(I1)
+
+For further analysis, it is convenient to work with the stationary Fokker-Planck equation on the distribution functions Pst± (θn ) which corresponds to the Langevin equation (I1):
+∂Pst±
+1
++
+(sin θn − ∆j/j1± ) Pst± = Q± ,
+∂θn
+T±
+
+(I2)
+
+where Q± is the quantity that should be found from the
+formalization condition on Pst± (θn ).
+To obtain the CVC, one needs to solve the FokkerPlanck equation in the form of Eq. (I2) and calculate
+the statistically-averaged voltage. For definiteness, we
+consider ∆j > 0 and take into account the symmetry of
+the Shapiro features at the end of the calculation. In
+this way, we obtain the voltage contribution from the
+slow dynamics, which is added to nω. As a result
+Z
+|⟨v⟩ − nω| = φ̇Pst± (φ)dφ
+Z
+= (∆j − j1± sin φ)Pst± (φ)dφ = −2πj1± T± Q± .
+
+(I3)
+
+We now only need to calculate Q± . It can be done with
+the use of the variation of parameters method taking into
+account the normalization condition and periodicity of
+Pst± (φ),
+1
+=−
+Q±
+
+Z2π
+
+
+dφ exp
+
+φ∆j/j1± + cos φ
+T±
+
+
+
+0
+
+As mentioned in Sec. IV, in the single-harmonic approximation [Eq. (11)], effective Josephson Eq. (9) has
+the form of the ordinary Josephson equation for the phase
+
+Z∞
+×
+φ
+
+
+
+x∆j/j1± + cos x
+dx exp −
+.
+T±
+
+(I4)
+
+16
+To calculate the integrals in Eq. (I4), we perform the
+following Fourier expansion:
+
+
+ 
+ 
+∞
+X
+cos φ
+1
+1
+exp
+= I0
++2
+cos kφ. (I5)
+Ik
+T±
+T±
+T±
+k=1
+
+Using Eq. (I5), we can represent Q± in the following
+form:
+#
+ 
+Z2π "  
+∞
+X
+1
+1
+1
++2
+cos kφ
+Ik
+= − dφ I0
+Q±
+T±
+T±
+0
+
+k=1
+
+  
+ 
+∞
+X
+1
+∆j
+2(−1)m
+1
+× I0
++
+Im
+T± j1± T± m=1
+T± m2 + (∆j/j1± T± )2
+
+
+∆j
+×
+cos mφ − m sin mφ .
+(I6)
+j1± T±
+
+For the fitting procedure, we rewrite Eq. (J1) in the form
+T = Afit (Prf + Y Pdc )1/5 ,
+
+(J3)
+
+where Afit = (Ce-ph Y )−1/5 . Here, we neglect CT05 term
+because of its small value.
+The R± (Prf ) dependence can be numerically obtained
+from Eqs. (J2) and (J3). In Eq. (J2) we use the value
+of ac current Iac at some value of rf power Prf as the
+fitting parameter (instead of Y ). For this purpose, we
+choose Prf = 1 mW because it corresponds to the location
+of the most pronounced maximum in Fig. 5(c). At the
+same time, in Eq.(J3) we use Afit as the second fitting
+parameter.
+
+The fitting procedure generates plots similar to
+Fig. 5(f) with a different number of extrema, their amplitudes, and locations. In our fitting procedure we rePerforming the integration over φ and substituting Eq.
+quire the location of the highest maximum to be at
+(I6) to Eq. (I3), we obtain the voltage:
+Prf = 1 mW, as it is in Fig. 5(c). We also adjust the
+X
+ 
+∞
+2 −1
+k
+number of extrema and their amplitudes in theory with
+1
+(−1) (2 − δk,0 ) (∆j/j1± )
+,
+⟨v⟩ = nω+∆j
+Ik2
+2
+those in Fig. 5(c). As a result, the fitting parameters are
+T±
+(∆j/j1± )2 + T± k 2
+k=0
+Afit = 1.72 K/mW1/5 , and Iac (1 mW) = 15.7 µA. At the
+(I7)
+same time, our model predicts that temperature changes
+which is valid for both signs of ⟨v⟩ and ∆j. Taking the
+from 2.2 K at Prf = 0 mW to 2.4 K at Prf = 2 mW. The
+derivative of Eq. (I7), we obtain the expression for the
+result is presented in Fig. 5(f).
+differential resistance Eq. (12) from the main text.
+Appendix J: Dependence of the Shapiro steps on
+power of microwave irradiation
+
+As mentioned in Sec. IV, the dependence of the Shapiro
+feature depths on the power of ac irradiation demonstrates nonmonotonic behavior caused by the Joule heating effect. Our goal is to explain such behavior and obtain
+theoretically the dependence of differential resistance on
+rf irradiation power, which would reproduce the experimental result of Fig. 5(c) measured at Φ/Φ0 = 0.75 for
+n = ±7. To do that, we need to relate the power of rf irradiation Prf and the temperature of the electron system
+T and then substitute the T (Prf ) dependence to Eq. (12).
+Moreover, we need to relate the power of rf irradiation
+and the ac current, Iac (Prf ), which also enters Eq. (12).
+We use the energy balance equation assuming that the
+electron system is cooled by the phonon subsystem [90],
+
+Prf /Y + Pdc = Ce-ph T 5 − T05 ,
+(J1)
+where Y is the factor determining what part of external
+microwave irradiation power is transferred to the sample,
+Ce-ph is the coefficient of the electron-phonon coupling,
+T0 = 50 mK is the temperature of the phonon subsystem,
+2
+and Pdc = Idc
+R0 is the Joule heating power owing dc
+current |Idc | = 20 µA, which corresponds to the Shapiro
+steps centers. We assume that the ac current is produced
+by microwave irradiation and thus
+2
+Prf /Y = Iac
+R0 /2.
+
+(J2)
+
+Appendix K: Additional Shapiro steps data
+
+TABLE I. Parameters of the three measured SQUID samples
+at T = 50 mK: the critical current of the SNS junction Isns ,
+the nanobridge critical current Inb , the critical phase φc , and
+the normal resistance R0 of the whole SQUID.
+Sample Isns (µA) Inb (µA) φc R0 (Ω)
+N5
+1.6
+48.9 63.8 7.5
+N7
+23.0
+53.7 58.5 3.6
+N8
+11.1
+62.9 61.5 2.8
+
+During the experiments, we measured three samples
+(N5, N7, and N8) with the same SQUID and nanobridge
+designs but different BTS flakes serving as the SNS junction. Sample N7 is discussed in the main text. All
+SQUIDs were studied under a magnetic field at 50 mK.
+Using Eq. (1) to fit experimentally measured curves
+Ic (H), we determined the main parameters of the samples, listed in Table I.
+For all samples, the CVCs were measured at various
+microwave frequencies and powers under different magnetic fields. Figure 8 shows some examples of the obtained results discussed in Appendix E.
+
+17
+
+FIG. 8. Additional data of the Shapiro steps measurements for different samples. Panel (a) shows the dependence of the
+differential resistance on the backward branches near Ir± vs current through the sample and rf power in the external magnetic
+field B = 0.29 G for sample N8. Panel (b) shows the Shapiro features in the positive and negative dc current directions under
+the same conditions. The dips of the R(V ) dependence are located at |V |/V0 = n − 1/2 with integer n. The plots clearly show
+the asymmetry of the Shapiro features for different current directions. Vertical left segments of the curves correspond to the
+abrupt retrapping to the S state. Panels (c) and (d) present similar to (a) and (b) dependencies for sample N5 at the same
+magnetic field. However, in this sample, the Shapiro features are located at integer values of |V |/V0 and do not demonstrate
+noticeable asymmetry. (e) Curves for sample N7 at different frequencies of the external microwave signal. An additional shift
+in 0.5 Ω was added sequentially to the data at different frequencies. The Shapiro features are located at half-integer positions
+for all frequencies. Pcr is defined as the minimal rf power at which the retrapping current of the sample Ir is fully suppressed.
+(f) Shapiro features in sample N7 measured at high microwave power, when the retrapping current is fully suppressed. At this
+condition, we are able to observe 18 dips in the differential resistance, all located at half-integer values of |V |/V0 . With the
+increase of |V |/V0 , the diode effect changes its sign. We attribute this to the Joule heating effect caused by dc current and
+temperature dependence of the critical phase φc . At the same time, an unexpected increase of the Shapiro features depths is
+observed in the range of |V |/V0 between 8 and 13.
+
+[1] A. Malvino, D. Bates, and P. Hoppe, Electronic Principles (McGraw Hill, New York, 2020).
+[2] K. Jiang and J. Hu, Superconducting diode effects, Nat.
+Phys. 18, 1145 (2022).
+[3] M. Nadeem, M. S. Fuhrer, and X. Wang, The superconducting diode effect, Nat. Rev. Phys. 5, 558 (2023).
+[4] P. J. W. Moll and V. B. Geshkenbein, Evolution of superconducting diodes, Nat. Phys. 19, 1379 (2023).
+[5] L. S. Levitov, Yu. V. Nazarov, and G. M. Eliashberg,
+Magnetostatics of superconductors without an inversion center, Pis’ma Zh. Eksp. Teor. Fiz. 41, 365 (1985),
+[JETP Lett. 41, 445 (1985)].
+[6] V. M. Edelstein, The Ginzburg–Landau equation for superconductors of polar symmetry, J. Phys.: Condens.
+Matter 8, 339 (1996).
+
+[7] R. Wakatsuki, Y. Saito, S. Hoshino, Y. M. Itahashi,
+T. Ideue, M. Ezawa, Y. Iwasa, and N. Nagaosa, Nonreciprocal charge transport in noncentrosymmetric superconductors, Sci. Adv. 3, e1602390 (2017).
+[8] K. Yasuda, H. Yasuda, T. Liang, R. Yoshimi,
+A. Tsukazaki, K. S. Takahashi, N. Nagaosa,
+M. Kawasaki, and Y. Tokura, Nonreciprocal charge
+transport at topological insulator/superconductor
+interface, Nat. Commun. 10, 2734 (2019).
+[9] F. Ando, Y. Miyasaka, T. Li, J. Ishizuka, T. Arakawa,
+Y. Shiota, T. Moriyama, Y. Yanase, and T. Ono, Observation of superconducting diode effect, Nature 584,
+373 (2020).
+[10] A. Daido, Y. Ikeda, and Y. Yanase, Intrinsic superconducting diode effect, Phys. Rev. Lett. 128, 037001
+
+18
+(2022).
+[11] N. F. Q. Yuan and L. Fu, Supercurrent diode effect and
+finite-momentum superconductors, Proc. Natl. Acad.
+Sci. USA 119, e2119548119 (2022).
+[12] S. Ilić and F. S. Bergeret, Theory of the supercurrent
+diode effect in Rashba superconductors with arbitrary
+disorder, Phys. Rev. Lett. 128, 177001 (2022).
+[13] J. J. He, Y. Tanaka, and N. Nagaosa, A phenomenological theory of superconductor diodes, New J. Phys. 24,
+053014 (2022).
+[14] T. H. Kokkeler, A. A. Golubov, and F. S. Bergeret, Field-free anomalous junction and superconducting diode effect in spin-split superconductor/topological
+insulator junctions, Phys. Rev. B 106, 214504 (2022).
+[15] T. Karabassov, I. V. Bobkova, A. A. Golubov, and
+A. S. Vasenko, Hybrid helical state and superconducting
+diode effect in superconductor/ferromagnet/topological
+insulator heterostructures, Phys. Rev. B 106, 224509
+(2022).
+[16] M. Yu. Levichev, I. Yu. Pashenkin, N. S. Gusev, and
+D. Yu. Vodolazov, Finite momentum superconductivity
+in superconducting hybrids: Orbital mechanism, Phys.
+Rev. B 108, 094517 (2023).
+[17] T. Kokkeler, I. Tokatly, and F. S. Bergeret, Nonreciprocal superconducting transport and the spin Hall effect
+in gyrotropic structures, SciPost Phys. 16, 055 (2024).
+[18] S. V. Mironov, A. S. Mel’nikov, and A. I. Buzdin, Photogalvanic phenomena in superconductors supporting intrinsic diode effect, Phys. Rev. B 109, L220503 (2024).
+[19] J. Hasan, D. Shaffer, M. Khodas, and A. Levchenko, Supercurrent diode effect in helical superconductors, Phys.
+Rev. B 110, 024508 (2024).
+[20] D. Kochan, A. Costa, I. Zhumagulov, and I. Žutić, Phenomenological theory of the supercurrent diode effect:
+The lifshitz invariant (2023), arXiv:2303.11975 [condmat.supr-con].
+[21] A. A. Mazanik, T. Kokkeler, I. V. Tokatly, and F. S.
+Bergeret, Interfacial spin-orbit coupling in superconducting hybrid systems (2025), arXiv:2502.10911 [condmat.supr-con].
+[22] D. Yu. Vodolazov and F. M. Peeters, Superconducting
+rectifier based on the asymmetric surface barrier effect,
+Phys. Rev. B 72, 172508 (2005).
+[23] D. Cerbu, V. N. Gladilin, J. Cuppens, J. Fritzsche,
+J. Tempere, J. T. Devreese, V. V. Moshchalkov, A. V.
+Silhanek, and J. Van de Vondel, Vortex ratchet induced
+by controlled edge roughness, New J. Phys. 15, 063022
+(2013).
+[24] S. S. Ustavschikov, M. Yu. Levichev, I. Yu. Pashenkin,
+N. S. Gusev, S. A. Gusev, and D. Yu. Vodolazov, Diode
+effect in a superconducting hybrid Cu/MoN strip with
+a lateral cut, JETP 135, 226 (2022).
+[25] D. Suri, A. Kamra, T. N. G. Meier, M. Kronseder,
+W. Belzig, C. H. Back, and C. Strunk, Non-reciprocity
+of vortex-limited critical current in conventional superconducting micro-bridges, Appl. Phys. Lett. 121,
+102601 (2022).
+[26] Y. Hou, F. Nichele, H. Chi, A. Lodesani, Y. Wu, M. F.
+Ritter, D. Z. Haxell, M. Davydova, S. Ilić, O. GlezakouElbert, A. Varambally, F. S. Bergeret, A. Kamra, L. Fu,
+P. A. Lee, and J. S. Moodera, Ubiquitous superconducting diode effect in superconductor thin films, Phys. Rev.
+Lett. 131, 027001 (2023).
+[27] M. Castellani, O. Medeiros, A. Buzzi, R. A. Foster,
+
+M. Colangelo, and K. K. Berggren, A superconducting
+full-wave bridge rectifier, Nat. Electron. 8, 417 (2025).
+[28] J. E. Villegas, S. Savel’ev, F. Nori, E. M. Gonzalez,
+J. V. Anguita, R. Garcia, and J. L. Vicent, A superconducting reversible rectifier that controls the motion of
+magnetic flux quanta, Science 302, 1188 (2003).
+[29] J. Van de Vondel, C. C. de Souza Silva, B. Y. Zhu,
+M. Morelle, and V. V. Moshchalkov, Vortex-rectification
+effects in films with periodic asymmetric pinning, Phys.
+Rev. Lett. 94, 057003 (2005).
+[30] B. L. T. Plourde, Nanostructured superconductors with
+asymmetric pinning potentials: Vortex ratchets, IEEE
+Trans. Appl. Supercond. 19, 3698 (2008).
+[31] O. V. Dobrovolskiy, E. Begun, V. M. Bevz, R. Sachser,
+and M. Huth, Upper frequency limits for vortex guiding
+and ratchet effects, Phys. Rev. Appl. 13, 024012 (2020).
+[32] Y.-Y. Lyu, J. Jiang, Y.-L. Wang, Z.-L. Xiao, S. Dong,
+Q.-H. Chen, M. V. Milošević, H. Wang, R. Divan,
+J. E. Pearson, P. Wu, F. M. Peeters, and W.-K. Kwok,
+Superconducting diode effect via conformal-mapped
+nanoholes, Nat. Commun. 12, 2703 (2021).
+[33] T. Yokoyama, M. Eto, and Yu. V. Nazarov, Anomalous
+Josephson effect induced by spin-orbit interaction and
+Zeeman effect in semiconductor nanowires, Phys. Rev.
+B 89, 195407 (2014).
+[34] C.-Z. Chen, J. J. He, M. N. Ali, G.-H. Lee, K. C. Fong,
+and K. T. Law, Asymmetric Josephson effect in inversion symmetry breaking topological materials, Phys.
+Rev. B 98, 075430 (2018).
+[35] A. A. Kopasov, A. G. Kutlin, and A. S. Mel’nikov, Geometry controlled superconducting diode and anomalous Josephson effect triggered by the topological phase
+transition in curved proximitized nanowires, Phys. Rev.
+B 103, 144520 (2021).
+[36] Y. Zhang, Y. Gu, P. Li, J. Hu, and K. Jiang, General
+theory of Josephson diodes, Phys. Rev. X 12, 041013
+(2022).
+[37] M. Davydova, S. Prembabu, and L. Fu, Universal
+Josephson diode effect, Sci. Adv. 8, eabo0309 (2022).
+[38] K. Halterman, M. Alidoust, R. Smith, and S. Starr, Supercurrent diode effect, spin torques, and robust zeroenergy peak in planar half-metallic trilayers, Phys. Rev.
+B 105, 104508 (2022).
+[39] C. Baumgartner, L. Fuchs, A. Costa, S. Reinhardt,
+S. Gronin, G. C. Gardner, T. Lindemann, M. J. Manfra,
+P. E. Faria Junior, D. Kochan, J. Fabian, N. Paradiso,
+and C. Strunk, Supercurrent rectification and magnetochiral effects in symmetric Josephson junctions, Nat.
+Nanotechnol. 17, 39 (2022).
+[40] A. Costa, J. Fabian, and D. Kochan, Microscopic study
+of the Josephson supercurrent diode effect in josephson
+junctions based on two-dimensional electron gas, Phys.
+Rev. B 108, 054522 (2023).
+[41] J. S. Meyer and M. Houzet, Josephson diode effect in a
+ballistic single-channel nanowire, Appl. Phys. Lett. 125,
+022603 (2024).
+[42] D. Debnath and P. Dutta, Gate-tunable Josephson
+diode effect in Rashba spin-orbit coupled quantum dot
+junctions, Phys. Rev. B 109, 174511 (2024).
+[43] P. Chatterjee and P. Dutta, Quasiparticles-mediated
+thermal diode effect in Weyl Josephson junctions, New
+J. Phys. 26, 073035 (2024).
+[44] J. J. Cuozzo, W. Pan, J. Shabani, and E. Rossi,
+Microwave-tunable diode effect in asymmetric SQUIDs
+
+19
+with topological Josephson junctions, Phys. Rev. Res.
+6, 023011 (2024).
+[45] P. K. Sivakumar, M. T. Ahari, J.-K. Kim, Y. Wu,
+A. Dixit, G. J. de Coster, A. K. Pandeya, M. J. Gilbert,
+and S. S. P. Parkin, Long-range phase coherence and
+tunable second order φ0 -josephson effect in a Dirac
+semimetal 1t − ptte2 (2024), arXiv:2403.19445 [condmat.supr-con].
+[46] T. Karabassov, I. V. Bobkova, V. S. Stolyarov, V. M.
+Silkin, and A. S. Vasenko, Competitive helical bands
+and highly efficient diode effect in F/S/TI/S/F hybrid
+structures (2025), arXiv:2407.14852 [cond-mat.suprcon].
+[47] E. Nikodem, J. Schluck, M. Geier, M. Papaj, H. F. Legg,
+J. Feng, M. Bagchi, L. Fu, and Y. Ando, Tunable superconducting diode effect in a topological nano-squid
+(2025), arXiv:2412.16569 [cond-mat.supr-con].
+[48] R. Haenel and O. Can, Superconducting diode
+from flux biased josephson junction arrays (2022),
+arXiv:2212.02657 [cond-mat.supr-con].
+[49] M. Gupta, G. V. Graziano, M. Pendharkar, J. T. Dong,
+C. P. Dempsey, C. Palmstrøm, and V. S. Pribiag, Gatetunable superconducting diode effect in a three-terminal
+Josephson device, Nat. Commun. 14, 3078 (2023).
+[50] A. M. Bozkurt, J. Brookman, V. Fatemi, and A. R.
+Akhmerov, Double-Fourier engineering of Josephson
+energy-phase relationships applied to diodes, SciPost
+Phys. 15, 204 (2023).
+[51] Ya. V. Fominov and D. S. Mikhailov, Asymmetric
+higher-harmonic SQUID as a Josephson diode, Phys.
+Rev. B 106, 134514 (2022).
+[52] R. S. Souto, M. Leijnse, and C. Schrade, Josephson
+diode effect in supercurrent interferometers, Phys. Rev.
+Lett. 129, 267702 (2022).
+[53] C. Ciaccia, R. Haller, A. C. C. Drachmann, T. Lindemann, M. J. Manfra, C. Schrade, and C. Schönenberger,
+Gate-tunable Josephson diode in proximitized InAs supercurrent interferometers, Phys. Rev. Res. 5, 033131
+(2023).
+[54] M. Coraiola, A. E. Svetogorov, D. Z. Haxell, D. Sabonis,
+M. Hinderling, S. C. ten Kate, E. Cheah, F. Krizek,
+R. Schott, W. Wegscheider, J. C. Cuevas, W. Belzig,
+and F. Nichele, Flux-tunable Josephson diode effect in
+a hybrid four-terminal Josephson junction, ACS Nano
+18, 9221 (2024).
+[55] P. Zhang, A. Zarassi, L. Jarjat, V. V. de Sande,
+M. Pendharkar, J. S. Lee, C. P. Dempsey, A. P. McFadden, S. D. Harrington, J. T. Dong, H. Wu, A. H. Chen,
+M. Hocevar, C. J. Palmstrøm, and S. M. Frolov, Large
+second-order Josephson effect in planar superconductorsemiconductor junctions, SciPost Phys. 16, 030 (2024).
+[56] X. Wu, J.-Y. Wang, H. Su, S. Yan, D. Pan, J. Zhao,
+P. Zhang, and H. Q. Xu, Tunable superconducting diode
+effect in higher-harmonic InSb nanosheet interferometers, New J. Phys. 27, 023031 (2025).
+[57] A. A. Golubov, M. Yu. Kupriyanov, and E. Il’ichev,
+The current-phase relation in Josephson junctions, Rev.
+Mod. Phys. 76, 411 (2004).
+[58] K. K. Likharev, Superconducting weak links, Rev. Mod.
+Phys. 51, 101 (1979).
+[59] K. K. Likharev and L. A. Yakobson, Steady-state properties of superconducting bridges, Zh. Tekhn. Fiz. 45,
+1503 (1975), [Sov. Phys.-Tekhn. Phys. 20, 950 (1975)].
+[60] A. G. P. Troeman, S. H. W. van der Ploeg, E. Il’Ichev,
+
+H.-G. Meyer, A. A. Golubov, M. Yu. Kupriyanov,
+and H. Hilgenkamp, Temperature dependence measurements of the supercurrent-phase relationship in niobium
+nanobridges, Phys. Rev. B 77, 024509 (2008).
+[61] N. Ligato, E. Strambini, F. Paolucci, and F. Giazotto,
+Preliminary demonstration of a persistent Josephson
+phase-slip memory cell with topological protection, Nat.
+Commun. 12, 5200 (2021).
+[62] W. Wernsdorfer, From micro- to nano-SQUIDs: applications to nanomagnetism, Supercond. Sci. Technol. 22,
+064013 (2009).
+[63] C. Granata and A. Vettoliere, Nano Superconducting Quantum Interference device: A powerful tool for
+nanoscale investigations, Phys. Rep. 614, 1 (2016).
+[64] K. Hasselbach, D. Mailly, and J. R. Kirtley, Microsuperconducting quantum interference device characteristics, J. Appl. Phys. 91, 4432 (2002).
+[65] D. S. Hopkins, D. Pekker, P. M. Goldbart, and
+A. Bezryadin, Quantum interference device made by
+DNA templating of superconducting nanowires, Science
+308, 1762 (2005).
+[66] H. Dausy, L. Nulens, B. Raes, M. J. Van Bael, and
+J. Van de Vondel, Impact of kinetic inductance on
+the critical-current oscillations of nanobridge SQUIDs,
+Phys. Rev. Appl. 16, 024013 (2021).
+[67] L. Nulens, H. Dausy, M. J. Wyszyński, B. Raes, M. J.
+Van Bael, M. V. Milošević, and J. Van de Vondel,
+Metastable states and hidden phase slips in nanobridge
+SQUIDs, Phys. Rev. B 106, 134518 (2022).
+[68] A. Murphy and A. Bezryadin, Asymmetric nanowire
+SQUID: Linear current-phase relation, stochastic
+switching, and symmetries, Phys. Rev. B 96, 094507
+(2017).
+[69] D. Margineda, A. Crippa, E. Strambini, Y. Fukaya,
+M. T. Mercaldo, M. Cuoco, and F. Giazotto, Sign reversal diode effect in superconducting Dayem nanobridges,
+Commun. Phys. 6, 343 (2023).
+[70] A. Greco, Q. Pichard, and F. Giazotto, Josephson diode
+effect in monolithic dc-SQUIDs based on 3D Dayem
+nanobridges, Appl. Phys. Lett. 123, 092601 (2023).
+[71] K. Misaki and N. Nagaosa, Theory of the nonreciprocal
+Josephson effect, Phys. Rev. B 103, 245302 (2021).
+[72] H. Wu, Y. Wang, Y. Xu, P. K. Sivakumar, C. Pasco,
+U. Filippozzi, S. S. P. Parkin, Y.-J. Zeng, T. McQueen,
+and M. N. Ali, The field-free Josephson diode in a van
+der Waals heterostructure, Nature 604, 653 (2022).
+[73] J. F. Steiner, L. Melischek, M. Trahms, K. J. Franke,
+and F. von Oppen, Diode effects in current-biased
+Josephson junctions, Phys. Rev. Lett. 130, 177002
+(2023).
+[74] G. S. Seleznev and Ya. V. Fominov, Influence of capacitance and thermal fluctuations on the Josephson diode
+effect in asymmetric higher-harmonic SQUIDs, Phys.
+Rev. B 110, 104508 (2024).
+[75] K. K. Likharev, Dynamics of Josephson Junctions and
+Circuits (Gordon and Breach, New York, 1986).
+[76] A. Barone and G. Paterno, Physics and Applications of
+the Josephson Effect (Wiley, New York, 1982).
+[77] M. Valentini, O. Sagi, L. Baghumyan, T. de Gijsel, J. Jung, S. Calcaterra, A. Ballabio, J. Aguilera Servin, K. Aggarwal, M. Janik, T. Adletzberger,
+R. Seoane Souto, M. Leijnse, J. Danon, C. Schrade,
+E. Bakkers, D. Chrastina, G. Isella, and G. Katsaros,
+Parity-conserving Cooper-pair transport and ideal su-
+
+20
+perconducting diode in planar germanium, Nat. Commun. 15, 169 (2024).
+[78] Y. Li, D. Yan, Y. Hong, H. Sheng, A. Wang, Z. Dou,
+X. Guo, X. Shi, Z. Su, Z. Lyu, T. Qian, G. Liu,
+F. Qu, K. Jiang, Z. Wang, Y. Shi, Z.-A. Xu, J. Hu,
+L. Lu, and J. Shen, Interfering Josephson diode effect in
+Ta2 Pd3 Te5 asymmetric edge interferometer, Nat. Commun. 15, 9031 (2024).
+[79] C. Ciaccia, R. Haller, A. C. C. Drachmann, T. Lindemann, M. J. Manfra, C. Schrade, and C. Schönenberger,
+Charge-4e supercurrent in a two-dimensional InAs-Al
+superconductor-semiconductor heterostructure, Commun. Phys. 7, 41 (2024).
+[80] A. Leblanc, C. Tangchingchai, Z. S. Momtaz,
+E. Kiyooka, J.-M. Hartmann, G. T. Fernandez-Bada,
+Z. Scherübl, B. Brun, V. Schmitt, S. Zihlmann, R. Maurand, E. Dumur, S. De Franceschi, and F. Lefloch, From
+nonreciprocal to charge-4e supercurrent in Ge-based
+Josephson devices with tunable harmonic content, Phys.
+Rev. Res. 6, 033281 (2024).
+[81] I. Babich, A. Kudriashov, D. Baranov, and V. S. Stolyarov, Limitations of the current–phase relation measurements by an asymmetric dc-SQUID, Nano Lett. 23,
+6713 (2023).
+[82] V. V. Schmidt, The Physics of Superconductors
+(Springer Berlin, Heidelberg, 1997).
+[83] R. C. Dinsmore, III, M.-H. Bae, and A. Bezryadin,
+Fractional order Shapiro steps in superconducting
+nanowires, Appl. Phys. Lett. 93, 192505 (2008).
+[84] N. Fujimaki, Y. Okabe, and S. Okamura, Phase-locking
+and microwave impedance of Josephson junctions with
+linear-periodic current-phase relations, J. Appl. Phys.
+51, 3409 (1980).
+[85] E. Trabaldo, R. Arpaia, M. Arzeo, E. Andersson,
+D. Golubev, F. Lombardi, and T. Bauch, Transport and
+noise properties of YBCO nanowire based nanoSQUIDs,
+Supercond. Sci. Technol. 32, 073001 (2019).
+[86] D. Hazra, L. M. A. Pascal, H. Courtois, and A. K.
+Gupta, Hysteresis in superconducting short weak links
+and µ-SQUIDs, Phys. Rev. B 82, 184530 (2010).
+[87] A. Blois, S. Rozhko, L. Hao, J. C. Gallop, and E. J.
+Romans, Heat propagation models for superconducting nanobridges at millikelvin temperatures, Supercond.
+Sci. Technol. 30, 014003 (2016).
+[88] V. S. Stolyarov, D. S. Yakovlev, S. N. Kozlov,
+O. V. Skryabina, D. S. Lvov, A. I. Gumarov, O. V.
+Emelyanova, P. S. Dzhumaev, I. V. Shchetinin, R. A.
+Hovhannisyan, S. V. Egorov, A. M. Kokotin, W. V.
+Pogosov, V. V. Ryazanov, M. Yu. Kupriyanov, A. A.
+Golubov, and D. Roditchev, Josephson current mediated by ballistic topological states in Bi2 Te2.3 Se0.7 single nanocrystals, Commun. Mater. 1, 38 (2020).
+[89] C. D. Shelly, P. See, I. Rungger, and J. M. Williams, Existence of Shapiro steps in the dissipative regime in superconducting weak links, Phys. Rev. Appl. 13, 024070
+
+(2020).
+[90] A. De Cecco, K. Le Calvez, B. Sacépé, C. B. Winkelmann, and H. Courtois, Interplay between electron overheating and ac Josephson effect, Phys. Rev. B 93,
+180505 (2016).
+[91] S. Biswas, C. B. Winkelmann, H. Courtois, and A. K.
+Gupta, Josephson coupling in the dissipative state of a
+thermally hysteretic µ-SQUID, Phys. Rev. B 98, 174514
+(2018).
+[92] M. J. Stephen, Noise in a driven Josephson oscillator,
+Phys. Rev. 186, 393 (1969).
+[93] R. L. Kautz, Noise, chaos, and the Josephson voltage
+standard, Rep. Prog. Phys. 59, 935 (1996).
+[94] V. Ambegaokar and B. I. Halperin, Voltage due to thermal noise in the dc Josephson effect, Phys. Rev. Lett.
+22, 1364 (1969).
+[95] C. M. Falco, W. H. Parker, S. E. Trullinger, and P. K.
+Hansma, Effect of thermal noise on current-voltage
+characteristics of Josephson junctions, Phys. Rev. B 10,
+1865 (1974).
+[96] A. R. Bishop and S. E. Trullinger, Josephson-junction
+threshold viewed as a critical point, Phys. Rev. B 17,
+2175 (1978).
+[97] Yu. M. Ivanchenko and L. A. Zil’berman, The Josephson
+effect in small tunnel contacts, Zh. Eksp. Teor. Fiz. 55,
+2395 (1968), [Sov. Phys. JETP 28, 1272 (1969)].
+[98] A. Blois, S. Rozhko, L. Hao, J. C. Gallop, and E. J.
+Romans, Proximity effect bilayer nano superconducting
+quantum interference devices for millikelvin magnetometry, J. Appl. Phys. 114, 233907 (2013).
+[99] J. Romijn, T. M. Klapwijk, M. J. Renne, and J. E.
+Mooij, Critical pair-breaking current in superconducting aluminum strips far below Tc , Phys. Rev. B 26, 3648
+(1982).
+[100] P. Dubos, H. Courtois, B. Pannetier, F. K. Wilhelm,
+A. D. Zaikin, and G. Schön, Josephson critical current
+in a long mesoscopic SNS junction, Phys. Rev. B 63,
+064502 (2001).
+[101] A. D. Zaikin and G. F. Zharkov, Theory of wide dirty
+SNS junctions, Fiz. Nizk. Temp. 7, 375 (1981), [Sov. J.
+Low Temp. Phys. 7, 184 (1981)].
+[102] E. A. Early, A. F. Clark, and C. J. Lobb, Physical basis
+for half-integral Shapiro steps in a DC SQUID, Physica C 245, 308 (1995).
+[103] S. Yu. Grebenchuk, R. Cattaneo, and V. M. Krasnov, Nonlocal long-range synchronization of planar
+Josephson-junction arrays, Phys. Rev. Appl. 17, 064032
+(2022).
+[104] D. Yu. Kazmin, V. D. Esin, A. V. Timonina, N. N.
+Kolesnikov, and E. V. Deviatov, Fractional a. c. Josephson effect as evidence of topological hinge states in a
+Dirac semimetal NiTe2 , Zh. Exp. Teor. Fiz. 166, 688
+(2024).
+
+

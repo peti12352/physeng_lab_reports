@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "4050307965d74418",
+    "type": "split",
+    "children": [
+      {
+        "id": "5907c8d519a9394f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e4119b55272a5126",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "courses/nano2/squid/docs/ultra_dense_presentation_cheat_sheet.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ultra_dense_presentation_cheat_sheet"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ded5d422d40df0ab",
+    "type": "split",
+    "children": [
+      {
+        "id": "467b20e49cce1e4d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "411775de38407421",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "d025d703f76df198",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "8a23082a7021bc02",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "598912adecd37f22",
+    "type": "split",
+    "children": [
+      {
+        "id": "f80982c42d85b769",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d0666f1aa07a32cb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "courses/nano2/squid/docs/SQUID.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for SQUID"
+            }
+          },
+          {
+            "id": "65998976d2e87438",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "courses/nano2/squid/docs/SQUID.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from SQUID"
+            }
+          },
+          {
+            "id": "c906dd5ecaebae86",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3c178e72848c11e7",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "1076a143e2629297",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "courses/nano2/squid/docs/SQUID.pdf",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of SQUID"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "e4119b55272a5126",
+  "lastOpenFiles": [
+    "courses/nano2/squid/docs/practice_script.md",
+    "courses/nano2/squid/docs/ultra_dense_presentation_cheat_sheet.md",
+    "courses/nano2/squid/docs/sedeLf10D",
+    "courses/nano2/squid/docs/presentation_study_notes.md",
+    "courses/nano2/squid/docs/squid_presentation.pdf",
+    "courses/nano2/squid/docs/SQUID_Literature_Review.md",
+    "courses/nano2/squid/docs/SQUID.pdf",
+    "courses/nano2/squid/docs/SQUID.md"
+  ]
+}

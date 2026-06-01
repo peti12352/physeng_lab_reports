@@ -1,0 +1,1520 @@
+Nanoscale thermal imaging of dissipation in quantum systems
+D. Halbertal1, J. Cuppens1,2, M. Ben Shalom3, L. Embon1,†, N. Shadmi4, Y. Anahory1,
+HR Naren1, J. Sarkar1, A. Uri1, Y. Ronen1, Y. Myasoedov1, L. S. Levitov5, E. Joselevich4,
+A. K. Geim3 and E. Zeldov1
+Energy dissipation is a fundamental process governing the dynamics of physical,
+chemical, and biological systems. It is also one of the main characteristics
+distinguishing quantum and classical phenomena. In condensed matter physics, in
+particular, scattering mechanisms, loss of quantum information, or breakdown of
+topological protection are deeply rooted in the intricate details of how and where the
+dissipation occurs. Despite its vital importance the microscopic behavior of a system
+is usually not formulated in terms of dissipation because the latter is not a readily
+measureable quantity on the microscale. Although nanoscale thermometry is
+gaining much recent interest‎1-‎15, the existing thermal imaging methods lack the
+necessary sensitivity and are unsuitable for low temperature operation required for
+study of quantum systems. Here we report a superconducting quantum interference
+nano-thermometer device with sub 50 nm diameter that resides at the apex of a
+sharp pipette and provides scanning cryogenic thermal sensing with four orders of
+magnitude improved thermal sensitivity of below 1 µK/Hz1/2. The non-contact
+non-invasive thermometry allows thermal imaging of very low nanoscale energy
+dissipation down to the fundamental Landauer limit ‎16-‎18 of 40 fW for continuous
+readout of a single qubit at 1 GHz at 4.2 K. These advances enable observation of
+dissipation due to single electron charging of individual quantum dots in carbon
+nanotubes and reveal a novel dissipation mechanism due to resonant localized states
+in hBN encapsulated graphene, opening the door to direct imaging of nanoscale
+dissipation processes in quantum matter.
+
+1
+
+Department of Condensed Matter Physics, Weizmann Institute of Science, Rehovot 7610001,
+Israel.
+2
+Catalan Institute of Nanoscience and Nanotechnology (ICN2), CSIC and the Barcelona Institute
+of Science and Technology, Campus UAB, Bellaterra, 08193 Barcelona, Spain.
+3
+National Graphene Institute, The University of Manchester, Booth St. E, Manchester M13 9PL,
+UK and the School of Physics and Astronomy, The University of Manchester, Manchester M13
+9PL, UK.
+4
+Department of Materials and Interfaces, Weizmann Institute of Science, Rehovot 7610001,
+Israel.
+5
+Department of Physics, Massachusetts Institute of Technology, Cambridge, Massachusetts
+02139, USA.
+†
+Present address: Department of Physics, Columbia University, New York, New York 10027,
+USA.
+1
+
+Investigation of energy dissipation on the nanoscale is of major fundamental interest
+for a wide range of disciplines from biological processes, through chemical reactions, to
+energy-efficient computing‎1-‎5. Study of dissipation mechanisms in quantum systems is of
+particular importance because dissipation demolishes quantum information. In order to
+preserve a quantum state the dissipation has to be extremely weak and hence hard to
+measure. As a figure of merit for detection of low power dissipation in quantum
+systems‎16 we consider an ideal qubit operating at a typical readout frequency of 1 GHz.
+Landauer's principle states the lowest bound on energy dissipation in an irreversible qubit
+operation to be 𝐸0 = 𝑘B 𝑇 ln 2, where 𝑘B is Boltzmann’s constant and 𝑇 is the
+temperature‎17,‎18. At 𝑇 = 4.2 K, 𝐸0 = 410-23 J, several orders of magnitude below 10-19 J
+of dissipation per logical operation in present day superconducting electronics and 10 -15 J
+in CMOS devices‎19,‎20. Hence the power dissipated by an ideal qubit operating at a
+readout rate of 𝑓 = 1 GHz will be as low as 𝑃 = 𝐸0 𝑓 = 40.2 fW. The resulting
+temperature increase of the qubit will depend on its size and the thermal properties of the
+substrate. For example, a 120 × 120 nm2 device on a 1 µm thick SiO2/Si substrate
+dissipating 40 fW will heat up by about 3 µK (Fig. 1). Such signals are several orders of
+magnitude below the best sensitivity of several mK⁄Hz 1⁄2 of any of the existing imaging
+techniques‎1-‎15 (Fig. 1a) including radiation-based thermometry utilizing infra-red‎6,
+fluorescence in nanodiamonds‎4,‎7,‎8, Raman‎9, or transmission electron beam‎5, and atomic
+force microscopy (AFM) outfitted with thermocouple or resistive thermometers ‎10-‎15.
+Moreover, none of the existing imaging techniques was demonstrated to operate at
+sufficiently low temperatures that are essential for study of quantum systems.
+Superconducting junctions are commonly used as highly sensitive thermometers ‎2,21
+‎ ,
+relying on the strong temperature dependence of their critical current 𝐼𝑐 (𝑇), which in the
+vicinity of the critical temperature 𝑇𝑐 can be approximated by 𝐼𝑐 (𝑇) ≅ 𝐼0 (1 − 𝑇⁄𝑇𝑐 ).
+Conventional junction configurations, however, are not suitable for scanning probe
+thermometry due to their planar geometry and strong thermal coupling to the substrate.
+Here we introduce a non-contact cryogenic scanning probe microscopy technique based
+on the superconducting quantum interference device (SQUID) positioned on a tip‎22,‎23. We
+utilize a novel approach in which a single Pb (𝑇𝑐 = 7.2 K) superconducting junction or a
+SQUID is fabricated on the apex of a sharp quartz pipette (SQUID-on-tip (SOT)) which
+can be made as small as a few tens of nm in diameter (Supplementary Information S1).
+Figure 1b shows a scanning electron micrograph (SEM) of such a SOT thermometer
+(tSOT) with an effective diameter of 46 nm, as determined from its quantum interference
+pattern. Similar SOT devices have previously been reported‎22,‎23 to be extremely sensitive
+magnetic sensors reaching magnetic spin sensitivity below 0.4 μB ⁄Hz 1⁄2 . The electrical
+characteristics of the tSOT (Fig. 1c) show the current through the sensor 𝐼𝑡𝑆𝑂𝑇 vs.
+
+2
+
+Size [nm]
+10 1
+
+10 2
+
+10 3
+
+150
+
+b
+
+plasmon TEM
+
+IR
+
+10 0
+
+c
+
+gap
+
+10 0
+
+Ic (4.2K)
+100
+
+ItSOT [µA]
+
+a
+
+Pb Pb
+
+SNOM
+10 -1
+
+10 -1
+
+50
+
+Raman
+
+TC SThM
+
+Ic (6K)
+
+10 -2
+
+-3
+
+10
+
+7
+
+120
+
+180
+
+50 nm
+0
+0
+10-1
+
+d
+
+60
+
+Ibias [µA]
+
+e
+
+tSOT
+
+10 -5
+
+He
+gas
+
+Rss
+
+10 -5
+
+tSOT
+
+-6
+
+10
+
+1
+
+10
+10
+
+2
+
+10
+
+-6
+
+[K]
+
+10 -4
+
+10-3
+
+ac
+
+10 -4
+
+10
+
+-3
+
+T [K]
+5 6
+
+T
+
+10
+
+nanodiamond
+
+4
+
+10 -2
+T [K]
+
+Sensitivity [K/Hz 1/2]
+
+Res. SThM
+
+device
+
+Rsd
+
+SiO2/Si
+
+Rdb
+
+Ts
+
+10-5
+
+Td
+
+10-7
+10-16 10-14 10-12 10-10
+
+3
+
+P [W]
+
+Spatial resolution [nm]
+
+Figure 1 | tSOT characteristics and performance. a, Sensitivities of different thermal
+imaging techniques (blue) and of the tSOT (red) vs. their spatial resolution (bottom-left
+axes). Green diamond: the measured temperature increase due to 40 fW dissipation
+(taken from (e)) corresponding to Landauer’s limit for qubit operation at 4.2 K at 1 GHz
+along with the theoretical scaling of the temperature with the qubit size (dashed line, topright axes). b, SEM image of the 46 nm effective diameter Pb tSOT. c, Electrical
+characteristics of the tSOT for temperatures ranging from 4.2 K to 7.2 K with marked
+values of the critical current 𝐼𝑐 at representative temperatures. d, Schematic drawing of
+the measurement setup and a simplified effective thermal circuit. e, Measurement of the
+tSOT temperature 𝑇𝑎𝑐 at 13.1 kHz above a 120 nm wide Cu nanowire with sheet
+resistance 0.46 /□ vs. the ac power 𝑃 dissipated by a variable 𝐼𝑎𝑐 in 120120 nm2 unit
+segment of the nanowire. The dashed line shows a linear fit (with slope 𝑅𝑑𝑏 = 6.8107
+K/W) and a noise floor of 𝑇𝑎𝑐 ≃ 440 nK below 𝑃 ≃ 6 fW using lock-in amplifier time
+constant of 1 sec.
+
+3
+
+externally applied bias current 𝐼𝑏𝑖𝑎𝑠 at various temperatures (see electrical diagram in Fig.
+S1c). For 𝐼𝑡𝑆𝑂𝑇 < 𝐼𝑐 essentially all the applied current flows through the tSOT while at
+higher bias a substantial part of the current diverts to a parallel shunt resistor. When
+biasing the tSOT at 𝐼𝑏𝑖𝑎𝑠 > 𝐼𝑐 (dashed line in Fig. 1c), the temperature dependence of
+𝐼𝑡𝑆𝑂𝑇 (𝑇) gives rise to a thermal response 𝑑𝐼𝑡𝑆𝑂𝑇 ⁄𝑑𝑇 = − 9.5 μA/K (Fig. S1b), which
+1/2
+combined with the very low white noise of 𝑆𝐼 = 8.3 pA⁄Hz 1⁄2 of the tSOT (Fig. S1c)
+1/2
+translates into a remarkably low thermal noise of 𝑆𝑇 = 870 nK⁄Hz 1⁄2 , a four orders of
+magnitude improvement over the existing thermal imaging methods (Fig. 1a).
+To enable effective thermal imaging, the thermal properties of the sensor, including
+its coupling to the sample, are crucial. For non-invasive imaging, the thermal resistance
+between the sensor and the investigated device, 𝑅𝑠𝑑 , has to be significantly larger than
+the thermal resistance of the device to the bulk of its substrate, 𝑅𝑑𝑏 (Fig. 1d). On the
+other hand, in order for the temperature of the sensor 𝑇𝑠 to accurately describe the local
+temperature of the device 𝑇𝑑 , a high thermal resistance 𝑅𝑠𝑠 is required between the sensor
+and its support structure. The resulting overall requirement of 𝑅𝑠𝑠 ≫ 𝑅𝑠𝑑 ≫ 𝑅𝑑𝑏 is
+usually hard to achieve in AFM-type scanning thermal probes‎12, leading to invasive
+in-contact imaging‎13-‎14. In tSOT, in contrast, 𝑅𝑠𝑠 is extremely high, owing to its unique
+nanoscale cross-section geometry, giving rise to a quantum-limited phonon thermal
+conductivity‎24, and to the absence of electronic heat conductivity along the
+superconducting leads. As a result, our smaller tSOT attains 𝑅𝑠𝑠 ~1011 K⁄W (see S6) as
+compared to 𝑅𝑑𝑏 ~107 K⁄W for a 120120 nm2 device on a SiO2/Si substrate at 4.2 K
+(Fig. 1e). The corresponding optimal 𝑅𝑠𝑑 of 108 to 1010 K⁄W is readily achieved in our
+configuration using a few mbar of He exchange gas to tune 𝑅𝑠𝑑 (Fig. S8). These features
+permit non-contact sensing of the local temperature 𝑇𝑑 of the sample with nanoscale
+resolution (Fig. S2 and sections S3-4).
+To characterize the thermal sensitivity of the scanning tSOT we position the sensor
+above a 120 nm wide Cu nanowire on SiO2/Si substrate (Figs. 1d and S7) carrying an ac
+current which results in an ac temperature modulation 𝑇𝑎𝑐 of the nanowire at 13.1 kHz.
+By changing the current amplitude we measured tSOT 𝑇𝑎𝑐 vs. the power 𝑃 dissipated per
+square 120120 nm2 segment of the wire (Fig. 1e). Since 𝑇𝑎𝑐 ≪ 𝑇𝑏 , where 𝑇𝑏 = 4.2 K is
+the thermal bath temperature, the measurement is in the small signal limit and hence 𝑇𝑎𝑐
+is linear in 𝑃 as expected, reaching a noise level of 𝑇𝑎𝑐 ≃ 440 nK at 𝑃 ≃ 6 fW. The green
+symbol in Fig. 1e points to the Landauer’s dissipation limit of 𝑃 = 40.2 fW of a qubit
+operating at 1 GHz at 4.2 K which gives rise to 𝑇𝑎𝑐 = 2.6 µK in our sample. This value is
+demarcated in Fig. 1a (green) along with the expected inverse scaling of the qubit
+temperature with its area (dashed line).
+
+4
+
+By applying a proper combination of magnetic field and bias, the tSOT can be tuned
+to have both magnetic field and thermal sensitivities. Since the Oersted field generated by
+the transport current in the sample is linear in current while the dissipation is quadratic,
+the resulting magnetic field signal 𝐵𝑧𝑎𝑐 generated by the ac current 𝐼𝑎𝑐 at frequency 𝑓 can
+be imaged simultaneously with the thermal signal 𝑇𝑎𝑐 that will be present at frequency 2𝑓
+as shown in Fig. S11.
+We employed the tSOT technique for nanoscale thermal imaging of quantum matter.
+Figures 2a,b show 𝑇𝑎𝑐 images of two single-wall carbon nanotubes (CNT) carrying an ac
+current of few nA. Each CNT is wound into a loop‎25 as outlined by the dotted trajectories
+and shown by SEM images in Figs. 2d,e. The thermal signal in Fig. 2a tracks the CNT,
+revealing the current-driven dissipation along the entire CNT length. Surprisingly, and in
+contrast to the above, Fig. 2b shows an absence of heating in the circular part of the loop.
+The 𝑇𝑎𝑐 image thus reveals that the applied current bypasses the loop exposing an
+electrically shorted junction between the two crossing sections of the CNT. This
+observation illustrates the capacity of tSOT for fault detection in operating nano-devices.
+A striking feature evident in Figs. 2a,b is ring-like fine structures, with a zoomed-in
+𝑇𝑎𝑐 image of one of them shown in Fig. 2c. These features resemble the Coulomb
+blockade rings observed in scanning gate microscopy‎26 in which the conductance through
+a quantum dot (QD) is measured as a function of the position of a conducting AFM tip. In
+this case, the characteristic equipotential rings corresponding to the periodic conditions of
+Coulomb blockade peaks governed by single electron charging of the QD‎27 originate
+from the tip acting as a local gate. Since the tSOT is conducting, it can also serve as a
+nanoscale scanning gate. Our long CNTs on the SiO2/Si substrate are, however, highly
+disordered, with numerous QDs in series resulting in CNT resistances in excess of 10
+M. As a result, no detectable change in the CNT conductance is observed while
+scanning the tSOT. The unique feature of the tSOT, however, is that in addition to
+functioning as a scanning gate it simultaneously operates as a nanoscale thermometer that
+detects minute changes in the local dissipation resulting from its own controllable local
+gating. The 𝑇𝑎𝑐 ring in Fig. 2c with a cross sectional width of 20 nm (Fig. 2f) thus reveals
+µK-range changes of the temperature of a QD resulting from modulating its single
+electron Coulomb blockade conductance peaks by the scanning tSOT (see sections S1314 of for additional details). This novel “scanning gate thermometry” thus adds another
+powerful functionality to the tSOT allowing nanoscale manipulation of the potential and
+study of the induced changes in the local scattering processes and dissipation that is
+inaccessible by other methods.
+
+5
+
+Figure 2 | Thermal imaging of single-walled carbon nanotubes and scanning gate
+thermometry of quantum dots. a-b, Thermal images of two CNT devices with loop
+geometry carrying 𝐼𝑎𝑐 of 12 nA (a) and 3 nA (b) revealing an electrical short at the loop
+intersection point in (b). The 𝑇𝑎𝑐 (𝑥, 𝑦) was acquired by tSOT of 104 nm diameter at
+scanning heights of about 65 nm (a) and 150 nm (b). The ring-like structures in 𝑇𝑎𝑐 result
+from variations in dissipation due to modulations in the single-electron charging of
+individual QDs as described in (c). c, Zoomed-in scanning gate thermometry image of a
+single QD in the area marked in (d) at a scan height of about 35 nm. Variations in the
+electrochemical potential of the QD induced by the scanning tSOT give rise to changes of
+the temperature of the QD at the Coulomb blockade peak conditions along the
+equipotential ring-like contour. d-e, SEM images of the devices in (a) and (b). f, Line-cut
+across the line marked in (c).
+One of the topics of high interest in the studies of electronic transport at low temperatures
+is the non-equilibrium heating of the electron bath and proliferation of hot carriers due to
+poor electron-phonon coupling. Graphene offers a unique system where the typical
+distance for such carrier - lattice cooling can exceed the dimensions of the device‎28 due to
+anomalously long lifetime of the hot carriers‎29. Electron cooling rates are believed to be
+sharply enhanced in the presence of disorder, however the precise mechanism of such
+enhancement is poorly understood‎30.
+6
+
+a
+
+b
+Idc
+
+Tac [mK]
+1
+
+0.65
+
+Idc
+1 µm
+
+500 nm
+
+0.3
+
+Figure 3 | Scanning gate thermometry observation of dissipation at localized
+resonant states at graphene edges. a, Optical image of hBN/graphene/hBN structure
+patterned into a washer shape (bright) with inner and outer diameters of 2 and 6 µm. b,
+Scanning ac gate thermometry 𝑇𝑎𝑐 image of the outlined area in (a) in presence of a dc
+current of 6 µA applied as indicated by the arrows in (a) at carrier concentration of 10 12
+cm-2. The 𝑇𝑎𝑐 (𝑥, 𝑦) was acquired by tSOT of 100 nm diameter at 4.2 K at a height of 40
+nm in presence of an ac potential of 200 mV applied to the tip (see sections S13-S15).
+The dashed lines mark graphene edges. The necklace of rings reveals the presence of
+resonant states along the edges of graphene that serve as local centers of energy
+dissipation.
+To probe microscopic dissipation mechanisms in graphene we performed scanning
+thermometry in high-mobility graphene encapsulated in hexagonal boron-nitride. We
+used a washer shaped device to which a dc current was applied between top and bottom
+constrictions as illustrated in Figure 3a (see S12 for details). Figure 3b shows the
+corresponding scanning gate thermal image revealing a startling visualization of
+dissipation processes, which are manifested in a complex structure of two necklaces of
+rings along the inner and outer edges of the device. The sharp ring-like structures have
+the same origin as the ring-like patterns in CNT in Figs. 2a-c, unveiling the presence of
+localized resonant states at the edges of graphene acting as atomic-scale heat beacons.
+The tSOT functions as a top gate which tunes the potential of the localized states into
+resonance when the combination of its distance and the voltage 𝑉𝑡𝑆𝑂𝑇 applied between the
+tip and the sample match the resonance conditions. This gives rise to sharp rings of
+enhanced temperature as described in detail in sections S13 and S15. Consequently the
+7
+
+ring radius 𝑅 changes upon varying 𝑉𝑡𝑆𝑂𝑇 as demonstrated in Fig. S16 and Video S1 or
+upon changing the tip height as demonstrated in the case of CNT in Fig. S15.
+Despite the similarity between the ring-like structures observed in CNT and graphene,
+their microscopic origin appears to be quite different. For CNT, the disorder potential
+creates QDs which confine discrete electronic states. Since the conductance of the QD is
+sharply enhanced under resonant conditions, the Coulomb blockade staircase gives rise to
+the sequence of concentric rings of enhanced local temperature in presence of current
+flow through the CNT (Fig. S15). In our hBN/graphene/hBN devices, in contrast, the hot
+electrons flow mainly in the bulk of the graphene, while the electron-lattice cooling
+occurs predominantly at defect states at graphene edges. Such defects can be formed by
+the vacancies and adatoms produced at the exposed graphene edge during etching
+process. Spatially localized electronic states originating from such defects, with energies
+pinned to the Dirac point‎31 were recently revealed by scanning tunneling microscopy‎32.
+Localized states can significantly enhance electron-phonon coupling thus providing a
+local drain for the excess energy of the hot electrons‎30. Since each defect creates a single
+resonant electronic state‎31 only one ring should be observed around each defect with the
+radius R that depends on 𝑉𝑡𝑆𝑂𝑇 as shown in Fig. S16 and Video S1. Acting as a gatetunable spatially localized energy flow bottlenecks, these dissipation centers are likely to
+play a dominant role in the hot-carrier applications of graphene electronics. These
+observations shed new light on electron-lattice cooling mechanisms in graphene, a
+subject of high current interest.
+The observation of striking spatially localized dissipation centers at graphene edge
+underscores the potential of the tSOT technique for uncovering the microscopic origins of
+dissipation in novel states of matter. Other systems of interest are topologically protected
+surface states, edge states in quantum spin and anomalous quantum Hall systems, and
+surface states in Weyl semimetals. By choosing appropriate superconducting
+materials‎22,‎23,‎33 it should be possible to extend the operating temperature range of the
+tSOT from tens of mK to tens of K (Fig. S1d) thus allowing investigation of a wide range
+of quantum systems. In addition, the operation of the tSOT at elevated magnetic fields
+combined with the multifunctional abilities of magnetic sensing and scanning gate
+thermometry opens the way to nanoscale investigation and imaging of intricate
+thermoelectric and thermomagnetic phenomena including Nernst effect, thermal Hall
+effect, thermoelectric nanoscale cooling and quantum heat conductance.
+
+8
+
+References
+1.
+2.
+
+Yue, Y. & Wang, X. Nanoscale thermal probing. Nano Reviews 3, 11586 (2012).
+Giazotto, F., Heikkilä, T. T., Luukanen, A., Savin, A. M. & Pekola, J. P.
+Opportunities for mesoscopics in thermometry and refrigeration: Physics and
+applications, Rev. Mod. Phys. 78, 217 (2006).
+3. Jin, C. Y., Li, Z., Williams, R. S., Lee, K.C. & Park, I. Localized temperature and
+chemical reaction control in nanoscale space by nanowire array. Nano Lett. 11,
+4818–4825 (2011).
+4. Kucsko, G. et al. Nanometer scale thermometry in a living cell. Nature 500, 54–58
+(2013).
+5. Mecklenburg, M. et al. Nanoscale temperature mapping in operating microelectronic
+devices. Science 347, 6222 (2015).
+6. Teyssieux, D., Thiery, L. & Cretin, B. Near-infrared thermography using a chargecoupled device camera: Application to microsystems, Rev. Sci. Instrum. 78, 034902
+(2007).
+7. Toyli, D. M., de las Casas, C. F., Christle, D. J., Dobrovitski, V. V. & Awschalom,
+D. D. Fluorescence thermometry enhanced by the quantum coherence of single spins
+in diamond. Proc. Natl. Acad. Sci. 110, 8417–8421 (2013).
+8. Neumann, P. et al. High-precision nanoscale temperature sensing using single
+defects in diamond. Nano Lett. 13, 2738–2742 (2013).
+9. Reparaz, J. S. et al. A novel contactless technique for thermal field mapping and
+thermal conductivity determination: Two-Laser Raman Thermometry. Rev. Sci.
+Instrum. 85, 034901 (2014).
+10. Brites, C. D. S. et al. Thermometry at the nanoscale, Nanoscale 4, 4799–4829
+(2012).
+11. Majumdar, A. Scanning thermal microscopy. Annu. Rev. Mat. Sci. 29, 505-585
+(1999).
+12. Menges, F. et al. Temperature mapping of operating nanoscale devices by scanning
+probe thermometry. Nature communications 7, 10874 (2016).
+13. Kim, K., Jeong, W., Lee, W. & Reddy, P. Ultra-high vacuum scanning thermal
+microscopy for nanometer resolution quantitative thermometry. ACS Nano. 6, 4248–
+4257 (2012).
+14. Sadat, S., Tan, A., Chua, Y. J. & Reddy, P. Nanoscale thermometry using point
+contact thermocouples. Nano Lett. 10, 2613–2617 (2010).
+15. Grosse, K. L., Bae, M. H., Lian, F., Pop, E. & King, W. P. Nanoscale Joule heating,
+Peltier cooling and current crowding at graphene–metal contacts, Nature
+Nanotechnology 6, 287-290 (2011).
+9
+
+16. Pekola, J. P. Towards quantum thermodynamics in electronic circuits. Nature
+Physics 11, 118–123 (2015).
+17. Landauer, R. Irreversibility and heat generation in the computing process. IBM J.
+Res. Dev. 5, 183–191 (1961).
+18. Bérut, A. et al. Experimental verification of Landauer’s principle linking information
+and thermodynamics. Nature 483, 187–189 (2012).
+19. Herr, Q. P., Herr, A. Y., Oberg, O. T. & Ioannidis, A. G. Ultra-low-power
+superconductor logic. J. Appl. Phys 109, 103903 (2011).
+20. Kuhn, K. J. et al. The ultimate CMOS device and beyond, IEDM Tech. Dig, 171–174
+(2012).
+21. Faivre, T., Golubev, D. & Pekola, J. P. Josephson junction based thermometer and its
+application in bolometry. J. Appl. Phys. 116, 094302 (2014).
+22. Vasyukov, D. et al. A scanning superconducting quantum interference device with
+single electron spin sensitivity. Nature Nanotechnology 8, 639–644 (2013).
+23. Finkler, A. et al. Self-aligned nanoscale SQUID on a tip. Nano Letters 10, 1046–
+1049 (2010).
+24. Schwab, K., Henriksen, E. A., Worlock, J. M. & Roukes, M. L. Measurement of the
+quantum of thermal conductance. Nature 404, 974–977 (2000).
+25. Shadmi, N., Geblinger, N., Ismach, A. & Joselevich, E. Formation of ordered vs
+disordered carbon nanotube serpentines on anisotropic vs isotropic substrates. J.
+Phys. Chem. C 118, 14044–14050 (2014).
+26. Woodside, M. T. and McEuen, P. L. Scanned probe imaging of charge states in
+nanotube quantum dots. Science 296, 1098-1101 (2002).
+27. Grabert, H. & Devoret, M. H. Single charge tunneling: Coulomb blockade
+phenomena in nanostructures, Nato Science Series B 294, Springer US (1992).
+28. Bandurin, D.A. et al., Negative local resistance caused by viscous electron backflow
+in graphene, Science 10.1126/science.aad0201 (2016).
+29. Bistritzer, R. and MacDonald, A. H., Electronic cooling in graphene, Phys. Rev. Lett.,
+102, 206410 (2009).
+30. Song, J. C. W., Reizer, M. Y. and Levitov, L. S. Disorder-assisted electron-phonon
+scattering and cooling pathways in graphene, Phys. Rev. Lett. 109, 106602 (2012).
+31. Pereira, V. M., Guinea, F., Lopes dos Santos, J. M. B., Peres, N. M. R. and Castro
+Neto, A. H., Disorder Induced Localized States in Graphene, Phys. Rev. Lett. 96,
+036801 (2006).
+32. González-Herrero, H. et al. Atomic-scale control of graphene magnetism by using
+hydrogen atoms. Science 352, 437-441 (2016).
+33. Lachman, E. et al. Visualization of superparamagnetic dynamics in magnetic
+topological insulators, Sci. Adv. 1, e1500740 (2015).
+10
+
+Acknowledgements
+We thank A. F. Young for discussions, M. V. Costache and S. O. Valenzuela for
+facilitation in Py/Cu sample fabrication, D. Shahar, I. Tamir, T. Levinson and S. Mitra
+for assistance in fabrication of a:In2O3 integrated devices, M. E. Huber for SOT readout
+setup, and M. L. Rappaport for technical assistance. This work was supported by the
+European Research Council (ERC) under the European Union’s Horizon 2020 program
+(grant No 655416), by the Minerva Foundation with funding from the Federal German
+Ministry of Education and Research, and by Rosa and Emilio Segré Research Award.
+LSL and EZ acknowledge the support of MISTI MIT-Israel Seed Fund.
+Author contributions
+DH, JC and EZ conceived the technique and designed the experiments. DH and JC
+performed the measurements. DH performed the analysis and theoretical modelling. LE
+constructed the scanning SOT microscope. MBS and AKG designed and provided the
+graphene sample and contributed to the analyses of the results. NS and EJ fabricated the
+CNT samples. JC fabricated the Cu/Py sample. DH, HRN and JS fabricated the a:In2O3
+sample. DH and YR designed and fabricated the spatial resolution demonstration sample.
+HRN, YA and AU fabricated the tSOT sensors. YA and YM developed the SOT
+fabrication technique. AU, YM and DH developed the tuning-fork based tSOT height
+control technique. LSL performed theoretical analysis. DH, JC and EZ wrote the
+manuscript. All authors participated in discussions and writing of the manuscript.
+Author information
+Correspondence and requests for materials should be addressed
+(dorri.halbertal@weizmann.ac.il) or EZ (eli.zeldov@weizmann.ac.il).
+
+11
+
+to
+
+DH
+
+Supplementary Information:
+Nanoscale thermal imaging of dissipation in quantum systems
+S1. tSOT fabrication and thermal characterization
+The tSOT fabrication methods, as well as the measurement circuitry and readout
+techniques, are based on the SOT technology23,24,‎34 with several modifications. The
+tSOTs are fabricated by self-aligned three stage in-situ Pb deposition onto a pulled quartz
+pipette with apex diameter between 40 and 300 nm cooled to about 8 K. Pb has a very
+high surface diffusion and as a result grows in form of isolated islands if deposited at
+room temperature or even at 77 K. The low temperature deposition is therefore required
+in order to attain sufficiently uniform thin Pb films on the surface of the quartz pipettes as
+described in ref. 23. The two main modifications in tSOT fabrication are the use of
+grooved quartz tubes, which facilitate reliable fabrication of small tSOTs, and deposition
+of an integrated Au shunt resistor in the vicinity of the apex, which adds damping
+resulting in linear characteristics above 𝐼𝑐 (Fig. S1a) that are advantageous for thermal
+imaging. The current through the sensor 𝐼𝑡𝑆𝑂𝑇 is measured using a SQUID series array
+amplifier (SSAA)‎35 as shown in the inset of Fig. S1c. For 𝐼𝑡𝑆𝑂𝑇 < 𝐼𝑐 the device is in the
+superconducting state and essentially all the applied current 𝐼𝑏𝑖𝑎𝑠 flows through the tSOT,
+while at higher currents the device is in a dissipative state in which 𝐼𝑏𝑖𝑎𝑠 is distributed
+between the external shunt resistor 𝑅𝑠ℎ𝑢𝑛𝑡 and the tSOT, leading to a decrease in the
+slope of the characteristics.
+Figure S1 shows the characteristics of the tSOT device used for the measurements in
+Figs. 1 of the main text. The tSOT effective diameter of 46 nm was extracted from the
+interference pattern as in Ref. 23. Figure S1a presents a set of 200 𝐼𝑡𝑆𝑂𝑇 vs. 𝐼𝑏𝑖𝑎𝑠 curves at
+different temperatures 𝑇, color-coded between 4.2 K and 𝑇𝑐 = 7.2 K, showing the
+monotonous decrease of 𝐼𝑐 with temperature. At a fixed 𝐼𝑏𝑖𝑎𝑠 = 160 μA (dotted line in
+Fig. S1a) this drop in 𝐼𝑐 results in a monotonous decrease in 𝐼𝑡𝑆𝑂𝑇 (𝑇), as shown in Fig.
+S1b, leading to a thermal response of 𝑑𝐼𝑡𝑆𝑂𝑇 /𝑑𝑇 = -9.5 μA/K at the base temperature.
+Figure S1c presents the spectral noise density of 𝐼𝑡𝑆𝑂𝑇 , showing the typical 1/𝑓 noise
+followed by a white noise level of 8.3 pA/Hz1/2 at frequencies above few hundred Hz.
+Combining the white noise level with the thermal response gives a thermal noise of 870
+nK/Hz1⁄2 at 4.2 K. Figure S1d shows the thermal noise vs. the temperature attained by
+measuring the noise spectra and the thermal response at various temperatures. This result
+
+12
+
+Figure S1 | Characteristics of the 46 nm diameter tSOT. a, Set of 200 𝐼𝑡𝑆𝑂𝑇 vs. 𝐼𝑏𝑖𝑎𝑠
+characteristics at various temperatures 𝑇 color coded from 4.2 to 7 K. b, Monotonically
+decreasing 𝐼𝑡𝑆𝑂𝑇 vs. 𝑇 for 𝐼𝑏𝑖𝑎𝑠 = 160 µA giving rise to thermal response of –9.5 µA/K at
+the base temperature and –13.7 µA/K close to Tc. c, tSOT current noise spectral density at
+the working point at 4.2 K reaching a white noise level of 8.3 pA/Hz1⁄2. Inset: schematics
+of the measurement circuit. d, Thermal noise as a function of temperature showing the
+very high thermal sensitivity of the tSOT in the entire range of temperatures up to 7 K.
+
+demonstrates that the tSOT can operate over a wide temperature range, up to 7 K, with
+outstanding thermal sensitivity, down to 600 nK/Hz1⁄2. Very close to 𝑇𝑐 the thermal noise
+diverges due to a decrease in the thermal response. Figure S1d shows that tSOT operates
+very well in the entire temperature range of 4.2 K to 7 K. In general, the most sensitive
+temperature range of the tSOT is 𝑇𝑐 ⁄2 < 𝑇 < 𝑇𝑐 where the critical current has an
+approximately linear 𝑇 dependence 𝐼𝑐 (𝑇) ≅ 𝐼0 (1 − 𝑇⁄𝑇𝑐 ). At lower temperatures the
+|𝑑𝐼𝑐 (𝑇)/𝑑𝑇| usually decreases and hence the sensitivity is expected to drop. This
+limitation can be readily addressed by using SOTs made of lower 𝑇𝑐 superconductors
+including Al [23] and In [33]. Another challenge for operation at very low temperatures
+is maintaining sufficiently low 𝑅𝑠𝑑 . Our preliminary studies show that In tSOT exhibits
+good thermal sensitivity in 3He exchange gas down to 700 mK. Reducing the working
+13
+
+temperature further may be achieved by immersion in liquid 3He which should allow
+operation in 3He cryostat down to 250 mK and at even lower temperatures in a dilution
+fridge. For operation at higher temperatures NbN, MgB2, and high-temperature
+superconductors could be potentially used, thus covering the full range of temperatures of
+interest for quantum systems.
+
+S2. Correlation between the sample and tSOT temperatures
+Unlike most other scanning thermal microscopy (SThM) techniques, the tSOT is not
+in physical contact with the sample device under inspection. The heat mediation between
+the device and the sensor is carried by variable pressure He exchange gas. A dedicated
+multi-layer device (Fig. S2a) was fabricated in order to test the correlation between the
+temperature measured by the tSOT and the temperature of the device. The device
+comprised a SiO2/Si substrate on which Au/Cr micro-heater (25 nm/5 nm thickness) was
+deposited and patterned into 12 µm wide strip (green in Fig. S2a), coated by 20 nm of
+Al2O3 insulating layer using atomic layer deposition (ALD). An amorphous In2O3 film‎36
+was deposited on top (33 nm thick, deposited in 1.510-5 mtorr of O2 and annealed in
+vacuum for 48 hours at 40 C) and patterned into an 8 µm wide strip with multiple
+contacts (red) connected to Au/Cr (25 nm/5 nm) metallic contact pads (blue).
+The metal-insulator transition of the a:In2O3 gives rise to a strongly temperature
+dependent resistance 𝑅(𝑇) which we utilize for self-thermometry. By globally varying
+the system temperature 𝑇 we measure concurrently 𝑅(𝑇) of the device and 𝐼𝑡𝑆𝑂𝑇 (𝑇) of
+the tSOT under thermal equilibrium conditions between the device and the sensor as
+shown in Fig. S2b. From these data the corresponding thermal responses 𝑑𝑅/𝑑𝑇 = −2.4
+kΩ/K and 𝑑𝐼𝑡𝑆𝑂𝑇 ⁄𝑑𝑇 = −10 µA/K at 4.2 K are derived (Fig. S2b). Then, by driving a
+low frequency ac current in the Au micro-heater we induce local ac heating in the device
+𝑑
+and measure the resulting ac temperatures of the In2O3 film, 𝑇𝑎𝑐
+, and of the tSOT sensor,
+𝑠
+𝑇𝑎𝑐 , under steady state non-equilibrium thermal conditions.
+
+14
+
+Figure S2 | Comparison between the sample and tSOT temperatures. a, False-color
+SEM image of the sample consisting of Cr/Au micro-heater (green), 33 nm thick a:In2O3
+thin film thermometer with series of contacts (red), and Au/Cr leads (blue). The microheater is insulated from the a:In2O3 by 20 nm layer of Al2O3. b, Simultaneous four probe
+measurement of the resistance 𝑅(𝑇) of the central In2O3 segment of the device (blue) and
+of the current 𝐼𝑡𝑆𝑂𝑇 (𝑇) through the tSOT (red) vs. temperature 𝑇 under thermal
+equilibrium conditions. The dashed lines show the corresponding slopes and the thermal
+𝑑
+responses at 4.2 K. c, Simultaneously measured second-harmonic 𝑇𝑎𝑐
+of the In2O3
+𝑠
+thermometer and 𝑇𝑎𝑐 of the tSOT vs. the total power 𝑃 dissipated in the Au heater by ac
+current at 10 Hz demonstrating the close conformity of the local temperature
+measurement of the tSOT. Dashed lines are linear fits to the data and demarcate the
+thermal noise levels of the two measurements. Inset: Schematic cross section of the
+sample and of the tSOT positioned at a relatively large height of 500 nm above the
+𝑠
+central segment of the In2O3 film. d, 𝑇𝑎𝑐
+as a function of tSOT height ℎ above the device
+𝑑
+(blue) and 𝑇𝑎𝑐 of the central segment of the device (red).
+Imaging was done, here and elsewhere, using an in-house-built scanning microscope
+operating at 4.2 K as described in ref. 23. The measurement was performed by driving an
+15
+
+ac current of variable amplitude up to 0.35 mA at 𝑓 = 10 Hz to the underlying Au microheater of 142 Ω resistance. The use of a low frequency is a result of the high RC time
+constant of the a:In2O3 device due to its high resistance (2-probe resistance of 200 kΩ).
+𝑑
+The resulting ac temperature variation of the device 𝑇𝑎𝑐
+at 2𝑓 was measured by applying
+a probing dc current of 1 µA to the current leads of the In2O3 device and measuring the
+second-harmonic voltage signal on the central segment of the device using a lock-in
+amplifier. A tSOT of 110 nm diameter and 2.1 µK/Hz1/2 temperature sensitivity (in the
+white noise region above few hundred Hz) was positioned 500 nm above the center of the
+central segment of the device (Fig. S2c inset) in 16 mbar of He exchange gas. The
+relatively large height of the tSOT was used for convenience since only the average local
+temperature measured by the tSOT was of importance for direct comparison with the
+𝑑
+temperature reading of the device. Figure S2c shows the simultaneously measured 𝑇𝑎𝑐
+𝑠
+and 𝑇𝑎𝑐 vs. the total power 𝑃 dissipated in the micro-heater. The dashed lines show a
+linear fit to the data and also mark the noise levels of 200 µK and 4 µK of the two
+measurements using 1 sec time constant of the lock-in amplifiers. The two signals scale
+𝑠
+𝑑
+linearly with 𝑃 as expected with 𝑇𝑎𝑐
+closely following 𝑇𝑎𝑐
+thus establishing a
+measurement of the actual device temperature by the tSOT.
+𝑠
+Next we applied 0.35 mA ac current in the heater and measured the 𝑇𝑎𝑐
+of the tSOT
+vs. the height ℎ above the device surface up to ℎ = 12 µm. Figure S2d shows an
+𝑠
+exponential decay of 𝑇𝑎𝑐
+with the height with a characteristic length scale of 7 µm.
+Similar results were attained for He gas pressures in the range of 2 to 26 mbar.
+𝑑
+𝑠
+Interestingly, on approaching ℎ = 0 the data show a higher 𝑇𝑎𝑐
+by about 22% than 𝑇𝑎𝑐
+.A
+similar 24% systematic difference is also observed in the data of Fig. S2c (that was taken
+500 nm above the device). Such a difference can be readily accounted for by taking into
+account the thermal Kapitza resistance 𝑅𝐾 at the In2O3/He gas interface which leads to
+temperature discontinuity at the solid/gas interface due to phonon mismatch‎37.
+Considering the measured temperature discontinuity and an estimate for the heat flow to
+the gas in our geometry we attain 𝑅𝐾 ≅ 6 K·cm2/W which is consistent with the values of
+the Kapitza resistance between solids and helium gas at 4.2 K available in the literature‎38.
+
+S3. Theoretical analysis of the tSOT spatial resolution
+In the presence of local dissipation we define 𝛿𝑇(𝑥, 𝑦) to describe the spatially
+varying surface temperature of the sample taken relative to the bath temperature 𝑇0 .
+Without loss of generality we will work in the limit 𝛿𝑇(𝑥, 𝑦) ≪ 𝑇0 . The corresponding
+temperature 𝛿𝑇𝑡𝑆𝑂𝑇 (𝑥, 𝑦) measured by the tSOT (relative to 𝑇0 ) will be determined by a
+convolution of 𝛿𝑇(𝑥, 𝑦) with a heat transfer kernel 𝑊(𝑟), where 𝑟 is the radial distance
+from the tip center. The effective spatial resolution is then determined by the kernel 𝑊(𝑟)
+which depends on the diameter 𝐷 of the tip and the scanning height ℎ above the surface.
+Our analysis is based on the assumption of ballistic flow of He atoms between the
+sample surface and the tSOT which for our geometry holds for He gas pressures of up to
+about 50 mbar [‎39]. We assume for simplicity that each atom carries an excess energy
+16
+
+proportional to the surface temperature 𝛿𝑇(𝑥, 𝑦) at the point of its origin and deposits this
+entire excess energy to the tSOT upon first encounter with its surface. We also assume
+that He atoms are scattered from the sample surface with a uniform angular distribution
+into the half space above the surface. These assumptions make our estimate a worst case
+scenario, while a more complete analysis should predict a better resolution. This is
+because the scattering probability is expected to be higher for smaller azimuthal angles
+and also because we ignore the contributions of multiple atom collisions between the
+sample and the tSOT which are more likely to happen for atoms trapped in the narrow
+gap between the tip apex and the sample.
+We model the tSOT as a disc of diameter 𝐷 that resides in the 𝑧 = ℎ plane, centered
+at 𝑥 = 𝑦 = 0. A planar sample is positioned at the 𝑧 = 0 plane. Following the above
+assumptions the probability density distribution of atoms departing from the origin within
+a small solid angle ∆Ω that covers an area ∆𝑆 on the 𝑧 = ℎ plane positioned at a radial
+distance 𝑟 is ∆Ω/∆S = ℎ(ℎ2 +𝑟2 )−3/2. Using this expression we estimate the probability of an
+atom originating at 𝒓 = (𝑥, 𝑦) on the sample surface to collide with the tSOT. The
+resulting 2D heat transfer kernel 𝑊(𝑟) is given by
+𝐷/2
+
+𝑊(𝒓) = ∫0
+
+2𝜋
+
+𝑑𝜌𝜌 ∫0 𝑑𝛼ℎ(ℎ2 + (𝑥 − 𝜌 cos 𝛼)2 + (𝑦 − 𝜌 sin 𝛼)2 )−3/2 /2𝜋
+
+Accordingly, the corresponding tSOT temperature is given by
+𝛿𝑇𝑡𝑆𝑂𝑇 (𝑥, 𝑦) = (4𝜂/𝜋𝐷2 ) ∫ 𝑑𝑥′ ∫ 𝑑𝑦′ 𝑊(𝑥 − 𝑥 ′ , 𝑦 − 𝑦′)𝛿𝑇(𝑥 ′ , 𝑦′),
+where 𝜂 is a proportionality constant determined by the heat flow balance conditions.
+Since in this section we are interested only in the spatial resolution of the tSOT response
+function in the ballistic regime we take 𝜂 = 1 for simplicity. Accordingly, the kernel
+𝑊(𝑟) is properly normalized such that a uniform surface temperature 𝛿𝑇(𝑥, 𝑦) = 𝛿𝑇
+results in 𝛿𝑇𝑡𝑆𝑂𝑇 (𝑥, 𝑦) = 𝛿𝑇.
+In the same vein, for the case of a 1D heat source, where 𝛿𝑇(𝑥, 𝑦) = 𝛿𝑇(𝑥), we
+deduce a 1D tSOT kernel function
+𝐷/2
+
+𝑊1 (𝑥) = ∫ 𝑑𝑦 𝑊(𝑥, 𝑦) = (ℎ/𝜋) ∫0
+
+2𝜋
+
+𝑑𝜌𝜌 ∫0 𝑑𝛼 (ℎ2 + (𝑥 − 𝜌 cos 𝛼)2 )−1
+
+and
+𝛿𝑇𝑡𝑆𝑂𝑇 (𝑥) = (4𝜂/𝜋𝐷2 ) ∫ 𝑑𝑥′ 𝑊1 (𝑥 − 𝑥 ′ )𝛿𝑇(𝑥′).
+Figure S3a presents the 2D kernel 𝑊(𝑟) at different normalized heights ℎ/𝐷,
+indicating a highly localized behavior up to ℎ/𝐷 ≅ 0.5. We define the spatial resolution
+of the sensor for given tSOT diameter D and scanning height ℎ as the full width at half
+maximum (FWHM) of 𝑊(𝑥, 𝑦 = 0). Figure S3b plots the resulting spatial resolution as a
+function of D and ℎ with dashed lines indicating contours of 50, 100 and 150 nm spatial
+resolution. Note that for small ℎ the contours are essentially vertical, showing that for
+ℎ ≪ 𝐷 the spatial resolution is equal to 𝐷. Even at larger heights of ℎ ≅ 𝐷/2 a fair
+resolution is attained. For example, a tSOT of 𝐷 = 75 nm at ℎ = 50 nm provides a spatial
+resolution of close to 100 nm.
+
+17
+
+Figure S3 | Theoretical analysis of the spatial resolution of tSOT. a, The tSOT 2D
+heat transfer kernel function for different heights ℎ above a planar sample for ballistic
+transport of helium atoms. b, The resulting spatial resolution of the tSOT technique
+(defined as FWHM of the kernel function) as a function of tSOT diameter 𝐷 and
+scanning height ℎ with contour lines marking resolution of 50, 100, and 150 nm. c,
+Calculated thermal signal measured by tSOT of 𝐷 = 100 nm at several scan heights
+above a square surface temperature profile 𝛿𝑇(𝑥, 𝑦) with 100 nm wide steps and 150 nm
+gaps without heat diffusion in the substrate as indicated by black line. d, Calculated
+surface temperature (black line) and the tSOT thermal signal as in c in presence of heat
+diffusion in the substrate. The shape of the thermal profiles is independent of heat
+conductivity of the substrate.
+Figure S3c presents the calculated tSOT signal for a 𝐷 = 100 nm device at different
+heights above a 100 nm square-shaped surface temperature profile 𝛿𝑇(𝑥) as indicated by
+the black line. The tSOT of 100 nm diameter can clearly resolve such temperature profile
+at low scan heights. However, in practical planar samples, such square-shaped surface
+temperature profile cannot be readily realized due to heat diffusion in the substrate which
+causes a significant broadening of the surface temperature. This broadening can be
+18
+
+understood by noting that the diffusion equation for a 1D heat source and a homogeneous
+3D substrate gives a heat flux that drops as 1/𝑟, where 𝑟 is the radial distance from the
+line-source. This results in a log(𝑟) temperature decay. Note that this long-range
+temperature decay is universal and is independent of the thermal conductivity of the
+substrate.
+Figure S4a presents a numerical solution of the heat diffusion equation showing the
+temperature distribution 𝛿𝑇(𝑥, 𝑧) in the bulk of a semi-infinite sample containing a 1D
+heater of 110 nm × 30 nm cross section extending in the 𝑦 direction. The black curve in
+Fig. S4b shows the corresponding surface temperature 𝛿𝑇(𝑥) of the sample displaying
+the long-range decaying tail that is well described by log(𝑟) dependence (dashed curve).
+The colored curves in Fig. S4b show the calculated 𝛿𝑇𝑡𝑆𝑂𝑇 (𝑥) profiles for a 𝐷 = 100 nm
+tSOT at various heights ℎ above the surface. For small ℎ values the tSOT kernel causes
+rounding of the sharp features on the scale 𝑥 < 𝐷 but otherwise 𝛿𝑇𝑡𝑆𝑂𝑇 (𝑥) closely
+follows the surface 𝛿𝑇(𝑥). In particular, for 𝑥 > ~2𝐷 in the slow log(𝑟) tail region, the
+profile 𝛿𝑇𝑡𝑆𝑂𝑇 (𝑥) is almost indistinguishable from the surface 𝛿𝑇(𝑥) for up to ℎ ≅ 100
+nm. This result demonstrates that at larger distances the measured 𝛿𝑇𝑡𝑆𝑂𝑇 (𝑥) is
+dominated by heat diffusion in the substrate rather than the intrinsic spatial resolution of
+the tSOT. Moreover, the log(𝑟) tail is a characteristic fingerprint of the actual surface
+temperature of the sample and cannot arise from the tSOT heat transfer kernel.
+
+Figure S4 | Comparison of heat profiles above a 1D heater: simulation vs.
+experimental results. a, Numerical solution of the temperature distribution in the bulk of
+the sample 𝛿𝑇(𝑥, 𝑧) comprising of an infinite slab heater of 110 nm width and 30 nm
+thickness (outlined in green), embedded in a semi-infinite homogeneous substrate. The
+heat conductivity within the heater cross section is taken to be much higher than that of
+the substrate. The resulting functional dependence of the temperature distribution in the
+bulk is characterized by a universal log(𝑟) dependence independent of the heat
+conductivity of the substrate. b, The surface temperature of the sample 𝛿𝑇(𝑥, 𝑧 = 0)
+(black line) and the calculated temperature 𝛿𝑇𝑡𝑆𝑂𝑇 (𝑥) of a 𝐷 =100 nm tSOT scanned at
+different heights ℎ (as indicated). c, The experimentally measured temperature profiles
+𝑇𝑎𝑐 (𝑥) at different scan heights above a nanowire heater. The sample and the tSOT are
+described in Fig. S5, where the current 𝐼𝑎𝑐 was applied only to the central nanowire. The
+dotted lines in b and c are fits to log(𝑟) asymptotic behavior, characterizing the
+long-range heat diffusion in the substrate.
+19
+
+Figure S3d shows a similar calculation for the case where three such 1D heaters are
+placed 150 nm apart of each other in a semi-infinite substrate. The black curve, which
+describes the surface 𝛿𝑇(𝑥), indicates that the heat signals of the three heaters strongly
+overlap due to the slow log(𝑟) tail, producing only weak shoulders at the heater
+positions. We emphasize that the surface 𝛿𝑇(𝑥) in this case is independent of the value of
+the heat conductivity of the substrate (up to a constant factor). The corresponding
+𝛿𝑇𝑡𝑆𝑂𝑇 (𝑥) well resolves the shoulders up to ℎ ≅ 𝐷/2 while further away from the heaters
+the profile 𝛿𝑇𝑡𝑆𝑂𝑇 (𝑥) is essentially indistinguishable from 𝛿𝑇(𝑥) at even higher scan
+heights, demonstrating once more the dominance of substrate heat diffusion in the
+thermal signal.
+
+S4. Experimental demonstration of the tSOT spatial resolution
+In order to demonstrate the actual spatial resolution limit of the tSOT sensor, one has
+to design an experiment in which the surface temperature changes on short length scales
+and the dominant role of the heat diffusion in the substrate is reduced. For this purpose
+three parallel Pd-Au nanowire structures were fabricated on SiO2/Si substrate (SiO2
+thickness of 150 nm). Each nanowire is 110 nm wide and 30 nm thick including 5 nm Ti
+adhesion layer, with 155 nm gap between the nanowires. A trench of 1.4 μm width and
+117 nm depth was then etched into the SiO2 layer using buffered HF solution, resulting in
+a suspended segment of the three nanowires as shown in tilted SEM image in Fig. S5a.
+The device was thermally imaged in various current configurations with a tSOT of
+effective magnetic diameter of 55 nm (determined from the period of tSOT quantum
+interference) and physical inner and outer diameters of 20 nm and 100 nm respectively.
+We first drive an ac current 𝐼𝑎𝑐 = 0.7 µA at 663 Hz through the central nanowire
+resulting in an average dissipation of 8 pW per square segment of the wire and measure
+𝑇𝑎𝑐 of the tSOT across the wire at different scanning heights ℎ as shown in Fig. S4c. The
+experimental data are in very good qualitative agreement with our numerical results in
+Fig. S4b. In particular, the log(𝑟) temperature decay (dashed line) is clearly reproduced,
+with the very weak ℎ dependence away from the origin confirming the dominant role of
+heat diffusion in the substrate and the locality of the tSOT kernel. We note that the
+qualitative behavior is not affected significantly by the fact that the nanowire is
+suspended. This is due to the fact that the suspended segment is short (1.4 µm) relative to
+the full length of the nanowire and the suspension height is only 117 nm. As a result, the
+long-range heat diffusion in the substrate is still governed by a 1D heat source, which
+gives rise to the observed log(𝑟) behavior. Next, we applied a total of 𝐼𝑎𝑐 = 0.5 µA at
+663 Hz to the three nanowires in parallel and imaged the temperature distribution at
+ℎ ≅15 nm as shown in Fig. S5b. A line cut through the data is shown in Fig. S5c. The
+presence of the two outer nanowire heaters is visible as shoulders in the 𝑇𝑎𝑐 profiles
+followed by log(𝑟) tails in very good qualitative agreement with the numerical results in
+Fig. S3d. Note that even though 𝑇𝑎𝑐 in the suspended segment in Fig. S5b (outlined by
+the dotted lines) is higher than in the non-suspended regions, the log(𝑟) decay through
+the substrate is essentially the same as discussed above.
+20
+
+Figure S5 | Experimental demonstration of spatial resolution of tSOT. a, SEM image
+(tilted at 45) of three Pd-Au nanowire heaters (110 nm wide, 30 nm thick, 155 nm
+separation) suspended above a 1.4 µm wide and 117 nm deep trench etched into SiO2/Si
+substrate. b-d, Thermal imaging 𝑇𝑡𝑆𝑂𝑇 (𝑥, 𝑦) of the device in three different measurement
+schemes using tSOT of 𝐷 = 100 nm at scan height of ℎ = 15 nm. b, Thermal image due to
+ac current applied in parallel to all three nanowires dissipating 3 pW per square segment of
+nanowire measured at the second harmonic of 663 Hz. White dotted lines indicate edges of
+the trench. c, Thermal profiles across the device for the cases of central wire heater, three
+wire heaters (along green line in b), compensated total power (along blue line in d), and
+tSOT heating (along red line in e). Inset: a schematic to-scale cross section of the
+experimental setup including the substrate (light blue), nanowires (orange), and tSOT apex
+(blue). d, Thermal image for the case of “heat dipole” in which 𝑃𝑎𝑐 ≅ 8.7 pW per square
+segment of nanowire is dissipated in the central wire while out-of-phase power of 𝑃𝑎𝑐 ≅ 4.2 pW and -4.5 pW per square segment of nanowire is “absorbed” in the two outer wires
+thus suppressing the long-range heat diffusion in the substrate (all measured at the second
+harmonic of 663 Hz). e, Thermal image with no current flowing in the wires while a larger
+current of 152 µA is driven through the tSOT causing dissipation in the tip apex. The
+resulting increase in the local temperature in the suspended nanowires during scanning is
+larger than in the recessed substrate as expected from the ballistic model. The scan window
+is within the suspended section. Time constants are 30 ms/pixel in all images, pixel sizes
+are 13 nm (b), 10 nm (d) and 10 nm (e).
+21
+
+We emphasize that the temperature 𝑇𝑡𝑆𝑂𝑇 (𝑥, 𝑦) measured by the non-contact tSOT
+scanning at height ℎ above the sample reﬂects the local temperature proﬁle of the sample
+convoluted with the height dependent kernel 𝑊. Consequently, in the case of suspended
+nanowires the 𝑇𝑡𝑆𝑂𝑇 (𝑥, 𝑦) reﬂects the temperature of the nanowires as well as the
+background temperature of the substrate in-between the wires. In contrast, contact-based
+vacuum SThM11-15 would detect only the temperature of the suspended nanowires if
+scanning at a height corresponding to the top surface plane of the nanowires.
+The above cases indicate that heat diffusion in the bulk has a dominant effect on the
+surface temperature distribution. This long-range contribution, however, can be
+significantly suppressed by two methods as follows. The first approach takes advantage
+of the fact that the phase of the ac power 𝑃𝑎𝑐 can be readily controlled. Consider a wire
+carrying a low frequency ac current 𝐼 cos(𝜔𝑡), which results in power dissipation
+𝑃 = 𝑃0 cos2 (𝜔𝑡) = 0.5𝑃0 + 0.5𝑃0 cos(2𝜔𝑡) = 𝑃𝑑𝑐 + 𝑃𝑎𝑐 . As a result, the wire creates a
+certain surface temperature profile 𝛿𝑇(𝑥, 𝑡) = 𝜏(𝑥) + 𝜏(𝑥) cos(2𝜔𝑡). Note that the
+temperature profile for the same wire carrying current of 𝐼 sin(𝜔𝑡) will be 𝛿𝑇(𝑥, 𝑡) =
+𝜏(𝑥) − 𝜏(𝑥) cos(2𝜔𝑡) with a negative ac term. Let us consider two such wires at 𝑥 = −𝑑
+and 𝑥 = 𝑑 carrying currents 𝐼 cos(𝜔𝑡) and 𝐼 sin(𝜔𝑡). The resulting temperature
+distribution will now be given by 𝛿𝑇(𝑥, 𝑡) = 𝛿𝑇𝑑𝑐 (𝑥) + 𝑇𝑎𝑐 (𝑥) cos(2𝜔𝑡) =
+(𝜏(𝑥 − 𝑑) + 𝜏(𝑥 + 𝑑)) + (𝜏(𝑥 − 𝑑) − 𝜏(𝑥 + 𝑑)) cos(2𝜔𝑡). Since the instantaneous 𝑃 is
+always positive, the instantaneous 𝛿𝑇(𝑥, 𝑡) and 𝛿𝑇𝑑𝑐 are positive as well. However,
+𝑇𝑎𝑐 (𝑥) can be either positive or negative. In particular, when the two wires overlap
+(𝑑 = 0), 𝑇𝑎𝑐 (𝑥) = 0 everywhere and 𝛿𝑇(𝑥, 𝑡) = 2𝜏(𝑥). This is because 𝑃𝑎𝑐 of the first
+wire is fully “absorbed” by the negative 𝑃𝑎𝑐 of the second wire. When the two wires are
+𝑡𝑜𝑡
+separated, the total 𝑃𝑎𝑐
+remains zero and the corresponding 𝑇𝑎𝑐 (𝑥) attains a “dipole”
+structure with positive and negative values on the two wires. As a result, the long-range
+log(𝑟) decay of 𝑇𝑎𝑐 (𝑥) of a single wire is replaced by a faster 1/𝑟 behavior. Applying
+this additional degree of freedom to three wires we can produce much more local 𝑇𝑎𝑐 (𝑥)
+temperature profiles. We implement this concept here by driving 𝐼𝑎𝑐 in the central wire
+and ~𝐼𝑎𝑐 /√2 with a phase shift of 𝜋/2 in each of the outer wires. As a result, the power
+𝑃𝑎𝑐 dissipated in the central wire is mostly “absorbed” by −𝑃𝑎𝑐 /2 in each of the outer
+𝑡𝑜𝑡
+wires thus forming a “screened” local source with total 𝑃𝑎𝑐
+~0. The resulting 𝑇𝑎𝑐 image
+in Fig. S5d and the corresponding line profile in Fig. S5c show a narrow temperature
+peak and the strong suppression of the log(𝑟) tail, demonstrating the high spatial
+resolution of the tSOT. The above three current schemes are summarized by numerical
+simulations in Fig. S6. The temperature distribution in the bulk of the substrate for the
+𝑡𝑜𝑡
+cases of single heater, three heaters, and 𝑃𝑎𝑐
+~0 are shown in Figs. S6a-c, and the
+corresponding 𝛿𝑇𝑡𝑆𝑂𝑇 (𝑥) for 𝐷 = 100 nm at ℎ = 15 nm are presented in Fig. S6d
+demonstrating a proper description of the experimental data. In particular, the width of
+𝑡𝑜𝑡
+the measured 𝑇𝑡𝑆𝑂𝑇 signal at FWHM of the 𝑃𝑎𝑐
+~0 of 284 nm in Fig. S5c is in excellent
+agreement with the calculated width of 270 nm in Fig. S6d.
+
+22
+
+Figure S6 | Theoretical comparison of different heating schemes. a, Temperature
+distribution 𝛿𝑇(𝑥, 𝑧) in the bulk of the sample due to a 1D heater of 110 nm × 30 nm
+cross section (green outline) embedded in a semi-infinite substrate. b, Temperature
+distribution due to three such heaters separated by a gap of 155 nm. c, Temperature
+𝑡𝑜𝑡
+distribution in the case of a “heat dipole” with 𝑃𝑎𝑐
+~0 in which each of the two outer
+heaters “absorbs” 43% of the ac power dissipated by the central heater (see text). d,
+Calculated temperature profiles for 𝐷 = 100 nm tSOT scanning at ℎ = 15 nm above the
+surface in the three cases a-c and for the case of local heating by the tSOT.
+Finally, we present an alternative approach to reduce the long-range substrate heat
+diffusion contribution based on the fact that for the case of a point source the heat flux in
+the substrate drops as 1/𝑟 2 resulting in 1/𝑟 decay of the surface temperature rather than
+the log(𝑟) behavior for 1D heat source. In order to implement a point source we can use
+the tSOT itself as a point heater by driving a current through the tip, significantly larger
+than the critical current, thus causing a local heating of the tSOT apex. This point-like
+heater will cause local heating of the sample surface which in turn causes a corresponding
+change in the tSOT temperature. A similar mechanism is commonly used in SThM
+schemes in which a warm scanning tip acts as a local heat source‎40,‎41. In our sample
+geometry and in the ballistic He transport regime, the tip that scans at a constant height
+will locally heat up the suspended nanowires when hovering 15 nm directly above their
+surface. When passing above the gaps between the wires, in contrast, the local heating of
+the etched SiO2 substrate that resides some 162 nm below the tip will be significantly
+smaller due to the much larger solid angle, leading to a sharp temperature contrast
+between the nanowires and the substrate. Figure S5e presents a thermal image of the
+suspended section in this “tSOT heater” mode showing three sharply resolved nanowires.
+The line cut through the image is presented in Fig. S5c with a width of the central peak at
+FWHM of only 132 nm as compared to 110 nm width of the nanowire and the tSOT
+diameter of 100 nm. We can model this situation by approximating a step-like change in
+23
+
+the effective surface temperature of a sample as shown in Fig. S3c. In this case the
+rounding of the thermal signal will be determined only by the tSOT kernel. Figure S6d
+“step T profile” presents the calculated 𝛿𝑇𝑡𝑆𝑂𝑇 (𝑥) profile using ℎ = 15 nm and 𝐷 = 100
+nm which shows a very good correspondence with the experimental data albeit with a
+larger temperature modulation. Since the width of the nanowires is comparable to 𝐷 the
+actual effective surface temperature of the sample due to the heating by the scanning
+tSOT is expected to be also significantly rounded explaining the reduced modulation.
+Interestingly, in Fig. S5e a higher 𝑇𝑡𝑆𝑂𝑇 temperature is attained above the suspended
+nanowires in contrast to what one may expect. This counter-intuitive behavior results
+from the height differences and the fact that the He atoms are in ballistic rather than
+diffusive regime. The local density of heat flow from the warm tip to the sample and the
+corresponding local surface temperature increase are strongly height dependent due to
+solid angle considerations. Since the suspended nanowires are much closer to the tip,
+their local temperature increase is significantly larger as compared to the temperature
+increase of the deeper Si substrate between the wires, leading to the increased 𝑇𝑡𝑆𝑂𝑇
+above the nanowires. Indeed, similar measurements in the planar region where the
+nanowires reside on the substrate show a lower 𝑇𝑡𝑆𝑂𝑇 above the nanowires due to their
+higher heat conductivity.
+The above experimental results in various dissipation schemes are well described by
+our numerical calculations and clearly demonstrate that the spatial resolution of the tSOT
+at low scanning heights is comparable to the tip diameter 𝐷.
+
+S5. Demonstration of tSOT temperature sensitivity
+Our various tSOT sensors display thermal sensitivities of the order of 1 µK/Hz1⁄2.
+Figure S7a demonstrates imaging of such low thermal signals in practice, using a 120 nm
+wide Cu nanowire on SiO2 /Si substrate (SiO2 thickness of 1 µm) carrying an ac current
+causing an ac heat dissipation in the nanowire at 2𝑓 = 13.1 kHz. Figure S7 presents two
+𝑇𝑎𝑐 profiles by scanning with the 46 nm diameter tSOT (same tSOT as used for Fig. 1)
+across the nanowire at two levels of power dissipation 𝑃 per square segment of the
+nanowire. The blue data were acquired at 𝑃 = 143 pW while the red data were measured
+at 𝑃 = 57 fW close to the Landauer limit of 40 fW for 1 GHz qubit operation. The 𝑇𝑎𝑐
+profiles show a sharp peak above the nanowire and extended tails due to heat diffusion in
+the SiO2/Si substrate.
+
+24
+
+Figure S7 | Demonstration of tSOT temperature sensitivity. 𝑇𝑎𝑐 profiles across a 120
+nm wide Cu nanowire at dissipation powers of 143 pW (blue) and 57 fW (red) per square
+segment measured by a tSOT of 46 nm diameter. The data were acquired using lock-in
+amplifier time constants of 0.3 sec and 1 sec respectively at height of 120 nm above the
+surface. Inset: schematic diagram of the Cu nanowire sample and the scanning tSOT.
+
+S6. Assessment of thermal resistances of the tSOT
+Figure 1d of the main text shows a simplified low-frequency thermal model of the
+tSOT scanning system. Evaluation of 𝑅𝑠𝑑 and 𝑅𝑠𝑠 is thus highly desirable for proper
+utilization and optimization of the tSOT sensor. In the following we assess theoretically
+the sensor-device thermal resistance 𝑅𝑠𝑑 and then determine experimentally the
+corresponding sensor-support resistance 𝑅𝑠𝑠 .
+Since at 4.2 K and 1 mbar pressure the mean free path of He atoms is ~3 µm we
+consider for our scanning heights a molecular flow regime in which He atoms flow
+ballistically between the sample surface and the apex of the tSOT sensor. According to
+Kennard's law‎39 the net power flux 𝛺 per unit temperature hitting a unit area under this
+√ 𝑅 ) 𝑝 ≡ 𝛽𝑝. Here 𝛼 is the accommodation coefficient (here taken
+regime is 𝛺 = (𝛼 𝛾+1
+𝛾−1 8𝜋𝑀𝑇
+as unity), 𝛾 is the adiabatic constant, 𝑅 is the universal gas constant, 𝑀 is the molar mass,
+𝑝 the gas pressure, and 𝑇 = 4.2 K the surface temperature (assumed to be much larger
+than the induced ac temperature variations) resulting in 𝛽 = 18 m/s/K. 𝑅𝑠𝑑 is then given
+by 𝑅𝑠𝑑 = 1/(𝛽𝑆𝑝), where 𝑆 = 𝜋𝐷2 /4 is the surface area of a tSOT of diameter 𝐷.
+Figure S8 shows the resulting 𝑅𝑠𝑑 (𝑝) calculated for 𝐷 = 240 nm tSOT vs. the He
+pressure 𝑝. 𝑅𝑠𝑑 can be readily varied from about 1.61010 K/W at 1 mbar to 5108 K/W
+at 30 mbar.
+25
+
+Figure S8 | Thermal resistances of tSOT. Red: Calculated thermal resistance 𝑅𝑠𝑑
+between the sensor and the sample device for 240 nm tSOT vs. the He pressure 𝑝 in the
+𝑠
+molecular flow regime. Blue circles: measured tSOT ac temperature 𝑇𝑎𝑐
+at height of 100
+nm above a thin film heater vs. He pressure. Dashed blue line is a theoretical fit resulting
+in thermal resistance between the tSOT sensor and its quartz support structure of 𝑅𝑠𝑠 =
+0.91010 K/W.
+𝑠
+Solving the effective circuit of Fig. 1d, the relation between the ac temperatures 𝑇𝑎𝑐
+𝑑
+𝑠
+𝑑
+−1
+of the tSOT and 𝑇𝑎𝑐 of the device is given by 𝑇𝑎𝑐 /𝑇𝑎𝑐 = [1 + 𝑅𝑠𝑑 ⁄𝑅𝑠𝑠 ]
+=
+[1 + (𝑅𝑠𝑠 𝛽𝑆𝑝)−1 ]−1 . A tSOT sensor of 240 nm diameter was held at a height of 100 nm
+above the surface of a metallic thin film heater of 170 Ω resistance driven by an ac
+𝑠
+current of 10 µA at 3.7 kHz and the 𝑇𝑎𝑐
+was measured as a function of the He pressure 𝑝
+as shown in Fig. S8 (blue circles). The dashed line shows an excellent fit to the data using
+𝑑
+the above equation with resulting 𝑇𝑎𝑐
+= 10.4 mK and 𝑅𝑠𝑠 = 0.91010 K/W. Such
+remarkably high thermal resistance between the sensor and the supporting quartz pipette,
+even for the extreme case of a large tSOT (relative to other tSOT devices used throughout
+the presented work), cannot be explained by naively taking into account the bulk thermal
+conductivity of quartz. The nanoscale cross section of the pipette, however, quenches the
+radial phonon degrees of freedom resulting in quantum-limited thermal
+conductance24,‎42,‎43. A 1D channel with a single phonon mode has a quantum thermal
+resistance of 𝑅0 = 3ℎ/(𝜋 2 𝑘 2 𝑇) = 2.521011 K/W at 4.2 K. The derived 𝑅𝑠𝑠 thus implies
+about 28 quantum channels of thermal conductance in our 240 nm diameter tSOT. The 46
+nm tSOT in the main text may thus support only one or two channels resulting in 𝑅𝑠𝑠 in
+excess of 1011 K/W.
+
+26
+
+An additional insight can be drawn from the presented pressure dependence of the
+thermal signal regarding the governing heat transfer processes. Since the signal vanishes
+in the low pressure limit, the possible contribution of near-field radiative processes to the
+heat transfer between the sample and the tSOT is apparently negligible under the
+presented working conditions.
+
+S7. Bandwidth of the tSOT thermal imaging
+Thermal processes at the nano-scale may have very short relaxation times and hence
+it is highly desirable for a nano-thermometer to have a high bandwidth (BW) to study
+relaxation processes. Figure S9 shows the frequency response of tSOT positioned at a
+relatively large distance of 500 nm above an Au thin film heater in He exchange gas
+pressure of 26 mbar. The figure shows the measured 𝑇𝑎𝑐 vs. the frequency 𝑓 of the heat
+signal (second harmonic) for two values of the ac power in the heater demonstrating BW
+of over 200 kHz which was limited by the BW of our electronic readout circuit.
+
+Figure S9 | Bandwidth characterization of the tSOT. Frequency dependence of 𝑇𝑎𝑐
+measured by a tSOT 500 nm above Au heater for ac heater powers of 8.8 µW and 2.2
+µW. Dashed red line shows the data collapse by multiplying the low power signal by 4.
+The bandwidth of 200 kHz is limited by external readout electronics.
+
+We can estimate the intrinsic thermal BW of the tSOT as following. The thermal time
+constant of the tSOT driven by the heat source in the sample should be given by sensor
+thermal mass times the sensor-heater thermal resistance 𝑅𝑠𝑑 . The mass of the Pb apex of
+27
+
+a tSOT with diameter D = 100 nm and thickness of 10 nm is approximately 10-18 Kg and
+therefore has a heat capacity of about C = 10-18 J/K, taking Pb specific heat‎44 as 0.042
+cal⁄Kg ∙ mole. For 𝑅𝑠𝑑 that is typically below 1010 K/W, the resulting intrinsic tSOT
+bandwidth is therefore above 10 MHz.
+
+S8. Tuning-fork based height control
+In some of the measurements performed throughout this work (graphene
+measurements and the tSOT spatial resolution measurement) scan heights above the
+sample were controlled by mechanically attaching the tSOT to a quartz tuning-fork (TF).
+The used TF is a quartz oscillator with nominal frequency of 32.768 kHz (product
+number TB38 of HM international). The TF was filed along three planes to adapt it to
+scanning constraints without violating the inversion symmetry of its two prongs. The
+filing shifted the resonant frequency to about 37 kHz. The tSOT protruded a few tens of
+µm above the highest point of the TF as demonstrated in Fig. S10. The TF was
+mechanically excited using a piezo-electric crystal as a dither. The TF’s response was
+read electrically through the voltage on its electrodes, which was pre-amplified at room
+temperature and fed into a lock-in amplifier. This assembly has a quality factor of
+~30,000 at a temperature of 4.2 K and vacuum conditions. As the tSOT approaches
+heights of ~10 nm above the surface of the sample its electrostatic interaction with the
+surface affects the resonant frequency of the TF. By applying a phase-locked loop (PLL)
+this frequency shift is monitored and used to determine the proximity of the tip to the
+sample. The scanning is then performed at a constant z-plane at a determined height
+above the sample surface.
+
+Figure S10 | Quartz crystal tuning fork resonator for tSOT height control. A SEM
+image showing a side view of the filed TF with the attached tSOT pipette. The tSOT
+protrudes typically 50 to 100 µm beyond the TF.
+
+28
+
+S9. Simultaneous magnetic and thermal imaging
+By applying a proper combination of magnetic field 𝐻𝑧 and 𝐼𝑏𝑖𝑎𝑠 , the tSOT can be
+tuned to have both magnetic field and thermal sensitivity, thus providing a unique
+capability of simultaneous magnetic and thermal imaging. Figure S11a shows a SEM
+micrograph of a “zigzag” nanostructure consisting of alternating segments of 100 nm
+wide Cu and 80 nm wide ferromagnetic Py (Ni80Fe20) wires. An ac current 𝐼𝑎𝑐 = 10 µA is
+applied to the sample at 𝑓 = 6.56 kHz and three signals are acquired simultaneously from
+the tSOT during scanning: time-averaged dc and two ac signals at frequencies 𝑓 and 2𝑓
+using two lock-in amplifiers. At the used bias conditions the tSOT had a thermal response
+of -8.6 µA/K and a simultaneous magnetic response of 91 nA/mT.
+The dc signal provides an image of the dc magnetic field 𝐵𝑧𝑑𝑐 (Fig. S11b) in presence
+of out-of-plane 𝜇0 𝐻𝑧 = 0.32 T and an in-plane field 𝜇0 𝐻|| = 0.1 T applied parallel to the
+Py nanowires. The image reveals that the Py nanowires are in a single in-plane
+magnetization domain state giving rise to the sharp peaks in the stray field 𝐵𝑧𝑑𝑐 at the
+ends of the nanowires. The Py nanowires also show a weaker bright signal along their
+length due to the out-of-plane tilting of the magnetic moments by 𝐻𝑧 .
+Figure S11c presents the first-harmonic ac component, which describes the ac
+magnetic signal 𝐵𝑧𝑎𝑐 , generated by 𝐼𝑎𝑐 . It shows that the current flows continuously along
+the zigzag structure avoiding the upper protruding parts of the nanostructures. This is
+quantitatively confirmed by the Biot-Savart law numerical simulation of 𝐵𝑧𝑎𝑐 in the inset,
+also providing an accurate estimate of the tSOT scanning height of 175 nm.
+The power dissipated in a resistor 𝑅 due to a sinusoidal ac current 𝐼𝑎𝑐 = 𝐼0 cos 𝜔𝑡 is
+2
+given by 𝑃 = 𝑅𝐼𝑎𝑐
+= 𝑅𝐼02 (1 + cos 2𝜔𝑡)/2 giving rise to dc temperature increase 𝑇𝑑𝑐 and
+ac temperature variation 𝑇𝑎𝑐 at 2𝜔. Figure S11d shows the resulting temperature map 𝑇𝑎𝑐
+(the accompanying dc signal due to 𝑇𝑑𝑐 is substantially smaller than 𝐵𝑧𝑑𝑐 and was
+subtracted from Fig. S11b for clarity). In contrast to the very uniform 𝐵𝑧𝑎𝑐 along the
+zigzag structure in Fig. S11c, 𝑇𝑎𝑐 in Fig. S11d is highly non-uniform revealing a
+significantly higher temperature of the Py segments. This is the result of about 40 times
+higher sheet resistance 18 /□ in Py than in Cu nanowires, giving rise to significantly
+higher dissipation along the Py segments. Interestingly, the nanowire segments
+protruding beyond the top corners of the zigzag also display an increased temperature
+despite the fact that no current flows there, revealing higher thermal conductivity of the
+metallic nanowires as compared to the underlying substrate. The tSOT thus provides
+multifunctional abilities for simultaneous imaging of magnetic and thermal signals.
+
+29
+
+Figure S11 | Simultaneous scanning tSOT thermal and magnetic imaging. a, False
+color SEM image of zigzag structure of alternating Cu (red) and Py (blue) nanowires. b,
+Image of 𝐵𝑧𝑑𝑐 in presence of applied magnetic fields of 𝜇0 𝐻𝑧 = 0.32 T and 𝜇0 𝐻|| = 0.1 T
+revealing the in-plane magnetization of Py segments. c, 𝐵𝑧𝑎𝑐 due to applied 𝐼𝑎𝑐 = 10 µA
+at 6.56 kHz through the structure. Inset: Theoretically calculated 𝐵𝑧𝑎𝑐 175 nm above the
+sample. d, Simultaneously measured thermal image of 𝑇𝑎𝑐 at 2f showing significantly
+higher dissipation in Py segments (pixel size 50 nm, scan speed 120 ms/pixel).
+
+S10. Carbon nanotube fabrication
+The SWCNT devices were fabricated on p-doped Si (100) with a thermally grown
+oxide layer of 300 nm, as reported previously25. Briefly, parallel stripes (25 μm wide, 25
+nm thick) of amorphous SiO2 coated by a thin layer (nominally 0.3 nm) of Fe growth
+catalyst were deposited on the substrate by standard photolithography and electron-beam
+evaporation. The samples were introduced into a tube furnace and were heated to 550° C
+for 20 min in air to remove organic contaminations. The SWCNT were grown by CVD:
+samples were heated to 900° C in an atmosphere of 300 sccm Ar and 200 sccm H2,
+followed by introduction of 1 sccm C2H4. Growth time was 45 min, by the end of which
+samples were left to cool in Ar. Electrodes for transport measurements were subsequently
+patterned by electron beam lithography, followed by deposition of 20 nm of Pd for
+Ohmic contacts and 10 nm of Au.
+
+30
+
+S11. Transport characterization of the CNT devices
+Figure S12 presents the electrical characterization of the two SWCNT devices
+discussed in the main text as a function of the applied back gate voltage 𝑉𝑔 . Both devices
+are highly disordered, forming a series of quantum dots, resulting in very low
+conductance and large fluctuations of the conductance vs. 𝑉𝑔 . Device 1 (Figs. S12a and
+2a) shows a metallic behavior with finite conductance at all values of 𝑉𝑔 , while device 2
+(Figs. S12b and 2b) shows a semiconducting behavior.
+
+Figure S12 | Gate dependence of SWCNT conductance at 4.2 K. a, Device 1
+measured with applied ac voltage of 80 mV at 31.5 Hz showing a highly disordered
+metallic behavior. b, Device 2 measured with ac voltage of 110 mV at 28.9 Hz showing a
+semiconducting behavior.
+
+S12. hBN encapsulated graphene device fabrication
+The devices were fabricated from single-layer graphene encapsulated between
+crystals of hexagonal boron nitride (hBN) (40 nm thick bottom crystal and 12 nm top).
+The transfer of the crystals was carried out using the dry-peel technique described
+previously‎45. The heterostructures were assembled on top of an oxidized Si wafer (90 nm
+of SiO2) which served as a back gate, and then annealed at 300 C in Ar-H2 atmosphere
+for 3 hours. A PMMA mask defining the shape of the device was fabricated on top of the
+annealed hBN-graphene-hBN stack by electron-beam lithography. The stack was etched
+in O2/CHF3 plasma with fast selective removal of hBN‎46. Metallic contacts (Niobium)
+were implemented in a second stage where an additional PMMA mask was used for both
+etching the stack and for the metal lift-off‎46. This procedure is similar to previous reports
+and results in electrons mobility above 30 𝑚2 ⁄𝑉 ∙ 𝑠 and ballistic transport on length scale
+of many microns28,‎47.
+31
+
+S13. Ring-like patterns in scanning gate thermometry due to localized
+states
+In order to provide qualitative description of the characteristic ring-like patterns in
+scanning gate thermometry as seen in Figs. 2, 3, S15, and S16 we performed 3D heat
+diffusion simulations using COMSOL. The CNT was modeled as a nanowire in a
+substrate with looped form matching the actual shape in Fig. 2d. Due to numerical
+limitations the CNT was modeled with a cross section of 5050 nm2 and the heat
+conductivity of the CNT (1100 W ⋅ m−1 K −1 for 5 nm diameter CNT [‎48]) was rescaled
+accordingly to give an equivalent heat flow along the CNT. Similarly, the graphene was
+modelled as 50 nm thick with rescaled heat conductivity equivalent to 2000 W ⋅ m−1 K −1
+for thickness of 0.3 nm [‎48] with geometry as in Fig. 3a. The heat conductivity of semiinfinite SiO2 substrate was taken as 0.08 W ⋅ m−1 K −1 [‎49]. The qualitative features
+presented below are insensitive to the values of thermal conductivities, which mainly
+determine the overall temperature scale.
+Figure S13a shows the surface temperature distribution due to dissipation per unit
+length in the CNT of 20 pW/µm showing the enhanced temperature along the CNT and
+the heat diffusion in the substrate on a typical length scale of 1 µm, similar to the
+experimental data in Fig. 2a (in the simulation straight segments of dissipating CNT
+extend 7 µm on each side beyond the displayed area). Figure S13b shows the surface
+temperature distribution caused by a localized resonant QD state on the CNT (located as
+marked by the right blue dot in Fig. S13a), modeled as a region with 20 nm diameter
+dissipating 20 pW giving rise to a heat spot diffusing into the substrate. The visible
+anisotropic shape of the surface temperature is due to higher heat conductivity along the
+CNT. In the case of reduced heat conductivity along the CNT the heat spot will be
+isotropic with universal 1/𝑟 decaying temperature profile determined by heat diffusion in
+an isotropic substrate. Temperature distribution due to another independent QD is shown
+in Fig. S13c.
+When the QDs are not in resonance the thermal image acquired by the scanning tSOT
+will be described by Fig. S13a. On the other hand, if one of the QDs is at resonance the
+excess dissipation will result in a thermal image that is given by the sum of Figs. S13a
+and S13b or of Figs. S13a and S13c accordingly. However, the excess dissipation is
+present only when the QD is tuned into one of its Coulomb blockade resonances 𝑛 by the
+tip potential. This occurs when the tSOT is at some lateral distances 𝑅𝑛 from the QD
+(which depends among other things on the scanning height and the tip potential 𝑉𝑡𝑆𝑂𝑇 ).
+As a result, the excess dissipation in the QD is present only when the tSOT is located
+along concentric rings of radius 𝑅𝑛 shown by the green circles in Figs. S13b,c (only a
+pair of 𝑅𝑛 rings is shown for each QD for clarity). Each QD will have a different set of
+𝑅𝑛 depending on the local potential structure, doping, and the QD capacitance as
+observed by scanning gate AFM26,‎50-‎53. The width of the rings is determined by the
+broadening of the Coulomb blockade energy levels of the QD and was taken to be 50 nm
+in the simulations.
+The thermal image attained by the scanning tSOT will therefore be composed as
+following. At any location except at the rings, the image will be given by Fig. S13a.
+When the tip is on one of the rings of the right QD, however, the QD dissipates and hence
+the image will be given by the sum of Figs. S13a and S13b. Similarly, when the tSOT is
+32
+
+a
+
+e
+
+b
+
+f
+
+c
+
+g
+
+d
+
+h
+
+Figure S13 | Numerical simulations of thermal ring-like structures due to resonant
+states in CNT and graphene. a, Surface temperature distribution 𝛿𝑇(𝑥, 𝑦) due to 20
+pW/µm power dissipation in a looped CNT on a SiO2 substrate. b, 𝛿𝑇(𝑥, 𝑦) due to 20 pW
+dissipation at a point on the CNT marked in blue in (a). c, Similar 𝛿𝑇(𝑥, 𝑦) due to the left
+point heat source marked in (a). d, Surface temperature distribution resulting from adding
+𝛿𝑇(𝑥, 𝑦) values along the green rings in (b) and (c) to 𝛿𝑇(𝑥, 𝑦) of (a). e, Surface
+temperature 𝛿𝑇(𝑥, 𝑦) due to 40 pW/µm2 power dissipation in a washer shaped graphene
+structure on a SiO2 substrate. f, 𝛿𝑇(𝑥, 𝑦) due to 60 pW dissipation at a point in the
+graphene marked in blue in (e). g, Similar 𝛿𝑇(𝑥, 𝑦) due to the heat source at left point
+marked in (e). h, Surface temperature attained by adding 𝛿𝑇(𝑥, 𝑦) values along the green
+rings in (f) and (g) to 𝛿𝑇(𝑥, 𝑦) of (e).
+33
+
+scanned across the left QD, the measured temperature along the green circles will be
+given by addition of Figs. S13a and S13c. The resulting combined thermal image is
+presented in Fig. S13d providing a qualitative description of the experimental results in
+Figs. 2 and S15. The same process is presented in Figs. S13e-h for the case of the
+graphene washer on SiO2 substrate, where a heat of 40 pW/µm2 was dissipated uniformly
+in the graphene. The resulting surface temperature of the sample is presented in Fig. S13e
+showing a uniform temperature in the graphene and a decaying distribution outside the
+washer and in the central aperture due to heat diffusing in the substrate, similar to the
+experimental data in Figs. 3b and S16. Figures S13f and S13g present the thermal map
+due to 60 pW dissipation at localized resonant states on dots with a diameter of 20 nm at
+locations indicated by blue dots in Fig. S13e. Similarly to the case of CNT the excess
+dissipation at the localized states occurs only when the scanning tip is located at lateral
+distance 𝑅 marked by the green circles in Figs. S13f-g. The resulting thermal image
+attained by a scanning tSOT will therefore appear as shown in Fig. S13h. As discussed in
+section S16, we attribute the localized states to vacancies and adatoms at the graphene
+edges, which result in localized states with narrow energy levels pinned near the Dirac
+point31. As a result, in contrast to the multiple energy levels in QD in CNT, we expect
+only one resonant state in graphene defects, giving rise to a single ring around each
+defect. The radius of the ring will vary upon changing the tip potential 𝑉𝑡𝑆𝑂𝑇 as observed
+experimentally in Fig. S16 and Video S1.
+
+Figure S14 | Numerical simulation of an ensemble of point heat sources in graphene.
+Simulation of the surface temperature 𝛿𝑇(𝑥, 𝑦) due to random distribution of point heat
+sources along the washer-shaped graphene edges on SiO2 substrate. The locations of the
+sources are marked by blue dots with an average density of 3 points/µm, which is sparser
+compared to the experimental findings. A power of 60 pW is dissipated at each point,
+resulting in a smeared image in which the ability to resolve the individual heat sources is
+lost, in contrast to Fig. 3.
+34
+
+Even though the ring structures may seem like a measurement artifact, they in fact
+provide a powerful spectroscopic tool that allows detection of the QDs or other resonant
+dissipative states which would not be possible otherwise. Figure S14 shows the
+calculated surface temperature distribution of the graphene washer similar to Fig. S13e in
+which instead of a uniform bulk heating all the dissipation arises due to isolated point
+heat sources, like in Figs. S13f and g, randomly distributed along the edges with even
+sparser average density (3 sources/µm) as compared to the experimental findings of Fig.
+3. The resulting 𝛿𝑇(𝑥, 𝑦) shows smooth inhomogeneities due to variations in the local
+average density of the point sources, smeared by the long-range heat conductivity, with
+essentially no visible signature of the individual sources. The scanning gate ability of the
+tSOT, in contrast, allows controllable switching of each of the point sources thus
+providing a unique tool for their individual detection and characterization.
+
+S14. Scanning gate thermometry of QD in SWCNT
+In addition to the scanning dc gate thermometry demonstrated in Fig. 2 in which the
+potential of the tSOT was kept constant while an ac current was applied to the CNT, we
+have performed scanning ac gate thermometry with an ac voltage of 80 mV at 130 Hz
+applied to the tSOT, while a dc current of 1.7 nA flowed through the CNT device 2. In
+this case the heat signal at the excitation frequency is generated only locally due to the
+small induced changes in the local conductance, reducing the background signal due to
+the overall ac heating of the CNT observed in Figs. 2a and 2b. Figures S15a-c present the
+𝑇𝑎𝑐 images produced by this technique at three different heights ℎ of the tSOT above a
+CNT segment marked by square in Fig. 2e. The height ℎ was incremented by 2 nm
+between the images. As expected, the diameter of the Coulomb blockade rings of the
+QDs grows with ℎ. Clearly the ring structure is far from circular. In all cases, the short
+axis of the asphericity of the rings is aligned with the direction of the CNT; a feature that
+may be explained by partial screening of the tSOT potential by neighboring QDs along
+the CNT. In addition, during the scan of Fig. S15b an abrupt change occurred, causing
+some rings to shrink by one period while other rings remained unchanged (scans are
+along vertical lines from right to left). This observation reveals instability, typical for
+QDs, in which the charge of one QD is abruptly changed without affecting the rest of the
+QDs, demonstrating the ability of scanning gate thermometry to resolve changes in
+dissipation arising from variations in single electron occupancy of a QD.
+
+35
+
+Figure S15 | Thermal imaging by scanning ac gate thermometry of quantum dot
+dissipation in SWCNT. a-c, 𝑇𝑎𝑐 images of a segment along CNT device 2 (marked by
+square in Fig. 2e) arising from changes in QDs dissipation induced by an ac potential
+applied to the tSOT in presence of dc current of 1.7 nA in the CNT. The height of the
+tSOT above the CNT was increased by 2 nm between the consecutive images, starting
+from about 15 nm in (a), resulting in expansion of the Coulomb blockade rings. During
+scan (b) an abrupt jump in the charge occupancy of one of the QDs occurred without
+affecting the dissipation in other QDs. Pixel size 1.8 nm and scan speed 10 nm/s.
+
+S15. Scanning gate thermometry of hBN/graphene/hBN device
+We employed three schemes for scanning gate thermometry of the graphene device,
+one dc scheme and two additional ac schemes introduced to enhance contrast. In the
+simplest scheme a dc current of 6 μA is driven through the structure and the
+corresponding 𝛿𝑇𝑑𝑐 image is acquired by the tSOT as shown in Fig. S16a, which presents
+a zoomed-in view of the inner aperture of the washer-shaped device. The applied current
+raises the temperature in the graphene region relative to the inner graphene-free region
+outlined by the red dotted circle. In addition to the smooth temperature background in
+graphene, a neckless of small ring-like structures of enhanced temperature with a radius
+of up to about 𝑅 = 150 nm is clearly visible along the edge of the graphene. Since the
+temperature increase at the rings is relatively small compared to the background
+temperature we employ two schemes in order to enhance their visibility.
+In the first ac–enhanced imaging mode we make use of the fact that the tSOT is
+mounted on a tuning fork (TF, see section S8 for more information). We excite the TF at
+its resonant frequency of 36.694 kHz with an rms amplitude of |𝑢
+⃗ | =5 nm and measure
+the resulting ac signal using a lock-in amplifier. The ac displacement of the tSOT gives
+rise to an ac signal 𝑇𝑎𝑐 = 𝑢
+⃗ ∙ 𝛻𝑇𝑑𝑐 which reflects the gradient of 𝛿𝑇𝑑𝑐 (𝑥, 𝑦) along 𝑢̂ – the
+direction of the TF oscillations, that were oriented at 30 deg with respect to the 𝑥 axis, as
+indicated by the arrow in Fig. S16b. In the resulting 𝑢̂ ∙ 𝛻𝑇𝑑𝑐 (𝑥, 𝑦) gradient image in Fig.
+S16b, which was acquired simultaneously with the 𝛿𝑇𝑑𝑐 (𝑥, 𝑦) image in Fig. S16a, the
+smoothly varying background is suppressed, while the sharp ring-like features are
+enhanced, thus facilitating a more detailed analysis of their behavior. The obtained image
+exhibits red and blue features due to positive and negative temperature gradient at the
+inner and outer sides of the dc rings.
+36
+
+a
+
+b
+
+c
+
+Figure S16 | Evolution of circular scanning gate thermometry signatures of resonant
+dissipation in graphene. The Back-gate of the graphene device of Fig. 3 was tuned to a
+fixed carrier concentration of 1.5 ∙ 1012 cm-2. A dc current of 6 μA flows from top to
+bottom similarly to Fig. 3. The tSOT scans 20 nm above the structure to image the inner
+hole of the structure presented in Fig. 3. The tSOT gating voltage was swept to create a
+series of thermal maps. a, A typical thermal map for a given tSOT gating voltage. The
+warm bright rings on the edge of the structure are clearly visible. b, When locked to the
+tuning-fork frequency of 36.694 kHz, one simultaneously gets a spatial derivative of the
+thermal map along the vibration axis (indicated by a unit vector u in the images) with an
+improved contrast. Two representing tSOT gate voltages are presented (b-c). The
+structure edge is marked by a dashed line. A full video of the evolution of the patterns is
+provided as well (Video S1). Pixel size 18.7 nm and time constant 3 ms.
+Using this ac-enhanced imaging mode we obtain a behavior of the rings with varying
+the tip-sample bias voltage 𝑉𝑡𝑆𝑂𝑇 , as illustrated in Figs. S16b,c and Video S1. The backgate voltage was fixed at -2.5 V yielding carrier concentration of 1.5 ∙ 1012 cm-2 and a
+series of images were acquired at different values of 𝑉𝑡𝑆𝑂𝑇 using a 100 nm diameter tSOT
+scanning at a height of 20 nm above the hBN/graphene/hBN structure. The Video S1
+shows that upon increasing 𝑉𝑡𝑆𝑂𝑇 rings start to appear at various locations along the edge
+of graphene and their radii grow as the tip bias increases consistent with the numerical
+simulations in section S13.
+As described in the main text, we attribute this behavior to the presence of localized
+electronic resonance states at adatoms and vacancies positioned at the exposed etched
+edges of the graphene. Recent studies have shown that these defects can indeed give rise
+to localized resonant states that are pinned in energy close to the Dirac point32,‎54-‎56. When
+a negative back gate is applied these localized states reside well above the Fermi energy
+and therefore cannot trap the hot carriers that have characteristic energies only slightly
+above 𝐸𝐹 . By placing the tip directly above the defect and increasing 𝑉𝑡𝑆𝑂𝑇 the energy
+level of the localized state is shifted towards 𝐸𝐹 and comes into resonance with the hot
+electrons at 𝑉𝑡𝑆𝑂𝑇 = 𝑉𝑐 . At this bias value a heat spot will be formed at the defect below
+the tip as a result of electron-lattice cooling bottleneck relieved through the defect
+37
+
+resonances. Under these conditions the hot carriers, trapped on the localized resonance
+states, release their excess energy through electron-phonon coupling enhanced by the
+localized states.
+As 𝑉𝑡𝑆𝑂𝑇 is further increased the energy level of the localized state is shifted to below
+𝐸𝐹 and thus goes out of resonance with hot electrons. However, in this situation where
+𝑉𝑡𝑆𝑂𝑇 > 𝑉𝑐 , the resonant conditions of the defect state can be restored by reducing the tipinduced potential by moving the tip a distance 𝑅 away from the defect. In this case a ring
+of enhanced temperature of radius 𝑅 in the 𝛿𝑇𝑑𝑐 (𝑥, 𝑦) images will be observed as in Fig.
+S16. Additional increase in 𝑉𝑡𝑆𝑂𝑇 requires moving the tip further away from the defect.
+Hence, the radius 𝑅 of the rings grows with 𝑉𝑡𝑆𝑂𝑇 as shown in Video S1. The value of 𝑉𝑐
+should depend on the specific structure of the defect and its environment and is hence
+expected to be location dependent. As a result, the onset of the ring formation should
+vary from one defect to another. Thus for a given 𝑉𝑡𝑆𝑂𝑇 a distribution of ring sizes should
+be observed, consistent with our experimental findings. Nevertheless, the various defects
+show similar behavior indicating a common nature of the localized states.
+Since the ring radius 𝑅 grows with 𝑉𝑡𝑆𝑂𝑇 , we can use an alternative ac-enhanced
+mode to improve the ring contrast. Adding a small ac component to 𝑉𝑡𝑆𝑂𝑇 will result in a
+small periodic expansion and shrinkage of the ring giving rise to a 𝑇𝑎𝑐 (𝑥, 𝑦) image in
+which the rings appear with bright and dark outlines. Figure 3b was acquired using this
+scheme of scanning gate thermometry with tip ac voltage of 200 mV at 843 Hz. The
+results obtained by all three scanning modes are found to be in good agreement with each
+other.
+
+S16. Supplementary Video S1: Scanning gate thermometry of
+hBN/graphene/hBN device
+Video S1 presents a sequence of ac images of the inner aperture of the washer-shaped
+graphene device acquired by the tSOT as a function of the potential 𝑉𝑡𝑆𝑂𝑇 between the tip
+and the sample. The images present the gradient of the local temperature 𝑢̂ ∙ 𝛻𝑇𝑑𝑐 (𝑥, 𝑦)
+produced by measuring the ac signal of the tSOT due to the ac vibration of the TF with
+an rms amplitude of 5 nm along 𝑢̂ at 36.694 kHz as described in section S16 above.
+Figures S16b,c present two frames from the video. New ring-like structures are formed
+along the graphene edge and expand as 𝑉𝑡𝑆𝑂𝑇 is increased as discussed in sections S13
+and S16.
+
+References
+34. Finkler, A. et al. Scanning superconducting quantum interference device on a tip for
+magnetic imaging of nanoscale phenomena, Rev. Sci. Instrum. 83, 073702 (2012).
+35. Huber, M. E. et al. DC SQUID series array amplifiers with 120 MHz bandwidth, IEEE
+Trans. Appl. Supercond. 11, 4048–4053 (2001).
+36. Ovadia, M., Kalok, D., Sacépé, B. & Shahar, D. Duality symmetry and its breakdown in the
+vicinity of the superconductor–insulator transition, Nature Physics 9, 415–418 (2013).
+37. Pollack, G. L. Kapitza resistance, Review of modern physics 41, 48–81 (1969).
+
+38
+
+38. Mate, C. F. & Sawyer, S. P. Kapitza effect in gaseous helium, Phys. Rev. Lett. 20, 834–837
+(1968).
+39. Kennard, E. H. Kinetic theory of gases (McGraw-Hill book co. Inc. New York, 1938), p.
+314.
+40. Worbes, L., Hellmann, D. and Kittel, A., Enhanced Near-Field Heat Flow of a Monolayer
+Dielectric Island, Phys. Rev. Lett. 110, 134302 (2013).
+41. Jeong, W., Kim, K., Kim, Y., Lee, W. and Reddy, P., Characterization of nanoscale
+temperature fields during electromigration of nanowires. Sci. Rep. 4, 4975 (2014).
+42. Meschke, M., Guichard, W. & Pekola, J. P. Single-mode heat conduction by photons. Nature
+444, 187–190 (2006).
+43. Jezouin, S. et al. Quantum limit of heat flow across a single electronic channel, Science 342,
+601-604 (2013).
+44. Horowitz, M. Silvidi, A. A. Malaker, S.F & Daunt, J. G. The specific heat of lead in the
+temperature range 1K to 75K, Phys. Rev. B 88, 1182-1186 (1952).
+45. Kretinin, A.V. et al. Electronic properties of graphene encapsulated with different twodimensional atomic crystals, Nano Letters 14, 3270-3276 (2014).
+46. Ben Shalom, M., et al. Quantum oscillations of the critical current and high-field
+superconducting proximity in ballistic graphene, Nature Physics (2015).
+47. Mayorov, A.S., Micrometer-scale ballistic transport in encapsulated graphene at room
+temperature, Nano Letters, 11, 2396-2399 (2011).
+48. Balandin, A. A., Thermal properties of graphene and nanostructured carbon materials,
+Nature Materials 10, 569-581 (2011).
+49. Zeller, R. C. & Pohl, R. O. Thermal conductivity and specific heat of noncrystalline solids,
+Phys. Rev. B 4, 2029-2041 (1971).
+50. Xue, J., Dhall, R., Cronin, S.B. and LeRoy, B. J., Scanning gate microscopy of ultra clean
+carbon nanotube quantum dots. arXiv:1508.05462 (2015).
+51. Garcia, A. G. F., Konig, M., Goldhaber-Gordon, D. and Todd, K., Scanning gate microscopy
+of localized states in wide graphene constrictions, Phys. Rev. B 87, 085446 (2013).
+52. Schnez, S., Güttinger, J., Stampfer, C., Ensslin, K. and Ihn, T., The relevance of
+electrostatics for scanning-gate microscopy, New Journal of Physics 13, 053013 (2011).
+53. Huefner, M. et al., Spatial mapping and manipulation of two tunnel-coupled quantum dots,
+Phys. Rev. B 83, 235326 (2011).
+54. Mao, J. et al., Realization of a tunable artificial atom at a supercritically charged vacancy in
+graphene. Nature Physics (2016).
+55. Ugeda, M. M., Brihuega, I., Guinea, F., and Gómez-Rodríguez, J. M., Missing atom as a
+source of carbon magnetism. Phys. Rev. Lett. 104, 096804 (2010).
+56. Ugeda, M. M. et al., Point defects on graphene on metals. Phys. Rev. Lett. 107, 116803
+(2011).
+39
+
+

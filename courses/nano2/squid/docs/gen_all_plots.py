@@ -57,7 +57,7 @@ def save_refined_plot(data_path, output_name, xlabel, ylabel, mode='iv', yscale=
             # Take a small segment (e.g. half a cycle or two periods)
             # 1520 points is usually one triangle sweep
             start, end = 0, pts_per_cycle
-            x = v_ref[start:end]
+            x = v_ref[start:end] / R_BIAS * 1e6 # uA
             y = v_sq[start:end] * yscale
             
             y_smooth = gaussian_filter(y, sigma=5)
@@ -80,13 +80,13 @@ def save_refined_plot(data_path, output_name, xlabel, ylabel, mode='iv', yscale=
 
 import re # Need re
 # Task 1: Josephson Junction I-V
-save_refined_plot(CODE_DIR + 'task1/1.txt', 'task1_iv.png', 
+save_refined_plot(CODE_DIR + 'task1/no_mag.txt', 'task1_iv.png', 
                    'Bias Current $I_{\\mathrm{bias}}$ [$\\mu$A]', 'Junction Voltage $V_{\\mathrm{j}}$ [mV]', mode='iv')
 
-# Task 2: SQUID I-V
+# Task 2: SQUID Flux Modulation
 save_refined_plot(CODE_DIR + 'task2/task2.txt', 'task2_iv.png', 
-                   'Bias Current $I_{\\mathrm{bias}}$ [$\\mu$A]', 'SQUID Voltage $V_{\\mathrm{SQUID}}$ [$\\mu$V]', mode='iv', yscale=1e6/1000)
+                   'Flux Bias Current $I_{\\mathrm{flux}}$ [$\\mu$A]', 'SQUID Voltage $V_{\\mathrm{SQUID}}$ [$\\mu$V]', mode='iv', yscale=1e6/1000)
 
 # Task 3: Flux Response (ZOOMED)
 save_refined_plot(CODE_DIR + 'task3/mag.txt', 'task3_flux.png', 
-                   'Flux Bias Voltage $V_{\\mathrm{ref}}$ [V]', 'SQUID Voltage $V_{\\mathrm{SQUID}}$ [$\\mu$V]', mode='flux', yscale=1e6/1000)
+                   'Flux Bias Current $I_{\\mathrm{flux}}$ [$\\mu$A]', 'SQUID Voltage $V_{\\mathrm{SQUID}}$ [$\\mu$V]', mode='flux', yscale=1e6/1000)

@@ -1,0 +1,1022 @@
+Nanotechnology and Quantum Applications special laboratory 2
+Code: BMETEFTBsPSPL2-00
+Language: English
+Location: BME,
+Responsible: Szabolcs Csonka, András Halbritter
+Lab leaders / supervisors:
+I ODMR (ODMR) / Ferenc Simon (simon.ferenc@ttk.bme.hu), Bence
+Göblyös(bgoblyos@edu.bme.hu)
+II High Tc SQUID (SQUID) / Olivér Kürtössy (o.kurtossy@gmail.com) , Peter
+Makk (makk.peter@ttk.bme.hu)
+III Entangled photon pairs (EntPhoton) / Csaba Holló
+(hollo.csaba@ttk.bme.hu), Tamás Sarkadi (sarkadi.tamas@ttk.bme.hu)
+IV Ultrafast Laser pulses (FastPulse) / Pál Maak (maak.pal@ttk.bme.hu)
+
+Requirements
+Attendance requirements: It is compulsory to execute
+Option a) 4 measurements or
+Option b) 3 measurements plus presentation of own research topic.
+Measurements are 2x4hours long. In case of certified absence, a maximum of
+1 replacement measurement (altogether 2x4 hours) are possible at a time
+agreed by the tutors.
+Option c) like in Option b), except that presence at all 4 measurements, but
+lab report is required only from 3 measurements.
+Working method: the measurements are executed in pairs. Please indicate
+your preferred pairs for the measurements in this Excel file by 22nd February.
+Option b) is only possible if both members of the pair choose it and a written
+certificate is required from the research supervisor that the student is actively
+carrying out research work.
+
+Schedule and place of the measurements (the numbers in the
+table denote the number of a measurement pair, see the pair
+codes here):
+Time-period of the courses:
+Team 1: Wednesday 8:30-12:00
+Team 2: Wednesday 13:15-17:00
+A lab responsible will be present continuously during these times. Breaks are
+not scheduled, but you may take a break and leave the lab as needed during
+measurements.
+Measurements exercises (see in lab descriptions):
+I ODMR - (place: F32L2 Physics Student Lab, FIII building 2nd floor)
+• II SQUID - (place: FI building, Basement, Nanoelectronics lab)
+• III EntPhoton - (place: FIII Building, Basement, Dep. Of Atomic Physics)
+• IV FastPulse - (place: F III Building, Dep. Of Atomic Physics)
+•
+
+Team 1 (8pairs)
+Week
+Date
+
+2
+2/25
+
+ODMR
+
+1,2,3 1,2,3
+
+SQUID
+
+4,5,6 4,5,6
+
+EntPhoton
+FastPulse
+Presentation
+
+Team 2 (10pairs)
+
+7,8
+
+3
+4
+5
+6
+7
+9
+10
+11
+12
+13
+14
+3/4 3/11 3/18 3/25 04/01 04/22 04/29 05/06 05/13 05/20 05/27
+
+7,8
+
+7,8
+
+7,8 4,5,6 4,5,6
+1,2,3 1,2,3
+
+7,8
+
+7,8
+
+1,2
+
+1,2
+
+3,6
+
+3,6
+
+4,5
+
+4,5
+
+4,5
+
+4,5
+
+1,2
+
+1,2
+
+7,8
+
+7,8
+
+3,6
+
+3,6
+
+1,2
+
+3,6
+
+4,5
+
+7,8
+
+15
+
+Week
+Date
+
+2
+2/25
+
+ODMR
+
+1,2,3 1,2,3 7,8,9 7,8,9 4,5,6 4,5,6
+
+SQUID
+
+4,5,6 4,5,6
+
+10
+
+10 1,2,3 1,2,3 7,8,9 7,8,9
+
+EntPhoton
+FastPulse
+
+9,10 9,10
+
+1,2
+
+1,2
+
+7,8
+
+3,6
+
+3,6
+
+4,5
+
+4,5
+
+4,5
+
+4,5 9,10 9,10
+
+1,2
+
+1,2
+
+7,8
+
+7,8
+
+Presentation
+
+3
+4
+5
+6
+7
+9
+10
+11
+12
+13
+14
+3/4 3/11 3/18 3/25 04/01 04/22 04/29 05/06 05/13 05/20 05/28
+
+7,8
+
+10
+
+10
+
+3,6
+
+3,6
+
+10, 1 3,6,2 4,5,9
+
+7,8
+
+Grading:
+Measurements
+• Entrance test (30 points) at the start of the first session.
+• Lab notes (30 points total), submitted at the end of each session.
+• Lab report (40 points), due within 1 week of the second session.
+
+Presentation
+• Option a) 1 oral presentation at the end of the semester on one of the
+measurements (100points) in 20 minutes with 10minutes discussion).
+Evaluation form is used (Scores for quality of a) structuring the content,
+b) introduction, c) presentation of the methodology, d) presentation of
+own results, e) adequate conclusion, f) visual quality, clarity of speech,
+confidence, formal aspects, ... ).
+• Option b) and c) Like in Option a) plus:
+- One more oral presentation on the own research work (50points)
+- In case the student has participated at TDK conference, no need for
+oral presentation (50point is automatic). 1 TDK presentation only allows
+skipping 1 oral presentation either in Spec. lab 1 or 2).
+Total Points:
+
+15
+
+• Option a): 500 points
+• Option b, c): 450 points
+
+Grade Scale:
+• <40%: Fail (1)
+• 40%-55%: Pass (2)
+• 55%-70%: Satisfactory (3)
+• 70%-85%: Good (4)
+• 85%-100%: Excellent (5)
+Note: The failure criterion applies to the overall score, not to individual
+components (entrance tests, lab notes, or reports). All measurements must be
+completed, but a low score in one area will only lower the aggregate grade
+without requiring a replacement measurement.
+
+Submission Rules:
+• Entrance Tests: Must be completed at the begining of the class. Late
+arrivals will have less or no time, leading to a potential loss of points.
+• Lab Notes: Submit online in Moodle within 1 hour of the end of each
+session. Late submission results 10-point-deduction per hour.
+• Lab Reports: Must be submitted within one week (7x24 hours) from the
+start of the second lab session. A one-time, one-week extension is
+allowed without penalty. Any further delay results in a 10-pointdeduction per week, until the score for the lab report reaches zero.
+Lab leaders should correct the lab reports within one week from the
+submission deadline, with a single possibility for an extra week delay. Please
+complain, if this is not satisfied.
+
+Student Pairs:
+Name1
+
+Neptun code
+
+Name 2
+
+Neptun code
+
+Option A, B, C
+
+Skipped
+measurement
+
+1
+
+Mukli Márton Gábor
+
+FDEQBX
+
+Tompos Gábor
+
+PYT84Z
+
+B
+
+Fast Pulse
+
+7
+
+Ladányi Márton
+
+Kohut Márk Balázs
+
+IR173M
+
+Morning
+
+2
+
+Árok Anna
+
+BJF7AG
+
+3
+
+Beke Bálint
+
+4
+
+F5U7ZL
+
+A
+
+OYRSP2
+
+Éberhardt Milán
+Karácsonyi
+Levente
+
+Y3BW2Z
+
+A
+
+Karminás Bence
+
+SAGXYK
+
+Bucskó Gergely
+
+GWCLHO
+
+A
+
+5
+
+Varga Aurél
+
+SVG8LE
+
+Bányai Áron
+
+FAWKVK
+
+A
+
+6
+
+Szathury Csaba
+
+NBP6LW
+
+Borcsok Balazs
+
+JR0D2G
+
+H31MOD
+
+2
+
+Bálint Béla Mária
+Mikes Tamás
+Kelemen
+
+3
+
+Harmos Imre
+
+DO7RDH
+
+3
+
+Bence Göblyös
+
+4
+5
+
+7
+8
+9
+10
+11
+Afternoon
+1
+
+BJPB5C
+
+Csabai Szabolcs
+Imre
+Szebedy András
+Pál
+
+CM5PHB
+
+Hunyady Csongor
+Will join as 3rd to
+other groups as
+possible
+
+Jaca Gregorio
+
+U8L9B9
+
+Ajzenberger Lea
+
+6
+7
+7
+
+Tichy Márk
+
+8
+
+Wagner Andor
+
+JBCDBJ
+
+Szontagh Bence
+
+9
+
+Yuri Fujii
+
+OPX6W0
+
+Zakariás Kozma
+
+JINF8A
+
+B
+
+HS2M9E
+
+A
+B
+
+Fast Pulse
+
+N/A
+
+B
+
+ODMR
+
+Tállosy Péter
+
+K14WR1
+
+A
+
+QK2Y4Z
+
+Volk János
+
+KKY30Q
+
+B
+
+Csoma Zsófia
+
+KFHXBR
+
+Márton Kornél
+
+OI7V8R
+
+A
+
+Bajnóczi Boldizsár
+
+S9BYHX
+
+Török Barnabás
+
+FY16Y2
+
+A
+
+JJHFL3
+
+B
+
+Fast Pulse
+
+Join as 3rd partner.
+Fast Pulse
+
+A
+
+Oral presentations:
+In case you chose Option B or C:
+- you have to prepare 2nd talk about your own research - or prove that you presented it at the TDK
+conference.
+- in case you had no TDK presentation please bring a written certificate from your supervisor that you
+are working with him/her .
+Places
+Semroom - Department of Physics, F building I, 1st floor, Room 10
+
+Program
+Week
+06 May
+11
+Student Name Topic
+pair
+
+Time
+
+Place
+
+In case own research topic
+was presented already at
+TDK conference 2025, give
+its title.
+
+1
+1
+1
+1
+2
+2
+Student
+pair
+
+1
+2
+1
+2
+1
+2
+
+10
+10
+1
+1
+1
+1
+
+ODMR
+SQUID
+Own Research
+Own Research
+EntP
+ODMR
+Name Topic
+
+1
+2
+1
+2
+1
+2
+
+ODMR
+EntP
+FastP
+SQUID
+Own Research
+Own Research
+
+Week 12
+13th May
+Student Name Topic
+pair
+3
+3
+6
+6
+
+1
+2
+1
+2
+
+ODMR
+SQUID
+EntP
+FastP
+
+9:00
+9:30
+10:00
+10:30
+11:00
+11:30
+Time
+
+14:15
+14:45
+15:15
+15:45
+16:15
+16:45
+
+Semroom
+Semroom
+Semroom
+Semroom
+Semroom
+Semroom
+
+Place
+
+In case own research
+topic was presented
+already at TDK
+conference 2025, give its
+title.
+
+Semroom
+Semroom
+Semroom
+Semroom
+Semroom
+Semroom
+
+Time
+
+Place
+
+9:00
+9:30
+10:00
+10:30
+11:00
+
+Semroom
+
+In case own research topic
+was presented already at
+TDK conference 2025, give
+its title.
+
+Semroom
+Semroom
+Semroom
+Semroom
+
+Semroom
+11:30
+Time
+Place
+
+Student
+pair
+
+Name Topic
+
+3
+3
+6
+6
+2
+
+1
+2
+1
+2
+1
+
+ODMR
+SQUID
+EntP
+FastP
+ODMR
+
+14:15
+14:45
+15:15
+15:45
+16:15
+
+Semroom
+
+2
+3
+
+2
+3
+
+EntP
+SQUID
+
+16:45
+17:15
+
+Semroom
+
+Semroom
+Semroom
+Semroom
+Semroom
+
+Semroom
+
+In case own research
+topic was presented
+already at TDK
+conference 2025, give its
+title.
+
+Week 13
+20th May
+Student Name Topic
+pair
+
+Time
+
+Place
+
+4
+4
+
+1
+2
+
+ODMR
+SQUID
+
+9:00
+9:30
+
+Semroom
+
+7
+
+1
+
+SQUID
+
+11:00
+
+Semroom
+
+7
+2
+ODMR
+Student
+Name Topic
+pair
+
+Semroom
+
+Semroom
+11:30
+Time
+Place
+
+4
+4
+5
+5
+9
+
+1
+2
+1
+2
+1
+
+ODMR
+SQUID
+EntP
+FastP
+ODMR
+
+14:15
+14:45
+15:15
+15:45
+16:15
+
+Semroom
+
+9
+5
+
+2
+1
+
+SQUID
+Own research
+
+16:45
+17:15
+
+Semroom
+
+5
+
+2
+
+Own research
+
+17:45
+
+Semroom
+
+Time
+
+Place
+
+Week 14
+Afternoom
+Student
+pair
+
+In case own research
+topic was presented
+already at TDK
+conference 2025, give its
+title.
+
+Semroom
+Semroom
+Semroom
+Semroom
+
+Semroom
+
+27th May
+Name Topic
+
+5
+1
+ODMR
+5
+2
+SQUID
+Student pair Name Topic
+
+7
+
+In case own research topic
+was presented already at
+TDK conference 2025, give
+its title.
+
+1
+
+EntP
+
+Semroom
+9:00
+Semroom
+9:30
+Time
+Place
+
+14:15
+
+Semroom
+
+In case own research
+topic was presented
+already at TDK
+conference 2025, give its
+title.
+
+In case own research
+topic was presented
+already at TDK
+conference 2025, give its
+title.
+
+7
+8
+8
+8
+
+2
+1
+2
+1
+
+FastP
+ODMR
+SQUID
+Own Research
+
+14:45
+15:15
+15:45
+16:15
+
+Semroom
+
+8
+7
+
+2
+3
+
+Own Research
+SQUID
+
+16:45
+17:15
+
+Semroom
+
+Semroom
+Semroom
+Semroom
+
+Semroom
+
+References to prepare your talk:
+
+ODMR
+[1] The nitrogen-vacancy colour centre in diamond
+Doherty et al., Physics Reports 528, 1–45 (2013)
+DOI: https://doi.org/10.1016/j.physrep.2013.02.001
+OA: https://arxiv.org/abs/1302.3288
+[2] Quantum error correction in a solid-state hybrid spin register
+Waldherr et al., Nature 506, 204–207 (2014)
+DOI: https://doi.org/10.1038/nature12919
+OA: https://arxiv.org/abs/1309.6424
+[3]· High-sensitivity diamond magnetometer with nanoscale resolution
+Taylor et al., Nature Physics 4, 810–816 (2008)
+DOI: https://doi.org/10.1038/nphys1075
+OA: https://arxiv.org/abs/0805.4783
+[4]· Coherence of single spins coupled to a nuclear spin bath of varying density
+Balasubramanian et al., Nature Materials 8, 383–387 (2009)
+DOI: https://doi.org/10.1038/nmat2420
+OA: https://arxiv.org/abs/0811.4464
+
+SQUID
+[1] J. S´olyom, Fundamentals of the Physics of Solids (Vol 2)
+[2] P. Makk, Transport in complex nanostructures lecture notes
+[3] C. Granata et al., Physics Reports, 614,1 (2016)
+
+[4] The Feynman lectures on Physics: The Schr¨odinger Equation in a Classical
+Context: A Seminar on Superconductivity
+[5] Yong-Joo Doh et al., Science 309, 272 (2005)
+[6] Mr. SQUID User’s Guide
+Further interesting readings
+[7]M. Hamalainen et al., Rev. Mod. Phys. 65, 413 (1993)
+[8] D. Vasyukov et al., Nature Nanotechnology 8, 639–644 (2013)
+[9] D. Halbertal et al., Nature 539, 407–410 (2016)
+[10] D. S. Kalashnikov et al. Phys. Rev. B 112, 144504 (2025)
+
+EntPhoton
+[becker2005] book on Time-Correlated Single Photon Counting Techniques
+[couteau2018] review on SPDC
+[hadfield2009] review on single photon detectors
+[kwiat1995] article on one of the first entangled photon pair source
+Link
+
+FastPulse
+[1] Varjú, K., Kovács, A., Kurdi, G. et al. High-precision measurement of angular dispersion in a CPA
+laser. Appl Phys B 74 (Suppl 1), s259–s263 (2002). https://doi.org/10.1007/s00340-002-0882-z
+https://link.springer.com/article/10.1007/s00340-002-0882-z#preview
+[2] Á Börzsönyi, PhD theses, 2012, Szegedi Tudományegyetem,
+https://doktori.bibl.u-szeged.hu/id/eprint/1423/1/BorzsonyiA_ertekezes.pdf
+https://www.ape-berlin.de/en/autocorrelator/mini-tpa/
+[3] W. Demtröder, Laser Spectroscopy Vol.2. , 2015, Springer
+https://faculty.kfupm.edu.sa/phys/magondal/Phys608/Demtroeder%205th%20edition.pdf
+
+Guildlines to prepare your talk
+1) About the structure of the presentation:
+On the title slide please include your name, the date, and your affiliation / place of
+research.
+Start either by describing the motivation to the research, or a contents slide. Show a list of
+contents at some point in the presentation, either before or after the motivation, but
+definitely before you get deeper into the topic or your results.
+
+The motivation can be as short as a couple of minutes, but don't be too short. It can be as
+long as 4-6 minutes (depends on the topic and your time limit), but stick to a few things
+only. It is counter-productive to present lots of examples and lose focus. If you mention
+something, make sure you know the background at least superficially (look in the
+references if necessary).
+Please read the References related to the lab course given in this file (see previous
+section) and build your motivation and introductory part using the information learnt from
+them.
+Discuss your experimental methods and the theoretical background at least in passing. If
+it is complicated but the details are not important, you can skip parts of it and focus on
+what is relevant later. If they are important, spend at least a few minutes on the basics and
+also define the physical quantities, so that the audience has some concept of it all.
+Structure the talk in your head, and present it accordingly. For example, pause between
+major parts for a few seconds and then say out loud what comes next. You could even put
+in an extra slide before each main part of the talk that shows only the title of this next part,
+in line with the Contents.
+At the end, make a summary or conclusions slide to go over your main results again. You
+can even show earlier pictures again. After the conclusions you might mention again some
+of the practical applications, but do not discuss them in detail. Focus on your
+achievements, stay positive, and maybe give an outlook and talk about how you plan to
+continue your research.
+Finally, acknowledge all important contributors, from fellow researchers who took part to
+other research groups who provided materials, or institutions where you performed part of
+your research, or funding projects, grants and fellowships.
+2) General advice:
+Practice the talk at least a couple of times out loud, and measure the time. Cut off parts as
+necessary to keep it short enough.
+Use figures and illustrations, try to avoid slides with text only, especially in the motivation /
+introduction. If possible, do not describe something and make the audience rely on their
+imagination, if you can instead illustrate that something by a schematic or a photo. Don't
+leave half a slide empty (unless it is a title slide); add an illustration or enlarge an existing
+one (within reason), or merge two slides into one if it is reasonable. If you have data in text
+or in tables that can also be shown in a figure, make the figure. If a schematic seems
+old/ugly, you can find a newer one or make one yourself.
+Note on the slides the sources and references that you get your material from, especially
+for images and figures. Add slide numbers.
+Please don't use screenshots of computer programs (windows and other user interfaces),
+at least crop to show only the graph.
+Define quantities on the slide: actually write down their names.
+
+Don't write too much text if possible, like long sentences. No need to write down every
+numerical result. No need to present every piece of research. Focus on a main story and do
+not get too sidetracked.
+You may use notes but don't rely on them too much, otherwise you may get stuck easily.
+Make the slides so that they are helpful for you, then remember to look up at your slide. And
+we can turn this around: describe your figures during your talk, if it's up there, you should
+explain it or just point to it at least once. Use the pointer/mouse.
+In evaluating the data, always try to consider what may be the error of the quantity, at least
+from how much variation there is between repeated measurements. Then consider how
+many decimal digits in the quantity are useful. For example, if the quantity you read out is
+2.0578 and the error (or scatter) is 0.1579, the useful digits in both are roughly two, and
+then just write 2.06 +- 0.16. Don't estimate relative differences between quantities that are
+themselves relative: like temperatures in Celsius (it is not an absolute temperature scale,
+but measured relative to 273 K).
+You can mention challenges or failures, but focus on how you overcame them. You can
+mention if there was something that did not work or that you could not finish, but do not
+dwell on it and do not collect them in one place. Focus on the results that you have
+achieved, and try to stay positive.
+
+

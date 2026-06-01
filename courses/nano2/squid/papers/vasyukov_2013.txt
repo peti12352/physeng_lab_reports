@@ -1,0 +1,1535 @@
+Scanning nano-SQUID with single electron spin sensitivity
+Denis Vasyukov1*†, Yonathan Anahory1†, Lior Embon1, Dorri Halbertal1, Jo Cuppens1, Lior Ne’eman1, Amit
+Finkler1, Yehonathan Segev1, Yuri Myasoedov1, Michael L. Rappaport1, Martin E. Huber1,2 and Eli Zeldov1*
+2QH RI WKH FULWLFDO PLOHVWRQHV LQ WKH LQWHQVLYH SXUVXLW RI
+TXDQWLWDWLYH QDQRVFDOH PDJQHWLF LPDJLQJ WRROV LV
+DFKLHYLQJWKHOHYHORIVHQVLWLYLW\UHTXLUHGIRUGHWHFWLQJWKH
+ILHOGJHQHUDWHGE\WKHVSLQPDJQHWLFPRPHQW%RIDVLQJOH
+HOHFWURQ6XSHUFRQGXFWLQJTXDQWXPLQWHUIHUHQFHGHYLFHV
+648,'V  ZKLFK DUH WUDGLWLRQDOO\ WKH PRVW VHQVLWLYH
+PDJQHWRPHWHUVFRXOGQRWKLWKHUWRUHDFKWKLVJRDOEHFDXVH
+RIWKHLUUHODWLYHO\ODUJHHIIHFWLYHVL]H RIWKHRUGHURIP 
+DQG SODQDU JHRPHWU\ +HUH ZH UHSRUW VHOIDOLJQHG
+IDEULFDWLRQ RI QDQR648,'V ZLWK GLDPHWHUV DV VPDOO DV 
+QP DQG ZLWK DQ H[WUHPHO\ ORZ IOX[ QRLVH RI  QΦ+]
+UHSUHVHQWLQJWZRRUGHUVRIPDJQLWXGHLPSURYHPHQWLQVSLQ
+VHQVLWLYLW\ GRZQ WR %+] ,Q DGGLWLRQ WKH GHYLFHV
+RSHUDWH RYHU DQ XQSUHFHGHQWHGO\ ZLGH UDQJH RI PDJQHWLF
+ILHOGV ZLWK  %+] VHQVLWLYLW\ HYHQ DW 7 :H
+GHPRQVWUDWH PDJQHWLF LPDJLQJ RI YRUWLFHV LQ W\SH ,,
+VXSHUFRQGXFWRU WKDW DUH  QP DSDUW DQG VFDQQLQJ
+PHDVXUHPHQWV RI $& PDJQHWLF ILHOGV GRZQ WR Q7 7KH
+XQLTXH JHRPHWU\ RI WKHVH QDQR648,'V WKDW UHVLGH RQ WKH
+DSH[ RI D VKDUS WLS DOORZV DSSURDFKLQJ WKH VDPSOH WR
+ZLWKLQ D IHZ QP ZKLFK SDYHV WKH ZD\ WR D QHZ FODVV RI
+VLQJOHVSLQUHVROYHGVFDQQLQJSUREHPLFURVFRS\
+
+A DC SQUID consists of a superconducting loop with two
+Josephson junctions or weak links. Its operation is based on the
+fact that as a result of quantum interference the maximum
+dissipationless current Ic that can flow through the SQUID is
+periodic in the magnetic flux Φ through the loop7, with a period
+of the flux quantum Φ0=h/2e (h is the Planck’s constant and e is
+the electron charge). The flux sensitivity of a SQUID is
+determined by its intrinsic flux noise with a typical value of the
+"#$
+order of !" = 1 µΦ0/Hz1/2. In order to achieve a sensitive
+"#$
+"#$
+magnetometer with a low magnetic field noise, !% = !" / A,
+SQUIDs are commonly designed to have pickup loops with
+large effective area A. In recent years there has been growing
+interest in the development of nano-SQUIDs for the study of
+quantum magnetism and for nanomagnetic imaging3-12. In this
+case, field sensitivity is compromised for the benefit of spatial
+resolution and sensitivity to magnetic dipoles. Since the
+magnetic field of a dipole has a 1/r3 dependence on the distance
+r from the dipole source, by reducing the loop size and allowing
+closer proximity to the source, nano-SQUIDs become extremely
+sensitive detectors of small magnetic moments, with one of the
+ultimate goals being sensitivity to a single electron spin or 1 µ B.
+Most micro- and nano-SQUIDs are fabricated using planar
+lithographic techniques, which permit the integration of pickup
+and excitation loops4. Our devices, in contrast, are fabricated on
+the apex of a hollow quartz tubes pulled into a very sharp
+pipette, the ideal geometry for scanning probe microscopy
+(Fig. 1). Superconducting films are deposited in three selfaligned steps resulting in two superconducting leads connected
+to a superconducting loop (see Fig. 1a and Methods). The
+SQUID geometry consists of a loop with two weak links in the
+form of Dayem bridges in the gap regions between the leads.
+1
+
+Similar devices12 made of Al have the drawback of working only
+at temperatures below 1 K. Also the large coherence length ξ
+and penetration depth ! of Al prevent realization of sensitive
+devices with characteristic dimensions below 0.1 µm. Here we
+report on new ultra-small nano-SQUIDs-on-tip (SOTs) made of
+Nb and Pb, which have significantly shorter ξ and λ and as a
+result can operate at much higher magnetic fields and
+temperatures, yield more than an order of magnitude smaller
+effective area, and achieve more than two orders of magnitude
+better spin sensitivity.
+
+a
+
+b
+
+Nb ø238 nm
+
+Au
+Nb
+Nb or Pb
+
+200 nm
+Bridges
+
+c Pb ø56 nm
+
+d
+
+Pb ø160 nm
+
+Gap
+Pb
+
+Pb
+
+Pb
+
+Bridge
+100 nm
+
+100 nm
+
+Figure 1 | Scanning electron microscope images of SQUID-on-tip
+devices. a, Schematic illustration of the pulled quartz tube with two Nb
+or Pb superconducting leads connected to Au electrodes. Inset:
+magnified view showing the superconducting loop on the apex of the
+tip. The bridges that reside in the gap regions between the leads form
+the two weak links of the SQUID. b, c, d, Images of the Nb SOT with
+an effective diameter of 238 nm, Pb SOT of ø56 nm, and Pb SOT of
+ø160 nm respectively. The islands that are visible in the gap region
+between the leads do not percolate and thus do not short the two leads.
+
+A SEM image of a Nb SOT is shown in Fig. 1b. The Nb was
+deposited by e-gun evaporation in order to have a point-like
+source since magnetron sputtering is incompatible with the SOT
+fabrication geometry; a dedicated UHV system was developed
+with a high-power e-gun and an in-situ rotatable stage. A 10 nm
+thick buffer layer of AlOx was added onto the quartz tips to
+prevent contamination from the overheated glass during the Nb
+deposition (see Methods). In order to overcome the very high
+room-temperature surface mobility of Pb, which results in island
+growth and consequently percolation only at large thicknesses,
+we have developed a high-vacuum system with an in-situ
+rotatable 4He cryostat for thermal deposition of Pb onto
+cryogenically cooled tips. We have also optimized the pipette
+pulling process to reach apex diameters as low as 40 nm. Figures
+1c and 1d show SEM images of two Pb SOTs with effective
+
+Weizmann Institute of Science, Department of Condensed Matter Physics, Rehovot 76100, Israel.
+Department of Physics, University of Colorado, Denver, CO 80217, USA.
+*email: denis.vasyukov@gmail.com, eli.zeldov@weizmann.ac.il.
+†
+These authors contributed equally to this work.
+2
+
+Quartz tube
+
+1
+
+Nb ø238 nm
+
+22 mT
+
+Pb ø160 nm
+
+e
+
+1.6
+
+ø238 nm
+42 mT
+ISOT
+
+15
+
+Vbias
+
+Rshunt
+
+Rbias
+
+200
+
+VBIAS (V)
+
+1.2
+
+30
+
+0
+0.0
+
+0.4
+
+SOT
+
+0.4 2.5
+
+1.0
+
+0.8
+0.3 1.5
+
+0.8
+
+SSAA
+
+L IN
+
+VFB
+
+0.8
+
+1.2
+
+0
+
+b
+
+1.8
+
+0.2
+
+0.4
+
+0.6
+
+d
+
+0.8
+
+1
+
+ø56 nm
+
+0T
+
+100
+
+VBIAS (V)
+
+150
+
+0.39 T
+
+50
+0
+0.0
+
+0.4
+0
+
+0.2 0.5
+
+-0.4
+
+-0.2
+
+0
+
+f
+
+Pb ø56 nm
+
+0.2
+
+0.4
+
+Pb ø46 nm
+
+1.6
+1.6
+
+Pb
+I SOT ( µ A)
+
+0.5 3.5
+
+1.2 1.2
+
+1.2
+
+1.5
+
+1.0
+
+0.8 0.8
+
+0.6
+
+0.5
+0.4 0.4
+
+0.5
+
+1.0
+
+VBIAS (V)
+
+1.5
+
+2.0
+
+0
+-1.2 -0.8 -0.4
+
+0
+
+0
+
+0
+
+0.4 0.8 1.2
+
+H (T)
+
+ISOT (100 µA)
+
+Nb
+
+45
+
+I SOT ( µ A)
+
+c
+1.2
+
+ISOT (100 µA)
+
+a
+
+-1.2 -0.8 -0.4
+
+0
+
+0.4 0.8 1.2
+
+H (T)
+
+Figure 2 | Quantum interference patterns and I-V characteristics of several SOT devices at 4.2 K. a, Nonhysteretic I-V characteristics
+of ø238 nm Nb SOT at two fields corresponding to the maximum (red) and minimum (black) Ic. The maximum of Ic is shifted away from
+zero magnetic field as a result of an asymmetry in the two junctions of the SOT. Inset shows the simplified measurement circuit (see
+Methods). b, I-V characteristics of the ø56 nm Pb SOT at fields of maximum and minimum Ic. c, Current through the Nb SOT (color code)
+vs. input voltage Vbias and applied field H showing quantum interference oscillations with a period corresponding to an effective SOT
+diameter of 238 nm. d, Quantum interference patterns of a Pb SOT with an effective diameter of 56 nm. Only three oscillation periods are
+obtained before Ic is fully suppressed at ±Hc2 = 1.2 T. e, Current oscillations in the ø160 nm Pb SOT. f, Current oscillations in the ø46 nm
+Pb SOT. Since the oscillation period is 1.27 T only the central period is clearly visible, while the neighboring lobes are truncated by
+vanishing of the critical current at ±Hc2 = 1.2 T. The oscillation periods of the SOTs are in excellent agreement with the diameters measured
+by SEM (Fig. 1).
+
+diameters of 160 and 56 nm, respectively.
+Figure 2 compares the quantum interference patterns and
+current-voltage characteristics (I-Vs) of Nb (Tc ≅ 8.7 K) and Pb
+(Tc ≅ 7 K) SOTs measured using the circuit shown in Fig. 2a (all
+measurements reported in this paper are obtained at 4.2 K). The
+Nb SOT shows pronounced critical current Ic oscillations up to
+exceptionally high field13,14 of over 1 T (Fig. 2c) with a period
+corresponding to an effective loop diameter of 238 nm. The
+interference patterns of Pb SOTs are characterized by very large
+modulations of Ic with an envelope that vanishes at 1.2 T. SOT
+operation at such high fields is possible because all the
+characteristic sizes of our devices are of the order of ξ and the
+thin leads are aligned almost parallel to the applied field. Figures
+2d to 2f show three Pb SOTs with effective diameters of 160, 56
+and 46 nm, respectively. The smallest SOT has an extremely
+large oscillation period of 1.27 T (Fig. 2f) and thus only the
+central lobe is visible in full in the field range of -Hc2 to +Hc2
+(where Hc2 = 1.2 T is the upper critical field). This device has an
+effective area that is some 20 times smaller than any previously
+reported4,10,12 nano-SQUID. The individual Ic oscillations of the
+Pb SOTs of all sizes display the usual sinusoidal field
+dependence of Ic characteristic of Josephson junctions and short
+bridges7. In contrast, the Nb SOT oscillations show saw-tooth
+behavior indicating a linear current-phase relation, characteristic
+of Dayem bridges that are long15 relative to ξ. We thus conclude
+that ξ in the Nb apex ring is significantly shorter that in Pb,
+consistent with the lower critical current and higher apparent Hc2
+
+in the Nb devices. Typical I-Vs are presented in Figs. 2a and 2b
+showing very large Ic modulation in the Pb SOTs. The I-Vs
+display pronounced negative differential resistance, yet they are
+nonhysteretic due to the use of an effective voltage bias circuit
+in Fig. 2a (see Methods and Supplementary Fig. S1).
+The flux noise spectra of the devices are shown in Fig. 3a.
+"#$
+The white noise of the Nb SOT is !" = 3.6 µΦ0/Hz1/2,
+7
+comparable to conventional SQUIDs. In contrast, the Pb SOTs
+"#$
+display flux noise as low as !" = 50 nΦ0/Hz1/2. This is one of
+the lowest flux noise levels ever achieved16-18 in SQUIDs. The
+ultimate flux noise in SQUIDs is determined by the quantum
+"#$
+noise8,19 !"& = ('L)1/2 where L is the loop inductance. In our
+devices L is governed by the kinetic inductance, e.g. Lk ≈ 5.8 pH
+in the ø56 nm Pb SOT derived from Ic modulation depth19
+"#$
+leading to !"& = 12 nΦ0/Hz1/2 (see Supplementary Information).
+The measured flux noise is thus 4.2 times higher than the
+quantum noise limit. Since Lk is some two orders of magnitude
+higher than the geometric inductance, further significant
+improvement in the flux noise can be anticipated by reducing the
+kinetic inductance through optimization of material parameters.
+The corresponding field noise is also very low for nano"#$
+SQUIDs, reaching !% = 5.1 nT/Hz1/2 in the ø160 nm Pb SOT.
+The smaller Pb SOTs shows very low 1/f noise of the order of
+0.5 µΦ0/Hz1/2 at 1 Hz, see Fig. 3a. An outstanding feature of the
+SOTs, however, is their extremely low spin noise. For a spin in
+
+2
+
+10
+
+-7
+
+Pb ø56 nm
+
+Pb ø160 nm
+
+-8
+0
+
+10
+
+1
+
+0.60
+0.50
+
+0.5
+
+10
+
+2
+
+10
+
+3
+
+4
+
+10
+
+5
+
+2
+
+10
+
+10
+
+Frequency (Hz)
+
+3
+
+10
+
+4
+
+5
+
+10
+
+Frequency (Hz)
+
+Pb ø160 nm
+
+0.3
+
+H (T)
+
+10
+
+µB/Hz1/2
+
+6
+5
+
+0.2
+
+d
+
+Pb ø56 nm
+
+1.2
+
+2.5
+
+1.1
+
+1.5
+
+1/2
+
+c
+
+0.38
+
+56 nm / H=1.07 T
+46 nm / H=0.96 T
+56 nm / H=0.35 T
+46 nm / H=0.51 T
+
+0.3
+
+↑ 50 nΦ0/Hz
+
+10
+
+0.75
+
+½
+
+Nb ø238 nm
+
+1/2
+
+10
+
+½
+
+Sn
+
+4
+
+0.5
+2.0
+
+0.5
+3
+
+0.1
+
+1.5
+
+0.4
+
+1.0
+
+2
+
+0
+
+0.6 1
+
+3
+
+10
+
+50
+
+Frequency (kHz)
+
+0.3
+
+½
+
+10
+
+-6
+
+b
+
+Sn (µB/Hz )
+
+-5
+
+1.0
+1/2
+
+10
+
+a
+Sn (µB/Hz )
+
+-4
+
+½
+
+SΦ (Φ0/Hz1/2)
+
+10
+
+0.6 1
+
+3
+
+10
+
+30
+
+100
+
+0.5
+
+Frequency (kHz)
+
+Figure 3 | Flux and spin noise spectra of the SOTs at 4.2K. a, Flux noise of the ø238 nm Nb SOT (red) and of ø160 nm (blue) and ø56
+nm (orange) Pb SOTs. The white noise level of the Pb SOTs reaches 50 nΦ0/Hz1/2. b, Spin noise of ø56 and ø46 nm Pb SOTs calculated for
+a dipole residing at the center and perpendicular to the SOT loop. The ø46 nm SOT displays spin sensitivity of 0.38 µ B/Hz1/2 at 0.5 T and 0.6
+µ B/Hz1/2 at 1 T. The roll off of the spectra above 30 kHz is due low pass filtering. c, Spin noise spectra (color code) vs. frequency and
+applied field for the ø160 nm Pb SOT at a constant Vbias=1.7 V. Noise below 5 µ B/Hz1/2 is colored in blue to yellow; field regions with noise
+above 6 µ B/Hz1/2 are colored in brown. d, Spin noise spectra (color code) vs. frequency and H for Pb ø56 nm SOT at a constant
+Vbias = 0.55 V (bottom) and 0.3 V (top). Noise values below 1.5 µ B/Hz1/2 are colored in blue to green in the field range of 0.3 to 0.5 T
+(bottom) and below 2 µ B/Hz1/2 in blue to yellow in the range of 1.02 to 1.22 T (top).
+
+the center and perpendicular to the SQUID loop, the spin noise
+"#$
+"#$
+in units of µ B/Hz1/2 is given by !( = !" r / re where r is the
+−15
+loop radius and re = 2.82×10 m is the classical electron
+"#$
+radius4. The Nb SOT achieves spin noise of !( = 154 µB/Hz1/2,
+comparable to the best results yet obtained4,5,12,20. Figure 3b
+shows the spin noise spectra in the smaller Pb SOTs at various
+fields. Remarkably, the ø46 nm SOT reaches sensitivity of 0.38
+µB/Hz1/2 that represents more than two orders of magnitude
+improvement4,5,12 over any previously reported SQUIDs.
+Moreover, in sharp contrast to conventional SQUIDs and a
+number of recent optical readout magnetometers that can operate
+only at low fields21-25, the SOTs can operate and remain very
+sensitive also at high fields. The ø56 and the ø46 nm Pb SOTs
+display spin noise of 0.75 and 0.6 µB/Hz1/2, respectively, at an
+unprecedented field of 1 T.
+Despite the fact that the SOT design does not include a
+feedback coil, as commonly used7 in planar SQUIDs, the SOT
+can be operated over a wide range of fields because of its
+periodic response and tunability of bias parameters. The color
+code in Fig. 3c shows the noise spectra in the ø160 nm Pb SOT
+demonstrating a noise level of less than 5 µ B/Hz1/2 over wide
+ranges of fields up to 0.35 T. Similarly, the ø56 nm Pb SOT
+displays noise below 1 µ B/Hz1/2 over a range of fields between
+0.3 and 0.5 T and below 2 µ B/Hz1/2 between 1 and 1.2 T.
+Additional field ranges, including sensitive operation even at
+
+zero field, can be obtained by properly designing the SOT
+diameter, bias conditions, and asymmetry as shown in the
+Supplementary Information.
+Since the SOT can approach and scan a sample within a few
+nm of the surface12,26, an even higher spin sensitivity and
+enhanced spatial resolution can be obtained near the loop edges
+rather than in the center8,27. Figures 4a and 4b show the
+calculated flux coupling to the ø160 nm SOT from a single
+electron spin at a safe distance of 10 nm. If the spin is located
+near the loop edges, the flux in the loop is 65 and 88 nΦ0 for
+spins oriented perpendicular and parallel to the loop plane,
+respectively. With the Pb SOT noise of 50 nΦ0/Hz1/2, this
+coupling corresponds to spin sensitivities of 0.77 and 0.57
+µ B/Hz1/2 for the two orientations, as compared to 1.4 µ B/Hz1/2 for
+a perpendicular spin in the center of the loop. There is, in
+addition, an excellent spatial resolution of 20 nm as shown in
+Figs. 4d and 4e. Similarly, Figs. 4c and 4f show the flux in the
+loop owing to a single perpendicular spin 10 nm below the ø46
+nm SOT giving rise to 0.53 µ B/Hz1/2 sensitivity.
+In order to demonstrate the spatial resolution of the SOTs,
+we have imaged vortices in a Nb thin film, as shown in Figs. 5a
+and 5b. The distance between vortices, a = (2Φ0 / √ 3B)1/2 (for
+the hexagonal lattice), and the local modulation of the magnetic
+field decrease rapidly with increasing field B. In addition, the
+amplitude of the field modulation decays as exp(-z/a) where z is
+
+3
+
+b
+
+Pb ø160 nm
+
+80
+
+40
+
+40
+
+40
+
+0
+
+20
+
+0
+
+-40
+
+0
+
+-40
+
+-80
+
+-20
+-80 -40 0
+d
+
+Φ (nΦ0)
+
+c
+
+Pb ø160 nm
+
+60
+
+40 80
+80
+
+40
+
+40
+
+20
+
+0
+
+0
+
+-40
+
+-20
+
+40 80
+
+50
+20
+-80 -40 0 40 80
+f
+
+-10
+
+100
+20 nm
+
+60
+43 nm
+
+20
+
+-80
+-80 -40 0 40 80
+X (nm)
+
+80
+
+-80
+-80 -40 0
+e
+
+60
+
+Pb ø46 nm
+
+Φ (nΦ0)
+
+Y (nm)
+
+a
+80
+
+-20
+-80 -40 0 40 80
+X (nm)
+
+-80 -40 0 40 80
+X (nm)
+
+Figure 4 | Calculated magnetic flux in the SOT loops vs. XY position of a single spin at 10 nm below the SQUID plane. a, 2D color
+plot of the flux from a single spin oriented normally to the ø160 nm SOT loop. b, Same as (a) but the spin is oriented in the X direction in
+the plane of the loop. c, Same as (a) but the SOT diameter is 46 nm. d, e, f, Cuts of (a), (b) and (c) at Y = 0. The colored regions above the
+dotted lines in (d), (e) and (f) show the locations where the Pb SOTs have spin sensitivity better than 1 µ B/Hz1/2. The arrows show the spatial
+resolution at full width at half maximum.
+
+c
+
+0.4
+
+21
+0
+-0.4
+
+0
+
+12
+
+2 µA
+
+1µ
+m
+
+m
+1µ
+
+1.5
+
+-0.5
+
+5 µm
+
+µm
+
+192
+
+b
+
+d
+
+200
+
+10 µA simulation / 50
+10 µA / 50
+200 nA
+0
+
+50
+
+Bac (nT)
+
+190
+
+Bdc (mT)
+
+100
+191
+
+100
+
+0
+
+0
+
+300
+nm
+
+-50
+
+300 nm
+
+Bac (µT)
+
+0.5
+
+Φac (nΦ0)
+
+15
+
+2.4 mA
+
+Bdc (mT)
+
+18
+
+Bac (mT)
+
+a
+
+-100
+
+-100
+-2
+
+-1
+
+0
+
+1
+
+2
+
+-200
+
+X (µm)
+
+Figure 5 | Scanning SQUID-on-tip microscopy images of vortex matter (a,b) and of magnetic field distribution generated by AC
+current (c,d) in Nb film at 4.2 K. a, 3D false color plot of the magnetic field distribution measured with a ø117 nm Pb SOT displaying
+pronounced peaks (red) at the vortex centers. The image shows the raw data with no processing measured at a constant height of about 50
+nm above the surface on the Nb film (H = 28 mT, scan area 1×1 µm2, pixel size 7 nm, and scanning speed 150 nm/sec). The minimum
+distance between the vortices is 330 nm. Nb film thickness is 420 nm and the penetration depth extracted from the vortex shape is λ ≅ 105
+nm. b, Similar image as in (a) obtained with a ø88 nm Pb SOT in applied field of about 0.2 T. Scan area is 300×300 nm2, pixel size 2 nm,
+scan speed 40 nm/sec. The distance between the closest vortices is 120 nm. c, 3D false color image of Bac measured at ~100 nm above a 3
+µm wide Nb strip with Iac = 2.4 mA (top) and 2 µA (bottom) at 609 Hz using a lock-in amplifier and ø70 nm Pb SOT. Both images show
+raw unprocessed data (scan area 1.5×5 µm2, pixel size 33.5 nm, scanning speed 560 nm/sec, lock-in time constant 100 ms). The wavy
+features in the top image are due to small local AC displacement of vortices by the Iac = 2.4 mA. d, Bac line profiles at Iac = 10 µA (blue,
+divided by 50), 200 nA (red), and zero current (green) (pixel size 25 nm, scanning speed 30 nm/sec, lock-in time constant 1 s). The black
+curve shows the calculated theoretical field profile (divided by 50) induced by 10 µA current at 100 nm above the surface of 400 nm thick
+superconducting strip. Note some six orders of magnitude variation in the field values between the different panels.
+
+4
+
+the height above the surface of the superconductor. As a result,
+all previous scanning magneto-sensitive imaging of vortices was
+limited to very low fields8,28-31 of up to a few mT. Figure 5b
+shows scanning SOT imaging of vortices at applied fields of up
+to 0.2 T. The distance between the two nearest vortices in
+Fig. 5b is only 120 nm.
+For testing the SOT sensitivity under realistic scanning
+conditions we imaged the AC magnetic field Bac generated by an
+AC transport current flowing in a 3 µm wide Nb strip using a
+lock-in amplifier and a ø70 nm Pb SOT. Figure 5c shows raw
+data of Bac distributions at AC currents of 2.4 mA and 2 µA.
+Figure 5d shows some additional line scans: At zero current
+(green curve) the noise level is fully consistent with our
+measurement of the white noise power density of ~90 nΦ0/Hz1/2
+in this device. The blue data show Bac at 10 µA (divided by 50)
+along with a theoretically calculated Bac at 100 nm above a
+superconducting strip carrying 10 µA current showing an
+excellent fit to the data. The red line shows the signal attained at
+200 nA demonstrating the detectable level of AC signal of about
+50 nT or 93 nΦ0 with lock-in time constant of 1 s. As shown in
+Fig. 4 this level should allow detection of a single electron spin.
+The presented results show that the SQUID-on-tip
+technology has the sensitivity and the spatial resolution that are
+required for detection and imaging of magnetic moments of
+individual electrons. With the anticipated further enhancements
+this method should establish a powerful new tool for quantitative
+nanoscale scanning magnetic microscopy with single spin
+sensitivity.
+Methods
+Pipettes with tip diameters in the range of 40 to 300 nm were fabricated
+from quartz tubes with 1 mm outside diameter and 0.5 mm inside
+diameter using a Sutter Instrument P2000 micropipette puller. Before
+the deposition of a superconducting film, two gold contacts 200 nm
+thick were deposited through a mask along the cylindrical part of the
+pipette, opposite each other. The mask with a 10 mm long and 0.3 mm
+wide opening prevents an overlap between the two gold electrodes and
+also prevents gold deposition onto the tapered part of the pipette. The
+superconducting films were deposited in three steps using in-situ
+rotators. In the first step the pipette is pointed towards the source
+(defined as 0° orientation) and a thin film is deposited onto the apex
+ring of the pipette forming the superconducting loop of the SQUID. The
+pipette is then rotated to a 105° orientation and an electrode is deposited
+on one side of the pipette, connecting the apex ring and the gold
+contact. The third deposition is performed at a -105° orientation,
+forming the second electrode on the opposite side of the pipette. The
+order of the three depositions can be changed. The deposition at angles
+larger than 90° assures formation of a gap that prevents shorting the two
+leads (see Fig. 1). In the regions where the loop overlaps the leads
+stronger superconductivity is attained, while the short parts of the loop
+next to the gaps between the leads act as two Dayem-bridge weak links,
+thus forming a self-aligned SQUID-on-tip12,26. Because of their small
+size, the SOTs are extremely sensitive to electrostatic discharge. The
+devices were therefore shorted at all times and opened only during the
+measurements.
+Nb SOT fabrication: The conventional method of magnetron
+sputtering of Nb cannot be applied to our process since the self-aligned
+fabrication requires deposition from a point source. We have used an
+alternative approach of e-gun deposition which requires, however, strict
+ultra-high vacuum (UHV) conditions because of the high sensitivity of
+Nb to contamination. We have therefore constructed a dedicated UHV
+system with base pressure of 3.5×10-11 Torr and pressure during the e-
+
+gun deposition of Nb of 2×10-9 Torr. The deposition rate was ~7 Å/s.
+Even though the Tc of the films was around 9 K, the tips showed finite
+residual resistance of about 100  at 4.2 K, possibly caused by
+contamination from the quartz and stress in Nb film. This hurdle was
+overcome by depositing a 10 nm thick AlOx buffer layer on the quartz
+tips, resulting in zero residual resistance and functional SOTs. The
+thickness of Nb electrodes on the sides of the pipette was typically 35
+nm and the thickness of the apex ring was about 23 nm.
+Pb SOT fabrication: The high surface mobility of the Pb atoms
+results in island growth and in a high percolation threshold in Pb films
+deposited onto room temperature substrates. Coupling the tips to liquid
+nitrogen reservoir improved the film morphology, but still did not allow
+reliable fabrication of SOTs. We therefore developed a thermal
+evaporation system in which the pipettes are mounted on the end of a
+homemade continuous flow 4He cryostat that can be rotated around a
+horizontal axis while in vacuum. The cold end of the cryostat is itself
+enclosed in a liquid nitrogen jacket. Because of the tip geometry, it is
+impossible to provide good thermal contact along the whole length of
+the quartz pipette, so the tip was fitted inside a narrow gap in a brass
+block mounted onto the cryostat. The system base pressure was 2×10-7
+Torr and the cryostat temperature was 8 K. Before the deposition, 4He
+gas at 3×10-5 Torr was introduced into the chamber to facilitate tip
+cooling and then pumped out to the base pressure. The deposition rate
+was ~5 Å/s and film thickness of the Pb SOT was about 40 nm for the
+electrodes and 25 nm for the apex ring.
+Electrical circuit: A simplified measurement circuit is shown in
+Fig. 2a. An input voltage Vbias in series with a cold Rbias ≅ 5 kΩ resistor
+applies current to the SOT that is shunted by a cold Rshunt ≅ 3 Ω. A
+series SQUID array amplifier32 (SSAA) is used as a cryogenic currentto-voltage converter to read out the SOT current ISOT. The SSAA is
+inductively coupled to the SOT circuit through LIN and is operated in a
+closed feedback loop, the output of which VFB is proportional to ISOT.
+When the SOT is in the superconducting state, most of the current
+supplied by Vbias passes through the SOT giving rise to the linear part of
+the I-Vs in Figs. 2a and 2b. In the resistive state above Ic most of the
+current flows through Rshunt resulting in the negative differential
+resistance. Nevertheless, the I-Vs may remain nonhysteretic due to the
+low resistance shunt Rshunt (see Supplementary Information).
+Imaging: An in-house-built scanning stage operating at 4.2 K was
+used for vortex imaging. The coarse motion was attained by three
+attocube piezoelectric positioners based on the slip-stick mechanism.
+The scanning was performed by an attocube integrated xyz scanner
+with xy range of 30 µm and z range of 15 µm at 4.2 K. The microscope
+provides for a z-axis feedback based on quartz tuning fork, but for the
+results presented in this work the SOT was scanned at a constant height
+above the Nb film with no feedback. The Nb film was sputtered on Si
+substrate and had a thickness of 420 nm.
+1.
+
+2.
+3.
+
+4.
+
+5.
+
+References
+
+Rugar, D., Budakian, R., Mamin, H. J. & Chui, B. W. Single spin
+detection by magnetic resonance force microscopy. Nature 430,
+329-332 (2004).
+Degen, C. L. & Home, J. P. Scanning probes: Cold-atom
+microscope shapes up. Nat. Nanotechnol. 6, 399-400 (2011).
+Cleuziou, J.-P., Wernsdorfer, W., Bouchiat, V., Ondarçuhu, T. &
+Monthioux, M. Carbon nanotube superconducting quantum
+interference device. Nat. Nanotechnol. 1, 53-59 (2006).
+Koshnick, N. C., Huber, M. E., Bert, J. A., Hicks, C. W., Large, J.,
+Edwards, H. & Moler, K. A. A terraced scanning superconducting
+quantum interference device susceptometer with submicron pickup
+loops. Appl. Phys. Lett. 93, 243101 (2008).
+Nagel, J., Kieler, O. F., Weimann, T., Wölbing, R., Kohlmann, J.,
+Zorin, A. B., Kleiner, R., Koelle, D. & Kemmler, M.
+Superconducting quantum interference devices with submicron
+Nb/HfTi/Nb junctions for investigation of small magnetic
+particles. Appl. Phys. Lett. 99, 032506 (2011).
+
+5
+
+6.
+
+7.
+
+8.
+9.
+
+10.
+
+11.
+
+12.
+
+13.
+
+14.
+
+15.
+16.
+
+17.
+
+18.
+
+19.
+20.
+
+21.
+22.
+
+23.
+
+24.
+
+25.
+
+Veauvy, C., Hasselbach, K. & Mailly, D. Scanning µsuperconduction quantum interference device force microscope.
+Rev. Sci. Inst. 73, 3825-3830 (2002).
+The SQUID Handbook: Fundamentals and Technology of SQUIDs
+and SQUID Systems, Vol. I (Edt. Clarke, J. & Braginski, A. I.
+Wiley VCH Verlag GmbH & Co. KGaA, Weinheim, 2006).
+Kirtley, J. R. Fundamental studies of superconductors using
+scanning magnetic imaging. Rep. Prog. Phys. 73, 126501 (2010).
+Foley, C. P. & Hilgenkamp, H. Why nanoSQUIDs are important:
+an introduction to the focus issue. Supercond. Sci. Technol. 22,
+064001 (2009).
+Troeman, A. G. P.,
+Derking, H.,
+Borger, B.,
+Pleikies, J.,
+Veldhuis, D. & Hilgenkamp, H. NanoSQUIDs based on niobium
+constrictions. Nano Lett. 7, 2152- 2156 (2007).
+Hao, L., Macfarlane, J. C., Gallop, J. C., Cox, D., Beyer, J., Drung,
+D. & Schurig, T. Measurement and noise performance of nanosuperconducting-quantum-interference devices fabricated by
+focused ion beam. Appl. Phys. Lett. 92, 192507 (2008).
+Finkler, A., Segev, Y., Myasoedov, Y., Rappaport, M. L.,
+Ne'eman, L., Vasyukov, D., Zeldov, E., Huber, M. E., Martin, J. &
+Yacoby, A. Self-aligned nanoscale SQUID on a tip. Nano Lett. 10,
+1046-1049 (2010).
+Lam, S. K. H., Clem, J. R. & Yang, W. A nanoscale SQUID
+operating at high magnetic fields. Nanotechnology 22, 455501
+(2011).
+Mandal, S., Bautze, T., Williams, O. A., Naud, C., Bustarret, É.,
+Omnès, F., Rodière. P., Meunier, T., Bäuerle, C. & Saminadayar,
+L. The diamond superconducting quantum interference device.
+ACS Nano 5, 7144-7148 (2011).
+Likharev, K. K. Superconducting weak links. Rev. Mod. Phys. 51,
+101-159 (1979).
+Van Harlingen, D. J., Koch, R. H. & Clarke, J. Superconducting
+quantum interference device with very low magnetic flux noise
+energy. Appl. Phys. Lett. 41, 197 (1982).
+Awschalom, D. D., Rozen, J. R., Ketchen, M. B., Gallagher, W. J.,
+Kleinsasser, A. W., Sandstrom, R. L. & Bumble., B. Low)noise
+modular microsusceptometer using nearly quantum limited dc
+SQUIDs. Appl. Phys. Lett. 53, 2108 (1988).
+Hatridge, M., Vijay, R., Slichter, D. H., Clarke, J. & Siddiqi, I.
+Dispersive magnetometry with a quantum limited SQUID
+parametric amplifier. Phys. Rev. B 83, 134501 (2011).
+Tesche, C. D. & Clarke, J. DC SQUID: Noise and optimization.
+J. Low Temp. Phys. 29, 301 (1977).
+Huber, M. E., Koshnick, N. C., Bluhm, H., Archuleta, L. J., Azua,
+T., Björnsson, P. G., Gardner, B. W., Halloran, S. T., Lucero, E. A.
+& Moler, K. A. Gradiometric micro-SQUID susceptometer for
+scanning measurements of mesoscopic samples. Rev. Sci. Instrum.
+79, 053704 (2008).
+Budker, D. & Romalis, M. Optical magnetometry. Nat. Phys. 3,
+227-234 (2007).
+Waldherr, G., Beck, J., Neumann, P., Said, R. S., Nitsche, M.,
+Markham, M. L., Twitchen, D. J., Twamley, J., Jelezko, F. &
+Wrachtrup, J. High-dynamic-range magnetometry with a single
+nuclear spin in diamond. Nat. Nanotechnol. 7, 105-108 (2012).
+Nusran, N. M., Momeen, M. U. & Gurudev Dutt, M. V. Highdynamic-range magnetometry with a single electronic spin in
+diamond. Nat. Nanotechnol. 7, 109-113 (2012).
+Maletinsky, P., Hong, S., Grinolds, M. S., Hausmann, B., Lukin,
+M. D., Walsworth, R. L., Loncar, M. & Yacoby, A. A robust
+scanning diamond sensor for nanoscale imaging with single
+nitrogen-vacancy centres. Nat. Nanotechnol. 7, 320-324 (2012).
+Rondin, L., Tetienne, J.-P., Spinicelli, P., Dal Savio, C., Karrai, K.,
+Dantelle, G., Thiaville, A., Rohart, S., Roch, J.-F. & Jacques, V.
+
+26.
+
+27.
+
+28.
+29.
+
+30.
+
+31.
+
+32.
+
+Nanoscale magnetic field mapping with a single spin scanning
+probe magnetometer. Appl. Phys. Lett. 100, 153118 (2012).
+Finkler, A., Vasyukov, D., Segev, Y., Ne'eman, L., Lachman,
+E. O., Rappaport, M. L., Myasoedov, Y., Zeldov, E. & Huber, M.
+E. Scanning superconducting quantum interference device on a tip
+for magnetic imaging of nanoscale phenomena. Rev. Sci. Instrum.
+83, 073702 (2012).
+Tilbrook, D. L. NanoSQUID sensitivity for isolated dipoles and
+small spin populations. Supercond. Sci. Technol. 22, 064003
+(2009).
+Bending, S. J. Local magnetic probes of superconductors. Adv.
+Phys. 48, 449 (1999).
+Matsuda, T., Kamimura, O., Kasai, H., Harada, K., Yoshida, T.,
+Akashi, T., Tonomura, A., Nakayama, Y., Shimoyama, J., Kishio,
+K., Hanaguri, T. & Kitazawa, K. Oscillating rows of vortices in
+superconductors. Science 7, 2136-2138 (2001).
+Auslaender, O. M., Luan, L., Straver, E. W. J., Hoffman, J. E.,
+Koshnick, N. C., Zeldov, E., Bonn, D. A., Liang, R., Hardy, W. N.
+& Moler, K. A. Mechanics of individual isolated vortices in a
+cuprate superconductor. Nat. Phys. 5, 35-39 (2009).
+Schwarz, A., Liebmann, M., Pi, U. H. & Wiesendanger, R. Real
+space visualization of thermal fluctuations in a triangular flux-line
+lattice. New J. Phys. 12, 033022 (2010).
+Huber, M., Neil, P., Benson, R., Burns, D., Corey, A., Flynn, C.;
+Kitaygorodskaya, Y., Massihzadeh, O., Martinis, J. & Hilton, G.
+DC SQUID series array amplifiers with 120 MHz bandwidth.
+IEEE Trans. Appl. Supercond. 11, 4048 (2001).
+
+Acknowledgements
+This work was supported by the European Research Council (ERC
+advanced grant) and by the Minerva Foundation with funding from the
+Federal German Ministry for Education and Research. Y.A.
+acknowledges support by the Azrieli Foundation and by the Fonds
+Québécois de la Recherche sur la Nature et les Technologies. M.H
+acknowledges support from the Weston Visiting Professorship
+program. E.Z. acknowledges support by the US-Israel Binational
+Science Foundation (BSF).
+
+Author contributions
+D.V. and Y.A. fabricated and measured the SOT devices. Y.A, M.R.,
+Y.M. and L.N. developed the Pb deposition setup. Y.M, M.R., and D.V.
+designed and built the Nb evaporator. L.E. designed and constructed the
+scanning SOT microscope. L.E., D.H. and J.C. carried out the magnetic
+imaging. A.F. and Y.S. contributed to the development of the SOTs and
+the microscope. M.H. developed the SQUID array readout system. D.V.
+and E.Z. co-wrote the paper. All authors contributed to the manuscript.
+
+Additional information
+The
+authors
+Correspondence
+to D.V. or E.Z.
+
+declare
+no
+and requests
+
+competing
+financial
+interests.
+for materials should be addressed
+
+6
+
+^ƵƉƉůĞŵĞŶƚĂƌǇDĂƚĞƌŝĂů
+^ĐĂŶŶŝŶŐŶĂŶŽͲ^Yh/ǁŝƚŚƐŝŶŐůĞĞůĞĐƚƌŽŶƐƉŝŶƐĞŶƐŝƚŝǀŝƚǇ
+YƵĂŶƚƵŵůŝŵŝƚŽĨƐĞŶƐŝƚŝǀŝƚǇĨŽƌŶĂŶŽͲ^Yh/Ɛ
+       0  !" ≈ !% ≈ ,#5  (    &"#  Φ, # ' !"#,)*5   " 
+   0      0 !   00 + 1-  .  /    
+/     2      (   0    0 0   
+ &" 345 67.   5 0       8   0 19 " ' " : "1.   "
+  0 /  1 0  "1 3,*7     0  "      ;*<<
+  " ≅ <.*= > 0  ;=<   " ≅ <.<, >#.    0    / 2 0   
+0  0           0    0 0 /   
+!" $ ")Φ< 345,?7. @  ;,A<  +/   /  " ≈ ,<.= >    ;=A  +/  
+  " ≈ =.4 >   &"  Φ, # ' ,A Φ<)> ,)* 0 ,* Φ<)> ,)*  .    0
+  2  0  =< Φ<)> ,)*   0   B.*  C.*       &".
+  &/        0  0  0        
+ " ≈ ,=< > 0  0  &"  Φ, # ' A< Φ<)> ,)*.      2 
+   2   B.A µΦ<)> ,)*   0   0.       /
+Φ, # ' "#,)* 0  *π#,)*       &"   Φ, # ' C< Φ<)> ,)*      ;,A<
+ +/  0 B< Φ<)> ,)*  ;=A  +/ . @  5      D    /   0
+34567   2  Φ, # ' C1%"π"&',)*#,)*5   1%  E  -  5   
+  5 0 &               / * @. E    
+  0  0           C.* F     /     ( 
+5   Φ, # ≈ ,*.= Φ<)> ,)* 0 6 Φ<)> ,)*   ;,A<  0 ;=A +/ 
+ .
+DĞĂƐƵƌŝŶŐƚŚĞ^KdĐƵƌƌĞŶƚͲǀŽůƚĂŐĞĐŚĂƌĂĐƚĞƌŝƐƚŝĐƐǁŝƚŚĂƐĞƌŝĞƐ^Yh/ĂƌƌĂǇĂŵƉůŝĨŝĞƌ;^^Ϳ
+  / 0   1 1             G#  
+
+/ 0      0       0.        
+  . H      0 (   /  5   @. * 5 
+   /   ,  B Ω#  0     /       
+  0   0 0  0   3C5,*5*A5B*7.    5   
+G     0     5     /  / ..   0
+   #    @. * 0 */    2.  0       0 0 
+@. ,      &/      0    .      / 
+      0    G       @. ,   ( 
+  /  0    /   0     G   @. ,/. 
+    0      0         G     
+.      0       /     05 /   /  / 0
+/   .
+
+,
+
+a
+
+40
+
+
+
+
+
+
+
+
+
+
+
+b
+
+30
+
+ISOT (µA)
+
+30
+20
+20
+10
+10
+
+0
+
+0
+
+5
+
+10
+
+0
+0.0
+
+15
+
+0.2
+
+VSOT (mV)
+
+0.4
+
+0.6
+
+Vbias (V)
+
+&ŝŐƵƌĞ ^ϭ ͮ ǆĂŵƉůĞƐ ŽĨ /Ͳs ĐŚĂƌĂĐƚĞƌŝƐƚŝĐƐ ŽĨ Eď ^Kd ŵĞĂƐƵƌĞĚ ƵƐŝŶŐ ĚŝĨĨĞƌĞŶƚ ƚǇƉĞƐ ŽĨ ďŝĂƐ ĐŽŶĚŝƚŝŽŶƐ Ăƚ
+ϰ͘Ϯ<͘ Ă5      /  0    0    /  . &    I  
+   /    G        *∆) 0              . ď5  
+  /       @. *    
+    / 
+  . E 1 0 0   0     #   0 0  0 .
+
+
+EŽŝƐĞŵĞĂƐƵƌĞŵĞŶƚƐ
+   0   0    /    0 2    0 0 
+/   0            0  00  2       
+ 0 0    0  20 /  %     . @     0 
+   0  +/         2    
+   / 6< Φ<)> ,)* @. * #.      0   0 
+1
+        ,  0 2   (  AA< >    0 
+ % 0  0    0 /         @. */.      
+      0 /               
+     .
+a
+
+b
+
+660 Hz
+
+10
+
+3
+
+10
+
+2
+
+10
+
+1
+
+2
+
+10
+
+½
+
+Φmeas (nΦ0)
+
+1/2
+
+SΦ (nΦ0/Hz )
+
+80 nΦ0/Hz1/2
+
+1
+
+10
+
+1
+
+10
+
+10
+
+Frequency (kHz)
+
+80 nΦ0
+
+1
+
+10
+
+2
+
+10
+
+3
+
+Φexc(nΦ0)
+
+&ŝŐƵƌĞ ^Ϯ ͮ ŽŵƉĂƌŝƐŽŶ ŽĨ ƚŚĞ ŶŽŝƐĞ ŵĞĂƐƵƌĞŵĞŶƚ ŝŶ Ă Wď ^Kd ƵƐŝŶŐ ƚǁŽ ƚĞĐŚŶŝƋƵĞƐ Ăƚ ϰ͘Ϯ<͘ Ă5  
+        2    / 6< Φ<)> ,)*. ď5 "1     
+ % 2    .  2  2  0 /   .       1    
+, 0 2   (  AA< > .  0   0         6< Φ<.
+
+*
+
+Vbias = 1.7 V
+
+0.4
+
+a
+
+Vbias = 1.9 V
+
+0.4
+
+b
+
+Vbias = 2.1 V
+
+0.4
+
+c
+
+0.3
+
+0.3
+
+0.2
+
+0.2
+
+0.2
+
+0.1
+
+0.1
+
+0.1
+
+5
+4
+3
+
+0
+
+1
+
+3
+10
+Frequency (kHz)
+
+50
+
+0
+
+1
+
+3
+10
+Frequency (kHz)
+
+50
+
+0
+
+½
+
+0.3
+
+Sn (µB/√Hz)
+
+H (T)
+
+6
+
+2
+1
+
+3
+10
+Frequency (kHz)
+
+50
+
+1
+
+&ŝŐƵƌĞ^ϯͮ^ƉŝŶŶŽŝƐĞƐƉĞĐƚƌĂŽĨ ;ϭϲϬŶŵWď^KdǀƐ͘ĂƉƉůŝĞĚĨŝĞůĚĂƚϰ͘Ϯ<ŵĞĂƐƵƌĞĚĂƚĚŝĨĨĞƌĞŶƚĐŽŶƐƚĂŶƚ
+ďŝĂƐĞƐ͘ Ă5 G/  ' ,.4 G. ď5 G/  ' ,.? G. Đ5 G/  ' *., G.
+
+/ŶĨůƵĞŶĐĞŽĨƚŚĞ^KdďŝĂƐŽŶƚŚĞƐƉŝŶƐĞŶƐŝƚŝǀŝƚǇ
+@  B   0   @. B     
+  /  0   /       
+  0   /    .
+
+. 0 0   
+0   /  0
+
+/ŶĨůƵĞŶĐĞŽĨƚŚĞ^Yh/ĂƐǇŵŵĞƚƌǇŽŶƚŚĞǁŽƌŬŝŶŐƌĂŶŐĞŽĨƚŚĞ^Kd
+     0        0. >    /  
+        / 0     0          0    
+I   (  345 ,?7. @  *    2 0        
+    ;*B6  &/     0   0.        
+     /  0   / 00  2
+ 0   0  
+    @. C 5   (      / 0 0  0 ( 
+     0 0 . @  C/              
+   ;,,?  +/    0   /   .        
+    / 0  0   0       0. @  C  
+  0         0   /  0 0#     
+     0 /  0 .    0    /  
+                  0   0. 
+ 0     / ,.* G)  / 0    0.   0 
+            1 0      0  
+*= JE )> ,)*5   /        0  .
+
+B
+
+a
+
+Ic1≈Ic2
+
+Positive bias
+Negative bias
+
+Ic2
+
+Ic1
+
+b
+
+Ic (µA)
+
+50
+40
+30
+20
+-0.3 -0.2 -0.1 0
+
+Ic2
+
+4
+
+Response (V/T)
+
+60
+
+Ic1
+
+Ic1>Ic2
+
+Vbias = 1 V
+Vbias = -1 V
+
+H (T)
+
+c
+
+3
+2
+1
+0
+-0.3 -0.2 -0.1 0
+
+0.1 0.2 0.3
+
+Maximum
+responce
+
+0.1 0.2 0.3
+
+H (T)
+
+&ŝŐƵƌĞ^ϰͮ/ŶĨůƵĞŶĐĞŽĨĂƐǇŵŵĞƚƌǇŽŶƚŚĞ^Yh/ŝŶƚĞƌĨĞƌĞŶĐĞƉĂƚƚĞƌŶ͘ Ă͕     0    
+  0    0    / 00   0   0. ď͕ 
+2               ;,,?  +/    /   5 0 
+                0. Đ͕
+ 0    
+0 0   0   /  0 0#.  0    /0  2     
+     0.
+
+C
+
+
